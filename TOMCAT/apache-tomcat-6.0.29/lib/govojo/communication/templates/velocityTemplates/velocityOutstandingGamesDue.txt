@@ -1,0 +1,27 @@
+Dear ^${firstname},
+
+As of ^${datenow}, our records show that we still have not received the following
+outstanding game(s):
+
+#foreach( $gametitle in ^$gametitles )
+${gametitle}
+#end
+
+This is just a reminder for you to return any game(s) you are currently
+holding.  You are currently over the 10 day grace period we allow for
+returning games after canceling your GPlay account.  
+
+It is important that you update the return status of the above game(s) within
+48 hours.  Otherwise, we will assume that you wish to keep the
+game(s) and we will charge you the appropriate replacement price.  Click on
+the link below to update the return status of your outstanding game(s).
+
+http://www.gplay.com/outstandingGames.do?ref=^${customerid}
+
+Let us know if there's anything else we can help you with.
+GPlay Customer Service
+ 
+*---- Helpful Links ----*
+Contact Us - http://www.gplay.com/displayContactUs.jsp
+My Account - https://www.gplay.com/account/displayAccountLanding.jsp
+FAQ - http://www.gplay.com/displayFAQ.jsp

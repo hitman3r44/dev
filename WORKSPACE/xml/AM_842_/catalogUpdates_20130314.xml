@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="AM_APPMD720CA">
+        <cost>298.25</cost>
+        <discount-dollars>31.74</discount-dollars>
+        <discount-percent>9.62</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.91</average-canada>
+            <rate-per-province>
+                <AB>17.08</AB>
+                <BC>17.91</BC>
+                <MB>15.72</MB>
+                <NB>16.56</NB>
+                <NL>18.75</NL>
+                <NS>16.84</NS>
+                <NT>18.06</NT>
+                <NU>28.44</NU>
+                <ON>12.90</ON>
+                <PE>15.91</PE>
+                <QC>11.92</QC>
+                <SK>17.08</SK>
+                <YT>21.02</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_LOG984155">
+        <status>DISCONTINUED</status>
+        <substitute-product>CYB91475N</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HARKARBT">
+        <title>Bluetooth Over-the-Ear Headphones</title>
+    </ls-product>
+    <ls-product id="AM_SONPS250MWBG">
+        <brand-name>Sony</brand-name>
+        <group>Gaming</group>
+        <category>PlayStation 3</category>
+        <type>N/A - PS3</type>
+        <image>http://loyaltysource.com/media/product/large/sonps250mwbg_1363184100760.jpg</image>
+        <status>AVAILABLE</status>
+        <title>PlayStation 3 250GB Console with Move Wonderbook Bundle</title>
+        <description>PlayStation Move offers a new and innovative gaming experience for the PlayStation 3 system by fusing realistic, high-definition gaming along with accurate, intuitive control. Camera and audio reception making it an integral part of the PlayStation Move motion control system. PlayStation Move Charging Station charges any two PlayStation Move controllers simultaneously. Wonderbook: Book of Spells takes you on a magical interactive journey of becoming a powerful wizard in your very own living room. Featuring original writing from world famous author, J.K. Rowling, discover back story and new conundrums from the world of Harry Potter. This bundle also includes a 250GB PS3 game console with a Playstation controller.</description>
+        <specification>Bundle includes: 1 Playstation 3 250GB console 1 Playstation 3 controller 1 PlayStation Move Motion Controller 1 Wonderbook with Book Of Spells game 1 PlayStation Eye Camera 1 PlayStation Move Game Disk (selected based on most popular title) PlayStation Move Charging Station</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>PS Move Wonderbook Bundle</model-number>
+        <weight>17</weight>
+        <shipping-size>
+            <length>14</length>
+            <width>16</width>
+            <height>26</height>
+        </shipping-size>
+        <msrp>495.00</msrp>
+        <cost>437.59</cost>
+        <discount-dollars>57.41</discount-dollars>
+        <discount-percent>11.60</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>9.00</average-canada>
+            <rate-per-province>
+                <AB>9.00</AB>
+                <BC>9.00</BC>
+                <MB>9.00</MB>
+                <NB>9.00</NB>
+                <NL>9.00</NL>
+                <NS>9.00</NS>
+                <NT>9.00</NT>
+                <NU>9.00</NU>
+                <ON>9.00</ON>
+                <PE>9.00</PE>
+                <QC>9.00</QC>
+                <SK>9.00</SK>
+                <YT>9.00</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TRU6424G">
+        <brand-name>Trudeau</brand-name>
+        <group>Kitchen</group>
+        <category>Dinnerware</category>
+        <type>Glassware</type>
+        <image>http://loyaltysource.com/media/product/large/tru6424g_1363192127411.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Bohemia Coffee Mug - Set of 8</title>
+        <description>Bohemia Coffee Mug - Set of 8.</description>
+        <specification>Tempered glass Microwave and dishwasher safe</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>49026424</model-number>
+        <weight>8</weight>
+        <shipping-size>
+            <length>9</length>
+            <width>18</width>
+            <height>11</height>
+        </shipping-size>
+        <msrp>49.99</msrp>
+        <cost>28.73</cost>
+        <discount-dollars>21.26</discount-dollars>
+        <discount-percent>42.53</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>0.00</average-canada>
+            <rate-per-province>
+                <AB>0.00</AB>
+                <BC>0.00</BC>
+                <MB>0.00</MB>
+                <NB>0.00</NB>
+                <NL>0.00</NL>
+                <NS>0.00</NS>
+                <NT>0.00</NT>
+                <NU>0.00</NU>
+                <ON>0.00</ON>
+                <PE>0.00</PE>
+                <QC>0.00</QC>
+                <SK>0.00</SK>
+                <YT>0.00</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/web/WEB-INF/jsp/brand/editProduct.jsp&apos; to &apos;editBrand.jsp&apos;" description="Rename resource &apos;editProduct.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/WEB-INF/jsp/brand/editProduct.jsp" name="editBrand.jsp" stamp="1331329093902" updateReferences="true"/>
+</session>

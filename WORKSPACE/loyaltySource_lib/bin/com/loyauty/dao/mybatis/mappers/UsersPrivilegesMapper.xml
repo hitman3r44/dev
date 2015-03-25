@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.loyauty.dao.mybatis.mappers.UsersPrivilegesMapper">
+	
+	<!-- Result maps -->  
+	<resultMap type="UsersPrivileges" id="privilegesResultMap"> 
+		<id property="id" column="id"/>   
+	</resultMap>
+
+    
+	<!-- =================== SELECT ==================== -->
+	
+	<select id="getPrivilegesByUser" parameterType="UsersPrivileges" resultMap="privilegesResultMap">
+		SELECT id AS id,
+			   user_id AS userId,
+			   action_name AS actionName,
+			   action_code AS actionCode,
+			   active AS action 
+		FROM   users_privileges
+		WHERE  user_id=#{userId} AND 
+			   action_code=#{actionCode} 
+			   AND active=#{active}
+	</select>
+
+</mapper>

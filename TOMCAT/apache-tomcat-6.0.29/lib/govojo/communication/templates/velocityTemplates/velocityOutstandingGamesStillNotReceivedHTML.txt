@@ -1,0 +1,38 @@
+Dear ^${firstname},
+
+<p>
+As of ^${datenow}, our records show that we still have not received the following
+outstanding game(s):
+</p>
+
+#foreach( $gametitle in ^$gametitles )
+<b>${gametitle}</b><br>
+#end
+
+<p>
+It has been 8 days since you updated us on the status of your outstanding
+game(s). If the game(s) are not received within 48 hours, you will be charged
+the appropriate replacement price. You may check the return status of the
+above game(s) by clicking on the the link below.
+</p>
+
+<a href =
+"http://www.gplay.com/outstandingGames.do?ref=^${customerid}">Check your outstanding games</a><br>
+
+<p>
+If you still have any questions please contact us.
+</p>
+
+<p>
+GPlay Customer Service
+</p>
+ 
+<p>
+*---- Helpful Links ----*<br>
+Contact Us - <a
+href="http://www.gplay.com/displayContactUs.jsp">http://www.gplay.com/displayContactUs.jsp</a><br>
+My Account - <a
+href="https://www.gplay.com/account/displayAccountLanding.jsp">https://www.gplay.com/account/displayAccountLanding.jsp</a><br>
+FAQ - <a
+href="http://www.gplay.com/displayFAQ.jsp">http://www.gplay.com/displayFAQ.jsp</a><br>
+</p>

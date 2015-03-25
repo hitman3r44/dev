@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/src/com/loyauty/web/struts/action/asiamiles/EnterXLS.java&apos; to &apos;UploadXLS.java&apos;" description="Rename resource &apos;EnterXLS.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/loyauty/web/struts/action/asiamiles/EnterXLS.java" name="UploadXLS.java" stamp="1366904265121" updateReferences="true"/>
+</session>

@@ -1,0 +1,19 @@
+Dear #FIRSTNAME#,
+
+Unfortunately we were unable to accept your review due
+to the following reasons:
+
+#DECLINE_REASONS#
+#DECLINE_COMMENT#
+=========================
+A copy of your review is attached below.  
+
+Thank you, 
+
+The GameAccess Team
+
+*************************
+
+Game Title: #GAME_TITLE#
+Review Title: #REVIEW_TITLE#
+Your Review: #REVIEW_BODY# 

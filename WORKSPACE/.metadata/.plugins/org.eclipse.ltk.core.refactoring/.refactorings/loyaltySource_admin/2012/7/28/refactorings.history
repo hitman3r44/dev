@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;loyaltySource_admin/web/WEB-INF/tiles.xml&apos; to &apos;tilesAdmin.xml&apos;" description="Rename resource &apos;tiles.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/WEB-INF/tiles.xml" name="tilesAdmin.xml" stamp="1342038001781" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;loyaltySource_admin/web/WEB-INF/tilesAdmin.xml&apos; to &apos;tiles.xml&apos;" description="Rename resource &apos;tilesAdmin.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/WEB-INF/tilesAdmin.xml" name="tiles.xml" stamp="1342038463735" updateReferences="true"/>
+</session>

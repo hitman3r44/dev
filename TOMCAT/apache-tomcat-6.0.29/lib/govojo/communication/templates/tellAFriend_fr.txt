@@ -1,0 +1,9 @@
+Salut #NAME#,
+
+Je sais que tu aimes les jeux vidéo alors j’ai décidé de t’envoyer ce courriel à propos d’un service de location de jeux nommé Game Access. Ils ont la plus grande sélection de jeux au Canada et tu peux louer un nombre illimité de jeux pour un coût mensuel peu élevé. En plus, les jeux vidéo sont livrés directement à ton domicile, ce qui évite des dérangements.
+
+Visite leur site au http://gameaccess.ca/index.jsp?ref_id=#REFERAL_ID#&lang=fr. Aussi, ils offrent un essai gratuit de 10 jours, donc tu n’as rien à perdre.
+
+Merci et à bientôt,
+
+#SENDER_FIRST_NAME#

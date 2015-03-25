@@ -1,0 +1,10 @@
+Cher(e) #FIRSTNAME#,
+
+Votre compte sera envoyé &agrave; notre agence de recouvrement affiliée dans les prochains jours. Un de leur représentant vous contactera sous peu.
+
+Le département de facturation Game Access
+
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

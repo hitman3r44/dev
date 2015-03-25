@@ -1,0 +1,19 @@
+<html>
+   <body>
+$test
+
+<p>Dear ^${customer},
+</p>
+
+<p>
+ $sometext <b>other</b> miscellaneous $test
+</p>
+
+$should be a literal
+
+$!{customer} too 
+${customer} too
+
+text
+   </body>
+</html>

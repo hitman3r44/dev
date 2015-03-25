@@ -1,0 +1,17 @@
+Cher(e) #FIRSTNAME#, 
+
+Le #TODAY#, nous avons tenté de charger votre carte de crédit pour notre service de location de jeux vidéo. Malheureusement, votre carte a refusé la charge. Veuillez s'il vous plaît effectuer un paiement sur cette carte ou modifier votre information de paiement dans la page 'Mon Compte'  de votre section des membres en utilisant le lien ici bas : 
+
+http://gameaccess.ca/signIn.jsp?lang=fr 
+
+Nous essaierons de charger votre carte à nouveau dans 5 jours. Entre temps, nous suspendons tout envoi de jeux vidéo. Une fois votre compte payé en entier, l'expédition de jeux reprendra son cours normal. 
+Si vous nécessitez de l'assistance, s'il vous plaît n'hésitez pas à nous contacter. 
+
+Merci de choisir Game Acces, 
+L'Équipe Game Access
+
+*---- Liens Utiles ----* 
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr 
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr 
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr
+

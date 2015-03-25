@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>GPlay Gift Certificate Notification</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5" link="#003399" vlink="#003399" alink="#FF9900">
+<table width="630"  border="0">
+  <tr>
+    <td> 
+      <!--START Preview the giftcerticate content-->
+      <table border="0" cellpadding="0" cellspacing="0" width="610">
+          <tr>
+            <td  rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="15" height="1"></td>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="595" height="21"></td>
+            <td rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="10" height="1"></td>
+          </tr>
+          <tr>
+            <td colspan="2" valign="top" width="80%"><font face="Arial, Helvetica, sans-serif" size="3"><b>#SENDER_FIRSTNAME# #SENDER_LASTNAME# has given you the gift of games!</b> 
+              <br>
+              You've received a gift certificate for #NUMBERMONTHS# of membership at GPlay, the leading online video game rental service. We recommend you print this page. You'll need the code below to redeem your gift membership.</font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="21"></td>
+          </tr>
+	</table>
+	<table>
+          <tr>
+             <td width="3%" height="30"><font size="3" color="#0066CC"><b></b></font></td>
+             <td colspan="2" height="30"><font size="2" color="#0066CC"><b><font face="Arial, Helvetica, sans-serif">GPlay Membership Benefits:</font></b></font></td>
+          </tr>
+
+          <tr>
+              <td width="3%" height="35"><img height=21 alt=Spacer src="http://www.gplay.com/images/transparent.gif" width=1></td>
+              <td width="4%" align="center" valign="top" height="35"><img src="http://www.gplay.com/images/giftcert/starburst.gif" width="15" height="15"></td>
+              <td width="66%" valign="top" height="35"><font size="2" face="Arial, Helvetica, sans-serif">Over 1,500 games to choose from for the four most popular consoles -- Playstation 2, Xbox, Gamecube and Game Boy Advance.</font></td>
+          </tr>
+          <tr>
+              <td width="3%"><img height=21 alt=Spacer src="http://www.gplay.com/images/transparent.gif" width=1></td>
+              <td width="4%" align="center" valign="top"><img src="http://www.gplay.com/images/giftcert/starburst.gif" width="15" height="15"></td>
+               <td width="66%" valign="top"><font size="2" face="Arial, Helvetica, sans-serif">No due dates and no late fees!</font></td>
+
+          </tr>
+          <tr>
+               <td width="3%"><img height=21 alt=Spacer src="http://www.gplay.com/images/transparent.gif" width=1></td>
+               <td width="4%" align="center" valign="top"><img src="http://www.gplay.com/images/giftcert/starburst.gif" width="15" height="15"></td>
+               <td width="66%" valign="top"><font face="Arial, Helvetica, sans-serif" size="2">Shipping is fast and always FREE.</font></td>
+          </tr>
+          <tr>
+               <td width="3%"><img height=21 alt=Spacer src="http://www.gplay.com/images/transparent.gif" width=1></td>
+               <td width="4%" align="center" valign="top"><img src="http://www.gplay.com/images/giftcert/starburst.gif" width="15" height="15"></td>
+
+               <td width="66%" valign="top"><font size="2" face="Arial, Helvetica, sans-serif">Unlimited game rentals. Send back your games and we'll send more!</font></td>
+          </tr>
+          <tr>
+               <td colspan="3">&nbsp;</td>
+          </tr>
+	</table>
+        <table border="0" cellpadding="0" cellspacing="0" width="610">
+          <tr>
+            <td colspan="2"><font face="Arial, Helvetica, sans-serif" size="3" color="#ff6600"><b>Printable 
+              Gift Certificate:</b></font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="11"></td>
+          </tr>
+        </table>
+
+
+<table width="630" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td rowspan="2"><img src="http://www.gplay.com/images/giftcert/gctop_01B.gif" width="261" alt="GPlay and Logo" height="48" border="0"></td>
+    <td><img src="http://www.gplay.com/images/giftcert/gctop_02.gif" alt="Gift Certificate edge image" width="336" height="31"></td>
+    <td rowspan="2"><img src="http://www.gplay.com/images/giftcert/gctop_03.gif" width="33" height="48"></td>
+  </tr>
+  <tr>
+    <td width="336" height="17" align="center" bgcolor="#ffffff" valign="bottom"><font face="Arial, Helvetica, sans-serif" size="1"><b>Gift Certificate Code # #GIFTCODE#</b></font></td>
+  </tr>
+</table>
+<table width="630" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td bgcolor="#00296f"><img src="http://www.gplay.com/images/giftcert/gcMid_01.gif" alt="Edge of Gift Certificate Box" width="18" height="188"></td>
+    <td colspan=3 width="594" height="188" valign="top"> 
+      <table cellpadding="0" cellspacing="0" width="594" border="0">
+        <tr>
+          <td rowspan="25"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="14" height="3"></td>
+          <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="7"></td>
+          <td rowspan="25"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="14" height="3"></td>
+        </tr>
+        <tr>
+          <td><font face="Arial, Helvetica, sans-serif" size="3"><b>Value: #NUMBERMONTHS# of membership at GPlay.com</b></font></td>
+        </tr>
+        <tr>
+          <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="566" height="11"></td>
+        </tr>
+        <tr>
+          <td><font face="Arial, Helvetica, sans-serif" size="2">To: #RECIPIENT_FIRSTNAME# #RECIPIENT_LASTNAME#<br>
+            From: #SENDER_FIRSTNAME# #SENDER_LASTNAME#</font></td>
+        </tr>
+        <tr>
+          <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="11"></td>
+        </tr>
+        <tr>
+          <td><font face="Arial, Helvetica, sans-serif" size="2">#PERSONAL_MESSAGE#</font></td>
+        </tr>
+        <tr>
+          <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="11"></td>
+        </tr>
+        <tr>
+          <td><font face="Arial, Helvetica, sans-serif" size="2">To redeem this 
+            gift certificate, go to <a href="http://www.gplay.com/redeem.jsp">http://www.gplay.com/redeem.jsp</a></font></td>
+        </tr>
+        <tr>
+          <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="11"></td>
+        </tr>
+        <tr>
+          <td><font face="Arial, Helvetica, sans-serif" size="1">Expiration: #CODE_EXPIRATION#</font></td>
+        </tr>
+      </table>
+    </td>
+    <td bgcolor="#00296f"><img src="http://www.gplay.com/images/giftcert/gcMid_03.gif" width="18" height="188"></td>
+  </tr>
+  <tr>
+    <td><img src="http://www.gplay.com/images/giftcert/gcMid_04.gif" alt="Gift Certificate edge image"  width="18" height="14"></td>
+    <td><img src="http://www.gplay.com/images/giftcert/gcMid_05.gif" alt="Gift Certificate edge image"  width="13" height="14"></td>
+    <td><img src="http://www.gplay.com/images/giftcert/gcMid_06.gif"  alt="Gift Certificate edge image" width="569" height="14"></td>
+    <td><img src="http://www.gplay.com/images/giftcert/gcMid_07.gif" alt="Gift Certificate edge image"  width="12" height="14"></td>
+    <td><img src="http://www.gplay.com/images/giftcert/gcMid_08.gif"  alt="Gift Certificate edge image" width="18" height="14"></td>
+  </tr>
+</table>
+<table width="630" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="http://www.gplay.com/images/giftcert/gcBottom.gif" width="630" height="20"></td>
+  </tr>
+</table>
+
+
+
+
+        <table border="0" cellpadding="0" cellspacing="0" width="610">
+          <tr>
+            <td  rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="15" height="1"></td>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="595" height="21"></td>
+            <td rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="10" height="1"></td>
+          </tr>
+          <tr>
+            <td valign="top" width="80%"><font face="Arial, Helvetica, sans-serif" size="3"><b>How 
+              to use your Gplay Gift Certificate:</b></font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="1" height="5"></td>
+          </tr>
+          <tr>
+            <td valign="top"><font face="Arial, Helvetica, sans-serif" size="2">1. 
+              Go to <a href="http://www.gplay.com/redeem.jsp">http://www.gplay.com/redeem.jsp</a></font> 
+              <br>
+              <font face="Arial, Helvetica, sans-serif" size="2">2. Insert your gift certificate number and press the &quotContinue&quot button. 
+              <br>
+              3. Follow the instructions.</font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" width="1" height="21"></td>
+          </tr>
+          <tr>
+            <td  valign="top"><font face="Arial, Helvetica, sans-serif" size="3" color="#77A10C"><b>Welcome to GPlay!</b></font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" width="1" height="11"></td>
+          </tr>
+          <tr>
+            <td> 
+              <hr width="98%" align="left">
+            </td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" width="1" height="11"></td>
+          </tr>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" width="610">
+          <tr>
+            <td  rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="15" height="1"></td>
+            <td><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="595" height="1"></td>
+            <td rowspan="50"><img src="http://www.gplay.com/images/transparent.gif" alt="Spacer" width="10" height="1"></td>
+          </tr>
+          <tr>
+            <td  valign="top"><font face="Arial, Helvetica, sans-serif" size="2"><b>Gift Certificate Guidelines</b></font></td>
+          </tr>
+          <tr>
+            <td><img src="http://www.gplay.com/images/transparent.gif" width="1" height="11"></td>
+          </tr>
+          <tr>
+            <td valign="top"><font face="Arial, Helvetica, sans-serif" size="1">1. 
+              Gift certificates must be redeemed within six months of the date 
+              of issuance. Unused gift certificates expire six months from the 
+              date of issuance.* <br>
+              <br>
+              2. Gift certificates must be redeemed through the GPlay.com Web 
+              site, http://www.gplay.com, toward the purchase of membership for 
+              GPlay rental services. <br>
+              <br>
+              3. Gift certificates are not redeemable for cash and cannot be returned 
+              for a cash refund. <br>
+              <br>
+              4. Gift certificate cash value is 1/10 of one cent. <br>
+              <br>
+              5. Gift certificates and their use on the GPlay.com Web site are 
+              subject to GPlay.com's general Terms of Use and Privacy Policy. 
+              <br>
+              <br>
+              6. We are not responsible for lost or stolen gift certificates. 
+              If you have any questions, please contact GPlay.com at http://gplay.com/displayContactUs.jsp 
+              . <br>
+              <br>
+              7. GPlay.com will have the right to close customer accounts and 
+              request alternative forms of payment if a fraudulently obtained 
+              gift certificate is redeemed through the GPlay.com Web site. <br>
+              <br>
+              8. GPLAY, INC. (&quot;GPLAY&quot;) AND ITS AFFILIATES MAKE NO 
+              WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO GIFT CERTIFICATES, 
+              INCLUDING WITHOUT LIMITATION, ANY EXPRESS OR IMPLIED WARRANTY OF 
+              MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN THE EVENT 
+              A GIFT CERTIFICATE CODE IS NON-FUNCTIONAL, YOUR SOLE REMEDY, AND 
+              OUR SOLE LIABILITY, SHALL BE THE REPLACEMENT OF SUCH GIFT CERTIFICATE. 
+              CERTAIN STATE LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES 
+              OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS 
+              APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS, EXCLUSIONS, 
+              OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MIGHT HAVE ADDITIONAL 
+              RIGHTS. <br>
+              <br>
+              9. GPlay reserves the right to change these terms and conditions 
+              from time to time at its discretion. <br>
+              <br>
+              10. The risk of loss and title for gift certificates pass to the 
+              purchaser upon our electronic transmission to the recipient or delivery 
+              to the carrier, whichever is applicable. <br>
+	      <br>
+	      11. Gift certificates may only be redeemed in the Unites States and its territories or military installations.<br>
+	      <br>
+	      12. Gift certificates cannot be combined with any other special or free offers.<br>
+	      <br>
+	      13. The gift certificate recipient will need a valid credit card to activate membership.<br>
+	      <br>
+	      14. To transfer this gift certificate, please provide the new recipient with this gift certificate redemption code. A transfer is only possible if the original gift certificate recipient has not yet redeemed this gift certificate.<br>
+              <br>
+              * Does not apply in California, Connecticut, Maine, or Massachusetts; 
+              applies in New Hampshire only for gift certificates over $100. Expiration 
+              date does not apply in any other states where prohibited by law. 
+              </font></td>
+          </tr>
+        </table>
+        <!--END Printable giftcerticate content-->
+    </td>
+  </tr>
+</table>
+</body>
+</html>

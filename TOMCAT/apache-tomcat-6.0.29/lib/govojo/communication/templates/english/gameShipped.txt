@@ -1,0 +1,18 @@
+Dear #FIRSTNAME#,
+
+We have packaged and shipped the following game(s) from your purchase order: 
+
+#GAMENAME#
+
+For more details regarding this order please visit your account using the link bellow:
+
+My Account: http://gameaccess.ca/myAccount.do
+
+If you have any questions, please feel free to contact our customer support at support@gameaccess.ca.
+
+Thank you for shopping at Game Access.
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/myAccount.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

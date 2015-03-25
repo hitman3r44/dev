@@ -1,0 +1,1767 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>07986884</po_number>
+        <first_name>HAN</first_name>
+        <last_name>NGUYEN KYLE</last_name>
+        <client_street>10 VIA ROMANO WAY</client_street>
+        <client_city>BRAMPTON</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6P1K2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1088</client_number>
+        <client_product_number>MSCCSU</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>GAPGC100</ls_product_id>
+        <product_title>$100 Gift Card</product_title>
+        <cost>99.84</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723297080472</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08124529</po_number>
+        <first_name>YING</first_name>
+        <last_name>CHANG SARA XUE</last_name>
+        <client_street>#110-3280 EAST 58TH AVENUE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5S3T2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>2207</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723288750476</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08124536</po_number>
+        <first_name>MENG</first_name>
+        <last_name>CHANG ANTHONY POW</last_name>
+        <client_street>#110-3280 EAST 58TH AVENUE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5S3T2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>2216</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723289043478</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08125433</po_number>
+        <first_name>HUBERT</first_name>
+        <last_name>FUNG</last_name>
+        <client_street>2551 EAST 43RD AVENUE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5R5V7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>5332</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723289341475</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08125434</po_number>
+        <first_name>HUBERT</first_name>
+        <last_name>FUNG</last_name>
+        <client_street>2551 EAST 43RD AVENUE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5R5V7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>5332</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723289122470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08127228</po_number>
+        <first_name>PRASAD</first_name>
+        <last_name>JYOTI</last_name>
+        <client_street>4749 PENDER STREET</client_street>
+        <client_city>BURNABY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5C2N4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7004</client_number>
+        <client_product_number>MSCCTX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>DAGPFL215</ls_product_id>
+        <product_title>The One for Women</product_title>
+        <cost>102.7</cost>
+        <shipping_cost>12.64</shipping_cost>
+        <tracking_number>7310723289982470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>08069107</po_number>
+        <first_name>YEUNG</first_name>
+        <last_name>MCKENZIE</last_name>
+        <client_street>307 - 80 ACADIA AVENUE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R9V1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4080</client_number>
+        <client_product_number>MS6219</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS3089159</ls_product_id>
+        <product_title>Chain with Large Open Heart Pendant  in Sterling Silver</product_title>
+        <cost>63.0</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723162756471</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>08120260</po_number>
+        <first_name>LAI</first_name>
+        <last_name>ANITA</last_name>
+        <client_street>6990 VIVIAN STREET</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5S2T6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0321</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723178727472</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>08115635</po_number>
+        <first_name>CARLING</first_name>
+        <last_name>LAM</last_name>
+        <client_street>305 - 1833 FRANCES ST.</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5L1Z8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9402</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723042111475</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>08115731</po_number>
+        <first_name>MARTINA</first_name>
+        <last_name>ESPINA</last_name>
+        <client_street>22 HOWE DRIVE</client_street>
+        <client_city>KITCHENER</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N2E1J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4832</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.46</shipping_cost>
+        <tracking_number>7310723042618479</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>08115811</po_number>
+        <first_name>CELSO</first_name>
+        <last_name>ESPINA</last_name>
+        <client_street>22 HOWE</client_street>
+        <client_city>KITCHENER</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N2E1J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4869</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>7.46</shipping_cost>
+        <tracking_number>7310723041871479</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>08114590</po_number>
+        <first_name>GREGORY</first_name>
+        <last_name>ZIMNICKI</last_name>
+        <client_street>300 BALLIOL STREET</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4S3G6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7368</client_number>
+        <client_product_number>MS6215</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS811442</ls_product_id>
+        <product_title>Cultured Pearl Earrings  in 14kt Yellow Gold</product_title>
+        <cost>63.0</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723926620468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>08115028</po_number>
+        <first_name>RICARDO</first_name>
+        <last_name>DE LIMA</last_name>
+        <client_street>12 LEONARD DRIVE</client_street>
+        <client_city>ST CATHARINES</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L2S3V2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4874</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.46</shipping_cost>
+        <tracking_number>7310723918826465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>08102452</po_number>
+        <first_name>OLIVIA</first_name>
+        <last_name>BONDOC</last_name>
+        <client_street>44 PIN LANE</client_street>
+        <client_city>SCARBOROUGH</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M1J0A6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0923</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723725031465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08102453</po_number>
+        <first_name>OLIVIA</first_name>
+        <last_name>BONDOC</last_name>
+        <client_street>44 PIN LANE</client_street>
+        <client_city>SCARBOROUGH</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M1J0A6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0923</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723724404468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08106377</po_number>
+        <first_name>LAIWAH</first_name>
+        <last_name>CHAN</last_name>
+        <client_street>1556 WEST 68 AVE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6P2V5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0163</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723723894468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08107001</po_number>
+        <first_name>HAN</first_name>
+        <last_name>YE</last_name>
+        <client_street>19 MORRISON CRESCENT</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R9L9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9075</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723723205462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08108349</po_number>
+        <first_name>KATHLEEN</first_name>
+        <last_name>WONG</last_name>
+        <client_street>43 MAGDALAN CRESCENT</client_street>
+        <client_city>RICHMOND HILL</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L4E0W4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>5488</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723725807466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08108908</po_number>
+        <first_name>LOK</first_name>
+        <last_name>LEUNG CHI</last_name>
+        <client_street>1106-555 DELESTRE AVE.</client_street>
+        <client_city>COQUITLAM</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3K0A9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7378</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723723485468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>08051424</po_number>
+        <first_name>WENG</first_name>
+        <last_name>NG KIN</last_name>
+        <client_street>SUITE 315  8 MONDEO DRIVE</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M1P5C7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9917</client_number>
+        <client_product_number>MSCCUN</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SKOSNDC31</ls_product_id>
+        <product_title>Chronograph Classic - BROWN</product_title>
+        <cost>148.5</cost>
+        <shipping_cost>11.93</shipping_cost>
+        <tracking_number>7310723542115461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08051792</po_number>
+        <first_name>RAJEEV</first_name>
+        <last_name>RATURI</last_name>
+        <client_street>1081 RIVERWOOD GATE</client_street>
+        <client_city>PORT COQUITLAM</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3B8A2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3018</client_number>
+        <client_product_number>MSCCUN</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SKOSNDC31</ls_product_id>
+        <product_title>Chronograph Classic - BROWN</product_title>
+        <cost>148.5</cost>
+        <shipping_cost>17.99</shipping_cost>
+        <tracking_number>7310723542436467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08058361</po_number>
+        <first_name>J</first_name>
+        <last_name>FUNG WINNIFRED</last_name>
+        <client_street>1 REAN DRIVE APT 1804</client_street>
+        <client_city>NORTH YORK</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M2K3C1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4313</client_number>
+        <client_product_number>MSCCTW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>DBKPFL416</ls_product_id>
+        <product_title>Intimately for Women</product_title>
+        <cost>34.08</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723540596460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08098103</po_number>
+        <first_name>HA</first_name>
+        <last_name>BUI THI THU</last_name>
+        <client_street>1017 KINGSWAY</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3920</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723584222462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08098118</po_number>
+        <first_name>Y</first_name>
+        <last_name>NGUYEN THANH</last_name>
+        <client_street>1017 KINGSWAY ST</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4835</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723584025469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08098129</po_number>
+        <first_name>NGAN</first_name>
+        <last_name>VUONG THUY</last_name>
+        <client_street>1017 KINGSWAY ST</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3168</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723583701463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08101795</po_number>
+        <first_name>BOQIU</first_name>
+        <last_name>HUANG</last_name>
+        <client_street>UNIT 219-7373 KENNEDY RD</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R1H6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8724</client_number>
+        <client_product_number>MS6216</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS890632</ls_product_id>
+        <product_title>Thin Long Drop Hook Earrings in Sterling Silver</product_title>
+        <cost>42.0</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723607653464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>08093404</po_number>
+        <first_name>CARY</first_name>
+        <last_name>AU KA YI</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>CANADA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3700</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723412672469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>08093405</po_number>
+        <first_name>CARY</first_name>
+        <last_name>AU KA YI</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>CANADA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3700</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723412127464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>08093406</po_number>
+        <first_name>CARY</first_name>
+        <last_name>AU KA YI</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>CANADA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3700</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723412518460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>08093511</po_number>
+        <first_name>OON</first_name>
+        <last_name>KHOO TIAK</last_name>
+        <client_street>550 HWY 7 EAST</client_street>
+        <client_city>RICHMOND HILL</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L4B3Z4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4178</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723413057463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>08095327</po_number>
+        <first_name>MRS</first_name>
+        <last_name>WINNIE</last_name>
+        <client_street>#405-5650 OAK STREET</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6M2V6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3253</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723411669460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>08090294</po_number>
+        <first_name>PRADEEP</first_name>
+        <last_name>APPASANI</last_name>
+        <client_street>1910 159A STREET</client_street>
+        <client_city>SURREY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V4A7B3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7804</client_number>
+        <client_product_number>MSCBFE</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC50</ls_product_id>
+        <product_title>$50 iTunes Gift Card</product_title>
+        <cost>50.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723295526460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08090424</po_number>
+        <first_name>HUA</first_name>
+        <last_name>SHI JIN</last_name>
+        <client_street>37 MEAD TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6E1V6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4127</client_number>
+        <client_product_number>MS6323</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KGTSD10V8GB</ls_product_id>
+        <product_title>8GB SDHC Class 10 Card</product_title>
+        <cost>17.17</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723297763467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08090428</po_number>
+        <first_name>JOVITA</first_name>
+        <last_name>SHI</last_name>
+        <client_street>37 MEAD TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6E1V6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4083</client_number>
+        <client_product_number>MS6323</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KGTSD10V8GB</ls_product_id>
+        <product_title>8GB SDHC Class 10 Card</product_title>
+        <cost>17.17</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723297197460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08090436</po_number>
+        <first_name>RICKY</first_name>
+        <last_name>SHI</last_name>
+        <client_street>37 MEAD TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6E1V6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4038</client_number>
+        <client_product_number>MS6323</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KGTSD10V8GB</ls_product_id>
+        <product_title>8GB SDHC Class 10 Card</product_title>
+        <cost>17.17</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723297101467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08090440</po_number>
+        <first_name>FANNIE</first_name>
+        <last_name>SHI</last_name>
+        <client_street>37 MEAD TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6E1V6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4109</client_number>
+        <client_product_number>MS6323</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KGTSD10V8GB</ls_product_id>
+        <product_title>8GB SDHC Class 10 Card</product_title>
+        <cost>17.17</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723297004461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08091204</po_number>
+        <first_name>CHUN</first_name>
+        <last_name>ZHANG YAN</last_name>
+        <client_street>701-12 YONGE STREET</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M5E1Z9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9183</client_number>
+        <client_product_number>MS6216</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS890632</ls_product_id>
+        <product_title>Thin Long Drop Hook Earrings in Sterling Silver</product_title>
+        <cost>42.0</cost>
+        <shipping_cost>7.80</shipping_cost>
+        <tracking_number>7310723320353467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08091539</po_number>
+        <first_name>TONG</first_name>
+        <last_name>KENNY</last_name>
+        <client_street>3800 REGENT STREET</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V7E2N6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>2286</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723295917466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08093368</po_number>
+        <first_name>REBECCA</first_name>
+        <last_name>MISQUITTA-HIGHLAND</last_name>
+        <client_street>3381 STEELES AVE. E</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M2H3S7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8004</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723295313466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08093381</po_number>
+        <first_name>DAVE</first_name>
+        <last_name>AU LUT TING</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3595</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723295047460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08093382</po_number>
+        <first_name>DAVE</first_name>
+        <last_name>AU LUT TING</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3595</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723294827469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08093383</po_number>
+        <first_name>DAVE</first_name>
+        <last_name>AU LUT TING</last_name>
+        <client_street>UNIT 2811</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4Y2J4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3595</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723294380469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>08085978</po_number>
+        <first_name>CHAN</first_name>
+        <last_name>HO YAN</last_name>
+        <client_street>7772 12TH AVENUE</client_street>
+        <client_city>BURNABY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3N2K5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1273</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723145846465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>08086654</po_number>
+        <first_name>CATHERINE</first_name>
+        <last_name>WONG</last_name>
+        <client_street>50-2773 BARNET HIGHWAY</client_street>
+        <client_city>COQUITLAM</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3C5G8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1505</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723144990466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>08086655</po_number>
+        <first_name>CATHERINE</first_name>
+        <last_name>WONG</last_name>
+        <client_street>50-2773 BARNET HIGHWAY</client_street>
+        <client_city>COQUITLAM</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3C5G8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1505</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723145613463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>08066800</po_number>
+        <first_name>TONG</first_name>
+        <last_name>LY BA</last_name>
+        <client_street>878 KINGSWAY</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4538</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723010207469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08066817</po_number>
+        <first_name>HA</first_name>
+        <last_name>LUU LAN</last_name>
+        <client_street>878 KINGSWAY</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>4583</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723009524461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08069223</po_number>
+        <first_name>KEVIN</first_name>
+        <last_name>CHEUNG</last_name>
+        <client_street>5900 LANCING ROAD</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V7C3A1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9253</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723011256466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08069239</po_number>
+        <first_name>GIEN</first_name>
+        <last_name>QUAN BINH</last_name>
+        <client_street>59  SEAFORTH AVE</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M6K1N7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>6235</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723010600468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08069269</po_number>
+        <first_name>JOEY</first_name>
+        <last_name>CHEUNG</last_name>
+        <client_street>5900 LANCING ROAD</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V7C3A1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9244</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723010840468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08074261</po_number>
+        <first_name>QUAN</first_name>
+        <last_name>ZHEN GUO</last_name>
+        <client_street>1215-15 SINGER COURT</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M2K0B1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>5737</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723001586467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08075678</po_number>
+        <first_name>HUANG</first_name>
+        <last_name>JASON</last_name>
+        <client_street>924 MOUNT PLEASANT ROAD</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4P2L6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8441</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723001186469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08075679</po_number>
+        <first_name>HUANG</first_name>
+        <last_name>JASON</last_name>
+        <client_street>924 MOUNT PLEASANT ROAD</client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4P2L6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8441</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723000710467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08076729</po_number>
+        <first_name>NHI</first_name>
+        <last_name>HUYNH VAN</last_name>
+        <client_street>1017 KINGSWAY</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5V3C7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7053</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723998681459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08076959</po_number>
+        <first_name>EDITHA</first_name>
+        <last_name>SUMUGOD</last_name>
+        <client_street>39 SEDONA CRESCENT</client_street>
+        <client_city>WINNIPEG</client_city>
+        <client_province>MB</client_province>
+        <client_postal_code>R2R2W4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1068</client_number>
+        <client_product_number>MSCCUA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGT210RZ</ls_product_id>
+        <product_title>Galaxy Tab 3 7'' 8GB</product_title>
+        <cost>215.06</cost>
+        <shipping_cost>14.33</shipping_cost>
+        <tracking_number>7310723030210463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08076966</po_number>
+        <first_name>SHING</first_name>
+        <last_name>TSE PAK</last_name>
+        <client_street>8228 BIRCHMOUNT ROAD  UNIT RG15</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R1A6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>5390</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723998320457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08077376</po_number>
+        <first_name>SUET</first_name>
+        <last_name>WU YING</last_name>
+        <client_street>4305 VICTORY ST</client_street>
+        <client_city>BURNABY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5J1R1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7122</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723994689459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08080674</po_number>
+        <first_name>LAN</first_name>
+        <last_name>YU SIN WAI</last_name>
+        <client_street>2203-55 SKYMARK DRIVE</client_street>
+        <client_city>NORTH YORK</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M2H3N4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1986</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723993687456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08081053</po_number>
+        <first_name>JOANNA</first_name>
+        <last_name>LO</last_name>
+        <client_street>179-9133 GOVERNMENT ST</client_street>
+        <client_city>BURNABY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3N0B1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8399</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723999031451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08081490</po_number>
+        <first_name>HAN</first_name>
+        <last_name>KONG XIANG</last_name>
+        <client_street>26 - 1292 SHERWOOD MILLS BLVD</client_street>
+        <client_city>MISSISSAUGA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5V2G8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>2959</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723994199453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08083226</po_number>
+        <first_name>PATTY</first_name>
+        <last_name>WU SHUI YI</last_name>
+        <client_street>1010 WEST 45TH AVENUE</client_street>
+        <client_city>VANCOUVER, B.C.</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6M2G6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>6461</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723999556459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08083336</po_number>
+        <first_name>ANN</first_name>
+        <last_name>TAN CHRYS</last_name>
+        <client_street>301 - 738 3 AVE SW</client_street>
+        <client_city>CALGARY</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2P0G7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7720</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.48</shipping_cost>
+        <tracking_number>7310723995897457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08083425</po_number>
+        <first_name>FUNG</first_name>
+        <last_name>LEUNG JAMES NGOK</last_name>
+        <client_street>339 CAMPUS PARKWAY</client_street>
+        <client_city>CHATHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N7L4V7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8818</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.59</shipping_cost>
+        <tracking_number>7310723999397458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08083660</po_number>
+        <first_name>WEI</first_name>
+        <last_name>LONG</last_name>
+        <client_street>119 BUR OAK AVE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6C2E7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0548</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.39</shipping_cost>
+        <tracking_number>7310723993257451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>08074006</po_number>
+        <first_name>DAVID</first_name>
+        <last_name>BROWN</last_name>
+        <client_street>243 MAIN STREET NORTH</client_street>
+        <client_city>ACTON</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7J1W7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>6710</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.55</shipping_cost>
+        <tracking_number>7310723813170458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08074007</po_number>
+        <first_name>DAVID</first_name>
+        <last_name>BROWN</last_name>
+        <client_street>243 MAIN STREET NORTH</client_street>
+        <client_city>ACTON</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7J1W7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>6710</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.55</shipping_cost>
+        <tracking_number>7310723812718453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08074008</po_number>
+        <first_name>DAVID</first_name>
+        <last_name>BROWN</last_name>
+        <client_street>243 MAIN STREET NORTH</client_street>
+        <client_city>ACTON</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7J1W7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>6710</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.55</shipping_cost>
+        <tracking_number>7310723812182452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08074026</po_number>
+        <first_name>DEBRA</first_name>
+        <last_name>BROWN</last_name>
+        <client_street>PO BOX 9</client_street>
+        <client_city>HALTON HILLS</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7J2M2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3312</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.55</shipping_cost>
+        <tracking_number>7310723811882452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08074027</po_number>
+        <first_name>DEBRA</first_name>
+        <last_name>BROWN</last_name>
+        <client_street>PO BOX 9</client_street>
+        <client_city>HALTON HILLS</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7J2M2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3312</client_number>
+        <client_product_number>MSCBFW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SRSGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.2</cost>
+        <shipping_cost>9.55</shipping_cost>
+        <tracking_number>7310723811466454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08074134</po_number>
+        <first_name>MICHELINE</first_name>
+        <last_name>CHIN PUI YUE</last_name>
+        <client_street>404 ABBEYDALE CIRCLE</client_street>
+        <client_city>OTTAWA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2K0E8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1935</client_number>
+        <client_product_number>MS6217</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS308873</ls_product_id>
+        <product_title>Extra Small Puffy Gucci Link Bracelet  in Sterling Silver</product_title>
+        <cost>63.0</cost>
+        <shipping_cost>7.75</shipping_cost>
+        <tracking_number>7310723798569452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08076098</po_number>
+        <first_name>HUK</first_name>
+        <last_name>JOANNA LIU FONG</last_name>
+        <client_street>218 SMOOTHWATER TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6B0M8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8847</client_number>
+        <client_product_number>MS6215</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS811442</ls_product_id>
+        <product_title>Cultured Pearl Earrings  in 14kt Yellow Gold</product_title>
+        <cost>63.0</cost>
+        <shipping_cost>7.75</shipping_cost>
+        <tracking_number>7310723813848456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08076099</po_number>
+        <first_name>HUK</first_name>
+        <last_name>JOANNA LIU FONG</last_name>
+        <client_street>218 SMOOTHWATER TERRACE</client_street>
+        <client_city>MARKHAM</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6B0M8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8847</client_number>
+        <client_product_number>MS6215</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS811442</ls_product_id>
+        <product_title>Cultured Pearl Earrings  in 14kt Yellow Gold</product_title>
+        <cost>63.0</cost>
+        <shipping_cost>7.75</shipping_cost>
+        <tracking_number>7310723814767459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08076132</po_number>
+        <first_name>JEREMY</first_name>
+        <last_name>GUI</last_name>
+        <client_street>5536 MIDDLEBURY DRIVE</client_street>
+        <client_city>MISSISSAUGA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5M5G7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0080</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>7.35</shipping_cost>
+        <tracking_number>7310723811060454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>08067018</po_number>
+        <first_name>CHRISTINA</first_name>
+        <last_name>TSANG</last_name>
+        <client_street>11168 HAMMERSMITH GATE</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V7A5H8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9775</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>11.43</shipping_cost>
+        <tracking_number>7310723653183458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08067137</po_number>
+        <first_name>SATHIARUBINI</first_name>
+        <last_name>SELVANAYAGARAJAH</last_name>
+        <client_street>49 RUSHINGBROOK DRIVE</client_street>
+        <client_city>RICHMOND HILL</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L4S1X3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9471</client_number>
+        <client_product_number>MSCBFC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC25</ls_product_id>
+        <product_title>$25 iTunes Gift Card</product_title>
+        <cost>25.0</cost>
+        <shipping_cost>7.35</shipping_cost>
+        <tracking_number>7310723652827452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08067331</po_number>
+        <first_name>KANG</first_name>
+        <last_name>ANN</last_name>
+        <client_street>18E. 51ST AVE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V5X1B9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7337</client_number>
+        <client_product_number>MS6222</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>VIC31303001</ls_product_id>
+        <product_title>CH 20 Carry-On</product_title>
+        <cost>175.5</cost>
+        <shipping_cost>31.99</shipping_cost>
+        <tracking_number>7310723676721453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08067447</po_number>
+        <first_name>JENNY</first_name>
+        <last_name>LEE</last_name>
+        <client_street>1371 WEST 59TH AVENUE</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6P1Y6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>1647</client_number>
+        <client_product_number>MSCBKV</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>FUJIM8_WH</ls_product_id>
+        <product_title>Instax Mini 8 Instant Camera with 10 Instant Films - WHITE</product_title>
+        <cost>89.43</cost>
+        <shipping_cost>12.58</shipping_cost>
+        <tracking_number>7310723666354456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08067941</po_number>
+        <first_name>YAN</first_name>
+        <last_name>MAK ABBY YAN</last_name>
+        <client_street>1907-400 CAPILANO ROAD</client_street>
+        <client_city>PORT MOODY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V3H0E1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0401</client_number>
+        <client_product_number>MSCBFE</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC50</ls_product_id>
+        <product_title>$50 iTunes Gift Card</product_title>
+        <cost>50.0</cost>
+        <shipping_cost>11.43</shipping_cost>
+        <tracking_number>7310723653386453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08068824</po_number>
+        <first_name>KONG</first_name>
+        <last_name>NG PAUL SIU</last_name>
+        <client_street>448 UNION STREET</client_street>
+        <client_city>VANCOUVER</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6A2B6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>8761</client_number>
+        <client_product_number>MSCCSV</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>DAO1115020</ls_product_id>
+        <product_title>8-Piece Basic Stainless Steel Seafood Set</product_title>
+        <cost>14.85</cost>
+        <shipping_cost>13.43</shipping_cost>
+        <tracking_number>7310723666793453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08069133</po_number>
+        <first_name>MARITES</first_name>
+        <last_name>TAPORCO</last_name>
+        <client_street>132 LESLIE AVENUE</client_street>
+        <client_city>BARRIE</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L4N9P4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>2067</client_number>
+        <client_product_number>MSCCUF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BUGLB02</ls_product_id>
+        <product_title>Aquila Backpack on Wheels</product_title>
+        <cost>100.1</cost>
+        <shipping_cost>19.25</shipping_cost>
+        <tracking_number>7310723698124454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08069165</po_number>
+        <first_name>EAN</first_name>
+        <last_name>WONG GABRIEL YOUNG</last_name>
+        <client_street>21162 80A AVE</client_street>
+        <client_city>LANGLEY</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V2Y0K3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>0419</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>11.43</shipping_cost>
+        <tracking_number>7310723652453453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08072092</po_number>
+        <first_name>FARRELL</first_name>
+        <last_name>GLORIA TSUI</last_name>
+        <client_street>14 THE HORSESHOE</client_street>
+        <client_city>DARTMOUTH</client_city>
+        <client_province>NS</client_province>
+        <client_postal_code>B2Y4E5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>7238</client_number>
+        <client_product_number>MSCBFF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>STBGC50</ls_product_id>
+        <product_title>$50 Starbucks Card</product_title>
+        <cost>50.96</cost>
+        <shipping_cost>10.99</shipping_cost>
+        <tracking_number>7310723652264455</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08072740</po_number>
+        <first_name>LORNE</first_name>
+        <last_name>GAULT</last_name>
+        <client_street>P O BOX 192</client_street>
+        <client_city>BELLEVUE</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T0K0E0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>3356</client_number>
+        <client_product_number>MSCBFE</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPGC50</ls_product_id>
+        <product_title>$50 iTunes Gift Card</product_title>
+        <cost>50.0</cost>
+        <shipping_cost>14.66</shipping_cost>
+        <tracking_number>7310723653852453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>08073746</po_number>
+        <first_name>LU</first_name>
+        <last_name>MA</last_name>
+        <client_street>1310 WHITELAW AVE.</client_street>
+        <client_city>OSHAWA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L1K0M6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number>9383</client_number>
+        <client_product_number>MSCBFX</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SUBGC50</ls_product_id>
+        <product_title>$50 Gift Card</product_title>
+        <cost>49.47</cost>
+        <shipping_cost>7.35</shipping_cost>
+        <tracking_number>7310723654745457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+</shipped_orders>

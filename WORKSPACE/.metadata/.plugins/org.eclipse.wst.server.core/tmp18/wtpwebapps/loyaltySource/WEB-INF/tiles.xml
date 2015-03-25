@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Tiles linked to an Action-->
+	<definition name="/homePage.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Home - Loyalty Source" />
+		<put-attribute name="body" type="template" value="../home/homePage.jsp"/>
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/signInPop.tiles" extends="popFormLayout">
+		<put-attribute name="body" type="template" value="../pops/signInPop.jsp" />
+	</definition> 
+	
+	<definition name="/venderAgreement.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../user/venderAgreement.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	
+		
+	<definition name="/sales.tiles" extends="baseLayoutFancy">
+		<put-attribute name="body" type="template" value="../sales/clientSales.jsp"/>
+	</definition>
+	
+	
+	<definition name="/searchResults.tiles" extends="baseLayoutFancy">
+		<put-attribute name="body" type="template" value="../search/searchResultsContent.jsp" />
+	</definition>
+	
+	<definition name="/product.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../product/product.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/ourProducts.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Our Products - Loyalty Source" />	
+		<put-attribute name="body" type="template" value="../product/ourProducts.jsp"/>
+	</definition>
+	
+	<definition name="/ourBrand.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Our Products - Loyalty Source" />	
+		<put-attribute name="left" type="template" value="" />
+		<put-attribute name="body" type="template" value="../brand/ourBrands.jsp"/>
+	</definition>
+	
+	<definition name="/contactUs.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Contact Us - Loyalty Source" />		
+		<put-attribute name="body" type="template" value="../pages/contactUs.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/services.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Services - Loyalty Source" />		
+		<put-attribute name="body" type="template" value="../pages/services.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/ourBrands.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Our Brands - Loyalty Source" />		
+		<put-attribute name="body" type="template" value="../pages/ourBrands.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+			
+	<definition name="/Loyalty_Program_Sourcing.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Loyalty_Program_Sourcing.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Customer_Loyalty_Program.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Customer_Loyalty_Program.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Promotional_Gifts.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Promotional_Gifts.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Corporate_Gift_Cards.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Corporate_Gift_Cards.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Corporate_Gifts.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Corporate_Gifts.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Customer_Loyalty_Incentives.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Customer_Loyalty_Incentives.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>  
+	
+	<definition name="/Customer_Loyalty_Program_Ideas.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Customer_Loyalty_Program_Ideas.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/Employee_Incentive_Program.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Employee_Incentive_Program.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/Customer_Incentive_Program.tiles" extends="baseLayoutFancy">		
+		<put-attribute name="body" type="template" value="../articles/Customer_Incentive_Program.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+	
+	<definition name="/customerSignUp.tiles" extends="baseLayoutFancy">
+		<put-attribute name="title" value="Sign up - Loyalty Source" />		
+		<put-attribute name="body" type="template" value="../user/customerSignUp.jsp" />
+		<put-attribute name="left" type="template" value="" />	
+	</definition>
+
+
+	<definition name="/error.tiles" extends="errorBaseLayout">
+		<put-attribute name="body" type="template" value="../errors/error.jsp" />
+	</definition>
+
+	<definition name="errorBaseLayout" template="/WEB-INF/jsp/layouts/errorBaseLayout.jsp">
+		<!-- body -->
+		<put-attribute name="body" value="" />
+	</definition>
+		
+	<!-- Generics templates -->
+	<definition name="baseLayout" template="/WEB-INF/jsp/layouts/baseLayout.jsp">
+		<!-- header -->
+		<put-attribute name="title" type="template" value="baseHeaderTitle.jsp" />
+		<put-attribute name="keywords" type="template" value="baseHeaderKeywords.jsp" />
+		<put-attribute name="description" type="template" value="baseHeaderDescription.jsp" />
+		<!-- header -->
+		<!-- body -->
+		<put-attribute name="menu" type="template" value="menu.jsp" />
+		<put-attribute name="left" type="template" value="leftMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" type="template" value="footer.jsp" />
+		<!-- body -->
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList"></put-list-attribute>
+		<put-list-attribute name="cssList"></put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+
+	<definition name="popLayout" template="WEB-INF/jsp/layouts/popLayout.jsp">
+		<!-- body -->
+		<put-attribute name="body" value="" />
+		<!-- body -->
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList"></put-list-attribute>
+		<put-list-attribute name="cssList"></put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	
+	<definition name="popFormLayout" extends="popLayout" >
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList">
+			<add-attribute type="string" value="jquery.form.js" />
+			<add-attribute type="string" value="gamejab.vanadium.js" />
+		</put-list-attribute>
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="form.css" />
+		</put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	
+	<definition name="baseLayoutFancy" extends="baseLayout">
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.css" />
+		</put-list-attribute>
+		<put-list-attribute name="scriptList">
+			<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+			<add-attribute type="string" value="fancybox/fancybox-types.js" />
+			<add-attribute type="string" value="fancybox/jquery.easing-1.3.pack.js" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="formLayoutFancy" extends="baseLayout">
+		<put-list-attribute name="cssList">
+				<add-attribute type="string" value="form.css" />
+				<add-attribute type="string" value="fileuploader.css" />
+				<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.css" />
+		</put-list-attribute>
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList">
+				<add-attribute type="string" value="jquery.form.js" />
+				<add-attribute type="string" value="gamejab.vanadium.js" />
+				<add-attribute type="string" value="fileuploader.js" />
+				<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+				<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+				<add-attribute type="string" value="fancybox/fancybox-types.js" />
+
+		</put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	
+	<definition name="baseLayoutFancyDatatables" extends="baseLayout">
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.1.css" />
+			<add-attribute type="string" value="form.css" />
+			<add-attribute type="string" value="datatable.css" />	
+		</put-list-attribute>
+		<put-list-attribute name="scriptList" >
+			<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+			<add-attribute type="string" value="fancybox/fancybox-types.js" />	
+			<add-attribute type="string" value="jquery.dataTables.js" />
+			<add-attribute type="string" value="datatables-types.js" />
+			<add-attribute type="string" value="jquery.truncator.js" />
+			<add-attribute type="string" value="jquery.jeditable.js" />
+
+		</put-list-attribute>
+	</definition>
+	<!-- Generics templates -->
+	
+</tiles-definitions>

@@ -1,0 +1,918 @@
+package govojo.db;
+
+import govojo.debugging.ExceptionHandler;
+import govojo.util.NullableTimeAndDate;
+import govojo.util.TimeAndDate;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class SpecialCoupon extends DatabaseRecord{
+
+    protected String      _couponCode;
+    protected int		  _couponType;
+    protected int		  _couponStatus;
+    protected String      _couponSiteName;
+    protected String      _couponComment;
+    protected TimeAndDate _couponTimestamp;
+    
+    public static final int COUPON_15TRIAL				= 1;
+    public static final int COUPON_2FOR1SPECIAL			= 2;
+    public static final int COUPON_2MRESERVE			= 3;
+    public static final int COUPON_7EXTENSION			= 4;
+    public static final int COUPON_30TRIAL				= 5;
+    public static final int COUPON_1YEAR_TRIAL			= 6;
+    public static final int COUPON_10PERC_GAMESUSED		= 7;
+    public static final int COUPON_30TRIAL_ACTIVE		= 8;
+    //Start 29/11/2010 MJGP
+    public static final int COUPON_30TRIAL2TIMES 		= 9;
+    //End 29/11/2010 MJGP
+    //Start 16/12/2010 MJGP
+    public static final int COUPON_60TRIAL 				= 10;
+    public static final int COUPON_90TRIAL 				= 11;
+    public static final int COUPON_180TRIAL 			= 12;
+    //End 16/12/2010 MJGP
+    //Start 21/04/2011 MJGP
+    public static final int	COUPON_90TRIAL_RESERVE_GAME = 13;
+    
+    //Start 07/08/2012 MJGP
+    public static final int COUPON_15_DAY_TRIAL_FAST_RETURN = 14;
+    public static final int COUPON_15_DAY_TRIAL_FAST_RETURN_5TIMES = 15;
+    //End 07/08/2012 MJGP
+    
+    // Free trial is already 10 days, coupon codes can extend this period depending on the coupon type.
+    public static final int NUM_DAYS_FREE_TRIAL = 5;
+    public static final int NUM_DAYS_EXTENDED_1ST = 7;
+    public static final int NUM_DAYS_FREE_TRIAL_30DAYS = 20;
+    //Start 16/12/2010 MJGP
+    //Add constants for the new type of coupons.
+    public static final int NUM_DAYS_FREE_TRIAL_60DAYS = 50;
+    public static final int NUM_DAYS_FREE_TRIAL_90DAYS = 80;
+    public static final int NUM_DAYS_FREE_TRIAL_180DAYS = 170;
+    //End 16/12/2010 MJGP
+    
+    public static final int COUPON_STATUS_ACTIVE = 1;
+    public static final int COUPON_STATUS_INCTIVE = 2;
+    //Start 29/11/2010 MJGP
+    //This will be 0 and 1
+    public static final int COUPON_2_TIMES_ACTIVE = 1;
+    //End 29/11/2010 MJGP
+    //Start 07/08/2012 MJGP^
+    public static final int COUPON_5_TIMES_ACTIVE = 4;
+    //End 07/08/2012 MJGP
+
+    /** the table where data is stored */
+    static final protected String _tableName = "specialcoupon";
+    
+    /** the field in the database that is the unique id */
+    static final protected String _idFieldName = "coupon_id";
+
+    /** the sequence for the primary key */
+    static final protected String _primaryKeySequence = "specialcoupon_id_seq";
+
+    /** the fields that are in the database, without the id field */
+    static final protected String[] _fields =
+    {
+	"coupon_code",
+	"coupon_type",
+	"coupon_status",
+	"coupon_sitename",
+	"coupon_comment",
+	"coupon_timestamp"
+    };
+
+    public SpecialCoupon()
+    {
+	initialize();
+    }
+
+    /** get a SINGLE customer from an sql result set */
+    public boolean fillFromCurrentRow(ResultSet result)
+    {
+	try
+	{
+            setID(result.getInt("coupon_id"));
+	    _couponCode               = result.getString("coupon_code");
+	    _couponType				  = result.getInt("coupon_type");
+	    _couponStatus			  = result.getInt("coupon_status");
+	    _couponSiteName           = result.getString("coupon_sitename");
+	    _couponComment			  = result.getString("coupon_comment");
+	    _couponTimestamp		  = TimeAndDate.getTimeAndDateFromSQLDateString(result.getString("coupon_timestamp"));
+	    
+ 	    return true;
+	}
+	catch (Exception e)
+	{
+	    ExceptionHandler.handleException(e,"SpecialCoupon.fillFromCurrentRow()");
+	    return false;
+	}
+    }
+
+    /** the name of the database table that stores the data */
+    public String getTableName()
+    {
+	return _tableName;
+    }
+
+    /** the field in the database that is the unique id */
+    public String getIDFieldName()
+    {
+       return _idFieldName;
+    }
+
+    /** the names of the fields that are stored in the database */
+    public String[] getFieldNames()
+    {
+       return _fields;
+    }
+
+    public String getPrimaryKeySequence()
+    {
+	return _primaryKeySequence;
+    }
+
+    /** gets the this instance's current value of all of the db data */
+    public String[] getCurrentFieldValues()
+    {
+       //the local place holder for values in the database
+       String values[] =
+       {           
+	   _couponCode,
+	   Integer.toString(_couponType),
+	   Integer.toString(_couponStatus),
+	   _couponSiteName,
+	   _couponComment,
+	   TimeAndDate.getSQLDateStringFromTimeAndDate(_couponTimestamp)
+       };
+       return values;
+    }
+
+    /** fill in all the blank data */
+    void initialize() {
+
+    	_couponCode		="";
+    	_couponType		=0;
+    	_couponStatus	=1;
+    	_couponSiteName  ="";
+ 	    _couponComment   ="";
+ 	    _couponTimestamp =new TimeAndDate();
+
+    }
+
+    /** return a new blank instance of this class
+      * NOTE: This is not static and cannot be static because
+      * it must be abstract in record.
+      * Java prevents methods from being both static and abstract
+      */
+    public DatabaseRecord newInstance()
+    {
+       return new SpecialCoupon();
+    }
+
+    /** return and array of creditcards from the sql result Set */
+    public static SpecialCoupon[] newArray(ResultSet resultSet)
+    {
+       return 
+	   ((SpecialCoupon[]) newArray(resultSet, (new SpecialCoupon()).getClass()));
+
+    }
+
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+    /*--------SETS AND GETS--------------------*/
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+	public String get_couponCode() {
+		return _couponCode;
+	}
+
+	public void set_couponCode(String code) {
+		_couponCode = code;
+	}
+	
+	public int get_couponType(){
+		return _couponType;
+	}
+	
+	public void set_couponType(int type){
+		_couponType= type;
+	}
+	
+	public int get_couponStatus(){
+		return this._couponStatus;
+	}
+	
+	public void set_couponStatus(int status){
+		this._couponStatus = status;
+	}
+	
+	public String get_couponSiteName() {
+		return _couponSiteName;
+	}
+
+	public void set_couponSiteName(String siteName) {
+		_couponSiteName = siteName;
+	}
+
+	public String get_couponComment() {
+		return _couponComment;
+	}
+
+	public void set_couponComment(String comment) {
+		_couponComment = comment;
+	}
+
+	public TimeAndDate get_couponTimestamp() {
+		return _couponTimestamp;
+	}
+
+	public void set_couponTimestamp(TimeAndDate timestamp) {
+		_couponTimestamp = timestamp;
+	}
+    
+
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+    /*----------BUSINESS LOGIC-----------------*/
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+	
+	public boolean isActiveCoupon(){
+		return (this._couponStatus == COUPON_STATUS_ACTIVE);
+	}
+	
+	public void activateCoupon(){
+    	if(this._couponCode != null){
+    	this._couponStatus = COUPON_STATUS_ACTIVE;
+    	update();
+    	}
+    }
+    
+    public void deactivateCoupon(){
+    	if(this._couponCode != null){
+    	 this._couponStatus = COUPON_STATUS_INCTIVE;
+    	update();
+    	}
+    }
+        
+    public static Integer couponIDFromCode(String code){
+ 
+        Integer returnVal = null;
+
+        SpecialCoupon sc = selectFromCouponCode(code);
+
+        if(sc != null){
+            returnVal = new Integer(sc.getID());
+        }
+
+        return returnVal;
+
+    }
+
+    /** This returns SpecialCoupon object if the coupon is valid and active, otherwise it returns null */
+    public static SpecialCoupon selectFromActiveCouponCode(String code){
+        return selectFromCouponCode(code, true);
+    }
+    
+    /** This returns SpecialCoupon object if the coupon is valid, otherwise it returns null */
+    public static SpecialCoupon selectFromCouponCode(String code){
+    	return selectFromCouponCode(code, false);
+    }
+    
+    // MS: I updated this method to use a PreparedStatement     
+    private static SpecialCoupon selectFromCouponCode(String code, boolean chooseJustValidCoupon){
+    	
+    	SpecialCoupon returnVal = new SpecialCoupon();
+    	String selectString = "select * from " + _tableName + " where UPPER(coupon_code) = ?";
+        if(chooseJustValidCoupon){
+        	selectString += " and coupon_status = ?" ;
+        }
+        System.out.println("Executing: " + selectString + " with code=" + code);
+        
+        Connection connection = null;
+        PreparedStatement prepStatement = null;
+        
+        try{
+        	connection = getDBConnection();
+        	prepStatement = connection.prepareStatement(selectString);
+        	prepStatement.setString(1, code.toUpperCase());
+        	
+        	if(chooseJustValidCoupon){
+        		prepStatement.setInt(2, COUPON_STATUS_ACTIVE);
+        	}
+        	
+        	ResultSet resultSet = prepStatement.executeQuery();
+        	
+        	
+        	
+        	
+        	if(!returnVal.fillFromNextRow(resultSet)){
+                returnVal = null;
+            }        	  
+        }catch(Exception e){
+            ExceptionHandler.handleException(e,"SpecialCoupon.selectFromCouponCode() exception:");
+        } finally {
+            try {
+                prepStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                ExceptionHandler.handleException(e,"SpecialCoupon.close() Exception:");
+                e.printStackTrace();
+            }
+        }
+        
+        return returnVal;        
+    }
+
+    /** Returns All coupons from DB*/
+    public static SpecialCoupon [] selectAllCoupons(){
+        return selectAllCoupons(null, null);
+    }
+    
+    /** Returns all coupons of a specific type*/
+    public static SpecialCoupon [] selectAllCouponsOfType(int couponType){
+    	return selectAllCoupons(new Integer(couponType), null);
+    }
+    
+    /** Returns all coupons of a specific status*/
+    public static SpecialCoupon [] selectAllCouponsOfStatus(int couponStatus){
+    	return selectAllCoupons(null, new Integer(couponStatus));
+    }
+    
+    public static SpecialCoupon [] selectAllCoupons(int couponType, int couponStatus){
+    	return selectAllCoupons(new Integer(couponType), new Integer(couponStatus));
+    }
+    
+    private static SpecialCoupon [] selectAllCoupons(Integer couponType, Integer couponStatus){
+    	String selectString = "select * from " + _tableName;
+    	if(couponType != null){
+        selectString += " where coupon_type =" + couponType;
+    	}
+    	selectString += " order by coupon_timestamp asc";
+    	if(couponStatus != null){
+    		selectString +=(couponType != null)?" and coupon_status=" + couponStatus 
+    											: " where coupon_status=" + couponStatus;
+    	}
+        return performMultipleQuery(selectString);
+
+    }
+    
+    
+    
+    public static SpecialCoupon [] selectAllCouponsNotOfType(int type){
+    	return performMultipleQuery("select * from " + _tableName + " where coupon_type !=" + type + " and coupon_status <> 2 order by coupon_id DESC");
+    }
+
+    public static SpecialCoupon [] selectAllCouponsLessInactive(){
+    	return performMultipleQuery("select * from " + _tableName + " where coupon_status <> 2 order by coupon_id DESC");
+    }
+    
+    protected static SpecialCoupon [] performMultipleQuery(String selectString){
+
+        System.out.println("Executing: " + selectString);
+
+        // create a new SpecialCoupon array
+        SpecialCoupon [] returnVal = null;
+
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = getDBConnection();
+            statement = connection.createStatement();
+
+            // get the results,
+            ResultSet resultSet = statement.executeQuery(selectString);
+
+            // store the data
+            // uses the newArray defined in this class
+            // (which uses reflection) to get the class name.
+            returnVal = newArray(resultSet);
+        }
+        catch(Exception e) {
+            ExceptionHandler.handleException(e,"SpecialCoupon.select() exception:");
+        }
+        finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                ExceptionHandler.handleException(e,"SpecialCoupon.close() Exception:");
+                e.printStackTrace();
+            }
+        }
+        return returnVal;
+    }
+   
+    protected static int updateCoupons(String query) {		 
+		 int status = 0;		 
+		 System.out.println("Executing: " + query);	     
+	     
+		 Connection connection = null;
+	     Statement statement = null;
+
+	     try {
+	         connection = getDBConnection();
+	         statement = connection.createStatement();
+	         status = statement.executeUpdate(query);
+	     }
+	     catch(Exception e) {
+	         ExceptionHandler.handleException(e,"specialCoupon.updatecoupons() exception:");
+	     }
+	     finally {
+	         try {
+	             statement.close();
+	             connection.close();
+	         } catch (SQLException e) {
+	             ExceptionHandler.handleException(e,"GameDesc.close() Exception:");
+	             e.printStackTrace();
+	         }
+	     }
+	     
+	     return status;
+
+	 }
+        
+    public static int activateAllCoupons(){
+    	return updateStatusOfAllCouponsOfType(null, COUPON_STATUS_ACTIVE);
+    }
+    
+    public static int deactivateAllCoupons(){
+    	return updateStatusOfAllCouponsOfType(null, COUPON_STATUS_INCTIVE);
+    }
+    
+    public static int activateAllCouponsOfType(int couponType){
+    	return updateStatusOfAllCouponsOfType(couponType, COUPON_STATUS_ACTIVE);
+    }
+    
+    public static int deactivateAllCouponsOfType(int couponType){
+    	return updateStatusOfAllCouponsOfType(couponType, COUPON_STATUS_INCTIVE);
+    }
+    
+    /** Reset status (Active or Inactive) to coupons of specific type**/
+    private static int updateStatusOfAllCouponsOfType(Integer couponType, Integer activationStatus){
+    	// Operation affects a group of coupons
+    	String updateString = "update specialcoupon set coupon_status=" + activationStatus;
+    	if(couponType != null ){
+    		updateString += " where coupon_type=" + couponType;
+    	}
+    	
+    	return updateCoupons(updateString);
+    }   
+    
+    public static NullableTimeAndDate addDaysToDate(TimeAndDate tad, int numOfDays){
+    	NullableTimeAndDate ntad = new NullableTimeAndDate();
+    	tad.add(TimeAndDate.DATE, numOfDays);
+    	ntad.setTimeAndDate(tad);
+    	return ntad;
+    }
+    
+    public static NullableTimeAndDate addYearToDate(TimeAndDate tad, int numOfYears){
+    	NullableTimeAndDate ntad = new NullableTimeAndDate();
+    	tad.add(TimeAndDate.YEAR, numOfYears);
+    	ntad.setTimeAndDate(tad);
+    	return ntad;
+    }
+    
+    public static void handleCouponCustomer(int couponType, String couponCode, int subscriptionID, boolean giveHim2For1, int planID){
+    	        		
+                		Subscription theSubscription = new Subscription();
+                		theSubscription.selectFromID(subscriptionID);
+                		
+                			switch(couponType){
+                			case SpecialCoupon.COUPON_15TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                												SpecialCoupon.NUM_DAYS_FREE_TRIAL));
+                					theSubscription.update();                				 
+                				}
+                				 break;
+                			case SpecialCoupon.COUPON_30TRIAL_ACTIVE:                				
+                     			if(planID == -1){                				                 				 
+                    				theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                    											SpecialCoupon.NUM_DAYS_FREE_TRIAL_30DAYS));
+                    				theSubscription.update();                				 
+                    			}
+                     			break;
+                			case SpecialCoupon.COUPON_7EXTENSION:
+                				if(theSubscription.getPartnerServiceID()==15 || theSubscription.getPartnerServiceID()==16)
+                				{
+                				theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(),
+                															SpecialCoupon.NUM_DAYS_EXTENDED_1ST));
+                				theSubscription.update();
+                				}
+                				 break;
+                			case SpecialCoupon.COUPON_2MRESERVE:                				 
+                				 SubscriptionReserveGame subReserveGame = new SubscriptionReserveGame();
+                				 subReserveGame.selectFromID(subscriptionID);
+                				 subReserveGame.setReserveGameServiceID(SubscriptionReserveGame.FREE_RESERVE_GAMES);
+                				                 		         
+                		         TimeAndDate nowPlus2Months = new TimeAndDate();
+                		         nowPlus2Months.add(TimeAndDate.MONTH, 2);                		         
+                		         NullableTimeAndDate ntadExp = new NullableTimeAndDate();
+                		         ntadExp.setTimeAndDate(nowPlus2Months);
+                		         
+            					 subReserveGame.setExpireDate(ntadExp);
+            					 subReserveGame.update();
+                				 break;
+                			case SpecialCoupon.COUPON_2FOR1SPECIAL:
+                				 if(giveHim2For1 ==true){                				 
+                					 theSubscription.setPartnerServiceID(16);
+                					 theSubscription.setPartnerServiceIDAfterTrial(16);
+                					 theSubscription.setServiceID(8);
+                					 theSubscription.update(); 
+                				 }
+                				 break;
+                			case SpecialCoupon.COUPON_30TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                													SpecialCoupon.NUM_DAYS_FREE_TRIAL_30DAYS));
+                					theSubscription.update();                				 
+                				}
+                				 break;
+                				 //Start 29/11/2010 MJGP
+                			case SpecialCoupon.COUPON_30TRIAL2TIMES:
+	                			if(planID == -1){                				                 				 
+	            					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+	            													SpecialCoupon.NUM_DAYS_FREE_TRIAL_30DAYS));
+	            					theSubscription.update();                				 
+	            				}
+	            				 break;
+	            				 //End 29/11/2010 MJGP
+                			case SpecialCoupon.COUPON_1YEAR_TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					NullableTimeAndDate oneYearMore = addYearToDate(theSubscription.getBillDate().getTimeAndDate(), 1);
+                					// 10 days must be removed cause by default a free trial customer is insert with a bill date 10 days later
+                					oneYearMore = addDaysToDate(oneYearMore.getTimeAndDate(), -10);
+                					theSubscription.setBillDate(oneYearMore);
+                					theSubscription.update();                				 
+                				}
+                				 break;	
+                				 //Start 16/12/2010 MJGP
+                				 //Treat the new type of coupons
+                			case SpecialCoupon.COUPON_60TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                													SpecialCoupon.NUM_DAYS_FREE_TRIAL_60DAYS));
+                					theSubscription.update();                				 
+                				}
+                				 break;
+                			case SpecialCoupon.COUPON_90TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                													SpecialCoupon.NUM_DAYS_FREE_TRIAL_90DAYS));
+                					theSubscription.update();                				 
+                				}
+                				 break;
+                			case SpecialCoupon.COUPON_180TRIAL:                				
+                				if(planID == -1){                				                 				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                													SpecialCoupon.NUM_DAYS_FREE_TRIAL_180DAYS));
+                					theSubscription.update();                				 
+                				}
+                				 break;
+                				 //End 16/12/2010 MJGP
+                			//Start 21/04/2011 MJGP
+                			case SpecialCoupon.COUPON_90TRIAL_RESERVE_GAME:
+                				if(planID == -1){                	
+                					SubscriptionReserveGame subReserve3Game = new SubscriptionReserveGame();
+                					subReserve3Game.selectFromID(theSubscription.getID());
+                					subReserve3Game.setReserveGameServiceID(SubscriptionReserveGame.RESERVE_GAMES);
+	                   				 
+                   				 	TimeAndDate nowPlus3Months = new TimeAndDate();
+                   				 	nowPlus3Months.add(TimeAndDate.MONTH, 3);                		         
+	                		        NullableTimeAndDate nullableTimeAndDate = new NullableTimeAndDate();
+	                		        nullableTimeAndDate.setTimeAndDate(nowPlus3Months);
+	                		         
+	                		        subReserve3Game.setExpireDate(nullableTimeAndDate);
+	                		                          				 
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                													SpecialCoupon.NUM_DAYS_FREE_TRIAL_90DAYS));
+                					
+                					theSubscription.update();
+                					subReserve3Game.update();
+                				}
+                				 break;
+                			//End 21/04/2011 MJGP
+                			//Start 07/08/2012 MJGP
+                			//Coupon 15 days of trial and fast return for 15 days
+                			case SpecialCoupon.COUPON_15_DAY_TRIAL_FAST_RETURN:                				
+                				if(planID == -1){   
+                					SubscriptionFastReturn subFastReturn = new SubscriptionFastReturn();
+                					subFastReturn.selectFromID(theSubscription.getID());
+                					subFastReturn.setFastReturnServiceID(SubscriptionFastReturn.FAST_RETURN);
+	                		        subFastReturn.setExpireDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+																SpecialCoupon.NUM_DAYS_FREE_TRIAL));
+                					
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                												SpecialCoupon.NUM_DAYS_FREE_TRIAL));
+                					theSubscription.update();   
+                					subFastReturn.update();
+                				}
+                				 break;
+                			case SpecialCoupon.COUPON_15_DAY_TRIAL_FAST_RETURN_5TIMES:                				
+                				if(planID == -1){   
+                					SubscriptionFastReturn subFastReturn = new SubscriptionFastReturn();
+                					subFastReturn.selectFromID(theSubscription.getID());
+                					subFastReturn.setFastReturnServiceID(SubscriptionFastReturn.FAST_RETURN);
+                					
+                					TimeAndDate nowPlus15Days = new TimeAndDate();
+                					nowPlus15Days.add(TimeAndDate.DATE, 15);                		         
+	                		        NullableTimeAndDate nullableTimeAndDate = new NullableTimeAndDate();
+	                		        nullableTimeAndDate.setTimeAndDate(nowPlus15Days);
+	                		        
+	                		        subFastReturn.setExpireDate(nullableTimeAndDate);
+                					
+                					theSubscription.setBillDate(addDaysToDate(theSubscription.getBillDate().getTimeAndDate(), 
+                												SpecialCoupon.NUM_DAYS_FREE_TRIAL));
+                					theSubscription.update();   
+                					subFastReturn.update();
+                				}
+                				 break;
+                			//End 07/08/2012 MJGP
+                			default:
+                				 break;
+                			}
+                		
+                		SpecialCoupon specialCoupon = new SpecialCoupon();	
+                    	specialCoupon=SpecialCoupon.selectFromCouponCode(couponCode);
+                    	int couponID = 0;
+                    	couponID = specialCoupon.getID();
+                    	// FREE 30 DAYS TRIAL and 1 YEAR TRIAL Coupons are one-time coupons 
+                    	if(specialCoupon.get_couponType() == COUPON_30TRIAL
+                    	|| specialCoupon.get_couponType() == COUPON_1YEAR_TRIAL
+                    	//Start 17/12/2010 MJGP
+                    	|| specialCoupon.get_couponType() == COUPON_60TRIAL
+                    	|| specialCoupon.get_couponType() == COUPON_90TRIAL
+                    	|| specialCoupon.get_couponType() == COUPON_180TRIAL
+                    	|| specialCoupon.get_couponType() == COUPON_90TRIAL_RESERVE_GAME
+                    	//End 17/12/2010
+                    	){
+                    		specialCoupon.deactivateCoupon();
+                    	}
+                    	//Start 29/11/2010 MJGP
+                    	if(specialCoupon.get_couponType() == COUPON_30TRIAL2TIMES
+                            	&& deactivate30Trial2Times(specialCoupon.get_couponCode())){
+                            		specialCoupon.deactivateCoupon();
+                        }
+                    	//End 29/11/2010 MJGP
+                    	//Start 07/08/2012 MJGP
+                    	if(specialCoupon.get_couponType() == COUPON_15_DAY_TRIAL_FAST_RETURN_5TIMES
+                            	&& deactivate15FreeTrialFastReturn5Times(specialCoupon.get_couponCode())){
+                            		specialCoupon.deactivateCoupon();
+                        }
+                    	//End 07/08/2012 MJGP
+                    	SpecialCouponCustomers specialCouponCustomers=new SpecialCouponCustomers();
+                    	specialCouponCustomers.set_cuID(subscriptionID);                    	
+           				specialCouponCustomers.set_couponID(couponID);
+           				NullableTimeAndDate now=new NullableTimeAndDate();
+           				now.setTimeAndDate(new TimeAndDate());
+           				specialCouponCustomers.set_couponDate(now);
+           				specialCouponCustomers.insert();           				
+           				   
+    }
+    
+    public static String getCouponTypeText(int couponType){
+    	String returnText = "";
+    	
+    	switch(couponType){
+    		case COUPON_15TRIAL:
+    			returnText = "15 DAYS TRIAL";
+    			break;
+    		case COUPON_2FOR1SPECIAL:
+    			returnText = "2 FOR 1 SPECIAL";
+    			break;
+    		case COUPON_2MRESERVE:
+    			returnText = "2 MONTHS RESERVE";
+    			break;	
+    		case COUPON_7EXTENSION:
+    			returnText = "7 DAYS EXTENSION";
+    			break;	
+    		case COUPON_30TRIAL:
+    			returnText = "30 DAYS TRIAL ACTIVE 1 TIMES";
+    			break;    		
+    		case COUPON_30TRIAL_ACTIVE:
+    			returnText = "30 DAYS TRIAL ALL ACTIVE";
+    			break;
+    		case COUPON_1YEAR_TRIAL:
+    			returnText = "1 GAME OUT FREE FOR A YEAR";
+    			break;
+    		case COUPON_30TRIAL2TIMES:
+    			returnText = "30 DAYS TRIAL ACTIVE 2 TIMES";
+    			break;
+    		//Start 17/12/2010 MJGP
+    		case COUPON_60TRIAL:
+    			returnText = "2 MONTHS TRIAL";
+    			break;    		
+    		case COUPON_90TRIAL:
+    			returnText = "3 MONTHS TRIAL";
+    			break;    		
+    		case COUPON_180TRIAL:
+    			returnText = "180 MONTHS TRIAL";
+    			break;    		
+    		//End 17/12/2010
+    		//Start 25/04/2011 MJGP
+    		case COUPON_90TRIAL_RESERVE_GAME:
+    			returnText = "3 MONTHS TRIAL AND RESERVE GAME";
+    			break;    		
+    		//End 25/04/2011 MJGP
+    		//Start 07/08/2012 MJGP
+    		case COUPON_15_DAY_TRIAL_FAST_RETURN:
+    			returnText = "15 DAYS FREE TRIAL AND FAST RETURN";
+    			break;  	
+    		//End 07/08/2012 MJGP
+    		default:
+    			break;
+    	}
+    	
+    return returnText;	
+    }
+    
+    public static void main(String args[])
+    {    	
+    	//HandleCouponCustomer(COUPON_2MRESERVE, "TEST30", 15296, false, 16);
+    	
+    }
+
+    //Start 29/11/2010 MJGP
+    /**
+     * @param couponCode
+     * @return A boolean to indicate if I have to deactivate the coupon
+     */
+    public static boolean deactivate30Trial2Times(String couponCode)
+    {
+    	Connection connection = null;
+		PreparedStatement  statement = null;
+		int counter = 0;
+		boolean deactivate = false;
+		StringBuilder sqlStatement = new StringBuilder(" select count(*) as counter ");
+		sqlStatement.append(" from specialcoupon sc, ");
+		sqlStatement.append(" specialcouponcustomers scc ");
+		sqlStatement.append(" where sc.coupon_id = scc.coupon_id ");
+		sqlStatement.append(" and sc.coupon_code = ? ");
+			
+		try {
+			connection = getDBConnection();
+			statement = connection.prepareStatement(sqlStatement.toString());
+			
+			statement.setString(1,couponCode);
+			
+			System.out.println("Executing: "+sqlStatement.toString());
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if (resultSet.next())
+				counter = resultSet.getInt("counter");
+			
+			if (counter >= COUPON_2_TIMES_ACTIVE)
+				deactivate = true;
+			
+		}
+		catch(Exception e) {
+			ExceptionHandler.handleException(e,"SpecialCoupon.deactivate30Trial2Times() exception:");
+		} finally {
+			try {        				
+				statement.close();
+				connection.close();
+			} catch (SQLException e) {
+				ExceptionHandler.handleException(e,"SpecialCoupon.close() Exception:");
+				e.printStackTrace();
+			}
+		}
+		return(deactivate);
+    }
+    //End 29/11/2010 MJGP
+    
+    //Start 07/08/2012 MJGP
+    /**
+     * @param couponCode
+     * @return A boolean to indicate if I have to deactivate the coupon
+     */
+    public static boolean deactivate15FreeTrialFastReturn5Times(String couponCode)
+    {
+    	Connection connection = null;
+		PreparedStatement  statement = null;
+		int counter = 0;
+		boolean deactivate = false;
+		StringBuilder sqlStatement = new StringBuilder(" select count(*) as counter ");
+		sqlStatement.append(" from specialcoupon sc, ");
+		sqlStatement.append(" specialcouponcustomers scc ");
+		sqlStatement.append(" where sc.coupon_id = scc.coupon_id ");
+		sqlStatement.append(" and sc.coupon_code = ? ");
+			
+		try {
+			connection = getDBConnection();
+			statement = connection.prepareStatement(sqlStatement.toString());
+			
+			statement.setString(1,couponCode);
+			
+			System.out.println("Executing: "+sqlStatement.toString());
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if (resultSet.next())
+				counter = resultSet.getInt("counter");
+			
+			if (counter >= COUPON_5_TIMES_ACTIVE)
+				deactivate = true;
+			
+		}
+		catch(Exception e) {
+			ExceptionHandler.handleException(e,"SpecialCoupon.deactivate30Trial2Times() exception:");
+		} finally {
+			try {        				
+				statement.close();
+				connection.close();
+			} catch (SQLException e) {
+				ExceptionHandler.handleException(e,"SpecialCoupon.close() Exception:");
+				e.printStackTrace();
+			}
+		}
+		return(deactivate);
+    }
+    //End 07/08/2012 MJGP
+    
+    //Start 17/12/2010 MJGP
+    
+    /**
+     * @param type of coupon.
+     * @return If it is necesary to check the 1 GAME OUT Free Trial in the registrationStep1.
+     */
+    public static  boolean check1GameOutFreeTrial(int type)
+    {
+    	boolean check = false;
+    	
+    	if(type == COUPON_15TRIAL ||
+		   type == COUPON_30TRIAL ||
+		   type == COUPON_30TRIAL_ACTIVE ||
+		   type == COUPON_30TRIAL2TIMES ||
+		   type == COUPON_1YEAR_TRIAL ||
+		   type == COUPON_60TRIAL ||
+		   type == COUPON_90TRIAL ||
+		   type == COUPON_180TRIAL ||
+		   type == COUPON_90TRIAL_RESERVE_GAME ||
+		   type == COUPON_15_DAY_TRIAL_FAST_RETURN)
+    	{
+    		check = true;
+    	}
+    	
+    	return(check);
+    }
+    
+    public String codeValidationMsgCoupon(String lang)
+    {
+    	String msg = "";
+    	try
+    	{
+	    	StringBuffer sqlString =  new StringBuffer(" select * ");
+	    	sqlString.append(" from specialcoupontype ");
+	    	sqlString.append(" where sct_id = " + String.valueOf(_couponType) );
+	    	
+	    	SpecialCouponType specialCouponType = SpecialCouponType.performQuery(sqlString.toString());
+	    	
+	    	if(lang.equals("en"))
+	    	{
+	    		msg = specialCouponType.getCodeValidationMsgEn();
+	    	}
+	    	else
+	    	{
+	    		msg = specialCouponType.getCodeValidationMsgFr(); 
+	    	}
+    	}
+    	catch(Exception ex)
+    	{
+    		ExceptionHandler.handleException(ex,"SpecialCoupon.codeValidationMsgCoupon() Exception:");
+            ex.printStackTrace();
+    	}   	
+    	
+    	return(msg);
+    }
+    //End 17/12/2010 MJGP
+    
+  
+}
+
+/***********************************************************
+Query used to create the StateAbbrev table
+
+CREATE SEQUENCE specialcoupon_id_seq INCREMENT 1 START 1;
+
+CREATE TABLE specialcoupon
+(
+  coupon_id integer NOT NULL DEFAULT nextval(('specialcoupon_id_seq'::text)::regclass),
+  coupon_code character varying(15) NOT NULL,
+  coupon_type integer DEFAULT 0,
+  coupon_status integer DEFAULT 1,
+  coupon_sitename character varying(50),
+  coupon_comment character varying(100),
+  coupon_timestamp timestamp with time zone,
+  CONSTRAINT specialcoupon_sc_pkey PRIMARY KEY (coupon_id),
+  CONSTRAINT specialcoupon_type_id_fkey FOREIGN KEY (coupon_type)
+      REFERENCES specialcoupontype (sct_id) MATCH SIMPLE   
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT specialcoupon_stqtus_id_fkey FOREIGN KEY (coupon_status)
+      REFERENCES specialcouponstatus (status_id) MATCH SIMPLE   
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  
+  CONSTRAINT specialcoupon_sc_name_key UNIQUE (coupon_code)
+);
+********************************************/

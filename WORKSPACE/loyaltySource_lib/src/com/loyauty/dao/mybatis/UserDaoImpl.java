@@ -1,0 +1,250 @@
+package com.loyauty.dao.mybatis;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.apache.ibatis.session.SqlSession;
+import com.loyauty.dao.UserDao;
+import com.loyauty.model.ClientCategory;
+import com.loyauty.model.Select;
+import com.loyauty.model.User;
+import com.loyauty.model.UserConnection;
+
+/**
+ * User DAO implementation.
+ *
+ */
+public class UserDaoImpl extends BasicDaoImpl implements UserDao{
+
+	public UserDaoImpl(SqlSession sqlSession, String mapperName) {
+		super(sqlSession, mapperName);		
+	}
+
+	@Override
+	public User getUser(Long userId) {		
+		return (User) getSqlSession().selectOne(getNameSpace("getUserFromId"), userId);
+	}	
+
+	//for Including Template in shipping
+	@Override
+	public User getAnyUserFromId(Long userId) {		
+		return (User) getSqlSession().selectOne(getNameSpace("getAnyUserFromId"), userId);
+	}	
+
+	@Override
+	public User getUser(String username) {
+		return (User) getSqlSession().selectOne(getNameSpace("getUserFromLogin"), username);
+	}
+	
+	@Override
+	public boolean usernameExists(String username) {		
+		return (getSqlSession().selectOne(getNameSpace("usernameExists"), username) != null);
+	}
+
+	@Override
+	public boolean emailExists(String email) {		
+		return (getSqlSession().selectOne(getNameSpace("emailExists"), email) != null);
+	}
+	
+	@Override
+	public void insertUserAccount(User user) {
+		getSqlSession().insert(getNameSpace("insertUserAccount"), user);
+	}
+	
+	@Override
+	public void updateUserAccount(User user) {
+		getSqlSession().update(getNameSpace("updateUserAccount"), user);
+	}
+	
+	@Override
+	public void updateUserById(User user) {
+		getSqlSession().update("updateUserAccountById", user);
+		getSqlSession().update("updateUserProfileById", user);
+	}
+	
+	@Override
+	public void insertUserProfil(User user) {
+		getSqlSession().insert(getNameSpace("insertUserProfil"), user);		
+	}
+	
+	@Override
+	public void insertProductToUsers(User user) {
+		getSqlSession().insert(getNameSpace("insertProductToUsers"), user);		
+	}
+	
+	@Override
+	public boolean insertUserConnection(UserConnection userConnection) {
+		boolean result= false;
+		int success=getSqlSession().insert(getNameSpace("insertUserConnection"), userConnection);
+		if(success>=0)result=true;
+		return result;
+	}
+
+	@Override
+	public User getUserByEmail(String useremail) {
+		return (User) getSqlSession().selectOne(getNameSpace("getUserByEmail"), useremail);
+	}
+
+	@Override
+	public void updateLogin(User user) {
+		getSqlSession().update(getNameSpace("updateLogin"), user);		
+	}
+	
+	@Override
+	public void updatePassword(User user) {
+		getSqlSession().update(getNameSpace("updatePassword"), user);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Long> getAllUsersByIdLessAdministrators(){
+		return getSqlSession().selectList(getNameSpace("getAllUsersByIdLessAdministrators"));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getAllUserAccounts(User userType) {
+		return (List<User>) getSqlSession().selectList(getNameSpace("getAllUserAccounts"), userType);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getAllUsers(User userType) {
+		return (List<User>) getSqlSession().selectList(getNameSpace("getAllUsers"), userType);  
+	}
+	
+	@Override
+	public void updateClientCategoryID(Select select) {
+		getSqlSession().update("updateClientCategoryID", select);
+	}
+	
+	@Override
+	public void updateTemplateCoeffitions(ClientCategory clc) {
+		getSqlSession().update("updateTemplateCoeffitions", clc);
+	}
+	
+	@Override
+	public User getUserByLogin(String login) {
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getUserByLogin"), login);
+		return userResult;
+	}
+
+	@Override
+	public User getCountUserShippingTotal(User user) {
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getCountUserShippingTotal"), user);
+		return userResult;
+	}
+	
+	@Override
+	public User getCountUserProductPrice(User user) {
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getCountUserProductPrice"), user);
+		return userResult;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<ClientCategory> getAllClientCategory() {
+		return (ArrayList<ClientCategory>)getSqlSession().selectList(getNameSpace("getAllClientCategory"));
+		
+	}
+	
+	@Override
+	public ClientCategory getClientCategoryById(Long clientCategoryId) {
+		return (ClientCategory) getSqlSession().selectOne(getNameSpace("getClientCategoryById"),clientCategoryId);
+	}
+	
+	@Override
+	public void insertTemplateOnUserAccount(User user) {
+		getSqlSession().insert(getNameSpace("insertTemplateOnUserAccount"), user);
+	}
+	
+	@Override
+	public void insertTemplateOnUserProfile(User user) {
+		getSqlSession().insert(getNameSpace("insertTemplateOnUserProfile"), user);
+	}
+	
+	@Override
+	public ClientCategory getClientCategoryByName(String clientCategoryName) {
+		return (ClientCategory) getSqlSession().selectOne(getNameSpace("getClientCategoryByName"), clientCategoryName);
+	}
+	
+	@Override
+	public void deleteUserProfile(Select select) {
+		getSqlSession().delete(getNameSpace("deleteUserProfile"), select);
+	}
+	
+	@Override
+	public void deleteUserAccount(Select select) {
+		getSqlSession().delete(getNameSpace("deleteUserAccount"), select);
+	}
+	
+	@Override
+	public boolean updateUserAdmin(User user) {
+		return (getSqlSession().update(getNameSpace("updateUserAdmin"), user) == 0);
+	}
+	
+	@Override
+	public boolean updateNoteAdmin(User user) {
+		return (getSqlSession().update(getNameSpace("updateNoteAdmin"), user) == 0);
+	}
+	
+	@Override
+	public User getUserOrTemplateById(Long userId) {
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getUserOrTemplateById"),userId);
+		return userResult;
+	}
+	
+	@Override
+	public User getAdmin(String login, String password) {
+		HashMap<Object, Object>param=new HashMap<Object, Object>();
+		param.put("login", login);
+		param.put("password", password);    
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getAdmin"),param);
+		return userResult;
+	}
+	
+	@Override
+	public User getSuperAdmin(String login, String password) {
+		HashMap<Object, Object>param=new HashMap<Object, Object>();
+		param.put("login", login);
+		param.put("password", password);    
+		User userResult=(User)getSqlSession().selectOne(getNameSpace("getSuperAdmin"),param);
+		return userResult;
+	}
+
+	@Override
+	public UserConnection getUserConnectionByUserId(Long userId) {
+		return (UserConnection) getSqlSession().selectOne(getNameSpace("getUserConnectionByUserId"), userId);
+	}
+
+
+	@Override
+	public UserConnection getUserConnectionByLogin(String userLogin) {
+		return (UserConnection) getSqlSession().selectOne(getNameSpace("getUserConnectionByLogin"), userLogin);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserConnection> getAllUsersConnections() {
+		return (List<UserConnection>) getSqlSession().selectList(getNameSpace("getAllUsersConnections"));
+	}
+
+	@Override
+	public boolean insertNewUserSumit(User user) {
+		boolean result= false;
+		int success=getSqlSession().insert(getNameSpace("insertNewUserSumit"), user);
+		if(success>=0)result=true;
+		return result;
+	}
+	@Override
+	public void disableUserByIdSumit(User user) {
+		getSqlSession().update(getNameSpace("disableUserByIdSumit"), user);
+
+	};
+	@Override
+	public void disableUserByLoginSumit(User user) {
+		getSqlSession().update(getNameSpace("disableUserByLoginSumit"), user);
+
+	};
+	
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="SS_KOLWC08">
+        <brand-name>Koolatron</brand-name>
+        <group>Kitchen</group>
+        <category>Small Appliances</category>
+        <type>Cellars</type>
+        <image>http://loyaltysource.com/media/product/large/kolwc08_1363293765651.jpg</image>
+        <status>AVAILABLE</status>
+        <title>8 Bottle Countertop Wine Chiller</title>
+        <description>Keep your wine chilled to perfection with the Koolatron eight bottle home wine fridge. This wine chiller holds eight wine bottles, and features a silent and vibration-free thermoelectric cooling system. The removable shelves allow you to customize the chiller and the built-in soft lighting make it a perfect show piece in any kitchen, den, or home bar. This unique wine fridge is perfect for either red or white wine. The electronic temperature control takes the guesswork out of storage, and makes it easy for you to keep your wines at the perfect temperature.</description>
+        <specification>Capacity : 8 bottles (750ml each). Temperature range : 6° to 18°C (42° to 65°F). External electronic thermostat. Digital temperature controls. Silent and vibration-free. Four removable shelves. Double paned insulated glass door with stainless trim. Soft-interior light.  </specification>
+        <others>Made in Canada.</others>
+        <warranty>3 months</warranty>
+        <model-number>WC08</model-number>
+        <weight>19.6</weight>
+        <shipping-size>
+            <length>12.25</length>
+            <width>21.5</width>
+            <height>20.8</height>
+        </shipping-size>
+        <msrp>169.99</msrp>
+        <cost>0.00</cost>
+        <discount-dollars>169.99</discount-dollars>
+        <discount-percent>100.00</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>25.13</average-canada>
+            <rate-per-province>
+                <AB>35.07</AB>
+                <BC>37.27</BC>
+                <MB>25.89</MB>
+                <NB>27.68</NB>
+                <NL>39.46</NL>
+                <NS>28.27</NS>
+                <NT>37.69</NT>
+                <NU>142.69</NU>
+                <ON>20.60</ON>
+                <PE>26.30</PE>
+                <QC>17.60</QC>
+                <SK>35.07</SK>
+                <YT>45.52</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="SS_KOLWC1235D">
+        <brand-name>Koolatron</brand-name>
+        <group>Kitchen</group>
+        <category>Small Appliances</category>
+        <type>Cellars</type>
+        <image>http://loyaltysource.com/media/product/large/kolwc1235d_1363295191311.jpg</image>
+        <status>AVAILABLE</status>
+        <title>12 Bottle Deluxe Wine Chiller</title>
+        <description>The Koolatron 12 Bottle Deluxe Wine Chiller is a great way to store and showcase your wines all in one elegant package. The 12 Bottle Deluxe Wine Chiller features double tempered glass doors, wooden shelves and soft interior lighting. This compact wine chiller uses a thermoelectric cooling unit, eliminating vibrations, which can disturb sediments found in wine.</description>
+        <specification>Capacity : 12 bottles (750ml each). Temperature range : 11° to 18°C (51.8° to 65°F). External electronic thermostat. Digital temperature controls. Silent and vibration-free. Five removable wood shelves. Double paned insulated glass door with stainless trim. Soft-interior light.  </specification>
+        <others>Made in Canada.</others>
+        <warranty>3 months</warranty>
+        <model-number>WC12-35D</model-number>
+        <weight>31</weight>
+        <shipping-size>
+            <length>14</length>
+            <width>23.2</width>
+            <height>28.2</height>
+        </shipping-size>
+        <msrp>199.99</msrp>
+        <cost>0.00</cost>
+        <discount-dollars>199.99</discount-dollars>
+        <discount-percent>100.00</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>33.17</average-canada>
+            <rate-per-province>
+                <AB>47.87</AB>
+                <BC>50.92</BC>
+                <MB>33.21</MB>
+                <NB>35.55</NB>
+                <NL>53.90</NL>
+                <NS>36.41</NS>
+                <NT>51.42</NT>
+                <NU>221.83</NU>
+                <ON>26.32</ON>
+                <PE>33.91</PE>
+                <QC>22.82</QC>
+                <SK>47.87</SK>
+                <YT>62.05</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

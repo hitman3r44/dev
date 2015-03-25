@@ -1,0 +1,1064 @@
+//ReservedGameList.java
+
+package govojo.inventory;
+
+import govojo.communication.config.MailPropertiesManager;
+import govojo.db.Address;
+import govojo.db.CustomerAlerts;
+import govojo.db.DBJoin;
+import govojo.db.GameInventory;
+import govojo.db.PremiumMembers;
+import govojo.db.Q10Members;
+import govojo.db.Queue;
+import govojo.db.ReservedGameQueue;
+import govojo.db.ReservedList;
+import govojo.db.util.SQLResultSet;
+import govojo.db.value.AllotedGame;
+import govojo.debugging.ExceptionHandler;
+import govojo.io.CommandLine;
+import govojo.io.FileUtils;
+import govojo.net.Mail;
+import govojo.util.NullableTimeAndDate;
+import govojo.util.TimeAndDate;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+import java.util.StringTokenizer;
+import java.util.TreeMap;
+
+import com.Ostermiller.util.ExcelCSVPrinter;
+
+public class ReservedGameList {
+	// Reserve list tweaking
+
+	private static final String MAIL_FROM = MailPropertiesManager.getInstance().getReservedGameListFrom();
+
+	private static final String[] MAIL_RECIPIENTS = MailPropertiesManager.getInstance().getReservedGameListMailRecipients();
+
+	// Maintain all the below parameters in a properties file
+	public static final String RESERVE_LIST_PROPERTIES_FILE = FileUtils.GOVOJO_ROOT_PATH + "/govojo/inventory/reservedList.properties";
+
+	// Properties file to store default magic priority
+	public static final String DEFAULT_PRIORITY_PROPERTIES_FILE = FileUtils.GOVOJO_ROOT_PATH + "/govojo/inventory/defaultPriority.properties";
+
+	public static String TOTAL_NUMBER_OF_MEMBERS_NEEDING_FULFILLMENT_KEY = "totalMembersNeedingFulfillment";
+	
+	private int magicPriority = 5;
+
+	public boolean DEBUG = true;
+
+	public static final int TRIAL_NOT_STARTED_PRIORITY = 1;
+
+	// cutoff is everyone who is less than one day
+	public static final int NEW_CUSTOMER_CUTOFF_DAYS = -7;
+
+	private boolean interactive = false;
+
+	private class RentalHistory {
+		int sumRentedAndReturned = 0;
+
+		NullableTimeAndDate lastDateReturned = new NullableTimeAndDate();
+
+		int getSumRentedAndReturned() {
+			return (sumRentedAndReturned);
+		}
+
+		void setSumRentedAndReturned(int sum) {
+			sumRentedAndReturned = sum;
+		}
+
+		NullableTimeAndDate getLastDateReturned() {
+			return (lastDateReturned);
+		}
+
+		void setLastDateReturned(NullableTimeAndDate date) {
+			lastDateReturned = date;
+		}
+	}
+	
+	
+
+	private class QueueAttributes {
+		int customerID = 0;
+
+		int totalOut = 0;
+
+		int maxGamesOut = 0;
+
+		// will be decremented as the reserve slot is alloted
+		int totalNeeded = 0;
+		
+		int actualTotalNeeded = 0;
+
+		int daysWaiting = 0;
+
+		boolean flagIfNoPicks = false;
+		
+		boolean isReserved = false;
+		
+		boolean gotReservedGame = false;
+
+		NullableTimeAndDate lastDateReturned = new NullableTimeAndDate();
+
+		// one is the best, start everybody off at the same
+		// level unless later set otherwise
+		int listPickPriority = Integer.MAX_VALUE;
+
+		Integer maxQueuePriorityPick = null;
+
+		void setCustomerID(int theID) {
+			customerID = theID;
+		}
+
+		int getCustomerID() {
+			return (customerID);
+		}
+
+		void setTotalOut(int numberOut) {
+			totalOut = numberOut;
+		}
+
+		int getTotalOut() {
+			return (totalOut);
+		}
+
+		void setMaxGamesOut(int theMax) {
+			maxGamesOut = theMax;
+		}
+
+		int getMaxGamesOut() {
+			return (maxGamesOut);
+		}
+
+		void setTotalNeeded(int needed) {
+			totalNeeded = needed;
+		}
+
+		int getTotalNeeded() {
+			return (totalNeeded);
+		}
+		
+		void setActualTotalNeeded(int needed) {
+			actualTotalNeeded = needed;
+		}
+
+		int getActualTotalNeeded() {
+			return (actualTotalNeeded);
+		}
+
+		void setLastDateReturned(NullableTimeAndDate theDate) {
+			lastDateReturned = theDate;
+		}
+
+		NullableTimeAndDate getLastDateReturned() {
+			return (lastDateReturned);
+		}
+
+		void setDaysWaiting(int numDays) {
+			daysWaiting = numDays;
+		}
+
+		int getDaysWaiting() {
+			return (daysWaiting);
+		}
+
+		void setListPickPriority(int thePriority) {
+			listPickPriority = thePriority;
+		}
+
+		int getListPickPriority() {
+			return (listPickPriority);
+		}
+
+		void setMaxQueuePriorityPick(Integer maxPick) {
+			maxQueuePriorityPick = maxPick;
+		}
+
+		Integer getMaxQueuePriorityPick() {
+			return (maxQueuePriorityPick);
+		}
+
+		void setFlagIfNoPicks(boolean theFlag) {
+			flagIfNoPicks = theFlag;
+		}
+
+		boolean getFlagIfNoPicks() {
+			return (flagIfNoPicks);
+		}
+		
+		void setIsReserved(boolean isReserved) {
+			this.isReserved = isReserved;
+		}
+
+		boolean isReserved() {
+			return (isReserved);
+		}
+		
+		void setGotReservedGame(boolean gotReserved) {
+			gotReservedGame = gotReserved;
+		}
+
+		boolean gotReservedGame() {
+			return (gotReservedGame);
+		}
+	}
+
+
+	// To maintain total number of games needed and remaining number of games needed.
+	// Needed during tweaking
+		
+		private class CustomerNeeds{
+			int totalNeeded = 0;
+			int remainingNeeded = 0;
+			
+			public int getRemainingNeeded() {
+				return remainingNeeded;
+			}
+			public void setRemainingNeeded(int remainingNeeded) {
+				this.remainingNeeded = remainingNeeded;
+			}
+			public int getTotalNeeded() {
+				return totalNeeded;
+			}
+			public void setTotalNeeded(int totalNeeded) {
+				this.totalNeeded = totalNeeded;
+			}
+			public CustomerNeeds(int totalNeeded, int remainingNeeded) {
+				super();
+				this.totalNeeded = totalNeeded;
+				this.remainingNeeded = remainingNeeded;
+			}
+										
+		}
+	
+	
+	public int getMagicPriority() {
+		return magicPriority;
+	}
+
+	public void setMagicPriority(int magicPriority) {
+		System.out.println("Calling setMagicPriority "+magicPriority);
+		this.magicPriority = magicPriority;
+	}
+
+	public void setInteractive(boolean bool) {
+		interactive = bool;
+	}
+
+	/**
+	 **/
+	public synchronized boolean createReserveList() {
+		// Verify that the reserved list is empty
+		List reservedList = DBJoin.selectDetailedReserveList();
+		SQLResultSet resultSet = new SQLResultSet(reservedList);
+		if (reservedList.size() > 0) {
+			System.out
+					.println("RESERVED LIST IS NOT EMPTY: This will not run untill all of the items in the reserved list have been cleaned out. Please delete all of the items in the reserved list to continue.");
+			return (false);
+		}
+
+		int customerID = 0;
+		int numberNeeded = 0;
+		int actualNumberNeeded = 0;
+		int queueID = 0;
+		int gameDescID = 0;
+		int inStockCount = 0;
+		int priority = 0;
+		int currentGamesNeededLevel = 1;
+		int maxGamesNeeded = 0;
+		TimeAndDate today = new TimeAndDate();
+		HashMap rentalHistoryMap = new HashMap();
+
+		// Store comma separated customer id's of customers who needs to be fulfilled in a properties file 
+		StringBuffer totalMembersNeedingFulfillment = new StringBuffer();
+		Properties reservedListProperties = new Properties();
+		
+		try {
+			reservedListProperties.load(new FileInputStream(RESERVE_LIST_PROPERTIES_FILE));
+		} catch (FileNotFoundException e1) {
+			System.out.println("Could not find resource file");
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			System.out.println("Could not read resource file");
+			e1.printStackTrace();
+		}
+		
+		
+		
+		// List to maintain the alloted games
+		ArrayList allotedGameList = new ArrayList();
+		AllotedGame allotedGame;
+
+		// First allot games to the reserved members
+		// Key: customerId value: ReservedGameQueue
+		HashMap reservedQueueMap = ReservedGameQueue
+				.getAllTheReservedGameQueueMap();
+
+		// store members who are eligible for swapping in a Map. 
+		// Key=customerId + service level, value= CustomerNeeds(total games needed,remaining games needed)
+		// This has been changed. Key cannot be just customerId. key="customerId+gameNeedLevel"
+		HashMap eligibleForSwappingMap = new HashMap();
+				
+
+		/**
+		 * * A TreeMap guarantees that the map will be in sorted order. * The
+		 * key for this tree map is an Integer (lenght of time waiting) * The
+		 * value is an Array list of people in that status.
+		 */
+		Map mapOfPriorities = new TreeMap(Collections.reverseOrder());
+
+		// Get customers with CustomerAlerts
+		Set customersWithAlerts = CustomerAlerts
+				.customerIDSWithActiveBillingAlerts();
+		Set customersNeedNormalize = Address.customerIDsNeedNormalize();
+
+		// Get the list of customers that need a game
+		List gamesNeeded = DBJoin.selectCustomersNeedingGame();
+		SQLResultSet customerResultSet = new SQLResultSet(gamesNeeded);
+		int gamesNeededSize = gamesNeeded.size();
+		System.out.println("*** " + gamesNeededSize + " customers need games.");
+
+		/*int[] idArray = new int[gamesNeededSize];
+		// get out the ids, and place them into an array of ids
+		for (int iter = 0; iter < gamesNeededSize; iter++) {
+			customerID = 0;
+			try {
+				customerID = Integer.parseInt(customerResultSet.getValue(
+						"customerID", iter));
+			} catch (NumberFormatException e) {
+				System.out.print("******* can't parse: "
+						+ customerResultSet.getValue("customerID", iter));
+			}
+
+			idArray[iter] = customerID;
+		}*/
+
+		// Filter the customers who have no released games in his queue. Also filer test accounts
+		ArrayList idList = new ArrayList();
+			
+		for (int iter = 0; iter < gamesNeededSize; iter++) {
+			customerID = 0;
+			try {
+				customerID = Integer.parseInt(customerResultSet.getValue(
+						"customerID", iter));
+			} catch (NumberFormatException e) {
+				System.out.print("******* can't parse: "
+						+ customerResultSet.getValue("customerID", iter));
+			}
+			
+			if(Queue.getNumberOfReleasedGamesInThePendingQueue(customerID) > 0 && customerID != 1){
+				idList.add(new Integer(customerID));
+			}
+			
+		}
+		
+		//	 get out the ids, and place them into an array of ids
+		int[] idArray = new int[idList.size()];
+		for (int i = 0; i < idList.size(); i++) {
+			idArray[i] = ((Integer)idList.get(i)).intValue();
+		}
+
+		// Grab more information on the customers that need games
+		// explicitly, we need the number of games that they have out
+		// and rented (summed) and we need the date they last returned.
+		List rentalHistory = DBJoin
+				.findRentedAndReturnedQueueInfoForList(idArray);
+		System.out.println("Pulling rental history, this may take a while...");
+		SQLResultSet historyRS = new SQLResultSet(rentalHistory);
+		int numHistory = rentalHistory.size();
+
+		for (int u = 0; u < numHistory; u++) {
+			RentalHistory hist = new RentalHistory();
+			try {
+				customerID = Integer.parseInt(historyRS.getValue("cu_id", u));
+				hist.setSumRentedAndReturned(Integer.parseInt(historyRS
+						.getValue("returned_rented", u)));
+				hist.setLastDateReturned(new NullableTimeAndDate(TimeAndDate
+						.getTimeAndDateFromSQLDateString(historyRS.getValue(
+								"max_date_returned", u))));
+
+				// if no exceptions, place the object in the Map
+				rentalHistoryMap.put(new Integer(customerID), hist);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		/***********************************************************************
+		 * **For all of the customers needing games, pull out the vital info on
+		 * those customers and create a HashMap of ArrayLists. The key for the
+		 * HashMap is an Integer that specifies the number of days that someone
+		 * has been waiting. Each item of the ArrayList contains a
+		 * QueueAttributes object.
+		 **********************************************************************/
+		for (int loop = 0; loop < gamesNeededSize; loop++) {
+			QueueAttributes queueItem = new QueueAttributes();
+
+			try {
+				customerID = Integer.parseInt(customerResultSet.getValue(
+						"customerID", loop));
+				if(!idList.contains(new Integer(customerID)))
+					continue;
+				numberNeeded = Integer.parseInt(customerResultSet.getValue(
+						"totalNeeded", loop));
+				actualNumberNeeded = numberNeeded;				
+				
+			} catch (NumberFormatException e) {
+				ExceptionHandler.handleException(e,
+						"ReservedGameList.createReserveList(): Decode Failed");
+			}
+
+			System.out
+					.println("Assigning priority for customer: " + customerID);
+			// Get this customer Rental History from the map
+			RentalHistory rentHistory = (RentalHistory) rentalHistoryMap
+					.get(new Integer(customerID));
+
+			// If it is null, then just set it to an empty object to
+			// prevent null pointer exceptions
+			if (rentHistory == null) {
+				rentHistory = new RentalHistory();
+			}
+
+			TimeAndDate joinDate = TimeAndDate
+					.getTimeAndDateFromSQLDateString(customerResultSet
+							.getValue("sub_timestamp", loop));
+
+			// NO SOUP if the customer has an alert
+			// or if the customer is in the reserved list
+			if ((customersWithAlerts.contains(new Integer(customerID)) == false)
+					&& (customersNeedNormalize
+							.contains(new Integer(customerID)) == false)) {
+
+				
+								
+				
+				// [ Allot games for the people who have reserved game
+				// regardless of the any of the parameter
+				ReservedGameQueue reservedGameQueue = (ReservedGameQueue)reservedQueueMap
+						.get(new Integer(customerID));
+				
+				// Store customers who needs fulfillment in a properies file
+				// Reserved and game need = 1, no need to put him in the list
+				   if(reservedGameQueue != null && numberNeeded == 1){
+					   // dont put this customer in the list
+				   }
+				   else{
+					   totalMembersNeedingFulfillment.append(customerID);
+					   totalMembersNeedingFulfillment.append(",");
+				   }
+				   
+								
+				if (reservedGameQueue != null) {
+					Queue queue = new Queue();
+					queue.selectFromID(reservedGameQueue.getQueueID());
+					int gameId = queue.getDescription();
+					
+					queueItem.setIsReserved(true);
+					// KTPL: Error when 2 different customers reserves the same game
+					int inStock = GameInventory.selectInstockInventoryIDListOfGame(gameId).size(); 
+					
+					/* Muthanna: the old implementation calculated the real position of a customer in the reserve game list.
+					   However, the correct one is to calculate one's position among only the customers needing games, that's why 
+					   I pass the array to the getReservedCustomerPosition method which calculates it correctly now.
+					*/
+					
+					if(ReservedGameQueue.getReservedCustomerPosition(gameId, customerID, idArray) > inStock){
+						; // Dont allot the game if he has not alloted before others
+					}					
+					else if(inStock > AllotedGame.getNumberOfGamesInTheAllotedList(allotedGameList,gameId)){
+						allotedGame = new AllotedGame();
+						allotedGame.setGameId(gameId);
+						allotedGame.setCustomerId(customerID);
+						allotedGame.setQueueId(queue.getID());
+						
+						// KTPL: ReservedListPriority 2007-11-12 Get the priority only considering released games
+						allotedGame.setPriority(queue.getPriority());
+						
+						allotedGame.setTotalNeeded(actualNumberNeeded);
+						allotedGame.setReserved(true);
+						allotedGame.setPremiumMember(isPremiumMember(customerID));
+						allotedGame.setServiceLevel(actualNumberNeeded);
+						allotedGameList.add(allotedGame);						
+						
+						queueItem.setGotReservedGame(true);
+					}
+					
+					// reserve a slot for the reserved game
+					numberNeeded = numberNeeded - 1;
+				}
+				// Allot games for the reserved members]
+
+				queueItem.setCustomerID(customerID);
+				queueItem.setTotalNeeded(numberNeeded);
+				queueItem.setActualTotalNeeded(actualNumberNeeded);
+				queueItem
+						.setLastDateReturned(rentHistory.getLastDateReturned());
+				// If someone has not received a game they should be priority
+				// over people who have returned to day.
+
+				if (queueItem.getLastDateReturned().getTimeAndDate() == null) {
+					queueItem.setDaysWaiting(TimeAndDate.getElapsedDays(
+							joinDate, today));
+				} else {
+					queueItem.setDaysWaiting(TimeAndDate.getElapsedDays(
+							queueItem.getLastDateReturned().getTimeAndDate(),
+							today));
+				}
+
+				// Check and see if maxGamesNeeded should be updated
+				if (maxGamesNeeded < queueItem.getActualTotalNeeded()) {
+					maxGamesNeeded = queueItem.getActualTotalNeeded();
+				}
+
+				TimeAndDate newCustomerCutoff = new TimeAndDate();
+				newCustomerCutoff.add(TimeAndDate.DAY_OF_MONTH,
+						NEW_CUSTOMER_CUTOFF_DAYS);
+				// Should this customer be treated special?
+				// check to see if they have been sent a game
+				// AND are less than 10 days old
+				// if((queueItem.getLastDateReturned().getTimeAndDate() == null)
+				// && (joinDate.getInMillis() >
+				// newCustomerCutoff.getInMillis())) {
+				// in this iteration, the customer should be treated special
+				// if they have not been sent a game
+				if (rentHistory.getSumRentedAndReturned() == 0) {
+					queueItem.setListPickPriority(1);
+					// Commented out in an effort to start trials
+					// queueItem.setMaxQueuePriorityPick(new Integer(3));
+					queueItem.setFlagIfNoPicks(true);
+				}
+
+				// Insert the queueItem into the Map
+				// Map structure: TreeMap -> TreeMap -> ArrayList
+				// Map structure: Priority -> Wait Time -> Customer List
+
+				Integer pickPriority = new Integer(queueItem
+						.getListPickPriority());
+				Integer waitTime = new Integer(queueItem.getDaysWaiting());
+				
+				//Start 26/10/2010 MJGP
+				System.out.println("Generation mapOfPriorities --> customerID: " + String.valueOf(customerID) + " (pickPriority: " + String.valueOf(pickPriority) + " waitTime: " + String.valueOf(waitTime) + ")");
+				//End 26/10/2010 MJGP
+				
+				// Does the priority map have this priority?
+				if (mapOfPriorities.containsKey(pickPriority)) {
+					TreeMap waitTimes = (TreeMap) mapOfPriorities
+							.get(pickPriority);
+					// Found the priority, does it have the wait time?
+					if (waitTimes.containsKey(waitTime)) {
+						// Found a list of people with this priority and wait
+						// time, add to the list
+						((ArrayList) waitTimes.get(waitTime)).add(queueItem);
+					} else { // no one with this wait time yet, add a new
+						// list
+						List newList = new ArrayList();
+						newList.add(queueItem);
+						waitTimes.put(waitTime, newList);
+					}
+				} else { // no one with this priority, add a new map with
+					// this priority
+					// map of wait times
+					TreeMap waitTimes = new TreeMap();
+					// List of customers
+					List newList = new ArrayList();
+
+					// add this person to the wait time list
+					newList.add(queueItem);
+					// add this wait time list to the wait time map
+					waitTimes.put(waitTime, newList);
+					// add this wait time map to the map of priorities
+					mapOfPriorities.put(pickPriority, waitTimes);
+				}
+			}
+		}
+		
+		// FIND THE GAMES FOR THE CUSTOMERS
+
+		Set flaggedCustomers = new HashSet();
+		//Start 26/10/2010 MJGP
+		System.out.println(" TreePriority: " + mapOfPriorities.toString());
+		//End 26/10/2010 MJGP 
+		/** * Iterate through all of the different number of games needed** */
+		for (int currNeedLevel = 1; currNeedLevel <= maxGamesNeeded; currNeedLevel++) {
+
+			Set keys = mapOfPriorities.keySet();
+			Iterator priorityIter = keys.iterator();
+
+			while (priorityIter.hasNext()) {
+				TreeMap mapOfWaitTimes = (TreeMap) mapOfPriorities
+						.get(priorityIter.next());
+				Set waitKeys = mapOfWaitTimes.keySet();
+				Iterator waitTimeIter = waitKeys.iterator();
+				// For each unique number of days that customers have been
+				// waiting starting with the person who has waited the longest
+				while (waitTimeIter.hasNext()) {
+
+					// If I do not create a "new" list here, Java will pass the
+					// list
+					// by reference. This will not work because I may change the
+					// contents of the list if someone gets bumped (they will be
+					// added to the end). So, to avoid the changes that I make
+					// persisting I use "new" here.
+					List custList = new ArrayList((ArrayList) mapOfWaitTimes
+							.get(waitTimeIter.next()));
+
+					/***********************************************************
+					 * * For each service level iterate through the group of
+					 * customers and determine if they need a game
+					 **********************************************************/
+
+					boolean gotGame;
+					for (int iter = 0; iter < custList.size(); iter++) {
+						gotGame = false;
+						customerID = ((QueueAttributes) custList.get(iter))
+								.getCustomerID();
+						numberNeeded = ((QueueAttributes) custList.get(iter))
+								.getTotalNeeded();
+						actualNumberNeeded = ((QueueAttributes) custList.get(iter)).getActualTotalNeeded();
+						Integer maxPick = ((QueueAttributes) custList.get(iter))
+								.getMaxQueuePriorityPick();
+						boolean flagNoPicks = ((QueueAttributes) custList
+								.get(iter)).getFlagIfNoPicks();
+						boolean hasReserved = ((QueueAttributes) custList
+								.get(iter)).isReserved();
+						boolean gotReserved = ((QueueAttributes) custList
+								.get(iter)).gotReservedGame();
+
+						/** *** Does this person still need a game? ** */
+						
+						//Start 26/10/2010 MJGP
+						System.out.println (" Condition vaiables --> customerID: " + String.valueOf(customerID)+ 
+											" currNeedLevel: " + String.valueOf(currNeedLevel) +
+											" actualNumberNeeded: " + String.valueOf(actualNumberNeeded) + 
+											" hasReserved: " + String.valueOf(hasReserved));
+						//End 26/10/2010 MJGP
+						
+						if (currNeedLevel > actualNumberNeeded) {
+							// fufilled, skip to the next person in the loop
+							continue;
+						}
+
+						// If a customer has reserved a game and the currNeedLevel is actual number needed, Just continue.
+						if (currNeedLevel == actualNumberNeeded && hasReserved) {
+							continue;
+						}
+
+
+						/**
+						 * ** For a customer, get the queue items that are in
+						 * stock ***
+						 */
+						// it is ordered by queue priority, most wanted to least
+						// wanted.
+						List instockQueue = DBJoin
+								.selectInStockGamesFromCustomerQueue(
+										customerID, maxPick);
+						SQLResultSet queueResultSet = new SQLResultSet(
+								instockQueue);
+						int instockQueueSize = instockQueue.size();
+
+						if ((flagNoPicks == true) && (instockQueueSize == 0)) {
+							flaggedCustomers.add(new Integer(customerID));
+						}
+
+						// ####################################################
+						for (int loopVar = 0; loopVar < instockQueueSize; loopVar++) {
+							boolean reserveGame = false;
+							try {
+								queueID = Integer.parseInt(queueResultSet
+										.getValue("queue_id", loopVar));
+								priority = Integer.parseInt(queueResultSet
+										.getValue("queue_pri", loopVar));
+								gameDescID = Integer.parseInt(queueResultSet
+										.getValue("gd_id", loopVar));
+								inStockCount = Integer.parseInt(queueResultSet
+										.getValue("count", loopVar));
+								
+								//Start 26/10/2010 MJGP
+								System.out.println("Reserving --> gameDescID: " + String.valueOf(gameDescID) +" (queueID: " + String.valueOf(queueID) + 
+												   " priority: " + String.valueOf(priority) + " customerID: " + String.valueOf(customerID) + 
+												   " inStockCount: " + String.valueOf(inStockCount) + " numberNeeded: " + String.valueOf(numberNeeded) + 
+												   " actualNumberNeeded: " + String.valueOf(actualNumberNeeded) + ")");
+								//End 26/10/2010 MJGP
+							} catch (NumberFormatException e) {
+								ExceptionHandler
+										.handleException(e,
+												"ReservedGameList.createReserveList(): Decode Failed");
+							}
+
+							/**
+							 * ** Does this person already have this game
+							 * reserved? ***
+							 */
+
+							if (!AllotedGame.customerHasGameReserved(
+									allotedGameList, customerID, gameDescID)) {
+								/**
+								 * ** Are all of the copies of this game already
+								 * reserved? ***
+								 */
+								int reserveCount = AllotedGame
+										.getNumberOfGamesInTheAllotedList(
+												allotedGameList, gameDescID);
+								System.out.println("reserveCount: " + String.valueOf(reserveCount) );
+								if (reserveCount < inStockCount) {
+									reserveGame = true;
+								}else{
+									continue;
+								}
+
+								if (reserveGame == true) {
+									/** ** Reserve the game to this customer **** */
+									
+																	
+									// Check for reserve a game. If customer has got a game and 
+									if(hasReserved && !gotReserved && (AllotedGame.getNumberOfGamesAllotedToTheCustomer(allotedGameList, customerID) >= actualNumberNeeded-1)){
+										gotGame = true;
+										//Start 26/10/2010 MJGP
+										System.out.println(" gotGame:" + String.valueOf(gotGame) + " customerID: " + String.valueOf(customerID) +
+														   " gameDescID: " + String.valueOf(gameDescID));
+										//End 26/10/2010 MJGP
+										break;
+									} 
+																		
+									if(AllotedGame.getNumberOfGamesAllotedToTheCustomer(allotedGameList, customerID) < actualNumberNeeded ){
+										gotGame = true;
+										allotedGame = new AllotedGame();
+										allotedGame.setGameId(gameDescID);
+										allotedGame.setCustomerId(customerID);
+										allotedGame.setQueueId(queueID);
+										allotedGame.setPriority(priority);
+										allotedGame.setTotalNeeded(actualNumberNeeded);
+										allotedGame.setPremiumMember(isPremiumMember(customerID));
+										allotedGame.setServiceLevel(currNeedLevel);
+										allotedGameList.add(allotedGame);
+										
+										//Start 26/10/2010 MJGP
+										System.out.println(" gotGame:" + String.valueOf(gotGame) + " customerID: " + String.valueOf(customerID) +
+														   " gameDescID: " + String.valueOf(gameDescID));
+										//End 26/10/2010 MJGP
+										
+										System.out.println("Priority "+priority+" Magic "+magicPriority);
+										if (priority > magicPriority){
+											eligibleForSwappingMap.put(""+customerID+":"+currNeedLevel,new CustomerNeeds(actualNumberNeeded,numberNeeded-(AllotedGame.getNumberOfGamesAllotedToTheCustomer(allotedGameList, customerID))));
+										}
+									}
+
+										
+									// Hop out of this customer's loop, we have
+									// found a game
+									break;
+								}
+							}
+						} // in stock queue loop
+
+						if (gotGame == false) {
+							eligibleForSwappingMap.put(""+customerID+":"+currNeedLevel,new CustomerNeeds(actualNumberNeeded,numberNeeded-(AllotedGame.getNumberOfGamesAllotedToTheCustomer(allotedGameList, customerID))));
+						}
+
+					} // customer list loop
+				} // waitTimeIter.hasNext()
+				// After each wait time group clear the "yield" flags
+			}
+		}
+
+		// [ Start Tweaking
+
+		System.out.println("============= Reserved List Size Before Tweaking ============"+allotedGameList.size());
+		
+		Set eligibleForSwappingSet = eligibleForSwappingMap.keySet();
+		Iterator eligibleForSwappingIterator = eligibleForSwappingSet.iterator();
+		Queue receipientCustomerQueue;
+		Queue donorCustomerQueue;
+		ArrayList recipientPendingQueueList;
+		ArrayList donorPendingQueueList;
+		
+		System.out.println("============= Tweaking Begins ============");
+		System.out.println("============= Eligible For Swapping Size============"+eligibleForSwappingSet.size());
+		
+		//Start 26/10/2010 MJGP
+		System.out.println(" eligibleForSwappingMap: " + eligibleForSwappingMap.toString());
+		System.out.println(" eligibleForSwappingSet: " + eligibleForSwappingSet.toString());
+		CustomerNeeds customerNeed;
+		while (eligibleForSwappingIterator.hasNext()){
+			String customerIdServiceLevel = (String)eligibleForSwappingIterator.next();
+			StringTokenizer customerIdServiceLevelTokenizer = new StringTokenizer(customerIdServiceLevel,":");
+			
+			int	receipientCustomerId = Integer.parseInt(customerIdServiceLevelTokenizer.nextToken());
+			int serviceLevel = Integer.parseInt(customerIdServiceLevelTokenizer.nextToken());
+			customerNeed = (CustomerNeeds)eligibleForSwappingMap.get(customerIdServiceLevel);
+			
+			
+			AllotedGame tempAllotedGame;
+			AllotedGame donorAllotedGame;
+			Queue queue = new Queue();
+			queue.setCustomer(receipientCustomerId);
+			// it is ordered by queue priority, most wanted to least wanted.
+			recipientPendingQueueList = queue.selectAllPendingQueueForCustomerAsArrayList();
+
+			// Search for a game from others within the magic priority.
+			checkForReceipient:
+			for (int i = 0; i < recipientPendingQueueList.size(); i++) {
+				receipientCustomerQueue = (Queue)recipientPendingQueueList.get(i);
+				if (receipientCustomerQueue.getPriority() <= magicPriority) {
+					// search for customer B who can give his game which is within
+					// magic priority
+					
+					for (int j = 0; j < allotedGameList.size(); j++) {
+						tempAllotedGame = (AllotedGame)allotedGameList.get(j);
+						// be sure this is not a reserved game
+						if (!tempAllotedGame.isReserved() && !tempAllotedGame.isPremiumMember() && receipientCustomerId != tempAllotedGame.getCustomerId()) {
+							// If customer B has a game within customer A's top
+							// priority and receipient should not be same as donor
+							if (tempAllotedGame.getGameId() == receipientCustomerQueue
+									.getDescription() && !AllotedGame.customerHasGameReserved(allotedGameList, receipientCustomerId, tempAllotedGame.getGameId())) {
+								// Check whether customer B also has another
+								// game within his top priority
+								int donorCustomerId = tempAllotedGame.getCustomerId();
+								System.out.println("============= Got a donor for receipient ===="+donorCustomerId);
+							
+								donorAllotedGame = tempAllotedGame;
+								
+								boolean donorAlsoGetsAGame = false;
+								queue = new Queue();
+								queue.setCustomer(donorCustomerId);
+								// it is ordered by queue priority, most wanted to least wanted.
+								donorPendingQueueList = queue.selectAllPendingQueueForCustomerAsArrayList();
+								
+								List instockQueue = DBJoin.selectInStockGamesFromCustomerQueue(
+										donorCustomerId, new Integer(magicPriority));
+								SQLResultSet queueResultSet = new SQLResultSet(instockQueue);
+								
+								// check whether there is a game within magic priority for game donor
+								
+								AllotedGame receipientAllotedGame = AllotedGame.getAllotedGameForCustomerAndServiceLevel(allotedGameList, receipientCustomerId, serviceLevel);						
+								for (int k = 0; k < donorPendingQueueList.size(); k++) {
+									donorCustomerQueue = (Queue)donorPendingQueueList.get(k);
+									if(donorCustomerQueue.getPriority() <= magicPriority){
+										for (int loopVar = 0; loopVar < instockQueue.size(); loopVar++) {
+												queueID = Integer.parseInt(queueResultSet
+														.getValue("queue_id", loopVar));
+												priority = Integer.parseInt(queueResultSet
+														.getValue("queue_pri", loopVar));
+												gameDescID = Integer.parseInt(queueResultSet
+														.getValue("gd_id", loopVar));
+												inStockCount = Integer.parseInt(queueResultSet
+														.getValue("count", loopVar));
+
+/**
+												 * ** Are all of the copies of this game already
+												 * reserved? ***
+												 */
+												int reserveCount = AllotedGame
+														.getNumberOfGamesInTheAllotedList(
+																allotedGameList, gameDescID);
+												if (reserveCount >= inStockCount) {
+													continue;
+												}
+												// If donor gets a game within his magic priority
+												if(gameDescID == donorCustomerQueue.getDescription() && !AllotedGame.customerHasGameReserved(allotedGameList, donorCustomerId, gameDescID) && (AllotedGame.getNumberOfGamesInTheAllotedList(allotedGameList, gameDescID) < inStockCount)){
+													// Got a game for donor also. So give donor's game to recipient and this game to donor
+													donorAlsoGetsAGame = true;
+													System.out.println(" =========== Donor also gets a game ======="+gameDescID);
+													// Check whether recipient had got any game or not
+													
+													if(receipientAllotedGame != null){
+														// already has a game
+														// update receipients's game with donor's game
+														receipientAllotedGame.setGameId(receipientCustomerQueue.getDescription());
+														receipientAllotedGame.setQueueId(receipientCustomerQueue.getID());
+														receipientAllotedGame.setPriority(receipientCustomerQueue.getPriority());
+														
+														System.out.println(" =========== receipient had a game,But priority > Magic number =======");
+													}else{
+														// not had any game. Allot donor's game to receipient.
+														if(customerNeed.getRemainingNeeded() > 0 && !AllotedGame.customerHasGameReserved(allotedGameList, customerID, gameDescID)){
+															receipientAllotedGame = new AllotedGame();
+															receipientAllotedGame.setGameId(receipientCustomerQueue.getDescription());
+															receipientAllotedGame.setCustomerId(receipientCustomerId);
+															receipientAllotedGame.setQueueId(receipientCustomerQueue.getID());
+															receipientAllotedGame.setPriority(receipientCustomerQueue.getPriority());
+															receipientAllotedGame.setTotalNeeded(customerNeed.getTotalNeeded());
+															receipientAllotedGame.setPremiumMember(isPremiumMember(receipientCustomerId));
+															receipientAllotedGame.setServiceLevel(serviceLevel);
+															System.out.println(" =========== receipient didnt had a game =======");
+															
+															allotedGameList.add(receipientAllotedGame);
+														}else{
+															break checkForReceipient;
+														}
+													
+													}
+													
+//													 update donor's game
+													tempAllotedGame.setQueueId(donorCustomerQueue.getID());
+													tempAllotedGame.setGameId(donorCustomerQueue.getDescription());
+													tempAllotedGame.setPriority(donorCustomerQueue.getPriority());
+													
+													break checkForReceipient;
+												}
+											}
+									
+										}
+								
+								}
+								// If donor doesnt gets a game
+								if(donorAlsoGetsAGame == false){
+									// check whether donor is a Q10 member
+									// if Q10 member then sacrifice your game to receipient
+									if(isQ10Member(donorCustomerId) && !AllotedGame.customerHasGameReserved(allotedGameList, receipientCustomerId, receipientCustomerQueue.getDescription())){
+										if(receipientAllotedGame == null){
+//if(AllotedGame.getNumberOfGamesInTheAllotedList(allotedGameList,receipientCustomerQueue.getDescription()) < inStockCount)
+											tempAllotedGame.setGameId(receipientCustomerQueue.getDescription());
+											tempAllotedGame.setQueueId(receipientCustomerQueue.getID());
+											tempAllotedGame.setPriority(receipientCustomerQueue.getPriority());
+											tempAllotedGame.setCustomerId(receipientCustomerId);
+											tempAllotedGame.setTotalNeeded(customerNeed.getTotalNeeded());
+										}else{
+											receipientAllotedGame.setGameId(receipientCustomerQueue.getDescription());
+											receipientAllotedGame.setQueueId(receipientCustomerQueue.getID());
+											receipientAllotedGame.setPriority(receipientCustomerQueue.getPriority());											
+										}
+										
+									}		
+								}
+							}
+
+						}
+					}
+				}
+			}
+		}
+		System.out.println("------------------------- Tweaking ended (Sandeep)-----------------------");
+		
+		// INSERT THE tweaked reserve list into database
+		
+		reservedListProperties.setProperty(TOTAL_NUMBER_OF_MEMBERS_NEEDING_FULFILLMENT_KEY, totalMembersNeedingFulfillment.toString());
+		try {
+			reservedListProperties.store(new FileOutputStream(RESERVE_LIST_PROPERTIES_FILE), "list of customerId's needing fulfillment ");
+		} catch (FileNotFoundException e1) {
+			System.out.println("Could not find properties file");
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			System.out.println("Could not write to properties file");
+			e1.printStackTrace();
+		}
+		
+		for(int i=0; i<allotedGameList.size(); i++){
+			AllotedGame tempAllotedGame = (AllotedGame)allotedGameList.get(i);
+			ReservedList reservedGame = new ReservedList();
+			reservedGame.setGameDescID(tempAllotedGame.getGameId());
+			reservedGame.setQueueID(tempAllotedGame.getQueueId());
+			reservedGame.setPriority(tempAllotedGame.getPriority());
+			reservedGame.setTotalNeeded(tempAllotedGame.getTotalNeeded());
+			
+			reservedGame.insert();
+		}
+		
+		// End Tweaking ]
+
+		// deal with the customers who are flagged
+		if ((flaggedCustomers.isEmpty() == false) && (interactive == true)) {
+
+			System.out
+					.println("\n\nDo you want to send out the report of everyone who was flagged? This report should only be sent once a day, normally after the afternoon run. If the games for the day have been checked in, and you want to send the report, please type \"y\". Otherwise please type \"n\": (y/n) ");
+			CommandLine theCL = new CommandLine();
+			theCL.readString();
+			if (theCL.getString().toLowerCase().equals("y")) {
+				File outputFile = null;
+				ExcelCSVPrinter csv = null;
+
+				try {
+					outputFile = new File("flaggedCustomers.csv");
+					csv = new ExcelCSVPrinter(new FileWriter(outputFile));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				csv.print("customerID");
+				csv.print("first name");
+				csv.print("last name");
+				csv.print("game ID");
+				csv.print("game name");
+				csv.print("console name");
+				csv.print("queue priority");
+				csv.print("release date");
+				csv.println("");
+
+				Iterator custIter = flaggedCustomers.iterator();
+				while (custIter.hasNext()) {
+					Integer custID = (Integer) custIter.next();
+					System.out.println("Customer: " + custID.toString()
+							+ " was skipped.");
+					List pendingGames = DBJoin
+							.selectPendingQueueGameCustomerConsole(custID);
+					SQLResultSet neededGames = new SQLResultSet(pendingGames);
+					int pendingGamesSize = pendingGames.size();
+					for (int loop = 0; loop < pendingGamesSize; loop++) {
+						csv.print(neededGames.getValue("customerID", loop));
+						csv.print(neededGames.getValue("firstName", loop));
+						csv.print(neededGames.getValue("lastName", loop));
+						csv.print(neededGames.getValue("gameDescID", loop));
+						csv.print(neededGames.getValue("gameName", loop));
+						csv.print(neededGames.getValue("consoleName", loop));
+						csv.print(neededGames.getValue("queuePriority", loop));
+						csv.print(neededGames.getValue("releaseDate", loop));
+						csv.println("");
+					}
+				}
+
+				String[] mailRecipients = MAIL_RECIPIENTS; 
+				Mail.send(mailRecipients, MAIL_FROM,
+						"Games Needed for "
+								+ new TimeAndDate().toddMMMyyyyString(),
+						"see attached", outputFile);
+				System.out.println("Mail sent sucessfully");
+			}
+		}
+			
+	 	return true; 
+	}
+		
+		
+	private boolean isQ10Member(int customerId) {
+		Q10Members q10Member = new Q10Members();
+		if(q10Member.selectFromCustomerId(customerId)){
+			return true;
+		}		
+		return false;
+	}
+
+	private boolean isPremiumMember(int customerId){
+		PremiumMembers premiumMember = new PremiumMembers();
+		if(premiumMember.selectFromCustomerId(customerId)){
+			return true;
+		}
+		return false;
+	}
+	
+	public static void printUsage() {
+		System.out
+				.println("\nUSAGE: java govojo.inventory.VideoGameInventory [checkout|checkin|add|insertleased]\n"
+						+ "EXAMPLE: java govojo.inventory.VideoGameInventory checkout");
+	}
+
+	public static void main(String args[]) {
+		ReservedGameList newList = new ReservedGameList();
+		newList.setInteractive(true);
+		newList.createReserveList();
+	}
+}

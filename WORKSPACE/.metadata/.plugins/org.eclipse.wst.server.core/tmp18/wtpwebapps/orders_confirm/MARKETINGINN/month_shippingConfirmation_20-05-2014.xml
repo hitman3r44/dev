@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>214036</po_number>
+        <first_name>Rocco</first_name>
+        <last_name>Raffaele</last_name>
+        <client_street>34 Willowhurst Cres</client_street>
+        <client_city>Scarborough</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M1R3R6</client_postal_code>
+        <client_order_id>6835506</client_order_id>
+        <client_other_id/>
+        <client_number> </client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>FUJS8200</ls_product_id>
+        <product_title>Finepix S8200</product_title>
+        <cost>284.84</cost>
+        <shipping_cost>15.77</shipping_cost>
+        <tracking_number>7310723109407473</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>213728</po_number>
+        <first_name>Gurmeet</first_name>
+        <last_name>Aasli</last_name>
+        <client_street>9 Stoneylake Ave</client_street>
+        <client_city>Brampton</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6V4P9</client_postal_code>
+        <client_order_id>6827028</client_order_id>
+        <client_other_id/>
+        <client_number> </client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>COBCV89</ls_product_id>
+        <product_title>Jammerz Talk Stereo Earphone with Microphone</product_title>
+        <cost>6.4</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723286923469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+</shipped_orders>

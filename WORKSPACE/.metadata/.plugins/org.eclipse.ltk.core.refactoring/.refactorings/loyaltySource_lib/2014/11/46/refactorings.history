@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_lib/src/com/loyauty/cronjob/orders/GameaccessSendingEmail.java&apos; to &apos;GameaccessSendingEmailTesting.java&apos;" description="Rename resource &apos;GameaccessSendingEmail.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/loyauty/cronjob/orders/GameaccessSendingEmail.java" name="GameaccessSendingEmailTesting.java" stamp="1415902213726" updateReferences="true"/>
+</session>

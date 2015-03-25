@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "http://www.tuckey.org/res/dtds/urlrewrite3.0.dtd">
+
+<urlrewrite>
+<rule>
+    <name>Global redirect</name>    
+    <condition name="host" operator="equal">^www\.loyaltysource\.com</condition>                
+    <from>^/(.*)</from>
+    <to type="permanent-redirect">http://loyaltysource.com/$1</to>
+</rule>
+
+<!-- ********************BEGIN INDEX******************** -->
+
+<rule>
+   	<from>^/signIn\.htm$</from>
+  	<to type="forward">signInPop.do</to>
+</rule>
+
+<rule>
+   	<from>^/homePage\.htm$</from>
+  	<to type="forward">homePage.do</to>
+</rule>
+
+<rule>
+   	<from>^/ourProducts\.htm$</from>
+  	<to type="forward">ourProducts.do</to>
+</rule>
+
+<rule>
+   	<from>^/contactUs\.htm$</from>
+  	<to type="forward">contactUs.do</to>
+</rule>
+
+<rule>
+   	<from>^/services\.htm$</from>
+  	<to type="forward">services.do</to>
+</rule>
+
+<rule>
+   	<from>^/ourBrands\.htm$</from>
+  	<to type="forward">ourBrand.do</to>
+</rule>
+
+<rule>
+   	<from>^/updatesXML\.htm$</from>
+  	<to type="forward">updatesXML.do</to>
+</rule>
+
+
+<!-- ////////////// ORDERS CONFIRMATION ////////////////// -->
+<rule>
+   	<from>^/ordersConfirmation-0\.htm$</from>
+  	<to type="forward">ordersConfirmation.do?op=0</to>
+</rule>
+
+<rule>
+   	<from>^/ordersConfirmation-1\.htm$</from>
+  	<to type="forward">ordersConfirmation.do?op=1</to>
+</rule>
+
+
+<rule>
+   	<from>^/ordersConfirmation-2\.htm$</from>
+  	<to type="forward">ordersConfirmation.do?op=2</to>
+</rule>
+<!-- ////////////// ORDERS CONFIRMATION ////////////////// -->
+
+<!-- ////////////// ERRORS /////////////////////////////// -->
+<rule>
+   	<from>^/request_error\.htm$</from>
+  	<to type="forward">error.do</to>
+</rule>
+<rule>
+	<from>^/request_error_\.htm$</from>
+  	<to type="forward">error.do</to>
+</rule>
+<rule>
+	<from>^/request_error_400\.htm$</from>
+  	<to type="forward">error.do?err=400</to>
+</rule> 
+ <rule>
+	<from>^/request_error_401\.htm$</from>
+  	<to type="forward">error.do?err=401</to>
+</rule>  
+ <rule>
+	<from>^/request_error_402\.htm$</from>
+  	<to type="forward">error.do?err=402</to>
+</rule>   
+ <rule>
+	<from>^/request_error_403\.htm$</from>
+  	<to type="forward">error.do?err=403</to>
+</rule>    
+ <rule>
+	<from>^/request_error_404\.htm$</from>
+  	<to type="forward">error.do?err=404</to>
+</rule>     
+ <rule>
+	<from>^/request_error_405\.htm$</from>
+  	<to type="forward">error.do?err=405</to>
+</rule>     
+ <rule>
+	<from>^/request_error_406\.htm$</from>
+  	<to type="forward">error.do?err=406</to>
+</rule>     
+ <rule>
+	<from>^/request_error_407\.htm$</from>
+  	<to type="forward">error.do?err=407</to>
+</rule>      
+ <rule>
+	<from>^/request_error_408\.htm$</from>
+  	<to type="forward">error.do?err=408</to>
+</rule>      
+ <rule>
+	<from>^/request_error_409\.htm$</from>
+  	<to type="forward">error.do?err=409</to>
+</rule>       
+ <rule>
+	<from>^/request_error_410\.htm$</from>
+  	<to type="forward">error.do?err=410</to>
+</rule>        
+ <rule>
+	<from>^/request_error_411\.htm$</from>
+  	<to type="forward">error.do?err=411</to>
+</rule>         
+ <rule>
+	<from>^/request_error_412\.htm$</from>
+  	<to type="forward">error.do?err=412</to>
+</rule>          
+ <rule>
+	<from>^/request_error_413\.htm$</from>
+  	<to type="forward">error.do?err=413</to>
+</rule>           
+ <rule>
+	<from>^/request_error_414\.htm$</from>
+  	<to type="forward">error.do?err=414</to>
+</rule>           
+ <rule>
+	<from>^/request_error_415\.htm$</from>
+  	<to type="forward">error.do?err=415</to>
+</rule>            
+ <rule>
+	<from>^/request_error_416\.htm$</from>
+  	<to type="forward">error.do?err=416</to>
+</rule>             
+ <rule>
+	<from>^/request_error_417\.htm$</from>
+  	<to type="forward">error.do?err=417</to>
+</rule>              
+ <rule>
+	<from>^/request_error_500\.htm$</from>
+  	<to type="forward">error.do?err=500</to>
+</rule>               
+ <rule>
+	<from>^/request_error_501\.htm$</from>
+  	<to type="forward">error.do?err=501</to>
+</rule>                
+ <rule>
+	<from>^/request_error_502\.htm$</from>
+  	<to type="forward">error.do?err=502</to>
+</rule>                 
+ <rule>
+	<from>^/request_error_503\.htm$</from>
+  	<to type="forward">error.do?err=503</to>
+</rule>                  
+ <rule>
+	<from>^/request_error_504\.htm$</from>
+  	<to type="forward">error.do?err=504</to>
+</rule>                   
+ <rule>
+	<from>^/request_error_505\.htm$</from>
+  	<to type="forward">error.do?err=505</to>
+</rule>                   
+ <rule>
+	<from>^/request_error_511\.htm$</from>
+  	<to type="forward">error.do?err=511</to>
+</rule>                   
+ <rule>
+	<from>^/request_error_570\.htm$</from>
+  	<to type="forward">error.do?err=570</to>
+</rule> 
+
+<!-- ////////////// ERRORS /////////////////////////////// -->
+
+
+
+<rule>
+   	<from>^/(.*):(.*)-downloadXML\.htm$</from>
+  	<to>/accessXML.do?login=$1&amp;password=$2</to>
+</rule>
+
+<rule>
+   	<from>^/(.*):(.*)-downloadXML-([0-9]+)-([0-9]+)-([0-9]+)\.htm$</from>
+  	<to>/accessXMLWithDates.do?login=$1&amp;password=$2&amp;m=$3&amp;d=$4&amp;y=$5</to>
+</rule>
+
+<rule>
+   	<from>^/updatesXMLFr\.htm$</from>
+  	<to type="forward">updatesXMLFr.do</to>
+</rule>
+
+<rule>
+   	<from>^/(.*):(.*)-downloadXMLFr\.htm$</from>
+  	<to>/accessXMLFr.do?login=$1&amp;password=$2</to>
+</rule>
+
+<rule>
+   	<from>^/(.*):(.*)-downloadXMLFr-([0-9]+)-([0-9]+)-([0-9]+)\.htm$</from>
+  	<to>/accessXMLWithDatesFr.do?login=$1&amp;password=$2&amp;d=$3&amp;m=$4&amp;y=$5</to>
+</rule>
+
+<rule>
+   	<from>^/Loyalty_Program_Sourcing\.htm$</from>
+  	<to type="forward">Loyalty_Program_Sourcing.do</to>
+</rule>
+
+<rule>
+   	<from>^/Customer_Loyalty_Program\.htm$</from>
+  	<to type="forward">Customer_Loyalty_Program.do</to>
+</rule>
+
+<rule>
+   	<from>^/Promotional_Gifts\.htm$</from>
+  	<to type="forward">Promotional_Gifts.do</to>
+</rule>
+
+<rule>
+   	<from>^/Corporate_Gift_Cards\.htm$</from>
+  	<to type="forward">Corporate_Gift_Cards.do</to>
+</rule>
+
+<rule>
+   	<from>^/Corporate_Gifts\.htm$</from>
+  	<to type="forward">Corporate_Gifts.do</to>
+</rule>
+
+<rule>
+   	<from>^/Customer_Loyalty_Incentives\.htm$</from>
+  	<to type="forward">Customer_Loyalty_Incentives.do</to>
+</rule>
+
+<rule>
+   	<from>^/Customer_Loyalty_Program_Ideas\.htm$</from>
+  	<to type="forward">Customer_Loyalty_Program_Ideas.do</to>
+</rule>
+
+<rule>
+   	<from>^/Employee_Incentive_Program\.htm$</from>
+  	<to type="forward">Employee_Incentive_Program.do</to>
+</rule>
+
+<rule>
+   	<from>^/Customer_Incentive_Program\.htm$</from>
+  	<to type="forward">Customer_Incentive_Program.do</to>
+</rule>
+
+<rule>
+   	<from>^/Apparel\.htm$</from>
+  	<to type="forward">searchResults.do?query=1&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Children\.htm$</from>
+  	<to type="forward">searchResults.do?query=9&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Electronics\.htm$</from>
+  	<to type="forward">searchResults.do?query=2&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Gaming\.htm$</from>
+  	<to type="forward">searchResults.do?query=3&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/GiftCards\.htm$</from>
+  	<to type="forward">searchResults.do?query=8&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Gift Cards\.htm$</from>
+  	<to type="forward">searchResults.do?query=8&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Homeworks\.htm$</from>
+  	<to type="forward">searchResults.do?query=4&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Kitchen\.htm$</from>
+  	<to type="forward">searchResults.do?query=5&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Outdoors\.htm$</from>
+  	<to type="forward">searchResults.do?query=6&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Sports\.htm$</from>
+  	<to type="forward">searchResults.do?query=7&amp;searchType=7</to>
+</rule>
+
+<rule>
+   	<from>^/Apparel\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Apparel\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Children\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Children\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Electronics\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Electronics\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/GiftCards\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Gift Cards\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/GiftCards\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Homeworks\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Homeworks\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Kitchen\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Kitchen\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Outdoors\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Outdoors\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Sports\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Sports\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/Gaming\-(.*)\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$3&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/Gaming\-(.*)-([0-9]+)\.htm$</from>
+  	<to>/searchResults.do?query=$2&amp;searchType=3</to>
+</rule>
+
+<rule>
+   	<from>^/(.*)\-(.*)\-([0-9]+)\.htm$</from>
+  	<to type="forward">/product.do?productId=$3</to> 
+</rule>
+
+<rule>
+   	<from>^/(.*)\-(.*)\-(.*)\-([0-9]+)\.htm$</from>
+  	<to type="forward">/searchResults.do?query=$4&amp;searchType=5</to>
+</rule>
+
+<rule>
+   	<from>^/(.*)\-([0-9]+)\.htm$</from>
+  	<to type="forward">/searchResults.do?query=$2&amp;searchType=4</to>
+</rule>
+
+<rule>
+   	<from>^/([a-zA-Z0-9]*)\.htm$</from>
+  	<to type="forward">$1.do</to>
+</rule>
+
+
+
+<!-- ********************END MULTIMEDIA******************** -->
+
+<!-- ********************BEGIIN SEARCH******************** -->
+
+<!-- ********************END SEARCH******************** -->
+  
+</urlrewrite>
+

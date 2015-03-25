@@ -1,0 +1,25 @@
+package com.loyauty.service.core.dto;
+
+import java.util.Date;
+
+import lombok.Data;
+import lombok.ToString;
+
+@Data @ToString(callSuper=true)
+public class ClientCategoryDTO  extends BasicDTO{
+	private static final long serialVersionUID = 8105045098151973928L;
+
+	private Long clientCategoryId;
+	private String clientCategoryName;
+	private Long clientCategoryUserId;
+	private String clientCategoryUserLogin;
+	private Long countTempUsed;
+	private Date creationDate;
+	private Long managerId;
+	private String managerRealName;
+	private Integer index;
+	private Double brandCoefficient;
+	private Double profitCoefficient;
+	private Double unitSoldCoefficient;
+
+}

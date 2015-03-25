@@ -1,0 +1,82 @@
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: status display disabled
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=dwr-invoker, urlPattern=/dwr/*
+2013-01-24 15:59:07 org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+2013-01-24 15:59:08 org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+2013-01-24 15:59:08 org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+2013-01-24 15:59:09 org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+2013-01-24 15:59:09 org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=DrawImageServlet, urlPattern=/jit
+2013-01-24 15:59:09 org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+2013-01-24 15:59:09 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+2013-01-24 15:59:09 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+2013-01-24 16:00:52 org.apache.catalina.core.ApplicationContext log
+INFO: action: Processing a GET for /store
+2013-01-24 16:00:52 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Looking for Action instance for class actions.ShowStorePage
+2013-01-24 16:00:52 org.apache.catalina.core.ApplicationContext log
+INFO: action:   Double checking for Action instance already there
+2013-01-24 16:00:52 org.apache.catalina.core.ApplicationContext log
+INFO: action:   Creating new Action instance
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action: Processing a POST for /registrationStep1Gold
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Looking for ActionForm bean under attribute 'registration'
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Recycling existing ActionForm bean instance of class 'formbeans.Registration'
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Populating bean properties from this request
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Validating input form properties
+2013-01-24 16:00:58 org.apache.catalina.core.ApplicationContext log
+INFO: action:   Validation error(s), redirecting to: /displaySignupStep1g.jsp
+2013-01-24 16:01:03 org.apache.catalina.core.ApplicationContext log
+INFO: action: Processing a GET for /store
+2013-01-24 16:01:03 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Looking for Action instance for class actions.ShowStorePage
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action: Processing a GET for /showPreview
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Looking for ActionForm bean under attribute 'gameRequest'
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Creating new ActionForm instance of class 'formbeans.GameRequestBean'
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Storing instance under attribute 'gameRequest' in scope 'session'
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Populating bean properties from this request
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Validating input form properties
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:   No errors detected, accepting input
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:  Looking for Action instance for class actions.GameRequest
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:   Double checking for Action instance already there
+2013-01-24 16:01:05 org.apache.catalina.core.ApplicationContext log
+INFO: action:   Creating new Action instance
+2013-01-24 16:01:22 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+2013-01-24 16:01:22 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+2013-01-24 16:01:22 org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+2013-01-24 16:01:22 org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+2013-01-24 16:01:22 org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet

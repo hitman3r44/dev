@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>84957321027549</po_number>
+        <first_name>Tina Johnston</first_name>
+        <last_name>Johnston</last_name>
+        <client_street>100 Endeavour Dr.</client_street>
+        <client_city>Cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N3C4C1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>WILWTD2834</ls_product_id>
+        <product_title>Bruiser Alloy Baseball Bat</product_title>
+        <cost>93.75</cost>
+        <shipping_cost>8.09</shipping_cost>
+        <tracking_number>7310723943996454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321029040</po_number>
+        <first_name>Matthew </first_name>
+        <last_name>Wigle</last_name>
+        <client_street>230 Lena Cres. </client_street>
+        <client_city>Cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N1R8R2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>DBDSSL20SB</ls_product_id>
+        <product_title>20V Lithium Cordless Drill/Driver with SmartSelect</product_title>
+        <cost>103.28</cost>
+        <shipping_cost>8.87</shipping_cost>
+        <tracking_number>7310723960924454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321029274</po_number>
+        <first_name>Mathew </first_name>
+        <last_name>Rodrigue</last_name>
+        <client_street>87 alison av</client_street>
+        <client_city>cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N1R1N3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>DEL2058</ls_product_id>
+        <product_title>.7 CU Ft Black Convection Oven with Manual Controls and Rotisserie</product_title>
+        <cost>91.92</cost>
+        <shipping_cost>18.50</shipping_cost>
+        <tracking_number>7310723946848453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321030048</po_number>
+        <first_name>Joe</first_name>
+        <last_name>Ferreira</last_name>
+        <client_street>112 Childerhose Crescent</client_street>
+        <client_city>Brantford</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N3P1Z6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>GPXDH300B</ls_product_id>
+        <product_title>1080P Upconverting DVD Player with HDMI</product_title>
+        <cost>37.0</cost>
+        <shipping_cost>9.92</shipping_cost>
+        <tracking_number>7310723818486462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321029794</po_number>
+        <first_name>Kevin </first_name>
+        <last_name>Bento</last_name>
+        <client_street>57 Fitzgerald Drive</client_street>
+        <client_city>Cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N1T0B2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>SEA2TBHD</ls_product_id>
+        <product_title>Seagate 2TB External Hard Drive</product_title>
+        <cost>135.71</cost>
+        <shipping_cost>10.90</shipping_cost>
+        <tracking_number>7310723604559462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321030048</po_number>
+        <first_name>Joe</first_name>
+        <last_name>Ferreira</last_name>
+        <client_street>112 Childerhose Crescent</client_street>
+        <client_city>Brantford</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N3P1Z6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>C2G41313</ls_product_id>
+        <product_title>Wireless Headphones 900 MHZ</product_title>
+        <cost>58.39</cost>
+        <shipping_cost>9.22</shipping_cost>
+        <tracking_number>7310723604924468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321030116</po_number>
+        <first_name>Trevor </first_name>
+        <last_name>Sabatine</last_name>
+        <client_street>8 Gerrard ave</client_street>
+        <client_city>Cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N3C2R6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>HIPSP456</ls_product_id>
+        <product_title>Universal iPod and MP3 Player Docking</product_title>
+        <cost>20.81</cost>
+        <shipping_cost>8.09</shipping_cost>
+        <tracking_number>7310723610350466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>84957321030116</po_number>
+        <first_name>Trevor</first_name>
+        <last_name>Sabatine</last_name>
+        <client_street>8 Gerrard ave</client_street>
+        <client_city>Cambridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N3C2R6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>BVLG520XL</ls_product_id>
+        <product_title>Panini Duo</product_title>
+        <cost>63.18</cost>
+        <shipping_cost>12.79</shipping_cost>
+        <tracking_number>7310723610787460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+</shipped_orders>

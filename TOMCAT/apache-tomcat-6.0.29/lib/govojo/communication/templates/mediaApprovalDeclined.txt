@@ -1,0 +1,9 @@
+Dear #FIRSTNAME#,
+
+You have uploaded content that was declined by our review team. In order to better understand what acceptable content is, please visit the link bellow:
+
+http://www.gameaccess.ca/displayTermsOfUse.jsp
+
+Thank you.
+
+The Game Access Team

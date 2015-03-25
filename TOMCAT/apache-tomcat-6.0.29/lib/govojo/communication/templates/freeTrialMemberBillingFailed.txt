@@ -1,0 +1,1 @@
+Billing failed for free trial Member #MEMBER_NAME#(#MEMBER_ID#) on #DATE# for amount $#AMOUNT# .

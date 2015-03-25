@@ -1,0 +1,24 @@
+Dear #FIRSTNAME#,
+
+On #TODAY#, we attempted to charge your credit card 
+for our video game rental service.  Unfortunately, your card 
+came back as declined from our merchant bank. Please make a
+a payment on this card or update your credit card information
+in the "My Account" section at the URL below.
+
+https://gameaccess.ca/account/displayAccountLanding.jsp
+
+We will attempt to bill you again in 5 days.  Until then, we must 
+temporarily suspend all video game shipments.  Once you have been
+properly billed, we will immediately restart sending games.
+
+If you need any assistance please do not hesitate to contact us.
+
+Thank you for choosing Game Access,
+
+The Game Access Team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - https://gameaccess.ca/account/displayAccountLanding.jsp
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

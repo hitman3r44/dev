@@ -1,0 +1,3140 @@
+!SESSION 2015-03-13 10:09:28.859 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+This is a continuation of log file C:\dev\WORKSPACE\.metadata\.bak_0.log
+Created Time: 2015-03-13 15:31:06.416
+
+!ENTRY org.eclipse.jdt.ui 4 2 2015-03-13 15:31:06.416
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-13 15:31:06.416
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-13 15:31:06.416
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.jdt.ui 4 0 2015-03-13 15:31:06.417
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-13 15:31:06.417
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+!SESSION 2015-03-20 17:10:25.348 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-03-20 17:10:28.256
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2015-03-20 17:10:43.731
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2015-03-20 17:12:03.727
+!MESSAGE Server Tomcat v6.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-03-20 17:27:39.903
+!MESSAGE Exception occurred during problem detection:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package com.loyauty.web.struts.action.product;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpSession;
+
+import org.jsoup.Jsoup;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import com.loyauty.enums.Language;
+import com.loyauty.enums.PriceType;
+import com.loyauty.enums.ProductStatus;
+import com.loyauty.enums.UserProductStatus;
+import com.loyauty.enums.UserType;
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.model.User;
+import com.loyauty.service.brand.BrandService;
+import com.loyauty.service.common.CommonService;
+import com.loyauty.service.core.DTOFactory;
+import com.loyauty.service.core.dto.AlterProductXMLDTO;
+import com.loyauty.service.core.dto.AlterUserProductXMLDTO;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.BoxDTO;
+import com.loyauty.service.core.dto.CategoryDTO;
+import com.loyauty.service.core.dto.ClientCategoryDTO;
+import com.loyauty.service.core.dto.CommonDTO;
+import com.loyauty.service.core.dto.ImageDTO;
+import com.loyauty.service.core.dto.OperationsDTO;
+import com.loyauty.service.core.dto.OrdersDTO;
+import com.loyauty.service.core.dto.ProductDTO;
+import com.loyauty.service.core.dto.ProductLinkDTO;
+import com.loyauty.service.core.dto.ProductModelDTO;
+import com.loyauty.service.core.dto.SpecificationDTO;
+import com.loyauty.service.core.dto.UserDTO;
+import com.loyauty.service.core.dto.UserProductPriceDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.image.ImageService;
+import com.loyauty.service.operations.OperationsService;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+import com.loyauty.util.CommonUtils;
+import com.loyauty.web.WebConstants;
+import com.loyauty.web.struts.action.LoyautyAction;
+
+public class EditSaleProduct extends LoyautyAction{
+	private static final long serialVersionUID = -5162061504759408826L;
+
+	
+
+	private ProductService productService;
+	private ImageService imageService;
+	private CommonService commonService;
+	private BrandService brandService;
+	private UserService userService;
+	private OperationsService operationsService;
+	
+	private UserSessionDTO userSession;
+	@Getter @Setter
+	private long productId;
+	@Getter @Setter
+	private long imageId;
+	@Getter @Setter
+	private long brand;
+	@Getter @Setter
+	private String brandName;
+	@Getter @Setter
+	private long category;
+	@Getter @Setter
+	private String categoryName;
+	@Getter @Setter
+	private long mainSpecification; 
+	@Getter @Setter
+	private String mainSpecificationName;
+	@Getter @Setter
+	private String manufProductID;
+	@Getter @Setter
+	private String manufProductID1;
+	@Getter @Setter
+	private String manufProductID2;
+	@Getter @Setter
+	private String manufProductID3;
+	@Getter @Setter
+	private String manufProductID4;
+	
+	@Getter @Setter
+	private Integer manufProductQuantity = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity1 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity2 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity3 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity4 = 0;
+	
+	@Getter @Setter
+	private String supplier;
+	@Getter @Setter
+	private String supplier1;
+	@Getter @Setter
+	private String supplier2;
+	@Getter @Setter
+	private String supplier3;
+	@Getter @Setter
+	private String supplier4;
+	
+	@Getter @Setter
+	private String price;
+	@Getter @Setter
+	private String price1;
+	@Getter @Setter
+	private String price2;
+	@Getter @Setter
+	private String price3;
+	@Getter @Setter
+	private String price4;	
+
+	@Getter @Setter
+	private String msrp0;
+	@Getter @Setter
+	private String msrp1;
+	@Getter @Setter
+	private String msrp2;
+	@Getter @Setter
+	private String msrp3;
+	@Getter @Setter
+	private String msrp4;
+	
+	@Getter @Setter
+	private String upc;
+	@Getter @Setter
+	private String loyaltyProductId;
+	@Getter @Setter
+	private String nameEn;
+	@Getter @Setter
+	private String nameFr;
+	@Getter @Setter
+	private String msrp;
+	@Getter @Setter
+	private String cost;
+	@Getter @Setter
+	private String large;
+	@Getter @Setter
+	private String width;
+	@Getter @Setter
+	private String high;
+	@Getter @Setter
+	private String weight;
+	@Getter @Setter
+	private Double boxLength;
+	@Getter @Setter
+	private Double boxWidth;
+	@Getter @Setter
+	private Double boxHeight;
+	/*
+	@Getter @Setter
+	private Double boxWeight;
+	*/
+	@Getter @Setter
+	private Double boxTotalWeight;
+	@Getter @Setter
+	private String largeCm;
+	@Getter @Setter
+	private String widthCm;
+	@Getter @Setter
+	private String highCm;
+	@Getter @Setter
+	private String weightKg;
+	@Getter @Setter
+	private String boxLengthCm;
+	@Getter @Setter
+	private String boxWidthCm;
+	@Getter @Setter
+	private String boxHeightCm;
+	@Getter @Setter
+	private String boxWeightKg;
+	@Getter @Setter
+	private Integer statusProductBox;
+	@Getter @Setter
+	private Boolean canadaPostSizesVerified;
+	@Getter @Setter
+	private BoxDTO boxDTO;
+	
+	@Getter @Setter
+	private String descriptionEn;
+	@Getter @Setter
+	private String descriptionFr;
+	@Getter @Setter
+	private String specificationEn;
+	@Getter @Setter
+	private String specificationFr;
+	@Getter @Setter
+	private String otherEng;
+	@Getter @Setter
+	private String otherFr;
+	
+	//uploading files
+	@Getter @Setter	
+	private File productImage; 
+	@Getter @Setter
+	private String productImageContentType;
+	@Getter @Setter
+	private String productImageFileName;
+	@Getter @Setter
+	private ImageDTO imgDTO;
+	@Getter @Setter
+	private List<CommonDTO> categoryList;
+	@Getter @Setter
+	private List<SpecificationDTO> mainSpecificationList;
+	@Getter @Setter
+	private boolean update = false;
+	@Getter @Setter
+	private ProductDTO productDTO;
+	@Getter @Setter
+	private UserProductPriceDTO userProductPriceDTO;	
+	
+	@Getter @Setter
+	private List<CommonDTO> brandList;
+	@Getter @Setter
+	private List<CommonDTO> statusList;
+
+	@Getter @Setter
+	private String linkUrl;
+	@Getter @Setter
+	private String note;
+	@Getter @Setter
+	private String statusName;	
+	@Getter @Setter
+	private Integer statusId;
+	@Getter @Setter
+	private List<UserDTO> activeClientsList;
+	@Getter @Setter
+	private int activeClientsSize;
+	@Getter @Setter
+	private int activeClientsTFSize;	
+	@Getter @Setter
+	private String loyaltyProductIdSub;
+	
+	@Getter @Setter
+	private String periodTime;
+	@Getter @Setter
+	private String warrantyQuantity;
+	@Getter @Setter
+	private Boolean defectFree;
+	
+	@Getter @Setter
+	private List<UserSessionDTO> userNameList;
+	@Getter @Setter
+	private String[] userPrice;
+	@Getter @Setter
+	private String[] percentageProfit;
+	@Getter @Setter
+	private String[] percentageDiscount;
+	@Getter @Setter
+	private String[] isExcluded;
+	@Getter @Setter
+	private String[] excluded;
+	
+	@Getter @Setter
+	private Double[] currencyRate;
+	@Getter @Setter
+	private String[] currencySymbol;
+	@Getter @Setter
+	private String[] currencyPrice;	//CURRENCY_LS_PRICE
+	@Getter @Setter
+	private List<ClientCategoryDTO> listClientCategory;
+	@Getter @Setter
+	private OperationsDTO operationDTO;
+	@Getter @Setter
+	private Integer thisProductForSale;
+	@Getter @Setter
+	private Boolean salesByDate;
+	@Getter @Setter
+	private Boolean saleForAllCleint;
+	@Getter @Setter
+	private String strUsersId;
+	
+	@Getter @Setter
+	private Boolean futurSUB;
+	@Getter @Setter
+	private Date startDate=new Date();
+	@Getter @Setter
+	private Date endDate=new Date();
+	
+	@Getter @Setter
+	private String strStartDate="";
+	@Getter @Setter
+	private String strEndDate="";
+	
+	@Getter @Setter
+	private ProductDTO saleProdctDTO;
+	
+	@Getter @Setter
+	private Long saveSaleSignal;
+	
+	
+	@Getter @Setter
+	private Long salesByDateCheckbox;
+	
+	
+	public  EditSaleProduct() throws ServiceLocatorException {
+		super();	
+		productService = getServiceLocator().getProductService();
+		commonService = getServiceLocator().getCommonService();
+		imageService = getServiceLocator().getImageService();
+		brandService = getServiceLocator().getBrandService();
+		userService = getServiceLocator().getUserService();
+		operationsService = getServiceLocator().getOperationsService();
+	}
+
+	@Override
+	public void prepare() {
+		try {
+		} catch(Exception e) {
+			e.printStackTrace();
+			log.debug("Error when getting product in method prepare()");
+		}
+	}
+
+	/**========================================================================
+								execute
+	   ========================================================================*/
+	@SuppressWarnings("unchecked")
+	@Override  
+	public String execute() throws Exception {
+		try {
+			HttpSession session = request.getSession(true);
+			SimpleDateFormat frmDate = new SimpleDateFormat("dd/MM/yyyy");
+			brandList = commonService.getBrands();
+			statusList = commonService.getAllProductStatuses();
+			categoryList  = internationalizeName(commonService.getCategoriesByBrand(brand));
+			mainSpecificationList = productService.getMainSpecificationByCategory(category);
+			productDTO = productService.getProductInformation(productId, null);
+			boxDTO = productService.getBoxByProductId(productId);
+			if(boxDTO==null)boxDTO=new BoxDTO();
+			imgDTO = productDTO.getImage();
+			activeClientsList = productService.getAllActiveClients(productId);
+			activeClientsTFSize = activeClientsSize = activeClientsList.size();
+			activeClientsTFSize = activeClientsList.isEmpty() ? 1 : activeClientsTFSize;
+			BasicUserDTO basicUserDTO = new BasicUserDTO();
+			basicUserDTO.setTypeId(UserType.USER.getValue());
+			basicUserDTO.setActive(true);
+			userNameList = userService.getAllUserAccounts(basicUserDTO);
+			for (UserSessionDTO usrDTO : userNameList) {
+				ProductDTO pDTO=productService.getSaleByProductIdAndUserId(productId, usrDTO.getId());
+				if(pDTO!=null)usrDTO.setSelected(true);
+			}
+			upc=productDTO.getUpc();
+			loyaltyProductId=productDTO.getLoyaltyProductId();
+			msrp=productDTO.getMsrp();
+			cost=productDTO.getCost();
+			mainSpecificationName=productDTO.getSpecificationProduct();
+			
+			/*------------------------------------------
+			 					Sale
+			  ------------------------------------------*/
+
+			if(saveSaleSignal!=null && saveSaleSignal!=0L){
+				saleProdctDTO.setId(productId);
+				Date startDate=getDateFromStr(strStartDate,frmDate);
+				Date endDate=getDateFromStr(strEndDate,frmDate);
+				saleProdctDTO.setStartDate(startDate);
+				saleProdctDTO.setEndDate(endDate);
+				//save sale price
+				Double vaCost=TryParseDouble(productDTO.getCost());
+				Double valMsrp=TryParseDouble(productDTO.getMsrp());
+				Double salePrice=TryParseDouble(saleProdctDTO.getSalePrice()+"");
+				Double salePercentProfit=((salePrice/vaCost)-1)*100;
+				Double salePercentDiscount=((valMsrp-salePrice)/valMsrp)*100;
+				salePercentProfit = (double) Math.round(salePercentProfit*100) / 100;
+				salePercentDiscount = (double) Math.round(salePercentDiscount*100) / 100;
+				saleProdctDTO.setSalePercentProfit(salePercentProfit);
+				saleProdctDTO.setSalePercentDiscount(salePercentDiscount);
+				saleProdctDTO.setSaleQt(saleProdctDTO.getQtMax());
+				if(salesByDate ){
+					saleProdctDTO.setQtMax(null);
+				}else{
+					saleProdctDTO.setStartDate(null);
+					saleProdctDTO.setEndDate(null);
+				}
+				if(!futurSUB)saleProdctDTO.setLoyaltyProductIdSub(null);
+
+				Long productSaleId=productService.addProductSale(saleProdctDTO); 
+				if(productSaleId>0L)saleProdctDTO.setProductSaleId(productSaleId);
+				List<Long> usersListSeleted =getUserDTOFromStrUserId(strUsersId,userNameList,saleForAllCleint);
+				productService.addUserSale(saleProdctDTO,usersListSeleted);
+				saleProdctDTO=productService.getSaleByProductId(productId);
+				checkUserNameListSelected();
+				return SUCCESS;
+
+			}else{
+				saleProdctDTO=productService.getSaleByProductId(productId);	
+				if(saleProdctDTO!=null && saleProdctDTO.getStartDate()==null)salesByDate=false;
+				if(saleProdctDTO!=null && (saleProdctDTO.getLoyaltyProductIdSub()==null || saleProdctDTO.getLoyaltyProductIdSub().equals("")))futurSUB=false;
+				if(saleProdctDTO!=null)saleForAllCleint=productService.isThereUserHavenThisSale(saleProdctDTO.getProductSaleId());
+			}
+
+				
+			if(saleProdctDTO==null){
+				saleProdctDTO=new ProductDTO();
+				strStartDate=frmDate.format(new Date());
+				strEndDate=frmDate.format(new Date());
+			}else{
+				if(saleProdctDTO.getStartDate()!=null)strStartDate=frmDate.format(saleProdctDTO.getStartDate());
+				if(saleProdctDTO.getEndDate()!=null)strEndDate=frmDate.format(saleProdctDTO.getEndDate());
+			}
+
+			if(salesByDate==null)salesByDate=true;
+			if(saleForAllCleint==null)saleForAllCleint=true;
+			//clean loyaltyProductIdSub
+			loyaltyProductIdSub=saleProdctDTO.getLoyaltyProductIdSub();
+			if(loyaltyProductIdSub!=null){
+				loyaltyProductIdSub=getStrCleaned(loyaltyProductIdSub);
+				saleProdctDTO.setLoyaltyProductIdSub(loyaltyProductIdSub);
+				futurSUB=true;
+				if(loyaltyProductIdSub.equals(""))futurSUB=false;
+			}
+			if(futurSUB==null)futurSUB=false;
+			 checkUserNameListSelected();
+			return SUCCESS;
+		} catch(ServiceException e) {
+			log.debug("Service Error when loading file");
+			addActionError(getText("loyauty.error.common.service"));
+		} catch (Exception e) {
+			addActionError(getText("loyauty.error.common.service"));
+		}
+		return INPUT;
+	}
+
+    
+	/**========================================================================
+								internationalizeName
+	   ========================================================================*/
+	private List<CommonDTO> internationalizeName(List<CategoryDTO> list){
+		List<CommonDTO> commonListDTO = new ArrayList<CommonDTO>();
+		CommonDTO commonDTO;
+		for(CategoryDTO cat : list){
+			commonDTO = CommonDTO.valueOf(cat.getId(), getText(cat.getCode()));			
+			commonListDTO.add(commonDTO);
+		}		
+		return commonListDTO;
+	}
+    
+	/**========================================================================
+								getUserSessionDTO
+	   ========================================================================*/
+	public static UserSessionDTO getUserSessionDTO(ClientCategoryDTO clDTO){
+		Long userId=clDTO.getClientCategoryId();
+		String login=clDTO.getClientCategoryName();
+		Integer TypeId=2;
+		Integer userLangId = 2;
+		Integer RESULTS_PER_PAGE=10;
+		String email="";
+		String code="";
+		Boolean isActive=true;
+		Long template =1L;
+		UserSessionDTO sessionDTO =new UserSessionDTO(userId, login, TypeId, userLangId, Language.ENGLISH.getValue(),
+													  RESULTS_PER_PAGE, email, code, isActive,template);
+		return sessionDTO;
+	}
+	
+	/**========================================================================
+ 							getTabUsersIdFromStrUserId
+	   ========================================================================*/
+	List<Long> getUserDTOFromStrUserId(String strUsersId,List<UserSessionDTO> userNameList,boolean saleForAllCleint){
+		
+		List<Long>result=new ArrayList<Long>(); 
+		
+		List<Long> resultList=new ArrayList<Long>();
+		if(strUsersId==null)strUsersId="";
+		if(saleForAllCleint){
+			for(UserSessionDTO usrDTO:userNameList){
+				if(usrDTO!=null)resultList.add(usrDTO.getId());
+			}
+			return resultList;
+		}
+		String[] strTabUsersId=strUsersId.split(","); 
+		for(int i=0;i<strTabUsersId.length;i++){
+			Long userId=TryParseLong(strTabUsersId[i]);
+			result.add(userId);
+		}
+		return result;
+	}
+
+	/**========================================================================
+ 							getStrCleaned
+	   ========================================================================*/
+	String getStrCleaned(String str){
+		if(str==null)str="";
+		str = str.replaceAll("\\s","");
+		str=str.replaceAll("\'","");
+		str=str.replaceAll("\"","");
+		str=str.replaceAll(";","");
+		str=str.replaceAll(",","");
+		return str;
+	}
+
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public Double TryParseDouble(String str){
+		str=getStrCleaned(str);
+		Double result=null;
+	    try {
+	    	result = Double.parseDouble(str);
+	        return result;
+	    } catch(NumberFormatException e) {
+	        return -1d;
+	    }
+	}
+
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public Long TryParseLong(String str){
+		str=getStrCleaned(str);
+		Long result=null;
+		try {
+			result = Long.parseLong(str);
+			return result;
+		} catch(NumberFormatException e) {
+			return -1L;
+		}
+	}
+	
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public UserSessionDTO getUserSessionById(List<UserSessionDTO> userList,Long userId){
+		UserSessionDTO result=null;
+		for(UserSessionDTO us:userList){
+			if(us.getId()!=0 && us.getId()==userId){
+				result=us;
+				break;
+			}
+		}
+		return result;
+	}
+
+	/**========================================================================
+ 							get getDateFromStr from string
+	   ========================================================================*/
+	public Date getDateFromStr(String strDate,SimpleDateFormat frm){
+		Date result=null;
+		strDate=getStrCleaned(strDate);
+	    try {
+	    	result=frm.parse(strDate);
+	        return result;
+	    } catch(Exception e) {
+	        return null;
+	    }
+	}
+	
+	/**========================================================================
+ 							check userNameList Selected
+	   ========================================================================*/
+	public void checkUserNameListSelected(){
+		
+		for (int i=0; i< userNameList.size();i++) {
+			ProductDTO pDTO;
+			try {
+				pDTO = productService.getSaleByProductIdAndUserId(productId, userNameList.get(i).getId());
+				userNameList.get(i).setSelected(false);
+				if(pDTO!=null)userNameList.get(i).setSelected(true);
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2015-03-20 17:27:39.905
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 17 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:27:39.906
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:27:39.906
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2015-03-20 17:27:39.907
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 17 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:27:39.907
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-03-20 17:53:08.071
+!MESSAGE Exception occurred during problem detection:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package com.loyauty.web.struts.action.product;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpSession;
+
+import org.jsoup.Jsoup;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import com.loyauty.enums.Language;
+import com.loyauty.enums.PriceType;
+import com.loyauty.enums.ProductStatus;
+import com.loyauty.enums.UserProductStatus;
+import com.loyauty.enums.UserType;
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.model.User;
+import com.loyauty.service.brand.BrandService;
+import com.loyauty.service.common.CommonService;
+import com.loyauty.service.core.DTOFactory;
+import com.loyauty.service.core.dto.AlterProductXMLDTO;
+import com.loyauty.service.core.dto.AlterUserProductXMLDTO;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.BoxDTO;
+import com.loyauty.service.core.dto.CategoryDTO;
+import com.loyauty.service.core.dto.ClientCategoryDTO;
+import com.loyauty.service.core.dto.CommonDTO;
+import com.loyauty.service.core.dto.ImageDTO;
+import com.loyauty.service.core.dto.OperationsDTO;
+import com.loyauty.service.core.dto.OrdersDTO;
+import com.loyauty.service.core.dto.ProductDTO;
+import com.loyauty.service.core.dto.ProductLinkDTO;
+import com.loyauty.service.core.dto.ProductModelDTO;
+import com.loyauty.service.core.dto.SpecificationDTO;
+import com.loyauty.service.core.dto.UserDTO;
+import com.loyauty.service.core.dto.UserProductPriceDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.image.ImageService;
+import com.loyauty.service.operations.OperationsService;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+import com.loyauty.util.CommonUtils;
+import com.loyauty.web.WebConstants;
+import com.loyauty.web.struts.action.LoyautyAction;
+
+public class EditSaleProduct extends LoyautyAction{
+	private static final long serialVersionUID = -5162061504759408826L;
+
+	
+
+	private ProductService productService;
+	private ImageService imageService;
+	private CommonService commonService;
+	private BrandService brandService;
+	private UserService userService;
+	private OperationsService operationsService;
+	
+	private UserSessionDTO userSession;
+	@Getter @Setter
+	private long productId;
+	@Getter @Setter
+	private long imageId;
+	@Getter @Setter
+	private long brand;
+	@Getter @Setter
+	private String brandName;
+	@Getter @Setter
+	private long category;
+	@Getter @Setter
+	private String categoryName;
+	@Getter @Setter
+	private long mainSpecification; 
+	@Getter @Setter
+	private String mainSpecificationName;
+	@Getter @Setter
+	private String manufProductID;
+	@Getter @Setter
+	private String manufProductID1;
+	@Getter @Setter
+	private String manufProductID2;
+	@Getter @Setter
+	private String manufProductID3;
+	@Getter @Setter
+	private String manufProductID4;
+	
+	@Getter @Setter
+	private Integer manufProductQuantity = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity1 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity2 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity3 = 0;
+	@Getter @Setter
+	private Integer manufProductQuantity4 = 0;
+	
+	@Getter @Setter
+	private String supplier;
+	@Getter @Setter
+	private String supplier1;
+	@Getter @Setter
+	private String supplier2;
+	@Getter @Setter
+	private String supplier3;
+	@Getter @Setter
+	private String supplier4;
+	
+	@Getter @Setter
+	private String price;
+	@Getter @Setter
+	private String price1;
+	@Getter @Setter
+	private String price2;
+	@Getter @Setter
+	private String price3;
+	@Getter @Setter
+	private String price4;	
+
+	@Getter @Setter
+	private String msrp0;
+	@Getter @Setter
+	private String msrp1;
+	@Getter @Setter
+	private String msrp2;
+	@Getter @Setter
+	private String msrp3;
+	@Getter @Setter
+	private String msrp4;
+	
+	@Getter @Setter
+	private String upc;
+	@Getter @Setter
+	private String loyaltyProductId;
+	@Getter @Setter
+	private String nameEn;
+	@Getter @Setter
+	private String nameFr;
+	@Getter @Setter
+	private String msrp;
+	@Getter @Setter
+	private String cost;
+	@Getter @Setter
+	private String large;
+	@Getter @Setter
+	private String width;
+	@Getter @Setter
+	private String high;
+	@Getter @Setter
+	private String weight;
+	@Getter @Setter
+	private Double boxLength;
+	@Getter @Setter
+	private Double boxWidth;
+	@Getter @Setter
+	private Double boxHeight;
+	/*
+	@Getter @Setter
+	private Double boxWeight;
+	*/
+	@Getter @Setter
+	private Double boxTotalWeight;
+	@Getter @Setter
+	private String largeCm;
+	@Getter @Setter
+	private String widthCm;
+	@Getter @Setter
+	private String highCm;
+	@Getter @Setter
+	private String weightKg;
+	@Getter @Setter
+	private String boxLengthCm;
+	@Getter @Setter
+	private String boxWidthCm;
+	@Getter @Setter
+	private String boxHeightCm;
+	@Getter @Setter
+	private String boxWeightKg;
+	@Getter @Setter
+	private Integer statusProductBox;
+	@Getter @Setter
+	private Boolean canadaPostSizesVerified;
+	@Getter @Setter
+	private BoxDTO boxDTO;
+	
+	@Getter @Setter
+	private String descriptionEn;
+	@Getter @Setter
+	private String descriptionFr;
+	@Getter @Setter
+	private String specificationEn;
+	@Getter @Setter
+	private String specificationFr;
+	@Getter @Setter
+	private String otherEng;
+	@Getter @Setter
+	private String otherFr;
+	
+	//uploading files
+	@Getter @Setter	
+	private File productImage; 
+	@Getter @Setter
+	private String productImageContentType;
+	@Getter @Setter
+	private String productImageFileName;
+	@Getter @Setter
+	private ImageDTO imgDTO;
+	@Getter @Setter
+	private List<CommonDTO> categoryList;
+	@Getter @Setter
+	private List<SpecificationDTO> mainSpecificationList;
+	@Getter @Setter
+	private boolean update = false;
+	@Getter @Setter
+	private ProductDTO productDTO;
+	@Getter @Setter
+	private UserProductPriceDTO userProductPriceDTO;	
+	
+	@Getter @Setter
+	private List<CommonDTO> brandList;
+	@Getter @Setter
+	private List<CommonDTO> statusList;
+
+	@Getter @Setter
+	private String linkUrl;
+	@Getter @Setter
+	private String note;
+	@Getter @Setter
+	private String statusName;	
+	@Getter @Setter
+	private Integer statusId;
+	@Getter @Setter
+	private List<UserDTO> activeClientsList;
+	@Getter @Setter
+	private int activeClientsSize;
+	@Getter @Setter
+	private int activeClientsTFSize;	
+	@Getter @Setter
+	private String loyaltyProductIdSub;
+	
+	@Getter @Setter
+	private String periodTime;
+	@Getter @Setter
+	private String warrantyQuantity;
+	@Getter @Setter
+	private Boolean defectFree;
+	
+	@Getter @Setter
+	private List<UserSessionDTO> userNameList;
+	@Getter @Setter
+	private String[] userPrice;
+	@Getter @Setter
+	private String[] percentageProfit;
+	@Getter @Setter
+	private String[] percentageDiscount;
+	@Getter @Setter
+	private String[] isExcluded;
+	@Getter @Setter
+	private String[] excluded;
+	
+	@Getter @Setter
+	private Double[] currencyRate;
+	@Getter @Setter
+	private String[] currencySymbol;
+	@Getter @Setter
+	private String[] currencyPrice;	//CURRENCY_LS_PRICE
+	@Getter @Setter
+	private List<ClientCategoryDTO> listClientCategory;
+	@Getter @Setter
+	private OperationsDTO operationDTO;
+	@Getter @Setter
+	private Integer thisProductForSale;
+	@Getter @Setter
+	private Boolean salesByDate;
+	@Getter @Setter
+	private Boolean saleForAllCleint;
+	@Getter @Setter
+	private String strUsersId;
+	
+	@Getter @Setter
+	private Boolean futurSUB;
+	@Getter @Setter
+	private Date startDate=new Date();
+	@Getter @Setter
+	private Date endDate=new Date();
+	
+	@Getter @Setter
+	private String strStartDate="";
+	@Getter @Setter
+	private String strEndDate="";
+	
+	@Getter @Setter
+	private ProductDTO saleProdctDTO;
+	
+	@Getter @Setter
+	private Long saveSaleSignal;
+	
+	
+	@Getter @Setter
+	private Long salesByDateCheckbox;
+	
+	
+	public  EditSaleProduct() throws ServiceLocatorException {
+		super();	
+		productService = getServiceLocator().getProductService();
+		commonService = getServiceLocator().getCommonService();
+		imageService = getServiceLocator().getImageService();
+		brandService = getServiceLocator().getBrandService();
+		userService = getServiceLocator().getUserService();
+		operationsService = getServiceLocator().getOperationsService();
+	}
+
+	@Override
+	public void prepare() {
+		try {
+		} catch(Exception e) {
+			e.printStackTrace();
+			log.debug("Error when getting product in method prepare()");
+		}
+	}
+
+	/**========================================================================
+								execute
+	   ========================================================================*/
+	@SuppressWarnings("unchecked")
+	@Override  
+	public String execute() throws Exception {
+		try {
+			HttpSession session = request.getSession(true);
+			SimpleDateFormat frmDate = new SimpleDateFormat("dd/MM/yyyy");
+			brandList = commonService.getBrands();
+			statusList = commonService.getAllProductStatuses();
+			categoryList  = internationalizeName(commonService.getCategoriesByBrand(brand));
+			mainSpecificationList = productService.getMainSpecificationByCategory(category);
+			productDTO = productService.getProductInformation(productId, null);
+			boxDTO = productService.getBoxByProductId(productId);
+			if(boxDTO==null)boxDTO=new BoxDTO();
+			imgDTO = productDTO.getImage();
+			activeClientsList = productService.getAllActiveClients(productId);
+			activeClientsTFSize = activeClientsSize = activeClientsList.size();
+			activeClientsTFSize = activeClientsList.isEmpty() ? 1 : activeClientsTFSize;
+			BasicUserDTO basicUserDTO = new BasicUserDTO();
+			basicUserDTO.setTypeId(UserType.USER.getValue());
+			basicUserDTO.setActive(true);
+			userNameList = userService.getAllUserAccounts(basicUserDTO);
+			for (UserSessionDTO usrDTO : userNameList) {
+				ProductDTO pDTO=productService.getSaleByProductIdAndUserId(productId, usrDTO.getId());
+				if(pDTO!=null)usrDTO.setSelected(true);
+			}
+			upc=productDTO.getUpc();
+			loyaltyProductId=productDTO.getLoyaltyProductId();
+			msrp=productDTO.getMsrp();
+			cost=productDTO.getCost();
+			mainSpecificationName=productDTO.getSpecificationProduct();
+			
+			/*------------------------------------------
+			 					Sale
+			  ------------------------------------------*/
+
+			if(saveSaleSignal!=null && saveSaleSignal!=0L){
+				saleProdctDTO.setId(productId);
+				Date startDate=getDateFromStr(strStartDate,frmDate);
+				Date endDate=getDateFromStr(strEndDate,frmDate);
+				saleProdctDTO.setStartDate(startDate);
+				saleProdctDTO.setEndDate(endDate);
+				//save sale price
+				Double vaCost=TryParseDouble(productDTO.getCost());
+				Double valMsrp=TryParseDouble(productDTO.getMsrp());
+				Double salePrice=TryParseDouble(saleProdctDTO.getSalePrice()+"");
+				Double salePercentProfit=((salePrice/vaCost)-1)*100;
+				Double salePercentDiscount=((valMsrp-salePrice)/valMsrp)*100;
+				salePercentProfit = (double) Math.round(salePercentProfit*100) / 100;
+				salePercentDiscount = (double) Math.round(salePercentDiscount*100) / 100;
+				saleProdctDTO.setSalePercentProfit(salePercentProfit);
+				saleProdctDTO.setSalePercentDiscount(salePercentDiscount);
+				saleProdctDTO.setSaleQt(saleProdctDTO.getQtMax());
+				if(salesByDate ){
+					saleProdctDTO.setQtMax(null);
+				}else{
+					saleProdctDTO.setStartDate(null);
+					saleProdctDTO.setEndDate(null);
+				}
+				if(!futurSUB)saleProdctDTO.setLoyaltyProductIdSub(null);
+
+				Long productSaleId=productService.addProductSale(saleProdctDTO); 
+				if(productSaleId>0L)saleProdctDTO.setProductSaleId(productSaleId);
+				List<Long> usersListSeleted =getUserDTOFromStrUserId(strUsersId,userNameList,saleForAllCleint);
+				productService.addUserSale(saleProdctDTO,usersListSeleted);
+				saleProdctDTO=productService.getSaleByProductId(productId);
+				checkUserNameListSelected();
+				return SUCCESS;
+
+			}else{
+				saleProdctDTO=productService.getSaleByProductId(productId);	
+				if(saleProdctDTO!=null && saleProdctDTO.getStartDate()==null)salesByDate=false;
+				if(saleProdctDTO!=null && (saleProdctDTO.getLoyaltyProductIdSub()==null || saleProdctDTO.getLoyaltyProductIdSub().equals("")))futurSUB=false;
+				if(saleProdctDTO!=null)saleForAllCleint=productService.isThereUserHavenThisSale(saleProdctDTO.getProductSaleId());
+			}
+
+				
+			if(saleProdctDTO==null){
+				saleProdctDTO=new ProductDTO();
+				strStartDate=frmDate.format(new Date());
+				strEndDate=frmDate.format(new Date());
+			}else{
+				if(saleProdctDTO.getStartDate()!=null)strStartDate=frmDate.format(saleProdctDTO.getStartDate());
+				if(saleProdctDTO.getEndDate()!=null)strEndDate=frmDate.format(saleProdctDTO.getEndDate());
+			}
+
+			if(salesByDate==null)salesByDate=true;
+			if(saleForAllCleint==null)saleForAllCleint=true;
+			//clean loyaltyProductIdSub
+			loyaltyProductIdSub=saleProdctDTO.getLoyaltyProductIdSub();
+			if(loyaltyProductIdSub!=null){
+				loyaltyProductIdSub=getStrCleaned(loyaltyProductIdSub);
+				saleProdctDTO.setLoyaltyProductIdSub(loyaltyProductIdSub);
+				futurSUB=true;
+				if(loyaltyProductIdSub.equals(""))futurSUB=false;
+			}
+			if(futurSUB==null)futurSUB=false;
+			 checkUserNameListSelected();
+			return SUCCESS;
+		} catch(ServiceException e) {
+			log.debug("Service Error when loading file");
+			addActionError(getText("loyauty.error.common.service"));
+		} catch (Exception e) {
+			addActionError(getText("loyauty.error.common.service"));
+		}
+		return INPUT;
+	}
+
+    
+	/**========================================================================
+								internationalizeName
+	   ========================================================================*/
+	private List<CommonDTO> internationalizeName(List<CategoryDTO> list){
+		List<CommonDTO> commonListDTO = new ArrayList<CommonDTO>();
+		CommonDTO commonDTO;
+		for(CategoryDTO cat : list){
+			commonDTO = CommonDTO.valueOf(cat.getId(), getText(cat.getCode()));			
+			commonListDTO.add(commonDTO);
+		}		
+		return commonListDTO;
+	}
+    
+	/**========================================================================
+								getUserSessionDTO
+	   ========================================================================*/
+	public static UserSessionDTO getUserSessionDTO(ClientCategoryDTO clDTO){
+		Long userId=clDTO.getClientCategoryId();
+		String login=clDTO.getClientCategoryName();
+		Integer TypeId=2;
+		Integer userLangId = 2;
+		Integer RESULTS_PER_PAGE=10;
+		String email="";
+		String code="";
+		Boolean isActive=true;
+		Long template =1L;
+		UserSessionDTO sessionDTO =new UserSessionDTO(userId, login, TypeId, userLangId, Language.ENGLISH.getValue(),
+													  RESULTS_PER_PAGE, email, code, isActive,template);
+		return sessionDTO;
+	}
+	
+	/**========================================================================
+ 							getTabUsersIdFromStrUserId
+	   ========================================================================*/
+	List<Long> getUserDTOFromStrUserId(String strUsersId,List<UserSessionDTO> userNameList,boolean saleForAllCleint){
+		
+		List<Long>result=new ArrayList<Long>(); 
+		
+		List<Long> resultList=new ArrayList<Long>();
+		if(strUsersId==null)strUsersId="";
+		if(saleForAllCleint){
+			for(UserSessionDTO usrDTO:userNameList){
+				if(usrDTO!=null)resultList.add(usrDTO.getId());
+			}
+			return resultList;
+		}
+		String[] strTabUsersId=strUsersId.split(","); 
+		for(int i=0;i<strTabUsersId.length;i++){
+			Long userId=TryParseLong(strTabUsersId[i]);
+			result.add(userId);
+		}
+		return result;
+	}
+
+	/**========================================================================
+ 							getStrCleaned
+	   ========================================================================*/
+	String getStrCleaned(String str){
+		if(str==null)str="";
+		str = str.replaceAll("\\s","");
+		str=str.replaceAll("\'","");
+		str=str.replaceAll("\"","");
+		str=str.replaceAll(";","");
+		str=str.replaceAll(",","");
+		return str;
+	}
+
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public Double TryParseDouble(String str){
+		str=getStrCleaned(str);
+		Double result=null;
+	    try {
+	    	result = Double.parseDouble(str);
+	        return result;
+	    } catch(NumberFormatException e) {
+	        return -1d;
+	    }
+	}
+
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public Long TryParseLong(String str){
+		str=getStrCleaned(str);
+		Long result=null;
+		try {
+			result = Long.parseLong(str);
+			return result;
+		} catch(NumberFormatException e) {
+			return -1L;
+		}
+	}
+	
+	/**========================================================================
+ 							get numeric from string
+	   ========================================================================*/
+	public UserSessionDTO getUserSessionById(List<UserSessionDTO> userList,Long userId){
+		UserSessionDTO result=null;
+		for(UserSessionDTO us:userList){
+			if(us.getId()!=0 && us.getId()==userId){
+				result=us;
+				break;
+			}
+		}
+		return result;
+	}
+
+	/**========================================================================
+ 							get getDateFromStr from string
+	   ========================================================================*/
+	public Date getDateFromStr(String strDate,SimpleDateFormat frm){
+		Date result=null;
+		strDate=getStrCleaned(strDate);
+	    try {
+	    	result=frm.parse(strDate);
+	        return result;
+	    } catch(Exception e) {
+	        return null;
+	    }
+	}
+	
+	/**========================================================================
+ 							check userNameList Selected
+	   ========================================================================*/
+	public void checkUserNameListSelected(){
+		
+		for (int i=0; i< userNameList.size();i++) {
+			ProductDTO pDTO;
+			try {
+				pDTO = productService.getSaleByProductIdAndUserId(productId, userNameList.get(i).getId());
+				userNameList.get(i).setSelected(false);
+				if(pDTO!=null)userNameList.get(i).setSelected(true);
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2015-03-20 17:53:08.072
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 17 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:53:08.072
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:53:08.072
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2015-03-20 17:53:08.073
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 17 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-20 17:53:08.073
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1205)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-20 19:05:47.416
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-20 19:05:47.567
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-20 19:05:47.690
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-20 19:05:47.690
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-20 19:05:47.690
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Unknown Source)
+!SESSION 2015-03-23 09:26:12.450 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.text 4 2 2015-03-23 09:34:06.412
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.text".
+!STACK 0
+java.lang.IllegalArgumentException: Index out of bounds
+	at org.eclipse.swt.SWT.error(SWT.java:4064)
+	at org.eclipse.swt.SWT.error(SWT.java:3998)
+	at org.eclipse.swt.SWT.error(SWT.java:3969)
+	at org.eclipse.swt.graphics.TextLayout.getLocation(TextLayout.java:1948)
+	at org.eclipse.swt.custom.StyledText.getPointAtOffset(StyledText.java:5456)
+	at org.eclipse.swt.custom.StyledText.setCaretLocation(StyledText.java:8349)
+	at org.eclipse.swt.custom.StyledText.updateSelection(StyledText.java:10194)
+	at org.eclipse.swt.custom.StyledText.handleTextChanged(StyledText.java:6227)
+	at org.eclipse.swt.custom.StyledText$6.textChanged(StyledText.java:5636)
+	at org.eclipse.ui.internal.console.ConsoleDocumentAdapter.documentChanged(ConsoleDocumentAdapter.java:375)
+	at org.eclipse.jface.text.AbstractDocument.doFireDocumentChanged2(AbstractDocument.java:769)
+	at org.eclipse.jface.text.AbstractDocument.doFireDocumentChanged(AbstractDocument.java:736)
+	at org.eclipse.jface.text.AbstractDocument.doFireDocumentChanged(AbstractDocument.java:721)
+	at org.eclipse.jface.text.AbstractDocument.fireDocumentChanged(AbstractDocument.java:796)
+	at org.eclipse.jface.text.AbstractDocument.replace(AbstractDocument.java:1191)
+	at org.eclipse.jface.text.AbstractDocument.replace(AbstractDocument.java:1210)
+	at org.eclipse.ui.internal.console.ConsoleDocument.replace(ConsoleDocument.java:82)
+	at org.eclipse.ui.internal.console.IOConsolePartitioner$TrimJob.runInUIThread(IOConsolePartitioner.java:652)
+	at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4041)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:620)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1408)
+!SESSION 2015-03-23 10:09:41.413 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-03-23 10:09:43.297
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.tigris.subversion.clientadapter.javahl 1 0 2015-03-23 10:09:47.299
+!MESSAGE Failed to load JavaHL Library.
+These are the errors that were encountered:
+no libapr-1 in java.library.path
+no libapriconv-1 in java.library.path
+no libeay32 in java.library.path
+no ssleay32 in java.library.path
+no libaprutil-1 in java.library.path
+no libsasl in java.library.path
+no libsvn_subr-1 in java.library.path
+no libsvn_delta-1 in java.library.path
+no libsvn_diff-1 in java.library.path
+no libsvn_wc-1 in java.library.path
+no libsvn_fs-1 in java.library.path
+no libsvn_repos-1 in java.library.path
+no libsvn_ra-1 in java.library.path
+no libsvn_client-1 in java.library.path
+no libsvnjavahl-1 in java.library.path
+no svnjavahl-1 in java.library.path
+no svnjavahl in java.library.path
+java.library.path = C:\dev\ECLIPSE;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/dev/ECLIPSE/jre/bin/server;C:/dev/ECLIPSE/jre/bin;C:/dev/ECLIPSE/jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_17\bin;C:\Program Files\VanDyke Software\SecureFX\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.3.6\;C:\Program Files (x86)\Skype\Phone\;C:\dev\ECLIPSE;;.
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 10:10:16.619
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-03-23 10:11:47.309
+!MESSAGE Exception occurred during problem detection:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package com.loyauty.service.core.dto;
+
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+
+import lombok.Data;
+import lombok.ToString;
+
+import com.loyauty.enums.ProductStatus;
+
+/**
+ * Contains data for the product.
+ */
+@Data @ToString(callSuper=true)
+public class ProductDTO extends BasicDTO{
+		
+	private static final long serialVersionUID = 1L;
+	
+	private Long selected;
+	private String upc;
+	private BrandDTO brand;
+	private CategoryDTO category;
+	private Long mainFilterTypeId;
+	private String manufacturerProductId;
+	private String loyaltyProductId;
+	private CommonDTO nameEng;
+	private CommonDTO nameFr;
+	private ImageDTO image;
+	private CommonDTO descriptionEng;
+	private CommonDTO descriptionFr;
+	private CommonDTO specificationEng;
+	private CommonDTO specificationFr;
+	private CommonDTO otherEng;
+	private CommonDTO otherFr;
+	private String msrp;
+	private String cost;
+	private String width;
+	private String high;
+	private String large;
+	private String weight;
+	private List<ProductModelDTO> manufactureProductList;
+	private Date creationDate;
+	private ProductStatus status;
+	private String statusName;
+	private String nameProduc;
+	private String descriptiProduct;
+	private String specificationProduct;
+	private String otherProduct;
+	private String priceProduct;  
+	private String hrefName;
+	private String localizedPriceProduct;
+	private String note;	
+	private List<ProductLinkDTO> linkList;	
+	private Date discontinuedStartDate;
+	private String loyaltyProductIdSub;
+	private CommonDTO warrantyEng;
+	private CommonDTO warrantyFr;
+	private Long warrantyTranslationId;
+	private Double discount;
+	private Boolean wereWgtDimChanged;
+	private Boolean consideredForXML;
+	private String oldImageRealName;
+	private Double stock;
+	private String actualWidth;
+	private String actualLength;
+	private String actualHeight;
+	private String actualWeight;
+	private Long userId;
+	private String css;
+	
+	private Double boxLength;
+	private Double boxWidth;
+	private Double boxHeight;
+	private Double boxTotalWeight;
+	
+	private Double classification;
+	private Double profit;
+	private Double qtSold;
+
+	//sale attributes
+	private Double  qtMax;
+	private Double  saleQt=0d;
+	private Date    startDate;
+	private Date    endDate;
+	private Double  regularPrice;
+	private Double  regularPercentProfit;
+	private Double  regularPercentDiscount;
+	private Boolean active=false;
+	private String  messageForClient="";
+	private String  saleNote="";
+	private Long  	productSaleId;
+	
+	
+	private Double salePrice; 
+	private Double salePercentProfit;
+	private Double salePercentDiscount;
+	
+	
+	
+	public ProductDTO(){}
+        public static class Builder {
+         
+			// Required parameters
+            private final Long id;
+            private final BrandDTO brand;
+            private final CategoryDTO categoryId;
+            
+            // Optional parameters - initialized to default values
+            private Long mainFilterTypeId = new Long(0);
+            private String manufacturerProductId = "";
+            private String loyaltyProductId = "";
+            private CommonDTO nameEng = null;
+            private CommonDTO nameFr = null;
+            private ImageDTO image = null;
+            private CommonDTO descriptionEng = null;
+            private CommonDTO descriptionFr = null;
+            private CommonDTO specificationEng = null;
+            private CommonDTO specificationFr = null;
+        	private CommonDTO otherEng = null;
+        	private CommonDTO otherFr = null;
+            private String msrp = "";
+            private String cost = "";
+            private String width = "0";
+            private String high = "0";
+            private String large = "0";
+            private String weight = "";
+            private String actualWidth = "0";
+        	private String actualHeight= "0";
+        	private String actualLength = "0";
+        	private String actualWeight = "";           
+            private List<ProductModelDTO> manufactureProductList = null;
+            private Date creationDate = null;
+            private String nameProduc;
+        	private String descriptiProduct;
+        	private String specificationProduct;
+        	private String otherProduct;    
+        	private String priceProduct;
+        	private String localizedPriceProduct;
+        	private ProductStatus status;
+        	private String statusName;        	
+        	private String note;        	
+        	private List<ProductLinkDTO> linkList;
+        	private Date discontinuedStartDate = null;
+        	private String loyaltyProductIdSub;
+        	private CommonDTO warrantyEng;
+        	private CommonDTO warrantyFr;
+        	private Long warrantyTranslationId;
+        	private Double discount;
+        	private Boolean wereWgtDimChanged;
+        	private Boolean consideredForXML;	
+        	private String oldImageRealName;
+            public Builder(Long Id, BrandDTO brand, CategoryDTO categoryId) {
+        	this.id = Id;
+        	this.brand = brand;
+        	this.categoryId = categoryId;
+            }
+            
+            public Builder mainFilterTypeId(Long val) { 
+                mainFilterTypeId = val; 
+                return this; 
+            }
+            public Builder manufacturerProductId(String val) { 
+	        	manufacturerProductId = val; 
+	        	return this; 
+            }
+            public Builder loyaltyProductId(String val) { 
+	        	loyaltyProductId = val; 
+	        	return this; 
+            }
+            public Builder nameEng(CommonDTO val) { 
+	        	nameEng = val; 
+	        	return this; 
+            }
+            public Builder nameFr(CommonDTO val) { 
+	        	nameFr = val; 
+	        	return this; 
+            }
+            public Builder descriptionEng(CommonDTO val) { 
+	        	descriptionEng = val; 
+	        	return this; 
+            }
+            public Builder descriptionFr(CommonDTO val) { 
+	        	descriptionFr = val; 
+	        	return this; 
+            }
+            public Builder specificationEng(CommonDTO val) { 
+	        	specificationEng = val; 
+	        	return this; 
+            }
+            public Builder specificationFr(CommonDTO val) { 
+	        	specificationFr = val; 
+	        	return this; 
+            }
+            public Builder otherEng(CommonDTO val) {
+            	otherEng = val;
+            	return this;
+            }
+            public Builder otherFr(CommonDTO val) {
+            	otherFr = val;
+            	return this;
+            }
+            public Builder image(ImageDTO val) { 
+	        	image = val; 
+	        	return this; 
+            }
+            public Builder msrp(String val) { 
+	        	msrp = val; 
+	        	return this; 
+            }
+            public Builder cost(String val) { 
+	        	cost = val; 
+	        	return this; 
+            }
+            public Builder weight(String val) { 
+	        	weight = val; 
+	        	return this; 
+            }
+            public Builder width(String val) { 
+	        	width = val; 
+	        	return this; 
+            }
+            public Builder high(String val) { 
+	        	high = val; 
+	        	return this; 
+            }
+            public Builder large(String val) { 
+	        	large = val; 
+	        	return this; 
+            }
+            public Builder actualWeight(String val) { 
+            	actualWeight = val; 
+	        	return this; 
+            }
+            public Builder actualWidth(String val) { 
+            	actualWidth = val; 
+	        	return this; 
+            }
+            public Builder actualHeight(String val) { 
+            	actualHeight = val; 
+	        	return this; 
+            }
+            public Builder actualLength(String val) { 
+            	actualLength = val; 
+	        	return this; 
+            }
+            public Builder manufactureProductList(List<ProductModelDTO> val) { 
+	        	manufactureProductList = val; 
+	        	return this; 
+            }
+            public Builder nameProduc(String val) {
+            	nameProduc = val;
+	            return this;
+            }
+            public Builder descriptiProduct(String val) {
+            	descriptiProduct = val;
+	            return this;
+            }
+            public Builder specificationProduct(String val) {
+            	specificationProduct = val;
+	            return this;
+            }
+            public Builder otherProduct(String val) {
+            	otherProduct = val;
+	            return this;
+            }
+            public Builder creationDate(Date val) {
+	            creationDate = val;
+	            return this;
+            }            
+            public Builder priceProduct(String val) {
+            	priceProduct = val;
+	            return this;
+            }            
+            public Builder localizedPriceProduct(String val) {
+            	localizedPriceProduct = val;
+	            return this;
+            }            
+            public Builder status(ProductStatus val) { 
+	        	status = val; 
+	        	return this; 
+            }
+            public Builder statusName(String val) { 
+	        	statusName = val; 
+	        	return this; 
+            }            
+            public Builder linkList(List<ProductLinkDTO> val) {
+            	linkList = val;
+            	return this;
+            }            
+            public Builder note(String val) {
+            	note = val;
+            	return this;
+            }
+            public Builder discontinuedStartDate(Date val) { 
+            	discontinuedStartDate = val; 
+	        	return this; 
+            }
+            public Builder loyaltyProductIdSub(String val) { 
+            	loyaltyProductIdSub = val; 
+	        	return this; 
+            }
+            public Builder warantyEng(CommonDTO val) {
+            	warrantyEng = val;
+            	return this;
+            }            
+            public Builder warantyFr(CommonDTO val) {
+            	warrantyFr = val;
+            	return this;
+            }            
+            public Builder warrantyTranslationId(Long val) {
+            	warrantyTranslationId = val;
+            	return this;
+            }
+            public Builder discount(Double val) {
+            	discount = val;
+            	return this;
+            }
+            public Builder wereWgtDimChanged(Boolean val) {
+            	wereWgtDimChanged = val;
+            	return this;
+            }
+            public Builder consideredForXML(Boolean val) {
+            	consideredForXML = val;
+            	return this;
+            }
+            public Builder oldImageIdBeforeUpdate(String val) {
+            	oldImageRealName = val;
+            	return this;
+            }
+            
+            public ProductDTO build() {
+            	return new ProductDTO(this);
+            }
+         }
+	
+        private ProductDTO(Builder builder) {
+            setId(builder.id);
+            brand = builder.brand;
+            category = builder.categoryId;
+            mainFilterTypeId = builder.mainFilterTypeId;
+            manufacturerProductId = builder.manufacturerProductId;
+            loyaltyProductId = builder.loyaltyProductId;
+            nameEng = builder.nameEng;
+            nameFr = builder.nameFr;
+            image = builder.image;
+            descriptionEng = builder.descriptionEng;
+            descriptionFr = builder.descriptionFr;
+            specificationEng = builder.specificationEng;
+            specificationFr = builder.specificationFr;
+            otherEng = builder.otherEng;
+            otherFr = builder.otherFr;
+            msrp = builder.msrp;
+            cost = builder.cost;
+            width = builder.width;
+            high = builder.high;
+            large = builder.large;
+            weight = builder.weight;
+            actualWeight =builder.actualWeight;
+            actualLength=builder.actualLength;
+            actualHeight=builder.actualHeight;
+            actualWidth=builder.actualWidth;
+            manufactureProductList = builder.manufactureProductList;
+            creationDate = builder.creationDate;
+            nameProduc = builder.nameProduc;
+            descriptiProduct = builder.descriptiProduct;
+            specificationProduct = builder.specificationProduct;
+            otherProduct = builder.otherProduct;
+            priceProduct = builder.priceProduct;
+            localizedPriceProduct = builder.localizedPriceProduct;
+            status = builder.status;
+            statusName = builder.statusName;
+            linkList = builder.linkList;
+            note = builder.note;
+        	discontinuedStartDate = builder.discontinuedStartDate;
+        	loyaltyProductIdSub = builder.loyaltyProductIdSub; 
+        	warrantyEng = builder.warrantyEng;
+        	warrantyFr = builder.warrantyFr;       	
+        	warrantyTranslationId = builder.warrantyTranslationId;
+        	discount = builder.discount;
+        	wereWgtDimChanged = builder.wereWgtDimChanged;
+        	consideredForXML = builder.consideredForXML;
+        	oldImageRealName = builder.oldImageRealName;
+        }
+        
+        public static Comparator<ProductDTO> getComparator(int id){
+    		Comparator<ProductDTO> comparator = CREATION_DATE_DESC;
+    		switch (id) {
+    		case 1:
+    			comparator = ALPHABITICALLY_ENG_AZ;
+    			break;
+    		case 2:
+    			comparator = ALPHABITICALLY_ENG_ZA;
+    			break;
+    		case 3:
+    			comparator = ALPHABITICALLY_FR_AZ;
+    			break;
+    		case 4:
+    			comparator = ALPHABITICALLY_FR_ZA;
+    			break;
+    		case 5:
+    			comparator = CREATION_DATE_DESC;
+    			break;	
+    		case 6:
+    			comparator = CREATION_DATE_ASC;
+    			break;
+    		case 7:
+    			comparator = MSRP_DESC;
+    			break;
+    		case 8:
+    			comparator = MSRP_ASC;
+    			break;
+    		case 9:
+    			comparator = COST_DESC;
+    			break;
+    		case 10:
+    			comparator = COST_ASC;
+    			break;
+    		case 11:
+    			comparator = ALPHABITICALLY_BRAND_AZ;
+    			break;
+    		case 12:
+    			comparator = DISCOUNT_DESC;
+    			break;    
+    		default:
+    			break;
+    		}    		
+    		return comparator;
+    	}
+        
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> ALPHABITICALLY_ENG_AZ = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o1.getNameEng().compareTo(o2.getNameEng());
+    		}
+    		
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> ALPHABITICALLY_ENG_ZA = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o2.getNameEng().compareTo(o1.getNameEng());
+    		}
+    		
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> ALPHABITICALLY_FR_AZ = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o1.getNameFr().compareTo(o2.getNameFr());
+    		}
+    		
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> ALPHABITICALLY_FR_ZA = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o2.getNameFr().compareTo(o1.getNameFr());
+    		}
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> CREATION_DATE_DESC = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o2.getCreationDate().compareTo(o1.getCreationDate());
+    		}
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> CREATION_DATE_ASC = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			return o1.getCreationDate().compareTo(o2.getCreationDate());
+    		}
+    		
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> MSRP_DESC = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			    			
+    			Double msrp1 = Double.parseDouble(o1.getMsrp());
+    			Double msrp2 = Double.parseDouble(o2.getMsrp());    			
+    			return msrp2.compareTo(msrp1);
+    		}
+    		
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> MSRP_ASC = new Comparator<ProductDTO>() {
+
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			    			
+    			Double msrp1 = Double.parseDouble(o1.getMsrp());
+    			Double msrp2 = Double.parseDouble(o2.getMsrp());    			
+    			return msrp1.compareTo(msrp2);
+    		}
+    		
+    	};
+
+    	/**
+    	 * The following are the comparators we use to sort products by price, highest first
+    	 */
+    	public static final Comparator<ProductDTO> COST_DESC = new Comparator<ProductDTO>() {
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			    			
+				String o1Price = o1.getPriceProduct();
+				String o2Price = o2.getPriceProduct();
+				int outcome = 0;
+				if (o1Price != null && !o1Price.matches("^\\s*$")) {
+					Double cost1 = Double.parseDouble(o1Price);
+					if (o2Price != null && !o2Price.matches("^\\s*$")) {
+						Double cost2 = Double.parseDouble(o2Price);
+						int costCompare = cost2.compareTo(cost1);
+						if (costCompare == 0) {
+							outcome = ALPHABITICALLY_BRAND_AZ.compare(o1, o2);
+						}
+						else {
+							outcome = costCompare;
+						}
+					} else {
+						outcome = -1;				
+					}
+				} else {
+					outcome = 1;
+				}
+				return outcome;
+    		}
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort products by price, lowest first
+    	 */
+    	public static final Comparator<ProductDTO> COST_ASC = new Comparator<ProductDTO>() {
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			    			
+    			String o1Price = o1.getPriceProduct();
+				String o2Price = o2.getPriceProduct();
+				int outcome = 0;
+				if (o1Price != null && !o1Price.matches("^\\s*$")) {
+					Double cost1 = Double.parseDouble(o1Price);
+					if (o2Price != null && !o2Price.matches("^\\s*$")) {
+						Double cost2 = Double.parseDouble(o2Price);
+						int costCompare = cost1.compareTo(cost2);
+						if (costCompare == 0) {
+							outcome = ALPHABITICALLY_BRAND_AZ.compare(o1, o2);
+						}
+						else {
+							outcome = costCompare;
+						}
+					} else {
+						outcome = -1;				
+					}
+				} else {
+					outcome = 1;
+				}
+				return outcome;
+    		}
+    	};    	
+    	
+    	/*
+    	 * The following is the comparator we use to sort products by brand, alphabetically, with numbers first then letters.
+		 * Leading numbers are compared naturally.
+    	 */
+    	public static final Comparator<ProductDTO> ALPHABITICALLY_BRAND_AZ = new Comparator<ProductDTO>() {
+       		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {			
+    			String o1BrandName = o1.getBrand().getName();
+    			String o2BrandName = o2.getBrand().getName();
+    			int brandCompare = o1BrandName.compareTo(o2BrandName);
+    			if(brandCompare == 0) {
+    				String o1ProdName = o1.getNameProduc().toLowerCase();
+    				String o2ProdName = o2.getNameProduc().toLowerCase();
+    				if (Character.isDigit(o1ProdName.charAt(0)) && Character.isDigit(o2ProdName.charAt(0))) {
+    					Integer o1Number = Integer.parseInt(o1ProdName.split("\\D+")[0]);
+    					Integer o2Number = Integer.parseInt(o2ProdName.split("\\D+")[0]);
+    					if (o1Number != o2Number) {
+    						return o1Number.compareTo(o2Number);
+    					}
+    				}
+    				return (o1ProdName.compareTo(o2ProdName));
+    			}
+    			return brandCompare;
+    		}
+    	};
+    	
+    	/**
+    	 * The following are the comparators we use to sort game search results.
+    	 */
+    	public static final Comparator<ProductDTO> DISCOUNT_DESC = new Comparator<ProductDTO>() {    		
+    		@Override
+    		public int compare(ProductDTO o1, ProductDTO o2) {
+    			Double discount1 = o1.getDiscount();
+    			Double discount2 = o2.getDiscount();
+    			int compareToDiscountPct = discount2.compareTo(discount1);
+    			int outcome = compareToDiscountPct;
+    			if (compareToDiscountPct == 0) {
+    				String price1 = o1.getPriceProduct();
+    				String price2 = o2.getPriceProduct();
+    				String msrp1 = o1.getMsrp();
+    				String msrp2 = o2.getMsrp();
+    				Double discount$1 = getDiscount$(price1, msrp1);
+    				Double discount$2 = getDiscount$(price2, msrp2);
+    				int compareToDiscount$ = discount$2.compareTo(discount$1);
+    				outcome = compareToDiscount$;
+    				if (compareToDiscount$ == 0) {
+    					String name1 = o1.getNameProduc();
+    					String name2 = o2.getNameProduc();					
+    					int compareToName = name1.compareTo(name2);
+    					outcome = compareToName;
+    					if (compareToName == 0) {
+    						Long id1 = o1.getId();
+    						Long id2 = o2.getId();
+    						outcome = id1.compareTo(id2);
+    					}
+    				}
+    			}
+    			return outcome;
+    		}
+    		
+    		private Double getDiscount$(String price, String msrp) {
+				double priceVal = 0d;
+				double msrpVal = 0d;
+				double discountVal = 0d;
+				if (price != null) {
+					if (!price.matches("^\\s*$") && !price.equalsIgnoreCase("")) {
+						priceVal = Double.parseDouble(price);		
+					} else {
+						priceVal = 0d;
+					}
+				}				
+				if (msrp != null) {					
+					if (!msrp.matches("^\\s*$") && !msrp.equalsIgnoreCase("")) {	
+						msrpVal = Double.parseDouble(msrp);	
+						discountVal = msrpVal - priceVal;
+					}
+				}
+				return discountVal;
+    		}
+    	};
+}
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2015-03-23 10:11:47.310
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 16 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-23 10:11:47.311
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-23 10:11:47.312
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2015-03-23 10:11:47.313
+!MESSAGE Error in JDT Core during reconcile
+!STACK 1
+Java Model Exception: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:233)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	... 16 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1005 2015-03-23 10:11:47.313
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference.getTypeBinding(QualifiedTypeReference.java:69)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:131)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:203)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:199)
+	at org.eclipse.jdt.internal.compiler.ast.Annotation.resolveType(Annotation.java:233)
+	at org.eclipse.jdt.internal.compiler.ast.ASTNode.resolveAnnotations(ASTNode.java:637)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:409)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:883)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:928)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:189)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:255)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:190)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:89)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1244)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:102)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:21:25.464
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:21:25.652
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:21:25.652
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:21:35.292
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:21:35.684
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:21:35.684
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:21:44.004
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:21:44.189
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:21:44.189
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:22:04.087
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:22:04.285
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:22:04.285
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:22:12.640
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:22:12.822
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:22:12.822
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:134)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:410)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:23:00.973
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:23:01.158
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:23:01.158
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-23 11:23:07.091
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-23 11:23:07.286
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-23 11:23:07.286
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+!SESSION 2015-03-24 11:48:46.073 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 4 566 2015-03-24 11:49:01.746
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+
+!ENTRY org.eclipse.ui.workbench 4 2 2015-03-24 11:49:01.746
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1981)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2653)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1845)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:2705)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:2645)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:2783)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:1915)
+	at org.eclipse.jdt.internal.core.JavaProject.isOnClasspath(JavaProject.java:2193)
+	at org.eclipse.jdt.internal.ui.BuildpathIndicatorLabelDecorator.getOverlay(BuildpathIndicatorLabelDecorator.java:47)
+	at org.eclipse.jdt.internal.ui.BuildpathIndicatorLabelDecorator.decorate(BuildpathIndicatorLabelDecorator.java:34)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 1 2015-03-24 11:49:01.746
+!MESSAGE Worker thread ended job: Refreshing workspace(7), but still holds rule: ThreadJob(Refreshing workspace(7),[F/loyaltySource/web/media/brand,])
+!SESSION 2015-03-24 11:49:01.676 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-03-24 11:49:03.520
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2015-03-24 11:49:25.752 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.7.0_17
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-03-24 11:49:27.615
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 4 2 2015-03-24 12:25:01.411
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-03-24 12:25:01.707
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-03-24 12:25:01.707
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)

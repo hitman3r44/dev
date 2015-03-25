@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>SAIL3A</po_number>
+        <first_name>Anne Maud</first_name>
+        <last_name>Guinard Parser</last_name>
+        <client_street>2850 Jacques Bureau</client_street>
+        <client_city>Laval</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H7P0B7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>KOLWC24</ls_product_id>
+        <product_title>24 Bottle Dual Zone Wine Chiller</product_title>
+        <cost>243.0</cost>
+        <shipping_cost>32.11</shipping_cost>
+        <tracking_number>7310723302544470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>SAIL3B</po_number>
+        <first_name>Anne Maud</first_name>
+        <last_name>Guinard Parser</last_name>
+        <client_street>2851 Jacques Bureau</client_street>
+        <client_city>Laval</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H7P0B8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>BVLR200XL</ls_product_id>
+        <product_title>Panini Grill</product_title>
+        <cost>93.6</cost>
+        <shipping_cost>10.32</shipping_cost>
+        <tracking_number>7310723280571468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+</shipped_orders>

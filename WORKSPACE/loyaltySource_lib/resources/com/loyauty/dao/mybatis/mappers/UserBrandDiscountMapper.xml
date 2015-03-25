@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    
+    
+ 
+<mapper namespace="com.loyauty.dao.mybatis.mappers.UserBrandDiscountMapper">
+
+		
+	<resultMap type="UserBrandDiscount" id="UserBrandDiscountResultMap">
+		<id property="id" column="UserBrandDiscountId"/>		
+	</resultMap>	
+
+	
+	<sql id="select">
+		select  ubd.id as UserBrandDiscountId,
+				ubd.user_id as userId,
+				ubd.brand_id as brandId,
+				ubd.discount as discount,
+				ubd.creation_date as creationDate			
+		FROM user_brand_discount ubd	
+	</sql>
+   	<sql id="whereId">where ubd.id = #{id}</sql>
+
+   	
+   	<select id="getEntity" resultMap="UserBrandDiscountResultMap">
+		<include refid="select"/>		
+      	<include refid="whereId"/>
+	</select>
+	
+	<select id="getAllEntities" resultMap="UserBrandDiscountResultMap">
+		<include refid="select"/>			      	
+	</select>
+	
+	<select id="getUserBrandDiscount" parameterType="UserBrandDiscount" resultMap="UserBrandDiscountResultMap">
+		<include refid="select"/>
+		where ubd.user_id= #{userId} and ubd.brand_id = #{brandId}
+	</select>
+	
+	
+	<insert id="insertEntity" parameterType="UserBrandDiscount">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('user_brand_discount_id_seq')
+    	</selectKey>
+		insert into user_brand_discount(id, user_id, brand_id, discount)
+		values(#{id}, #{userId}, #{brandId}, #{discount})	
+	</insert>
+
+	<update id="updateEntity" parameterType="UserBrandDiscount">
+		update user_brand_discount ubd set user_id=#{userId}, brand_id=#{brandId}, discount=#{discount}, creation_date=#{creationDate}
+		<include refid="whereId"/>
+	</update>
+	
+	<delete id="deleteEntity" parameterType="long">
+		delete from user_brand_discount 
+		<include refid="whereId"/>
+	</delete>  
+
+
+
+
+</mapper>

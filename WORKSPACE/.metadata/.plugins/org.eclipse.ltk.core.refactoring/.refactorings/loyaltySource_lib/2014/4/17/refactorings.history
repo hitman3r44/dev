@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_lib/src/com/SendMailTesting.java&apos; to &apos;OrdersConfirmSendMail.java&apos;" description="Rename resource &apos;SendMailTesting.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/SendMailTesting.java" name="OrdersConfirmSendMail.java" stamp="1398551192147" updateReferences="true"/>
+</session>

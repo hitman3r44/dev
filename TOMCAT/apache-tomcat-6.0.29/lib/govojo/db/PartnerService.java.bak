@@ -1,0 +1,600 @@
+//PartnerService.java
+
+package govojo.db;
+
+import govojo.debugging.ExceptionHandler;
+import govojo.util.TimeAndDate;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class PartnerService extends DatabaseRecord
+{
+    public final static int DEFAULT_PARTNER_ID = 1;
+    public final static int DEFAULT_PARTNERSERVICE_ID = 1;
+    
+	//Start 05/09/2012 RGP
+	public static final int PS_2GAMES_FOR_PRICE_OF_1_ID = 19;	
+	//End 05/09/2012 RGP
+    
+
+    protected int         _partservID;
+    protected int         _partnerID;
+    protected int         _serviceID;
+    protected int         _statusID;
+    protected String      _visible;
+    protected String      _price;
+    protected TimeAndDate _timestamp;
+
+    /** the table where data is stored */
+    static final protected String _tableName = "partnerservice";
+    
+    /** the field in the database that is the unique id */
+    static final protected String _idFieldName = "pasv_id";
+
+    /** the sequence for the primary key */
+    static final protected String _primaryKeySequence = "partnerservice_pasv_id_seq";
+
+    /** the fields that are in the database, without the id field */
+    static final protected String[] _fields =
+    {
+	"pa_id",
+	"sv_id",
+	"status_id",
+	"pasv_visible",
+	"pasv_price",
+	"pasv_timestamp"
+    };
+
+    static public final Map<Integer, List<PartnerService>> PARTNER_BY_BILLING_1234GAME_OUT_MAP;
+    static public final PartnerService REGULAR_PARTNER_BILLING_MONTHLY_2GAMES_OUT;
+    static public final PartnerService DISCOUNT_PARTNER_BILLING_MONTHLY_1GAME_OUT;
+    static public final PartnerService DISCOUNT_PARTNER_BILLING_MONTHLY_2GAME_OUT;
+    static {
+		// Building of PartnerService list following the billing plan
+		List<Integer> rentalPlanIds = new ArrayList<Integer>();
+		rentalPlanIds.add(1); // 1 game out
+		rentalPlanIds.add(2); // 2 game out
+		rentalPlanIds.add(3); // 3 game out
+		rentalPlanIds.add(4); // 4 game out
+    	PARTNER_BY_BILLING_1234GAME_OUT_MAP = PartnerService.getMapOfPartnerServiceListByRentalPlanIds(rentalPlanIds); 
+		// Building of monthly one game out PartnerService in discount
+		PartnerService oneGameOutDiscountMonthly = new PartnerService();
+
+		oneGameOutDiscountMonthly.selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(7, 0, BillingType.MONTHLY_BILLING);
+		DISCOUNT_PARTNER_BILLING_MONTHLY_1GAME_OUT = oneGameOutDiscountMonthly;
+		PartnerService twoGameOutDiscountMonthly = new PartnerService();
+		twoGameOutDiscountMonthly.selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(8, 0, BillingType.MONTHLY_BILLING);
+		DISCOUNT_PARTNER_BILLING_MONTHLY_2GAME_OUT = twoGameOutDiscountMonthly;
+
+		PartnerService twoGamesOutRegularMonthly = new PartnerService();
+		twoGamesOutRegularMonthly.selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(2, 0, BillingType.MONTHLY_BILLING);
+		REGULAR_PARTNER_BILLING_MONTHLY_2GAMES_OUT = twoGamesOutRegularMonthly;
+    }
+    
+    public PartnerService()
+    {
+	initialize();
+    }
+
+    /** get a SINGLE customer from an sql result set */
+    public boolean fillFromCurrentRow(ResultSet result)
+    {
+	try
+	{
+	    setID(result.getInt("pasv_id"));
+	    _partnerID                     = result.getInt("pa_id");
+	    _serviceID                     = result.getInt("sv_id");
+	    _statusID                      = result.getInt("status_id");
+	    _visible                       = result.getString("pasv_visible");
+	    _price                         = result.getString("pasv_price");
+	    _timestamp                     = TimeAndDate.getTimeAndDateFromSQLDateString(result.getString("pasv_timestamp"));
+
+ 	    return true;
+	}
+	catch (Exception e)
+	{
+	    ExceptionHandler.handleException(e,"PartnerService.fillFromCurrentRow()");
+	    return false;
+	}
+    }
+
+    /** the name of the database table that stores the data */
+    public String getTableName()
+    {
+	return _tableName;
+    }
+
+    /** the field in the database that is the unique id */
+    public String getIDFieldName()
+    {
+       return _idFieldName;
+    }
+
+    /** the names of the fields that are stored in the database */
+    public String[] getFieldNames()
+    {
+       return _fields;
+    }
+
+    public String getPrimaryKeySequence()
+    {
+	return _primaryKeySequence;
+    }
+
+    /** gets the this instance's current value of all of the db data */
+    public String[] getCurrentFieldValues()
+    {
+       //the local place holder for values in the database
+       String values[] =
+       {   
+	   Integer.toString(_partnerID),
+	   Integer.toString(_serviceID),
+	   Integer.toString(_statusID),
+	   _visible,
+	   _price,
+	   TimeAndDate.getSQLDateStringFromTimeAndDate(_timestamp)
+       };
+       return values;
+    }
+
+    /** fill in all the blank data */
+    void initialize() 
+    {
+	_partservID              = 0;
+	_partnerID               = 0;
+	_serviceID               = 0;
+	_statusID                = 0;
+	_visible                 = "";
+	_price                   = "";
+	_timestamp               = new TimeAndDate();
+    }
+
+    /** return a new blank instance of this class
+      * NOTE: This is not static and cannot be static because
+      * it must be abstract in record.
+      * Java prevents methods from being both static and abstract
+      */
+    public DatabaseRecord newInstance()
+    {
+       return new PartnerService();
+    }
+
+    /** return and array of creditcards from the sql result Set */
+    public static PartnerService[] newArray(ResultSet resultSet)
+    {
+       return 
+	   ((PartnerService[]) newArray(resultSet, (new PartnerService()).getClass()));
+
+    }
+
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+    /*--------SETS AND GETS--------------------*/
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+    public int getPartner()
+    {
+	return(_partnerID);
+    }
+
+    public void setPartner(int thePartner)
+    {
+	_partnerID = thePartner;
+    }
+
+    public int getService()
+    {
+        return(_serviceID);
+    }
+
+    public void setService(int theService)
+    {
+        _serviceID = theService;
+    }
+
+    public int getStatus()
+    {
+	return(_statusID);
+    }
+
+    public void setStatus(int theStatus)
+    {
+	_statusID = theStatus;
+    }
+
+    public String getVisible()
+    {
+	return(_visible);
+    }
+
+    public void setVisible(String isVisible)
+    {
+	_visible = isVisible;
+    }
+    
+    public String getPrice()
+    {
+	return(_price);
+    }
+
+    public void setPrice(String thePrice)
+    {
+	_price = thePrice; 
+    }
+
+    public TimeAndDate getTimestamp()
+    {
+	return(_timestamp);
+    }
+
+    public void setTimestamp(TimeAndDate theDate)
+    {
+	_timestamp = theDate;
+    }
+
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+    /*----------BUSINESS LOGIC-----------------*/
+    /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+	/**
+	 * This method give a Map of PartnerService list for each billingCycle and for the rental plan ids given in argument 
+	 * @param rentalPlanIds list of rental plan ids used to select prices
+	 * @return a Map[billingCycleId:partnerService list] for the rental plan ids given in argument
+	 */
+    public static Map<Integer, List<PartnerService>> getMapOfPartnerServiceListByRentalPlanIds(
+    		List<Integer> rentalPlanIds) {
+    	
+    	StringBuilder rentalPlanIdsStr = new StringBuilder();
+    	if (rentalPlanIds != null && rentalPlanIds.size()>0) {
+    		rentalPlanIdsStr.append(rentalPlanIds.get(0).toString());
+    		for (int i = 1; i < rentalPlanIds.size(); i++) {
+    			Integer planId = rentalPlanIds.get(i);
+    			rentalPlanIdsStr.append(","+planId);
+			}
+    	}
+    	
+    	String selectMonthly = " select ps.* from partnerservicebilling psb, partnerservice ps " +
+						    	" where psb.bt_id = " + BillingType.MONTHLY_BILLING +
+						    	" and   ps.pasv_id = psb.pasv_id " +
+						    	" and   ps.sv_id in (" + rentalPlanIdsStr + ") ";
+    	
+    	String selectQuarterly = " select ps.* from partnerservicebilling psb, partnerservice ps " +
+						    	" where psb.bt_id = " + BillingType.QUARTERLY_BILLING +
+						    	" and   ps.pasv_id = psb.pasv_id " +
+						    	" and   ps.sv_id in (" + rentalPlanIdsStr + ") ";
+    	
+    	String selectBiAnnual = " select ps.* from partnerservicebilling psb, partnerservice ps " +
+						    	" where psb.bt_id = " + BillingType.BIANNUAL_BILLING +
+						    	" and   ps.pasv_id = psb.pasv_id " +
+						    	" and   ps.sv_id in (" + rentalPlanIdsStr + ") ";
+
+    	List<PartnerService> lmonthly = getResultList(selectMonthly);
+    	List<PartnerService> lquarterly = getResultList(selectQuarterly);
+    	List<PartnerService> lbiannual = getResultList(selectBiAnnual);
+    	// filling the a map
+    	Map<Integer, List<PartnerService>> result = new HashMap<Integer, List<PartnerService>>();
+    	result.put(BillingType.MONTHLY_BILLING, lmonthly);
+    	result.put(BillingType.QUARTERLY_BILLING, lquarterly);
+    	result.put(BillingType.BIANNUAL_BILLING, lbiannual);
+    	
+    	return result;
+    }
+    
+    /**
+     * This function takes two integers and 
+     * it returns the ID of the partnerservice that has that number of games
+     * out for that partner. There should only be one plan for
+     * the partner at that number out, otherwise how would we pick? If no
+     * plans are found for the partner, the integer returned is zero
+     * @param partnerID partner Id
+     * @param numOut number of game out
+     * @return the ID of the partnerservice that has that number of games out for that partner
+     */
+    public static int selectPlanForPartnerWithNumGamesOut(int partnerID, int numOut) {
+        String selectString = "select " + _idFieldName + " from " +
+	    " partnerservice, service where partnerservice.sv_id = service.sv_id " +
+	    " AND pa_id = " + partnerID + 
+	    " AND sv_max_games_out = " + numOut +
+	    " AND pasv_visible = 'true'";
+
+        System.out.println("Executing: "+selectString);
+
+	int returnVal = 0;
+
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = getDBConnection();
+            statement = connection.createStatement();
+
+            // get the results,
+            ResultSet resultSet = statement.executeQuery(selectString);
+	    while(resultSet.next()) {
+                returnVal = resultSet.getInt(_idFieldName);
+            }
+
+        } catch(Exception e) {
+            ExceptionHandler.handleException(e,"PartnerService.selectPlanFor() exception:");
+        } finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                ExceptionHandler.handleException(e,"PartnerService.close() Exception:");
+                e.printStackTrace();
+            }
+        }
+        return (returnVal);
+    }
+
+    public boolean selectPartnerServicesForPartnerAndServiceIDs(int sv_id, int pa_id){
+
+        String selectString = "select * from " + _tableName + " where pa_id = " + pa_id + 
+                              " AND sv_id = " + sv_id;
+
+        if(pa_id == 0){
+            pa_id = DEFAULT_PARTNER_ID;
+        }
+
+        return getResult(selectString);
+    }
+
+// ---------------------- (KTPL : Billing Cycle(Change membership) --------------------
+    
+    public boolean selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(int sv_id, int pa_id,int billingCycle){
+
+    	if(pa_id == 0){
+            pa_id = DEFAULT_PARTNER_ID;
+        }
+System.out.println("Sv_Id:"+sv_id+" pa_id:"+pa_id + " billing :"+billingCycle);    	
+    	String selectString = "select partnerservice.pasv_id,pa_id,sv_id,status_id,pasv_price,pasv_timestamp,pasv_visible from " + _tableName + ",partnerservicebilling where pa_id = " + pa_id + 
+                              " AND sv_id = " + sv_id + " and partnerservice.pasv_id = partnerservicebilling.pasv_id and bt_id="+billingCycle;
+
+        
+
+        return getResult(selectString);
+    }
+    
+//  ---------------------- KTPL : Billing Cycle) --------------------
+
+    public PartnerService[] selectPartnerServicesForPartnerID(int pa_id){
+
+        String selectString = "select * from " + _tableName + " where pa_id = " + pa_id;
+
+        if(pa_id == 0){
+            pa_id = DEFAULT_PARTNER_ID;
+        } 
+
+	selectString += " order by pasv_id";
+
+        return getResults(selectString);
+    }
+
+    public PartnerService[] selectAllPartnerService(){
+
+	String selectString = "select * from " + _tableName;
+
+	if (_partnerID != 0) {
+	    selectString += " where pa_id = " + _partnerID;
+	}
+
+	selectString += " order by to_number(pasv_price, '9999D99')";
+
+        return getResults(selectString);
+    }
+    
+    
+    public PartnerService selectPriceForPartnerAndServiceIDAndBillingCycle(int sv_id, int pa_id,int billingCycle){
+
+    	if(pa_id == 0){
+            pa_id = DEFAULT_PARTNER_ID;
+        }
+    	
+    	
+    	// As the games out is 1 for both service id 1 and 7, also billing cycles is applicalbe 
+    	// for 1,2,3,4 games out, change service id to 1 if it is 7 and change to 2 if it is 8)
+    	// 7 and 8 are discounted memberships with games out 1 and 2 respectively
+    	if(sv_id == 7 || sv_id == 10){
+    		sv_id = 1;
+    	}
+    	
+    	if(sv_id == 8){
+    		sv_id = 2;
+    	}
+    	
+    	System.out.println("Sv_Id:"+sv_id+" pa_id:"+pa_id + " billing :"+billingCycle);    	
+    	
+    	String selectString = "select partnerservice.pasv_id,pa_id,sv_id,status_id,pasv_price,pasv_timestamp,pasv_visible from " + _tableName + ",partnerservicebilling where pa_id = " + pa_id + 
+                              " AND sv_id = " + sv_id + " and partnerservice.pasv_id = partnerservicebilling.pasv_id and bt_id="+billingCycle;
+
+         
+
+    	  System.out.println("Executing: "+selectString);
+
+    	  PartnerService returnVal = new PartnerService();
+
+          System.out.println("Executing: " + selectString);
+
+          Connection connection = null;
+          Statement statement = null;
+
+          try {
+              connection = getDBConnection();
+              statement = connection.createStatement();
+
+              // get the results,
+              ResultSet resultSet = statement.executeQuery(selectString);
+
+              if(!returnVal.fillFromNextRow(resultSet)){
+                  returnVal = null;
+              }
+          }
+          catch(Exception e) {
+              ExceptionHandler.handleException(e,"GamePurchaseRequest.select() exception:");
+          }
+          finally {
+              try {
+                  statement.close();
+                  connection.close();
+              } catch (SQLException e) {
+                  ExceptionHandler.handleException(e,"GamePurchaseRequest.close() Exception:");
+                  e.printStackTrace();
+              }
+          }
+
+          return(returnVal);
+    }
+
+    public boolean getResult(String selectString) {
+        // Extra where clause to save me the logic of figuring out
+        // if one is needed or not.
+
+        boolean returnVal = false;
+        ResultSet resultSet = null;
+
+        System.out.println("Executing: "+selectString);
+
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = getDBConnection();
+            statement = connection.createStatement();
+
+            // get the results,
+            resultSet = statement.executeQuery(selectString);
+            returnVal = fillFromNextRow(resultSet);
+        }
+        catch(Exception e) {
+            ExceptionHandler.handleException(e,"Subscription.select() exception:");
+        }
+        finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                ExceptionHandler.handleException(e,"PartnerService.close() Exception:");
+                e.printStackTrace();
+            }
+        }
+        return returnVal;
+    }
+
+    static public List<PartnerService> getResultList(String selectString) {
+            List<PartnerService> partnerServices = null;
+            ResultSet resultSet = null;
+
+            System.out.println("Executing: "+selectString);
+
+            Connection connection = null;
+            Statement statement = null;
+            try {
+    	    connection = getDBConnection();
+    	    statement = connection.createStatement();
+    	    
+    	    // get the results,
+    	    resultSet = statement.executeQuery(selectString);
+            partnerServices = newArrayList(resultSet, PartnerService.class);
+    	}
+            catch(Exception e) {
+    	    ExceptionHandler.handleException(e,"Subscription.select() exception:");
+    	}
+            finally {
+                try {
+                    statement.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    ExceptionHandler.handleException(e,"PartnerService.close() Exception:");
+                    e.printStackTrace();
+                }
+            }
+            return partnerServices;
+        }
+    
+    public PartnerService[] getResults(String selectString) {
+	// Extra where clause to save me the logic of figuring out
+	// if one is needed or not.
+
+        PartnerService [] partnerServiceArray = null;
+        ResultSet resultSet = null;
+
+        System.out.println("Executing: "+selectString);
+
+        Connection connection = null;
+        Statement statement = null;
+        try {
+	    connection = getDBConnection();
+	    statement = connection.createStatement();
+	    
+	    // get the results,
+	    resultSet = statement.executeQuery(selectString);
+            partnerServiceArray = newArray(resultSet);
+	}
+        catch(Exception e) {
+	    ExceptionHandler.handleException(e,"Subscription.select() exception:");
+	}
+        finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                ExceptionHandler.handleException(e,"PartnerService.close() Exception:");
+                e.printStackTrace();
+            }
+        }
+        return partnerServiceArray;
+    }
+
+    public void runTests()
+    {
+	
+   	setPrice("219.95");
+	setPartner(1);
+	setService(4);
+	setStatus(1);
+	setVisible("true");
+	insert();
+       	
+    	
+    	
+	
+    }
+    
+    /** for testing */
+    public static void main(String args[])
+    {
+    	
+	PartnerService thePS = new PartnerService();
+	thePS.setPartner(1);
+	thePS.setService(6);
+	thePS.setPrice("79.99");
+	thePS.setStatus(1);
+	thePS.setVisible("true");
+	thePS.insert();	
+	//thePS.runTests();
+    }
+
+}
+
+
+/***********************************************************
+Query used to create the PartnerService table
+
+create sequence partnerservice_pasv_id_seq INCREMENT 1 START 1;
+
+create table partnerservice
+(
+ pasv_id int primary key DEFAULT nextval('partnerservice_pasv_id_seq'),
+ pa_id int constraint fkey_pasv_pa_id references partner(pa_id),
+ sv_id int constraint fkey_pasv_sv_id references service(sv_id),
+ status_id int constraint fkey_pasv_status_id references partnerstatus(status_id),
+ pasv_visible varchar(10),
+ pasv_price varchar(10),
+ pasv_timestamp TIMESTAMP
+);
+********************************************/

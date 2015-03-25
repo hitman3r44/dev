@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Tiles linked to an Action-->
+	<definition name="/homePage.tiles" extends="baseLayoutFancy">
+		<!-- Homepage to be completed -->
+		<put-attribute name="body" type="template" value="../layouts/homePage.jsp" />	
+	</definition>
+	
+	<definition name="/signInPop.tiles" extends="popFormLayout">
+		<put-attribute name="body" type="template" value="../pops/signInPop.jsp" />
+	</definition> 
+	
+	<definition name="/commonList.tiles" extends="baseLayoutFancyDatatables">
+		<put-attribute name="body" type="template" value="../layouts/commonList.jsp" />
+	</definition>
+	
+	<definition name="/manageAccount.tiles" extends="baseLayoutFancyDatatables">
+		<put-attribute name="body" type="template" value="../user/manageAccount.jsp" />
+	</definition>
+	
+	<definition name="/addProduct.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../product/addProduct.jsp" />
+	</definition>
+	
+	<definition name="/editProduct.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../product/editProduct.jsp" />
+	</definition>
+
+	<definition name="/addSimilarProduct.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../product/addSimilarProduct.jsp" />
+	</definition>
+	
+	<definition name="/addProductSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../product/addProductSuccess.jsp" />
+	</definition>  
+
+	<definition name="/editProductSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../product/editProductSuccess.jsp" />
+	</definition>
+	
+	<definition name="/productToExcel.tiles" extends="baseLayoutFancyDatatables">
+		<put-attribute name="body" type="template" value="../product/productToExcel.jsp" />
+	</definition> 
+		
+	<definition name="/addCategory.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../category/addCategory.jsp" />
+	</definition> 
+	
+	<definition name="/addCategorySuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../category/addCategorySuccess.jsp" />
+	</definition> 
+	
+	<definition name="/editCategory.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../category/editCategory.jsp" />
+	</definition>
+	
+	<definition name="/addBrand.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../brand/addBrand.jsp" />
+	</definition>
+	
+	<definition name="/editBrand.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../brand/editBrand.jsp" />
+	</definition>
+	
+	<definition name="/addBrandSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../brand/addBrandSuccess.jsp" />
+	</definition>   
+	
+	<definition name="/addMainSpecification.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../specification/addMainSpecification.jsp" />
+	</definition>
+	
+	<definition name="/mainSpecificationSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../specification/mainSpecificationSuccess.jsp" />
+	</definition>  
+	
+	<definition name="/editMainSpecification.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../specification/editMainSpecification.jsp" />
+	</definition>
+		
+	<definition name="/addUser.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/addUser.jsp" />
+	</definition>
+	
+	<definition name="/addUserSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/addUserSuccess.jsp" />
+	</definition>
+	
+	<definition name="/editUser.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/editUser.jsp" />
+	</definition>
+	
+	<definition name="/listProduct.tiles" extends="baseLayoutFancyDatatables">
+		<put-attribute name="body" type="template" value="../product/listProduct.jsp" />		
+	</definition>
+	
+	<definition name="/messageInfoPop.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../pops/messageInfoPop.jsp" />
+	</definition>
+
+	<definition name="/viewBrand.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../view/viewBrand.jsp" />
+	</definition>
+
+	<definition name="/viewCategory.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../view/viewCategory.jsp" />
+	</definition>
+
+	<definition name="/viewType.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../view/viewType.jsp" />
+	</definition>
+	
+	<definition name="/viewUser.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../view/viewUser.jsp" />
+	</definition>
+
+	<definition name="/viewProduct.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../view/viewProduct.jsp" />
+	</definition>
+	
+	<definition name="/amendProduct.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../amend/amendProduct.jsp" />
+	</definition>
+	
+	<definition name="/amendingProductSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../amend/amendingProductSuccess.jsp" />
+	</definition>
+			
+	<definition name="/uploadXLSSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../asiaMiles/uploadXLSSuccess.jsp" />
+	</definition>
+	
+	<definition name="/uploadXLS.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../asiaMiles/uploadXLS.jsp" />
+	</definition>
+		
+	<definition name="/downloadPDFSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../asiaMiles/downloadPDFSuccess.jsp" />
+	</definition>			
+				
+	<definition name="/downloadPDF.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../asiaMiles/downloadPDF.jsp" />
+	</definition>			
+	
+		
+	<definition name="/uploadXMLSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../inbox/uploadXMLSuccess.jsp" />
+	</definition>
+	
+	<definition name="/uploadXML.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../inbox/uploadXML.jsp" />
+	</definition>
+		
+	<definition name="/downloadPDFXMLSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../inbox/downloadPDFSuccess.jsp" />
+	</definition>
+					
+	<definition name="/uploadXLSADVSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../advantage/uploadXMLSuccess.jsp" />
+	</definition>
+	
+	<definition name="/uploadXLSADV.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../advantage/uploadXML.jsp" />
+	</definition>
+		
+	<definition name="/downloadPDFXLSLADVSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../advantage/downloadPDFSuccess.jsp" />
+	</definition>
+		
+	<definition name="/transferSuccess.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/transfer/transferSuccess.jsp" />
+	</definition>			
+				
+	<definition name="/transfer.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/transfer/transfer.jsp" />
+	</definition>
+					
+	<definition name="/addTemplate.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../template/addTemplate.jsp" />
+	</definition>
+							
+	<definition name="/noteAdmin.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/admin/noteAdmin.jsp" />
+	</definition>
+
+	<definition name="/usersListAccount.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/usersListAccount.jsp" />
+	</definition>
+
+	<definition name="/createOrdersAuto.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/createOrdersAuto.jsp" />
+	</definition>
+	
+	<definition name="/createOrdersAutoRemoteFile.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/createOrdersAutoRemoteFile.jsp" />
+	</definition>
+
+	<definition name="/createOrdersManual.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/createOrdersManual.jsp" />
+	</definition>
+	
+	<definition name="/reportOrders.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/reportOrders.jsp" />
+	</definition>
+	
+	<definition name="/invoicedOrders.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/invoicedOrders.jsp" />
+	</definition>
+	
+	<definition name="/generateInvoice.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/generateInvoice.jsp" />
+	</definition>
+
+	<definition name="/treatmentOrders.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/treatmentOrders.jsp" />
+	</definition>
+
+	<definition name="/downloadPDFXML.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/treatmentOrders.jsp" />
+	</definition>
+
+	<definition name="/getOrderFile.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/getOrderFile.jsp" />
+	</definition>
+	
+	
+	<definition name="/getOrderRemoteFile.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/getOrderRemoteFile.jsp" />
+	</definition>
+	
+	<definition name="/uploadAdminXLS.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/uploadAdminXLS.jsp" />
+	</definition>
+
+	<definition name="/ordersFileMapper.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/ordersFileMapper.jsp" />
+	</definition>
+
+	<definition name="/userConnection.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../user/userConnection.jsp" />
+	</definition>
+
+	<!-- Generics templates -->
+	<definition name="baseLayout" template="/WEB-INF/jsp/layouts/baseLayout.jsp">
+		<!-- header -->
+		<put-attribute name="title" type="template" value="baseHeaderTitle.jsp" />
+		<put-attribute name="keywords" type="template" value="baseHeaderKeywords.jsp" />
+		<put-attribute name="description" type="template" value="baseHeaderDescription.jsp" />
+		<!-- header -->
+		<!-- body -->
+		<put-attribute name="menu" type="template" value="menu.jsp" />
+		<put-attribute name="search" type="template" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" type="template" value="footer.jsp" />
+		<!-- body -->
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList"></put-list-attribute>
+		<put-list-attribute name="cssList"></put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	<definition name="popLayout" template="WEB-INF/jsp/layouts/popLayout.jsp">
+		<!-- body -->
+		<put-attribute name="body" value="" />
+		<!-- body -->
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList"></put-list-attribute>
+		<put-list-attribute name="cssList"></put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	
+	<definition name="popFormLayout" extends="popLayout" >
+		<!-- header custom css and js-->
+		<put-list-attribute name="scriptList">
+			<add-attribute type="string" value="jquery.form.js" />
+			<add-attribute type="string" value="gamejab.vanadium.js" />
+		</put-list-attribute>
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="form.css" />
+		</put-list-attribute>
+		<!-- header custom css and js-->
+	</definition>
+	
+	<definition name="baseLayoutFancy" extends="baseLayout">
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.css" />
+		</put-list-attribute>
+		<put-list-attribute name="scriptList">
+			<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+			<add-attribute type="string" value="fancybox/fancybox-types.js" />
+			<add-attribute type="string" value="fancybox/jquery.easing-1.3.pack.js" />
+		</put-list-attribute>
+	</definition>
+		
+	<definition name="formLayoutFancy" extends="baseLayout">
+			<put-list-attribute name="scriptList">
+				<add-attribute type="string" value="jquery.form.js" />
+				<add-attribute type="string" value="gamejab.vanadium.js" />
+				<add-attribute type="string" value="fileuploader.js" />
+				<add-attribute type="string" value="ckeditor/ckeditor.js" />
+				<add-attribute type="string" value="ckeditor/ckeditor_customStart.js"/>	
+				<add-attribute type="string" value="ckeditor/adapters/jquery.js" />
+				<add-attribute type="string" value="loyalty.userAdminManager.js" />	
+				<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+				<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+				<add-attribute type="string" value="fancybox/fancybox-types.js" />
+			</put-list-attribute>
+			<put-list-attribute name="cssList">
+				<add-attribute type="string" value="form.css" />
+				<add-attribute type="string" value="fileuploader.css" />
+				<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.css" />
+			</put-list-attribute>
+	</definition>
+	
+	<definition name="baseLayoutFancyDatatables" extends="baseLayout">
+		<put-list-attribute name="cssList">
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.css" />
+			<add-attribute type="string" value="form.css" />
+			<add-attribute type="string" value="datatable.css" />	
+		</put-list-attribute>
+		<put-list-attribute name="scriptList" >
+			<add-attribute type="string" value="fancybox/jquery.mousewheel-3.0.4.pack.js" />
+			<add-attribute type="string" value="fancybox/jquery.fancybox-1.3.4.pack.js" />	
+			<add-attribute type="string" value="fancybox/fancybox-types.js" />	
+			<add-attribute type="string" value="jquery.dataTables.js" />
+			<add-attribute type="string" value="datatables-types.js" />
+			<add-attribute type="string" value="jquery.truncator.js" />
+			<add-attribute type="string" value="jquery.jeditable.js" />
+			<add-attribute type="string" value="loyalty.userAdminManager.js" />	
+
+		</put-list-attribute>
+	</definition>
+	
+	<!-- Generics templates -->
+				
+</tiles-definitions>

@@ -1,0 +1,12 @@
+Dear ^${firstname},
+
+Thank you for continuing to be a valued member of GPlay's video game rental service!  We have noticed that the card you have on file is set to expire soon.  Please take a quick moment to update your card information so we can continue to send you all the games you want.  
+
+You can login to your account by clicking on the following link.  Then click on the My Account link in the upper right side of the site to update your card information.
+
+http://www.gplay.com/displayLogin.jsp
+
+
+Thanks again and have a great day!
+
+GPlay Billing Department

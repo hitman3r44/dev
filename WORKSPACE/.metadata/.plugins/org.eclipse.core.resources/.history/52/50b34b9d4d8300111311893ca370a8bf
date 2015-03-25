@@ -1,0 +1,591 @@
+<%@ taglib uri='/WEB-INF/struts-html.tld' prefix='html' %>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/gplay.tld" prefix="govojo" %>
+
+<%@page import="java.util.Locale"%>
+<%@page import="formbeans.Registration"%>
+<%@page import="application.SessionUtils"%>
+<%@page import="govojo.db.SpecialCoupon"%>
+
+<script type="text/javascript">
+var count = 0;
+function checkIframe(){
+
+    try{
+
+    	//For IE Fix
+
+        if(count > 0)
+        {
+
+            document.getElementById('error_div').innerHTML=document.getElementById('ajax_ifr').contentWindow.document.body.innerHTML;
+
+        }
+
+    }catch (e){}
+
+    count++;
+
+}
+
+
+function checkTerms(){
+
+	if(!document.getElementById('termsChkBox').checked)	{
+	
+		alert("<bean:message key="alert.agreetermsandconditions"/>");
+
+		return false;
+
+	}
+
+	var formObj = document.forms['registration'];
+
+    formObj.action = "/registrationStep1.do";
+
+    formObj.target = "";
+
+	return true;
+
+}
+
+function checkCoupon()
+{	
+	document.getElementById('couponValidation').value = "true";
+	
+	var formObj = document.forms['registration'];
+
+    formObj.action = "/registrationStep1.do";
+    
+    formObj.submit();
+
+    getResponse('validateCoupon.jsp?lang=en&code='+document.getElementById('couponCode').value+'&time='+ new Date().getTime(), 'en');
+			
+}
+
+function FastReturn()
+{
+	document.getElementById('checkFastReturn').value = document.getElementById('checkFR').checked;	
+}
+
+function ReserveGame()
+{
+	document.getElementById('checkReserveGame').value = document.getElementById('checkRG').checked;
+}
+
+function callAjax(val){
+
+	document.getElementById('parameterToValidate').value=val;
+
+	var formObj = document.forms['registration'];
+
+	formObj.action = "/ajaxValidate.do";
+
+	formObj.target = "ajax_ifr";
+
+	formObj.submit();
+
+}
+
+function desactivarCheck()
+{
+	document.registration.checkFR.checked = false;
+	document.registration.checkRG.checked = false;
+	document.registration.checkFR.disabled = true;
+	document.registration.checkRG.disabled = true;
+}
+
+function activarCheck()
+{
+	document.registration.checkFR.disabled = false;
+	document.registration.checkRG.disabled = false;
+}
+
+<%
+
+Locale currentLanguage = (Locale)request.getSession().getAttribute(org.apache.struts.action.Action.LOCALE_KEY);
+
+String lang = "en";
+
+if(currentLanguage != null){
+
+    lang = currentLanguage.getLanguage();
+
+}
+
+Registration userBean = null;
+
+try{
+
+    userBean = (Registration)request.getSession().getAttribute("registration");
+
+}catch(Exception e){}
+
+String userLang = null;
+
+if(userBean != null && userBean.getLanguage() != null){
+	
+	userLang = userBean.getLanguage();
+	
+}
+
+%>
+</script>
+
+<script type="text/javascript">		
+
+alert("2");
+alert(window.location.search.substring(1));
+
+$(document).ready(function() {
+	Elastic.configuration.refreshOnResize = false;
+	$("a#example5").fancybox({
+		'titleShow'		: true
+	});
+	$("a#example6").fancybox({
+		'titleShow'		: true
+	});
+	$("a#example7").fancybox({
+		'titleShow'		: true
+	});
+	$("a#example8").fancybox({
+		'titleShow'		: true
+	});
+	$("a#example9").fancybox({
+		'titleShow'		: true
+	});
+	$('input#couponCode').attr("value","");
+	if($('input#radioFreeTrial').attr("checked"))
+	{
+		desactivarCheck();
+	}
+	showCheckReserveGame($('input#couponReserveGame'));
+	$('input#radioOneGame').click(function(){
+		showCheckReserveGame($('input#couponReserveGame'));
+	});
+	$('input#radioTwoGame').click(function(){
+		showCheckReserveGame($('input#couponReserveGame'));
+	});
+		
+	$('input#radioFreeTrial').click(function(){
+		$('strong#textFeatures').text("Features available after the free trial:");
+		$('div#displayReserveGameCoupon').hide();
+		$('div#displayReserveGame').show();
+	});
+	
+	
+});
+
+function showCheckReserveGame(elem)
+{
+	var value = parseInt(elem.val());
+	if($('input#radioFreeTrial').attr("checked"))
+	{
+		$('strong#textFeatures').text("Features available after the free trial:");
+	}
+	else
+	{
+		$('strong#textFeatures').text("Enhance your gaming with these features:");
+	}
+	//3 is coupon type 2reservegames so we have show the checkbox checked.
+	if(value == 3 || value == 13)
+	{
+		$('div#displayReserveGameCoupon').show();
+		$('div#displayReserveGame').hide();
+		$('input#checkRG').attr('checked', false);
+	}
+	else
+	{
+		$('div#displayReserveGameCoupon').hide();
+		$('div#displayReserveGame').show();
+	}
+}
+</script>
+
+<script type="text/javascript" src="scripts/ajax_func.js"></script>
+<script type="text/javascript" src="scripts/couponfunctions.js"></script>
+
+<%
+
+
+boolean hasCoupon = (session.getAttribute(SessionUtils.COUPON_TYPE) != null);
+Integer couponType = (hasCoupon)? (Integer) session.getAttribute(SessionUtils.COUPON_TYPE):null;
+
+String numOfDaysText = "10 days";
+boolean enableOnlyTrialPlan = false;
+ if(couponType != null){                                            	  	
+	  	if(couponType.intValue() == SpecialCoupon.COUPON_15TRIAL)
+	  	{
+	  		numOfDaysText = "<font color=\"#EE0000\">15</font> days";
+	  	} 
+	  	else if(couponType == SpecialCoupon.COUPON_30TRIAL || couponType == SpecialCoupon.COUPON_30TRIAL_ACTIVE
+	  														 || couponType == SpecialCoupon.COUPON_30TRIAL2TIMES)
+	  	{
+	  		numOfDaysText = "<font color=\"#EE0000\">30</font> days";
+	  	//Start 17/12/2010 MJGP
+	  	} 
+	  	else if(couponType == SpecialCoupon.COUPON_60TRIAL)
+	  	{
+			numOfDaysText = "<font color=\"#EE0000\">2</font> months";
+		} 
+	  	else if(couponType == SpecialCoupon.COUPON_90TRIAL)
+	  	{
+			numOfDaysText = "<font color=\"#EE0000\">3</font> months";
+		} 
+	  	else if(couponType == SpecialCoupon.COUPON_180TRIAL)
+	  	{
+			numOfDaysText = "<font color=\"#EE0000\">6</font> months";
+		//End 17/12/2010 MJGP
+	  	}
+	  	//Start 21/04/2011 MJGP
+	  	else if(couponType == SpecialCoupon.COUPON_90TRIAL_RESERVE_GAME)
+	  	{
+			numOfDaysText = "<font color=\"#EE0000\">3</font> months";
+	  	}
+	  	//End 21/04/2011 MJGP
+	  	else if(couponType == SpecialCoupon.COUPON_1YEAR_TRIAL)
+	  	{
+	  		numOfDaysText = "<font color=\"#EE0000\">1 year</font>";
+			enableOnlyTrialPlan = true;
+	  	} 
+	  	else{ 
+	  		numOfDaysText = "10 days"; 
+	  	}
+}
+
+String twoGamesPriceText = "$14.95";
+ if( couponType != null && couponType.intValue() == SpecialCoupon.COUPON_2FOR1SPECIAL){
+ 	twoGamesPriceText = "<font color=\"#EE0000\">$9.95</font>"; 
+ }
+ 
+ String sevenDaysExtText = "the 1<sup>st</sup> month";
+ if( couponType != null && couponType.intValue() == SpecialCoupon.COUPON_7EXTENSION){
+	 sevenDaysExtText = "<font color=\"#EE0000\">37 days</font>"; 
+ }
+ 
+ String reserveGamesText = "Only $2.99/month.";
+ String displayReserveGameCoupon = "";
+ String displayReserveGame = "";
+ if( couponType != null && couponType.intValue() == SpecialCoupon.COUPON_2MRESERVE){
+	 reserveGamesText = "<font color=\"#EE0000\">FREE for 2 months!</font>"; 
+ }
+ if( couponType != null && couponType.intValue() == SpecialCoupon.COUPON_90TRIAL_RESERVE_GAME){
+	 reserveGamesText = "<font color=\"#EE0000\">FREE for 3 months!</font>"; 
+ }
+%>
+<html:form action="/registrationStep1.do" method="post" onsubmit="return checkTerms()"> 
+
+
+<html:hidden property="pageToBeValidated" value="newSignUp0" />
+<input type="hidden" name="nextPage" id="nextPage" value="" />
+<input type="hidden" name="couponValidation" id="couponValidation" value="" />
+<!-- <input type="hidden" name="checkFastReturn" id="checkFastReturn" value="" />
+<input type="hidden" name="checkReserveGame" id="checkReserveGame" value="" /> -->
+<input type="hidden" name="parameterToValidate" id="parameterToValidate" value="0" />
+<html:hidden property="referredBy" value='<%=request.getParameter("ref_id")%>' />
+<input type="hidden" name="couponReserveGame" id="couponReserveGame" value="<%=session.getAttribute(SessionUtils.COUPON_TYPE)%>" />
+
+<%-- SECTION TITLE--%>
+<div class="section_underline" style="margin-top:15px;width:789px;">
+<div class="columns" style="margin-bottom:5px;">
+<div class="column fixed red_font" style="width:545px;font-size:24px;">Create a Platinum Account</div>
+<div class="column elastic red_font" style="font-size:12px;padding-top:10px;">Have a Question? <strong>1-888-880-0443</strong></div>
+</div>
+</div>
+<%-- SECTION TITLE--%>
+<%-- SECTION STEP 1--%>
+<div class="columns" style="width:789px;">
+<div class="column fixed" style="width:520px;">
+
+<div style="width:480px;">
+<div style="padding:15px 15px 5px 15px;font-size:12px;" class="red_font"><strong>Choose your package:</strong></div>
+
+<div class="arial_12px_red_bold" name="error_div" id="error_div"><html:errors/></div>
+
+ <%-- PACKAGE 1 --%>
+<div style="background-color:#f1f2f2;margin:6px 0px 6px 15px;" class="columns">
+	<div class="fixed column" style="width:20px;padding:10px 12px;">	
+			<html:radio styleId="radioTwoGame" disabled="<%=enableOnlyTrialPlan%>" property="planID" value="16" onclick="activarCheck()"/>
+
+	</div>
+	<div class="fixed column" style="width:40px;padding-top:6px;">
+<img src="images/signup_discs.png" width="38" height="29" />
+	</div>
+	<div class="fixed column" style="padding:7px 0px 0px 10px;">
+<div>
+				<strong>2 games out at <%=twoGamesPriceText %> for <%=sevenDaysExtText%> </strong>
+			</div>
+			<div>Renews at $24.95/month</div>
+
+	</div>
+</div> 
+<%-- PACKAGE 1 --%>
+
+<%-- PACKAGE 2 --%>
+<div style="background-color:#f1f2f2;margin:6px 0px 6px 15px;" class="columns">
+	<div class="fixed column" style="width:20px;padding:10px 12px;">
+<html:radio styleId="radioOneGame" disabled="<%=enableOnlyTrialPlan%>"	property="planID" value="15" onclick="activarCheck()"/>
+	</div>
+	<div class="fixed column" style="width:40px;padding-top:6px;">
+<img src="images/signup_disc.png" width="28" height="29" />
+	</div>
+	<div class="fixed column" style="padding:7px 0px 0px 10px;">
+			<div>
+				<strong>1 game out at $9.95 for <%=sevenDaysExtText%></strong>
+			</div>
+			<div>Renews at $17.95/month</div>
+	</div>
+</div>
+<%-- PACKAGE 2 --%>
+
+<%-- PACKAGE 3 --%>
+<div style="background-color:#f1f2f2;margin:6px 0px 6px 15px;" class="columns">
+	<div class="fixed column" style="width:20px;padding:10px 12px;">
+<html:radio styleId="radioFreeTrial" property="planID" value="-1" onclick="desactivarCheck()"/>
+
+	</div>
+	<div class="fixed column" style="width:40px;padding-top:6px;">
+			<img src="images/signup_disc.png" width="28" height="29" />
+	</div>
+	<div class="fixed column" style="padding:7px 0px 0px 10px;">
+			<div>
+				<strong>Free trial for <%=numOfDaysText%> - 1 game out</strong>
+			</div>
+			<div>Renews at $17.95/month</div>
+	</div>
+</div>
+<%-- PACKAGE 3 --%>
+
+<div style="padding:15px 15px 5px 15px;font-size:12px;" class="red_font">
+	<strong id="textFeatures">Enhance your gaming with these features:</strong>
+</div>
+<%-- FAST RETURN --%>
+<div style="margin:6px 0px 6px 15px;" class="columns">
+	<div class="fixed column" style="width:20px;padding:10px 12px;">
+		
+			 <html:checkbox  styleId="checkFR" property="checkFastReturn"/> 
+			<!-- <input name="checkFR" id="checkFR" type="checkbox"   onchange="FastReturn()"/> -->
+	</div>
+	<div class="fixed column" style="width:50px;"><img src="images/fast_return_icon.png" width="23" height="30" /></div>
+	<div class="fixed column" style="width:350px;padding-top:5px;">
+
+			<div>
+				<strong>FAST RETURN - Lower turnaround times by 50%</strong>
+			</div>
+			<div>Only $3.99/month. <a id="example5" class="blue_font" href="#fastreturnSignupPop">More info</a></div>
+
+	</div>
+</div>
+<%-- FAST RETURN --%>
+<%-- RESERVE A GAME --%>
+<div style="margin:6px 0px 6px 15px;" class="columns same-height">
+	<div id="displayReserveGame" class="fixed column" style="width:20px;padding:5px 12px;display:<%=displayReserveGame%>;">
+			<html:checkbox  styleId="checkRG" property="checkReserveGame" />
+			 <!--<input name="checkRG"  id="checkRG" type="checkbox" onchange="ReserveGame()"/> -->
+	</div>
+    <div id="displayReserveGameCoupon" class="fixed column" style="width:20px;padding:5px 12px;display:<%=displayReserveGameCoupon%> ;">
+			<input type="checkbox" checked="checked" disabled="disabled"/>
+		</div>
+	<div class="fixed column" style="width:50px;">
+			<img src="images/reserve_icon.png" width="26" height="25" />
+	</div>
+	<div class="fixed column" style="width:350px;">
+
+			<div><strong>RESERVE A GAME - Reserve specific games like a VIP</strong></div>
+			<div><%=reserveGamesText %> <a id="example6" class="blue_font" href="#reserveSignupPop">More info</a></div>
+	</div>
+</div>
+
+<%-- REDEEM COUPON --%>
+<div style="margin:15px 0px 6px 15px;" class="columns same-height section_topbottom_underline">
+
+<div class="fixed column"><div class="vertical-center" style="padding:10px 12px;">Redeem coupon/gift certificate:</div></div>
+<div class="fixed column">
+  <div class="vertical-center">
+    <html:text styleId="couponCode" property="couponCode"></html:text>
+  	<!-- <INPUT id="couponCode" name="couponCode" autocomplete="off" value="" SIZE="15" MAXLENGTH="50" onKeyPress="if(!checkEnter(event)){document.getElementById('CodeValidator').onclick(); return false;}" class="verdana_12px_grey">-->
+  </div>
+</div>
+  
+<div class="fixed column"><div class="vertical-center" style="padding-left:10px;"><a id="CodeValidator" href="javascript:void(0);" onclick="checkCoupon()">
+				<span id="theImage"><input name="submitImage" type="button" value="Redeem" id="submitImage" style="width:80px;padding:3px;"/></span>
+	  			</a>
+    </div></div>
+</div>
+<%-- REDEEM COUPON --%>
+<%-- COUPON MSG --%>
+<%
+// For users referred to us by facebook, we want to keep the terms checkbox unchecked by default.
+String referrerID = (String) session.getAttribute(SessionUtils.REFERRER_ID);
+boolean userReferredByFacebook = (referrerID != null && referrerID.equalsIgnoreCase("3e506b88"));
+
+boolean hasValidCouponInSession = ( /*session.getAttribute(SessionUtils.COUPON_CODE) !=null &&*/
+									session.getAttribute(SessionUtils.COUPON_VALIDATION_MSG) != null)?true:false;
+
+String divVisibility = (hasValidCouponInSession)?"block":"none";
+%>
+		<div id="CouponMsg" style="font:Verdana, Geneva, sans-serif;color:#f20303;padding:5px 15px;display:<%=divVisibility %>;">
+
+		<span id="resultMsg">
+		<%
+		if(hasValidCouponInSession)
+		{
+			//if(couponType !=null )
+			//{                            	
+				out.print("<font color=\"#EE0000\">" + 
+                          session.getAttribute(SessionUtils.COUPON_VALIDATION_MSG).toString() + 
+                          "</font>");
+            //}	 
+		}
+		%>
+		
+		</span>
+		
+		</div>
+<%-- COUPON MSG --%>
+<%-- TERMS --%>
+<div style="margin:15px 0px 6px 28px;" class="columns same-height">
+<div class="fixed column">
+  <div class="vertical-center">I agree to the <a id="example7" class="blue_font" href="#termsSignupPop">Terms of Use</a> and <a id="example8" class="blue_font" href="#policySignupPop">Rental Policy</a>.</div></div>
+<div class="fixed column"><div class="vertical-center" style="padding-left:10px;">
+    <input name="termsChkBox" type="checkbox" id="termsChkBox" <%=(userReferredByFacebook)?"":"checked" %>>
+    </div></div>
+</div>
+<%-- TERMS --%>
+<%-- SUBMIT --%>
+<div style="margin:30px 0px 10px 180px;"><input type="image" src="images/button_su_next_en.gif" width="120" height="32" border="0"/></div>
+<%-- SUBMIT --%>
+</div>
+</div>
+<%-- RIGHT--%>
+<div class="column elastic">
+<div style="margin:15px 12px 15px 0px;">
+<div class="red_font" style="font-size:12px;margin-bottom:10px;"><strong>Features:</strong></div>
+<%-- FEATURES--%>
+<%-- LINE 1--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_topbottom_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/greencheck_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>Unlimited Rentals</strong></div></div>
+</div>
+<%-- LINE 1--%>
+<%-- LINE 2--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/greencheck_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>+10 000 Games in Stock</strong></div></div>
+</div>
+<%-- LINE 2--%>
+<%-- LINE 3--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/greencheck_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>Free Shipping</strong></div></div>
+</div>
+<%-- LINE 3--%>
+<%-- LINE store--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/greencheck_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;width:200px;"><strong>Save on Purchases with our Reward Program</strong> (<a id="example9" class="blue_font" href="#rewardPop">?</a>)</div></div>
+</div>
+<%-- LINE store--%>
+<%-- LINE 4--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/greencheck_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>Exclusive to Canada</strong></div></div>
+  <div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><img src="images/can_flag.gif" width="32" height="16" /></div></div>
+</div>
+<%-- LINE 4--%>
+<%-- LINE 5--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/redcross_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>No Late Fees</strong></div></div>
+</div>
+<%-- LINE 5--%>
+<%-- LINE 6--%>
+<div style="width:100%;padding:5px 0px 5px 12px;" class="columns same-height section_underline">
+<div class="fixed column">
+  <div class="vertical-center"><img src="images/redcross_icon.png" width="21" height="16" /></div></div>
+<div class="fixed column">
+  <div class="vertical-center" style="padding-left:8px;"><strong>No Commitment</strong></div></div>
+</div>
+<%-- LINE 6--%>
+<%-- ALREADY MEMBER--%>
+<div style="width:100%;padding:25px 0px 5px 12px;text-align:center;">
+<strong><a href="signIn.jsp">Already a member? Click here.</a></strong>
+</div>
+<%-- ALREADY MEMBER--%>
+<%-- LIVE SUPPORT --%>
+<div style="width:100%;padding:10px 0px 5px 12px;text-align:center;"><jsp:include page="/contentLiveSupport.jsp"></jsp:include></div>
+<%-- LIVE SUPPORT --%>
+<%-- END FEATURES--%>
+</div>
+<%-- END RIGHT--%>
+</div>
+</div>
+</html:form>
+
+
+
+<iframe width="0" height="0" style="display:none" name="ajax_ifr" id="ajax_ifr" onload="checkIframe()" src="/images/blank.gif"></iframe>
+
+
+<!-- div displayed by fancy box -->
+<div style="display: none;">
+<div id="fastreturnSignupPop">
+	<jsp:include page="/fastreturnSignupPop.jsp" >
+		<jsp:param name="lang" value="en" />
+	</jsp:include>
+</div>
+<div id="reserveSignupPop">
+	<jsp:include page="/reserveSignupPop.jsp" >
+		<jsp:param name="lang" value="en" />
+	</jsp:include>
+</div>
+<div id="termsSignupPop">
+	<jsp:include page="/termsSignupPop.jsp" >
+		<jsp:param name="lang" value="en" />
+	</jsp:include>
+</div>
+<div id="policySignupPop">
+	<jsp:include page="/policySignupPop.jsp" >
+		<jsp:param name="lang" value="en" />
+	</jsp:include>
+</div>
+<div id="rewardPop">
+	<jsp:include page="/RewardPop.jsp" >
+		<jsp:param name="lang" value="en" />
+	</jsp:include>
+</div>
+</div>
+<!-- div displayed by fancy box -->
+
+
+
+
+<!-- <script type="text/javascript">selectLang();</script> -->
+<%
+  if( couponType !=null && SpecialCoupon.check1GameOutFreeTrial(couponType)){%>                            	
+    	<script type="text/javascript">
+       	document.getElementsByName('planID')[2].checked=true;
+       	desactivarCheck();
+       	</script>
+<%}%>
+<%
+  if(couponType !=null && couponType == SpecialCoupon.COUPON_2FOR1SPECIAL){%>                            	
+	<script type="text/javascript">
+	document.getElementsByName('planID')[0].checked=true;
+	activarCheck();
+	</script>
+
+<%}%>

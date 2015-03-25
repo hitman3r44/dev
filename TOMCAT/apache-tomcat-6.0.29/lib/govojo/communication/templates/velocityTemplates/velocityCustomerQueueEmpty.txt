@@ -1,0 +1,25 @@
+Dear ^${firstname},
+
+We noticed that your queue is empty. We're ready and willing to send 
+you your first set of games! Please add some games to your queue now 
+and we'll have them sent out shortly. Click on the link below to 
+login and see the latest games available in the GPlay Zone:
+
+http://gplay.com/displayLogin.jsp
+
+
+What are you waiting for?  We're ready to send you your games!
+
+Sincerely,
+GPlay Customer Service
+
+*********************************************************************
+You are receiving this message because you have signed up for GPlay's 
+video game rental service, but have not added any games to your 
+queue. You will not receive another message from GPlay regarding your 
+empty queue. GPlay does not disclose, rent, or sell any information 
+that you provide to us. For more information, please refer to our 
+Privacy Policy.
+
+http://gplay.com/displayPrivacyPolicy.jsp
+*********************************************************************

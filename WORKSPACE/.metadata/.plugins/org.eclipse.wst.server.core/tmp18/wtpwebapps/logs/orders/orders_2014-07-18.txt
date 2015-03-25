@@ -1,0 +1,70 @@
+===============================================
+18/07/2014 12:25:43 By:test100
+===============================================
+ 1 ,LS_ORDER_ID:C-VISAD-1406423 ,|---->dosen't exist 
+ 2 ,LS_ORDER_ID:C-VISAD-1406460 ,|---->dosen't exist 
+ 3 ,LS_ORDER_ID:C-VISAD-1406474 ,|---->dosen't exist 
+ 4 ,LS_ORDER_ID:C-VISAD-1406532 ,|---->dosen't exist 
+ 5 ,LS_ORDER_ID:C-VISAD-1406385 ,|---->dosen't exist 
+ 6 ,LS_ORDER_ID:CAN0038305 ,|---->dosen't exist 
+ 7 ,LS_ORDER_ID:C-VISAD-1406123 ,|---->dosen't exist 
+ 8 ,LS_ORDER_ID:C-VISAD-1405226 ,|---->dosen't exist 
+ 9 ,LS_ORDER_ID:CAN0038313 ,|---->dosen't exist 
+ 36 ,LS_ORDER_ID:C-VISAD-1405711 ,|---->dosen't exist 
+ 37 ,LS_ORDER_ID:C-VISAD-1405198 ,|---->dosen't exist 
+ 38 ,LS_ORDER_ID:C-VISAD-1406146 ,|---->dosen't exist 
+ 40 ,LS_ORDER_ID:C-VISAD-1404379 ,|---->dosen't exist 
+ 41 ,LS_ORDER_ID:C-VISAD-1404941 ,|---->dosen't exist 
+ 42 ,LS_ORDER_ID:122690 ,|---->dosen't exist 
+ 43 ,LS_ORDER_ID:4317231 ,|---->dosen't exist 
+ 85 ,LS_ORDER_ID:C-VISAD-1404660 ,|---->dosen't exist 
+ 86 ,LS_ORDER_ID:C-VISAD-1404972 ,|---->dosen't exist 
+ 87 ,LS_ORDER_ID:C-VISAD-1405283 ,|---->dosen't exist 
+ 88 ,LS_ORDER_ID:14-47630 ,|---->dosen't exist 
+ 89 ,LS_ORDER_ID:C-BLC-1406383 ,|---->dosen't exist 
+ 90 ,LS_ORDER_ID:C-VISAD-1406392 ,|---->dosen't exist 
+ 91 ,LS_ORDER_ID:4317404 ,|---->dosen't exist 
+ 92 ,LS_ORDER_ID:C-VISAD-1406085 ,|---->dosen't exist 
+ 93 ,LS_ORDER_ID:CAN0038358 ,|---->dosen't exist 
+ 94 ,LS_ORDER_ID:C-MM-1406209 ,|---->dosen't exist 
+ 95 ,LS_ORDER_ID:14-47631 ,|---->dosen't exist 
+ 96 ,LS_ORDER_ID:14-47631_2 ,|---->dosen't exist 
+ 97 ,LS_ORDER_ID:14-47631_3 ,|---->dosen't exist 
+ 98 ,LS_ORDER_ID:ONO57708495_2 ,|---->dosen't exist 
+ 99 ,LS_ORDER_ID:C-VISAD-1402823 ,|---->dosen't exist 
+
+===============================================
+18/07/2014 12:25:55 By:test100
+===============================================
+ 1 ,LS_ORDER_ID:C-VISAD-1406423 ,|---->dosen't exist 
+ 2 ,LS_ORDER_ID:C-VISAD-1406460 ,|---->dosen't exist 
+ 3 ,LS_ORDER_ID:C-VISAD-1406474 ,|---->dosen't exist 
+ 4 ,LS_ORDER_ID:C-VISAD-1406532 ,|---->dosen't exist 
+ 5 ,LS_ORDER_ID:C-VISAD-1406385 ,|---->dosen't exist 
+ 6 ,LS_ORDER_ID:CAN0038305 ,|---->dosen't exist 
+ 7 ,LS_ORDER_ID:C-VISAD-1406123 ,|---->dosen't exist 
+ 8 ,LS_ORDER_ID:C-VISAD-1405226 ,|---->dosen't exist 
+ 9 ,LS_ORDER_ID:CAN0038313 ,|---->dosen't exist 
+ 36 ,LS_ORDER_ID:C-VISAD-1405711 ,|---->dosen't exist 
+ 37 ,LS_ORDER_ID:C-VISAD-1405198 ,|---->dosen't exist 
+ 38 ,LS_ORDER_ID:C-VISAD-1406146 ,|---->dosen't exist 
+ 40 ,LS_ORDER_ID:C-VISAD-1404379 ,|---->dosen't exist 
+ 41 ,LS_ORDER_ID:C-VISAD-1404941 ,|---->dosen't exist 
+ 42 ,LS_ORDER_ID:122690 ,|---->dosen't exist 
+ 43 ,LS_ORDER_ID:4317231 ,|---->dosen't exist 
+ 85 ,LS_ORDER_ID:C-VISAD-1404660 ,|---->dosen't exist 
+ 86 ,LS_ORDER_ID:C-VISAD-1404972 ,|---->dosen't exist 
+ 87 ,LS_ORDER_ID:C-VISAD-1405283 ,|---->dosen't exist 
+ 88 ,LS_ORDER_ID:14-47630 ,|---->dosen't exist 
+ 89 ,LS_ORDER_ID:C-BLC-1406383 ,|---->dosen't exist 
+ 90 ,LS_ORDER_ID:C-VISAD-1406392 ,|---->dosen't exist 
+ 91 ,LS_ORDER_ID:4317404 ,|---->dosen't exist 
+ 92 ,LS_ORDER_ID:C-VISAD-1406085 ,|---->dosen't exist 
+ 93 ,LS_ORDER_ID:CAN0038358 ,|---->dosen't exist 
+ 94 ,LS_ORDER_ID:C-MM-1406209 ,|---->dosen't exist 
+ 95 ,LS_ORDER_ID:14-47631 ,|---->dosen't exist 
+ 96 ,LS_ORDER_ID:14-47631_2 ,|---->dosen't exist 
+ 97 ,LS_ORDER_ID:14-47631_3 ,|---->dosen't exist 
+ 98 ,LS_ORDER_ID:ONO57708495_2 ,|---->dosen't exist 
+ 99 ,LS_ORDER_ID:C-VISAD-1402823 ,|---->dosen't exist 
+

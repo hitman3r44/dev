@@ -1,0 +1,219 @@
+package govojo.util;
+
+import govojo.debugging.ExceptionHandler;
+import govojo.util.base64.Base64;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import xjava.security.Cipher;
+import xjava.security.PaddingScheme;
+import cryptix.provider.key.RawKey;
+import cryptix.provider.key.RawSecretKey;
+import cryptix.util.core.BI;
+import cryptix.util.core.Hex;
+
+public class Crypt
+{
+    /******************************************************
+     #	I would like to have this class also support encryption
+     #  of strings. The problem with that is the Hex.fromString()
+     #  method. This method requires that the string not have any
+     #  characters over ascii 16 or what ever...ints are always
+     #  able to be translated into hex...
+    *****************************************************/
+
+    // This is not needed because it was done statically by editing the file
+    // /usr/java/lib/security/java.security
+    // or (/usr/java/jdk1.3-blackdown/jre/lib/security/java.security)
+   // java.security.Security.addProvider(new cryptix.provider.Cryptix());
+
+    private static boolean DEBUG = false;
+
+    private static String privateKey = new String("2312A419CDEBE771");
+    private static String HASH_ALGORITM = "SHA-1";
+
+    public static String encryptInt(int plainTextInt){
+
+        return encrypt(plainTextInt);
+
+    }
+
+    public static String encrypt(long plainTextLong)
+    {
+	if(DEBUG)
+	    System.out.println("Input to encrypt: " + plainTextLong);
+	String returnVal = new String();
+	// convert a string to a DES key and print out the result
+	/*********
+	RawSecretKey key2 = new RawSecretKey("DES",Hex.fromString(privateKey));
+	
+	RawSecretKey key2 = new RawSecretKey("Blowfish",Hex.fromString(privateKey));
+	*********/       
+    
+	RawKey rkey = (RawKey) key2;
+
+	Cipher des = null;
+	// use the DES key to encrypt a string
+	try {
+		/*************
+	    des=Cipher.getInstance(Cipher.getInstance("DES/ECB/NONE"),
+				   null, 
+				   PaddingScheme.getInstance("PKCS#5"));
+	  
+	    
+	    des=Cipher.getInstance(Cipher.getInstance("Blowfish"),
+                                   null,
+                                   PaddingScheme.getInstance("OneAndZeroes"));
+	    *************/
+	    des = Cipher.getInstance("IDEA/CFB", "Cryptix");   
+	    RawSecretKey key2 = new RawSecretKey("IDEA", Hex.fromString(privateKey));
+	    des.initEncrypt(key2);
+	} catch (Exception e) {
+	    ExceptionHandler.handleException(e, "Exception Encrypting a string");
+	}
+	
+	byte[] ciphertext = null;
+	BigInteger Bciph = null;
+	if( des != null)
+	{
+	    ciphertext = des.crypt(Hex.fromString(Long.toString(plainTextLong)));
+	    returnVal = Base64.encodeBytes(ciphertext);
+	} else {
+	    returnVal = null;
+	}
+	if(DEBUG)
+	    System.out.println("Resulting Encrypted Text: " + returnVal);
+
+	return(returnVal);
+    }
+
+    public static int decryptInt(String encryptedText)
+    {
+	if(DEBUG)
+	    System.out.println("Input to decrypt: " + encryptedText);
+	int returnVal = 0;
+	/******
+	RawSecretKey key2 = new RawSecretKey("DES", Hex.fromString(privateKey));
+	
+	RawSecretKey key2 = new RawSecretKey("Blowfish", Hex.fromString(privateKey));
+	******/
+	RawSecretKey key2 = new RawSecretKey("IDEA", Hex.fromString(privateKey));
+        byte[] ciphertext = Base64.decode(encryptedText);
+
+	BigInteger Bciph = null;
+
+	Cipher des = null;
+        // use the DES key to encrypt a string
+        try {
+            //des=Cipher.getInstance("DES/ECB/NONE","Cryptix");
+        	/**************
+        des=Cipher.getInstance(Cipher.getInstance("DES/ECB/NONE"),
+				   null, 
+				   PaddingScheme.getInstance("PKCS#5"));
+	    
+	    des=Cipher.getInstance(Cipher.getInstance("Blowfish"),
+                                   null,
+                                   PaddingScheme.getInstance("OneAndZeroes"));
+	    **************/
+        des = Cipher.getInstance("IDEA/CFB", "Cryptix");
+	    des.initDecrypt(key2);
+        } catch (Exception e) {
+            ExceptionHandler.handleException(e, "Exception Encrypting a string");
+        }
+	
+	if (des != null)
+	{
+	    // decrypt ciphertext
+	    ciphertext = des.crypt(ciphertext);
+	    
+	    // convert the byte[] into a BigInteger
+	    Bciph = new BigInteger(ciphertext);
+	    // print out representation of decrypted ciphertext
+	    if (DEBUG) 
+		System.out.println(BI.dumpString(Bciph));
+	    // Convert the BigInt into a hex with no spaces...
+	    try {
+		returnVal = Integer.parseInt(Hex.toString(BI.getMagnitude(Bciph)));
+	    } catch (NumberFormatException e) {
+		returnVal = 0;
+	    }
+	} else {
+	    returnVal = 0;
+	}
+	if (DEBUG)
+	    System.out.println("Decrypted text: " + returnVal);
+	return(returnVal);
+    }
+
+    /**
+     ** Given a string it returns a hash of that string.
+     ** The hash is one-way, meaning that it cannot be decoded.
+     ** the original value shoudl be re-encoded and compared against
+     ** a known hash for verification.
+     **/
+
+    public static String createHash(String hashInput) {
+	String returnVal = null;
+
+	byte[] buf = hashInput.getBytes();
+
+	MessageDigest algorithm = null;
+	try {
+	    algorithm = MessageDigest.getInstance("SHA-1");
+	} catch (NoSuchAlgorithmException e) {
+	    ExceptionHandler.handleException(e, "Encryption Algorithm not found");
+	}
+
+	if(algorithm != null) {
+	    algorithm.reset();
+	    algorithm.update(buf);
+	    byte[] result = algorithm.digest();
+	    returnVal = new String(Base64.encodeBytes(result));
+	}
+
+	return(returnVal);
+    }
+
+    public static void main (String[] args) 
+    {
+    	System.out.println("Encrypt Id = "+encryptInt(1234));
+    	/*  String results = "";
+       
+	int intToEncrypt = 1;
+        results = encryptInt(intToEncrypt);
+	System.out.println("Encryption: " + results);
+	int decryptResults = decryptInt(results);
+	System.out.println("results of decrypt= " + decryptResults);
+	java.security.Security.addProvider(new cryptix.provider.Cryptix());
+	if(decryptResults == intToEncrypt)
+	{
+	    System.out.println("TEST SUCCEEDED...");
+	} else {
+	    System.out.println("TEST FAILED...");
+	}
+
+	System.out.println("Creating Hash of \"hello\"  :" + Crypt.createHash("hello"));
+	System.out.println("Re-creating the hash again:" + Crypt.createHash("hello"));
+	System.out.println("The above results should be the same.\n");
+
+	System.out.println("creating Hash of \"jello\" (one letter off): " + Crypt.createHash("jello"));
+	System.out.println("Hash of \"jello\" again                    : " + Crypt.createHash("jello"));
+
+	     
+      	for(int x = 0; x < 10000; x++) {
+	    results = encryptInt(x);
+	    System.out.println("Results: " + results);
+	    try {
+		//results = encryptInt(x);
+		decryptResults = decryptInt(results);
+	    } catch (Exception e) {
+		System.out.println(x + " FAILED...");
+	    }
+	    if ((x % 100) == 0)
+		System.out.println(x);
+	}
+	*/
+    }
+}

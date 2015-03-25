@@ -1,0 +1,17 @@
+Cher(e) #FIRSTNAME#, 
+
+Nous avons expédié le ou les jeux suivant de votre sélection. Les temps de livraison sont généralement entre 2 à 6 jours ouvrables dépendamment de votre localisation.. 
+
+#GAMENAME#
+ 
+Si vous avez des questions, n'hésitez pas à contacter notre service à la clientèle en utilisant le lien ici bas: 
+
+http://gameaccess.ca/displayContactUs.jsp?lang=fr 
+
+Meilleures salutations, 
+L'Équipe Game Access 
+
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

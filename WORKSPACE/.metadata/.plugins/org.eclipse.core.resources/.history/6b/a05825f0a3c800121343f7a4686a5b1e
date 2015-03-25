@@ -1,0 +1,323 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+ <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>  
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<style type="text/css">
+label {
+	width:170px;
+}
+.vanadium-advice {
+	margin-left: 170px;
+}
+input.vanadium-valid {
+	background-image: none;
+}
+.ui-datepicker-header { background: url('./images/backgroundHeaderDate.png') repeat 0 0 #000;color:white;} 
+</style>
+<div class="unit" style="width:800px;margin-left:100px;">
+<div class="pop_title" style="margin-top:30px;">Edit a User</div>
+<s:if test="hasActionErrors()">  
+  <div id="globalAdvice" class="gray_bg global-vanadium-advice">
+  		<s:iterator value="actionErrors">
+  				<span><s:property escape="false" /></span><br/>
+  		</s:iterator></div>  
+</s:if>
+  <div id="formContainer" >
+    <s:form id="form" action="updateUser.do" method="post" validate="true" enctype="multipart/form-data">
+    <s:hidden name="userId" value="%{userId}" />
+    <s:token></s:token>
+      <fieldset>
+        <!--Login-->
+        <label for="accept_team_members">Login:</label>        
+        <s:textfield id="login" name="login" maxlength="30" cssStyle="width:150px;"/>
+        <span id="login_Error" style="display:none;margin-left:2px;"></span>
+        <!--Login-->
+        <br />
+        <!--Code-->
+        <label for="accept_team_members">Code:</label>        
+        <s:textfield id="code" name="code" maxlength="30" cssStyle="width:150px;"/>
+        <span id="code_Error" style="display:none;margin-left:2px;"></span>
+        <!--Code-->
+        <br />
+        <!--Type-->
+        <label for="username">Type:</label>
+ 		<s:select id="type" 
+        		  name="type"
+        		  cssStyle="width:156px;"
+        		  required="true"	
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 
+        		  listKey="value"
+        		  listValue="%{typeName}"			    		  
+    			  list="%{@com.loyauty.web.WebConstants@ALL_USER_TYPE}" /> 
+    	<span id="type_Error" style="display:none;margin-left:2px;"></span>
+        <!--Type-->
+        <br />
+        <!--Password-->
+        <label for="accept_team_members">Password:</label>        
+        <s:textfield id="password" name="password" maxlength="30" cssStyle="width:150px;"/>
+        <span id="password_Error" style="display:none;margin-left:2px;"></span>
+        <!--Password-->
+        <br />
+        <!--Email-->
+        <label for="accept_team_members">Email:</label>        
+        <s:textfield id="email" name="email" maxlength="320" cssStyle="width:150px;"/>
+        <span id="email_Error" style="display:none;margin-left:2px;"></span>
+        <!--Email-->
+        <br />
+        <!--Active-->
+        <label for="accept_team_members">Active:</label>
+        <s:if test="%{active == true}" >
+       		<s:checkbox label="checkbox test" name="active" checked="checked" value="aBoolean" fieldValue="true"/>
+        </s:if>
+        <s:else>
+       		<s:checkbox label="checkbox test" name="active" value="aBoolean" fieldValue="true"/>
+        </s:else>
+        <span id="active_Error" style="display:none;margin-left:2px;"></span>
+        <!--Active-->
+        <br />
+        <!--Real Name-->
+        <label for="accept_team_members">Real Name:</label>        
+        <s:textfield id="realName" name="realName" maxlength="50" cssStyle="width:150px;"/>
+        <span id="realName_Error" style="display:none;margin-left:2px;"></span>
+        <!--Real Name-->
+        <br />
+        <!--Address-->
+        <label for="accept_team_members">Address:</label>        
+        <s:textfield id="address" name="address" maxlength="120" cssStyle="width:150px;"/>
+        <span id="address_Error" style="display:none;margin-left:2px;"></span>
+        <!--Address-->
+        <br />
+        <!--Postal Code-->
+        <label for="accept_team_members">Postal Code:</label>        
+        <s:textfield id="postalCode" name="postalCode" maxlength="10" cssStyle="width:150px;"/>
+        <span id="postalCode_Error" style="display:none;margin-left:2px;"></span>
+        <!--Postal Code-->
+        <br />
+        <!--Phone-->
+        <label for="accept_team_members">Phone:</label>        
+        <s:textfield id="phone" name="phone" maxlength="12" cssStyle="width:150px;"/>
+        <span id="phone_Error" style="display:none;margin-left:2px;"></span>
+        <!--Phone-->
+        <br />
+        <!--Primary language-->
+        <label for="username">Primary language:</label>
+ 		<s:select id="primaryLanguage" 
+        		  name="primaryLanguage"
+        		  cssStyle="width:156px;"
+        		  required="true"	
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 
+        		  listKey="value"
+        		  listValue="%{getText(localizationKey)}"			    		  
+    			  list="%{@com.loyauty.web.WebConstants@ALL_LANGUAGE}" /> 
+    	<span id="type_Error" style="display:none;margin-left:2px;"></span>
+        <!--Primary language-->
+        <br />
+        <!--Secondary language-->
+        <label for="username">Secondary language:</label>
+ 		<s:select id="secondaryLanguage" 
+        		  name="secondaryLanguage"
+        		  cssStyle="width:156px;"
+        		  required="true"	
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 
+        		  listKey="value"
+        		  listValue="%{getText(localizationKey)}"
+    			  list="%{@com.loyauty.web.WebConstants@ALL_LANGUAGE}" />
+    	<span id="type_Error" style="display:none;margin-left:2px;"></span>
+    	<br />
+        <!--Secondary language-->
+        
+        <!--Type-->
+        <label for="userType">Client category:</label>
+		<s:textfield readonly="true" id="clientCategoryName" name="clientCategoryName" value="%{clientCategoryName}"
+					 style="display:none;visibility:hidden;width:150px;"/>
+		<s:hidden id="clientCategoryIdCopy" name="clientCategoryIdCopy" value="%{clientCategoryIdCopy}"/>
+		<s:hidden id="isTemp" name="isTemp" value="%{isTemp}"/>
+		<div id="divClientCategory">
+		<s:select
+	        id="listClientCategory"
+	        name="clientCategoryId"
+	        cssStyle="width:156px;"
+	        list="listClientCategory"
+	        emptyOption="false"
+	        headerKey="-1"
+	        listKey="clientCategoryId"
+	        listValue="clientCategoryName"
+	        headerValue="--Select--"/>	
+	     </div>
+		
+        <!--Type-->
+        
+        <!--updateDate-->
+        <label for="updateDate">Update date:</label>
+        <s:date name="updateDate" var="updateDate" format="dd/MM/yyyy"/>
+		<s:textfield id="datepicker" name="strUpdateDate" value="%{#updateDate}" key="labelkey" readonly="true" cssStyle="width:150px;" />
+
+        <br />
+		<!--updateDate-->
+
+        <!--Shipping Multiplier Factor-->
+        <label for="accept_team_members">Multiplier [Shipping Factor]:</label>
+        <s:textfield id="multiplier" name="multiplier" maxlength="50" cssStyle="width:150px;"/>
+        <span id="multiplier_Error" style="display:none;margin-left:2px;"></span>
+        <!--Shipping Multiplier Factor-->
+        <br /><br /><br />
+        
+<table border="1" cellspacing="0" cellpadding="0" class="pad_5px nowraptable datatable">
+<thead class="gray_header">
+	<tr>
+		<th><s:text name="Province" /></th>
+		<th><s:text name="Population [%]" /></th>
+	</tr>
+</thead>
+<s:if test="%{provinceNameList != null}">
+	<s:if test="%{provinceNameList.size > 0}" >
+		<tbody>
+			<s:iterator value="provinceNameList" status="count">
+				<tr>
+					<td><s:property value="%{provinceName[#count.index]}"/></td>
+					<td><input 	id="populationPercentage_<s:property value="id"/>"
+								style="text-align: center; width: 80px;" 
+								value="<s:property value="%{populationPercentage[#count.index]}"/>"
+								name="populationPercentage"/></td>
+				</tr>
+			</s:iterator>
+		</tbody>
+	</s:if>
+</s:if>	            								
+</table>      
+    
+        
+        <br />
+        
+        <s:if test='%{#session.usr == "menu"}' > 
+        	<input id="btUpdateUser" type="submit" value="Update User" 
+        	   	style="margin:20px 20px 0px 190px;padding:5px 10px;font-size:20px;"/>
+		</s:if>        	   
+        	   
+      </fieldset>
+    </s:form>
+     <%@ include file="dialogues/progressBar.jsp" %>
+  </div>
+</div>
+  <script type="text/javascript">
+  
+  var timerCounter=0;
+
+//Method horloge:it's specially for progressBar
+
+function horloge() {
+	$("#progressBar").css("display","block"); 
+	$("#progressBar").css("visibility","visible");
+	
+	//create a timer
+	timerCounter++;
+	if(timerCounter<=10){
+		timer = window.setTimeout("horloge()", 1000);
+	}else{
+		$("#progressBar").css("display","none");
+		$("#progressBar").css("visibility","hidden");
+		window.clearTimeout(timer);
+		timerCounter=0;
+	};
+}
+
+  var requiredMessage = '<s:text name="loyauty.error.common.required" />';
+  var vanadiumAdv = "vanadium-advice -vanadium-empty-advice- vanadium-invalid";
+  var VanadiumRules = {
+		login: [
+  			'only_on_blur',
+  			['advice','login_Error'],
+  			{validator:'required', invalidCustomMessage: requiredMessage}
+  		],
+  		code: [
+  			'only_on_blur',
+  			['advice','code_Error'],
+  			{validator:'required', invalidCustomMessage: requiredMessage}
+  		],
+  		password: [
+  			'only_on_blur',
+  			['advice','password_Error'],
+  			{validator:'required', invalidCustomMessage: requiredMessage}
+  		],
+  		email: [
+ 			'only_on_blur',
+ 			['advice','email_Error'],
+ 			{validator:'email', invalidCustomMessage: requiredMessage}
+  		],
+  		realName: [
+  			'only_on_blur',
+  			['advice','realName_Error'],
+  			{validator:'required', invalidCustomMessage: requiredMessage}
+  		],
+  		address: [
+			'only_on_blur',
+			['advice','address_Error'],
+			{validator:'required', invalidCustomMessage: requiredMessage}
+  		],  
+  		postalCode: [
+  				'only_on_blur',
+  				['advice','postalCode_Error'],
+  				{validator:'required', invalidCustomMessage: requiredMessage}
+  	  	],
+  	  	phone: [
+  				'only_on_blur',
+  				['advice','phone_Error'],
+  				{validator:'required', invalidCustomMessage: requiredMessage}
+  	  	],
+  	  	multiplier: [
+  				'only_on_blur',
+  				['advice','multiplier_Error'],
+  				{validator:'required', invalidCustomMessage: requiredMessage}
+  	  	],
+  		formContainer: 'container'
+  	};
+
+  $(function() {
+	    $("#datepicker").datepicker({
+	    	dateFormat: 'dd/mm/yy',//'dd-mm-yy'
+            changeMonth: true,
+            changeYear: true
+        });
+	  });
+
+  $(function() {
+	  isTemp=$("#isTemp").val();
+	  isTemp=isTemp.replace(/^\s\s*/, ''); 
+	  isTemp=isTemp.replace(/\s\s*$/, ''); 
+	  isTemp=isTemp.replace(/([\s]+)/g, '-'); 
+	  if(isTemp==1){
+		$("#divClientCategory").css("display","none");
+		$("#divClientCategory").css("visibility","hidden"); 
+	  	$("#clientCategoryName").css("display","block"); 
+		$("#clientCategoryName").css("visibility","visible");
+		
+	  }else{
+		$("#divClientCategory").css("display","block");
+		$("#divClientCategory").css("visibility","visible"); 
+	  	$("#controlePrice").css("display","none"); 
+		$("#controlePrice").css("visibility","hidden");
+	  }
+	 
+	  });
+  
+
+  $(document).ready(function() {
+		
+		// progressBar
+	    $("#btUpdateUser").click(function(){  
+			$('html,body').scrollTop(0);
+			horloge();
+			
+		});
+		
+		$(this).keydown(function(e){
+		    if (e.keyCode == 13 || e.keyCode == 32 || e.keyCode == 9) { 
+		        return false;
+		    }
+		});
+	});
+  	
+  </script>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+    PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+
+<configuration>
+	
+  <properties resource="loyauty-database.properties"></properties>	
+  
+  <settings>
+    <setting name="cacheEnabled" 				value="true"/>
+    <setting name="lazyLoadingEnabled" 			value="true"/>
+    <setting name="multipleResultSetsEnabled" 	value="true"/>
+    <setting name="useColumnLabel" 				value="true"/>
+    <setting name="useGeneratedKeys" 			value="false"/> 
+    <!-- SIMPLE, REUSE, BATCH -->   
+    <setting name="defaultExecutorType" 		value="SIMPLE"/>
+    <setting name="autoMappingBehavior" 		value="FULL"/>       
+    
+    <!-- 
+    <setting name="enhancementEnabled" value="false"/>    
+    <setting name="defaultStatementTimeout" value="25000"/>
+     -->
+  </settings> 
+    
+  <typeAliases>  
+  
+  	   <typeAlias alias="CollectionClasses" 	type="com.loyauty.model.CollectionClasses"/>
+  	   <typeAlias alias="Orders" 		        type="com.loyauty.model.Orders"/>
+  	   <typeAlias alias="UserFilesDownloaded" 	type="com.loyauty.model.UserFilesDownloaded"/>
+  	   <typeAlias alias="UserConnection" 		type="com.loyauty.model.UserConnection"/>
+  	   <typeAlias alias="UsersPrivileges" 		type="com.loyauty.model.UsersPrivileges"/>
+  	   <typeAlias alias="OrdersSpecialShipping" type="com.loyauty.model.OrdersSpecialShipping"/>
+  	   <typeAlias alias="OrdersRows" 		    type="com.loyauty.model.OrdersRows"/>
+  	   <typeAlias alias="UserFileRecovery" 		type="com.loyauty.model.UserFileRecovery"/>
+  	   <typeAlias alias="Operations" 			type="com.loyauty.model.Operations"/>
+  	   <typeAlias alias="ClientCategory" 		type="com.loyauty.model.ClientCategory"/>		
+       <typeAlias alias="User" 					type="com.loyauty.model.User"/>
+       <typeAlias alias="Image" 				type="com.loyauty.model.Image"/>
+       <typeAlias alias="Product" 				type="com.loyauty.model.Product"/>
+       <typeAlias alias="Translation" 			type="com.loyauty.model.Translation"/>
+       <typeAlias alias="TranslationEntry" 		type="com.loyauty.model.TranslationEntry"/> 
+       <typeAlias alias="Brand" 				type="com.loyauty.model.Brand"/>
+       <typeAlias alias="Category" 				type="com.loyauty.model.Category"/>
+       <typeAlias alias="CategoryGroup" 		type="com.loyauty.model.CategoryGroup"/>      
+       <typeAlias alias="Specification" 		type="com.loyauty.model.Specification"/> 
+       <typeAlias alias="ProductModelNumber" 	type="com.loyauty.model.ProductModelNumber"/> 
+       <typeAlias alias="UserBrandDiscount" 	type="com.loyauty.model.UserBrandDiscount"/> 
+       <typeAlias alias="UserCategoryDiscount" 	type="com.loyauty.model.UserCategoryDiscount"/> 
+       <typeAlias alias="CategoryBrand" 		type="com.loyauty.model.CategoryBrand"/> 
+       <typeAlias alias="ProductLink" 			type="com.loyauty.model.ProductLink"/> 
+       <typeAlias alias="BrandCategoryGroup" 	type="com.loyauty.model.BrandCategoryGroup"/> 
+       <typeAlias alias="Query" 				type="com.loyauty.model.Query"/>
+       <typeAlias alias="UserProductPrice"		type="com.loyauty.model.UserProductPrice"/>
+       <typeAlias alias="Province"				type="com.loyauty.model.Province"/>
+       <typeAlias alias="City"					type="com.loyauty.model.City"/>
+       <typeAlias alias="ShippingCity"			type="com.loyauty.model.ShippingCity"/>
+       <typeAlias alias="ShippingProvince"		type="com.loyauty.model.ShippingProvince"/>
+       <typeAlias alias="ShippingTotal"			type="com.loyauty.model.ShippingTotal"/>
+       <typeAlias alias="UserProvincePopulation" type="com.loyauty.model.UserProvincePopulation"/>
+       <typeAlias alias="AlterProductXML" 		type="com.loyauty.model.AlterProductXML"/>
+       <typeAlias alias="AlterUserProductXML" 	type="com.loyauty.model.AlterUserProductXML"/>
+       <typeAlias alias="Box" 		        	type="com.loyauty.model.Box"/>
+       <typeAlias alias="Currency" 		       	type="com.loyauty.model.Currency"/>
+                     
+  </typeAliases> 
+  
+  <typeHandlers>  	
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.LanguageHandler" 
+  						javaType="com.loyauty.enums.Language"/>
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.StatusHandler" 
+  						javaType="com.loyauty.enums.Status"/>
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.ProductStatusHandler" 
+  						javaType="com.loyauty.enums.ProductStatus"/> 						
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.TypeHandler" 
+  						javaType="com.loyauty.enums.Type"/>
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.PriceTypeHandler" 
+  						javaType="com.loyauty.enums.PriceType"/>	
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.UserProductStatusHandler" 
+  						javaType="com.loyauty.enums.UserProductStatus"/>
+  	<typeHandler handler="com.loyauty.dao.mybatis.handler.ProvinceHandler" 
+  						javaType="com.loyauty.enums.Province"/>  																		 				  													 							
+  </typeHandlers>
+  
+  <!--
+  <plugin interceptor="org.apache.ibatis.example.ExamplePlugin">
+    <property name="dialect" value="com.starit.core.ibatis3.pager.MySQLDialect"/>
+  </plugin>
+  </plugins
+  -->
+
+  <environments default="development">
+  
+  <environment id="development">	
+	<transactionManager type="JDBC">
+		<!-- <property name="" value=""/> -->
+		<property name="driver.encoding" value="UTF8"/>	
+	</transactionManager>
+	<dataSource type="UNPOOLED">
+		<property name="driver" value="${driver}"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${username}"/>
+		<property name="password" value="${password}"/>			
+	</dataSource>
+  </environment>
+  
+  <environment id="production1">
+  	<transactionManager type="JDBC">
+  		<property name="driver.encoding" value="UTF8"/>
+  	</transactionManager>
+  	<dataSource type="POOLED">  
+  		<property name="driver" value="${driver}"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${username}"/>
+		<property name="password" value="${password}"/>	  		
+  		<property name="poolMaximumActiveConnections" value="100"/>
+  		<property name="poolMaximumIdleConnections" value="10"/>
+  		<property name="poolTimeToWait" value="30000"/> <!-- 30 seconds -->  		
+  	</dataSource>
+  </environment>
+  
+  <environment id="production2">
+  	<transactionManager type="JDBC"></transactionManager>
+  	<dataSource type="JNDI">
+  		<property name="data_source" value="jdbc/postgres/loyalty"/>
+  	</dataSource>
+  </environment>  
+  </environments>
+  	
+  <mappers>  
+  	 	
+    <mapper resource="com/loyauty/dao/mybatis/mappers/UserMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/ImageMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/ProductMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/TranslationMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/BrandMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/CategoryMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/SpecificationMapper.xml"/>
+    <mapper resource="com/loyauty/dao/mybatis/mappers/UserBrandDiscountMapper.xml"/> 
+ 	<mapper resource="com/loyauty/dao/mybatis/mappers/UserCategoryDiscountMapper.xml"/>
+ 	<mapper resource="com/loyauty/dao/mybatis/mappers/OperationsMapper.xml"/>
+ 	<mapper resource="com/loyauty/dao/mybatis/mappers/OrdersMapper.xml"/>
+ 	<mapper resource="com/loyauty/dao/mybatis/mappers/UsersPrivilegesMapper.xml"/>
+  </mappers>
+  
+</configuration>
+

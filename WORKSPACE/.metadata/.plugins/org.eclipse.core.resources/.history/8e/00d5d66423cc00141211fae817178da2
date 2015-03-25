@@ -1,0 +1,100 @@
+package com.loyauty.cronjob;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+
+import com.loyauty.enums.UserType;
+import com.loyauty.exception.ServiceException;
+import com.loyauty.service.ServiceLocator;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.ProductDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+
+public class MakeXML {
+	private static ServiceLocator serviceLocator;
+	private static UserService userService;
+	private static ProductService productService;
+	
+	public static void main(String... args) {
+		serviceLocator = ServiceLocator.getInstance();
+		try {
+			userService = serviceLocator.getUserService();
+			productService = serviceLocator.getProductService();
+			
+			BasicUserDTO basicUserDTO = new BasicUserDTO();
+			basicUserDTO.setTypeId(UserType.USER.getValue());
+			basicUserDTO.setActive(true);
+			List<UserSessionDTO> userNameList = userService.getAllUserAccounts(basicUserDTO);
+			
+			XMLGenXProductCatalog genXCatalogEn = null;
+			XMLGenXProductCatalogFR genXCatalogFr = null;
+			String whereToWriteIn = "";
+			for (UserSessionDTO userSessionDTO :  userNameList) {
+				long userId = userSessionDTO.getId();
+				genXCatalogEn = new XMLGenXProductCatalog();
+				genXCatalogFr = new XMLGenXProductCatalogFR();			
+				String inDir = userSessionDTO.getCode() + (userId*userId + 1) + "_";				
+				File[] fileEn = new File[2];
+				File[] fileFr = new File[2];
+				
+				Calendar cal = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+				
+				// whereToWriteIn = "C:\\dev\\workspace\\xml\\" + inDir  + "\\catalogUpdates.xml";
+				whereToWriteIn = "/usr/apache-tomcat-7.0.27/webapps/xml/" + inDir  + "/catalogUpdates.xml";					
+				fileEn[0] = new File(whereToWriteIn);
+				
+				// whereToWriteIn = "C:\\dev\\workspace\\xml\\" + inDir  + "\\catalogUpdates_" + sdf.format(cal.getTime()) +  ".xml";
+				whereToWriteIn = "/usr/apache-tomcat-7.0.27/webapps/xml/" + inDir  + "/catalogUpdates_" + sdf.format(cal.getTime()) +  ".xml";		
+				fileEn[1] = new File(whereToWriteIn);
+				
+				// whereToWriteIn = "C:\\dev\\workspace\\xml\\french\\" + inDir  + "\\catalogUpdatesFr.xml";
+				whereToWriteIn = "/usr/apache-tomcat-7.0.27/webapps/xml/french/" + inDir  + "/catalogUpdatesFr.xml";					
+				fileFr[0] = new File(whereToWriteIn);
+				
+				//whereToWriteIn = "C:\\dev\\workspace\\xml\\french\\" + inDir  + "\\catalogUpdatesFr_" + sdf.format(cal.getTime()) +  ".xml";
+				whereToWriteIn = "/usr/apache-tomcat-7.0.27/webapps/xml/french/" + inDir  + "/catalogUpdatesFr_" + sdf.format(cal.getTime()) +  ".xml";		
+				fileFr[1] = new File(whereToWriteIn);
+				
+				for (int fileIndexEn = 0; fileIndexEn < fileEn.length; fileIndexEn++) {					
+					if (!fileEn[fileIndexEn].exists()) {
+						fileEn[fileIndexEn].getParentFile().mkdirs();
+						new FileWriter(fileEn[fileIndexEn]);
+					}					
+					genXCatalogEn.generateXML(userId, fileEn[fileIndexEn], userSessionDTO.getCode());
+				}
+				
+				for (int fileIndexFr = 0; fileIndexFr < fileFr.length; fileIndexFr++) {
+					if (!fileFr[fileIndexFr].exists()) {
+						fileFr[fileIndexFr].getParentFile().mkdirs();
+						new FileWriter(fileFr[fileIndexFr]);
+					}
+					genXCatalogFr.generateXMLFR(userId, fileFr[fileIndexFr], userSessionDTO.getCode());
+				}				
+			}
+			
+			long userId = 0L;
+			long productId = 0L;
+			List<ProductDTO> productDTOList = productService.getProductsAsOfConsideredForXML();
+			for (UserSessionDTO userSessionDTO :  userNameList) {
+				userId = userSessionDTO.getId();
+				for (ProductDTO productDTO : productDTOList) {
+					productId = productDTO.getId();
+					productService.closeProductConsideredForXML(productId);
+					productService.closeAlterProductXML(productId);
+					productService.closeAlterUserProductXML(userId, productId);					
+				}
+			}
+			
+		} catch (ServiceException sx) {
+			sx.printStackTrace();
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+	}
+}

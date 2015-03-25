@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>	
+     <package name="struts-admin-support" namespace="/" extends="struts-admin-default">
+		        
+		<action name="homePage" class="com.loyauty.web.struts.action.home.HomePage">
+            <interceptor-ref name="i18nStack"/>
+            <result name="success" type="tiles">/homePage.tiles</result>
+        </action>
+        
+        <action name="manageAccountInit" class="com.loyauty.web.struts.action.user.ManageAccountInit">
+        	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+			<interceptor-ref name="basicStack"/>
+			<result name="success" type="tiles">/manageAccount.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addCurrency" class="com.loyauty.web.struts.action.currency.AddCurrency">
+            <interceptor-ref name="i18nStack"/>
+            <result name="success" type="tiles">/addCurrency.tiles</result>
+            <result name="input" type="tiles">/addCurrency.tiles</result>
+            <result name="authentification" type="tiles">/homePage.tiles</result>
+        </action>
+        
+        <action name="editCurrency" class="com.loyauty.web.struts.action.currency.EditCurrency">
+            <interceptor-ref name="i18nStack"/>
+            <result name="success" type="tiles">/editCurrency.tiles</result>
+            <result name="input" type="tiles">/editCurrency.tiles</result>
+            <result name="authentification" type="tiles">/homePage.tiles</result>
+        </action>
+        
+        <action name="commonList" class="com.loyauty.web.struts.action.common.ShowCommonDataTable">
+        	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+			<interceptor-ref name="basicStack"/>
+			<result name="success" type="tiles">/commonList.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+
+        <action name="getUserProduct" class="com.loyauty.web.struts.action.product.GetUserProduct">
+        	<interceptor-ref name="i18nStack"/>  
+        	<interceptor-ref name="authentification"/>       	   
+	    	<interceptor-ref name="basicStack" />  	        	
+			<result name="success" type="tiles">/manageAccount.tiles</result>
+			<result name="input" type="tiles">/manageAccount.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+      	
+        <action name="getProductList"  method="getProductList" class="com.loyauty.web.struts.action.product.AddProduct">
+            <interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/listProduct.tiles</result>
+			<result name="input" type="tiles">/listProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addProduct" class="com.loyauty.web.struts.action.product.AddProduct">
+            <interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/addProduct.tiles</result>
+			<result name="input" type="tiles">/addProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="saveProduct" class="com.loyauty.web.struts.action.product.SaveProduct">
+           	<interceptor-ref name="tokenSession"/>
+            	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+            	<interceptor-ref name="fileUpload" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addProductSuccess.tiles</result>
+			<result name="input" type="tiles">/addProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+                
+       <action name="getProduct" class="com.loyauty.web.struts.action.product.GetProduct">
+           	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/editProduct.tiles</result>
+			<result name="input" type="tiles">/editProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="editProduct" class="com.loyauty.web.struts.action.product.EditProduct">
+            <interceptor-ref name="tokenSession"/>
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/>  
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/editProductSuccess.tiles</result>
+			<result name="input" type="tiles">/editProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addSimilarProduct" class="com.loyauty.web.struts.action.product.GetSimilarProduct">
+           	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/addSimilarProduct.tiles</result>
+			<result name="input" type="tiles">/addSimilarProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="saveBrand" class="com.loyauty.web.struts.action.brand.SaveBrand">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/>
+            <interceptor-ref name="fileUpload" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addBrandSuccess.tiles</result>
+			<result name="input" type="tiles">/addBrand.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+
+		<action name="editBrand" class="com.loyauty.web.struts.action.brand.EditBrandShow">
+		    <interceptor-ref name="i18nStack"/>  
+        	<interceptor-ref name="authentification"/>       	   
+	    	<interceptor-ref name="basicStack" />  
+			<result name="success" type="tiles">/editBrand.tiles</result>
+			<result name="input" type="tiles">/editBrand.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addBrand"  class="com.loyauty.web.struts.action.brand.AddBrand">
+            <interceptor-ref name="i18nStack"/> 
+            <interceptor-ref name="authentification"/>
+			<result name="success" type="tiles">/addBrand.tiles</result>
+			<result name="input" type="tiles">/addBrand.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+		        
+        <action name="confirmEditBrand"  class="com.loyauty.web.struts.action.brand.EditBrand">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/> 
+            <interceptor-ref name="authentification"/> 
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addBrandSuccess.tiles</result>
+			<result name="input" type="tiles">/editBrand.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+
+        <action name="exportTOExcel" class="com.loyauty.web.struts.action.product.ExportToExcel">
+            <interceptor-ref name="authentification"/>       	   
+	    	<interceptor-ref name="basicStack" /> 
+			<result type="stream">
+            	<param name="contentType">"application/vnd.ms-excel"</param>
+            	<param name="inputName">excelStream</param>
+            	<param name="contentDisposition">contentDisposition</param>
+            	<param name="bufferSize">1024</param>
+        	</result>
+        	<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addCategory" class="com.loyauty.web.struts.action.category.AddCategory">
+            <interceptor-ref name="i18nStack"/> 
+            <interceptor-ref name="authentification"/> 
+			<result name="success" type="tiles">/addCategory.tiles</result>
+			<result name="input" type="tiles">/addCategory.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="saveCategory" class="com.loyauty.web.struts.action.category.SaveCategory">
+            <interceptor-ref name="token"/>
+            <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addCategorySuccess.tiles</result>
+			<result name="input" type="tiles">/addCategory.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="getCategory" class="com.loyauty.web.struts.action.category.GetCategory">
+             <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+			<result name="success" type="tiles">/editCategory.tiles</result>
+			<result name="input" type="tiles">/editCategory.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+                
+        <action name="editCategory" class="com.loyauty.web.struts.action.category.EditCategory">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addCategorySuccess.tiles</result>
+			<result name="input" type="tiles">/editCategory.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="addMainSpecification" class="com.loyauty.web.struts.action.specification.AddMainSpecification">
+             <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+			<result name="success" type="tiles">/addMainSpecification.tiles</result>
+			<result name="input" type="tiles">/addMainSpecification.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="saveMainSpecification" class="com.loyauty.web.struts.action.specification.SaveMainSpecification">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/> 
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/mainSpecificationSuccess.tiles</result>
+			<result name="input" type="tiles">/addMainSpecification.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="getMainSpecification" class="com.loyauty.web.struts.action.specification.GetMainSpecification">
+             <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+			<result name="success" type="tiles">/editMainSpecification.tiles</result>
+			<result name="input" type="tiles">/editMainSpecification.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+       	<action name="saveUser" class="com.loyauty.web.struts.action.user.AddUser">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/> 
+       		<interceptor-ref name="basicStack" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addUserSuccess.tiles</result>  
+			<result name="input" type="tiles">/addUser.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+
+       	<action name="editUser" class="com.loyauty.web.struts.action.user.EditUser">
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/>
+       		<interceptor-ref name="basicStack" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="redirect">/commonList.do?pageType=1</result>
+			<result name="input" type="tiles">/editUser.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+
+       	<action name="updateUser" class="com.loyauty.web.struts.action.user.SaveUser">
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/> 
+       		<interceptor-ref name="basicStack" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/addUserSuccess.tiles</result>
+			<result name="input" type="tiles">/editUser.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+		      
+        <action name="editMainSpecification" class="com.loyauty.web.struts.action.specification.EditMainSpecification">
+            <interceptor-ref name="token"/> 
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="authentification"/> 
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/mainSpecificationSuccess.tiles</result>
+			<result name="input" type="tiles">/editMainSpecification.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+	<action name="viewBrand" class="com.loyauty.web.struts.action.view.ViewBrand">
+		<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/viewBrand.tiles</result>
+			<result name="input" type="tiles">/viewBrand.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+        <action name="viewCategory" class="com.loyauty.web.struts.action.view.ViewCategory">
+             <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/>
+			<result name="success" type="tiles">/viewCategory.tiles</result>
+			<result name="input" type="tiles">/viewCategory.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+	
+        <action name="viewType" class="com.loyauty.web.struts.action.view.ViewType">
+             <interceptor-ref name="i18nStack"/>
+             <interceptor-ref name="authentification"/> 
+			<result name="success" type="tiles">/viewType.tiles</result>
+			<result name="input" type="tiles">/viewType.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+	 	
+		<action name="viewUser" class="com.loyauty.web.struts.action.view.ViewUser">
+            	<interceptor-ref name="i18nStack"/>
+            	<interceptor-ref name="authentification"/> 
+       		<interceptor-ref name="basicStack" />
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+			<result name="success" type="tiles">/viewUser.tiles</result>
+			<result name="input" type="tiles">/viewUser.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+		
+       <action name="viewProduct" class="com.loyauty.web.struts.action.view.ViewProduct">
+           	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/viewProduct.tiles</result>
+			<result name="input" type="tiles">/viewProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+       </action>
+       
+       <action name="amendProduct" class="com.loyauty.web.struts.action.amend.AmendProduct">
+           	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/amendProduct.tiles</result>
+			<result name="input" type="tiles">/amendProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+       <action name="amendingProduct" class="com.loyauty.web.struts.action.amend.AmendingProduct">
+           	<interceptor-ref name="i18nStack"/>
+        	<interceptor-ref name="authentification"/>
+	    	<interceptor-ref name="basicStack" />
+			<result name="success" type="tiles">/amendingProductSuccess.tiles</result>
+			<result name="input" type="tiles">/amendingProductSuccess.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+        </action>
+        
+   		<action name="upload" class="com.loyauty.web.struts.action.asiamiles.UploadXLS">
+			<result name="success" type="tiles">/downloadPDFSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXLS.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+
+   		<action name="transform" class="com.loyauty.web.struts.action.asiamiles.Transform">
+   			<result name="success" type="tiles">/uploadXLSSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXLS.tiles</result>
+   		</action> 
+   				       
+   		<action name="goToTransfer" class="com.loyauty.web.struts.action.user.transfer.GoToTransfer">
+			<result name="success" type="tiles">/transfer.tiles</result>
+			<result name="input" type="tiles">/transfer.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+    
+   		<action name="transfer" class="com.loyauty.web.struts.action.user.transfer.Transfer">
+			<result name="success" type="tiles">/transfer.tiles</result>
+			<result name="input" type="tiles">/transfer.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+	   		
+	 	<action name="download" class="com.loyauty.web.struts.action.asiamiles.DownloadPDF">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDF.tiles</result>
+	   </action> 
+	   		
+	 	<action name="addTemplate" class="com.loyauty.web.struts.action.template.AddTemplate">
+			<result name="success" type="tiles">/addTemplate.tiles</result>
+			<result name="input" type="tiles">/addTemplate.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+	   </action>  
+	   
+	   	   		
+	 	<action name="editTemplate" class="com.loyauty.web.struts.action.template.EditTemplate">
+			<result name="success" type="tiles">/editTemplate.tiles</result>
+			<result name="input" type="tiles">/editTemplate.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+	   </action>  
+   		
+   		<action name="initUser" class="com.loyauty.web.struts.action.user.InitUser">
+			<result name="success" type="tiles">/addUser.tiles</result>
+			<result name="input" type="tiles">/addUser.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+	   </action>  
+   		
+   	   <action name="noteAdmin" class="com.loyauty.web.struts.action.user.admin.NoteAdmin">
+			<result name="success" type="tiles">/noteAdmin.tiles</result>
+			<result name="input" type="tiles">/noteAdmin.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+	   </action>
+
+   		 <!-- ************************************* Upload and Download ************************** -->
+   		 
+   		 <action name="uploadXML" class="com.loyauty.web.struts.action.inbox.UploadXML">
+			<result name="success" type="tiles">/downloadPDFXMLSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXML.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+
+   		<action name="transformXML" class="com.loyauty.web.struts.action.inbox.TransformXML">
+   			<result name="success" type="tiles">/uploadXMLSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXML.tiles</result>
+   		</action>  
+   		
+   			   		
+	 	<action name="downloadPDF" class="com.loyauty.web.struts.action.inbox.DownloadPDF">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXML.tiles</result>
+	   </action>  		 
+   		
+   		<action name="downloadFile" class="com.loyauty.web.struts.action.orders.DownloadFile">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXML.tiles</result>
+	   </action>  		 
+   		 
+   		
+   		 
+   		 <!-- ************************************************************************ -->
+
+	    <!-- ****************************************** Advantage PDF ***************************** -->
+   		 
+   		 <action name="uploadXLSADV" class="com.loyauty.web.struts.action.advantage.UploadXLS">
+			<result name="success" type="tiles">/downloadPDFXLSLADVSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXLSADV.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+
+   		<action name="transformXLSADV" class="com.loyauty.web.struts.action.advantage.TransformXLS">
+   			<result name="success" type="tiles">/uploadXLSADVSuccess.tiles</result>
+			<result name="input" type="tiles">/uploadXLSADV.tiles</result>
+   		</action>  
+   		
+   			   		
+	 	<action name="downloadPDFADV" class="com.loyauty.web.struts.action.advantage.DownloadPDF">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXSLADV.tiles</result>
+	   </action>  		 
+   		 
+   		 <!-- ************************************************************************ -->
+	   	
+   		<action name="usersListAccount" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+   			<result name="success" type="tiles">/usersListAccount.tiles</result>
+			<result name="input" type="tiles">/usersListAccount.tiles</result>
+   		</action> 
+   		
+   		
+   		
+
+   		 <!-- ************************************* Order management************************** -->
+
+   		<action name="createOrdersAuto" class="com.loyauty.web.struts.action.orders.CreateOrdersAuto">
+   			<result name="success" type="tiles">/createOrdersAuto.tiles</result>
+			<result name="input" type="tiles">/createOrdersAuto.tiles</result>
+   		</action>  
+   		
+   		 
+   		<action name="goToCreateOrdersAuto" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/getOrderFile.tiles</result>
+			<result name="input" type="tiles">/getOrderFile.tiles</result>
+   		</action>  
+   		
+   		<action name="createOrdersAutoRemoteFile" class="com.loyauty.web.struts.action.orders.CreateOrdersAutoRemoteFile">
+   			<result name="success" type="tiles">/createOrdersAutoRemoteFile.tiles</result>
+			<result name="input" type="tiles">/createOrdersAutoRemoteFile.tiles</result>
+   		</action>  
+
+   		<action name="goToCreateOrdersAutoRemoteFile" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/getOrderRemoteFile.tiles</result>
+			<result name="input" type="tiles">/getOrderRemoteFile.tiles</result>
+   		</action>
+   		  		 
+   		<action name="goToCreateOrdersManual" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/createOrdersManual.tiles</result>
+			<result name="input" type="tiles">/createOrdersManual.tiles</result>
+   		</action>  
+   		
+   		   		  		 
+   		<action name="goToTreatmentOrders" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/treatmentOrders.tiles</result>
+			<result name="input" type="tiles">/treatmentOrders.tiles</result>
+   		</action> 
+   		
+   		   		   		  		 
+   		<action name="goToReportOrders" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/reportOrders.tiles</result>
+			<result name="input" type="tiles">/reportOrders.tiles</result>
+   		</action> 
+   		
+   		   		   		   		  		 
+   		<action name="goToInvoicedOrders" class="com.loyauty.web.struts.action.orders.GoToOrders">
+   			<result name="success" type="tiles">/invoicedOrders.tiles</result>
+			<result name="input" type="tiles">/invoicedOrders.tiles</result>
+   		</action> 
+   		   
+   		    		   		   		   		  		 
+   		<action name="invoicedOrders" class="com.loyauty.web.struts.action.orders.InvoicedOrders">
+   			<result name="success" type="tiles">/invoicedOrders.tiles</result>
+			<result name="input" type="tiles">/invoicedOrders.tiles</result>
+   		</action>  
+   		   
+   		   		   		   		  		 
+   		<action name="reportOrders" class="com.loyauty.web.struts.action.orders.ReportOrders">
+   			<result name="success" type="tiles">/reportOrders.tiles</result>
+			<result name="input" type="tiles">/reportOrders.tiles</result>
+   		</action> 
+   		
+   		<action name="createOrdersManual" class="com.loyauty.web.struts.action.orders.CreateOrdersManual">
+   			<result name="success" type="tiles">/createOrdersManual.tiles</result>
+			<result name="input" type="tiles">/createOrdersManual.tiles</result>
+   		</action>  
+   		
+   		<action name="generateInvoice" class="com.loyauty.web.struts.action.orders.GenerateInvoice">
+   			<result name="success" type="tiles">/generateInvoice.tiles</result>
+			<result name="input" type="tiles">/generateInvoice.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action> 
+   		
+   		  		
+   		<action name="treatmentOrders" class="com.loyauty.web.struts.action.orders.TreatmentOrders">
+   			<result name="success" type="tiles">/treatmentOrders.tiles</result>
+			<result name="input" type="tiles">/treatmentOrders.tiles</result>
+   		</action>  
+    		
+   		<action name="printOrdersToPDF" class="com.loyauty.web.struts.action.orders.PrintOrdersToPDF">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXML.tiles</result>
+	   </action> 
+	   
+	       		
+   		<action name="ordersAdminXLS" class="com.loyauty.web.struts.action.orders.OrdersAdminXLS">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXML.tiles</result>
+	   </action> 
+	
+   		<action name="productAdminXLS" class="com.loyauty.web.struts.action.product.productAdminXLS">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="tiles">/downloadPDFXML.tiles</result>
+	   </action> 
+
+   		<action name="goToUploadAdminXLS" class="com.loyauty.web.struts.action.orders.GoToUploadAdminXLS">
+			<result name="success" type="tiles">/uploadAdminXLS.tiles</result>
+			<result name="input" type="tiles">/uploadAdminXLS.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+	   
+   		<action name="uploadAdminXLS" class="com.loyauty.web.struts.action.orders.UploadAdminXLS">
+			<result name="success" type="tiles">/uploadAdminXLS.tiles</result>
+			<result name="input" type="tiles">/uploadAdminXLS.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+   		
+   		  			   
+   		<action name="ordersFileMapper" class="com.loyauty.web.struts.action.orders.OrdersFileMapper">
+			<result name="success" type="tiles">/ordersFileMapper.tiles</result>
+			<result name="input" type="tiles">/ordersFileMapper.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+   		
+   		<action name="userConnection" class="com.loyauty.web.struts.action.user.UserConnection">
+			<result name="success" type="tiles">/userConnection.tiles</result>
+			<result name="input" type="tiles">/userConnection.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+
+   		<action name="classificateProducts" class="com.loyauty.web.struts.action.product.ClassificateProducts">
+			<result name="success" type="tiles">/classificateProducts.tiles</result>
+			<result name="input" type="tiles">/classificateProducts.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+   		
+   		
+   		<action name="editSaleProduct" class="com.loyauty.web.struts.action.product.EditSaleProduct">
+			<result name="success" type="tiles">/editSaleProduct.tiles</result>
+			<result name="input" type="tiles">/editSaleProduct.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
+   		
+   		
+   		
+ 
+    </package>
+ 
+   
+   	<package name="struts-admin-user" namespace="/user" extends="struts-admin-default"> 
+
+		<action name="*User" class="com.loyauty.web.struts.action.user.UserCUD" method="{1}">
+			<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>               
+        </action> 
+                
+        <!--  
+        <action name="settingsSave" class="com.loyauty.web.struts.action.user.UserSettings" method="save">
+        	<interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>         
+        </action>
+         -->
+        <action name="login" class="com.loyauty.web.struts.action.user.Login" >
+        	<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>                			 
+        </action>
+        <!--
+        <action name="lostUserOrPwd" class="com.loyauty.web.struts.action.user.LostUserOrPwd" >
+        	<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>            
+        </action>
+         -->                
+        <action name="logout" class="com.loyauty.web.struts.action.user.Logout" >
+        	<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="basicStack"/>
+			<result name="success" type="redirect">/homePage.do</result>
+        </action>
+        
+        <action name="switchLang" class="com.loyauty.web.struts.action.user.SwitchLang" >
+        	<interceptor-ref name="i18nStack"/>        	
+			<interceptor-ref name="basicStack"/>
+			<result name="success" type="redirect">${url}</result>
+			<result name="homePage" type="redirect">/homePage.do</result>
+        </action>
+        <!--
+         <action name="*feedBack"  class="com.loyauty.web.struts.action.user.UserBugAndSuggestions" method="{1}" >
+        	<interceptor-ref name="i18nStack"/>      
+        	<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>	        					
+			<result name="success" type="redirect">/homePage.do</result>
+        </action>
+         -->
+                 
+    </package>      
+       
+    <package name="struts-admin-ajax" namespace="/ajax" extends="struts-admin-default">
+		
+		<result-types>
+			<result-type name="json" class="code.google.struts2jsonresult.JSONResult">
+				<!-- format the output json -->
+				<param name="prettyPrint">false</param>
+				<!--
+					Serialize the result property of the action 
+					See (https://cwiki.apache.org/S2PLUGINS/another-json-result-typestruts2jsonresult.html) to understand this configuration
+				-->
+				<param name="target">result</param>
+				<param name="deepSerialize">true</param>
+				<param name="patterns"> -*.class</param>
+			</result-type>
+		</result-types>
+		
+		<action name="uploadTemporaryProduct"  method="uploadTemporaryProduct" class="com.loyauty.web.struts.action.loadFile.AjaxUploadFile">
+        	<interceptor-ref name="i18nStack"/>
+       		<interceptor-ref name="fileUpload" />
+       		<interceptor-ref name="basicStack" /> 	    	    	                
+        </action>
+		
+		
+		 <!-- show information tables --> 
+         <action name="accountsList" method="accountsList" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>
+        <action name="brandList" method="brandList" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>
+        <action name="categoryList" method="categoryList" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>
+        <action name="productList" method="productList" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>     
+        <action name="productListQuery" method="productListQuery" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>     
+        <action name="populateCategoryAndDiscount" method="populateCategoryAndDiscount" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>        
+        <action name="getProductAndDiscountByCategory" method="getProductAndDiscountByCategory" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>
+        <action name="populateCategory" method="populateCategory" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>        
+        <action name="getMainSpecificationByCategory" method="getMainSpecificationByCategory" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action> 
+        <action name="setManuelPrices" method="setManuelPrices" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>
+      	<action name="setuserproductstatus" method="setuserproductstatus" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action>      
+       <action name="uploadImage"  method="uploadImage" class="com.loyauty.web.struts.action.loadFile.AjaxUploadFile">
+        	<interceptor-ref name="i18nStack"/>
+       		<interceptor-ref name="fileUpload" />
+       		<interceptor-ref name="basicStack" />
+        </action>
+        <action name="getMainSpecificationList" method="getMainSpecificationList" class="com.loyauty.web.struts.action.ajax.AdminPageAjax">
+			<result type="json" name="success" />
+        </action> 
+                
+	</package>   
+    
+    <package name="wildcard" namespace="/" extends="struts-admin-default">
+		
+        <action name="*" class="com.loyauty.web.struts.action.LoyautyAction">
+            <result type="tiles">/{1}.tiles</result>
+        </action>
+        
+    </package>
+    
+</struts>

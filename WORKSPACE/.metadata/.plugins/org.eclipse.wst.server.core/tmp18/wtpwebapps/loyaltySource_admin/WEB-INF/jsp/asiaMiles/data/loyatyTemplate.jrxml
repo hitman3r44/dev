@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="loyatyTemplate" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="42" bottomMargin="42" uuid="0912d63a-dea8-44fa-a18b-96ca3cae74fb">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="619"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FF0000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FF0000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FF0000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FF0000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="6cefac72-e2c1-41e2-bad4-40c9f65c7a36"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<field name="packageCode" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="claimNumber" class="java.lang.String"/>
+	<field name="memberRefNo" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="deliveryName" class="java.lang.String"/>
+	<field name="deliveryPhoneCountry" class="java.lang.String"/>
+	<field name="deliveryPhoneZone" class="java.lang.String"/>
+	<field name="deliveryPhoneNumber" class="java.lang.String"/>
+	<field name="deliveryPhoneInstruction" class="java.lang.String"/>
+	<field name="addressInstruction" class="java.lang.String"/>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="address1" class="java.lang.String"/>
+	<field name="address2" class="java.lang.String"/>
+	<field name="address3" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="postalCode" class="java.lang.String"/>
+	<field name="stateName" class="java.lang.String"/>
+	<field name="emailAddress" class="java.lang.String"/>
+	<group name="claimNumber">
+		<groupExpression><![CDATA[$F{claimNumber}]]></groupExpression>
+		<groupHeader>
+			<band height="570">
+				<textField>
+					<reportElement uuid="d4b76411-e245-4306-911f-6356359455c0" style="SubTitle" x="414" y="155" width="132" height="20" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{claimNumber}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b7212f8e-697b-4512-ae23-68d1dab79e81" x="309" y="131" width="100" height="20" forecolor="#FF0000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<text><![CDATA[PURCHASE ORDER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bb41f467-3df2-4de4-87e6-bff961a866fe" x="309" y="155" width="100" height="20"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<text><![CDATA[CLAIM NUMBER : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="01792ade-b32d-4f43-af51-ea1661d4ef38" x="40" y="205" width="178" height="15" forecolor="#FF0000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<text><![CDATA[SHIP TO:]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="e2ea6d91-91cb-4435-8309-c82dd13c1846" x="40" y="221" width="178" height="1" forecolor="#FF0000"/>
+				</line>
+				<staticText>
+					<reportElement uuid="2b1128fd-f096-4cd1-8ae8-42da987e7b39" style="Column header" x="42" y="240" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MEMBER REF NO :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="de9a9136-cd0f-4887-a145-dffca13c3e0b" style="Column header" x="42" y="278" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DELIVERY NAME :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f8776079-8d32-4681-b833-5f8e4094e4ac" style="Column header" x="42" y="259" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[COMPANY NAME :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aabcf710-1ebf-4b4a-8490-1e0b866b04b0" style="Column header" x="42" y="297" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DELIVERY PHONE NUMBER :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2cfa972c-48c8-4bf8-9be6-8601e6b92677" style="Column header" x="42" y="316" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DELIVERY PHONE INSTR :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="17541866-e9c1-4ef4-afa0-41976688fd91" style="Column header" x="42" y="335" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADDRESS 1 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6813bcfb-c45e-4c8f-b29b-acd84a016e14" style="Column header" x="42" y="354" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADDRESS 2 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ae107eae-de14-47cb-a4c3-0b636f527c92" style="Column header" x="42" y="373" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADDRESS 3 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="e3f669fa-b887-485a-a18e-887e4c557b3f" style="Column header" x="42" y="392" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[CITY :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="254e6018-8893-4982-a249-dd4023ef5b4f" style="Column header" x="42" y="411" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[POSTAL CODE :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a2a2d18f-f377-4855-9650-d10a8e3e9c6f" style="Column header" x="42" y="430" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[STATE NAME :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ad2b9ef7-0253-4815-926d-dbf093530ed9" style="Column header" x="42" y="468" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Email Address :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6711a150-4c7a-4755-93aa-9944ba9e5cf8" style="Column header" x="42" y="449" width="152" height="15" forecolor="#000000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADDRESS INSTRUCTION :]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="b93ab510-c29a-4b00-94d2-7127b68858f4" style="Detail" x="198" y="240" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{memberRefNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="00b84258-f1f6-42d6-9bf8-2c7a5a8b04c6" style="Detail" x="198" y="259" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8165b9f7-3d45-48b6-9e0f-316c748ca476" style="Detail" x="198" y="278" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliveryName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="b3b1ea3d-2f56-40da-86a9-3de949d7f4d7" style="Detail" x="198" y="297" width="24" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliveryPhoneCountry}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="cc951315-6fdf-45fd-84f3-dd5c8377db0c" style="Detail" x="224" y="297" width="35" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliveryPhoneZone}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8cf021e6-eb76-4f2a-86e9-4a910d826e5f" style="Detail" x="264" y="297" width="122" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliveryPhoneNumber}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="98fd709d-76d8-4977-998f-025084d35923" style="Detail" x="198" y="316" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliveryPhoneInstruction}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8c4dc1f0-6470-4c4c-91f6-aae651d7c18b" style="Detail" x="198" y="335" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="6c9fbe8a-192f-447f-b96e-657c46919f4a" style="Detail" x="198" y="354" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8a639999-e10f-4144-8e97-56c4baa97175" style="Detail" x="198" y="373" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address3}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="3aece760-e5b7-4b43-a7b5-baa43c911e14" style="Detail" x="198" y="392" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="d222e933-e5e1-4a86-ac02-3fdacbeee90a" style="Detail" x="198" y="411" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{postalCode}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="6e8a3bf0-79c5-46e4-b0ba-1da38bf1b11b" style="Detail" x="198" y="430" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stateName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="a306150f-78f2-4d42-a5ae-593a820f97ce" style="Detail" x="198" y="468" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{emailAddress}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1cf9914f-87b6-4fd6-86ca-a41001f04adc" style="Detail" x="198" y="449" width="315" height="15"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{addressInstruction}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="90135d1a-035f-4333-9166-12a024b0a9b0" x="0" y="538" width="555" height="1"/>
+					<graphicElement>
+						<pen lineColor="#FF0000"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement uuid="5933afaf-dae8-4f54-9b6c-50d49ed329da" style="Column header" x="3" y="548" width="93" height="15" forecolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[QUANTITY]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="d4e6d337-8e82-44e0-a276-ef5ce184302c" x="0" y="539" width="1" height="30"/>
+					<graphicElement>
+						<pen lineColor="#FF0000"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement uuid="5f8f3c30-d487-4bfe-9d85-35e4cac412ca" x="555" y="539" width="1" height="30"/>
+					<graphicElement>
+						<pen lineColor="#FF0000"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement uuid="f9d53823-1d87-48c5-9fc1-bd902ebd851d" x="100" y="539" width="1" height="30" forecolor="#FF0000"/>
+				</line>
+				<line>
+					<reportElement uuid="3d139eba-bae3-4189-a2ed-ce18907dbca3" x="231" y="539" width="1" height="30" forecolor="#FF0000"/>
+				</line>
+				<staticText>
+					<reportElement uuid="f91bcf77-ae7e-467e-9dcd-d52124ad77e7" style="Column header" x="106" y="548" width="121" height="15" forecolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PACKAGE CODE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7b3cc85a-f0f4-4723-ac57-9e1490f602f7" style="Column header" x="238" y="548" width="308" height="15" forecolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DESCRIPTION]]></text>
+				</staticText>
+				<image>
+					<reportElement uuid="8d3399cb-be56-47b8-8f4d-5bf50c0b610f" x="42" y="2" width="158" height="144"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement uuid="c1beca0f-e7d3-4398-8fae-f48e168d6b38" x="40" y="503" width="180" height="15" forecolor="#FF0000"/>
+					<textElement>
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<text><![CDATA[ITEM (S)]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="c7819857-9ade-45b3-a05a-2d6a45675e59" x="40" y="519" width="178" height="1" forecolor="#FF0000"/>
+				</line>
+				<line>
+					<reportElement uuid="b069d2c2-f40a-456b-991f-45a53dab0001" x="0" y="569" width="555" height="1" forecolor="#FF0000"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7cb59f95-c67e-424e-a43f-6f829b8f068e" style="Detail" x="103" y="9" width="125" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packageCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="abfdbf01-2886-4810-a72c-f9caefc094f7" style="Detail" x="236" y="9" width="315" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c75a110c-dd07-4de1-be67-1f8d9cb760f2" style="Detail" x="5" y="9" width="92" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="ac274bcc-e8a1-4f54-97f0-5aa03bf25989" x="100" y="0" width="1" height="30" forecolor="#FF0000"/>
+			</line>
+			<line>
+				<reportElement uuid="96823dd6-b955-423e-8a31-d910c6154616" x="231" y="0" width="1" height="30" forecolor="#FF0000"/>
+			</line>
+			<line>
+				<reportElement uuid="59aeb542-94c9-426c-8519-853a631040f4" x="0" y="0" width="1" height="30" forecolor="#FF0000"/>
+			</line>
+			<line>
+				<reportElement uuid="ba46c101-a943-4979-9db3-967e6fd85533" x="555" y="0" width="1" height="30" forecolor="#FF0000"/>
+			</line>
+			<line>
+				<reportElement uuid="521668f7-57c5-46fb-b717-c8094310e830" x="0" y="30" width="555" height="1" forecolor="#FF0000"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch">
+			<line>
+				<reportElement uuid="04915512-3ce1-4c83-a103-d2b968e63496" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6645f46e-5113-40ae-b302-025b9995d2d2" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="4d5f9265-5e73-42e7-bebe-e9c1c508714e" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd  hh:mm:ss">
+				<reportElement uuid="4d78ccfa-a588-4a72-92a1-eb1f190a01ea" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

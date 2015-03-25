@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>AWC13469</po_number>
+        <first_name>Corinna</first_name>
+        <last_name>Pastorchik</last_name>
+        <client_street>5009 - 1ST STREET S.W.</client_street>
+        <client_city>CALGARY</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2G0A1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>AD_KTAKSC6223</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KTAKSC6223</ls_product_id>
+        <product_title>6-Quart Slow Cooker</product_title>
+        <cost>88.5</cost>
+        <shipping_cost>27.71</shipping_cost>
+        <tracking_number>7310723093963474</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>AWC13434</po_number>
+        <first_name>Dean</first_name>
+        <last_name>Wetzlaugk</last_name>
+        <client_street>11330 154TH STREET NW</client_street>
+        <client_city>EDMONTON</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T5M1X7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>AD_CEL71331</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CEL71331</ls_product_id>
+        <product_title>Nature DX 10x32 Binoculars</product_title>
+        <cost>123.24</cost>
+        <shipping_cost>13.06</shipping_cost>
+        <tracking_number>7310723818221469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>AWC13473</po_number>
+        <first_name>Jay</first_name>
+        <last_name>Haase</last_name>
+        <client_street>107-3412 27 ST NE</client_street>
+        <client_city>CALGARY</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T1Y5E2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>AD_KOLKWC4</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KOLKWC4</ls_product_id>
+        <product_title>Coca-Cola 4L Personnal Refrigerator</product_title>
+        <cost>53.2</cost>
+        <shipping_cost>18.14</shipping_cost>
+        <tracking_number>7310723709106462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>AWC13433</po_number>
+        <first_name>Dean</first_name>
+        <last_name>Wetzlaugk</last_name>
+        <client_street>11330 154TH STREET NW</client_street>
+        <client_city>EDMONTON</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T5M1X7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>AD_SONSRSBTX500</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SONSRSBTX500</ls_product_id>
+        <product_title>SRSBTX500 Premium Wireless Speaker System</product_title>
+        <cost>231.5</cost>
+        <shipping_cost>25.68</shipping_cost>
+        <tracking_number>7310723688826450</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+</shipped_orders>

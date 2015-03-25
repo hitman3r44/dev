@@ -1,0 +1,18 @@
+Cher(e) #FIRSTNAME#, 
+
+Nous avons reçu le ou les jeux suivant de votre part : 
+
+#GAMENAME# 
+
+Si votre compte est actif, nous vous enverrons un ou d'autres jeux de votre sélection sous peu. Dépendamment de votre compte, vous recevrez alors un autre courriel avec les détails du ou des jeux expédiés. 
+Si vous avez des questions, n'hésitez pas à contacter notre service à la clientèle en utilisant le lien ici bas: 
+
+http://gameaccess.ca/displayContactUs.jsp?lang=fr 
+
+Meilleures salutations,
+L'Équipe Game Access
+
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

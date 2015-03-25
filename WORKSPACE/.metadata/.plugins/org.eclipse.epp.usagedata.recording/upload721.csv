@@ -1,0 +1,251 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396299429933
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396299431311
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299434869
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299437097
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299440970
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299455560
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299459454
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299474697
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299478235
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299488844
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299492628
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299523300
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299526582
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396299531323
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396299551360
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396299595883
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396299605639
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299622559
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299624503
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299628407
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396299631690
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396299643698
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299665747
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299665964
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396299737006
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299739815
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299812928
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396299818230
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299821268
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396299830015
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299839017
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396299873973
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299877458
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299882802
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396299917789
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299924016
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299924227
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299927402
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396299928610
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396299930802
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299938545
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299942329
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396299945645
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396299961190
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299962671
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299965244
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299969034
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396299985955
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396299988644
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396299992889
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396300018302
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396300021087
+executed,command,org.eclipse.jdt.debug.ui,3.5.2.v20100928a_r362,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1396300024719
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396300027527
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396300042966
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300095883
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300272976
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300298102
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300683383
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396300691708
+opened,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396300711549
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396300711576
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300722336
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300766777
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396300769215
+started,bundle,org.eclipse.wst.xml.ui,1.1.103.v201101122108,"org.eclipse.wst.xml.ui",1396300792177
+started,bundle,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.ui",1396300792178
+started,bundle,org.eclipse.wst.common.uriresolver,1.1.401.v201004280700,"org.eclipse.wst.common.uriresolver",1396300792427
+started,bundle,org.eclipse.wst.css.core,1.1.402.v201102031915,"org.eclipse.wst.css.core",1396300792455
+started,bundle,org.eclipse.wst.jsdt.web.support.jsp,1.0.303.v201012160047,"org.eclipse.wst.jsdt.web.support.jsp",1396300793032
+started,bundle,org.eclipse.wst.jsdt.web.ui,1.0.304.v201012160349,"org.eclipse.wst.jsdt.web.ui",1396300793050
+started,bundle,org.eclipse.jst.jsf.facelet.ui,1.0.0.v20100602,"org.eclipse.jst.jsf.facelet.ui",1396300793128
+started,bundle,org.eclipse.jst.jsf.ui,1.3.1.v20100906,"org.eclipse.jst.jsf.ui",1396300793133
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.200.v201004150600,"org.eclipse.wst.jsdt.manipulation",1396300793184
+started,bundle,org.eclipse.wst.jsdt.ui,1.1.4.v201102160540,"org.eclipse.wst.jsdt.ui",1396300793186
+started,bundle,org.eclipse.wst.css.ui,1.0.502.v201101122002,"org.eclipse.wst.css.ui",1396300793207
+started,bundle,org.eclipse.wst.dtd.ui,1.0.500.v201004290328,"org.eclipse.wst.dtd.ui",1396300793283
+started,bundle,org.eclipse.wst.jsdt.web.core,1.0.304.v201102160550,"org.eclipse.wst.jsdt.web.core",1396300793300
+opened,editor,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.core.jspsource.source",1396300793442
+activated,editor,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.core.jspsource.source",1396300793492
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396300796186
+closed,editor,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.core.jspsource.source",1396300796186
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300799547
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300829058
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396300832278
+started,bundle,org.eclipse.wst.xsl.exslt.core,1.0.0.v201005240426,"org.eclipse.wst.xsl.exslt.core",1396300853866
+started,bundle,org.eclipse.wst.xsl.ui,1.1.1.v201009091745,"org.eclipse.wst.xsl.ui",1396300853900
+opened,editor,org.eclipse.wst.xml.ui,1.1.103.v201101122108,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1396300853934
+activated,editor,org.eclipse.wst.xml.ui,1.1.103.v201101122108,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1396300854011
+started,bundle,org.eclipse.wst.internet.cache,1.0.400.v201004280700,"org.eclipse.wst.internet.cache",1396300854051
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396300882580
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396300885627
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396300887887
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396300889449
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300894440
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396300948601
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396300954634
+opened,editor,org.eclipse.wst.xml.ui,1.1.103.v201101122108,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1396300958778
+activated,editor,org.eclipse.wst.xml.ui,1.1.103.v201101122108,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1396300958807
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396300993167
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396300995579
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301008326
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301052357
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396301058549
+opened,editor,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.core.jspsource.source",1396301067037
+activated,editor,org.eclipse.jst.jsp.ui,1.1.503.v201101262228,"org.eclipse.jst.jsp.core.jspsource.source",1396301067069
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396301088267
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396301093084
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301097655
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301180650
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301184353
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301188950
+opened,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301189193
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301189236
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.navigate.openResource",1396301189250
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396301196926
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396301210800
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301213299
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301218546
+opened,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301218607
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301218630
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.navigate.openResource",1396301218630
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396301233021
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301234980
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301237362
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301242810
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301271905
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301273637
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301283492
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396301286563
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301314639
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301317534
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301317556
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396301327412
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301330505
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301458408
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301460651
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396301469603
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301477230
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301478916
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301536271
+activated,view,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.views.ResourceNavigator",1396301540890
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301553298
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301559176
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301559326
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396301586669
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.saveAll",1396301602929
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396301606458
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301626648
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301647878
+opened,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301647936
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301647957
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.navigate.openResource",1396301647957
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301661163
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396301666558
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301670114
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301672341
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396301679500
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396301682183
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.undo",1396301684465
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301692153
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301696334
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396301699499
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396301715377
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396301715689
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301720026
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396301727199
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301735210
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301735470
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396301738611
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301741956
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301759748
+activated,view,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console.ConsoleView",1396301779834
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396301788902
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396301812213
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396301815164
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301823362
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396301823570
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396301825340
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301828878
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301830181
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.project.cleanAction",1396301830191
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301830459
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301831185
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1396301835058
+error,log,,,"Errors occurred during the build.",1396301835215
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301835220
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301837390
+started,bundle,org.eclipse.wst.wsi,1.0.400.v201004220210,"org.eclipse.wst.wsi",1396301838801
+started,bundle,org.eclipse.wst.command.env,1.0.409.v201004211805,"org.eclipse.wst.command.env",1396301838814
+started,bundle,org.eclipse.wst.ws,1.1.203.v201004211805,"org.eclipse.wst.ws",1396301838815
+started,bundle,org.eclipse.wst.ws.service.policy,1.0.204.v201011011834,"org.eclipse.wst.ws.service.policy",1396301839389
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396301883889
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302039306
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396302049792
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396302063515
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396302066177
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jdt.ui"".",1396302069027
+error,log,,,"Error in JDT Core during AST creation",1396302069043
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1396302069415
+error,log,,,"Errors occurred during the build.",1396302069720
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302069736
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+no handler,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302069933
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302070121
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302072863
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1396302075974
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.copy",1396302080399
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.paste",1396302083439
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1396302098416
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1396302101855
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1396302103018
+error,log,,,"Errors occurred during the build.",1396302103175
+activated,editor,org.eclipse.jdt.ui,3.6.2.r362_v20110203,"org.eclipse.jdt.ui.CompilationUnitEditor",1396302103306
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302103336
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302105049
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302109491
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302110744
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.project.cleanAction",1396302110751
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302111022
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302111249
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.core.resources"".",1396302115260
+error,log,,,"Errors occurred during the build.",1396302115363
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302115369
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302121845
+activated,view,org.eclipse.wst.server.ui,1.1.207.v20110119,"org.eclipse.wst.server.ui.ServersView",1396302122814
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302125148
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302125993
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302126323
+started,bundle,org.eclipse.jst.server.tomcat.ui,1.1.200.v20100418,"org.eclipse.jst.server.tomcat.ui",1396302139017
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302139151
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302146166
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302147006
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302151919
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302153117
+executed,command,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.project.cleanAction",1396302153129
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302153421
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1396302153651
+error,log,,,"Exception occurred during problem detection:\n----------------------------------- SOURCE BEGIN -------------------------------------\npackage com.loyauty.web.struts.action.orders;\n\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.io.OutputStream;\nimport java.util.ArrayList;\nimport java.util.List;\n\nimport javax.servlet.http.HttpSession;\n\nimport org.apache.commons.io.FileUtils;\n\nimport com.loyauty.exception.ServiceLocatorException;\nimport com.loyauty.model.User;\nimport com.loyauty.service.ServiceLocator;\nimport com.loyauty.service.core.dto.BasicUserDTO;\nimport com.loyauty.service.core.dto.ItemMapDTO;\nimport com.loyauty.service.core.dto.OrdersDTO;\nimport com.loyauty.service.core.dto.UserFileRecoveryDTO;\nimport com.loyauty.service.core.dto.UserSessionDTO;\nimport com.loyauty.service.orders.OrdersService;\nimport com.loyauty.service.user.UserService;\nimport com.loyauty.web.struts.action.LoyautyAction;\n\n\nimport lombok.Getter;\nimport lombok.Setter;\n\npublic class OrdersFileMapper extends LoyautyAction {\n\t\n\tprivate static final long serialVersionUID = -4456834673L;\n\n\tprivate ServiceLocator serviceLocator;\n\tprivate OrdersService orderService;\n\tprivate UserService userService;\n\t\n\t@Getter @Setter\n\tprivate UserFileRecoveryDTO ufrDTO;\n\t\n\t@Getter @Setter\n\tprivate List<ItemMapDTO> columnNo;\n\n\t@Getter @Setter\n\tprivate List<User> usersList;\n\t\n\tprivate static int USER_TYPE = 2;\n\t\n\t@Getter @Setter\n\tprivate String userLogo;\n\t\n\t\n\t@Getter @Setter\n\tprivate Long uploadSignal;\n\t\n\t\n\t@Getter @Setter\n\tprivate Long userId;\n\t\n\t@Getter @Setter\n\tprivate File fileToUpload;\n\t\n\t@Getter @Setter\n\tprivate String fileToUploadName;\n\t\n\t@Getter @Setter\n\tprivate String userLogin;\n\t\n\t\n\t@Getter @Setter\n\tprivate String message;\n\t\n\t@Getter @Setter\n\tprivate Integer selectedFileType;\n\t\n\t\n\t@Getter @Setter\n\tprivate Integer buttonClicked;\n\t\n\t@Getter @Setter\n\tprivate Integer saveOrderMap;\n\t\n\tpublic OrdersFileMapper() throws ServiceLocatorException{\n\t\tsuper();\n\t\torderService = getServiceLocator().getOrderService();\n\t\tuserService = getServiceLocator().getUserService();\n\t\t\n\t\tufrDTO=new UserFileRecoveryDTO();\n\t\t\n\t}\n\t\n\t@SuppressWarnings(""unchecked"")\n\t@Override\n\tpublic String execute() throws Exception {\n\t\t\n\ttry{\n\t\tHttpSession session = request.getSession(true);\n\t\t//recovered all users\n\t\tUser userSelectd=(User)session.getAttribute(""userSelectd"");\n\t\tList<User> usersListSession=(List<User>)session.getAttribute(""usersListSession"");\n\t\tuserLogo=(String)session.getAttribute(""userLogo"");\n\t\tif(usersListSession==null){\n\t\t\tBasicUserDTO basicUserDTO = new BasicUserDTO();\n\t\t\tbasicUserDTO.setTypeId(USER_TYPE);\n\t\t\tList<UserSessionDTO> listAllUsers= userService.getAllUsers(basicUserDTO);\n\t\t\tusersList=new ArrayList<User>();\n\t\t\tfor(UserSessionDTO userDTO:listAllUsers){\n\t\t\t\tUser user=new User();\n\t\t\t\tuser.setId(userDTO.getId());\n\t\t\t\tuser.setLogin(userDTO.getLogin());\n\t\t\t\tusersList.add(user);\n\t\t\t}\n\t\t\tsession.setAttribute(""usersListSession"",usersList);\n\t\t}else usersList=usersListSession;\n\n\t\t/*-------------------- When Admin Find User Login ---------------------------\n\t\t\t\t\tcheck userId and his logo\n\t\t -----------------------------------------------------------------------------*/\n\t\t\tcolumnNo=(List<ItemMapDTO>)session.getAttribute(""columnNo"");\n\t\t\tif(columnNo==null)columnNo = new ArrayList<ItemMapDTO>();\n\t\t\t\n\t\t\t//get list if button clicked is not null and it is -1. once upload button is clicked its value will change to 1.\n\t\t\tif(buttonClicked != null && buttonClicked == -1){\n\t\t\t\tuserSelectd=userService.getUserByLogin(userLogin);\n\t\t\t\tuserLogo=null;\n\t\t\t\tuserId=null;\n\t\t\t\tif(userSelectd!=null){\n\t    \t\t\t//show user logo\n\t    \t\t\tuserLogo=""./images/orders/usersLogos/""+userLogin+"".png"";\n\t    \t\t\tuserId=userSelectd.getId();\n\t\t\t\t}\n\t\t\t\tcolumnNo = new ArrayList<ItemMapDTO>();\n\t\t\t\t\n\t\t\t\tString filePath = session.getServletContext().getRealPath(""/"");\n\n\n\t\t\t\t//if userLogo dosn't exist give him a blank logo\n\t\t\t\tcreateUserLogo(filePath +""images/orders/usersLogos/BLANK.png"", filePath +""images/orders/usersLogos/""+userLogin+"".png"");\n\t\t\t\tsession.setAttribute(""userLogo"",userLogo);\n\t\t\t\tsession.setAttribute(""userId"",userId);\n\t\t\t\tsession.setAttribute(""userSelectd"",userSelectd);\n\t\t\t\t\n\t\t\t\t//get file uploaded with a name and extension\n\t\t\t\tString filePathData = filePath + ""WEB-INF/jsp/orders/data/"";\n\t\t\t\t\n\t\t\t\t//if userLogo dosn't exist give him a blank logo\n\t\t\t\tcreateUserLogo(filePath +""images/orders/usersLogos/BLANK.png"", filePath +""images/orders/usersLogos/""+userLogin+"".png"");\n\t\t\t\t\n\t\t\t\t// ------------------ Uploading  file  -----------------------\n\t\t\t\tif(selectedFileType==null)\tselectedFileType=-1;\n\t\t\t\tString fileNameToSave=""FileToMap"";\n\t\t\t\tsession.setAttribute(""fileToUploadName"",fileToUploadName);\n\t\t\t\tfileToUploadName=(String)session.getAttribute(""fileToUploadName"");\n\t\t\t\tFile destFile = new File(filePathData+fileNameToSave); // desitnation file\n\t\t\t\tif(destFile.exists())destFile.delete();\n\t\t\t\t// upload file\n\t\t\t\tswitch (selectedFileType) {\n\t\t\t\tcase 1:\n\t\t\t\t\tfileNameToSave=fileNameToSave+"".xml"";\n\t\t\t\t\tdestFile = new File(filePathData, fileNameToSave);\n\t\t\t\t\tFileUtils.copyFile(fileToUpload, destFile);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 2:\n\t\t\t\t\tfileNameToSave=fileNameToSave+"".xls"";\n\t\t\t\t\tdestFile = new File(filePathData, fileNameToSave);\n\t\t\t\t\tFileUtils.copyFile(fileToUpload, destFile);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 3:\n\t\t\t\t\tdestFile = new File(filePathData+userLogin+"".csv"");\n\t\t\t\t\tFileUtils.copyFile(fileToUpload, destFile);\n\t\t\t\t\torderService.mapCSVToXLS(filePathData,""FileToMap"");\n\t\t\t\t\tdestFile = new File(filePathData+""FileToMap.xls""); // destination file\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\ttry {\n\t\t\t\t\t// Populate the combobox with the values of column of file.\n\t\t\t\t\tcolumnNo = orderService.getItemsUserFileMapping(destFile,selectedFileType);\n\t\t\t\t\tsession.setAttribute(""columnNo"",columnNo);\n\t\t\t\t} catch (IOException e) {\n\t\t\t\t\te.printStackTrace();\n\t\t\t\t\tmessage=""The system to a problem.\\nCheck that the file is in XLS format"";\n\t\t\t\t\tsession.setAttribute(""rapportError"",null);\n\t\t\t\t\tuserLogo=null;\n\t\t\t\t\tsession.setAttribute(""userLogo"",null);\n\t\t\t\t\treturn ""input"";\n\t\t\t\t}\n\t\t\t\tif(userId==null)userLogin="""";\n\t\t\t}\n\t\t\n\t\t\tif(userSelectd!=null){\n\t\t\t\tuserId=userSelectd.getId();\n\t\t\t\tuserLogin=userSelectd.getLogin();\n\t\t\t}\n\t\t\t\n\t\tif (ufrDTO!= null && saveOrderMap!= null && saveOrderMap!= -1){\t\n\t\t\tufrDTO = prepareUserFileRecovery(ufrDTO , selectedFileType, userId);\n\t\t\tif(ufrDTO != null){\n\t\t\t\tboolean result = orderService.insertUserFileRecoveryRecord(ufrDTO);\n\t\t\t\tif(result==true){\n\t\t\t\t\t\tSystem.out.println(""One row inserted Succesfully"");\n\t\t\t\t}\n\t\t\t\tSystem.out.println(""you have selected :  ""+ ufrDTO.getProductOrderNumber());\n\t\t\t\tSystem.out.println(""you have selected :  ""+ ufrDTO.getFormatDate());\n\t\t\t}\n\t\t}\n\t\t\n\t} catch (Exception e) {\n\t\te.printStackTrace();\n\t\treturn ""input"";\n\t}\n\t\treturn SUCCESS;\n\t}\n\n\t/*=========================  createUserLogo ===========================\n\t \t\t\t\tCreate  Blank User Logo if not Exist\n\t  =================================================================*/\n\tpublic void createUserLogo(String source, String destination) throws IOException{\n\t\tFile fileLogo=new File(destination);\n\t\tif(!fileLogo.exists()){\n\t\t\tInputStream in = new FileInputStream(source);\n\t\t\tOutputStream out = new FileOutputStream(destination);\n\t\t\tbyte[] buf = new byte[1024];\n\t\t\tint len;\n\t\t\twhile ((len = in.read(buf)) > 0) {\n\t\t\t\tout.write(buf, 0, len);\n\t\t\t}\n\t\t\tin.close();\n\t\t\tout.close();\t\n\t\t}\n\t}\t\n\t\n\tpublic UserFileRecoveryDTO prepareUserFileRecovery(UserFileRecoveryDTO ufrDTO, Integer selectedFileType, Long userId) throws Exception{\n\t\t\n\t\tswitch (selectedFileType) {\n\t\tcase 1: // xml\n\t\t\tbreak;\n\t\tcase 2: // for xls\n\t\t\tif(ufrDTO.getProductOrderNumber()==null || ufrDTO.getProductOrderNumber().equals("""")) ufrDTO.setProductOrderNumber(""0"");\n\t\t\tif(ufrDTO.getClientOrderNumber()==null || ufrDTO.getClientOrderNumber().equals("""")) ufrDTO.setClientOrderNumber(""0"");\n\t\t\tif(ufrDTO.getCstProductNumber()==null || ufrDTO.getCstProductNumber().equals("""")) ufrDTO.setCstProductNumber(""0"");\n\t\t\tif(ufrDTO.getProductOrderDate()==null || ufrDTO.getProductOrderDate().equals("""")) ufrDTO.setProductOrderDate(""0"");\n\t\t\tif(ufrDTO.getClientNumber()==null || ufrDTO.getClientNumber().equals("""")) ufrDTO.setClientNumber(""0"");\n\t\t\tif(ufrDTO.getClientFirstName()==null || ufrDTO.getClientFirstName().equals("""")) ufrDTO.setClientFirstName(""0"");\n\t\t\tif(ufrDTO.getClientLastName()==null || ufrDTO.getClientLastName().equals("""")) ufrDTO.setClientLastName(""0"");\n\t\t\tif(ufrDTO.getClientStreet()==null || ufrDTO.getClientStreet().equals("""")) ufrDTO.setClientStreet(""0"");\n\t\t\tif(ufrDTO.getClientOtherStreet()==null || ufrDTO.getClientOtherStreet().equals("""")) ufrDTO.setClientOtherStreet(""0"");\n\t\t\tif(ufrDTO.getClientCity()==null || ufrDTO.getClientCity().equals("""")) ufrDTO.setClientCity(""0"");\n\t\t\tif(ufrDTO.getClientPostalCode()==null || ufrDTO.getClientPostalCode().equals("""")) ufrDTO.setClientPostalCode(""0"");\n\t\t\tif(ufrDTO.getClientProvince()==null || ufrDTO.getClientProvince().equals("""")) ufrDTO.setClientProvince(""0"");\n\t\t\tif(ufrDTO.getClientPhone()==null || ufrDTO.getClientPhone().equals("""")) ufrDTO.setClientPhone(""0"");\n\t\t\tif(ufrDTO.getClientEmail()==null || ufrDTO.getClientEmail().equals("""")) ufrDTO.setClientEmail(""0"");\n\t\t\tif(ufrDTO.getLsProductID()==null || ufrDTO.getLsProductID().equals("""")) ufrDTO.setLsProductID(""0"");\n\t\t\tif(ufrDTO.getProductDescription()==null || ufrDTO.getProductDescription().equals("""")) ufrDTO.setProductDescription(""0"");\n\t\t\tif(ufrDTO.getUnitPrice()==null || ufrDTO.getUnitPrice().equals("""")) ufrDTO.setUnitPrice(""0"");\n\t\t\tif(ufrDTO.getCompanyHeader()==null || ufrDTO.getCompanyHeader().equals("""")) ufrDTO.setCompanyHeader(""0"");\n\t\t\tif(ufrDTO.getUserId()==null || ufrDTO.getUserId().equals("""")) ufrDTO.setUserId(userId);\n\t\t\tif(ufrDTO.getFileTypeId()==null || ufrDTO.getFileTypeId().equals("""")) ufrDTO.setFileTypeId(2);\n\t\t\tif(ufrDTO.getFileType()==null || ufrDTO.getFileType().equals("""")) ufrDTO.setFileType(""xls"");\n\t\t\tif(ufrDTO.getQuantity()==null || ufrDTO.getQuantity().equals("""")) ufrDTO.setQuantity(""0"");\n\t\t\tif(ufrDTO.getTagRoot()==null || ufrDTO.getTagRoot().equals("""")) ufrDTO.setTagRoot(""0"");\n\t\t\tif(ufrDTO.getShippingCompany()==null || ufrDTO.getShippingCompany().equals("""")) ufrDTO.setShippingCompany(""0"");\n\t\t\tif(ufrDTO.getRequiredDate()==null || ufrDTO.getRequiredDate().equals("""")) ufrDTO.setRequiredDate(""0"");\n\t\t\tif(ufrDTO.getClientOtherNames()==null || ufrDTO.getClientOtherNames().equals("""")) ufrDTO.setClientOtherNames(""0"");\n\t\t\tif(ufrDTO.getClientPhoneZone()==null || ufrDTO.getClientPhoneZone().equals("""")) ufrDTO.setClientPhoneZone(""0"");\n\t\t\tif(ufrDTO.getFormatDate()==null || ufrDTO.getFormatDate().equals("""")) ufrDTO.setFormatDate(""0"");\n\t\t\tif(ufrDTO.getNotes()==null || ufrDTO.getNotes().equals("""")) ufrDTO.setNotes(""0"");\n\t\t\tif(ufrDTO.getClientProductNumber()==null || ufrDTO.getClientProductNumber().equals("""")) ufrDTO.setClientProductNumber(""0"");\n\t\t\tif(ufrDTO.getClientOtherId()==null || ufrDTO.getClientOtherId().equals("""")) ufrDTO.setClientOtherId(""0"");\n\t\t\tif(ufrDTO.getProvidedLsProductId()==null || ufrDTO.getProvidedLsProductId().equals("""")) ufrDTO.setProvidedLsProductId(""0"");\n\t\t\tif(ufrDTO.getFileTypeIdConfirm()==null || ufrDTO.getFileTypeIdConfirm().equals("""")) ufrDTO.setFileTypeIdConfirm(2);\n\t\t\t\n\t\t\t/* VALIDATION PENDING....\n\t\t\tif(ufrDTO.getProductOrderNumber()==null||ufrDTO.getProductOrderNumber().equals("""")){\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\telse if(ufrDTO.getClientPostalCode() == null || ufrDTO.getClientPostalCode()==""""){\n\t\t\t\tSystem.out.println("" Postal Code is missing"");\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\t*/\n\t\t\tbreak;\n\t\tcase 3:\n\t\t\tbreak;\n\t\t}\n\t\t// if compulsory field missed return null ...change it latter\n\t\treturn ufrDTO;\n\t}\n\t\n    \n    public String[] getProperties(String fullClassName) throws ClassNotFoundException{\n    \t@SuppressWarnings(""rawtypes"")\n\t\tClass cls = Class.forName(fullClassName);//""com.loyauty.service.core.dto.UserFileRecoveryDTO""\n    \tObject fieldlist[] = cls.getDeclaredFields();\n    \tString[] result=new String[fieldlist.length];\n    \tfor(int i=0;i<fieldlist.length;i++){\n    \t\tString itemDefinition=fieldlist[i].toString();\n    \t\tString[]itemDefinitionList=itemDefinition.split(""\\\\."");\n    \t\tString item=itemDefinitionList[itemDefinitionList.length-1];\n    \t\tresult[i]=item;\n    \t}\n    \treturn result;\n    }\n\n\t\n}\n\n----------------------------------- SOURCE END -------------------------------------",1396302154733

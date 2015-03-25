@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="KLF_PEU27179"/>
+    <ls-product id="KLF_PEU230128"/>
+    <ls-product id="KLF_SONBDVE390">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONBDVE3100</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ301358">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241386</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ101353">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ301379">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSGEF43</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ101359">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSXDC79</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ301360">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROT70227</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ00001">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ101319">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTLB72498</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_ESQ301395">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSSC125</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512634">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGS72439</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512719">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGB72339</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512720">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNE161</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512584">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512724">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSRK021</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512519">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241564</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_HUG1512661">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTAGS90047</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_LCT2010547">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_LCT2000518">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_LCT2010595">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_LCT2000668">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_LCT2000651">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_LCT2010552">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNDC31</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_LCT2010579">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA475</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL81197">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="KLF_THL10286">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL10285">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="KLF_THL10311">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL10276">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPH9016</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL80996">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPEGF91</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL90835">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPF3995</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL90781">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6021</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL10307">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6015</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL81146">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPS6031</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL90768">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC26002</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_LCT2010621">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_LCT2010566">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="KLF_CAB519057">
+        <group>Outdoors</group>
+        <category>Bbqs</category>
+    </ls-product>
+    <ls-product id="KLF_BDI580415">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CAB530352">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_BDI530632">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_BDI530634">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CAB943052">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CAB629310">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_APPMD093LL">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - English</title>
+    </ls-product>
+    <ls-product id="KLF_APPZ0MP">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - French</title>
+    </ls-product>
+    <ls-product id="KLF_APPMD096LL">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - English</title>
+    </ls-product>
+    <ls-product id="KLF_APPZ0MS">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - French</title>
+    </ls-product>
+    <ls-product id="KLF_THL1781242">
+        <status>DISCONTINUED</status>
+        <substitute-product>LRSRRS89R</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_THL1710277">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_SONMDREX38IPB">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONMDREX100IP_BK</substitute-product>
+    </ls-product>
+    <ls-product id="KLF_APPMD528CA">
+        <cost>324.07</cost>
+        <discount-dollars>6.92</discount-dollars>
+        <discount-percent>2.09</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>15.88</average-canada>
+            <rate-per-province>
+                <AB>18.37</AB>
+                <BC>19.18</BC>
+                <MB>17.23</MB>
+                <NB>18.07</NB>
+                <NL>20.07</NL>
+                <NS>18.31</NS>
+                <NT>19.43</NT>
+                <NU>28.63</NU>
+                <ON>14.57</ON>
+                <PE>17.39</PE>
+                <QC>13.62</QC>
+                <SK>18.37</SK>
+                <YT>22.67</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD529CA">
+        <cost>422.07</cost>
+        <discount-dollars>8.92</discount-dollars>
+        <discount-percent>2.07</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.95</average-canada>
+            <rate-per-province>
+                <AB>20.44</AB>
+                <BC>21.25</BC>
+                <MB>19.30</MB>
+                <NB>20.14</NB>
+                <NL>22.14</NL>
+                <NS>20.38</NS>
+                <NT>21.50</NT>
+                <NU>30.70</NU>
+                <ON>16.64</ON>
+                <PE>19.46</PE>
+                <QC>15.69</QC>
+                <SK>20.44</SK>
+                <YT>24.74</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD530CA">
+        <cost>520.07</cost>
+        <discount-dollars>10.92</discount-dollars>
+        <discount-percent>2.06</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>20.02</average-canada>
+            <rate-per-province>
+                <AB>22.51</AB>
+                <BC>23.32</BC>
+                <MB>21.37</MB>
+                <NB>22.21</NB>
+                <NL>24.21</NL>
+                <NS>22.45</NS>
+                <NT>23.58</NT>
+                <NU>32.78</NU>
+                <ON>18.71</ON>
+                <PE>21.53</PE>
+                <QC>17.76</QC>
+                <SK>22.51</SK>
+                <YT>26.81</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD531CA">
+        <cost>324.07</cost>
+        <discount-dollars>6.92</discount-dollars>
+        <discount-percent>2.09</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>15.88</average-canada>
+            <rate-per-province>
+                <AB>18.37</AB>
+                <BC>19.18</BC>
+                <MB>17.23</MB>
+                <NB>18.07</NB>
+                <NL>20.07</NL>
+                <NS>18.31</NS>
+                <NT>19.43</NT>
+                <NU>28.63</NU>
+                <ON>14.57</ON>
+                <PE>17.39</PE>
+                <QC>13.62</QC>
+                <SK>18.37</SK>
+                <YT>22.67</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD532CA">
+        <cost>422.07</cost>
+        <discount-dollars>8.92</discount-dollars>
+        <discount-percent>2.07</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.95</average-canada>
+            <rate-per-province>
+                <AB>20.44</AB>
+                <BC>21.25</BC>
+                <MB>19.30</MB>
+                <NB>20.14</NB>
+                <NL>22.14</NL>
+                <NS>20.38</NS>
+                <NT>21.50</NT>
+                <NU>30.70</NU>
+                <ON>16.64</ON>
+                <PE>19.46</PE>
+                <QC>15.69</QC>
+                <SK>20.44</SK>
+                <YT>24.74</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD534CA">
+        <cost>451.47</cost>
+        <discount-dollars>9.52</discount-dollars>
+        <discount-percent>2.07</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.95</average-canada>
+            <rate-per-province>
+                <AB>20.44</AB>
+                <BC>21.25</BC>
+                <MB>19.30</MB>
+                <NB>20.14</NB>
+                <NL>22.14</NL>
+                <NS>20.38</NS>
+                <NT>21.50</NT>
+                <NU>30.70</NU>
+                <ON>16.64</ON>
+                <PE>19.46</PE>
+                <QC>15.69</QC>
+                <SK>20.44</SK>
+                <YT>24.74</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD535CA">
+        <cost>549.47</cost>
+        <discount-dollars>11.52</discount-dollars>
+        <discount-percent>2.05</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>20.02</average-canada>
+            <rate-per-province>
+                <AB>22.51</AB>
+                <BC>23.32</BC>
+                <MB>21.37</MB>
+                <NB>22.21</NB>
+                <NL>24.21</NL>
+                <NS>22.45</NS>
+                <NT>23.58</NT>
+                <NU>32.78</NU>
+                <ON>18.71</ON>
+                <PE>21.53</PE>
+                <QC>17.76</QC>
+                <SK>22.51</SK>
+                <YT>26.81</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD536CA">
+        <cost>647.47</cost>
+        <discount-dollars>13.52</discount-dollars>
+        <discount-percent>2.05</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>24.16</average-canada>
+            <rate-per-province>
+                <AB>26.65</AB>
+                <BC>27.46</BC>
+                <MB>25.51</MB>
+                <NB>26.35</NB>
+                <NL>28.35</NL>
+                <NS>26.59</NS>
+                <NT>27.72</NT>
+                <NU>36.92</NU>
+                <ON>22.85</ON>
+                <PE>25.67</PE>
+                <QC>21.90</QC>
+                <SK>26.65</SK>
+                <YT>30.95</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD537CA">
+        <cost>451.47</cost>
+        <discount-dollars>9.52</discount-dollars>
+        <discount-percent>2.07</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.95</average-canada>
+            <rate-per-province>
+                <AB>20.44</AB>
+                <BC>21.25</BC>
+                <MB>19.30</MB>
+                <NB>20.14</NB>
+                <NL>22.14</NL>
+                <NS>20.38</NS>
+                <NT>21.50</NT>
+                <NU>30.70</NU>
+                <ON>16.64</ON>
+                <PE>19.46</PE>
+                <QC>15.69</QC>
+                <SK>20.44</SK>
+                <YT>24.74</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD538CA">
+        <cost>549.47</cost>
+        <discount-dollars>11.52</discount-dollars>
+        <discount-percent>2.05</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>20.02</average-canada>
+            <rate-per-province>
+                <AB>22.51</AB>
+                <BC>23.32</BC>
+                <MB>21.37</MB>
+                <NB>22.21</NB>
+                <NL>24.21</NL>
+                <NS>22.45</NS>
+                <NT>23.58</NT>
+                <NU>32.78</NU>
+                <ON>18.71</ON>
+                <PE>21.53</PE>
+                <QC>17.76</QC>
+                <SK>22.51</SK>
+                <YT>26.81</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_APPMD539CA">
+        <cost>647.47</cost>
+        <discount-dollars>13.52</discount-dollars>
+        <discount-percent>2.05</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>24.16</average-canada>
+            <rate-per-province>
+                <AB>26.65</AB>
+                <BC>27.46</BC>
+                <MB>25.51</MB>
+                <NB>26.35</NB>
+                <NL>28.35</NL>
+                <NS>26.59</NS>
+                <NT>27.72</NT>
+                <NU>36.92</NU>
+                <ON>22.85</ON>
+                <PE>25.67</PE>
+                <QC>21.90</QC>
+                <SK>26.65</SK>
+                <YT>30.95</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_TOS47L6200U">
+        <cost>1,024.62</cost>
+        <discount-dollars>268.37</discount-dollars>
+        <discount-percent>20.76</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>72.16</average-canada>
+            <rate-per-province>
+                <AB>88.25</AB>
+                <BC>92.47</BC>
+                <MB>70.94</MB>
+                <NB>74.40</NB>
+                <NL>95.94</NL>
+                <NS>75.67</NS>
+                <NT>92.24</NT>
+                <NU>293.76</NU>
+                <ON>64.24</ON>
+                <PE>71.85</PE>
+                <QC>61.16</QC>
+                <SK>88.24</SK>
+                <YT>104.20</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="KLF_CAB116344">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CAB130251">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CAB130190">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="KLF_CABSPIN1G">
+        <shipping-size>
+            <length>42</length>
+            <width>16</width>
+            <height>16</height>
+        </shipping-size>
+    </ls-product>
+</catalog>

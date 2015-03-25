@@ -1,0 +1,70 @@
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/gplay.tld" prefix="govojo" %>
+<%@ taglib uri="/WEB-INF/datetime.tld" prefix="dt" %>
+<%@ taglib uri="/WEB-INF/taglibs-string.tld" prefix="str" %>
+<%@ taglib uri="/WEB-INF/session.tld" prefix="currentSession" %>
+<%@ page import="application.SessionUtils" %>
+<%@ page import="formbeans.GameAttributesBean" %>
+<%@ page import ="govojo.db.Console" %>
+
+<% 
+if((session.getAttribute(SessionUtils.GAME_INFORMATION) != null) 
+		&& (((GameAttributesBean)session.getAttribute(SessionUtils.GAME_INFORMATION)).getGameDescIDAsStr() != null)) { 
+%>
+
+<bean:define id="gameDescID" name="<%=SessionUtils.GAME_INFORMATION%>" property="gameDescIDAsStr" scope="session" type="java.lang.String"/>
+<bean:define id="consoleIDAsString" name="<%=SessionUtils.GAME_INFORMATION%>" property="consoleIDAsStr" scope="session"/>
+<bean:define id="image" name="<%=SessionUtils.GAME_INFORMATION%>" property="imagePath" scope="session"/>
+<bean:define id="genreID" name="<%=SessionUtils.GAME_INFORMATION%>" property="genreIDAsStr" scope="session"/>
+<bean:define id="userRating" name="<%=SessionUtils.GAME_INFORMATION%>" property="userRating" scope="session"/>
+<bean:define id="addToQueue" name="<%=SessionUtils.GAME_INFORMATION%>" property="addToQueueURL" scope="session"/>
+<bean:define id="gameManual" name="<%=SessionUtils.GAME_INFORMATION%>" property="manualURL" scope="session"/>
+<bean:define id="totalReviews" name="<%=SessionUtils.GAME_INFORMATION%>" property="totalCriticReviewsAsStr" scope="session"/>
+<bean:define id="totalScreenShots" name="<%=SessionUtils.GAME_INFORMATION%>" property="totalScreenShotsAsStr" scope="session"/>
+
+<%
+
+String consoleTop = "" ;
+String featuredGameImage = "" ;
+String productUrl = "" ;
+System.out.println("consoleIDAsString : " + consoleIDAsString);
+if(consoleIDAsString.equals(Integer.toString(Console.PLAYSTATION2))) {
+		featuredGameImage = "images/header_small_ps2_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.XBOX))) {
+		featuredGameImage = "images/header_small_xbox_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.GAMECUBE))) {
+		featuredGameImage = "images/header_small_gc_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.PSP))) {
+		featuredGameImage = "images/header_small_psp_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.WII))) {
+		featuredGameImage = "images/header_small_wii_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.PLAYSTATION3))) {
+		featuredGameImage = "images/header_small_ps3_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.XBOX360)))  {
+		featuredGameImage = "images/header_small_360_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.DS))) {
+		featuredGameImage = "images/header_small_ds_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.NINTENDO3DS))) {
+	featuredGameImage = "images/header_small_3ds_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.PSVITA))) {
+		featuredGameImage = "images/header_small_vita_new.gif";
+} else if(consoleIDAsString.equals(Integer.toString(Console.WII_U))) {
+		featuredGameImage = "images/header_small_wiiu.gif";
+}
+
+if(request.getParameter("console") != null) {
+	if(request.getParameter("console").equalsIgnoreCase("0")) {
+		featuredGameImage = "images/header_small_allconsoles_rental.gif";
+	}
+}
+%>
+
+<table width="560" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="<%=featuredGameImage %>" width="560" height="119" border="0"></td>
+  </tr>
+</table>
+
+<%} %>

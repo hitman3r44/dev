@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="ASD_BKS30560">
+        <status>DISCONTINUED</status>
+        <substitute-product>BKS811442</substitute-product>
+    </ls-product>
+    <ls-product id="ASD_JJJ70161AS">
+        <brand-name>Joseph Joseph</brand-name>
+        <group>Kitchen</group>
+        <category>Tools &amp; Accessories</category>
+        <type>Utensils and Tools</type>
+        <image>http://loyaltysource.com/media/product/large/jjj70161as_1361740077727.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Nest Utensils Compact Kitchen Tool Set</title>
+        <description>Utensil Set, 5 pieces, assorted colors, nylon. The ultimate collection of practical, space-saving kitchen utensils with an innovative design that allows each utensil to be stacked perfectly together in a self-supporting design for compact storage. When nested the tools are held securely in place by small magnets in the handles. Made from toughened nylon, all tools are heat-resistant up to 240°C/464°F. Dishwasher safe.</description>
+        <specification> Set Includes: Perforated turner Spaghetti server Slotted spoon Cooking spoon Ladle</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>7010061AS</model-number>
+        <weight>3</weight>
+        <shipping-size>
+            <length>7</length>
+            <width>13</width>
+            <height>7</height>
+        </shipping-size>
+    </ls-product>
+    <ls-product id="ASD_APPIPWF4G128G">
+        <brand-name>Apple</brand-name>
+        <group>Electronics</group>
+        <category>Computers</category>
+        <type>Tablets &amp; Netbooks</type>
+        <image>http://loyaltysource.com/media/product/large/appipwf4g128g_1363024767286.jpg</image>
+        <status>AVAILABLE</status>
+        <title>iPad Retina Wi-Fi 4G 128GB Bundle - BLACK</title>
+        <description>Pick up the iPad with Retina display and suddenly, it’s clear. You’re actually touching your photos, reading a book, playing the piano. Nothing comes between you and what you love. That’s because the fundamental elements of iPad — the display, the processor, the cameras, the wireless connection — all work together to create the best possible experience. And they make iPad capable of so much more than you ever imagined. This bundle includes a black iPad with retina display Wi-Fi 4G 128GB, a wireless keyboard, a light grey smart cover and a lightning to 30-pin connector.</description>
+        <specification>9.7-inch (diagonal) LED-backlit Multi-Touch display with IPS technology Dual-core A6X with quad-core graphics 128GB of storage Wi-Fi / Bluetooth 4.0 / 4G LTE HD video recording (1080p) 5-megapixel iSight camera Built-in speaker / microphone Also included : Wireless English keyboard iPad Smart Cover case - Light grey Lighting to 30-pin adapter cable (0.2M)</specification>
+        <others>4th Generation Environmental Handling Fee included.</others>
+        <warranty>1 year</warranty>
+        <model-number>ME400C/A</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>12</length>
+            <width>13</width>
+            <height>5</height>
+        </shipping-size>
+        <msrp>1099.99</msrp>
+        <cost>1,139.63</cost>
+        <discount-dollars>-39.64</discount-dollars>
+        <discount-percent>-3.60</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>31.48</average-canada>
+            <rate-per-province>
+                <AB>34.53</AB>
+                <BC>35.47</BC>
+                <MB>32.84</MB>
+                <NB>33.76</NB>
+                <NL>36.40</NL>
+                <NS>34.05</NS>
+                <NT>35.65</NT>
+                <NU>50.83</NU>
+                <ON>29.89</ON>
+                <PE>33.03</PE>
+                <QC>28.85</QC>
+                <SK>34.53</SK>
+                <YT>39.02</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_CYB91475N">
+        <brand-name>Cyber Acoustics</brand-name>
+        <group>Electronics</group>
+        <category>Computers</category>
+        <type>Accessories &amp; Others</type>
+        <image>http://loyaltysource.com/media/product/large/cyb91475n_1363113034915.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Portable Laptop Speaker CA2880</title>
+        <description>The CA-2880 laptop speaker bar is perfect for movie watchers and music listeners on the go. Powered by USB, there's no need for external power, thus creating a single cable experience that denies clutter. The provided carrying case and portable design makes the CA-2880 perfect for taking trips. The 1.5" drivers make for a solid listening experience, and the laptop clip is suitable for the portable lifestyle.</description>
+        <specification>Clip-on design Slim and compact design Full-stereo sound USB cord Carry case</specification>
+        <others>Environmental Handling Fee included.</others>
+        <warranty>1 year</warranty>
+        <model-number>91475N</model-number>
+        <weight>2.65</weight>
+        <shipping-size>
+            <length>10.25</length>
+            <width>4.72</width>
+            <height>3.25</height>
+        </shipping-size>
+        <msrp>29.99</msrp>
+        <cost>21.22</cost>
+        <discount-dollars>8.77</discount-dollars>
+        <discount-percent>29.24</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>9.69</average-canada>
+            <rate-per-province>
+                <AB>12.18</AB>
+                <BC>13.00</BC>
+                <MB>11.05</MB>
+                <NB>11.89</NB>
+                <NL>13.88</NL>
+                <NS>12.13</NS>
+                <NT>13.26</NT>
+                <NU>22.48</NU>
+                <ON>8.37</ON>
+                <PE>11.20</PE>
+                <QC>7.43</QC>
+                <SK>12.18</SK>
+                <YT>16.49</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_HARKARBT">
+        <brand-name>Harman Kardon</brand-name>
+        <group>Electronics</group>
+        <category>Portable</category>
+        <type>Headphones</type>
+        <image>http://loyaltysource.com/media/product/large/harkarbt_1363181180247.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Bluetooth Over-the-Ear Headphones</title>
+        <description>The over-ear model BT Bluetooth headphones include an integrated microphone so users don't have to remove them for a call. Built-in playback buttons sit along the side of one ear cup for easy music controls. These high-performance wireless headphones are charged via the included USB cable, but also work in passive mode. That means if the battery which lasts 12 hours is dead, users can attach the fabric-covered headphone cable for wired playback from an iPhone, iPod or iPad. Competitive Bluetooth headphones do not offer passive playback.</description>
+        <specification>Remote and mic Bluetooth Foldable Attachable/detachable cable USB rechargeable Apple recommended</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>HARKAR-BT</model-number>
+        <weight>4</weight>
+        <shipping-size>
+            <length>12</length>
+            <width>10</width>
+            <height>6</height>
+        </shipping-size>
+        <msrp>249.99</msrp>
+        <cost>186.88</cost>
+        <discount-dollars>63.11</discount-dollars>
+        <discount-percent>25.25</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>14.92</average-canada>
+            <rate-per-province>
+                <AB>17.97</AB>
+                <BC>18.91</BC>
+                <MB>16.28</MB>
+                <NB>17.20</NB>
+                <NL>19.84</NL>
+                <NS>17.49</NS>
+                <NT>19.09</NT>
+                <NU>34.27</NU>
+                <ON>13.33</ON>
+                <PE>16.47</PE>
+                <QC>12.29</QC>
+                <SK>17.97</SK>
+                <YT>22.46</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_SONPS250MWBG">
+        <brand-name>Sony</brand-name>
+        <group>Gaming</group>
+        <category>PlayStation 3</category>
+        <type>N/A - PS3</type>
+        <image>http://loyaltysource.com/media/product/large/sonps250mwbg_1363184100760.jpg</image>
+        <status>AVAILABLE</status>
+        <title>PlayStation 3 250GB Console with Move Wonderbook Bundle</title>
+        <description>PlayStation Move offers a new and innovative gaming experience for the PlayStation 3 system by fusing realistic, high-definition gaming along with accurate, intuitive control. Camera and audio reception making it an integral part of the PlayStation Move motion control system. PlayStation Move Charging Station charges any two PlayStation Move controllers simultaneously. Wonderbook: Book of Spells takes you on a magical interactive journey of becoming a powerful wizard in your very own living room. Featuring original writing from world famous author, J.K. Rowling, discover back story and new conundrums from the world of Harry Potter. This bundle also includes a 250GB PS3 game console with a Playstation controller.</description>
+        <specification>Bundle includes: 1 Playstation 3 250GB console 1 Playstation 3 controller 1 PlayStation Move Motion Controller 1 Wonderbook with Book Of Spells game 1 PlayStation Eye Camera 1 PlayStation Move Game Disk (selected based on most popular title) PlayStation Move Charging Station</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>PS Move Wonderbook Bundle</model-number>
+        <weight>17</weight>
+        <shipping-size>
+            <length>14</length>
+            <width>16</width>
+            <height>26</height>
+        </shipping-size>
+        <msrp>495.00</msrp>
+        <cost>450.59</cost>
+        <discount-dollars>44.41</discount-dollars>
+        <discount-percent>8.97</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>31.80</average-canada>
+            <rate-per-province>
+                <AB>42.02</AB>
+                <BC>44.26</BC>
+                <MB>32.53</MB>
+                <NB>34.37</NB>
+                <NL>46.49</NL>
+                <NS>34.96</NS>
+                <NT>44.68</NT>
+                <NU>153.11</NU>
+                <ON>27.15</ON>
+                <PE>32.96</PE>
+                <QC>24.08</QC>
+                <SK>42.02</SK>
+                <YT>52.66</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_TRU6424G">
+        <brand-name>Trudeau</brand-name>
+        <group>Kitchen</group>
+        <category>Dinnerware</category>
+        <type>Glassware</type>
+        <image>http://loyaltysource.com/media/product/large/tru6424g_1363192127411.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Bohemia Coffee Mug - Set of 8</title>
+        <description>Bohemia Coffee Mug - Set of 8.</description>
+        <specification>Tempered glass Microwave and dishwasher safe</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>49026424</model-number>
+        <weight>8</weight>
+        <shipping-size>
+            <length>9</length>
+            <width>18</width>
+            <height>11</height>
+        </shipping-size>
+        <msrp>49.99</msrp>
+        <cost>29.48</cost>
+        <discount-dollars>20.51</discount-dollars>
+        <discount-percent>41.03</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>13.18</average-canada>
+            <rate-per-province>
+                <AB>17.60</AB>
+                <BC>18.77</BC>
+                <MB>14.49</MB>
+                <NB>15.58</NB>
+                <NL>20.09</NL>
+                <NS>15.94</NS>
+                <NT>19.22</NT>
+                <NU>52.12</NU>
+                <ON>11.02</ON>
+                <PE>14.77</PE>
+                <QC>9.51</QC>
+                <SK>17.60</SK>
+                <YT>24.06</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_KOLWC08">
+        <brand-name>Koolatron</brand-name>
+        <group>Kitchen</group>
+        <category>Small Appliances</category>
+        <type>Cellars</type>
+        <image>http://loyaltysource.com/media/product/large/kolwc08_1363293765651.jpg</image>
+        <status>AVAILABLE</status>
+        <title>8 Bottle Countertop Wine Chiller</title>
+        <description>Keep your wine chilled to perfection with the Koolatron eight bottle home wine fridge. This wine chiller holds eight wine bottles, and features a silent and vibration-free thermoelectric cooling system. The removable shelves allow you to customize the chiller and the built-in soft lighting make it a perfect show piece in any kitchen, den, or home bar. This unique wine fridge is perfect for either red or white wine. The electronic temperature control takes the guesswork out of storage, and makes it easy for you to keep your wines at the perfect temperature.</description>
+        <specification>Capacity : 8 bottles (750ml each). Temperature range : 6° to 18°C (42° to 65°F). External electronic thermostat. Digital temperature controls. Silent and vibration-free. Four removable shelves. Double paned insulated glass door with stainless trim. Soft-interior light.  </specification>
+        <others>Made in Canada.</others>
+        <warranty>3 months</warranty>
+        <model-number>WC08</model-number>
+        <weight>19.6</weight>
+        <shipping-size>
+            <length>12.25</length>
+            <width>21.5</width>
+            <height>20.8</height>
+        </shipping-size>
+        <msrp>169.99</msrp>
+        <cost>121.50</cost>
+        <discount-dollars>48.49</discount-dollars>
+        <discount-percent>28.53</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>25.13</average-canada>
+            <rate-per-province>
+                <AB>35.07</AB>
+                <BC>37.27</BC>
+                <MB>25.89</MB>
+                <NB>27.68</NB>
+                <NL>39.46</NL>
+                <NS>28.27</NS>
+                <NT>37.69</NT>
+                <NU>142.69</NU>
+                <ON>20.60</ON>
+                <PE>26.30</PE>
+                <QC>17.60</QC>
+                <SK>35.07</SK>
+                <YT>45.52</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="ASD_KOLWC1235D">
+        <brand-name>Koolatron</brand-name>
+        <group>Kitchen</group>
+        <category>Small Appliances</category>
+        <type>Cellars</type>
+        <image>http://loyaltysource.com/media/product/large/kolwc1235d_1363295191311.jpg</image>
+        <status>AVAILABLE</status>
+        <title>12 Bottle Deluxe Wine Chiller</title>
+        <description>The Koolatron 12 Bottle Deluxe Wine Chiller is a great way to store and showcase your wines all in one elegant package. The 12 Bottle Deluxe Wine Chiller features double tempered glass doors, wooden shelves and soft interior lighting. This compact wine chiller uses a thermoelectric cooling unit, eliminating vibrations, which can disturb sediments found in wine.</description>
+        <specification>Capacity : 12 bottles (750ml each). Temperature range : 11° to 18°C (51.8° to 65°F). External electronic thermostat. Digital temperature controls. Silent and vibration-free. Five removable wood shelves. Double paned insulated glass door with stainless trim. Soft-interior light.  </specification>
+        <others>Made in Canada.</others>
+        <warranty>3 months</warranty>
+        <model-number>WC12-35D</model-number>
+        <weight>31</weight>
+        <shipping-size>
+            <length>14</length>
+            <width>23.2</width>
+            <height>28.2</height>
+        </shipping-size>
+        <msrp>199.99</msrp>
+        <cost>149.16</cost>
+        <discount-dollars>50.83</discount-dollars>
+        <discount-percent>25.42</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>33.17</average-canada>
+            <rate-per-province>
+                <AB>47.87</AB>
+                <BC>50.92</BC>
+                <MB>33.21</MB>
+                <NB>35.55</NB>
+                <NL>53.90</NL>
+                <NS>36.41</NS>
+                <NT>51.42</NT>
+                <NU>221.83</NU>
+                <ON>26.32</ON>
+                <PE>33.91</PE>
+                <QC>22.82</QC>
+                <SK>47.87</SK>
+                <YT>62.05</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

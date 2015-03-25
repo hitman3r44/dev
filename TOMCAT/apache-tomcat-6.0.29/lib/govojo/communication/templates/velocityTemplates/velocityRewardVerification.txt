@@ -1,0 +1,27 @@
+Dear ^${firstname},
+
+Welcome to GPlay, the best way to rent video games online.  We would like to
+thank you for signing up for our service.
+
+You have earned the following reward(s):
+
+#foreach( $reward in ^$rewards )
+$reward.name
+#end
+
+In order to redeem your reward, please follow the link below where you will be
+asked to verify your identity. After this is complete, your reward will be
+sent out to you.
+
+The identity verification link is:
+
+https://www.gplay.com/rewardVerifyLogin.do?ref=^${customerid}
+
+Let us know if there's anything else we can help you with.
+
+GPlay Customer Service
+
+*---- Helpful Links ----*
+Contact Us - http://www.gplay.com/displayContactUs.jsp
+My Account - https://www.gplay.com/account/displayAccountLanding.jsp
+FAQ - http://www.gplay.com/displayFAQ.jsp

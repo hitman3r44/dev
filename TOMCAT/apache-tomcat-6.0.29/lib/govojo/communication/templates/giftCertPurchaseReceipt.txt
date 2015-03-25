@@ -1,0 +1,23 @@
+Thank you for shopping with GPlay!  Your gift certificate 
+purchase is complete.  Your order number is #ORDERNUMBER#.  
+
+Below are the gift certificates you have purchased.  The 
+following recipient(s) have received the gift certificate(s) 
+via the email address(es) you provided.  If you want gift
+certificate print outs, please click the "Printable Version" 
+link below each gift certificate.
+
+
+Thanks again for choosing GPlay!
+
+GPlay Customer Service
+
+*---- Helpful Links ----*
+Contact Us - http://www.gplay.com/displayContactUs.jsp
+My Account - http://www.gplay.com/account/displayAccountLanding.jsp
+FAQ - http://www.gplay.com/displayFAQ.jsp
+
+
+--- YOUR GIFT CERTIFICATES ---
+
+#ORDERSUMMARY#

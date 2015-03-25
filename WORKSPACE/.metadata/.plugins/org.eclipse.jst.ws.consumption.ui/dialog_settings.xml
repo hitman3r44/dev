@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="http://devserver:28080/axis2/services/Converter?wsdl"/>
+		<item value="http://localhost/Axis2WSTest/services/Converter?wsdl"/>
+	</list>
+</section>

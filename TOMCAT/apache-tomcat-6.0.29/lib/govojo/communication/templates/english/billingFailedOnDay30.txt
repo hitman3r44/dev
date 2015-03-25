@@ -1,0 +1,20 @@
+Dear #FIRSTNAME#,
+
+As you may already know, your account with us is passed due on payments. On #DATE#, we attempted to charge your credit card for our video game rental service and the transaction was denied once again. This means you are currently 2 payments behind.
+
+We will attempt to charge the card again in 5 days. All new game rentals are still on hold. Once the account has been properly billed, we will immediately start resending games.
+
+If you would like to make a payment now with a new credit card or simply try to charge the same card again, please log in using the link below and access the "My account" section where you will be bale to maka a payment.
+
+http://gameaccess.ca/myAccount.do
+
+If you cannot make a payment soon, we highly suggest you contact us to give us an update on the situation.
+
+Thank you,
+
+Game Access Billing Department
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/myAccount.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/web/WEB-INF/jsp/orders/data/EtaTemplate.xls&apos; to &apos;etaTemplate.xls&apos;" description="Rename resource &apos;EtaTemplate.xls&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/WEB-INF/jsp/orders/data/EtaTemplate.xls" name="etaTemplate.xls" stamp="1421262775722" updateReferences="true"/>
+</session>

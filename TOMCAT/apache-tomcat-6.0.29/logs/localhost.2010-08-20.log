@@ -1,0 +1,112 @@
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: status display disabled
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=dwr-invoker, urlPattern=/dwr/*
+Aug 20, 2010 10:07:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:07:07 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:07:07 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:07:07 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:07:07 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=DrawImageServlet, urlPattern=/jit
+Aug 20, 2010 10:07:07 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: status display disabled
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=dwr-invoker, urlPattern=/dwr/*
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Aug 20, 2010 10:07:08 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Aug 20, 2010 10:07:56 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+Aug 20, 2010 10:07:56 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+Aug 20, 2010 10:07:57 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+Aug 20, 2010 10:07:57 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+Aug 20, 2010 10:07:57 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+Aug 20, 2010 10:07:57 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+Aug 20, 2010 10:07:57 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: status display disabled
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=dwr-invoker, urlPattern=/dwr/*
+Aug 20, 2010 10:52:22 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:52:23 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:52:23 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:52:23 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:52:23 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=DrawImageServlet, urlPattern=/jit
+Aug 20, 2010 10:52:23 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: status display disabled
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Loading application resources from resource ApplicationResources
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Initializing configuration from resource path /WEB-INF/struts-config.xml
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=action, urlPattern=*.do
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Process servletName=dwr-invoker, urlPattern=/dwr/*
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Mapping for servlet 'action' = '*.do'
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Aug 20, 2010 10:52:24 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+Aug 20, 2010 10:52:28 AM org.apache.catalina.core.ApplicationContext log
+INFO: action: Finalizing this controller servlet

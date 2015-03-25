@@ -1,0 +1,64 @@
+/*  Formy - CSS Framework 0.8   */
+
+/* 
+	reset.css  
+*/
+
+fieldset, form, label, legend
+ { margin:0;padding:0px 0px 0px 10px;border:0;font-weight:inherit;font-style:inherit;font-size:11px;font-family:inherit;vertical-align:baseline; }
+
+/* 
+	Structural
+*/
+
+
+fieldset
+	{ margin: 0 0 1.5em 0; padding: 20px 0px 0px 0px;  }
+
+legend
+	{ padding: 0 .4em; font-size:1.2em;  }
+
+input, select, textarea {
+	padding:2px 0px 2px 2px;
+	margin:2px 2px 2px 0px;
+}
+label	 
+	{ float:left; display:block; clear:left; margin-right:1em; text-align:left; }
+
+button, optgroup
+	{ margin:2px 0px 2px 0px; }
+	
+label { margin-top:5px; }
+
+input[type=checkbox] {
+	margin:0px;
+}
+
+	
+	
+	
+/* 
+	Color palette
+*/
+	
+legend
+	{ background-color: #e3dfdf; color: #333; }
+
+input[type="checkbox"]
+	{ color: #000; }
+
+input[type="radio"]
+	{  background-color: #fff; color: #000; }
+
+option
+	{ background-color:#fff; color:#000; }
+
+optgroup
+	{ background-color:#ccc; color:#000; }
+
+button
+	{ background-color: #ccc; color: #333; }
+
+
+
+

@@ -1,0 +1,182 @@
+body, ul, li {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin:0px;
+	padding:0px;
+	color:#555555;
+}
+h1 {
+	margin:0px;
+	padding-bottom:2px;
+}
+a {
+	color:#555555;
+}
+a:hover {
+	color:#999999;
+}
+#page_content {
+	display:block;
+}
+#container {
+	width:100%;
+}
+#header {
+	height:39px;
+	width:100%;
+	background-color:#f7f7f7;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#ececec;
+}
+.section_left {
+	float:left;
+}
+#header_container {
+	padding-left:60px;
+}
+#hmenus {
+	width:100%;
+	padding-top:14px;
+	padding-right:0;
+	padding-bottom:0px;
+}
+.nav ul {
+	margin:0;
+}
+.nav li {
+	background:none repeat scroll 0 0 #777777;
+	display:block;
+	margin-right:7px;
+	height:25px;
+	color:#FFFFFF;
+}
+.nav a {
+	color:#FFFFFF;
+	display:block;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.nav a:visited {
+	color:#FFFFFF;
+	display:block;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.nav li:hover {
+	background-color:#39a6c8;
+	color:#FFFFFF;
+}
+#search_section {
+	position:relative;
+	padding-top:40px;
+	padding-right:4px;
+	padding-bottom:4px;
+	padding-left:60px;
+}
+#search {
+	font-size:14px;
+	color:#555555;
+	text-decoration:none;
+	padding-top:2px;
+	padding-left:5px;
+}
+.middle * {
+	vertical-align:middle;
+	margin-right:6px;
+}
+.section_left_align * {
+	vertical-align:middle;
+	margin-left:5px;
+	margin-right:2px;
+}
+.section_right_align * {
+	vertical-align:middle;
+	margin-left:0px;
+	margin-right:2px;
+}
+#game_info {
+		padding-top: 30px;
+}
+#game_info_header {
+	width:960px;
+	height:37px;
+	display:inline;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#ececec;
+}
+#game_info_content{
+	position:relative;
+	width:960px;
+	height:37px;
+	display:block;
+	padding-left:60px;
+	padding-top:20px;
+}
+#game_info_header div {
+	display:inline;
+	margin:5px;
+}
+.section_title {
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	padding-left:10px;
+	padding-right:10px;
+}
+.section_left {
+	float:left;
+}
+#game_cover {
+	float:left;
+	text-align:center;
+	padding-right:40px;
+}
+#game_info_title {
+	float:left;
+	text-align:left;
+	color:#555555;
+}
+#game_info_text {
+	text-align:left;
+	padding-top:30px;
+}
+#game_info_text div {
+	float:left;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+#multiplayer_info {
+	margin-left:40px;
+}
+.section_right {
+	float:right;
+}
+.verdana_grey_12px {
+	font-size:12px;
+	color:#555555;
+	text-decoration:none;
+	font-weight:normal;
+}
+.verdana_12px_blue_bold {
+	font-size:12px;
+	color:#2c8cab;
+	text-decoration:none;
+	font-weight:bold;
+}
+.verdana_18px_blue {
+	font-size:18px;
+	color:#2c8cab;
+	text-decoration:none;
+	font-weight:normal;
+}
+.small_blue_links {
+	color:#2c8cab;
+}
+#multiplayer_info div {
+	padding-top:1px;
+	padding-bottom:1px;
+}

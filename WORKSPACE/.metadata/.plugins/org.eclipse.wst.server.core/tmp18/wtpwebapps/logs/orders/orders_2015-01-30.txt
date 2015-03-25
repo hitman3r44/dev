@@ -1,0 +1,540 @@
+===============================================
+30/01/2015 18:26:27 By:frank
+===============================================
+ 1 ,LS_ORDER_ID:ONO571349264 ,|---->dosen't exist 
+ 2 ,LS_ORDER_ID:ONO571349467R2 ,|---->dosen't exist 
+ 3 ,LS_ORDER_ID:ONO571349563 ,|---->dosen't exist 
+ 4 ,LS_ORDER_ID:ONO571349464 ,|---->dosen't exist 
+ 5 ,LS_ORDER_ID:RIO10CMCH1441035R3 ,|---->dosen't exist 
+ 6 ,LS_ORDER_ID:RIO10VISADCH1441088 ,|---->dosen't exist 
+ 7 ,LS_ORDER_ID:RIO10VISADCH1440978 ,|---->dosen't exist 
+ 8 ,LS_ORDER_ID:RIO10CMCH1441035R4 ,|---->dosen't exist 
+ 9 ,LS_ORDER_ID:RIO10CMCH1441035R1 ,|---->dosen't exist 
+ 10 ,LS_ORDER_ID:RIO10VISADCH1441104 ,|---->dosen't exist 
+ 11 ,LS_ORDER_ID:RIO10VISADCH1441011 ,|---->dosen't exist 
+ 12 ,LS_ORDER_ID:RIO10VISADCH1440956 ,|---->dosen't exist 
+ 13 ,LS_ORDER_ID:RIO10VISADCH1441014 ,|---->dosen't exist 
+ 14 ,LS_ORDER_ID:RIO10VISADCH1440955 ,|---->dosen't exist 
+ 15 ,LS_ORDER_ID:RIO10VISADCH1441157 ,|---->dosen't exist 
+ 16 ,LS_ORDER_ID:RIO10VISADCH1441081 ,|---->dosen't exist 
+ 17 ,LS_ORDER_ID:RIO10VISADCH1440972 ,|---->dosen't exist 
+ 18 ,LS_ORDER_ID:RIO10CMCH1441035R6 ,|---->dosen't exist 
+ 19 ,LS_ORDER_ID:VIO45TCLV-140107 ,|---->dosen't exist 
+ 20 ,LS_ORDER_ID:ONO571349467R2_1 ,|---->dosen't exist 
+ 21 ,LS_ORDER_ID:CHM20141231 ,|---->dosen't exist 
+ 22 ,LS_ORDER_ID:INO4358569 ,|---->dosen't exist 
+ 23 ,LS_ORDER_ID:CAO3212202961 ,|---->dosen't exist 
+ 24 ,LS_ORDER_ID:CAO3212191741 ,|---->dosen't exist 
+ 25 ,LS_ORDER_ID:CAO3212219291 ,|---->dosen't exist 
+ 26 ,LS_ORDER_ID:CAO3212219615 ,|---->dosen't exist 
+ 27 ,LS_ORDER_ID:CAO3212211741 ,|---->dosen't exist 
+ 28 ,LS_ORDER_ID:ACO39IL3396322 ,|---->dosen't exist 
+ 29 ,LS_ORDER_ID:ACO39IL3396904 ,|---->dosen't exist 
+ 30 ,LS_ORDER_ID:ACO39IL3396907 ,|---->dosen't exist 
+ 31 ,LS_ORDER_ID:ACO39IL3396541 ,|---->dosen't exist 
+ 32 ,LS_ORDER_ID:ACO39IL3395531 ,|---->dosen't exist 
+ 33 ,LS_ORDER_ID:ACO39IL3396061 ,|---->dosen't exist 
+ 34 ,LS_ORDER_ID:ACO39IL3396903 ,|---->dosen't exist 
+ 35 ,LS_ORDER_ID:ACO39IL3395581 ,|---->dosen't exist 
+ 36 ,LS_ORDER_ID:ACO39IL3395541 ,|---->dosen't exist 
+ 37 ,LS_ORDER_ID:ACO39IL3396981 ,|---->dosen't exist 
+ 38 ,LS_ORDER_ID:ACO39IL3397023 ,|---->dosen't exist 
+ 39 ,LS_ORDER_ID:ACO39IL3398201 ,|---->dosen't exist 
+ 40 ,LS_ORDER_ID:ACO39IL3398311 ,|---->dosen't exist 
+ 41 ,LS_ORDER_ID:ACO39IL3398351 ,|---->dosen't exist 
+ 42 ,LS_ORDER_ID:ACO39IL3398331 ,|---->dosen't exist 
+ 43 ,LS_ORDER_ID:ACO39IL3398153 ,|---->dosen't exist 
+ 44 ,LS_ORDER_ID:ACO39IL3398381 ,|---->dosen't exist 
+ 45 ,LS_ORDER_ID:ACO39IL3398061 ,|---->dosen't exist 
+ 46 ,LS_ORDER_ID:ACO39IL3398091 ,|---->dosen't exist 
+ 47 ,LS_ORDER_ID:ACO39IL3398565 ,|---->dosen't exist 
+ 48 ,LS_ORDER_ID:ACO39IL3398271 ,|---->dosen't exist 
+ 49 ,LS_ORDER_ID:ASO2909054185 ,|---->dosen't exist 
+ 50 ,LS_ORDER_ID:ASO2909051641 ,|---->dosen't exist 
+ 51 ,LS_ORDER_ID:ASO2909052756 ,|---->dosen't exist 
+ 52 ,LS_ORDER_ID:ASO2909053282 ,|---->dosen't exist 
+ 53 ,LS_ORDER_ID:ASO2909053835 ,|---->dosen't exist 
+ 54 ,LS_ORDER_ID:ASO2909051958 ,|---->dosen't exist 
+ 55 ,LS_ORDER_ID:ASO2909051772 ,|---->dosen't exist 
+ 56 ,LS_ORDER_ID:ASO2909052059 ,|---->dosen't exist 
+ 57 ,LS_ORDER_ID:ASO2909051675 ,|---->dosen't exist 
+ 58 ,LS_ORDER_ID:ASO2909051676 ,|---->dosen't exist 
+ 59 ,LS_ORDER_ID:ASO2909051651 ,|---->dosen't exist 
+ 60 ,LS_ORDER_ID:ASO2909051661 ,|---->dosen't exist 
+ 61 ,LS_ORDER_ID:ASO2909054706 ,|---->dosen't exist 
+ 62 ,LS_ORDER_ID:ASO2909051586 ,|---->dosen't exist 
+ 63 ,LS_ORDER_ID:ASO2909051794 ,|---->dosen't exist 
+ 64 ,LS_ORDER_ID:ASO2909052215 ,|---->dosen't exist 
+ 65 ,LS_ORDER_ID:ASO2909052242 ,|---->dosen't exist 
+ 66 ,LS_ORDER_ID:ASO2909054159 ,|---->dosen't exist 
+ 67 ,LS_ORDER_ID:ASO2909056154 ,|---->dosen't exist 
+ 68 ,LS_ORDER_ID:ASO2909057305 ,|---->dosen't exist 
+ 69 ,LS_ORDER_ID:ASO2909057314 ,|---->dosen't exist 
+ 70 ,LS_ORDER_ID:ASO2909057315 ,|---->dosen't exist 
+ 71 ,LS_ORDER_ID:ASO2909057348 ,|---->dosen't exist 
+ 72 ,LS_ORDER_ID:ASO2909058068 ,|---->dosen't exist 
+ 73 ,LS_ORDER_ID:ASO2909058069 ,|---->dosen't exist 
+ 74 ,LS_ORDER_ID:ASO2909058070 ,|---->dosen't exist 
+ 75 ,LS_ORDER_ID:ASO2909058071 ,|---->dosen't exist 
+ 76 ,LS_ORDER_ID:ONO57776761R3 ,|---->dosen't exist 
+ 77 ,LS_ORDER_ID:ONO57776680 ,|---->dosen't exist 
+ 78 ,LS_ORDER_ID:ONO571350229 ,|---->dosen't exist 
+ 79 ,LS_ORDER_ID:ONO571350229R4 ,|---->dosen't exist 
+ 80 ,LS_ORDER_ID:ONO57776761 ,|---->dosen't exist 
+ 81 ,LS_ORDER_ID:ONO571350797 ,|---->dosen't exist 
+ 82 ,LS_ORDER_ID:ONO571350760 ,|---->dosen't exist 
+ 83 ,LS_ORDER_ID:ONO571350797_1 ,|---->dosen't exist 
+ 84 ,LS_ORDER_ID:RIO10VISADCH1431885 ,|---->dosen't exist 
+ 85 ,LS_ORDER_ID:RIO10CBLCCH1434267 ,|---->dosen't exist 
+ 86 ,LS_ORDER_ID:RIO10VISADCH1434988 ,|---->dosen't exist 
+ 87 ,LS_ORDER_ID:MAO56249878R1 ,|---->dosen't exist 
+ 88 ,LS_ORDER_ID:RIO10VISADCH1436130 ,|---->dosen't exist 
+ 89 ,LS_ORDER_ID:RIO10VISADCH1436970 ,|---->dosen't exist 
+ 90 ,LS_ORDER_ID:RIO10VISADCH1436691 ,|---->dosen't exist 
+ 91 ,LS_ORDER_ID:RIO10VISADCH1437475 ,|---->dosen't exist 
+ 92 ,LS_ORDER_ID:RIO10VISADCH1438084 ,|---->dosen't exist 
+ 93 ,LS_ORDER_ID:RIO10VISADCH1439504 ,|---->dosen't exist 
+ 94 ,LS_ORDER_ID:RIO10VISADCH1439312 ,|---->dosen't exist 
+ 95 ,LS_ORDER_ID:CHM20141223 ,|---->dosen't exist 
+ 96 ,LS_ORDER_ID:CHM20141229R1 ,|---->dosen't exist 
+ 97 ,LS_ORDER_ID:MAO56250479 ,|---->dosen't exist 
+ 98 ,LS_ORDER_ID:MAO56250479R1 ,|---->dosen't exist 
+ 99 ,LS_ORDER_ID:RIO10VISADCH1441199 ,|---->dosen't exist 
+ 100 ,LS_ORDER_ID:RIO10VISADCH1441253 ,|---->dosen't exist 
+ 101 ,LS_ORDER_ID:RIO10VISADCH1441190 ,|---->dosen't exist 
+ 102 ,LS_ORDER_ID:RIO10VISADCH1441205 ,|---->dosen't exist 
+ 103 ,LS_ORDER_ID:RIO10VISADCH1441212 ,|---->dosen't exist 
+ 104 ,LS_ORDER_ID:RIO10VISADCH1441259 ,|---->dosen't exist 
+ 105 ,LS_ORDER_ID:RIO10VISADCH1441265 ,|---->dosen't exist 
+ 106 ,LS_ORDER_ID:RIO10VISADCH1441215 ,|---->dosen't exist 
+ 107 ,LS_ORDER_ID:RIO10VISADCH1441267 ,|---->dosen't exist 
+ 108 ,LS_ORDER_ID:RIO10VISADCH1441341 ,|---->dosen't exist 
+ 109 ,LS_ORDER_ID:RIO10VISADCH1441322 ,|---->dosen't exist 
+ 110 ,LS_ORDER_ID:RIO10VISADCH1441310 ,|---->dosen't exist 
+ 111 ,LS_ORDER_ID:RIO10VISADCH1441348 ,|---->dosen't exist 
+ 112 ,LS_ORDER_ID:RIO10VISADCH1441334 ,|---->dosen't exist 
+ 113 ,LS_ORDER_ID:RIO10VISADCH1441338 ,|---->dosen't exist 
+ 114 ,LS_ORDER_ID:RIO10VISADCH1441294 ,|---->dosen't exist 
+ 115 ,LS_ORDER_ID:RIO10VISADCH1441296 ,|---->dosen't exist 
+ 116 ,LS_ORDER_ID:VIO45TCLV-140265 ,|---->dosen't exist 
+ 117 ,LS_ORDER_ID:HMO73690516959 ,|---->dosen't exist 
+ 118 ,LS_ORDER_ID:MAO56250553 ,|---->dosen't exist 
+ 119 ,LS_ORDER_ID:MAO56250553R1 ,|---->dosen't exist 
+ 120 ,LS_ORDER_ID:ASO2909017627 ,|---->dosen't exist 
+ 121 ,LS_ORDER_ID:CAO3212015001 ,|---->dosen't exist 
+ 122 ,LS_ORDER_ID:INO4357590 ,|---->dosen't exist 
+ 123 ,LS_ORDER_ID:INO4357473 ,|---->dosen't exist 
+ 124 ,LS_ORDER_ID:INO4357691 ,|---->dosen't exist 
+ 125 ,LS_ORDER_ID:INO4357593 ,|---->dosen't exist 
+ 126 ,LS_ORDER_ID:BIO1142344 ,|---->dosen't exist 
+ 127 ,LS_ORDER_ID:CAO3212046781 ,|---->dosen't exist 
+ 128 ,LS_ORDER_ID:ACO39IL3384071 ,|---->dosen't exist 
+ 129 ,LS_ORDER_ID:ACO39IL3389871 ,|---->dosen't exist 
+ 130 ,LS_ORDER_ID:ACO39IL3389552 ,|---->dosen't exist 
+ 131 ,LS_ORDER_ID:ASO2909030994 ,|---->dosen't exist 
+ 132 ,LS_ORDER_ID:ASO2909035773 ,|---->dosen't exist 
+ 133 ,LS_ORDER_ID:CAO3212109181 ,|---->dosen't exist 
+ 134 ,LS_ORDER_ID:ACO39IL3392151 ,|---->dosen't exist 
+ 135 ,LS_ORDER_ID:ASO2909043154 ,|---->dosen't exist 
+ 136 ,LS_ORDER_ID:ONO57776130 ,|---->dosen't exist 
+ 137 ,LS_ORDER_ID:CAO3212156941 ,|---->dosen't exist 
+ 138 ,LS_ORDER_ID:INO4358461 ,|---->dosen't exist 
+ 139 ,LS_ORDER_ID:INO4358451 ,|---->dosen't exist 
+ 140 ,LS_ORDER_ID:INO4358426 ,|---->dosen't exist 
+ 141 ,LS_ORDER_ID:ACO39IL3394841 ,|---->dosen't exist 
+ 142 ,LS_ORDER_ID:ACO39IL3393681 ,|---->dosen't exist 
+ 143 ,LS_ORDER_ID:ACO39IL3394011 ,|---->dosen't exist 
+ 144 ,LS_ORDER_ID:ACO39IL3393271 ,|---->dosen't exist 
+ 145 ,LS_ORDER_ID:ACO39IL3395163 ,|---->dosen't exist 
+ 146 ,LS_ORDER_ID:ACO39IL3393341 ,|---->dosen't exist 
+ 147 ,LS_ORDER_ID:ACO39IL3393653 ,|---->dosen't exist 
+ 148 ,LS_ORDER_ID:ACO39IL3394401 ,|---->dosen't exist 
+ 149 ,LS_ORDER_ID:ACO39IL3393691 ,|---->dosen't exist 
+ 150 ,LS_ORDER_ID:ACO39IL3393171 ,|---->dosen't exist 
+ 151 ,LS_ORDER_ID:ACO39IL3393191 ,|---->dosen't exist 
+ 152 ,LS_ORDER_ID:ACO39IL3394411 ,|---->dosen't exist 
+ 153 ,LS_ORDER_ID:ASO2909047393 ,|---->dosen't exist 
+ 154 ,LS_ORDER_ID:ASO2909045971 ,|---->dosen't exist 
+ 155 ,LS_ORDER_ID:ASO2909051025 ,|---->dosen't exist 
+ 156 ,LS_ORDER_ID:ASO2909048637 ,|---->dosen't exist 
+ 157 ,LS_ORDER_ID:CAO3212186531 ,|---->dosen't exist 
+ 158 ,LS_ORDER_ID:CAO3212176041 ,|---->dosen't exist 
+ 159 ,LS_ORDER_ID:CAO3212188661 ,|---->dosen't exist 
+ 160 ,LS_ORDER_ID:CAO3212174172 ,|---->dosen't exist 
+ 161 ,LS_ORDER_ID:CAO3212174041 ,|---->dosen't exist 
+ 162 ,LS_ORDER_ID:CAO3212178041 ,|---->dosen't exist 
+ 163 ,LS_ORDER_ID:CAO3212188073 ,|---->dosen't exist 
+ 164 ,LS_ORDER_ID:CAO3212181641 ,|---->dosen't exist 
+ 165 ,LS_ORDER_ID:ONO571349265 ,|---->dosen't exist 
+ 166 ,LS_ORDER_ID:ONO571349249 ,|---->dosen't exist 
+ 167 ,LS_ORDER_ID:ONO57776415R3 ,|---->dosen't exist 
+ 168 ,LS_ORDER_ID:ONO571349378R1 ,|---->dosen't exist 
+ 169 ,LS_ORDER_ID:ONO571349312 ,|---->dosen't exist 
+ 170 ,LS_ORDER_ID:ONO571349409 ,|---->dosen't exist 
+ 171 ,LS_ORDER_ID:RIO10VISADCH1440037 ,|---->dosen't exist 
+ 172 ,LS_ORDER_ID:CHM20141229R1_1 ,|---->dosen't exist 
+ 173 ,LS_ORDER_ID:RIO10CMCH1441035R1_1 ,|---->dosen't exist 
+ 174 ,LS_ORDER_ID:14-49107 ,|---->dosen't exist 
+ 175 ,LS_ORDER_ID:649778 ,|---->dosen't exist 
+ 176 ,LS_ORDER_ID:4990210 ,|---->dosen't exist 
+ 177 ,LS_ORDER_ID:5078817 ,|---->dosen't exist 
+ 178 ,LS_ORDER_ID:5021807 ,|---->dosen't exist 
+ 179 ,LS_ORDER_ID:42827 ,|---->dosen't exist 
+ 180 ,LS_ORDER_ID:CAN0062289 ,|---->dosen't exist 
+ 181 ,LS_ORDER_ID:5109816 ,|---->dosen't exist 
+ 182 ,LS_ORDER_ID:645674 ,|---->dosen't exist 
+ 183 ,LS_ORDER_ID:5106016 ,|---->dosen't exist 
+ 184 ,LS_ORDER_ID:CAN0060450 ,|---->dosen't exist 
+ 185 ,LS_ORDER_ID:5082084 ,|---->dosen't exist 
+ 186 ,LS_ORDER_ID:CAN0062244 ,|---->dosen't exist 
+ 187 ,LS_ORDER_ID:5105884 ,|---->dosen't exist 
+ 188 ,LS_ORDER_ID:5116237 ,|---->dosen't exist 
+ 189 ,LS_ORDER_ID:5115527 ,|---->dosen't exist 
+ 190 ,LS_ORDER_ID:5110313 ,|---->dosen't exist 
+ 191 ,LS_ORDER_ID:656850 ,|---->dosen't exist 
+ 192 ,LS_ORDER_ID:5118203 ,|---->dosen't exist 
+ 193 ,LS_ORDER_ID:5115968 ,|---->dosen't exist 
+ 194 ,LS_ORDER_ID:CAO3210986021 ,|---->dosen't exist 
+ 195 ,LS_ORDER_ID:CAO3211062201 ,|---->dosen't exist 
+ 196 ,LS_ORDER_ID:INO4350579 ,|---->dosen't exist 
+ 197 ,LS_ORDER_ID:CAO3211232411 ,|---->dosen't exist 
+ 198 ,LS_ORDER_ID:CAO3211209871 ,|---->dosen't exist 
+ 199 ,LS_ORDER_ID:INO4352236 ,|---->dosen't exist 
+ 200 ,LS_ORDER_ID:CAO3211399701 ,|---->dosen't exist 
+ 201 ,LS_ORDER_ID:INO4353080 ,|---->dosen't exist 
+ 202 ,LS_ORDER_ID:CAO3211478021 ,|---->dosen't exist 
+ 203 ,LS_ORDER_ID:ONO571303896 ,|---->dosen't exist 
+ 204 ,LS_ORDER_ID:ASO2908955480 ,|---->dosen't exist 
+ 205 ,LS_ORDER_ID:ONO57767109R1 ,|---->dosen't exist 
+ 206 ,LS_ORDER_ID:ASO2908976559 ,|---->dosen't exist 
+ 207 ,LS_ORDER_ID:ACO39IL3349672 ,|---->dosen't exist 
+ 208 ,LS_ORDER_ID:ACO39IL3355661 ,|---->dosen't exist 
+ 209 ,LS_ORDER_ID:CAO3211846541 ,|---->dosen't exist 
+ 210 ,LS_ORDER_ID:ACO39IL3370821 ,|---->dosen't exist 
+ 211 ,LS_ORDER_ID:ACO39IL3372381 ,|---->dosen't exist 
+ 212 ,LS_ORDER_ID:CAO3211910091 ,|---->dosen't exist 
+ 213 ,LS_ORDER_ID:CAO3211896511 ,|---->dosen't exist 
+ 214 ,LS_ORDER_ID:ACO39IL3377936 ,|---->dosen't exist 
+ 215 ,LS_ORDER_ID:CAO3211977211 ,|---->dosen't exist 
+ 216 ,LS_ORDER_ID:ASO2909017637 ,|---->dosen't exist 
+
+===============================================
+30/01/2015 18:29:19 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:35:14 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:46:39 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:48:15 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:51:09 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:52:47 By:frank
+===============================================
+ 1 ,LS_ORDER_ID:ONO571349264 ,|---->dosen't exist 
+ 2 ,LS_ORDER_ID:ONO571349467R2 ,|---->dosen't exist 
+ 3 ,LS_ORDER_ID:ONO571349563 ,|---->dosen't exist 
+ 4 ,LS_ORDER_ID:ONO571349464 ,|---->dosen't exist 
+ 5 ,LS_ORDER_ID:RIO10CMCH1441035R3 ,|---->dosen't exist 
+ 6 ,LS_ORDER_ID:RIO10VISADCH1441088 ,|---->dosen't exist 
+ 7 ,LS_ORDER_ID:RIO10VISADCH1440978 ,|---->dosen't exist 
+ 8 ,LS_ORDER_ID:RIO10CMCH1441035R4 ,|---->dosen't exist 
+ 9 ,LS_ORDER_ID:RIO10CMCH1441035R1 ,|---->dosen't exist 
+ 10 ,LS_ORDER_ID:RIO10VISADCH1441104 ,|---->dosen't exist 
+ 11 ,LS_ORDER_ID:RIO10VISADCH1441011 ,|---->dosen't exist 
+ 12 ,LS_ORDER_ID:RIO10VISADCH1440956 ,|---->dosen't exist 
+ 13 ,LS_ORDER_ID:RIO10VISADCH1441014 ,|---->dosen't exist 
+ 14 ,LS_ORDER_ID:RIO10VISADCH1440955 ,|---->dosen't exist 
+ 15 ,LS_ORDER_ID:RIO10VISADCH1441157 ,|---->dosen't exist 
+ 16 ,LS_ORDER_ID:RIO10VISADCH1441081 ,|---->dosen't exist 
+ 17 ,LS_ORDER_ID:RIO10VISADCH1440972 ,|---->dosen't exist 
+ 18 ,LS_ORDER_ID:RIO10CMCH1441035R6 ,|---->dosen't exist 
+ 19 ,LS_ORDER_ID:VIO45TCLV-140107 ,|---->dosen't exist 
+ 20 ,LS_ORDER_ID:ONO571349467R2_1 ,|---->dosen't exist 
+ 21 ,LS_ORDER_ID:CHM20141231 ,|---->dosen't exist 
+ 22 ,LS_ORDER_ID:INO4358569 ,|---->dosen't exist 
+ 23 ,LS_ORDER_ID:CAO3212202961 ,|---->dosen't exist 
+ 24 ,LS_ORDER_ID:CAO3212191741 ,|---->dosen't exist 
+ 25 ,LS_ORDER_ID:CAO3212219291 ,|---->dosen't exist 
+ 26 ,LS_ORDER_ID:CAO3212219615 ,|---->dosen't exist 
+ 27 ,LS_ORDER_ID:CAO3212211741 ,|---->dosen't exist 
+ 28 ,LS_ORDER_ID:ACO39IL3396322 ,|---->dosen't exist 
+ 29 ,LS_ORDER_ID:ACO39IL3396904 ,|---->dosen't exist 
+ 30 ,LS_ORDER_ID:ACO39IL3396907 ,|---->dosen't exist 
+ 31 ,LS_ORDER_ID:ACO39IL3396541 ,|---->dosen't exist 
+ 32 ,LS_ORDER_ID:ACO39IL3395531 ,|---->dosen't exist 
+ 33 ,LS_ORDER_ID:ACO39IL3396061 ,|---->dosen't exist 
+ 34 ,LS_ORDER_ID:ACO39IL3396903 ,|---->dosen't exist 
+ 35 ,LS_ORDER_ID:ACO39IL3395581 ,|---->dosen't exist 
+ 36 ,LS_ORDER_ID:ACO39IL3395541 ,|---->dosen't exist 
+ 37 ,LS_ORDER_ID:ACO39IL3396981 ,|---->dosen't exist 
+ 38 ,LS_ORDER_ID:ACO39IL3397023 ,|---->dosen't exist 
+ 39 ,LS_ORDER_ID:ACO39IL3398201 ,|---->dosen't exist 
+ 40 ,LS_ORDER_ID:ACO39IL3398311 ,|---->dosen't exist 
+ 41 ,LS_ORDER_ID:ACO39IL3398351 ,|---->dosen't exist 
+ 42 ,LS_ORDER_ID:ACO39IL3398331 ,|---->dosen't exist 
+ 43 ,LS_ORDER_ID:ACO39IL3398153 ,|---->dosen't exist 
+ 44 ,LS_ORDER_ID:ACO39IL3398381 ,|---->dosen't exist 
+ 45 ,LS_ORDER_ID:ACO39IL3398061 ,|---->dosen't exist 
+ 46 ,LS_ORDER_ID:ACO39IL3398091 ,|---->dosen't exist 
+ 47 ,LS_ORDER_ID:ACO39IL3398565 ,|---->dosen't exist 
+ 48 ,LS_ORDER_ID:ACO39IL3398271 ,|---->dosen't exist 
+ 49 ,LS_ORDER_ID:ASO2909054185 ,|---->dosen't exist 
+ 50 ,LS_ORDER_ID:ASO2909051641 ,|---->dosen't exist 
+ 51 ,LS_ORDER_ID:ASO2909052756 ,|---->dosen't exist 
+ 52 ,LS_ORDER_ID:ASO2909053282 ,|---->dosen't exist 
+ 53 ,LS_ORDER_ID:ASO2909053835 ,|---->dosen't exist 
+ 54 ,LS_ORDER_ID:ASO2909051958 ,|---->dosen't exist 
+ 55 ,LS_ORDER_ID:ASO2909051772 ,|---->dosen't exist 
+ 56 ,LS_ORDER_ID:ASO2909052059 ,|---->dosen't exist 
+ 57 ,LS_ORDER_ID:ASO2909051675 ,|---->dosen't exist 
+ 58 ,LS_ORDER_ID:ASO2909051676 ,|---->dosen't exist 
+ 59 ,LS_ORDER_ID:ASO2909051651 ,|---->dosen't exist 
+ 60 ,LS_ORDER_ID:ASO2909051661 ,|---->dosen't exist 
+ 61 ,LS_ORDER_ID:ASO2909054706 ,|---->dosen't exist 
+ 62 ,LS_ORDER_ID:ASO2909051586 ,|---->dosen't exist 
+ 63 ,LS_ORDER_ID:ASO2909051794 ,|---->dosen't exist 
+ 64 ,LS_ORDER_ID:ASO2909052215 ,|---->dosen't exist 
+ 65 ,LS_ORDER_ID:ASO2909052242 ,|---->dosen't exist 
+ 66 ,LS_ORDER_ID:ASO2909054159 ,|---->dosen't exist 
+ 67 ,LS_ORDER_ID:ASO2909056154 ,|---->dosen't exist 
+ 68 ,LS_ORDER_ID:ASO2909057305 ,|---->dosen't exist 
+ 69 ,LS_ORDER_ID:ASO2909057314 ,|---->dosen't exist 
+ 70 ,LS_ORDER_ID:ASO2909057315 ,|---->dosen't exist 
+ 71 ,LS_ORDER_ID:ASO2909057348 ,|---->dosen't exist 
+ 72 ,LS_ORDER_ID:ASO2909058068 ,|---->dosen't exist 
+ 73 ,LS_ORDER_ID:ASO2909058069 ,|---->dosen't exist 
+ 74 ,LS_ORDER_ID:ASO2909058070 ,|---->dosen't exist 
+ 75 ,LS_ORDER_ID:ASO2909058071 ,|---->dosen't exist 
+ 76 ,LS_ORDER_ID:ONO57776761R3 ,|---->dosen't exist 
+ 77 ,LS_ORDER_ID:ONO57776680 ,|---->dosen't exist 
+ 78 ,LS_ORDER_ID:ONO571350229 ,|---->dosen't exist 
+ 79 ,LS_ORDER_ID:ONO571350229R4 ,|---->dosen't exist 
+ 80 ,LS_ORDER_ID:ONO57776761 ,|---->dosen't exist 
+ 81 ,LS_ORDER_ID:ONO571350797 ,|---->dosen't exist 
+ 82 ,LS_ORDER_ID:ONO571350760 ,|---->dosen't exist 
+ 83 ,LS_ORDER_ID:ONO571350797_1 ,|---->dosen't exist 
+ 84 ,LS_ORDER_ID:RIO10VISADCH1431885 ,|---->dosen't exist 
+ 85 ,LS_ORDER_ID:RIO10CBLCCH1434267 ,|---->dosen't exist 
+ 86 ,LS_ORDER_ID:RIO10VISADCH1434988 ,|---->dosen't exist 
+ 87 ,LS_ORDER_ID:MAO56249878R1 ,|---->dosen't exist 
+ 88 ,LS_ORDER_ID:RIO10VISADCH1436130 ,|---->dosen't exist 
+ 89 ,LS_ORDER_ID:RIO10VISADCH1436970 ,|---->dosen't exist 
+ 90 ,LS_ORDER_ID:RIO10VISADCH1436691 ,|---->dosen't exist 
+ 91 ,LS_ORDER_ID:RIO10VISADCH1437475 ,|---->dosen't exist 
+ 92 ,LS_ORDER_ID:RIO10VISADCH1438084 ,|---->dosen't exist 
+ 93 ,LS_ORDER_ID:RIO10VISADCH1439504 ,|---->dosen't exist 
+ 94 ,LS_ORDER_ID:RIO10VISADCH1439312 ,|---->dosen't exist 
+ 95 ,LS_ORDER_ID:CHM20141223 ,|---->dosen't exist 
+ 96 ,LS_ORDER_ID:CHM20141229R1 ,|---->dosen't exist 
+ 97 ,LS_ORDER_ID:MAO56250479 ,|---->dosen't exist 
+ 98 ,LS_ORDER_ID:MAO56250479R1 ,|---->dosen't exist 
+ 99 ,LS_ORDER_ID:RIO10VISADCH1441199 ,|---->dosen't exist 
+ 100 ,LS_ORDER_ID:RIO10VISADCH1441253 ,|---->dosen't exist 
+ 101 ,LS_ORDER_ID:RIO10VISADCH1441190 ,|---->dosen't exist 
+ 102 ,LS_ORDER_ID:RIO10VISADCH1441205 ,|---->dosen't exist 
+ 103 ,LS_ORDER_ID:RIO10VISADCH1441212 ,|---->dosen't exist 
+ 104 ,LS_ORDER_ID:RIO10VISADCH1441259 ,|---->dosen't exist 
+ 105 ,LS_ORDER_ID:RIO10VISADCH1441265 ,|---->dosen't exist 
+ 106 ,LS_ORDER_ID:RIO10VISADCH1441215 ,|---->dosen't exist 
+ 107 ,LS_ORDER_ID:RIO10VISADCH1441267 ,|---->dosen't exist 
+ 108 ,LS_ORDER_ID:RIO10VISADCH1441341 ,|---->dosen't exist 
+ 109 ,LS_ORDER_ID:RIO10VISADCH1441322 ,|---->dosen't exist 
+ 110 ,LS_ORDER_ID:RIO10VISADCH1441310 ,|---->dosen't exist 
+ 111 ,LS_ORDER_ID:RIO10VISADCH1441348 ,|---->dosen't exist 
+ 112 ,LS_ORDER_ID:RIO10VISADCH1441334 ,|---->dosen't exist 
+ 113 ,LS_ORDER_ID:RIO10VISADCH1441338 ,|---->dosen't exist 
+ 114 ,LS_ORDER_ID:RIO10VISADCH1441294 ,|---->dosen't exist 
+ 115 ,LS_ORDER_ID:RIO10VISADCH1441296 ,|---->dosen't exist 
+ 116 ,LS_ORDER_ID:VIO45TCLV-140265 ,|---->dosen't exist 
+ 117 ,LS_ORDER_ID:HMO73690516959 ,|---->dosen't exist 
+ 118 ,LS_ORDER_ID:MAO56250553 ,|---->dosen't exist 
+ 119 ,LS_ORDER_ID:MAO56250553R1 ,|---->dosen't exist 
+ 120 ,LS_ORDER_ID:ASO2909017627 ,|---->dosen't exist 
+ 121 ,LS_ORDER_ID:CAO3212015001 ,|---->dosen't exist 
+ 122 ,LS_ORDER_ID:INO4357590 ,|---->dosen't exist 
+ 123 ,LS_ORDER_ID:INO4357473 ,|---->dosen't exist 
+ 124 ,LS_ORDER_ID:INO4357691 ,|---->dosen't exist 
+ 125 ,LS_ORDER_ID:INO4357593 ,|---->dosen't exist 
+ 126 ,LS_ORDER_ID:BIO1142344 ,|---->dosen't exist 
+ 127 ,LS_ORDER_ID:CAO3212046781 ,|---->dosen't exist 
+ 128 ,LS_ORDER_ID:ACO39IL3384071 ,|---->dosen't exist 
+ 129 ,LS_ORDER_ID:ACO39IL3389871 ,|---->dosen't exist 
+ 130 ,LS_ORDER_ID:ACO39IL3389552 ,|---->dosen't exist 
+ 131 ,LS_ORDER_ID:ASO2909030994 ,|---->dosen't exist 
+ 132 ,LS_ORDER_ID:ASO2909035773 ,|---->dosen't exist 
+ 133 ,LS_ORDER_ID:CAO3212109181 ,|---->dosen't exist 
+ 134 ,LS_ORDER_ID:ACO39IL3392151 ,|---->dosen't exist 
+ 135 ,LS_ORDER_ID:ASO2909043154 ,|---->dosen't exist 
+ 136 ,LS_ORDER_ID:ONO57776130 ,|---->dosen't exist 
+ 137 ,LS_ORDER_ID:CAO3212156941 ,|---->dosen't exist 
+ 138 ,LS_ORDER_ID:INO4358461 ,|---->dosen't exist 
+ 139 ,LS_ORDER_ID:INO4358451 ,|---->dosen't exist 
+ 140 ,LS_ORDER_ID:INO4358426 ,|---->dosen't exist 
+ 141 ,LS_ORDER_ID:ACO39IL3394841 ,|---->dosen't exist 
+ 142 ,LS_ORDER_ID:ACO39IL3393681 ,|---->dosen't exist 
+ 143 ,LS_ORDER_ID:ACO39IL3394011 ,|---->dosen't exist 
+ 144 ,LS_ORDER_ID:ACO39IL3393271 ,|---->dosen't exist 
+ 145 ,LS_ORDER_ID:ACO39IL3395163 ,|---->dosen't exist 
+ 146 ,LS_ORDER_ID:ACO39IL3393341 ,|---->dosen't exist 
+ 147 ,LS_ORDER_ID:ACO39IL3393653 ,|---->dosen't exist 
+ 148 ,LS_ORDER_ID:ACO39IL3394401 ,|---->dosen't exist 
+ 149 ,LS_ORDER_ID:ACO39IL3393691 ,|---->dosen't exist 
+ 150 ,LS_ORDER_ID:ACO39IL3393171 ,|---->dosen't exist 
+ 151 ,LS_ORDER_ID:ACO39IL3393191 ,|---->dosen't exist 
+ 152 ,LS_ORDER_ID:ACO39IL3394411 ,|---->dosen't exist 
+ 153 ,LS_ORDER_ID:ASO2909047393 ,|---->dosen't exist 
+ 154 ,LS_ORDER_ID:ASO2909045971 ,|---->dosen't exist 
+ 155 ,LS_ORDER_ID:ASO2909051025 ,|---->dosen't exist 
+ 156 ,LS_ORDER_ID:ASO2909048637 ,|---->dosen't exist 
+ 157 ,LS_ORDER_ID:CAO3212186531 ,|---->dosen't exist 
+ 158 ,LS_ORDER_ID:CAO3212176041 ,|---->dosen't exist 
+ 159 ,LS_ORDER_ID:CAO3212188661 ,|---->dosen't exist 
+ 160 ,LS_ORDER_ID:CAO3212174172 ,|---->dosen't exist 
+ 161 ,LS_ORDER_ID:CAO3212174041 ,|---->dosen't exist 
+ 162 ,LS_ORDER_ID:CAO3212178041 ,|---->dosen't exist 
+ 163 ,LS_ORDER_ID:CAO3212188073 ,|---->dosen't exist 
+ 164 ,LS_ORDER_ID:CAO3212181641 ,|---->dosen't exist 
+ 165 ,LS_ORDER_ID:ONO571349265 ,|---->dosen't exist 
+ 166 ,LS_ORDER_ID:ONO571349249 ,|---->dosen't exist 
+ 167 ,LS_ORDER_ID:ONO57776415R3 ,|---->dosen't exist 
+ 168 ,LS_ORDER_ID:ONO571349378R1 ,|---->dosen't exist 
+ 169 ,LS_ORDER_ID:ONO571349312 ,|---->dosen't exist 
+ 170 ,LS_ORDER_ID:ONO571349409 ,|---->dosen't exist 
+ 171 ,LS_ORDER_ID:RIO10VISADCH1440037 ,|---->dosen't exist 
+ 172 ,LS_ORDER_ID:CHM20141229R1_1 ,|---->dosen't exist 
+ 173 ,LS_ORDER_ID:RIO10CMCH1441035R1_1 ,|---->dosen't exist 
+ 174 ,LS_ORDER_ID:14-49107 ,|---->dosen't exist 
+ 175 ,LS_ORDER_ID:649778 ,|---->dosen't exist 
+ 176 ,LS_ORDER_ID:4990210 ,|---->dosen't exist 
+ 177 ,LS_ORDER_ID:5078817 ,|---->dosen't exist 
+ 178 ,LS_ORDER_ID:5021807 ,|---->dosen't exist 
+ 179 ,LS_ORDER_ID:42827 ,|---->dosen't exist 
+ 180 ,LS_ORDER_ID:CAN0062289 ,|---->dosen't exist 
+ 181 ,LS_ORDER_ID:5109816 ,|---->dosen't exist 
+ 182 ,LS_ORDER_ID:645674 ,|---->dosen't exist 
+ 183 ,LS_ORDER_ID:5106016 ,|---->dosen't exist 
+ 184 ,LS_ORDER_ID:CAN0060450 ,|---->dosen't exist 
+ 185 ,LS_ORDER_ID:5082084 ,|---->dosen't exist 
+ 186 ,LS_ORDER_ID:CAN0062244 ,|---->dosen't exist 
+ 187 ,LS_ORDER_ID:5105884 ,|---->dosen't exist 
+ 188 ,LS_ORDER_ID:5116237 ,|---->dosen't exist 
+ 189 ,LS_ORDER_ID:5115527 ,|---->dosen't exist 
+ 190 ,LS_ORDER_ID:5110313 ,|---->dosen't exist 
+ 191 ,LS_ORDER_ID:656850 ,|---->dosen't exist 
+ 192 ,LS_ORDER_ID:5118203 ,|---->dosen't exist 
+ 193 ,LS_ORDER_ID:5115968 ,|---->dosen't exist 
+ 194 ,LS_ORDER_ID:CAO3210986021 ,|---->dosen't exist 
+ 195 ,LS_ORDER_ID:CAO3211062201 ,|---->dosen't exist 
+ 196 ,LS_ORDER_ID:INO4350579 ,|---->dosen't exist 
+ 197 ,LS_ORDER_ID:CAO3211232411 ,|---->dosen't exist 
+ 198 ,LS_ORDER_ID:CAO3211209871 ,|---->dosen't exist 
+ 199 ,LS_ORDER_ID:INO4352236 ,|---->dosen't exist 
+ 200 ,LS_ORDER_ID:CAO3211399701 ,|---->dosen't exist 
+ 201 ,LS_ORDER_ID:INO4353080 ,|---->dosen't exist 
+ 202 ,LS_ORDER_ID:CAO3211478021 ,|---->dosen't exist 
+ 203 ,LS_ORDER_ID:ONO571303896 ,|---->dosen't exist 
+ 204 ,LS_ORDER_ID:ASO2908955480 ,|---->dosen't exist 
+ 205 ,LS_ORDER_ID:ONO57767109R1 ,|---->dosen't exist 
+ 206 ,LS_ORDER_ID:ASO2908976559 ,|---->dosen't exist 
+ 207 ,LS_ORDER_ID:ACO39IL3349672 ,|---->dosen't exist 
+ 208 ,LS_ORDER_ID:ACO39IL3355661 ,|---->dosen't exist 
+ 209 ,LS_ORDER_ID:CAO3211846541 ,|---->dosen't exist 
+ 210 ,LS_ORDER_ID:ACO39IL3370821 ,|---->dosen't exist 
+ 211 ,LS_ORDER_ID:ACO39IL3372381 ,|---->dosen't exist 
+ 212 ,LS_ORDER_ID:CAO3211910091 ,|---->dosen't exist 
+ 213 ,LS_ORDER_ID:CAO3211896511 ,|---->dosen't exist 
+ 214 ,LS_ORDER_ID:ACO39IL3377936 ,|---->dosen't exist 
+ 215 ,LS_ORDER_ID:CAO3211977211 ,|---->dosen't exist 
+ 216 ,LS_ORDER_ID:ASO2909017637 ,|---->dosen't exist 
+
+===============================================
+30/01/2015 18:53:45 By:frank
+===============================================
+
+===============================================
+30/01/2015 18:58:04 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:00:21 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:01:06 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:02:18 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:03:23 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:03:46 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:04:21 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:26:12 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:28:35 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:29:41 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:30:40 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:32:23 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:32:50 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:33:26 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:34:49 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:35:48 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:36:26 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:37:22 By:frank
+===============================================
+
+===============================================
+30/01/2015 19:37:56 By:frank
+===============================================
+

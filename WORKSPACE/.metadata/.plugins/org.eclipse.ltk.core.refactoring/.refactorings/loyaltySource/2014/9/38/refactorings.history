@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource/src/com/loyauty/web/struts/action/LoyautyAction.java&apos; to &apos;LoyautyActionWeb.java&apos;" description="Rename resource &apos;LoyautyAction.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/loyauty/web/struts/action/LoyautyAction.java" name="LoyautyActionWeb.java" stamp="1410744151152" updateReferences="true"/>
+</session>

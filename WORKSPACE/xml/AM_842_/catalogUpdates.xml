@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="AM_TFL0050">
+        <cost>279.31</cost>
+        <discount-dollars>70.68</discount-dollars>
+        <discount-percent>20.19</discount-percent>
+    </ls-product>
+    <ls-product id="AM_BUGB0103">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>25.71</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>25.71</BC>
+                <MB>20.30</MB>
+                <NB>21.69</NB>
+                <NL>27.53</NL>
+                <NS>22.04</NS>
+                <NT>25.71</NT>
+                <NU>89.64</NU>
+                <ON>14.71</ON>
+                <PE>21.86</PE>
+                <QC>12.39</QC>
+                <SK>25.71</SK>
+                <YT>34.34</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TFLFV3476">
+        <cost>40.00</cost>
+        <discount-dollars>24.99</discount-dollars>
+        <discount-percent>38.45</discount-percent>
+    </ls-product>
+    <ls-product id="AM_VIC30379_BK">
+        <type>Luggage Sets</type>
+    </ls-product>
+    <ls-product id="AM_TFLOF170850">
+        <cost>88.84</cost>
+        <discount-dollars>11.15</discount-dollars>
+        <discount-percent>11.15</discount-percent>
+    </ls-product>
+    <ls-product id="AM_TFLTT560E50">
+        <cost>54.73</cost>
+        <discount-dollars>5.26</discount-dollars>
+        <discount-percent>8.77</discount-percent>
+    </ls-product>
+    <ls-product id="AM_TFLFR404652">
+        <cost>63.72</cost>
+        <discount-dollars>26.27</discount-dollars>
+        <discount-percent>29.19</discount-percent>
+    </ls-product>
+    <ls-product id="AM_TFLFZ700051">
+        <cost>236.39</cost>
+        <discount-dollars>63.60</discount-dollars>
+        <discount-percent>21.20</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD10706">
+        <cost>322.40</cost>
+        <discount-dollars>117.59</discount-dollars>
+        <discount-percent>26.73</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>49.51</average-canada>
+            <rate-per-province>
+                <AB>49.51</AB>
+                <BC>49.51</BC>
+                <MB>36.95</MB>
+                <NB>39.11</NB>
+                <NL>52.65</NL>
+                <NS>39.66</NS>
+                <NT>49.51</NT>
+                <NU>192.94</NU>
+                <ON>29.09</ON>
+                <PE>39.39</PE>
+                <QC>24.44</QC>
+                <SK>49.51</SK>
+                <YT>63.16</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CUD10707">
+        <cost>358.98</cost>
+        <discount-dollars>111.01</discount-dollars>
+        <discount-percent>23.62</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD10708">
+        <cost>424.08</cost>
+        <discount-dollars>125.91</discount-dollars>
+        <discount-percent>22.89</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD10906">
+        <cost>228.78</cost>
+        <discount-dollars>61.21</discount-dollars>
+        <discount-percent>21.11</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD10907">
+        <cost>252.96</cost>
+        <discount-dollars>67.03</discount-dollars>
+        <discount-percent>20.95</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD10908">
+        <cost>306.90</cost>
+        <discount-dollars>63.09</discount-dollars>
+        <discount-percent>17.05</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD11904G">
+        <cost>145.08</cost>
+        <discount-dollars>34.91</discount-dollars>
+        <discount-percent>19.40</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD11907G">
+        <cost>167.40</cost>
+        <discount-dollars>52.59</discount-dollars>
+        <discount-percent>23.91</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD11908G">
+        <cost>210.18</cost>
+        <discount-dollars>39.81</discount-dollars>
+        <discount-percent>15.92</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD17204G">
+        <cost>122.76</cost>
+        <discount-dollars>27.23</discount-dollars>
+        <discount-percent>18.15</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD17207G">
+        <cost>145.08</cost>
+        <discount-dollars>44.91</discount-dollars>
+        <discount-percent>23.64</discount-percent>
+    </ls-product>
+    <ls-product id="AM_CUD17208G">
+        <cost>174.84</cost>
+        <discount-dollars>45.15</discount-dollars>
+        <discount-percent>20.52</discount-percent>
+    </ls-product>
+    <ls-product id="AM_TFL0990G">
+        <cost>52.54</cost>
+        <discount-dollars>47.45</discount-dollars>
+        <discount-percent>47.45</discount-percent>
+    </ls-product>
+    <ls-product id="AM_TFLGC702D52">
+        <cost>169.45</cost>
+        <discount-dollars>80.54</discount-dollars>
+        <discount-percent>32.22</discount-percent>
+    </ls-product>
+    <ls-product id="AM_BUG49545001">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>30.95</average-canada>
+            <rate-per-province>
+                <AB>30.95</AB>
+                <BC>30.95</BC>
+                <MB>24.12</MB>
+                <NB>25.66</NB>
+                <NL>33.01</NL>
+                <NS>26.05</NS>
+                <NT>30.95</NT>
+                <NU>109.96</NU>
+                <ON>18.11</ON>
+                <PE>25.86</PE>
+                <QC>15.34</QC>
+                <SK>30.95</SK>
+                <YT>40.49</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TFLIS5500Q0">
+        <cost>88.07</cost>
+        <discount-dollars>51.92</discount-dollars>
+        <discount-percent>37.09</discount-percent>
+    </ls-product>
+    <ls-product id="AM_VIC31318201">
+        <type>Luggage Sets</type>
+        <estimated-shipping-rates>
+            <average-canada>50.18</average-canada>
+            <rate-per-province>
+                <AB>50.18</AB>
+                <BC>50.18</BC>
+                <MB>36.93</MB>
+                <NB>39.18</NB>
+                <NL>53.43</NL>
+                <NS>39.74</NS>
+                <NT>50.18</NT>
+                <NU>201.18</NU>
+                <ON>28.87</ON>
+                <PE>39.46</PE>
+                <QC>23.98</QC>
+                <SK>50.18</SK>
+                <YT>64.32</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_MNI982214">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AM_MNI864700">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>28.52</average-canada>
+            <rate-per-province>
+                <AB>28.52</AB>
+                <BC>28.52</BC>
+                <MB>21.70</MB>
+                <NB>23.23</NB>
+                <NL>30.58</NL>
+                <NS>23.62</NS>
+                <NT>28.52</NT>
+                <NU>107.53</NU>
+                <ON>15.68</ON>
+                <PE>23.43</PE>
+                <QC>12.91</QC>
+                <SK>28.52</SK>
+                <YT>38.06</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_MNI92019">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AM_MNI91854">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AM_MNI92002">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>32.77</average-canada>
+            <rate-per-province>
+                <AB>32.77</AB>
+                <BC>32.77</BC>
+                <MB>24.92</MB>
+                <NB>26.57</NB>
+                <NL>35.02</NL>
+                <NS>26.98</NS>
+                <NT>32.77</NT>
+                <NU>123.15</NU>
+                <ON>18.57</ON>
+                <PE>26.77</PE>
+                <QC>15.48</QC>
+                <SK>32.77</SK>
+                <YT>43.02</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_MNI958771">
+        <type>Travel Bags</type>
+        <estimated-shipping-rates>
+            <average-canada>46.69</average-canada>
+            <rate-per-province>
+                <AB>46.69</AB>
+                <BC>46.69</BC>
+                <MB>35.13</MB>
+                <NB>37.19</NB>
+                <NL>49.63</NL>
+                <NS>37.70</NS>
+                <NT>46.69</NT>
+                <NU>178.74</NU>
+                <ON>27.59</ON>
+                <PE>37.44</PE>
+                <QC>23.27</QC>
+                <SK>46.69</SK>
+                <YT>59.60</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_MNI982264">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>26.59</average-canada>
+            <rate-per-province>
+                <AB>26.59</AB>
+                <BC>26.59</BC>
+                <MB>21.18</MB>
+                <NB>22.57</NB>
+                <NL>28.41</NL>
+                <NS>22.92</NS>
+                <NT>26.59</NT>
+                <NU>90.52</NU>
+                <ON>15.59</ON>
+                <PE>22.74</PE>
+                <QC>13.27</QC>
+                <SK>26.59</SK>
+                <YT>35.22</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_MNILHB20020">
+        <type>Travel Bags</type>
+    </ls-product>
+    <ls-product id="AM_SAS511141349">
+        <type>Travel Bags</type>
+        <estimated-shipping-rates>
+            <average-canada>40.13</average-canada>
+            <rate-per-province>
+                <AB>40.13</AB>
+                <BC>40.13</BC>
+                <MB>29.57</MB>
+                <NB>31.52</NB>
+                <NL>42.88</NL>
+                <NS>32.00</NS>
+                <NT>40.13</NT>
+                <NU>160.80</NU>
+                <ON>22.37</ON>
+                <PE>31.77</PE>
+                <QC>18.38</QC>
+                <SK>40.13</SK>
+                <YT>52.32</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TFLK170DCA">
+        <cost>34.26</cost>
+        <discount-dollars>15.73</discount-dollars>
+        <discount-percent>31.47</discount-percent>
+    </ls-product>
+    <ls-product id="AM_SASXENWPAG">
+        <type>Travel Bags</type>
+    </ls-product>
+    <ls-product id="AM_CNB700103200021">
+        <msrp>124.99</msrp>
+        <cost>87.50</cost>
+        <discount-dollars>37.49</discount-dollars>
+        <discount-percent>29.99</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>14.71</average-canada>
+            <rate-per-province>
+                <AB>14.71</AB>
+                <BC>14.71</BC>
+                <MB>13.80</MB>
+                <NB>14.67</NB>
+                <NL>15.66</NL>
+                <NS>14.88</NS>
+                <NT>14.71</NT>
+                <NU>28.63</NU>
+                <ON>9.97</ON>
+                <PE>14.78</PE>
+                <QC>9.18</QC>
+                <SK>14.71</SK>
+                <YT>19.32</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700103710021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103710021_1423843106701.jpg</image>
+        <status>AVAILABLE</status>
+        <title>LADY Wallet - Black</title>
+        <description>Store all your personal belongings in this beautiful wallet made from genuine leather construction with python and shine effect. A front flap with snap closure and multiple interior compartments to keeps everything secured.</description>
+        <specification>Composition / Finition:Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Black. Gold tone plating. Features: Front flap with snap closure. Multiple interior compartments for cards &amp; bills.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700103710021</model-number>
+        <weight>1.10</weight>
+        <shipping-size>
+            <length>5.00</length>
+            <width>4.75</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>14.71</average-canada>
+            <rate-per-province>
+                <AB>14.71</AB>
+                <BC>14.71</BC>
+                <MB>13.80</MB>
+                <NB>14.67</NB>
+                <NL>15.66</NL>
+                <NS>14.88</NS>
+                <NT>14.71</NT>
+                <NU>28.63</NU>
+                <ON>9.97</ON>
+                <PE>14.78</PE>
+                <QC>9.18</QC>
+                <SK>14.71</SK>
+                <YT>19.32</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700108400021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700108400021_1423843497079.jpg</image>
+        <status>AVAILABLE</status>
+        <title>SUBLIME Wallet - Graphite</title>
+        <description>Stylishly carry your personal info from one place to another. This flapover clutch made from genuine Italian leather is beautifully designed for secure storage.   </description>
+        <specification>Composition / Finition:Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Graphite. Dark grey tone plating. Features: Front flap with magnetic snap closure. Multiple interior compartments, one zip closure, for cards, bills &amp; more.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700108400021</model-number>
+        <weight>2.87</weight>
+        <shipping-size>
+            <length>7.5</length>
+            <width>4.0</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>17.03</average-canada>
+            <rate-per-province>
+                <AB>17.03</AB>
+                <BC>17.03</BC>
+                <MB>15.29</MB>
+                <NB>16.24</NB>
+                <NL>18.12</NL>
+                <NS>16.48</NS>
+                <NT>17.03</NT>
+                <NU>38.08</NU>
+                <ON>11.26</ON>
+                <PE>16.37</PE>
+                <QC>10.28</QC>
+                <SK>17.03</SK>
+                <YT>22.08</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CEL44310">
+        <brand-name>Celestron</brand-name>
+        <group>Children</group>
+        <category>Toys</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cel44310_1423843698048.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Portable LCD Digital Microscope</title>
+        <description>The Celestron LCD Handheld Digital Microscope is a lightweight, portable microscope with a 2.4” color TFT LCD screen. A soft carry pouch is included so you can take it along on all your outdoor adventures.</description>
+        <specification>2.4" color LCD screen. Built-in 3 MP digital camera. 1x to 3.7x optical zoom, up to 54x magnification. 4x digital zoom. 128MB internal flash memory, with SD card slot for added storage up to 16GB. Adjustable LED illumination. USB 2.0 cable for transferring images to your computer. Soft carry pouch.</specification>
+        <others>2 AA batteries not included.</others>
+        <warranty>1 year</warranty>
+        <model-number>44310</model-number>
+        <weight>1.00</weight>
+        <shipping-size>
+            <length>4.00</length>
+            <width>3.0</width>
+            <height>2.0</height>
+        </shipping-size>
+        <msrp>114.99</msrp>
+        <cost>113.28</cost>
+        <discount-dollars>1.71</discount-dollars>
+        <discount-percent>1.49</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>15.39</average-canada>
+            <rate-per-province>
+                <AB>15.39</AB>
+                <BC>15.39</BC>
+                <MB>14.47</MB>
+                <NB>15.35</NB>
+                <NL>16.34</NL>
+                <NS>15.56</NS>
+                <NT>15.39</NT>
+                <NU>29.31</NU>
+                <ON>10.65</ON>
+                <PE>15.46</PE>
+                <QC>9.86</QC>
+                <SK>15.39</SK>
+                <YT>20.00</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700108930021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700108930021_1423845168694.jpg</image>
+        <status>AVAILABLE</status>
+        <title>SUBLIME Wallet - Black</title>
+        <description>Stylishly carry your personal info from one place to another. This flapover clutch made from genuine Italian leather is beautifully designed for secure storage.   </description>
+        <specification>Composition / Finition:Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Black. Rose gold tone plating. Features: Front flap with magnetic snap closure. Multiple interior compartments, one zip closure, for cards, bills &amp; more.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700108930021</model-number>
+        <weight>2.87</weight>
+        <shipping-size>
+            <length>7.5</length>
+            <width>4.0</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>17.03</average-canada>
+            <rate-per-province>
+                <AB>17.03</AB>
+                <BC>17.03</BC>
+                <MB>15.29</MB>
+                <NB>16.24</NB>
+                <NL>18.12</NL>
+                <NS>16.48</NS>
+                <NT>17.03</NT>
+                <NU>38.08</NU>
+                <ON>11.26</ON>
+                <PE>16.37</PE>
+                <QC>10.28</QC>
+                <SK>17.03</SK>
+                <YT>22.08</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700104200020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700104200020_1423845864077.jpg</image>
+        <status>AVAILABLE</status>
+        <title>MISS Crossbody Bag - Nude and Black</title>
+        <description>This compact crossbody handbag is perfect for every day wear, featuring an adjustable strap and interior zipped compartment. Made from genuine leather and conveniently sized with a magnetic snap closure.</description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Nude &amp; black. Silver tone plating. Features: Adjustable crossbody strap. Front flap with magnetic snap closure. Back compartment. Interior zipped compartment &amp; phone compartment. Shoulder drop: Min drop: 23 1/2'' &amp; Max drop: 25''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700104200020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>8.0</length>
+            <width>7.0</width>
+            <height>3.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>18.87</average-canada>
+            <rate-per-province>
+                <AB>18.87</AB>
+                <BC>18.87</BC>
+                <MB>17.13</MB>
+                <NB>18.08</NB>
+                <NL>19.96</NL>
+                <NS>18.32</NS>
+                <NT>18.87</NT>
+                <NU>39.92</NU>
+                <ON>13.09</ON>
+                <PE>18.21</PE>
+                <QC>12.12</QC>
+                <SK>18.87</SK>
+                <YT>23.92</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700104710020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700104710020_1423845997445.jpg</image>
+        <status>AVAILABLE</status>
+        <title>MISS Crossbody Bag - Black</title>
+        <description>This compact crossbody handbag is perfect for every day wear, featuring an adjustable strap and interior zipped compartment. Made from genuine leather and conveniently sized with a magnetic snap closure.</description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Black. Gold tone plating. Features: Adjustable crossbody strap. Front flap with magnetic snap closure. Back compartment. Interior zipped compartment &amp; phone compartment. Shoulder drop: Min drop: 23 1/2'' &amp; Max drop: 25''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700104710020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>8.0</length>
+            <width>7.0</width>
+            <height>3.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>18.87</average-canada>
+            <rate-per-province>
+                <AB>18.87</AB>
+                <BC>18.87</BC>
+                <MB>17.13</MB>
+                <NB>18.08</NB>
+                <NL>19.96</NL>
+                <NS>NOT AVAILABLE</NS>
+                <NT>18.87</NT>
+                <NU>39.92</NU>
+                <ON>13.09</ON>
+                <PE>18.21</PE>
+                <QC>12.12</QC>
+                <SK>18.87</SK>
+                <YT>23.92</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700101310020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700101310020_1423846372332.jpg</image>
+        <status>AVAILABLE</status>
+        <title>SIGNATURE Shoulder Bag - Black</title>
+        <description>This statement bag is made from genuine leather and decorated with removable chains. With an adjustable shoulder strap, it can be worn cross-body or as a shoulder bag.</description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow). Pebbled effect. Decorative removable chains. Color: Black. Silver tone plating. Features: Adjustable shoulder strap. Zip closure on top. Interior zipped compartment. Min drop: 21'' &amp; Max drop: 22 1/2'' Comes with a dust bag.  </specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700101310020</model-number>
+        <weight>3.31</weight>
+        <shipping-size>
+            <length>13.75</length>
+            <width>10.5</width>
+            <height>3.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>25.91</average-canada>
+            <rate-per-province>
+                <AB>25.91</AB>
+                <BC>25.91</BC>
+                <MB>22.58</MB>
+                <NB>23.76</NB>
+                <NL>27.33</NL>
+                <NS>24.05</NS>
+                <NT>25.91</NT>
+                <NU>67.01</NU>
+                <ON>17.70</ON>
+                <PE>23.91</PE>
+                <QC>16.06</QC>
+                <SK>25.91</SK>
+                <YT>33.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700101400020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700101400020_1423846549905.jpg</image>
+        <status>AVAILABLE</status>
+        <title>SIGNATURE Shoulder Bag - Metallic pewter</title>
+        <description>This statement bag is made from genuine leather and decorated with removable chains. With an adjustable shoulder strap, it can be worn cross-body or as a shoulder bag.</description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow). Pebbled effect. Decorative removable chains. Color: Metallic pewter. Dark grey tone plating. Features: Adjustable shoulder strap. Zip closure on top. Interior zipped compartment. Min drop: 21'' &amp; Max drop: 22 1/2'' Comes with a dust bag.  </specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700101400020</model-number>
+        <weight>3.31</weight>
+        <shipping-size>
+            <length>13.75</length>
+            <width>10.5</width>
+            <height>3.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>25.91</average-canada>
+            <rate-per-province>
+                <AB>25.91</AB>
+                <BC>25.91</BC>
+                <MB>22.58</MB>
+                <NB>23.76</NB>
+                <NL>27.33</NL>
+                <NS>24.05</NS>
+                <NT>25.91</NT>
+                <NU>67.01</NU>
+                <ON>17.70</ON>
+                <PE>23.91</PE>
+                <QC>16.06</QC>
+                <SK>25.91</SK>
+                <YT>33.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700105310020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700105310020_1423847134849.jpg</image>
+        <status>AVAILABLE</status>
+        <title>DAME Shoulder bag - Black and silver</title>
+        <description>Sleek and sophisticated, this shoulder bag features genuine leather construction with python and shine effect. Finished with a front flap closure, it secures your storage stylishly.   </description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Black. Silver tone plating. Features: Removable shoulder strap, combination of chains &amp; leather. Front flap with magnetic snap closure. Back zipped compartment. Interior zipped compartment. Shoulder drop: 13''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700105310020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>9.0</length>
+            <width>5.25</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>17.87</average-canada>
+            <rate-per-province>
+                <AB>17.87</AB>
+                <BC>17.87</BC>
+                <MB>16.31</MB>
+                <NB>17.19</NB>
+                <NL>18.87</NL>
+                <NS>17.42</NS>
+                <NT>17.87</NT>
+                <NU>34.87</NU>
+                <ON>12.71</ON>
+                <PE>17.31</PE>
+                <QC>11.89</QC>
+                <SK>17.87</SK>
+                <YT>22.84</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700105710020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700105710020_1423847274542.jpg</image>
+        <status>AVAILABLE</status>
+        <title>DAME Shoulder bag - Black and gold</title>
+        <description>Sleek and sophisticated, this shoulder bag features genuine leather construction with python and shine effect. Finished with a front flap closure, it secures your storage stylishly.   </description>
+        <specification>Composition / Finition: Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Black. Gold tone plating. Features: Removable shoulder strap, combination of chains &amp; leather. Front flap with magnetic snap closure. Back zipped compartment. Interior zipped compartment. Shoulder drop: 13''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700105710020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>9.0</length>
+            <width>5.25</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>17.87</average-canada>
+            <rate-per-province>
+                <AB>17.87</AB>
+                <BC>17.87</BC>
+                <MB>16.31</MB>
+                <NB>17.19</NB>
+                <NL>18.87</NL>
+                <NS>17.42</NS>
+                <NT>17.87</NT>
+                <NU>34.87</NU>
+                <ON>12.71</ON>
+                <PE>17.31</PE>
+                <QC>11.89</QC>
+                <SK>17.87</SK>
+                <YT>22.84</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700103200020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103200020_1423847691390.jpg</image>
+        <status>AVAILABLE</status>
+        <title>LADY Handbag - Nude and black</title>
+        <description>Made from genuine Italian leather, this two-tone satchel is the ideal size to fit all of your daily essentials. Detailed top handles and a removable shoulder strap, this purse is functional yet chic.</description>
+        <specification>Composition / Finition:Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Nude &amp; black. Silver tone plating. Features: Top handles and removable &amp; adjustable shoulder strap. Zip closure on top. Back zipped compartment; Two front compartments one with snap closure. Multiple interior compartments, one zip closure, for electronic tablet &amp; phone. Shoulder drop / handle drop: Handle: 5 1/2'' / Shoulder drop Max: 25''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700103200020</model-number>
+        <weight>4.40</weight>
+        <shipping-size>
+            <length>11.5</length>
+            <width>9.5</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>20.57</average-canada>
+            <rate-per-province>
+                <AB>20.57</AB>
+                <BC>20.57</BC>
+                <MB>18.65</MB>
+                <NB>19.66</NB>
+                <NL>21.72</NL>
+                <NS>19.91</NS>
+                <NT>20.57</NT>
+                <NU>45.91</NU>
+                <ON>14.35</ON>
+                <PE>19.78</PE>
+                <QC>13.22</QC>
+                <SK>20.57</SK>
+                <YT>26.96</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CNB700103400020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103400020_1423847849945.jpg</image>
+        <status>AVAILABLE</status>
+        <title>LADY Handbag - Graphite</title>
+        <description>Made from genuine Italian leather, this two-tone satchel is the ideal size to fit all of your daily essentials. Detailed top handles and a removable shoulder strap, this purse is functional yet chic.</description>
+        <specification>Composition / Finition:Genuine leather from Italy (cow &amp; sheep). Python &amp; shine effect. Color: Graphite. Dark grey tone plating. Features: Top handles and removable &amp; adjustable shoulder strap. Zip closure on top. Back zipped compartment; Two front compartments one with snap closure. Multiple interior compartments, one zip closure, for electronic tablet &amp; phone. Shoulder drop / handle drop: Handle: 5 1/2'' / Shoulder drop Max: 25''. Comes with a dust bag.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>700103400020</model-number>
+        <weight>4.40</weight>
+        <shipping-size>
+            <length>11.5</length>
+            <width>9.5</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>20.57</average-canada>
+            <rate-per-province>
+                <AB>20.57</AB>
+                <BC>20.57</BC>
+                <MB>18.65</MB>
+                <NB>19.66</NB>
+                <NL>21.72</NL>
+                <NS>19.91</NS>
+                <NT>20.57</NT>
+                <NU>45.91</NU>
+                <ON>NOT AVAILABLE</ON>
+                <PE>19.78</PE>
+                <QC>13.22</QC>
+                <SK>20.57</SK>
+                <YT>26.96</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_GAI333269448338G">
+        <brand-name>Gaiam</brand-name>
+        <group>Sports</group>
+        <category>Fitness</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/gai333269448338g_1423853736288.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Yoga Kit - PURPLE</title>
+        <description>The Gaiam Yoga Kit is an ideal way to ease yoga into your daily workout routine. It comes with a yoga mat, a carrying case, a yoga block, and a water bottle.</description>
+        <specification>This set includes: Yoga mat. Yoga Block. Carrying case. Water bottle.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>ZKOCMT703331</model-number>
+        <weight>5.00</weight>
+        <shipping-size>
+            <length>24.0</length>
+            <width>10.0</width>
+            <height>10.00</height>
+        </shipping-size>
+        <msrp>109.99</msrp>
+        <cost>77.44</cost>
+        <discount-dollars>32.55</discount-dollars>
+        <discount-percent>29.59</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>34.03</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>34.03</BC>
+                <MB>25.17</MB>
+                <NB>26.93</NB>
+                <NL>36.47</NL>
+                <NS>27.37</NS>
+                <NT>NOT AVAILABLE</NT>
+                <NU>135.78</NU>
+                <ON>18.51</ON>
+                <PE>27.16</PE>
+                <QC>15.06</QC>
+                <SK>34.03</SK>
+                <YT>45.02</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TFL254575G">
+        <brand-name>T-fal</brand-name>
+        <group>Kitchen</group>
+        <category>Cookware</category>
+        <type>Cookware Sets</type>
+        <image>http://loyaltysource.com/media/product/large/tfl254575g_1423856390648.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Talent Induction Fry Pans 3-Piece Bundle</title>
+        <description>Show off your culinary skills with these T-fal Talent fry pans. Made from sturdy aluminum, these durable pans feature T-fal's revolutionary six-layer Titanium Pro non-stick coating. With high sides, these pans offer tons of room to cook a full meal and guard against splatters. Thermo-Spot technology lets you see when the pan is hot enough, ensuring optimal cooking results.</description>
+        <specification>This set includes: 20cm Frypan. 24cm Frypan. 30cm Frypan.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>E4420252</model-number>
+        <weight>8.00</weight>
+        <shipping-size>
+            <length>17.72</length>
+            <width>12.60</width>
+            <height>9.45</height>
+        </shipping-size>
+        <msrp>254.99</msrp>
+        <cost>78.42</cost>
+        <discount-dollars>176.57</discount-dollars>
+        <discount-percent>69.25</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>30.77</average-canada>
+            <rate-per-province>
+                <AB>30.77</AB>
+                <BC>30.77</BC>
+                <MB>23.26</MB>
+                <NB>24.87</NB>
+                <NL>NOT AVAILABLE</NL>
+                <NS>25.27</NS>
+                <NT>30.77</NT>
+                <NU>117.35</NU>
+                <ON>17.02</ON>
+                <PE>25.07</PE>
+                <QC>14.03</QC>
+                <SK>30.77</SK>
+                <YT>40.78</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_RWTIS1430">
+        <brand-name>Rowenta</brand-name>
+        <group>Homeworks</group>
+        <category>Appliances</category>
+        <type>Irons &amp; Steamers</type>
+        <image>http://loyaltysource.com/media/product/large/rwtis1430_1423858344524.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Pro Compact Steamer</title>
+        <description>The Rowenta pro compact steamer gives you all the benefits of a full-sized steam generator in one small, portable unit! Blasting through the most stubborn wrinkles with ease, this steamer will take a boring chore and help complete it in a snap.  </description>
+        <specification>1,400 watts of power for superior steaming performance. 1L continuous refill water tank for unlimited steam time and adjustable steam levels. Soft-touch hose stays cool while steaming. Smart storage: steam hose wraps around the base while the steam head locks in place, giving you a secure storage solution. Crease attachment: easily eliminates sharp creases and resilient wrinkles.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>IS1430</model-number>
+        <weight>3.00</weight>
+        <shipping-size>
+            <length>10.0</length>
+            <width>6.0</width>
+            <height>6.00</height>
+        </shipping-size>
+        <msrp>69.99</msrp>
+        <cost>54.00</cost>
+        <discount-dollars>15.99</discount-dollars>
+        <discount-percent>22.85</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.44</average-canada>
+            <rate-per-province>
+                <AB>17.44</AB>
+                <BC>17.44</BC>
+                <MB>15.17</MB>
+                <NB>16.22</NB>
+                <NL>18.67</NL>
+                <NS>16.48</NS>
+                <NT>17.44</NT>
+                <NU>46.72</NU>
+                <ON>10.73</ON>
+                <PE>16.36</PE>
+                <QC>9.47</QC>
+                <SK>17.44</SK>
+                <YT>24.04</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_RWTIB5100D1">
+        <brand-name>Rowenta</brand-name>
+        <group>Homeworks</group>
+        <category>Appliances</category>
+        <type>Irons &amp; Steamers</type>
+        <image>http://loyaltysource.com/media/product/large/rwtib5100d1_1423858778128.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Ironing Board - WHITE</title>
+        <description>Treat your garments with the cleaning care they deserve using the Rowenta Ironing Board. Built with a large surface area, an integrated rest for your iron or steam station, and a handy hanger rack, you'll ensure a comfortable ironing experience. Easily transport the ironing board as you see fit with the wheeled design.</description>
+        <specification>Made of foam and cotton.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>IB5100D1</model-number>
+        <weight>12.00</weight>
+        <shipping-size>
+            <length>67.72</length>
+            <width>18.5</width>
+            <height>9.84</height>
+        </shipping-size>
+        <msrp>119.99</msrp>
+        <cost>97.20</cost>
+        <discount-dollars>22.79</discount-dollars>
+        <discount-percent>18.99</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>NOT AVAILABLE</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>NOT AVAILABLE</BC>
+                <MB>NOT AVAILABLE</MB>
+                <NB>NOT AVAILABLE</NB>
+                <NL>NOT AVAILABLE</NL>
+                <NS>NOT AVAILABLE</NS>
+                <NT>NOT AVAILABLE</NT>
+                <NU>NOT AVAILABLE</NU>
+                <ON>NOT AVAILABLE</ON>
+                <PE>NOT AVAILABLE</PE>
+                <QC>NOT AVAILABLE</QC>
+                <SK>NOT AVAILABLE</SK>
+                <YT>NOT AVAILABLE</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_SAGLIGHTBULB">
+        <brand-name>Smart &amp; Green</brand-name>
+        <group>Homeworks</group>
+        <category>Decoration</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/saglightbulb_1423861500721.jpg</image>
+        <status>AVAILABLE</status>
+        <title>LED Light Bulb with Speaker</title>
+        <description>The Eco Chic light bulb is an energy saving LED light bulb with an integrated Bluetooth speaker. Just place it in any standard electrical lamp and use the “Play” feature on your Bluetooth enabled music player to listen to music wherever you choose.</description>
+        <specification>Bulb: LED 8 W, 110-240 V. Energy saving. Low consumption. 4 colour options: white, green, blue, and red. Speaker: 10 W, 200 Hz-20 kHz.</specification>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>LIGHTBULB</model-number>
+        <weight>1.00</weight>
+        <shipping-size>
+            <length>15.0</length>
+            <width>9.00</width>
+            <height>9.0</height>
+        </shipping-size>
+        <msrp>99.99</msrp>
+        <cost>93.60</cost>
+        <discount-dollars>6.39</discount-dollars>
+        <discount-percent>6.39</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>25.33</average-canada>
+            <rate-per-province>
+                <AB>25.33</AB>
+                <BC>25.33</BC>
+                <MB>20.26</MB>
+                <NB>21.61</NB>
+                <NL>27.08</NL>
+                <NS>21.94</NS>
+                <NT>25.33</NT>
+                <NU>85.46</NU>
+                <ON>14.77</ON>
+                <PE>21.78</PE>
+                <QC>12.57</QC>
+                <SK>25.33</SK>
+                <YT>33.72</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

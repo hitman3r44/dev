@@ -1,0 +1,11 @@
+1367251036963	Rename resource 'AsiaMiles'
+1367251964352	Rename resource 'DownloadPDFSuccess.jsp'
+1367254738685	Rename resource 'Copy (2) of downloadPDF.jsp'
+1367254752288	Rename resource 'Copy of downloadPDF.jsp'
+1367332194954	Infer generic type arguments
+1367332216779	Infer generic type arguments
+1367340008074	Rename resource 'downloadPDF.jsp'
+1367340049153	Rename resource 'downloadPDFError.jsp'
+1367351345780	Rename local variable 'asieMilesPO'
+1367351384230	Rename local variable 'asieMiles'
+1367352576955	Rename local variable 'listAsieMilesPoDto'

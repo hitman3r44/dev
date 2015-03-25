@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>699391</po_number>
+        <first_name>Antony</first_name>
+        <last_name>Barnes</last_name>
+        <client_street>14 Lawrence Avenue</client_street>
+        <client_city>Cornwall</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K6H4H2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_ARO01856119</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>ARO01856119</ls_product_id>
+        <product_title>Wood Art Set 119-Piece</product_title>
+        <cost>39.0</cost>
+        <shipping_cost>14.01</shipping_cost>
+        <tracking_number>7310723219338476</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>703460</po_number>
+        <first_name>Chad</first_name>
+        <last_name>Foster</last_name>
+        <client_street>109 Third Street</client_street>
+        <client_city>Somerset</client_city>
+        <client_province>MB</client_province>
+        <client_postal_code>R0G2L0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_CAB943052</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CAB943052</ls_product_id>
+        <product_title>Deluxe Life Vest</product_title>
+        <cost>23.23</cost>
+        <shipping_cost>18.80</shipping_cost>
+        <tracking_number>7310723181837472</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>703460</po_number>
+        <first_name>Chad</first_name>
+        <last_name>Foster</last_name>
+        <client_street>109 Third Street</client_street>
+        <client_city>Somerset</client_city>
+        <client_province>MB</client_province>
+        <client_postal_code>R0G2L0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SLU580184G</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SLU580184G</ls_product_id>
+        <product_title>6-person 10' x 10' Trail Tent with Camp Light Kit</product_title>
+        <cost>383.97</cost>
+        <shipping_cost>49.17</shipping_cost>
+        <tracking_number>7310723191405470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>700977</po_number>
+        <first_name>Raheem</first_name>
+        <last_name>Abdul</last_name>
+        <client_street>9536 Simpson Court NW</client_street>
+        <client_city>Edmonton</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T6R0T8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_BRBPFL253</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BRBPFL253</ls_product_id>
+        <product_title>Burberry for Women</product_title>
+        <cost>75.6</cost>
+        <shipping_cost>12.23</shipping_cost>
+        <tracking_number>7310723039035470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>700977</po_number>
+        <first_name>Raheem</first_name>
+        <last_name>Abdul</last_name>
+        <client_street>9536 Simpson Court NW</client_street>
+        <client_city>Edmonton</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T6R0T8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_GUEPFL024</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>GUEPFL024</ls_product_id>
+        <product_title>Guess by Marciano for Women</product_title>
+        <cost>50.4</cost>
+        <shipping_cost>12.23</shipping_cost>
+        <tracking_number>7310723038784478</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>700977</po_number>
+        <first_name>Raheem</first_name>
+        <last_name>Abdul</last_name>
+        <client_street>9536 Simpson Court NW</client_street>
+        <client_city>Edmonton</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T6R0T8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_RCVPFL021</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>RCVPFL021</ls_product_id>
+        <product_title>Just Cavalli for Women</product_title>
+        <cost>44.8</cost>
+        <shipping_cost>11.11</shipping_cost>
+        <tracking_number>7310723038988470</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>701251</po_number>
+        <first_name>CADEE</first_name>
+        <last_name>NABER</last_name>
+        <client_street>151 SERVICE ROAD EAST</client_street>
+        <client_city>SHELLBROOK</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S0J2E0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SLU580184TENT</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SLU580184TENT</ls_product_id>
+        <product_title>6-person 10' x 10' Trail Tent</product_title>
+        <cost>263.98</cost>
+        <shipping_cost>37.97</shipping_cost>
+        <tracking_number>7310723109865471</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>703228</po_number>
+        <first_name>Luke</first_name>
+        <last_name>Walters</last_name>
+        <client_street>#2-81Colins Cres</client_street>
+        <client_city>medicine hat</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T1B1T7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_TFLTFASL11CW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TFLTFASL11CW</ls_product_id>
+        <product_title>11 Piece Softline Cookware Set</product_title>
+        <cost>99.31</cost>
+        <shipping_cost>30.06</shipping_cost>
+        <tracking_number>7310723059863473</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>693507</po_number>
+        <first_name>Reg</first_name>
+        <last_name>Somerville</last_name>
+        <client_street>483 McGaughey Ave</client_street>
+        <client_city>North Bay</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>P1B1W4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_H2K0515G</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>H2K0515G</ls_product_id>
+        <product_title>Set of 4 Mini Oval Cocottes with Lids</product_title>
+        <cost>17.96</cost>
+        <shipping_cost>9.40</shipping_cost>
+        <tracking_number>7310723832863461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>699054</po_number>
+        <first_name>Debra</first_name>
+        <last_name>Stahl</last_name>
+        <client_street>c/o Calgary Airport Authority</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2E6W5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_CSTCS90</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CSTCS90</ls_product_id>
+        <product_title>6 Holes Pop Out Muffin Pan</product_title>
+        <cost>19.95</cost>
+        <shipping_cost>12.23</shipping_cost>
+        <tracking_number>7310723830170462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>701162</po_number>
+        <first_name>Rod</first_name>
+        <last_name>St. George</last_name>
+        <client_street>64 Columbus Drive</client_street>
+        <client_city>Carbonear</client_city>
+        <client_province>NL</client_province>
+        <client_postal_code>A1Y1A6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_KAS7184018</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KAS7184018</ls_product_id>
+        <product_title>Japanese Chef Knife - 18cm</product_title>
+        <cost>84.5</cost>
+        <shipping_cost>18.95</shipping_cost>
+        <tracking_number>7310723980177465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>701563</po_number>
+        <first_name>SANDY</first_name>
+        <last_name>BESLER</last_name>
+        <client_street>6400 HAMMOND BAY ROAD</client_street>
+        <client_city>NANAIMO</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V9T6M9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_MANAMM00772</client_product_number>
+        <quantity>2.0</quantity>
+        <ls_product_id>MANAMM00772</ls_product_id>
+        <product_title>16 Piece Square Dinner Set</product_title>
+        <cost>46.55</cost>
+        <shipping_cost>49.88</shipping_cost>
+        <tracking_number>7310723887991461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>702018</po_number>
+        <first_name>Alain</first_name>
+        <last_name>Boudreault</last_name>
+        <client_street>1892 Des Genevriers</client_street>
+        <client_city>L'Ancienne-Lorette</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G2E5T1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_HIPHSIPWSP850</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>HIPHSIPWSP850</ls_product_id>
+        <product_title>Wireless In/Outdoor Docking Speaker System</product_title>
+        <cost>87.78</cost>
+        <shipping_cost>11.80</shipping_cost>
+        <tracking_number>7310723913271468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>699166</po_number>
+        <first_name>gilbert</first_name>
+        <last_name>de roy</last_name>
+        <client_street>399 Joseph Germain</client_street>
+        <client_city>bois des filion</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>J6z1M8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SEASTBX5100</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SEASTBX5100</ls_product_id>
+        <product_title>Expansion Portable Hard Drive 500GB</product_title>
+        <cost>77.22</cost>
+        <shipping_cost>6.84</shipping_cost>
+        <tracking_number>7310723801411464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>700159</po_number>
+        <first_name>Sylvain</first_name>
+        <last_name>Morin</last_name>
+        <client_street>1198  rue principale</client_street>
+        <client_city>St-Côme-Liniere</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>g0m1j0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SEASTDS1000100</client_product_number>
+        <quantity>2.0</quantity>
+        <ls_product_id>SEASTDS1000100</ls_product_id>
+        <product_title>Slim 1 TB USB 3.0 Portable External Hard Drive for Mac</product_title>
+        <cost>109.5</cost>
+        <shipping_cost>11.45</shipping_cost>
+        <tracking_number>7310723806711460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>702254</po_number>
+        <first_name>Pino</first_name>
+        <last_name>Daddario</last_name>
+        <client_street>3394  Jean Talon east</client_street>
+        <client_city>Montreal</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H2A1W8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SMGT210RZ</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGT210RZ</ls_product_id>
+        <product_title>Galaxy Tab 3 7'' 8GB</product_title>
+        <cost>215.06</cost>
+        <shipping_cost>9.68</shipping_cost>
+        <tracking_number>7310723772226463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>702730</po_number>
+        <first_name>Classic Auto Glass</first_name>
+        <last_name>&amp; Upholstery</last_name>
+        <client_street>1143 Main Street</client_street>
+        <client_city>Sussex Corner</client_city>
+        <client_province>NB</client_province>
+        <client_postal_code>E4E2Z5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_TIMT5K632MF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TIMT5K632MF</ls_product_id>
+        <product_title>Digital Pedometer</product_title>
+        <cost>28.13</cost>
+        <shipping_cost>14.69</shipping_cost>
+        <tracking_number>7310723753799467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>700165</po_number>
+        <first_name>audrey</first_name>
+        <last_name>martel</last_name>
+        <client_street>3050 boul. des forges</client_street>
+        <client_city>trois-rivieres</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G8Z1V5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_HARKARNI</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>HARKARNI</ls_product_id>
+        <product_title>Noise-Isolating In-Ear Headphones</product_title>
+        <cost>75.56</cost>
+        <shipping_cost>7.94</shipping_cost>
+        <tracking_number>7310723489299460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>702264</po_number>
+        <first_name>Nickson</first_name>
+        <last_name>Maina</last_name>
+        <client_street>145c royal road</client_street>
+        <client_city>edmonton</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>t6j2e7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_ALUABS03F</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUABS03F</ls_product_id>
+        <product_title>Portable Bluetooth/USB/3.5mm Wireless Speaker</product_title>
+        <cost>37.68</cost>
+        <shipping_cost>12.23</shipping_cost>
+        <tracking_number>7310723600470464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>696957</po_number>
+        <first_name>Craig</first_name>
+        <last_name>Holeywell</last_name>
+        <client_street>54 Dawson Crescent</client_street>
+        <client_city>Milton</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L9T5H9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_HARKARNI</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>HARKARNI</ls_product_id>
+        <product_title>Noise-Isolating In-Ear Headphones</product_title>
+        <cost>8.06</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723483503464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>699875</po_number>
+        <first_name>Chris</first_name>
+        <last_name>Sullivan</last_name>
+        <client_street>361 Highland Ave</client_street>
+        <client_city>Windsor</client_city>
+        <client_province>NS</client_province>
+        <client_postal_code>b0n2t0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_JBLMICROII_WH</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>JBLMICROII_WH</ls_product_id>
+        <product_title>OnTour Micro II Pocket Sized Speaker - WHITE</product_title>
+        <cost>41.82</cost>
+        <shipping_cost>14.94</shipping_cost>
+        <tracking_number>7310723414375467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>701801</po_number>
+        <first_name>DARCY</first_name>
+        <last_name>LONGEWAY</last_name>
+        <client_street>1049 Jade Street</client_street>
+        <client_city>Quesnel</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V2J4E2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_TFL0050</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TFL0050</ls_product_id>
+        <product_title>ActiFry</product_title>
+        <cost>279.31</cost>
+        <shipping_cost>43.91</shipping_cost>
+        <tracking_number>7310723424111468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>700178</po_number>
+        <first_name>melanie</first_name>
+        <last_name>desharnais</last_name>
+        <client_street>710 charest ouest</client_street>
+        <client_city>Quebec</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G1N2C1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_TFL0050</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TFL0050</ls_product_id>
+        <product_title>ActiFry</product_title>
+        <cost>279.31</cost>
+        <shipping_cost>23.30</shipping_cost>
+        <tracking_number>7310723322286466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>700382</po_number>
+        <first_name>apple auto glass</first_name>
+        <last_name>apple auto glass</last_name>
+        <client_street>41A Ilsey</client_street>
+        <client_city>dartmouth</client_city>
+        <client_province>NS</client_province>
+        <client_postal_code>b3b1k9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_PEEPA740</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>PEEPA740</ls_product_id>
+        <product_title>Paramount arm F/22-40 LCD SCRNS-GLS</product_title>
+        <cost>102.26</cost>
+        <shipping_cost>15.15</shipping_cost>
+        <tracking_number>7310723314535466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>701251</po_number>
+        <first_name>CADEE</first_name>
+        <last_name>NABER</last_name>
+        <client_street>151 SERVICE ROAD EAST</client_street>
+        <client_city>SHELLBROOK</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S0J2E0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_KOLTCFD05</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TTCTCFD05</ls_product_id>
+        <product_title>Food Dehydrator 5 Tray</product_title>
+        <cost>52.0</cost>
+        <shipping_cost>30.82</shipping_cost>
+        <tracking_number>7310723276059468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>701421</po_number>
+        <first_name>rod</first_name>
+        <last_name>st george</last_name>
+        <client_street>64 Columbus Drive</client_street>
+        <client_city>Carbonear</client_city>
+        <client_province>NL</client_province>
+        <client_postal_code>A1Y1A6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_FOSEXPHOBO_BR</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSEXPHOBO_BR</ls_product_id>
+        <product_title>Explorer Hobo Bag - EXPRESSO</product_title>
+        <cost>154.7</cost>
+        <shipping_cost>26.11</shipping_cost>
+        <tracking_number>7310723275628467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>701514</po_number>
+        <first_name>martin</first_name>
+        <last_name>robitaille</last_name>
+        <client_street>3200 rue de l etchemin</client_street>
+        <client_city>Lévis</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G6W7X6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SONSRSBTX500</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SONSRSBTX500</ls_product_id>
+        <product_title>SRSBTX500 Premium Wireless Speaker System</product_title>
+        <cost>231.5</cost>
+        <shipping_cost>18.23</shipping_cost>
+        <tracking_number>7310723287628462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>701532</po_number>
+        <first_name>SANDRA</first_name>
+        <last_name>SPICER</last_name>
+        <client_street>551 WESTVILLE RD</client_street>
+        <client_city>NEW GLASGOW</client_city>
+        <client_province>NS</client_province>
+        <client_postal_code>B2H2J6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_FOSEXPMINI_BK</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSEXPMINI_BK</ls_product_id>
+        <product_title>Explorer Mini Bag - BLACK</product_title>
+        <cost>61.75</cost>
+        <shipping_cost>13.26</shipping_cost>
+        <tracking_number>7310723267545468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>701727</po_number>
+        <first_name>FRANK</first_name>
+        <last_name>LAMB</last_name>
+        <client_street>28 south kootenay ave</client_street>
+        <client_city>fruitvale</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>v0g1l0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_APPME971CA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPME971CA</ls_product_id>
+        <product_title>New iPod Nano 16GB - SPACE GREY</product_title>
+        <cost>146.66</cost>
+        <shipping_cost>18.61</shipping_cost>
+        <tracking_number>7310723328603465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>699166</po_number>
+        <first_name>gilbert</first_name>
+        <last_name>de roy</last_name>
+        <client_street>399 Joseph Germain</client_street>
+        <client_city>bois des filion</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>J6z1M8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_CKPECKMRC10</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CKPECKMRC10</ls_product_id>
+        <product_title>Deluxe Rice Cooker and Steamer</product_title>
+        <cost>36.4</cost>
+        <shipping_cost>12.29</shipping_cost>
+        <tracking_number>7310723181235469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>700921</po_number>
+        <first_name>Debbie</first_name>
+        <last_name>Wall</last_name>
+        <client_street>6 carmel place</client_street>
+        <client_city>sherwood park</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>t8a5b1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_FOSEMCLUTCH_BK</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSEMCLUTCH_BK</ls_product_id>
+        <product_title>Emory Clutch Wallet- BLACK</product_title>
+        <cost>48.75</cost>
+        <shipping_cost>12.23</shipping_cost>
+        <tracking_number>7310723125248463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>688858</po_number>
+        <first_name>Glenda</first_name>
+        <last_name>Geisler</last_name>
+        <client_street>101-17th Avenue S.W</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2G1H2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_APPMC769C-A</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD510C-A</ls_product_id>
+        <product_title>iPad with Retina display Wi-Fi 16GB - BLACK</product_title>
+        <cost>423.66</cost>
+        <shipping_cost>20.87</shipping_cost>
+        <tracking_number>7310723959600451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>697269</po_number>
+        <first_name>George</first_name>
+        <last_name>Etches</last_name>
+        <client_street>6200 Tomken Road</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5T1X7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_KTABCG11</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KTABCG11</ls_product_id>
+        <product_title>Coffee Grinder</product_title>
+        <cost>40.0</cost>
+        <shipping_cost>8.74</shipping_cost>
+        <tracking_number>7310723005609469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>698758</po_number>
+        <first_name>Sylvain</first_name>
+        <last_name>Morin</last_name>
+        <client_street>1198  rue principale</client_street>
+        <client_city>St-Côme-Liniere</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>g0m1j0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_KEUKUB60</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KEUKUB60</ls_product_id>
+        <product_title>Special Edition Brewer</product_title>
+        <cost>142.24</cost>
+        <shipping_cost>22.63</shipping_cost>
+        <tracking_number>7310723974103456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>699038</po_number>
+        <first_name>Sepehr</first_name>
+        <last_name>Dijouri</last_name>
+        <client_street>352 PARKWOOD AVE</client_street>
+        <client_city>BRADFORD</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3Z2W9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_ALUF07SF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUF07SF</ls_product_id>
+        <product_title>7" Digital Photo Frame with Auto Slideshow Feature</product_title>
+        <cost>39.26</cost>
+        <shipping_cost>11.11</shipping_cost>
+        <tracking_number>7310723053438462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>699186</po_number>
+        <first_name>Benoit.</first_name>
+        <last_name>Richard</last_name>
+        <client_street>8101 Elmslie</client_street>
+        <client_city>LaSalle</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H8N2W6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_KTAKSB1575MC</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>KTAKSB1575MC</ls_product_id>
+        <product_title>5 Speed Stand Blender</product_title>
+        <cost>126.5</cost>
+        <shipping_cost>13.93</shipping_cost>
+        <tracking_number>7310723017086463</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>699186</po_number>
+        <first_name>Benoit.</first_name>
+        <last_name>Richard</last_name>
+        <client_street>8101 Elmslie</client_street>
+        <client_city>LaSalle</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H8N2W6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_BKS22098</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BKS22098</ls_product_id>
+        <product_title>Small Square Shaped Hoop Earrings  in Sterling Silver</product_title>
+        <cost>87.5</cost>
+        <shipping_cost>6.84</shipping_cost>
+        <tracking_number>7310723951482451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>1178423</po_number>
+        <first_name>Tonia</first_name>
+        <last_name>Townsend</last_name>
+        <client_street>9-2180 South Wellington rd</client_street>
+        <client_city>nanaimo</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>v9x1v8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_DELEC702</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>DELEC702</ls_product_id>
+        <product_title>Stainless Steel Pump Espresso Maker</product_title>
+        <cost>181.13</cost>
+        <shipping_cost>26.23</shipping_cost>
+        <tracking_number>7310723847743451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>692797</po_number>
+        <first_name>corrie</first_name>
+        <last_name>tesselaar</last_name>
+        <client_street>1563 bungay rd</client_street>
+        <client_city>HUNTER RIVER</client_city>
+        <client_province>PE</client_province>
+        <client_postal_code>c0a1n0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_LOGMK320</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>LOGMK320</ls_product_id>
+        <product_title>Logitech MK320 Wireless Desktop</product_title>
+        <cost>49.96</cost>
+        <shipping_cost>20.32</shipping_cost>
+        <tracking_number>7310723828489453</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>693138</po_number>
+        <first_name>Mitch</first_name>
+        <last_name>Merrithew</last_name>
+        <client_street>29 Casewood Dr</client_street>
+        <client_city>fredericton</client_city>
+        <client_province>NB</client_province>
+        <client_postal_code>e3c2l6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SEASTBV1000100</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SEASTBV1000100</ls_product_id>
+        <product_title>Expansion Portable Hard Drive 1TB</product_title>
+        <cost>102.47</cost>
+        <shipping_cost>13.76</shipping_cost>
+        <tracking_number>7310723793368456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>699636</po_number>
+        <first_name>Steeve</first_name>
+        <last_name>Gamache</last_name>
+        <client_street>85 rue gatineau</client_street>
+        <client_city>Granby</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>j2j0p1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_MAX190544</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>MAX190544</ls_product_id>
+        <product_title>In-Ear Stereo Headphones</product_title>
+        <cost>6.0</cost>
+        <shipping_cost>10.76</shipping_cost>
+        <tracking_number>7310723776616451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>700280</po_number>
+        <first_name>ralph</first_name>
+        <last_name>kaeufer</last_name>
+        <client_street>577 pinedale avenue</client_street>
+        <client_city>burlington</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L7L3W5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_ALUABS03F</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUABS03F</ls_product_id>
+        <product_title>Portable Bluetooth/USB/3.5mm Wireless Speaker</product_title>
+        <cost>37.68</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723818172457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>696771</po_number>
+        <first_name>Sylvain</first_name>
+        <last_name>Morin</last_name>
+        <client_street>1198  rue principale</client_street>
+        <client_city>St-Côme-Liniere</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>g0m1j0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_INT515718Q</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>INT515718Q</ls_product_id>
+        <product_title>Queen Size Rising Comfort Air Bed</product_title>
+        <cost>119.98</cost>
+        <shipping_cost>21.62</shipping_cost>
+        <tracking_number>7310723635271456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>699149</po_number>
+        <first_name>Glen</first_name>
+        <last_name>Baker</last_name>
+        <client_street>APPLE AUTO GLASS</client_street>
+        <client_city>Halifax</client_city>
+        <client_province>NS</client_province>
+        <client_postal_code>B3K4X1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_DELEC860</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>DELEC860</ls_product_id>
+        <product_title>Stainless Steel Pump Espresso Maker with Milk Frother</product_title>
+        <cost>507.15</cost>
+        <shipping_cost>35.24</shipping_cost>
+        <tracking_number>7310723586142454</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>699884</po_number>
+        <first_name>freddy</first_name>
+        <last_name>martinez</last_name>
+        <client_street>7C Forester crescent</client_street>
+        <client_city>Nepean</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2h8y1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_JJJ5167WH</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>JJJ5167WH</ls_product_id>
+        <product_title>White Digital Scale</product_title>
+        <cost>51.99</cost>
+        <shipping_cost>9.04</shipping_cost>
+        <tracking_number>7310723666519459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>700159</po_number>
+        <first_name>Sylvain</first_name>
+        <last_name>Morin</last_name>
+        <client_street>1198  rue principale</client_street>
+        <client_city>St-Côme-Liniere</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>g0m1j0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_APPMD513C-A</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD513C-A</ls_product_id>
+        <product_title>iPad with Retina display Wi-Fi 16GB - WHITE</product_title>
+        <cost>395.55</cost>
+        <shipping_cost>20.82</shipping_cost>
+        <tracking_number>7310723658530455</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>700168</po_number>
+        <first_name>Elisabeth</first_name>
+        <last_name>Poulin</last_name>
+        <client_street>321</client_street>
+        <client_city>Beauceville</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G5X2Z4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_SMGT210RZ</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGT210RZ</ls_product_id>
+        <product_title>Galaxy Tab 3 7'' 8GB</product_title>
+        <cost>215.06</cost>
+        <shipping_cost>13.61</shipping_cost>
+        <tracking_number>7310723657897450</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>700169</po_number>
+        <first_name>Bob</first_name>
+        <last_name>Henry</last_name>
+        <client_street>1350 St. John Street</client_street>
+        <client_city>Regina</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S4R1S3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_APPMD721CA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD721CA</ls_product_id>
+        <product_title>New iPod Touch 64GB - SILVER</product_title>
+        <cost>391.91</cost>
+        <shipping_cost>19.99</shipping_cost>
+        <tracking_number>7310723665107459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>700237</po_number>
+        <first_name>DOMINIC</first_name>
+        <last_name>BLACKBURN</last_name>
+        <client_street>976 BOULVARD STE-GENEVIEVE</client_street>
+        <client_city>CHICOUTIMI NORD</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G7G2G4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>OR_ALUAPS01F</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUAPS01F</ls_product_id>
+        <product_title>Bump External Speaker</product_title>
+        <cost>19.36</cost>
+        <shipping_cost>7.89</shipping_cost>
+        <tracking_number>7310723664826450</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+</shipped_orders>

@@ -1,0 +1,12 @@
+package com.loyauty.dao;
+
+
+
+import com.loyauty.model.Brand;
+
+
+public interface BrandDao extends BasicGenericDao<Brand, Long> {
+
+
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/loyaltySource_lib/src/com/loyauty/utility/ProductCatalogToXLS.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CAPTURE_IN_FILE" value="C:\ProductCatalogXLS_Eclipse.log"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.loyauty.utility.ProductCatalogToXLS"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="loyaltySource_lib"/>
+</launchConfiguration>

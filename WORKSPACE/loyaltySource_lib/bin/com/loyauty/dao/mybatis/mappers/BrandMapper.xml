@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    
+    
+ 
+<mapper namespace="com.loyauty.dao.mybatis.mappers.BrandMapper">
+
+	<resultMap type="Long" id="categoryGroupListResultMap">
+		<id property="categoryGroupId" column="categoryGroupId"/>
+	</resultMap>
+		
+	<resultMap id="valueIdsMap" type="java.lang.Long">
+    	<result property="categoryGroupId" column="categoryGroupId" /> 
+	</resultMap>
+	
+	<resultMap type="Brand" id="brandResultMap">
+		<id property="id" column="brandId"/>
+		<association property="image" javaType="Image" resultMap="ImageMapper.imageResultMap" />
+		<collection property="categoryGroupId" column="brandId" javaType="ArrayList" select="getAllBrandCategoryGroup"/>
+		
+		<!-- <collection property="categoryGroupId" javaType="ArrayList" column="id" select="getAllBrandCategoryGroup"/> -->
+	</resultMap>	
+
+	
+	<sql id="select">
+		select  br.id as brandId,
+				br.name as name,
+				br.image_id as image,
+				br.description as description,
+				br.creation_date as creationDate,
+				br.code as code,
+				br.hide as hide,
+				br.satisfact as satisfact,
+				im.id as imageId,
+				im.name as imageName,
+				im.real_name as realNameImg,
+				im.type_id as type, 
+				im.size, 
+				im.height, 
+				im.width, 
+				im.large, 
+				im.resolution,
+				im.score, 
+				bcg.category_group_id	as categoryGroupId
+		FROM brand br			
+		left join image im on (br.image_id = im.id )	
+		left join brand_category_group bcg on(bcg.brand_id = br.id)
+	</sql>
+   	<sql id="whereId">where br.id = #{id}</sql>
+   	<sql id="whereName">where br.name = #{name}</sql>
+   	
+   	<select id="getEntity" resultMap="brandResultMap">
+		<include refid="select"/>		
+      	<include refid="whereId"/>
+	</select>
+	
+	<select id="getEntityByName" resultMap="brandResultMap">
+		<include refid="select"/>		
+      	<include refid="whereName"/>
+	</select>
+	
+	<select id="getEntityByCode" parameterType="Brand" resultMap="brandResultMap">
+		<include refid="select"/>		
+      	where lower(br.code) = lower(#{code})
+      	<if test="id != null">
+      	      and br.id <![CDATA[<>]]> #{id}
+      	</if>
+	</select>
+	
+	<select id="getAllEntities" resultMap="brandResultMap">
+		<include refid="select"/>
+		order by br.name				      	
+	</select>
+	
+	<select id="getAllBrandByCategoryGroup" parameterType="Long" resultMap="brandResultMap">
+		<include refid="select"/>
+		where bcg.category_group_id = #{categoryGroupId} 
+		      and (select count(*) 
+		           from product p
+		           where p.brand_id = br.id) > 0
+		order by br.name
+	</select>
+	
+	<select id="getAllBrandCategoryGroup" parameterType="Long" resultMap="valueIdsMap">		
+		select 	bcg.category_group_id as categoryGroupId
+		from 	brand_category_group bcg
+		where 	bcg.brand_id =  #{brandId}
+	</select>	
+		
+		<insert id="insertCatG" parameterType="BrandCategoryGroup">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('brand_category_group_id_seq')
+    	</selectKey>
+		insert into brand_category_group(id, brand_id, category_group_id)
+		values(#{id}, #{brandid}, #{idCategoryGroup})	
+	</insert>
+	
+	<insert id="insertEntity" parameterType="Brand">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('brand_id_seq')
+    	</selectKey>
+		insert into brand(id, name, image_id, description, code,satisfact)
+		values(#{id}, #{name}, #{image.id}, #{description}, #{code},#{satisfact})	
+	</insert>
+	
+
+	<update id="updateEntity" parameterType="Brand">
+		update brand set name=#{name}, 
+						 image_id=#{image.id}, 
+						 description=#{description},
+						 code=#{code},
+						 satisfact=#{satisfact}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteEntity" parameterType="long">
+		delete from brand br
+		<include refid="whereId"/>
+	</delete>  
+
+  	<delete id="deleteCatG" parameterType="long">
+		delete from brand_category_group bcg
+		where bcg.brand_id = #{id}
+	</delete>  
+
+
+</mapper>

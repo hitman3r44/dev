@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    
+    
+ 
+<mapper namespace="com.loyauty.dao.mybatis.mappers.CategoryMapper">
+
+
+	<resultMap type="Long" id="categoryBrandEntryResultMap">
+		<id property="brandsId" column="brandsId"/>
+	</resultMap>
+
+	<resultMap type="Category" id="categoryResultMap">
+		<id property="id" column="categoryId"/>		
+		<collection property="brandsId" ofType="ArrayList" resultMap="categoryBrandEntryResultMap" />
+	</resultMap>	
+	
+	<sql id="select">
+		select  ca.id as categoryId,
+				ca.category_group_id as categoryGoupeId,
+				ca.name as name,
+				ca.code as code,
+				ca.description as description,
+				ca.creation_date as creationDate,
+				bc.brand_Id as brandsId
+		from category ca
+		left join brand_category bc on bc.category_id = ca.id	
+	</sql>	
+	
+   	<sql id="whereId">where ca.id = #{id}</sql>
+   	<sql id="whereName">where ca.name = #{name}</sql>
+   	
+   	<select id="getEntity" resultMap="categoryResultMap">
+		<include refid="select"/>		
+      	<include refid="whereId"/>
+	</select>
+	
+	<select id="getEntityByName" resultMap="categoryResultMap">
+		<include refid="select"/>		
+      	<include refid="whereName"/>
+	</select>
+	
+	<select id="getAllEntities" resultMap="categoryResultMap">
+		<include refid="select"/>
+		order by ca.name			      	
+	</select>
+	
+	<select id="getCategoriesByBrand" resultMap="categoryResultMap" parameterType="long">
+		<include refid="select"/>
+		where bc.brand_id = #{id}
+		order by ca.name
+	</select>
+	
+	<select id="getCategoryByName" parameterType="long" resultMap="categoryResultMap">
+		<include refid="select"/>
+		where ca.name ilike #{name}
+	</select>
+	
+	<select id="getCategoryGroupId" parameterType="long" resultType="long">
+		select c.category_group_id
+		from category c
+		where c.id = #{id}
+	</select>
+	
+	<insert id="insertEntity" parameterType="Brand">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('category_id_seq')
+    	</selectKey>
+		insert into category(id, category_group_id, name, code, description, creation_date)
+		values(#{id}, #{categoryGoupeId}, #{name}, #{code}, #{description}, #{creationDate})	
+	</insert>
+	
+	<insert id="insertCategoryBrands" parameterType="CategoryBrand">
+		insert into brand_category(category_id, brand_id)
+		values(#{categoryId}, #{brandId})
+	</insert>
+
+	<update id="updateEntity" parameterType="Brand">
+		update category ca set name=#{name}, category_group_id=#{categoryGoupeId}, code=#{code}, description=#{description}, creation_date=#{creationDate}
+		<include refid="whereId"/>
+	</update>
+	
+	
+	<delete id="deleteEntity" parameterType="long">
+		delete from category 
+		<include refid="whereId"/>
+	</delete>  
+	
+	<delete id="deleteCategoryBrandByCategoryId" parameterType="long">
+		delete from brand_category bc 
+		where category_id = #{id}
+	</delete>
+</mapper>

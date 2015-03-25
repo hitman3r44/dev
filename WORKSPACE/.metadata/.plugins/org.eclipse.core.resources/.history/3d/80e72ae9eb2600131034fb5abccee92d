@@ -1,0 +1,686 @@
+package com.loyauty.web.struts.action.orders;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
+import javax.servlet.http.HttpSession;
+import lombok.Getter;
+import lombok.Setter;
+
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.model.Orders;
+import com.loyauty.model.OrdersRows;
+import com.loyauty.model.User;
+import com.loyauty.service.core.DTOFactory;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.OrdersDTO;
+import com.loyauty.service.core.dto.UserProductPriceDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.orders.OrdersService;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+import com.loyauty.web.struts.action.LoyautyAction;
+
+public class ReportOrders  extends LoyautyAction {
+	private static final long serialVersionUID = -3811760851445730062L;
+	
+	private UserService userService;
+	private ProductService productService;
+	private OrdersService orderService;
+	@Getter @Setter
+	private String userLogin;
+	@Getter @Setter
+	private List<User> usersList;
+	private static int USER_TYPE = 2;
+	@Getter @Setter
+	List<OrdersDTO>listOrdersDTO;
+	@Getter @Setter
+	private String lsOrderId;
+	@Getter @Setter
+	Long poYpop;
+	@Getter @Setter
+	Long poXpop;
+	@Getter @Setter
+	private Long pageTop=0L;
+	@Getter @Setter
+	private Date creationDate ;
+	@Getter @Setter
+	private Long findOrdersSignal;
+	private String status;
+	@Getter @Setter
+	private Long sizeResult=0L;
+	@Getter @Setter
+	private Long sorting;
+	@Getter @Setter
+	private Long sortingOrdersSignal;
+	@Getter @Setter
+	private Integer fieldForSorting;
+	@Getter @Setter
+	private Integer asc;
+	@Getter @Setter
+	private Integer scrollDivRowsLeft;
+	@Getter @Setter
+	private Integer scrollPageLeft;
+	@Getter @Setter
+	private Integer scrollDivRowsTop;
+	@Getter @Setter
+	private String strCreationDateStart;
+	@Getter @Setter
+	private String strCreationDateEnd;
+	@Getter @Setter
+	private Date creationDateStart;
+	@Getter @Setter
+	private Date creationDateEnd ;
+	private Date creationDateStartArg;
+	private Date creationDateEndArg ;
+	@Getter @Setter
+	private Integer selectedStatus;
+	@Getter @Setter
+	private Long editOrderSignal;
+	@Getter @Setter
+	private Long cancelSignal;
+	@Getter @Setter
+	private Integer indexOrder;
+	@Getter @Setter
+	private OrdersDTO orderToEdit;
+	@Getter @Setter
+	private String strProductOrderDate;
+	@Getter @Setter
+	private String lsProductID;
+	@Getter @Setter
+	Integer indexRow;
+	@Getter @Setter
+	private String showOrderDetailPop;
+	@Getter @Setter
+	private Long userId;
+	@Getter @Setter
+	private Long checkProductPriceSignal;
+	@Getter @Setter
+	private Long saveTemporaryRowSignal;
+	@Getter @Setter
+	private Long addSimilarRowSignal;
+	@Getter @Setter
+	private Long deleteRowSignal;
+	@Getter @Setter
+	private Long saveOrdersSignal;
+	@Getter @Setter
+	private Long checkBoxPrintSignal;
+	@Getter @Setter
+	private Boolean checkBoxPrint;
+	
+	//recovery Data Order
+	@Getter @Setter
+	private String clientLastName;
+	@Getter @Setter
+	private String clientFirstName;
+	@Getter @Setter
+	private String clientOtherNames;
+	@Getter @Setter
+	private String clientStreet;
+	@Getter @Setter
+	private String  clientOtherStreet;
+	@Getter @Setter
+	private String  clientCity;
+	@Getter @Setter
+	private String  clientProvince;
+	@Getter @Setter
+	private String  clientPostalCode;
+	@Getter @Setter
+	private String  clientPhone;
+	@Getter @Setter
+	private String  clientEmail;
+	@Getter @Setter
+	private String productOrderNumber;
+	@Getter @Setter
+	private String strRequiredDate;
+	
+	//recovery data row
+	@Getter @Setter
+	private Double quantity ;
+	@Getter @Setter
+	private Double quantityToChange;
+	@Getter @Setter
+	private Double stock;
+	@Getter @Setter
+	private String productDescription;
+	@Getter @Setter
+	private Double unitPrice;
+	@Getter @Setter
+	private Double shippingFee;
+	@Getter @Setter
+	private String shippingCompany;
+	@Getter @Setter
+	private String trackingNumber;
+	@Getter @Setter
+	private Long quantityToChangeSignal;
+	@Getter @Setter
+	private Long duplicateOrderSignal;
+	@Getter @Setter
+	private String strCreationDate;
+	@Getter @Setter
+	private String strCreationOrderDate;
+	@Getter @Setter
+	private User usr;
+	@Getter @Setter
+	private String showSaveSuccessPop="visibility:hidden;display:none;";
+	//showSaveSuccessPop="display:block;visibility:visible;";
+	//showSaveSuccessPop="visibility:hidden;display:none;";
+	@Getter @Setter
+	private String message;
+	@Getter @Setter
+	private Long okSaveSuccessPopSignal;
+
+	/*=========================================================================================
+										Default constructor
+	  =========================================================================================*/
+	public  ReportOrders() throws ServiceLocatorException {
+		super();	 
+		userService = getServiceLocator().getUserService();
+		orderService = getServiceLocator().getOrderService();
+		productService = getServiceLocator().getProductService();
+	}
+	/*=========================================================================================
+	 									method execute
+	  =========================================================================================*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public String execute() throws Exception {
+		HttpSession session = request.getSession(true);
+		if(showOrderDetailPop==null)showOrderDetailPop="visibility:hidden;display:none;";
+		if(poYpop==null)poYpop=100L;
+		if(poXpop==null)poXpop=100L;
+		Hashtable<String, OrdersDTO>hashOrders;
+		if(selectedStatus==null)selectedStatus=-1;
+		sizeResult=(Long)session.getAttribute("sizeResult");
+		asc=(Integer)session.getAttribute("asc");
+		if(asc==null)asc=0;
+		if(sizeResult==null)sizeResult=0L;
+		List<Integer>listIndexColumn=new ArrayList<Integer>();
+		try {
+	
+			/*-------------------- recovery users list -----------------------------------
+							Recovery users list in session
+			 -----------------------------------------------------------------------------*/
+			BasicUserDTO basicUserDTO = new BasicUserDTO();
+			basicUserDTO.setTypeId(USER_TYPE);
+			List<User> usersListSession=(List<User>)session.getAttribute("usersListSession");
+			if(usersListSession==null){
+				List<UserSessionDTO> listAllUsers= userService.getAllUsers(basicUserDTO);
+				usersList=new ArrayList<User>();
+				for(UserSessionDTO userDTO:listAllUsers){
+					User user=new User();
+					user.setId(userDTO.getId());
+					user.setLogin(userDTO.getLogin());
+					usersList.add(user);
+				}
+				session.setAttribute("usersListSession",usersList);
+			}else usersList=usersListSession;
+
+			/*------ always recovery creationDate from strCreationDate ------
+						always keep the user search options
+			  ---------------------------------------------------------------*/
+			creationDateStart=null;
+			SimpleDateFormat frm = new SimpleDateFormat("dd/MM/yyyy");
+			if (((strCreationDateStart)!=null)&&(!"".equals(strCreationDateStart))){
+    			try {
+    				Date date = frm.parse(strCreationDateStart);
+    				creationDateStart=date;
+    				creationDateStartArg=date;
+    			}
+    			catch (Exception pe) {
+    				creationDateStart=null;
+    				addActionError("Please enter a date in the correct format");
+    			}
+    		}
+    		if(creationDateStart==null){
+				Date date = frm.parse("01/01/1900");
+				creationDateStartArg=date;
+    		}
+    		creationDateEnd=null;
+    		if (((strCreationDateEnd)!=null)&&(!"".equals(strCreationDateEnd))){
+    			frm = new SimpleDateFormat("dd/MM/yyyy");
+    			try {
+    				Date date = frm.parse(strCreationDateEnd);
+    				creationDateEnd=date;
+    				creationDateEndArg=date;
+    			}
+    			catch (Exception pe) {
+    				creationDateEnd=null;
+    				addActionError("Please enter a date in the correct format");
+    			}
+    		}
+    		if(creationDateEnd==null){
+    			creationDateEndArg=new Date();
+    		}
+
+			/*------ always recovery Status from selectedStatus key ------
+						always keep the status search options
+			  ---------------------------------------------------------------*/
+    		switch (selectedStatus) {
+				case -1:status="";
+					break;
+				case 0:status="open";
+					break;
+				case 1:status="progress";
+					break;
+				case 2:status="shipped";
+					break;
+				case 3:status="billed";
+					break;
+			}
+
+			/*------------ When Admin click on icon findOrders.png ----------
+								check user and complete infos client
+			 ----------------------------------------------------------------*/
+			if(findOrdersSignal!=null && findOrdersSignal!=0L){	
+				listIndexColumn=new ArrayList<Integer>();
+				for(int i=0;i<=32;i++){
+					if(i!=2 && i<=12){
+						listIndexColumn.add(i);
+						if(i!=0)listIndexColumn.add(-i);
+					}
+					if(i==28 || i==29 || i==32){
+						listIndexColumn.add(i);
+						listIndexColumn.add(-i);
+					}
+				}			
+				listOrdersDTO=orderService.searchOrdersWithOptionsAndSorting(creationDateStartArg, creationDateEndArg, userLogin, lsOrderId, status, listIndexColumn);
+				session.setAttribute("listIndexColumn",listIndexColumn);
+				session.setAttribute("sizeResult",sizeResult);
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				return SUCCESS;
+			}
+
+			/*------------ When Admin click on the icon sorting of column ----------
+							seach result with option of sorting list
+			 -----------------------------------------------------------------------*/
+			if(sortingOrdersSignal!=null && sortingOrdersSignal!=0L){	
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				listIndexColumn=(List<Integer>)session.getAttribute("listIndexColumn");
+				asc=(asc==1?-1:1);
+				int nextElement=listIndexColumn.get(0);
+				fieldForSorting=asc*fieldForSorting;
+				listIndexColumn.set(0,fieldForSorting);
+				for(int i=1;i<listIndexColumn.size();i++){
+					int element=listIndexColumn.get(i);
+					listIndexColumn.set(i,nextElement);
+					nextElement=element;
+				}	
+				listOrdersDTO=orderService.searchOrdersWithOptionsAndSorting(creationDateStartArg, creationDateEndArg, userLogin, lsOrderId, status, listIndexColumn);
+				int balance=0;
+				int OrderIndex=0;
+				for(OrdersDTO orDTO: listOrdersDTO){
+					balance=(balance==1?0:1);
+					if(balance==1){
+						orDTO.setCssStyle("background-color: rgb(245,249,252);border-right: 1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:  1px solid #CCCCCC;");
+					}else{
+						orDTO.setCssStyle("background-color: color:white;border-right:1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:1px solid #CCCCCC;");
+					}
+					orDTO.setIndex(OrderIndex); 
+					OrderIndex++;
+				}
+				session.setAttribute("listIndexColumn",listIndexColumn);
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				session.setAttribute("asc", asc);
+				return SUCCESS;
+			}
+
+			/*------ when Admin click on the lsOrder link in table -----------
+			show popup detail and allow admin to update Order
+			  ---------------------------------------------------------------*/
+			if (editOrderSignal!=null && editOrderSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				if(orderToEdit==null)orderToEdit=new OrdersDTO();
+				if(orderToEdit.getProductOrderDate()==null)strProductOrderDate="";
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*--- when Admin click on the cancel Button of orderDetailPop ---
+					we mast just hide popup OrderDetail
+			  ---------------------------------------------------------------*/
+    		if (cancelSignal!=null && cancelSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				showOrderDetailPop="visibility:hidden;display:none;";
+    			return SUCCESS;
+    		}
+
+			/*-------------------- When Admin left lsProduct TextField -------------
+								check userPrice in DB, and write it in web view
+			 -----------------------------------------------------------------------------*/
+			if(checkProductPriceSignal!=null && checkProductPriceSignal!=0L){
+				listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderDTOToUpdate=listOrdersDTO.get(indexOrder);
+				orderDTOToUpdate=fillDataOrderDTO(orderDTOToUpdate);
+				OrdersRows orderRowToUpadate=orderDTOToUpdate.getRowsList().get(indexRow);
+				UserProductPriceDTO userProductPrice=productService.getUsrPPriceByLsproductId(userId, lsProductID);
+				orderRowToUpadate.setCss("");
+				orderRowToUpadate.setCssPrice("");
+				if(userProductPrice==null){
+					orderRowToUpadate.setCss("background-color:red;");
+					orderRowToUpadate.setProductDescription(""); 
+					orderRowToUpadate.setStock(null);
+					orderRowToUpadate.setProductId(null);
+					orderRowToUpadate.setLsProductID(lsProductID);
+					orderRowToUpadate.setLsPrice(null);
+				}else{
+					Double usrPrice=orderRowToUpadate.getUnitPrice();
+					if(usrPrice==null)usrPrice=0D;
+					if(usrPrice < userProductPrice.getPriceNum()){
+						orderRowToUpadate.setCssPrice("background-color:red;");	
+					}
+					orderRowToUpadate.setProductDescription(userProductPrice.getProductTitle());
+					orderRowToUpadate.setStock(userProductPrice.getStock());
+					orderRowToUpadate.setProductId(userProductPrice.getProductId());
+					orderRowToUpadate.setLsProductID(userProductPrice.getLsProductId());
+					orderRowToUpadate.setLsPrice(userProductPrice.getPriceNum());
+					System.out.println("userProductPrice.getLsProductId():"+userProductPrice.getLsProductId());
+				}
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				orderToEdit=orderDTOToUpdate;
+				listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*----------------- When Admin check on saveTemporaryRow Icon --------------------------
+					we must first obtained the object that contains the list of rows,
+					after we accede to the row by index recovered by web view and change it
+			 ---------------------------------------------------------------------------------------*/
+			if(saveTemporaryRowSignal!=null && saveTemporaryRowSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderDTOToUpdate=listOrdersDTO.get(indexOrder);
+				orderDTOToUpdate=fillDataOrderDTO(orderDTOToUpdate);
+				OrdersRows orderRowToSaveMemory=orderDTOToUpdate.getRowsList().get(indexRow);
+				orderRowToSaveMemory.setIcon("images/orders/itemValidated.png");
+				if(orderRowToSaveMemory!=null){
+					orderRowToSaveMemory.setQuantity(quantity); 
+					orderRowToSaveMemory.setLsProductID(lsProductID);
+					orderRowToSaveMemory.setProductDescription(productDescription);
+					orderRowToSaveMemory.setUnitPrice(unitPrice);
+					orderRowToSaveMemory.setCssPrice("background-color:#FF6666;");
+					orderRowToSaveMemory.setCssQuantity("background-color:#FF6666;");
+					if(quantity!=null && quantity>0D)orderRowToSaveMemory.setCssQuantity("");
+					if(unitPrice!=null && orderRowToSaveMemory.getLsPrice()!=null
+					  && unitPrice>=orderRowToSaveMemory.getLsPrice())
+					  orderRowToSaveMemory.setCssPrice("");
+					orderRowToSaveMemory.setShippingFee(shippingFee);
+					orderRowToSaveMemory.setShippingCompany(shippingCompany);
+					orderRowToSaveMemory.setTrackingNumber(trackingNumber);	
+					int indexOrder=0;
+					int indexRow=0;
+					for(OrdersDTO orderDTO:listOrdersDTO){
+						orderDTO.setIndex(indexOrder);
+						indexOrder++;
+						indexRow=0;
+						for(OrdersRows orderRows:orderDTO.getRowsList()){
+							orderRows.setIndex(indexRow);
+							indexRow++;
+						}
+					}
+					session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+					listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				}
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*------- When Admin click on addSimilarRow Icon on the OrderDetailPop --------
+								Add one Row Similar at the previews
+			  -----------------------------------------------------------------------------*/
+			if(addSimilarRowSignal!=null && addSimilarRowSignal!=0L){
+				listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderDTOToUpdate=listOrdersDTO.get(indexOrder);
+				//generate lsOrderId to new order
+				orderDTOToUpdate=fillDataOrderDTO(orderDTOToUpdate);
+				OrdersRows orderRowToClone=orderDTOToUpdate.getRowsList().get(indexRow);
+				if(orderRowToClone!=null){
+					if(!orderRowToClone.getIcon().equals("images/orders/itemValidated.png")){
+						orderRowToClone.setQuantity(quantity); 
+						orderRowToClone.setLsProductID(lsProductID);
+						orderRowToClone.setStock(stock);
+						orderRowToClone.setProductDescription(productDescription);
+						orderRowToClone.setUnitPrice(unitPrice);
+						orderRowToClone.setShippingFee(shippingFee);
+						orderRowToClone.setShippingCompany(shippingCompany);
+						orderRowToClone.setTrackingNumber(trackingNumber);
+					}
+					orderRowToClone.setIcon("images/orders/itemValidated.png");
+					OrdersRows orderRowToAdd=DTOFactory.getOrderRowClone(orderRowToClone);
+					orderRowToAdd.setId(-1L);
+					
+					orderDTOToUpdate.getRowsList().add(indexRow+1,orderRowToAdd);
+					int indexOrder=0;
+					int indexRow=0;
+					for(OrdersDTO orderDTO:listOrdersDTO){
+						orderDTO.setIndex(indexOrder);
+						indexOrder++;
+						indexRow=0;
+						for(OrdersRows orderRows:orderDTO.getRowsList()){
+							orderRows.setIndex(indexRow);
+							indexRow++;
+						}
+					}
+					session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+					listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				}
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*-------- When Admin click on Delete Row Icon of orderDetail Popup-----------
+									Delete this row using index
+			 -----------------------------------------------------------------------------*/
+			if(deleteRowSignal!=null && deleteRowSignal!=0L){
+				listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderDTO=listOrdersDTO.get(indexOrder);
+				orderDTO=fillDataOrderDTO(orderDTO);
+				int nb=orderService.nbOrderRowsNotDeleted(orderDTO.getRowsList());
+				if(orderDTO!=null && orderDTO.getRowsList().size()>1){
+					for(int i=0 ;i<orderDTO.getRowsList().size();i++){
+						if(i==indexRow && nb>1){
+							orderDTO.getRowsList().get(i).setToDelete(1);
+							break;
+						}
+					}
+				}
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*------ when Admin click on the button save of orderDetail ------
+					 save order and keep pup showed 
+			  ---------------------------------------------------------------*/
+    		if (saveOrdersSignal!=null && saveOrdersSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				orderToEdit=fillDataOrderDTO(orderToEdit);
+				orderService.updateOrderByLsOrderId(orderToEdit);
+				for(OrdersRows row:orderToEdit.getRowsList()){
+					if(row.getId()==-1)row.setId(0L);
+				}
+				orderToEdit=DTOFactory.getOrderDTOConsideredMissingInfo(orderToEdit);
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				message="Saving has completed successfuly";
+				showSaveSuccessPop="display:block;visibility:visible;";
+				showOrderDetailPop="display:block;visibility:visible;";
+    			return SUCCESS;
+    		}
+
+			/*------ When user change Quantity to split in orderDetailPop ----------
+					 prepare order to split from two other orders witch
+				 	 one must have a lsOrder with underscore 
+	 		 -----------------------------------------------------------------------*/
+			if(quantityToChangeSignal!=null && quantityToChangeSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderToChangeQt=listOrdersDTO.get(indexOrder);
+				OrdersRows orderRow=orderToChangeQt.getRowsList().get(indexRow);
+				orderToChangeQt=fillDataOrderDTO(orderToChangeQt);
+				if(quantityToChange<orderRow.getQuantity())orderRow.setQuantityToSplit(quantityToChange);
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				listOrdersDTO=(List<OrdersDTO>)session.getAttribute("listOrdersDTOReport");
+				orderToEdit=listOrdersDTO.get(indexOrder);
+				showOrderDetailPop="display:block;visibility:visible;";
+				return SUCCESS;
+			}
+
+			/*-------------------- Duplicate Order ----------------------------------------
+							Create order in just in memory
+	 		 -----------------------------------------------------------------------------*/
+			if(duplicateOrderSignal!=null && duplicateOrderSignal!=0L){
+			listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+			OrdersDTO orderToClone=listOrdersDTO.get(indexOrder);
+			orderToClone=fillDataOrderDTO(orderToClone);
+			hashOrders=new Hashtable<String, OrdersDTO>();
+			for(OrdersDTO ord:listOrdersDTO){
+				hashOrders.put(ord.getLsOrderId(), ord);
+			}
+			OrdersDTO orderClone=DTOFactory.getOrderDTOSplitted(orderToClone);
+			if(orderClone!=null){
+				String lsOrder=orderClone.getLsOrderId();
+				String strlsOrder=orderService.generateLsOrderId(lsOrder, hashOrders);
+				orderClone.setLsOrderId(strlsOrder);//rgb(116,180,209)
+				orderClone.setCssStyle("background-color:#FFFF99;border-right: 1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:  1px solid #CCCCCC;");
+				orderToEdit=orderClone;
+				orderToEdit.setBackgroundColor("background-color:#FFFF99;");
+				listOrdersDTO.add(indexOrder+1,orderClone);
+				indexOrder=0;
+				for(OrdersDTO ord: listOrdersDTO){
+					ord.setIndex(indexOrder);
+					indexOrder++;
+				}
+				if(listOrdersDTO.size()>0){
+					session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				}
+				orderService.updateOrderByLsOrderId(orderToClone);
+				orderService.insertOrderWithRows(orderClone);			
+			}else orderToEdit=orderToClone;
+			showOrderDetailPop="display:block;visibility:visible;";
+			return SUCCESS;
+			}
+
+
+			/*-------------------- When user check print item -----------------------------
+					Add or remove this element from the orders to print
+	 		 -----------------------------------------------------------------------------*/
+			if(checkBoxPrintSignal!=null && checkBoxPrintSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				OrdersDTO orderDTOInList=listOrdersDTO.get(indexOrder);
+				orderDTOInList.setPrint(checkBoxPrint);
+				session.setAttribute("listOrdersDTOReport",listOrdersDTO);
+				return SUCCESS;
+			}
+
+			/*-------------------- When user check print item -----------------------------
+					Add or remove this element from the orders to print
+	 		 -----------------------------------------------------------------------------*/
+			if(okSaveSuccessPopSignal!=null && okSaveSuccessPopSignal!=0L){
+				listOrdersDTO=(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+				showSaveSuccessPop="visibility:hidden;display:none;";
+				showOrderDetailPop="visibility:hidden;display:none;";
+				return SUCCESS;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "input";
+		}
+	return SUCCESS;
+	}
+
+   /*=========================================================================================
+							fill all fields of order without rows
+	 =========================================================================================*/
+	public OrdersDTO fillDataOrderDTO(OrdersDTO orderDTO){
+		SimpleDateFormat frm = new SimpleDateFormat("dd/MM/yyyy");
+		//orderToEdit=listOrdersDTO.get(indexOrder);
+		orderDTO.setClientLastName(clientLastName);
+		orderDTO.setClientFirstName(clientFirstName);
+		orderDTO.setClientOtherNames(clientOtherNames); 
+		orderDTO.setClientStreet(clientStreet);
+		orderDTO.setClientOtherStreet(clientOtherStreet);
+		orderDTO.setClientCity(clientCity);
+		orderDTO.setClientProvince(clientProvince);
+		orderDTO.setClientProvince(clientProvince);
+		orderDTO.setClientPostalCode(clientPostalCode);
+		orderDTO.setClientPhone(clientPhone);
+		orderDTO.setClientEmail(clientEmail);			
+		orderDTO.setProductOrderNumber(productOrderNumber);
+		
+		
+		if (((strProductOrderDate)!=null)&&(!"".equals(strProductOrderDate))){
+			frm = new SimpleDateFormat("dd/MM/yyyy");
+			try {
+				Date date = frm.parse(strProductOrderDate);
+				orderDTO.setProductOrderDate(date);
+			}
+			catch (Exception pe) {
+				addActionError("Please enter a date in the correct format");
+			}
+		}
+		
+		if (((strCreationOrderDate)!=null)&&(!"".equals(strCreationOrderDate))){
+			frm = new SimpleDateFormat("dd/MM/yyyy");
+			try {
+				Date date = frm.parse(strCreationOrderDate);
+				orderDTO.setCreationDate(date);
+			}
+			catch (Exception pe) {
+				addActionError("Please enter a date in the correct format");
+			}
+		}
+		
+		if (((strRequiredDate)!=null)&&(!"".equals(strRequiredDate))){
+			frm = new SimpleDateFormat("dd/MM/yyyy");
+			try {
+				Date date = frm.parse(strRequiredDate);
+				orderDTO.setRequiredDate(date);
+			}
+			catch (Exception pe) {
+				addActionError("Please enter a date in the correct format");
+			}
+		}
+		return orderDTO;
+	}
+
+	/*=========================================================================================
+								generate LsOrderId
+	  =========================================================================================*/
+	public String generateLsOrderId(String argLsOrderID,HttpSession session){
+		Hashtable<String, String>lsOrdersIdHash=(Hashtable<String, String>)session.getAttribute("lsOrdersIdHash");
+		if(lsOrdersIdHash==null){
+			lsOrdersIdHash=new Hashtable<String, String>();
+			List<Orders> listOrders=null;
+			try {
+				listOrders = orderService.getAllOrders();
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			}
+			if(listOrders!=null){
+				for(Orders ord:listOrders){
+					lsOrdersIdHash.put(ord.getLsOrderId(), ord.getLsOrderId());
+				}
+			}
+		}
+		int inc=0;//increment
+        String lsOrderIdToGenerate=argLsOrderID;
+        while(lsOrdersIdHash.containsKey(lsOrderIdToGenerate)){
+        	inc++; 
+        	lsOrderIdToGenerate=argLsOrderID+"-"+inc;
+        }
+        lsOrdersIdHash.put(lsOrderIdToGenerate, lsOrderIdToGenerate);
+        session.setAttribute("lsOrdersIdHash", lsOrdersIdHash);
+        return lsOrderIdToGenerate;
+	}
+	
+
+}

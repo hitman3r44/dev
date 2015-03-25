@@ -1,0 +1,111 @@
+<project name="${loyaltySource_lib.app.name}" default="usage" basedir=".">
+
+    <description>Build Script to build the Layouty lib Project</description>
+
+    <property file="build.properties"/>
+
+	<path id="loyaltySource_lib.soap.classpath">
+	<pathelement location="${loyaltySource_lib.root}/SOAP/rating/bin"/>
+		<pathelement location="${loyaltySource_lib.root}/SOAP/rating/bin/ca/canadapost/cpcdp/rating"/>		
+		<pathelement location="${loyaltySource_lib.root}/SOAP/rating/bin/ca/canadapost/cpcdp/rating/stub"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/bin"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/conf"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axiom-api-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axiom-dom-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axiom-impl-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axis2-codegen-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axis2-kernel-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axis2-xmlbeans-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/commons-codec-1.3.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/commons-httpclient-3.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/commons-logging-1.1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/httpcore-4.0.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/neethi-3.0.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/wsdl4j-1.6.2.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/xmlbeans-2.3.0.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/XmlSchema-1.4.7.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/wss4j-1.5.12.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axis2-adb-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/axis2-transport-http-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/mail-1.4.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/commons-fileupload-1.2.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/woden-api-1.0M9.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/rampart-core-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/rampart-policy-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/xmlsec-1.4.5.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/rampart-trust-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/opensaml1-1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/opensaml-2.2.3.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/rampart/xmltooling-1.2.0.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/jaxen-1.1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.root}/third-party/lib/axis2/mex-1.6.1-impl.jar"/>
+    </path>
+
+    <path id="build.classpath">
+		<path refid="loyaltySource_lib.soap.classpath"/>
+        <fileset dir="${lib}" includes="*.jar"/>
+    	<fileset dir="${libdev}" includes="*.jar"/>
+    	<fileset dir="${libshared}" includes="jxl.jar"/>	
+    	<fileset dir="${libshared}" includes="*.jar"/>
+    </path>	
+
+    <!-- Useful shortcuts -->
+    <patternset id="meta.files">
+        <include name="**/*.xml"/>
+        <include name="**/*.properties"/>
+    </patternset>
+
+    <target name="usage">
+    <echo>
+    Usage: build [clean|compile|jar]
+    compile     -- compile all project files
+    clean   -- deletes the compiled classes and jar files
+    jar     -- build drp appservice and web related jar files
+    </echo>
+    </target>
+
+    <target name="clean"
+        description="deletes bytecode for clean build">
+        <delete dir="${dist}" />
+    </target>
+
+    <target name = "compile"
+     description = "compiles project files to ${classes.dest}">
+        <mkdir dir="${classes.dest}" />
+        <javac srcdir="${java.source.dir}"
+              destdir="${classes.dest}"
+             includes="**/*.java"
+         	classpathref="build.classpath" 
+                debug="${debug}"/>
+    </target>
+	
+	<!-- Copy metadata to build classpath -->
+	<target name="copymetafiles">
+	     <copy todir="${classes.dest}">
+	         <fileset dir="${java.resource.dir}">
+	             <patternset refid="meta.files"/>
+	         </fileset>
+		 </copy>
+	</target>
+
+    <target name="jar" depends="compile, copymetafiles"
+     description="jars the project files">
+    	<mkdir dir="${jar.dest}" />
+        <delete file = "${jar.dest}/${loyaltySource_lib.app.name}.jar"/>
+        <jar jarfile = "${jar.dest}/${loyaltySource_lib.app.name}.jar"
+             basedir = "${classes.dest}"
+            includes = "**/*.class" >
+    		<patternset refid="meta.files" />
+    	</jar>    	
+    </target>
+
+    <target name="javadoc">
+        <mkdir dir="docs/api"/>
+        <javadoc sourcepath="${java.source.dir}"
+                packagenames="com.loyaltySource.*"
+                destdir="docs/api">
+        </javadoc>
+    </target>
+
+</project>
+

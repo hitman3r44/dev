@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1414423542093_1" label="loyalty_mappers" name="loyalty_mappers">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib/resources/com" type="2"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1415663765934_2" label="admin" name="admin">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_admin" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418321412407_3" label="loyalty_web" name="loyalty_web">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418414311238_4" label="loy_lib" name="loy_lib">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418414335353_5" label="all" name="all">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_admin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424369981875_6" label="all_excpt_media" name="all_excpt_media">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/stylesheets" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/fancybox" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build.xml" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build.properties" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/.project" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/.settings" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build_old.properties_old" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/WEB-INF" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/src" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/test" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/resources" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/scripts" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build_old.xml_old" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/css" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/.classpath" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_admin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/lib" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/images" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/communications" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/META-INF" type="2"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1331313793742_0" label="Window Working Set" name="Aggregate for window 1328050774348"/>
+</workingSetManager>

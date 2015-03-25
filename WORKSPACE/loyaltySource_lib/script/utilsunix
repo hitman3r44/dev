@@ -1,0 +1,110 @@
+#/etc/rc.d/rc.local init truc
+
+#RSS IMPORT DEVSERVER
+cd /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib
+/usr/java/jdk1.6.0_16/bin/java -classpath /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/*:/usr/apache-tomcat-6.0.29/lib/* com.gamejab.cronjob.RssImport http://localhost/apache-solr-3.3.0/gameNameOr
+
+#RSS IMPORT production
+cd /usr/apache-tomcat-7.0.11/webapps/gamejab/WEB-INF/lib
+/usr/java/jdk1.6.0_24/bin/java -classpath /usr/apache-tomcat-7.0.11/webapps/gamejab/WEB-INF/lib/*:/usr/apache-tomcat-7.0.11/lib/* com.gamejab.cronjob.RssImport http://localhost/apache-solr-3.3.0/gameNameOr
+
+
+
+#executable Production
+cd /root/wars/
+/usr/java/jdk1.6.0_24/bin/java -classpath /root/wars/gamejab_lib.jar:/usr/apache-tomcat-7.0.11/lib/* com.gamejab.cronjob.Test
+#executable Devserver
+cd /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/
+/usr/java/jdk1.6.0_16/bin/java -classpath /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/gamejab_lib.jar:/usr/apache-tomcat-6.0.29/lib/* com.gamejab.cronjob.Test
+
+
+SQL A REVISER:
+select game_id,content_rating_id  from game_zoNE where content_rating_id is null;  #Unit Sold 
+select rating  from game_review where rating>100; #review_rating >100
+
+
+ZIP media production
+tar -cvf media_backup20110415-000001.tar media/
+
+unZip media production 
+tar -xvf myfile.tar
+
+
+#import DB Diego
+cd C:\Program Files\PostgreSQL\9.0\bin\
+psql -U postgres gamejab < "C:\Users\Diego\Desktop\Mutthana Files\diego files\diego\DB\gamejab_backup.sql"
+
+#import DB production and devserver
+cd /root/jabbackups
+psql -U postgres gamejab < "/root/jabbackups/gamejab_backup.sql"
+
+#executable Production TEST
+cd /root/wars/wartemp
+/usr/java/jdk1.6.0_24/bin/java -classpath /root/wars/wartemp/gamejab_lib.jar:/usr/apache-tomcat-7.0.11/lib/* com.gamejab.cronjob.Test
+
+#executable Devserver TEST
+cd /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/
+/usr/java/jdk1.6.0_16/bin/java -classpath /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/gamejab_lib.jar:/usr/apache-tomcat-6.0.29/lib/* com.gamejab.cronjob.Test
+
+#Unzip Images from production in devserver
+tar -xf media_backup20110505-000001.tar 
+rm -rf media
+mv /home/gamejab/home/gamejab/media /home/gamejab/
+
+#/etc/rc.d/rc.local init truc
+
+#mysql
+/etc/init.d/mysqld start
+/etc/init.d/mysqld stop
+/etc/init.d/mysqld restart
+#mysql connect devserver
+ mysql -u sqladmin -p
+ pwd : mysql
+#mysql connect production
+  mysql -u root -p
+ pwd : mysqlgamejabfaq
+ 
+usr1: mysql
+pwd: gamejab
+ 
+
+ /var/lib/mysql
+
+#Apache
+/usr/local/apache/bin/apachectl stop
+/usr/local/apache/bin/apachectl start
+/usr/local/apache/bin/apachectl restart
+
+/etc/init.d/httpd start
+/etc/init.d/httpd stop
+/etc/init.d/httpd restart
+
+# See open ports with pid
+netstat -all --program
+ 
+#Delete all logs devserver
+/usr/apache-tomcat-6.0.29/bin/shutdown.sh
+cd /usr/apache-tomcat-6.0.29/logs/
+ls
+rm -f *.*
+ls
+/usr/apache-tomcat-6.0.29/bin/startup.sh
+tail -500f /usr/apache-tomcat-6.0.29/logs/catalina.out 
+
+#backup single table from database
+pg_dump -t group_platform -U postgres gamejab > /root/jabbackups/group_platform_bk.sql
+
+#restore single table to database
+psql -f /root/group_family_bk.sql -U postgres gamejab
+
+
+#UpdateSuggestionQuery Manuel
+cd /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/
+/usr/java/jdk1.6.0_16/bin/java -classpath /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/gamejab_lib.jar:/usr/apache-tomcat-6.0.29/lib/* com.gamejab.cronjob.UpdateSuggestionQuery
+/usr/java/jdk1.6.0_16/bin/java -classpath /usr/apache-tomcat-6.0.29/webapps/gamejab/WEB-INF/lib/gamejab_lib.jar:/usr/apache-tomcat-6.0.29/lib/* com.gamejab.cronjob.IndexGenerator
+
+#deleting jpg file in dir
+find /usr/apache-tomcat-7.0.11/webapps -type f -name "*.jpg" -exec rm -f {} \;
+
+#select into file
+SELECT * FROM table \g filename

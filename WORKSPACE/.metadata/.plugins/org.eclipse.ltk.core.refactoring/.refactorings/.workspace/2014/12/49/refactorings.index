@@ -1,0 +1,7 @@
+1417652712236	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/config/MailPropertiesManager.java'
+1417652717019	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/config/mails.properties'
+1417652723056	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/exception/BusinessLogicException.java'
+1417652726952	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/exception/GameNotFoundException.java'
+1417652731206	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/exception/InitializationException.java'
+1417652735769	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/exception/RequiredElementMissingException.java'
+1417652739546	Delete resource 'loyaltySource_lib/src/com/loyauty/cronjob/testing/exception/UnImplementedMethodException.java'

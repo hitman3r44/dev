@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<proxool>
+   <alias>dbpool</alias>
+   <driver-url>jdbc:postgresql://localhost:5432/gameaccess</driver-url>
+   <driver-class>org.postgresql.Driver</driver-class>
+   <driver-properties>
+      <property name="user" value="postgres"/>
+      <property name="password" value="gamejab"/>
+
+      <!-- PG DRIVER SPECIFIC LOG LEVELS: INFO: 1, DEBUG, 2 -->
+      <!-- <property name="loglevel" value="1"/> -->
+
+   </driver-properties>
+   <maximum-connection-count>30</maximum-connection-count>
+   <minimum-connection-count>5</minimum-connection-count>
+   <house-keeping-test-sql>select CURRENT_DATE</house-keeping-test-sql>
+   <verbose>true</verbose>
+   <trace>true</trace>
+</proxool>

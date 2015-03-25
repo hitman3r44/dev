@@ -1,0 +1,620 @@
+package com.loyauty.cronjob;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import com.loyauty.enums.UserType;
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.service.ServiceLocator;
+import com.loyauty.service.core.dto.AlterProductXMLDTO;
+import com.loyauty.service.core.dto.AlterUserProductXMLDTO;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.CityDTO;
+import com.loyauty.service.core.dto.ProductDTO;
+import com.loyauty.service.core.dto.ProvinceDTO;
+import com.loyauty.service.core.dto.ShippingCityDTO;
+import com.loyauty.service.core.dto.ShippingProvinceDTO;
+import com.loyauty.service.core.dto.ShippingTotalDTO;
+import com.loyauty.service.core.dto.UserDTO;
+import com.loyauty.service.core.dto.UserProductPriceDTO;
+import com.loyauty.service.core.dto.UserProvincePopulationDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+
+import ca.canadapost.cpcdp.rating.GetRatesClient;
+/**
+ * 
+ * @author Rafael Padron
+ *
+ */
+public class AutoShipping {
+	
+	private static double POUND_TO_KG_FACTOR = .45359237;
+	private static double INCH_TO_CM_FACTOR = 2.54;
+	private static double NUMBER_OF_TRIALS = 3;
+	
+	private static final double COVERAGE_RATE_PER_100$ = 1.80d;
+	
+	private static ServiceLocator serviceLocator;
+	private static ProductService productService;
+	private static UserService userService;	
+	
+	public static void main(String[] args) {		
+		serviceLocator = ServiceLocator.getInsance();				
+		try {
+			productService = serviceLocator.getProductService();
+			userService = serviceLocator.getUserService();
+			
+			AlterProductXMLDTO alterProductXMLDTO = null;
+			AlterUserProductXMLDTO alterUserProductXMLDTO = null;
+			
+			List<ProvinceDTO> provinceDTOList = null;
+			List<CityDTO> cityDTOList = null;
+			long productID = 0L;
+			long provinceID = 0L;
+			long cityID = 0L;
+			
+			BasicUserDTO basicUserDTO = new BasicUserDTO();
+			basicUserDTO.setTypeId(UserType.USER.getValue());
+			basicUserDTO.setActive(true);
+			List<UserSessionDTO> userNameList = userService.getAllUserAccounts(basicUserDTO);
+			
+			ArrayList<Long> arrayList = new ArrayList<Long>();
+			for (UserSessionDTO uDTO : userNameList) {
+				arrayList.add(uDTO.getId());
+			}
+			
+			ShippingCityDTO shippingCityDTO = new ShippingCityDTO();
+			ShippingProvinceDTO shippingProvinceDTO = new ShippingProvinceDTO();
+			ShippingTotalDTO shippingTotalDTO = new ShippingTotalDTO();
+			
+			List<ProductDTO> productDTOList = productService.getWereWgtDimChangedFromProduct();			
+			
+			System.out.println("/-------------------------------------- PHASE I: DB INSERT/UPDATE FOR DB-SHIPPING-RELATED TABLES. ------------------------/");
+			for (ProductDTO productDTO : productDTOList) {
+				productID = productDTO.getId();
+				cityDTOList = productService.getCities();
+				for (CityDTO cityDTO : cityDTOList) {
+						cityID = cityDTO.getId();
+						shippingCityDTO = new ShippingCityDTO();
+						shippingCityDTO.setProductId(productID);
+						shippingCityDTO.setCityId(cityID);
+/*
+						if (!productService.existsShippingCity(productID, cityID)) {
+							productService.createShippingCity(shippingCityDTO);
+						}
+*/
+				}
+				
+				provinceDTOList = productService.getAllProvinces();
+				for (ProvinceDTO provinceDTO : provinceDTOList) {
+					provinceID = provinceDTO.getId();
+					shippingProvinceDTO = new ShippingProvinceDTO();
+					shippingProvinceDTO.setProductId(productID);
+					shippingProvinceDTO.setProvinceId(provinceID);
+/*
+					if (!productService.existsShippingProvince(productID, provinceID)) {
+						productService.createShippingProvince(shippingProvinceDTO);
+					}
+*/					
+					for (long userID : arrayList) {
+						shippingTotalDTO = new ShippingTotalDTO();
+						shippingTotalDTO.setProductId(productID);
+						shippingTotalDTO.setProvinceId(provinceID);
+						shippingTotalDTO.setUserId(userID);
+						if (!productService.existsShippingTotal(productID, provinceID, userID)) {
+							productService.createShippingTotal(shippingTotalDTO);
+						}
+					}
+				}
+			}
+			
+			System.out.println("/-------------------------------------- PHASE II:  fillShippingCityUsingSOAP(productDTOList) ------------------------/");
+			// Update ShippingCityDTO and its DB-Table.
+			// fillShippingCityUsingSOAP(productDTOList);
+			
+			System.out.println("/-------------------------------------- PHASE III:  updateShippingProvince(productDTOList) ------------------------/");
+			// Update ShippingProvinceDTO and its DB-Table.
+			// updateShippingProvince(productDTOList);
+			
+			System.out.println("/-------------------------------------- PHASE IV:  updateShippingTotalAndUserProductPrice(productDTOList, arrayList) ------------------------/");			
+			// Update ShippingTotaDTO along with userProductPriceDTO and their respective DB-Tables.
+			updateShippingTotalAndUserProductPrice(productDTOList, arrayList);
+			
+			System.out.println("/-------------------------------------- PHASE V:  FOR NEW PRODUCTS ONLY, PUTTING'EM ALL IN DB... ------------------------/");						
+
+/* 
+REMOVE COMMENTS - BEGIN
+
+			UserProductPriceDTO userProductPriceDTO = new UserProductPriceDTO();
+			for (ProductDTO productDTO : productDTOList) {
+				productID = productDTO.getId();
+				if (!productService.existsOnAlterProductXML(productID)) {
+					alterProductXMLDTO = new AlterProductXMLDTO();
+					alterProductXMLDTO.setProductId(productID);
+					alterProductXMLDTO.setBrandId(true);
+					alterProductXMLDTO.setCategoryId(true);
+					alterProductXMLDTO.setTypeId(true);
+					if (productDTO.getImage() != null) {
+						alterProductXMLDTO.setImageId(true);
+					} else {
+						alterProductXMLDTO.setImageId(false);
+					}
+					alterProductXMLDTO.setStatusId(true);
+					alterProductXMLDTO.setNameEn(true);
+					alterProductXMLDTO.setNameFr(true);
+					alterProductXMLDTO.setDescriptionEn(true);
+					alterProductXMLDTO.setDescriptionFr(true);
+					alterProductXMLDTO.setSpecificationEn(true);
+					alterProductXMLDTO.setSpecificationFr(true);
+					alterProductXMLDTO.setOtherEn(true);
+					alterProductXMLDTO.setOtherFr(true);
+					alterProductXMLDTO.setWarrantyEn(true);
+					alterProductXMLDTO.setWarrantyFr(true);
+					alterProductXMLDTO.setDimensions(true);
+					alterProductXMLDTO.setWeight(true);
+					alterProductXMLDTO.setModelNumber(true);
+					alterProductXMLDTO.setMsrp(true);
+					alterProductXMLDTO.setProductToBeExecuted(true);
+					if (productService.existsOnAlterProductXML(productID)) {
+						productService.updateAlterProductXML(alterProductXMLDTO);
+					} else {
+						productService.createAlterProductXML(alterProductXMLDTO);
+					}
+				}
+
+				for (long userID : arrayList) {
+					if (!productService.existsOnAlterUserProductXML(productID, userID)) {
+						alterUserProductXMLDTO = new AlterUserProductXMLDTO();
+						alterUserProductXMLDTO.setUserId(userID);
+						alterUserProductXMLDTO.setProductId(productID);
+						alterUserProductXMLDTO.setPriceDiscount(true);
+						alterUserProductXMLDTO.setShipping(true);
+						alterUserProductXMLDTO.setExcluded(false);
+						alterUserProductXMLDTO.setUserProductToBeExecuted(true);
+						userProductPriceDTO = productService.getUserProductPriceInformation(productID, userID);
+						alterUserProductXMLDTO.setExcludedMeaning(userProductPriceDTO.getExcluded());
+						if (productService.existsOnAlterUserProductXML(productID, userID)) {
+							productService.updateAlterUserProductXML(alterUserProductXMLDTO);
+						} else {
+							productService.createAlterUserProductXML(alterUserProductXMLDTO);
+						}
+					}
+				}
+			}
+
+			System.out.println("/-------------------------------------- LAST PHASE: CLOSE ALL ------------------------/");						
+			// Close every 'Product' DB-Table with the 'were_wgt_dim_changed' back to false.
+			for (ProductDTO productDTO : productDTOList) {
+				productID = productDTO.getId();
+				productService.closeProductWereWgtDimChanged(productID);
+			}
+
+REMOVE COMMENTS - END			
+*/
+			
+			
+		} catch(ServiceException e){
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+		
+	public static void fillShippingCityUsingSOAP(List<ProductDTO> productDTOList) {
+		System.out.println("\n\n\n\n\n\n\n BEGIN  fillShippingCityUsingSOAP() BEGIN \n\n\n\n\n\n\n\n\n");
+		serviceLocator = ServiceLocator.getInsance();		
+		try {			
+			productService = serviceLocator.getProductService();
+			long productId = 0L;
+			String rate = "";
+			List<CityDTO> cityDTOList = null;
+			String wgt = "";
+			String l = "", w = "", h = "";
+			double weightLbs = 0d;
+			double lengthIn = 0d, widthIn = 0d, heightIn = 0d;			
+			double weightKg = 0d;
+			double lengthCm = 0d, widthCm = 0d, heightCm = 0d;		
+			int weight = 0;
+			int length = 0, width = 0, height = 0;
+			ShippingCityDTO shippingCityDTO = new ShippingCityDTO();
+			int off = 0;
+			String to = "";
+			
+			for (ProductDTO productDTO : productDTOList) {
+				productId = productDTO.getId();
+				cityDTOList = productService.getCities();
+				for (CityDTO cityDTO : cityDTOList) {
+					wgt = productDTO.getWeight();	
+					if (wgt != null) {
+						if (!wgt.matches("^\\s*$")) {
+							weightLbs = Double.parseDouble(wgt);
+							weightKg = weightLbs * POUND_TO_KG_FACTOR;
+							weight = (int) Math.round(weightKg * 100) / 100;								
+						} else {
+							weight = 1;
+						}
+					} else {
+						weight = 1;
+					}
+					
+					l = productDTO.getLarge();					
+					if (l != null) {
+						if (!l.matches("^\\s*$")) {
+							lengthIn = Double.parseDouble(l);
+							lengthCm = lengthIn * INCH_TO_CM_FACTOR;
+							length = (int) Math.round(lengthCm * 100) / 100;								
+						} else {
+							length = 1;
+						}
+					} else {
+						length = 1;
+					}
+					
+					w = productDTO.getWidth();					
+					if (w != null) {
+						if (!w.matches("^\\s*$")) {
+							widthIn = Double.parseDouble(w);
+							widthCm = widthIn * INCH_TO_CM_FACTOR;
+							width = (int) Math.round(widthCm * 100) / 100;								
+						} else {
+							width = 1;
+						}
+					} else {
+						width = 1;
+					}
+					
+					h = productDTO.getHigh();
+					if (h != null) {
+						if (!h.matches("^\\s*$")) {
+							heightIn = Double.parseDouble(h);
+							heightCm = heightIn * INCH_TO_CM_FACTOR;
+							height = (int) Math.round(heightCm * 100) / 100;								
+						} else {
+							height = 1;
+						}
+					} else {
+						height = 1;
+					}
+					
+					weight = (weight == 0) ? 1 : weight;
+					length = (length == 0) ? 1 : length;
+					width = (width == 0) ? 1 : width;
+					height = (height == 0) ? 1 : height;
+					
+					to = cityDTO.getPostalCode();
+					rate = getRatesFormatted(to, weight, length, width, height);
+					
+					shippingCityDTO = new ShippingCityDTO();
+					shippingCityDTO.setProductId(productId);
+					shippingCityDTO.setCityId(cityDTO.getId());
+					
+					if (rate.equalsIgnoreCase("0.00")) {
+						off = 1;
+						do {
+							rate = getRatesFormatted(to, weight, length, width, height);
+							if (!rate.equalsIgnoreCase("0.00")) break;
+							if (off >= NUMBER_OF_TRIALS) break;	
+							++off;
+						} while(rate.equalsIgnoreCase("0.00"));
+					}
+					
+					shippingCityDTO.setExpeditedParcelPrice(rate);
+					productService.updateShippingCityToExpeditedParcelPrice(shippingCityDTO);
+					
+				}	// for ... cityDTO				
+			}	// for ... productDTO
+			
+		} catch (ServiceLocatorException slx) {
+			slx.printStackTrace();
+		} catch (ServiceException sx) {
+			sx.printStackTrace();
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		System.out.println("\n\n\n\n\n\n\n END  fillShippingCityUsingSOAP() END \n\n\n\n\n\n\n\n\n");
+	}	// main()	
+	
+	private static String getRatesFormatted(String to, int weight, int length, int width, int height) {
+		GetRatesClient ratesClient;
+		String rate;
+		BigDecimal rateBD;
+		double rateVal;
+		ratesClient = new GetRatesClient("H4C3C5", to,  weight, length, width, height);
+		rateBD = ratesClient.getRates();
+		rate = rateBD.toString();		
+		if (rate != null) {
+			if (!rate.matches("^\\s*$") && !rate.equalsIgnoreCase("")) {		
+				rateVal = Double.parseDouble(rate);
+				rate = format(rateVal, "#,###.00", "en", "US");	
+			} else {
+				rateVal = 0d;
+				rate = "0.00";
+			}
+			if (rate.equalsIgnoreCase(".00")) {
+				rate = "0.00";
+			}
+		}
+		
+		if (weight >= 30) {
+			rate = "NOT AVAILABLE";
+		}
+		return rate;
+	}
+	
+	public static void updateShippingProvince(List<ProductDTO> productDTOList) {		
+		serviceLocator = ServiceLocator.getInsance();		
+		try {			
+			productService = serviceLocator.getProductService();
+			
+			long productId = 0L;
+			long provinceId = 0L;
+			long cityId = 0L;
+			List<ProvinceDTO> provinceDTOList = null;
+			List<CityDTO> cityDTOList = null;
+			ShippingCityDTO shippingCityDTO = null;
+			ShippingProvinceDTO shippingProvinceDTO = null;
+			double weightedTotalProvince = 0d;
+			double expeditedParcelPrice = 0d;
+			double populationPercentage = 0d;
+			String weightedPrice = "";
+			String parcelPrice = "";
+			boolean isOverweighted = false;
+			
+			for (ProductDTO productDTO : productDTOList) {
+				productId = productDTO.getId();
+				provinceDTOList = productService.getAllProvinces();
+				for (ProvinceDTO provinceDTO : provinceDTOList) {
+					provinceId = provinceDTO.getId();
+					cityDTOList = productService.getAllCities(provinceId);
+					weightedTotalProvince = 0d;
+					isOverweighted = false;
+					for (CityDTO cityDTO : cityDTOList) {
+						cityId = cityDTO.getId();
+						shippingCityDTO = productService.getShippingCity(productId, cityId);		
+						parcelPrice = shippingCityDTO.getExpeditedParcelPrice();
+						if (parcelPrice != null) {
+							if (parcelPrice.trim().equalsIgnoreCase("NOT AVAILABLE") || parcelPrice.matches("^\\s*$")) {
+								isOverweighted = true;
+								expeditedParcelPrice = 0d;
+							} else {
+								expeditedParcelPrice = Double.parseDouble(shippingCityDTO.getExpeditedParcelPrice());								
+							}
+						} else {
+							expeditedParcelPrice = 0d;
+						}
+						
+						populationPercentage = Double.parseDouble(cityDTO.getPopulationPercentage());
+						populationPercentage /= 100d;
+						weightedTotalProvince += populationPercentage * expeditedParcelPrice;				
+					}	// for ... cityDTO					
+					
+					shippingProvinceDTO = new ShippingProvinceDTO();
+					shippingProvinceDTO.setProductId(productId);
+					shippingProvinceDTO.setProvinceId(provinceId);
+					weightedPrice = String.valueOf(weightedTotalProvince);
+					
+					if (weightedPrice != null) {
+						if (!weightedPrice.matches("^\\s*$") && !weightedPrice.equalsIgnoreCase("")) {
+							weightedPrice = format(weightedTotalProvince, "#,###.00", "en", "US");	
+						} else {
+							weightedPrice = "0.00";
+						}
+						if (weightedPrice.equalsIgnoreCase(".00")) {
+							weightedPrice = "0.00";
+						}
+					}
+					
+					if (isOverweighted) {
+						shippingProvinceDTO.setWeightedTotalProvince("NOT AVAILABLE");
+					} else {
+						shippingProvinceDTO.setWeightedTotalProvince(weightedPrice);						
+					}
+					
+					productService.updateShippingProvince(shippingProvinceDTO);
+					
+				}	// for ... provinceDTO
+			}	// for ... productDTO
+			
+		} catch (ServiceLocatorException slx) {			
+			slx.printStackTrace();
+		} catch (ServiceException sx) {
+			sx.printStackTrace();
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		
+	}	// main()
+	
+	public static void updateShippingTotalAndUserProductPrice(List<ProductDTO> productDTOList, ArrayList<Long> userIDList) {		
+		serviceLocator = ServiceLocator.getInsance();		
+		try {			
+			productService = serviceLocator.getProductService();
+			userService = serviceLocator.getUserService();
+			
+			long productId = 0L;
+			long provinceId = 0L;
+			List<ProvinceDTO> provinceDTOList = null;
+			ShippingTotalDTO shippingTotalDTO = null;
+			ShippingProvinceDTO shippingProvinceDTO = null;
+			UserProductPriceDTO userProductPriceDTO = null;
+			UserProvincePopulationDTO userProvincePopulation =  null;
+			String price = "";
+			String wtp = "";
+			String populationPercent = "";
+			double weightedTotalProvince = 0d;
+			double coverage = 0d;
+			double averageShippingTotal = 0d;
+			double weightedProvinceTotalWithCoverage = 0d;
+			double populationPercentage = 0d;
+			double shippingTotalCanada = 0d;
+			
+			for (Long userId : userIDList) {
+				UserDTO userDTO = userService.getUserInformation(userId);
+				
+				double multiplier = Double.parseDouble(userDTO.getMultiplier());
+				multiplier /= 100d;
+				multiplier += 1d;
+				
+				for (ProductDTO productDTO : productDTOList) {
+					productId = productDTO.getId();
+					provinceDTOList = productService.getAllProvinces();
+					shippingTotalCanada = 0d;
+					for (ProvinceDTO provinceDTO : provinceDTOList) {
+						provinceId = provinceDTO.getId();
+						price = productDTO.getPriceProduct();
+						if (price != null) {
+							if (!price.matches("^\\s*$")) {
+								coverage = calculateCoverage(Double.parseDouble(price));	// from user_product_price DB Table.
+							} else {
+								coverage = 0d;
+							}
+						} else {
+							coverage = 0d;
+						}
+						
+						userProductPriceDTO = new UserProductPriceDTO();
+						userProductPriceDTO.setProductId(productId);
+						userProductPriceDTO.setUserId(userId);
+						
+						String covString = String.valueOf(coverage);			
+						if (covString != null) {
+							if (!covString.matches("^\\s*$") && !covString.equalsIgnoreCase("")) {
+								covString = format(coverage, "#,###.00", "en", "US");	
+							} else {
+								covString = "0.00";
+							}
+							if (covString.equalsIgnoreCase(".00")) {
+								covString = "0.00";
+							}
+						}
+						
+						userProductPriceDTO.setShippingCoverage(String.valueOf(covString));
+						productService.updateUPPShippingCoverage(userProductPriceDTO);
+						
+						shippingTotalDTO = new ShippingTotalDTO();
+						shippingTotalDTO.setProductId(productId);
+						shippingTotalDTO.setProvinceId(provinceId);
+						shippingTotalDTO.setUserId(userId);
+						
+						shippingProvinceDTO = productService.getWeightedTotalProvinceFromShippingProvince(productId, provinceId);
+						wtp = shippingProvinceDTO.getWeightedTotalProvince();
+						
+						if (!wtp.trim().equalsIgnoreCase("NOT AVAILABLE")) {					
+							weightedTotalProvince = Double.parseDouble(wtp);
+							
+							weightedProvinceTotalWithCoverage = coverage + weightedTotalProvince;
+							String weightedProvinceWCoverage = String.valueOf(weightedProvinceTotalWithCoverage);
+							if (weightedProvinceWCoverage != null) {
+								if (!weightedProvinceWCoverage.matches("^\\s*$") && !weightedProvinceWCoverage.equalsIgnoreCase("")) {
+									weightedProvinceWCoverage = format(weightedProvinceTotalWithCoverage, "#,###.00", "en", "US");
+								} else {
+									weightedProvinceWCoverage = "0.00";
+								}
+								if (weightedProvinceWCoverage.equalsIgnoreCase(".00")) {
+									weightedProvinceWCoverage = "0.00";
+								}
+							}
+							
+							shippingTotalDTO.setWeightedProvinceTotalWithCoverage(weightedProvinceWCoverage);
+							
+							averageShippingTotal = weightedProvinceTotalWithCoverage * multiplier;
+							String avgTotal = String.valueOf(averageShippingTotal);				
+							if (avgTotal != null) {
+								if (!avgTotal.matches("^\\s*$") && !avgTotal.equalsIgnoreCase("")) {
+									avgTotal = format(averageShippingTotal, "#,###.00", "en", "US");	
+								} else {
+									avgTotal = "0.00";
+								}
+								if (avgTotal.equalsIgnoreCase(".00")) {
+									avgTotal = "0.00";
+								}
+							}
+							
+							shippingTotalDTO.setAverageShippingTotal(avgTotal);						
+							
+							userProvincePopulation = productService.getUserProvincePopulation(userId, provinceId);
+							populationPercent = userProvincePopulation.getPopulationPercent();
+							populationPercentage = Double.parseDouble(populationPercent);
+							populationPercentage /= 100d;
+							shippingTotalCanada += populationPercentage * averageShippingTotal;
+							
+						} else {
+							shippingTotalDTO.setWeightedProvinceTotalWithCoverage("NOT AVAILABLE");
+							shippingTotalDTO.setAverageShippingTotal("NOT AVAILABLE");
+						}
+						productService.updateShippingTotal(shippingTotalDTO);
+						
+					}	// for ... provinceDTO
+					
+					userProductPriceDTO = new UserProductPriceDTO();
+					userProductPriceDTO.setProductId(productId);
+					userProductPriceDTO.setUserId(userId);
+					
+					if (!wtp.trim().equalsIgnoreCase("NOT AVAILABLE")) {				
+						String shippingCanada = String.valueOf(shippingTotalCanada);			
+						if (shippingCanada != null) {
+							if (!shippingCanada.matches("^\\s*$") && !shippingCanada.equalsIgnoreCase("")) {
+								shippingCanada = format(shippingTotalCanada, "#,###.00", "en", "US");	
+							} else {
+								shippingCanada = "0.00";
+							}
+							if (shippingCanada.equalsIgnoreCase(".00")) {
+								shippingCanada = "0.00";
+							}
+						}
+						userProductPriceDTO.setShippingTotalCanada(shippingCanada);				
+					} else {
+						userProductPriceDTO.setShippingTotalCanada("NOT AVAILABLE");
+					}
+					
+					productService.updateUPPShippingTotalCanada(userProductPriceDTO);
+					
+				}	// for ... productDTO
+			}
+		} catch (ServiceLocatorException slx) {			
+			slx.printStackTrace();
+		} catch (ServiceException sx) {
+			sx.printStackTrace();
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		
+	}	// main()
+	
+	private static String format(double value, String pattern, String language, String country) {
+		Locale loc = new Locale(language, country);
+		NumberFormat nf = NumberFormat.getInstance(loc);
+		DecimalFormat df = (DecimalFormat) nf;
+		df.applyPattern(pattern);
+		return nf.format(value);
+	}
+	
+	private static double calculateCoverage(double averageWeightedPrice) {
+		double outcome = 0d;
+		double times = averageWeightedPrice / 100d;
+		String analyzer = String.valueOf(times);
+		int index = analyzer.indexOf(".");
+		String integerPart = analyzer.substring(0, index);		
+		String mantissaPart = analyzer.substring(index, analyzer.length());				
+		int integer = Integer.parseInt(integerPart);
+		double mantissa = Double.parseDouble(mantissaPart);		
+		if (mantissa == 0d) {
+			outcome = (integer > 0) 
+			?  (((double) (integer-1)) * COVERAGE_RATE_PER_100$) 
+			: 0d;
+		} else {
+			outcome = (integer > 0) 
+			?  (((double) integer) * COVERAGE_RATE_PER_100$) 
+			: 0d;
+		}
+		return outcome;
+	}
+	
+}

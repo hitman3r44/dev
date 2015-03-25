@@ -1,0 +1,13 @@
+Cher(e) #FIRSTNAME#,
+
+Merci de vous être inscrit à la communauté Game Access. De manière à authentifier votre compte veuillez s'il vous plaît visiter le lien suivant: 
+http://www.gameaccess.ca/activateMyaccount.do?subID=#SUB_ID#&lang=fr
+
+Merci,
+
+L'Équipe Game Access
+
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

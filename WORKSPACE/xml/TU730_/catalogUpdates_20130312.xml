@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="TU_DELEN680">
+        <status>DISCONTINUED</status>
+        <substitute-product>DELEN520SL</substitute-product>
+    </ls-product>
+    <ls-product id="TU_JJJ70852WH">
+        <brand-name>Joseph Joseph</brand-name>
+        <group>Kitchen</group>
+        <category>Tools &amp; Accessories</category>
+        <type>Accessories</type>
+        <image>http://loyaltysource.com/media/product/large/jjj70852wh_1361741244516.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Arena Self-Draining Dish Rack</title>
+        <description>Self-Draining Dish Rack, 4 x 17 x 14” / 10 x 43 x 35cm, white/green.The innovative, compact design of this stylish dish rack provides lots of space for draining and storing plates, bowls, glasses and utensils. Flexible ribs hold dishes securely in place, helping to prevent chips and scratches while drying. The distinctive, concentric design and sloping base, channel water away quickly and efficiently and the integrated spout enables it to be drained directly into the sink. Extra-large utensil holders also ensure Arena is as practical as it is stylish. ***Dishes not included***</description>
+        <specification/>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>7085002WH</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>19</length>
+            <width>18</width>
+            <height>7</height>
+        </shipping-size>
+        <msrp>69.99</msrp>
+        <cost>38.08</cost>
+        <discount-dollars>31.91</discount-dollars>
+        <discount-percent>45.59</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>0.00</average-canada>
+            <rate-per-province>
+                <AB>0.00</AB>
+                <BC>0.00</BC>
+                <MB>0.00</MB>
+                <NB>0.00</NB>
+                <NL>0.00</NL>
+                <NS>0.00</NS>
+                <NT>0.00</NT>
+                <NU>0.00</NU>
+                <ON>0.00</ON>
+                <PE>0.00</PE>
+                <QC>0.00</QC>
+                <SK>0.00</SK>
+                <YT>0.00</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="TU_TTMN13654">
+        <title>RocketBallz Steel Iron Set - LEFT</title>
+    </ls-product>
+    <ls-product id="TU_TTMN13665">
+        <title>RocketBallz Steel Iron Set - RIGHT</title>
+    </ls-product>
+</catalog>

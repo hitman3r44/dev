@@ -1,0 +1,6 @@
+1360686350849	Move 'TransferUserForShippingTotal.java' to 'transfer'
+1360686636941	Move 'InsertShippingCity.java' to 'insert'
+1360687391633	Rename resource 'pgm'
+1360962146704	Rename resource 'InsertShippingCity.java'
+1360962160730	Rename resource 'InsertShippingProvince.java'
+1360962183211	Rename resource 'InsertShippingTotal.java'

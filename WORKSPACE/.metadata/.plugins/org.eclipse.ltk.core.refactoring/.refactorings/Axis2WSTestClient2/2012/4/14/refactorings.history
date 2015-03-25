@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConverterClient.java&apos; to &apos;Axis2WSTestClient/src/wtp&apos;&#x0D;&#x0A;- Original project: &apos;Axis2WSTestClient2&apos;&#x0D;&#x0A;- Destination element: &apos;Axis2WSTestClient/src/wtp&apos;&#x0D;&#x0A;- Original element: &apos;wtp.ConverterClient.java&apos;" description="Copy compilation unit" destination="=Axis2WSTestClient/src&lt;wtp" element1="/test&lt;wtp{ConverterClient.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1333391674812" units="1" version="1.0"/>
+</session>

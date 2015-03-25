@@ -1,0 +1,2175 @@
+/**
+ *
+ * Billing.java
+ *
+**/
+
+package govojo.commerce;
+
+import govojo.communication.Receipt;
+import govojo.db.Address;
+import govojo.db.AddressType;
+import govojo.db.AlertStatus;
+import govojo.db.AlertType;
+import govojo.db.Authentication;
+import govojo.db.BillingException;
+import govojo.db.BillingType;
+import govojo.db.CreditCard;
+import govojo.db.CreditCardStatus;
+import govojo.db.CreditTransaction;
+import govojo.db.Customer;
+import govojo.db.CustomerAlerts;
+import govojo.db.DBJoin;
+import govojo.db.DelinquentCustomers;
+import govojo.db.PartnerService;
+import govojo.db.PartnerServiceBilling;
+import govojo.db.PartnerServiceHistory;
+import govojo.db.Queue;
+import govojo.db.RecurringTransaction;
+import govojo.db.Referrals;
+import govojo.db.RefundTransaction;
+import govojo.db.Service;
+import govojo.db.SingleTransaction;
+import govojo.db.Subscription;
+import govojo.db.SubscriptionFastReturn;
+import govojo.db.SubscriptionReserveGame;
+import govojo.db.SubscriptionStatus;
+import govojo.db.SubscriptionTrigger;
+import govojo.db.SubscriptionTriggerStatus;
+import govojo.db.TransactionStatus;
+import govojo.db.TransactionType;
+import govojo.db.util.SQLResultSet;
+import govojo.debugging.Alert;
+import govojo.io.CommandLine;
+import govojo.io.FileUtils;
+import govojo.net.Mail;
+import govojo.util.NullableTimeAndDate;
+import govojo.util.TimeAndDate;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Billing {
+
+	// Date that govojo started to bill (used to find the max cycle)
+	// 2002-04-10 00:00
+	// This should be one month older than the actual bill date to insure 
+	// that everyone gets billed.
+	private static TimeAndDate govojoStartDate =
+		new TimeAndDate(2002, 03, 11, 0, 0);
+
+	private String[] summaryRecips = {};
+
+	private static String lastBillStartDateFile = FileUtils.GOVOJO_ROOT_PATH + "/govojo/commerce/lastStartDate.txt";
+	private static String lastBillDateFinishFile = FileUtils.GOVOJO_ROOT_PATH + "/govojo/commerce/lastFinishDate.txt";
+	private static String dayOfLastBillFile = FileUtils.GOVOJO_ROOT_PATH + "/govojo/commerce/dayOfLastBill.txt";
+	private static String billDateFormat = "dd-MMM-yyyy";
+	private static final int PARTNERSERVICE_PACKAGE_4_GAMES_OUT = 4;
+	private static final int SERVICE_PACKAGE_4_GAMES_OUT = 4;
+
+	private final int EXEMPT_FROM_BILLING = 1;
+	private final int SUCCESSFUL_BILLING = 2;
+	private final int BILLING_DECLINED = 3;
+
+	private final int TWO_GAME_PARTNERSERVICE_ID = 1;
+	private final int TWO_GAME_SERVICE_ID = 1;
+
+	private boolean isCommandLine = false;
+	private boolean removeAlertIfSuccessful = false;
+	private boolean sendFailEmail = true;
+
+	private CashRegister _register = null;
+	private Authentication _authentication = null;
+	private CreditTransaction _creditTrans = null;
+
+	// true: testing   false: live
+	// ############################################################
+	public static boolean TESTING_DONOTCHARGE = false;
+	// ############################################################
+
+	public Billing() {
+		initialize();
+	}
+
+	public void initialize() {
+
+	}
+
+	public void setCommandLine(boolean cline) {
+		isCommandLine = cline;
+	}
+
+	public boolean getCommandLine() {
+		return (isCommandLine);
+	}
+
+	public boolean getRemoveAlertIfSuccessful() {
+		return (removeAlertIfSuccessful);
+	}
+
+	public void setRemoveAlertIfSuccessful(boolean yesNo) {
+		removeAlertIfSuccessful = yesNo;
+	}
+
+	public boolean getSendFailEmail() {
+		return (sendFailEmail);
+	}
+
+	public void setSendFailEmail(boolean yesNo) {
+		sendFailEmail = yesNo;
+	}
+
+	public Authentication getAuthentication() {
+		return _authentication;
+	}
+
+	public CreditTransaction getCreditTransaction() {
+		return (_creditTrans);
+	}
+
+	/**
+	 * Procedure for billing the monthly recurring people
+	 * 1. Find all the people who need to be billed.
+	 *    1a. Search for all of the people who have a billing date of
+	 *        today or before, and do not have a successful billing
+	 *        cycle of one. 
+	 *    1b. Verify that this person should be billed by
+	 *        checking for a billing exception for this subscription.
+	 * 2. The people that make it through step one should be billed for
+	 *    full amount of their subscription.
+	 * 3. If for some reason this person is not able to be billed the
+	 *    following things will happen:
+	 *    3a. A billing exception is generated. We do not want to
+	 *        Pay fees for each billing attempt that fails, so give this
+	 *        person a few days to work out their issues. If a billing
+	 *        exception exists, update it with a few more days.
+	 *    3b. A billing alert is generated in Customer Alerts. This will
+	 *        alert customer service to the non billing condition.
+	 *    3c. A row is written to the recurring transaction table to
+	 *        signify that a billing was attemped with the proper status
+	 *        bit set.
+	 *    3d. A templatized email is sent out to the customer stating
+	 *        the inability to bill.
+	 * 4. If the person is able to be charged then a row will be stored
+	 *    in the recurring transaction table to prevent them from getting
+	 *    billed until their next cycle. If they have a customer alert, then
+	 *    set the alert status to false.
+	 * 5. An email is generated with the statistics of the billing run
+	 *    addressed to the people who care about the money. :)
+	 **/
+	public void billMonthlyReccurringUsers() {
+		int exemptFromBilling = 0;
+		int successfulCharge = 0;
+		int creditCardFail = 0;
+		TimeAndDate currBillDate = new TimeAndDate();
+
+		// first, iterate through the cycles to billed
+		int maxCycle = getMaxCycle();
+		setCommandLine(true);
+		for (int currCycle = 1; currCycle <= maxCycle; currCycle++) {
+			// clone the billing date, because if we roll the TimeAndDate
+			// the DATE portion of the date could change (on the 31st for
+			// example)
+			TimeAndDate billDate = (TimeAndDate) currBillDate.clone();
+			// Decrement billDate
+			// the add() method correctly deals with the fact that some
+			// months have less than 31 days. For example, If the billing 
+			// occurs on the 31st of March, add(MONTH, -1) will produce 
+			// the 28th of Febuary
+			// only add after the first month
+			if (currCycle != 1) {
+				billDate.add(TimeAndDate.MONTH, ((currCycle - 1) * -1));
+			}
+			System.out.println("BillDate = " + billDate.toString());
+			List needingBilling =
+				DBJoin.findBillingNeededForDateAndCycle(billDate, currCycle);
+			SQLResultSet resultSet = new SQLResultSet(needingBilling);
+			System.out.println("Number: " + needingBilling.size());
+			for (int currBill = 0;
+				currBill < needingBilling.size();
+				currBill++) {
+				int subID =
+					Integer.parseInt(resultSet.getValue("subID", currBill));
+				int resultCode = checkExceptionAndRecurringCharge(subID, 1);
+			}
+		}
+		HashMap theMap = new HashMap();
+		theMap.put("Successful", Integer.toString(successfulCharge));
+		theMap.put("Failed", Integer.toString(creditCardFail));
+		Mail.send(summaryRecips, "Billing Completed", theMap);
+	}
+
+	public void billMonthlyUsers(NullableTimeAndDate theDate) {
+		if (theDate.getTimeAndDate() != null) {
+			billMonthlyUsers(
+				theDate.getTimeAndDate().get(TimeAndDate.DAY_OF_MONTH));
+		}
+	}
+
+	public void billMonthlyUsers(int dayOfMonth) {
+		if ((dayOfMonth >= 1) && (dayOfMonth <= 31)) {
+			System.out.println("Started billing for: " + dayOfMonth);
+			TimeAndDate maxDate = new TimeAndDate();
+			// We don't want to bill anyone whos billing date may fall on the correct day
+			// but the day is in the future... so set the max date to tomorrow
+			// (don't bill anyone who's billing date is older than tomorrow)
+			maxDate.add(TimeAndDate.DAY_OF_MONTH, 1);
+			List needingBilling =
+				DBJoin.getMonthlyBillsForToday(dayOfMonth, maxDate);
+			SQLResultSet resultSet = new SQLResultSet(needingBilling);
+			System.out.println("Number: " + needingBilling.size());
+			for (int currBill = 0;
+				currBill < needingBilling.size();
+				currBill++) {
+				int subID =
+					Integer.parseInt(resultSet.getValue("subID", currBill));
+				// KTPL: 31-12-2007 DelinquentCustomers: Filter all delinquent customers. They will be billed separately.
+				if(!DelinquentCustomers.isDelinquentCustomer(subID)){
+					int resultCode = checkExceptionAndRecurringCharge(subID, 1);
+				}
+
+			}
+			System.out.println("Finished billing for: " + dayOfMonth);
+		}
+	}
+
+	private int checkExceptionAndRecurringCharge(int subID, int currCycle) {
+		int resultCode = 0;
+		// Does this subscription ID have a billing exception?
+		BillingException billEx = new BillingException();
+		if (billEx.isExemptFromBilling(subID)) {
+			if (billEx.getBypassBillingForMonth().booleanValue() == true) {
+				// This person can skip billing write a transaction
+				// so that it will be noted
+				CreditTransaction credit = new CreditTransaction();
+				credit.setAuthentication(0);
+				credit.setTransactionType(TransactionType.RECURRING);
+				credit.setTransactionStatus(TransactionStatus.COMPLETE);
+				credit.setTransactionComment(
+					"Allowed to skip billing (BillingEx id:"
+						+ billEx.getID()
+						+ ")");
+				credit.setAmount("0.00");
+				credit.insert();
+
+				// Now insert the recurring transaction
+				// (This ID is actually the same ID
+				//  as the CreditTransaction)
+				RecurringTransaction recurTrans = new RecurringTransaction();
+				recurTrans.setSubscriptionID(subID);
+				recurTrans.setCycle(currCycle);
+				recurTrans.insert(credit.getID());
+			}
+
+			resultCode = EXEMPT_FROM_BILLING;
+		} else { // This person should be billed
+			boolean result = recurringChargeWriteAlert(subID, currCycle);
+			if (result == true) {
+				resultCode = SUCCESSFUL_BILLING;
+			} else {
+				resultCode = BILLING_DECLINED;
+			}
+		}
+		return (resultCode);
+	}
+	
+	public int checkExceptionAndRecurringMonthlyCharge(int subID) {
+		return checkExceptionAndRecurringCharge(subID, BillingType.MONTHLY_BILLING);
+	}
+
+	private static int getMaxCycle() {
+		TimeAndDate now = new TimeAndDate();
+		return (TimeAndDate.getElapsedMonths(govojoStartDate, now));
+	}
+
+	public boolean recurringChargeWriteAlert(int subID, int cycleNumber) {
+		return (recurringChargeWriteAlert(subID, cycleNumber, null));
+	}
+
+	public boolean recurringChargeWriteAlert(
+		int subID,
+		int cycleNumber,
+		CreditCard creditCard) {
+		Subscription theSub = new Subscription();
+		boolean subExists = theSub.selectFromID(subID);
+		boolean customerTrialUpgraded = false;
+
+		if (!subExists) {
+			System.out.println(
+				"Subscription id: " + subID + " does not exist.");
+			return (false);
+		}
+
+		if (theSub.getSubscriptionStatusID() == SubscriptionStatus.CLOSED) {
+			System.out.println(
+				"Subscription id: "
+					+ subID
+					+ " is CLOSED. Please activate it to charge.");
+			return (false);
+		}
+
+		//Check and see if this customer should be upgraded to (out of trial service)
+		SubscriptionTrigger endOfTrialUpgrade =
+			SubscriptionTrigger.getActiveTrialUpgradeTriggersForSubscription(
+				subID);
+		
+		if (endOfTrialUpgrade != null) {
+			// Do they have an specified level to upgrade to?
+			if (theSub.getPartnerServiceIDAfterTrial() == 0) {
+				// no specifed level, use the default
+				theSub.setPartnerServiceID(TWO_GAME_PARTNERSERVICE_ID);
+				theSub.setServiceID(TWO_GAME_SERVICE_ID);
+			} else { //they have a specified level
+				PartnerService partServ = new PartnerService();
+				boolean found =
+					partServ.selectFromID(
+						theSub.getPartnerServiceIDAfterTrial());
+				if (found == true) { //we found a partner service in the db
+					theSub.setPartnerServiceID(
+						theSub.getPartnerServiceIDAfterTrial());
+					theSub.setServiceID(partServ.getService());
+				} else { // no partner service found in the db,
+					// this should not happen
+					theSub.setPartnerServiceID(TWO_GAME_PARTNERSERVICE_ID);
+					theSub.setServiceID(TWO_GAME_SERVICE_ID);
+				}
+			}
+
+			endOfTrialUpgrade.setStatusID(
+					SubscriptionTriggerStatus.FIRED_SUCCESSFUL);
+				endOfTrialUpgrade.update();
+				
+				customerTrialUpgraded = true;
+				
+/*				// PartnerServiceHistory being inserted while signup
+
+				PartnerServiceHistory psh = new PartnerServiceHistory();
+				psh.setSubscriptionID(theSub.getID());
+				psh.setPartnerServiceID(theSub.getPartnerServiceID());
+				psh.insert(); */
+		}
+		
+//		------------------ (KTPL: If not upgraded from trial, check for Downgrade -----------------
+
+		else{
+			PartnerServiceHistory psh = new PartnerServiceHistory();
+			psh.selectPartnerServiceHistoryForSubscription(theSub.getID());
+			
+			int previousPartnerServiceID = psh.getPartnerServiceID();
+			int changedPartnerServiceID = theSub.getPartnerServiceID();
+			int numberOfGamesRented =0;
+						
+			// Check for change of membership plan
+			if(previousPartnerServiceID != changedPartnerServiceID){
+			
+				PartnerService changedPS = new PartnerService();
+				changedPS.selectFromID(changedPartnerServiceID);
+				
+				PartnerService oldPS = new PartnerService();
+				oldPS.selectFromID(previousPartnerServiceID);
+				
+				Service oldService = new Service();
+				oldService.selectFromID(oldPS.getService());
+				
+				Service changedService = new Service();
+				changedService.selectFromID(changedPS.getService());
+						
+				
+				//Start 12/04/2011
+				//Check if the billing type is different in that case if the game rented is different from the games package,
+				//change the partnerService of the user.
+				if(PartnerServiceBilling.getBillingTypeForPartnerService(changedPS.getID()) != PartnerServiceBilling.getBillingTypeForPartnerService(oldPS.getID()))
+				{
+					try{
+						numberOfGamesRented = Queue.getNumberOfGamesRentedFastReturnBy(theSub.getPurchasingCustomerID());
+						if(numberOfGamesRented >  changedService.getMaxGameOut()){
+							PartnerService newPS = new PartnerService();
+							newPS.selectFromID(Service.getPartnerServiceIdForGame(numberOfGamesRented));
+							theSub.setPartnerServiceID(newPS.getID());
+							theSub.setServiceID(newPS.getService());
+						}
+					}
+					catch (Exception e) {
+						System.out.println(" Error different billing packages: "  + e.getMessage());
+						//By default set the 4 package games out.
+						theSub.setPartnerServiceID(PARTNERSERVICE_PACKAGE_4_GAMES_OUT);
+						theSub.setServiceID(SERVICE_PACKAGE_4_GAMES_OUT);
+					}
+				}
+				//End 12/04/2011 MJGP
+				else{
+					// Check For Downgrade (if user has not yet returned the extra games, bring back him to the previous plan)
+					if(oldService.getMaxGameOut() > changedService.getMaxGameOut()){
+						numberOfGamesRented = Queue.getNumberOfGamesRentedBy(theSub.getPurchasingCustomerID());
+						if(numberOfGamesRented >  changedService.getMaxGameOut()){
+							theSub.setPartnerServiceID(previousPartnerServiceID);
+							theSub.setServiceID(oldService.getID());
+						}
+										
+					}
+				}
+				
+				theSub.setPartnerServiceIDAfterTrial(theSub.getPartnerServiceID());
+				
+			}
+			else
+			//If the user change several times maybe the user have more games that it is possible.
+			//Upgrade the user.
+			{
+				Service currentService = new Service();
+				currentService.selectFromID(theSub.getServiceID());
+				
+				try{
+					numberOfGamesRented = Queue.getNumberOfGamesRentedFastReturnBy(theSub.getPurchasingCustomerID());
+					if(numberOfGamesRented >  currentService.getMaxGameOut()){
+						PartnerService newPS = new PartnerService();
+						newPS.selectFromID(Service.getPartnerServiceIdForGame(numberOfGamesRented));
+						theSub.setPartnerServiceID(newPS.getID());
+						theSub.setServiceID(newPS.getService());
+					}
+				}
+				catch (Exception e) {
+					System.out.println(" Error different billing packages: "  + e.getMessage());
+					//By default set the 4 package games out.
+					theSub.setPartnerServiceID(PARTNERSERVICE_PACKAGE_4_GAMES_OUT);
+					theSub.setServiceID(SERVICE_PACKAGE_4_GAMES_OUT);
+				}
+			}
+		
+		}
+
+//		 ---------------------- KTPL: Downgrade) -----------------	
+		
+		theSub.update();
+
+		// Charge the subscription 
+		boolean result = recurringCharge(subID, cycleNumber, creditCard);
+
+		// subscription might have been updated in the recurringCharge method
+		theSub.selectFromID(subID);
+
+		// Find the customers info
+		int customerID = theSub.getPurchasingCustomerID();
+
+
+		
+		// Customer Alerts keep the humans up to speed...
+		CustomerAlerts theAlert = new CustomerAlerts();
+		CustomerAlerts[] alerts =
+			theAlert.selectAllActiveBillingAlertsForCustomer(customerID);
+
+		if (result == false) {
+			// [KTPL:DelinquentCustomers 07-12-2007 
+			// Put an alert and an entry in the delinquentcustomers table
+		    if(!DelinquentCustomers.isDelinquentCustomer(subID)){
+		
+				theAlert.setCustomer(customerID);
+				theAlert.setStatus(AlertStatus.ACTIVE);
+				theAlert.setType(AlertType.BILLING);
+				theAlert.setAlertInfo("Automated Billing Attempt Failed");
+				theAlert.insert();
+
+			
+			Address billingAddress = Address.selectFromCustomerID(customerID,AddressType.BILLING);
+				
+			alerts = CustomerAlerts.selectAllActiveBillingAlertsForCustomer(customerID);
+				
+			DelinquentCustomers cust = new DelinquentCustomers();
+		    	cust.setSubId(theSub.getID());
+		    	
+		    	int checkpoint = DelinquentCustomers.getCheckpointForMonthsBehind(alerts.length);
+		    	cust.setAttempt(checkpoint);	    	
+		    	cust.setCheckpoint(checkpoint);
+		    	cust.setLevel(DelinquentCustomers.getLevel(checkpoint));		    	
+		    	cust.setMaxLevel(cust.getLevel());		    	
+		    	cust.setActive(DelinquentCustomers.DELINQUENT_CUSTOMER_ACTIVE);
+		    	
+		    	PartnerService ps = new PartnerService();
+		    	ps.selectFromID(theSub.getPartnerServiceID());
+		    	
+		    	double amountOwed = 0;
+				double surchargeAmount = 0;
+				double amountOwedWithTax = 0;
+				double surchargeAmountWithTax = 0;
+				double totalAmountOwedWithTax = 0;	
+		    	
+		    	try{
+					amountOwed = Double.parseDouble(ps.getPrice()); 
+					amountOwed += findExtraChargeForOtherServices(subID); 
+				}catch (Exception e) {
+					amountOwed = 0;
+				}
+				
+				amountOwed = amountOwed * alerts.length;
+				amountOwedWithTax = SalesTax.getInstance().calculateTotalForAmountAndAddress(new Money(amountOwed),billingAddress).doubleValue();
+				
+				surchargeAmount = DelinquentCustomers.getSurchargeAmount(cust.getMaxLevel(), amountOwed);
+				surchargeAmountWithTax = SalesTax.getInstance().calculateTotalForAmountAndAddress(new Money(surchargeAmount),billingAddress).doubleValue();
+				
+				totalAmountOwedWithTax = amountOwedWithTax + surchargeAmountWithTax;	
+							
+		    	cust.setAmountOwed(Money.roundOff(amountOwedWithTax+""));
+		    	cust.setSurchargeAmount(Money.roundOff(surchargeAmountWithTax+""));
+		    	cust.setTotalAmountOwed(Money.roundOff(totalAmountOwedWithTax+""));
+		    	cust.setDelinquentDate(alerts[0].getTimestamp());
+		    	cust.setPreviousBillingDate(new TimeAndDate());
+//		    	cust.setNewBillingDate(DelinquentCustomers.getNextBillingDate(cust.getCheckpoint()));
+			cust.setNewBillingDate(DelinquentCustomers.getNextBillingDate(cust.getCheckpoint(),theSub.getBillDate().getTimeAndDate()));
+		    	cust.insert();
+		    	
+		    	Customer customer = new Customer();
+		    	customer.selectFromID(customerID);
+		    	if(customerTrialUpgraded){
+		    		Receipt.freeTrialMemberBillingFailed(customer, amountOwed);
+		    	}			
+
+			/*
+			BillingException billEx = new BillingException();
+			TimeAndDate newTimeDate = new TimeAndDate();
+			NullableTimeAndDate nextBill = new NullableTimeAndDate();
+			
+			if(billEx.selectExceptionForSub(subID)) {
+			// a billing exception exists, update it...
+			newTimeDate.add(TimeAndDate.DATE, 30);
+			nextBill.setTimeAndDate(newTimeDate);
+			
+			billEx.setNextBillDate(nextBill);
+			billEx.setBypassBillingForMonth(new Boolean(false));
+			billEx.update();
+			} else { //no billing exception exists
+			// write a billing exception
+			newTimeDate.add(TimeAndDate.DATE, 2);
+			nextBill.setTimeAndDate(newTimeDate);
+			
+			billEx.setSubscription(subID);
+			billEx.setNextBillDate(nextBill);
+			billEx.setBypassBillingForMonth(new Boolean(false));
+			billEx.setTimestamp(new TimeAndDate());
+			billEx.insert();
+			}
+			*/
+
+			if (sendFailEmail == true) {
+				// send out an email informing the customer
+				Customer theCustomer = new Customer();
+				theCustomer.selectFromID(customerID);
+				//Receipt.cardDeclineNotification(theCustomer);
+				Receipt.delinquentBillingFailed(cust);
+			}
+		   }
+
+			System.out.println("\n\nBILLING FAILED");
+		} else { // customer sucessfully charged
+			//If this user has any membership rewards that are trial
+			// based, we can activate them now;
+			// NOT FOR GAMEACCESS
+			//MemberRewards.activatePendingTrialRewards(customerID);
+
+			
+			theSub.selectFromID(subID);
+			
+//			------------------ (KTPL: Tell a friend) -----------------
+			
+	// If customer has been referred by someone & his first billing is successful then add free days to the referrer
+			
+			Referrals.addFreeDaysToTheReferrer(customerID);
+			
+//			------------------ (KTPL: Tell a friend) -----------------
+			
+			
+//			 ---------------------- (KTPL: Downgrade -----------------
+			PartnerServiceHistory psh = new PartnerServiceHistory();
+			psh.selectPartnerServiceHistoryForSubscription(theSub.getID());
+			psh.setPartnerServiceID(theSub.getPartnerServiceID());
+			psh.update();
+			
+//			 ---------------------- KTPL: Downgrade) -----------------
+			
+			
+//			 ---------------------- (KTPL: Billing Cycle -----------------
+	
+			int billingType = PartnerServiceBilling.getBillingTypeForPartnerService(theSub.getPartnerServiceID());
+			
+			if(billingType == BillingType.QUARTERLY_BILLING || billingType == BillingType.BIANNUAL_BILLING){
+				int numberOfDaysToAdd = 0;
+				
+				// billing exception should occur for next two months for quarterly and next five months for bi-annual			
+
+				numberOfDaysToAdd = (billingType == BillingType.QUARTERLY_BILLING) ? 90:180;
+				
+				
+				TimeAndDate newTimeDate = new TimeAndDate();
+				NullableTimeAndDate nextBill = new NullableTimeAndDate();
+
+				
+				int numberOfDaysElapsedFromBillingAlert = 0;
+				if (alerts != null && alerts.length > 0) {
+					TimeAndDate alertTimeDate;
+					theAlert = alerts[0];
+					alertTimeDate = theAlert.getTimestamp();
+					if(alertTimeDate != null){
+						numberOfDaysElapsedFromBillingAlert = TimeAndDate.getElapsedDays(alertTimeDate, newTimeDate);
+					}					
+				}
+				
+				numberOfDaysToAdd = numberOfDaysToAdd - numberOfDaysElapsedFromBillingAlert;
+				
+				newTimeDate.add(TimeAndDate.DATE, numberOfDaysToAdd);
+				nextBill.setTimeAndDate(newTimeDate);
+			
+				theSub.setBillDate(nextBill);
+				theSub.update();
+			}
+			
+			
+//			 ---------------------- KTPL: Billing Cycle) -----------------
+		
+
+		/*	if (alerts.length > 0) {
+				boolean disableAlert = true;
+				for (int loopIter = 0; loopIter < alerts.length; ++loopIter) {
+					if ((isCommandLine == false)
+						&& (removeAlertIfSuccessful == false)) {
+						Alert.send(
+							"GameAccess Subscription "
+								+ subID
+								+ " NEEDS MANUAL CUSTOMER ALERT REMOVAL",
+							"Subscription id "
+								+ subID
+								+ " has a customer alert that was created before the autobilling system. Please charge the customer for the number of deliquient payments that are recorded in the pre-auto-billing system.");
+						disableAlert = false;
+					}
+				}
+				if (disableAlert == true) {
+					// Remove the billing customer alert if one exists...
+					theAlert.disableAllActiveBillingAlertsForCustomer(
+						customerID);
+					System.out.println(
+						"\n********\n*******\nALERT DEACTIVATED");
+				}
+			} */
+
+			// KTPL: Delinquent customers Remove the alert once billing gets succeeded
+				alerts = CustomerAlerts.selectAllActiveBillingAlertsForCustomer(theSub.getPurchasingCustomerID());
+				if(alerts.length > 0){
+					theAlert = alerts[0];
+					theAlert.setStatus(AlertStatus.INACTIVE);
+					theAlert.update();
+				}
+				
+				DelinquentCustomers.updateDelinquentMember(theSub.getID(), 1, false);
+
+			System.out.println("\n\nBILLING SUCCEDED");
+		}
+
+		return (result);
+	}
+
+	/** KTPL: DelinquentCustomers 
+	 * Responsible for recurring charges of Delinquent customers.
+	 * @param delinquentCustomer Represents a Delinquent Customer. 
+	 */
+	public static boolean recurringChargeDelinquentCustomer(DelinquentCustomers delinquentCustomer, boolean autoBill) {
+		CustomerAlerts alert = new CustomerAlerts();
+    	CustomerAlerts[] alerts;
+    	Billing billing;
+    	
+    	boolean billingSuccess = true;
+    	int successfulCount = 0;
+
+    	Subscription sub = new Subscription();
+    	int subID = delinquentCustomer.getSubId();
+    	sub.selectFromID(subID);
+
+	StringBuffer logMsg = new StringBuffer();
+
+	if(sub.getSubscriptionStatusID() != SubscriptionStatus.ACTIVE){
+    		return false;
+    	}    
+	
+    	int customerId = sub.getPurchasingCustomerID();
+    	
+    	Address billingAddress = Address.selectFromCustomerID(customerId,AddressType.BILLING);
+		alerts = CustomerAlerts.selectAllActiveBillingAlertsForCustomer(customerId);
+		
+		logMsg.append("Alerts Length before processing = ");
+		logMsg.append(alerts.length);
+		logMsg.append("\n");
+	
+	// Bill for the past failed months(months having alerts) 
+		if (alerts != null && alerts.length > 0) {
+			for (int loopIter = 0; loopIter < alerts.length; loopIter++) {
+				alert = alerts[loopIter];
+				
+				
+				/* For Testing..... Delete this later
+				if(successfulCount == 2){
+					billingSuccess = false;
+					break;
+				}*/
+				
+				billing = new Billing();
+				if(billing.genericCharge(subID, 1, true, null, null, null, null, null)){
+					logMsg.append("Billing Success For Alert = ");
+			                logMsg.append(alert.getTimestamp());
+			                logMsg.append("\n");
+					alert.setStatus(AlertStatus.INACTIVE);
+					alert.update();
+					successfulCount++;
+				}else{
+					logMsg.append("Billing Failed For Alert = ");
+                                        logMsg.append(alert.getTimestamp());
+                                        logMsg.append("\n");
+					billingSuccess = false;
+					break;
+				}			
+									
+			}	
+				logMsg.append("Success Count = ");
+                                logMsg.append(successfulCount);
+                                logMsg.append("\n");
+	
+		}   		
+		
+		// Alerts are inserted and delinquent status are changed only if it is an autobill
+		if(autoBill){
+			logMsg.append("Auto Bill ");
+                        logMsg.append("\n");			
+
+			// Try to bill for the present month(If he is in checkpoints 5, 35 and 65). 
+			// Note: checkpoint 5 is achieved when billing fails on 5th day. So now he will be in the next billing day i.e 30th day
+			int checkpoint = delinquentCustomer.getCheckpoint();
+			if(checkpoint == DelinquentCustomers.CHECKPOINT_5 || checkpoint == DelinquentCustomers.CHECKPOINT_35 || checkpoint == DelinquentCustomers.CHECKPOINT_65){
+				if(billingSuccess){
+					billing = new Billing();
+					billingSuccess = billing.genericCharge(subID, 1, true, null, null, null, null, null);
+					if(billingSuccess){
+				 		logMsg.append("Auto Bill  -  Monthly Bill Success");
+				                logMsg.append("\n");
+						successfulCount++;
+					}					
+				}
+				// Billing failed add an alert
+				if(!billingSuccess){
+					CustomerAlerts theAlert = new CustomerAlerts();
+					theAlert.setCustomer(customerId);
+					theAlert.setStatus(AlertStatus.ACTIVE);
+					theAlert.setType(AlertType.BILLING);
+					theAlert.setAlertInfo("Automated Billing Attempt Failed");
+					theAlert.insert();
+				}
+			}
+				
+		}
+
+	// If billing does not completes, then set amount owed, surcharge amount, checkpoint, level and next billing date
+			if(!billingSuccess){
+				// Calculate amount owed and surcharge amount
+				double amountOwed = 0;
+				double surchargeAmount = 0;
+				double amountOwedWithTax = 0;
+				double surchargeAmountWithTax = 0;
+				double totalAmountOwedWithTax = 0;		
+				
+				int newCheckpoint = delinquentCustomer.getCheckpoint();
+				int newLevel = delinquentCustomer.getLevel();
+				
+				TimeAndDate newBillingDate = delinquentCustomer.getNewBillingDate();
+				TimeAndDate previousBillingDate = delinquentCustomer.getNewBillingDate();
+				TimeAndDate delinquentDate = delinquentCustomer.getDelinquentDate();
+				
+				
+				// No bill succeeded
+				if(successfulCount == 0){
+					if(autoBill){
+						newCheckpoint = delinquentCustomer.getCheckpoint() + 1;
+					}						
+					 logMsg.append("No Billing succeeded ");
+		                         logMsg.append("\n");						
+				}else{
+					 logMsg.append("Partial Billing ");
+		                         logMsg.append("\n");
+
+					// If 1 or 2 months are billed and failed for others. Then update his checkpoint and level
+					// If customer(Checkpoint 5 & Level 2) has to be billed 2 months(previous and current). Previous month
+					// bill gets succeed and the current month fails, then he should me moved back to checkpoint 0 and level 1.
+					newCheckpoint = delinquentCustomer.getCheckpoint() - ((2 * successfulCount));	
+					if(newCheckpoint <= 0){
+						newCheckpoint = 1;
+					}
+					
+					// Failed alert's timestamp is the new delinquent date
+					alerts = CustomerAlerts.selectAllActiveBillingAlertsForCustomer(customerId);
+					if(alerts.length > 0){
+						delinquentDate = alerts[0].getTimestamp();
+					}
+					previousBillingDate = DelinquentCustomers.getNextBillingDateUsingDelinquentDate(newCheckpoint-1,delinquentDate);
+					
+					System.out.println("============== New Checkpoint ======== "+newCheckpoint);
+				}
+				
+				
+				
+				if(autoBill){
+					//newBillingDate = DelinquentCustomers.getNextBillingDateUsingDelinquentDate(newCheckpoint,delinquentDate);
+					newBillingDate = DelinquentCustomers.getNextBillingDate(newCheckpoint,sub.getBillDate().getTimeAndDate());
+				}
+				 
+				logMsg.append("New Checkpoint =  ");
+				logMsg.append(newCheckpoint);
+				logMsg.append("\n");
+				newLevel = DelinquentCustomers.getLevel(newCheckpoint);
+				if(newLevel > delinquentCustomer.getMaxLevel()){
+					delinquentCustomer.setMaxLevel(newLevel);
+				}
+
+				logMsg.append("New Level =  ");
+                                logMsg.append(newLevel);
+				logMsg.append("\n");
+
+								
+				PartnerService ps = new PartnerService();
+				ps.selectFromID(sub.getPartnerServiceID());
+							
+				try{
+					amountOwed = Double.parseDouble(ps.getPrice()); 
+					amountOwed += findExtraChargeForOtherServices(subID); 
+					logMsg.append("Partner Service price =  ");
+	                                logMsg.append(ps.getPrice());
+                                	logMsg.append("\n");
+
+					logMsg.append("Amount Owed For 1 Month =  ");
+	                                logMsg.append(amountOwed);
+					logMsg.append("\n");
+				}catch (Exception e) {
+					amountOwed = 0;
+				}
+				
+				alerts = CustomerAlerts.selectAllActiveBillingAlertsForCustomer(customerId);
+				
+				
+				 logMsg.append("New Alerts Length =  ");
+                                    logMsg.append(alerts.length);
+                                   logMsg.append("\n");
+
+
+				amountOwed = amountOwed * alerts.length;
+				amountOwedWithTax = SalesTax.getInstance().calculateTotalForAmountAndAddress(new Money(amountOwed),billingAddress).doubleValue();
+				
+				surchargeAmount = DelinquentCustomers.getSurchargeAmount(delinquentCustomer.getMaxLevel(), amountOwed);
+				surchargeAmountWithTax = SalesTax.getInstance().calculateTotalForAmountAndAddress(new Money(surchargeAmount),billingAddress).doubleValue();
+				
+				totalAmountOwedWithTax = amountOwedWithTax + surchargeAmountWithTax;		
+				
+				logMsg.append("Total Amount Owed With TAx =  ");
+                                logMsg.append(totalAmountOwedWithTax);
+				logMsg.append("\n");
+							
+				delinquentCustomer.setAttempt(delinquentCustomer.getAttempt()+1);
+				delinquentCustomer.setCheckpoint(newCheckpoint);
+				delinquentCustomer.setLevel(newLevel);
+				delinquentCustomer.setAmountOwed(Money.roundOff(amountOwedWithTax+""));
+				delinquentCustomer.setSurchargeAmount(Money.roundOff(surchargeAmountWithTax+""));
+				delinquentCustomer.setTotalAmountOwed(Money.roundOff(totalAmountOwedWithTax+""));
+				delinquentCustomer.setDelinquentDate(delinquentDate);
+				delinquentCustomer.setPreviousBillingDate(previousBillingDate);
+				
+				if(newBillingDate.before(new TimeAndDate())){
+					newBillingDate = sub.findNextBillDate().getTimeAndDate();
+				}
+				
+				delinquentCustomer.setNewBillingDate(newBillingDate);
+				
+				// Auto bill from cron
+				if(autoBill){					
+					// Send mail 
+					Receipt.delinquentBillingFailed(delinquentCustomer);
+					if(newLevel == DelinquentCustomers.LEVEL_4){
+						Receipt.customerReachedLevel4(delinquentCustomer);
+					}
+					if(newLevel == DelinquentCustomers.LEVEL_5){
+						Receipt.customerReachedLevel5(delinquentCustomer);
+					}
+			
+				}				
+		
+			}
+			
+			
+		
+		//	 If all the billing gets succeed then change the delinquent customer's status to inactive
+		if(billingSuccess){
+			System.out.println("============== Billing Success ======== ");
+			delinquentCustomer.setActive(DelinquentCustomers.DELINQUENT_CUSTOMER_INACTIVE);
+		}
+		
+		// Used For Reward Level- If new level is 3 or more reset active days to 0
+		if(!billingSuccess && delinquentCustomer.getLevel() > 2){
+			sub.setActivePlatinumDays(0);
+			sub.update();
+		}
+		
+		delinquentCustomer.update();
+		
+		// Mail.send(Receipt.ADMIN_ARRAY, "Delinquent Billing", "Customer "+customerId+" charged "+successfulCount+ " times successfully");
+		
+		return billingSuccess;
+	}
+	
+		
+
+	/**
+	 * Responsible for recurring charges.
+	 * @param subID Represents a subscriptionID.
+	 * @param cycleNumber Used to specify a cycle number.
+	 * @param creditCard A credit card object to charge.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 * &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	 * DON'T USE THIS, USE RECURRING CHARGE WRITE ALERT INSTEAD
+	 * &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	 */
+	private boolean recurringCharge(
+		int subID,
+		int cycleNumber,
+		CreditCard creditCard) {
+
+		// This is a monthly billing
+		// Billing.IS_MONTHLY_BILLING = true;
+		
+		boolean result = genericCharge(
+                        subID,
+                        cycleNumber,
+                        true,
+                        null,
+                        null,
+                        null,
+                        null,
+                        creditCard);
+		if (result == false){
+			Subscription sub = new Subscription();
+	    	sub.selectFromID(subID);
+	    	
+	    	int billingType = PartnerServiceBilling.getBillingTypeForPartnerService(sub.getPartnerServiceID());
+	    	if(billingType == BillingType.QUARTERLY_BILLING || billingType == BillingType.BIANNUAL_BILLING){
+	    		PartnerService ps = new PartnerService();
+	    		ps.selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(sub.getServiceID(), PartnerService.DEFAULT_PARTNER_ID, BillingType.MONTHLY_BILLING);
+	    		sub.setPartnerServiceID(ps.getID());
+	    		sub.setPartnerServiceIDAfterTrial(ps.getID());
+	    		sub.update();
+	    		result = genericCharge(
+                    	subID,
+                        cycleNumber,
+                        true,
+                        null,
+                        null,
+                        null,
+                        null,
+                        creditCard);
+
+	    	}
+		}
+		//Billing.IS_MONTHLY_BILLING = false;
+
+		return result;
+
+	}
+
+	/**
+	 * Responsible for recurring charges.
+	 * @param subID Represents a subscriptionID.
+	 * @param cycleNumber Used to specify a cycle number.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 * &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	 * DON'T USE THIS, USE RECURRING CHARGE WRITE ALERT INSTEAD
+	 * &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	 */
+	private boolean recurringCharge(int subID, int cycleNumber) {
+		return genericCharge(subID, cycleNumber, true, null, null, null, null);
+	}
+
+	/**
+	 * Responsible for single charge.
+	 * @param custID Represents a customer ID.
+	 * @param amount The amount to charge the customer.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+	private boolean singleCharge(
+		int custID,
+		double amount,
+		int singleTransTypeID) {
+		return singleCharge(custID, amount, null, singleTransTypeID);
+	}
+
+	/**
+	 * Responsible for a single charge.
+	 * @param custID Represents a customer ID.
+	 * @param amount The amount to charge the customer in the case of a single transaction charge.
+	 * @param comment Optional comment to be persisted in the Transaction object.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+	public boolean singleCharge(
+		int custID,
+		double amount,
+		String comment,
+		int singleTransTypeID) {
+		return genericCharge(
+			custID,
+			0,
+			false,
+			new Double(amount),
+			null,
+			comment,
+			new Integer(singleTransTypeID));
+	}
+
+	/**
+	 * Responsible for a single charge.
+	 * @param custID Represents a customer ID.
+	 * @param amount The amount to charge the customer in the case of a single transaction charge.
+	 * @param tax The amount of tax that will be included in the charge balance.
+	 * @param comment Optional comment to be persisted in the Transaction object.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+	public boolean singleCharge(
+		int custID,
+		double amount,
+		double tax,
+		String comment,
+		int singleTransTypeID) {
+		
+		
+		return genericCharge(
+			custID,
+			0,
+			false,
+			new Double(amount),
+			new Double(tax),
+			comment,
+			new Integer(singleTransTypeID));
+		
+		
+		 
+	}
+
+	/**
+	 * Responsible for a single charge.
+	 * @param custID Represents a customer ID.
+	 * @param amount The amount to charge the customer in the case of a single transaction charge.
+	 * @param tax The amount of tax that will be included in the charge balance.
+	 * @param comment Optional comment to be persisted in the Transaction object.
+	 * @param creditCard A credit card object to charge.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+	public boolean singleCharge(
+		int custID,
+		double amount,
+		double tax,
+		String comment,
+		int singleTransTypeID,
+		CreditCard creditCard) {
+		return genericCharge(
+			custID,
+			0,
+			false,
+			new Double(amount),
+			new Double(tax),
+			comment,
+			new Integer(singleTransTypeID),
+			creditCard);
+	}
+
+	/** 
+	 * genericCharge is responsible for both single and recurring charges.
+	 * @param id Represents either a customer ID or a subscriptionID depending on whether
+	 *         it is a single or recurring charge.
+	 * @param cycleNumber Used to specify a cycle number in the case of recurring transactions.
+	 * @param isRecurring If true, then a recurring transaction charge will be performed. Else
+	 *        perform a single transaction charge.
+	 * @param amount The amount to charge the customer in the case of a single transaction charge.
+	 * @param tax The amount of tax that will be included in the charge balance. If null, then
+	 *        the tax will be computed automatically using the customer's billing address state.
+	 * @param comment Optional comment to be saved in the Transaction object.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+	private boolean genericCharge(
+		int id,
+		int cycleNumber,
+		boolean isRecurring,
+		Double amount,
+		Double tax,
+		String comment,
+		Integer singleTransTypeID) {
+
+		return genericCharge(
+			id,
+			cycleNumber,
+			isRecurring,
+			amount,
+			tax,
+			comment,
+			singleTransTypeID,
+			null);
+	}
+
+	/**
+	 * Determine the bill amount for a subscribing customer. This does not include taxes.
+	 * @param subscriptionID An ID corresponding to a Subscription record.
+	 * @return A Money object containing the bill amount.
+	 */
+	public static Money billAmountForSubscription(int subscriptionID) {
+
+		Money returnVal = null;
+
+		Subscription subscription = new Subscription();
+
+		if (subscription.selectFromID(subscriptionID)) {
+
+			PartnerService partnerServ = new PartnerService();
+			partnerServ.selectFromID(subscription.getPartnerServiceID());
+
+			if (partnerServ != null) {
+			    	//New Sign-up changes - This code will be used only in case of recurring calculations
+			    	//Please do not use this code to calculate during non-recurring price calculations
+			        //As we need to calculate the price at the normal rates during recurring charges
+			        if(partnerServ.getID() == 15)
+			        {   //Since the partner service 15 needs to be charge at 1 game out/Monthly regular service
+			            partnerServ.selectFromID(1);
+			        }
+			        if(partnerServ.getID() == 16)
+			        {   //Since the partner service of 16 needs to be charged at 2 game out/Monthly service 
+			            partnerServ.selectFromID(2);
+			        }
+
+				double extraCharge = findExtraChargeForOtherServices(subscriptionID);
+				returnVal = new Money(partnerServ.getPrice());
+				returnVal = returnVal.add(new Money(extraCharge));
+			
+			}
+		}
+
+		return returnVal;
+
+	}
+
+	/**
+	 * Determine the total bill amount for a subscribing customer including taxes.
+	 * @param subscriptionID An ID corresponding to a Subscription record.
+	 * @return A Money object containing the total bill amount (tax included).
+	 */
+	public static Money totalBillAmountForSubscription(int subscriptionID) {
+
+		Money returnVal = null;
+
+		Address billingAddress = null;
+
+		Subscription subscription = new Subscription();
+		if (subscription.selectFromID(subscriptionID)) {
+
+			Address[] addressArray =
+				billingAddress.selectFromCustomerID(
+					subscription.getPurchasingCustomerID());
+			for (int iter = 0; iter < addressArray.length; iter++) {
+				if (addressArray[iter].isBillingAddress()) {
+					billingAddress = addressArray[iter];
+				}
+			}
+		}
+
+		Money billAmount = billAmountForSubscription(subscriptionID);
+
+		if (billAmount != null) {
+			returnVal =
+				SalesTax.getInstance().calculateTotalForAmountAndAddress(
+					billAmount,
+					billingAddress);
+		}
+
+		return returnVal;
+	}
+
+	/**
+	 * genericCharge is responsible for both single and recurring charges.
+	 * @param id Represents either a customer ID or a subscriptionID depending on whether
+	 *         it is a single or recurring charge.
+	 * @param cycleNumber Used to specify a cycle number in the case of recurring transactions.
+	 * @param isRecurring If true, then a recurring transaction charge will be performed. Else
+	 *        perform a single transaction charge.
+	 * @param amount The amount to charge the customer in the case of a single transaction charge.
+	 * @param tax The amount of tax that will be included in the charge balance. If null, then
+	 *        the tax will be computed automatically using the customer's billing address state.
+	 * @param comment Optional comment to be saved in the Transaction object.
+	 * @param creditCardObj A credit card object to charge.
+	 * @return A boolean indicating whether or not the charge was successful.
+	 */
+
+	private boolean genericCharge(
+		int id,
+		int cycleNumber,
+		boolean isRecurring,
+		Double amount,
+		Double tax,
+		String comment,
+		Integer singleTransTypeID,
+		CreditCard creditCardObj) {
+
+		boolean returnVal = false;
+		Subscription theSub = new Subscription();
+
+		Customer customer = new Customer();
+		PartnerService partServ = null;
+
+		RecurringTransaction recurTrans = null;
+		SingleTransaction singleTrans = null;
+
+		if (isRecurring) {
+
+			// get the Subscription object
+			if (theSub.selectFromID(id)) {
+				// get the Customer object
+				customer.selectFromID(theSub.getPurchasingCustomerID());
+			} else {
+				System.out.println("The subscription was not found in records");
+				return false;
+			}
+
+			// get the PartnerService object
+			partServ = new PartnerService();
+			partServ.selectFromID(theSub.getPartnerServiceID());
+		    	//New Sign-up changes - This code will be used only in case of recurring calculations
+		    	//Please do not use this code to calculate during non-recurring price calculations
+		        //As we need to change the partnerservice id and the service id in the subscription 
+		        if(partServ.getID() == 15)
+		        {   //Since the partner service 15 needs to be charge at 1 game out/Monthly regular service
+		            partServ.selectFromID(1);
+		            //Setting the partnerServiceID as 1 and setting the service id as 1
+		            theSub.setPartnerServiceID(1);
+		            theSub.setServiceID(1);
+		            theSub.update();
+		        }
+		        if(partServ.getID() == 16)
+		        {   //Since the partner service of 16 needs to be charged at 2 game out/Monthly service 
+		            partServ.selectFromID(2);
+		            //Setting the partnerServiceID as 2 and setting the service id as 2
+		            theSub.setPartnerServiceID(2);
+		            theSub.setServiceID(2);
+		            theSub.update();
+		        }
+				// The Partner-ServiceID = 20 is charged back to, as regularly, 2 game monthly. 
+	        if(partServ.getID() == 19)
+		        {   // The Partner-ServiceID = 20 is charged back to, as regularly, 2 game monthly. 
+		            
+		        	int numberOfRecurrPayments = RecurringTransaction.selectFromSubscriptionID(id).length;
+		        	if (numberOfRecurrPayments >= 2) {
+		        		
+  						SubscriptionFastReturn subFastReturn = new SubscriptionFastReturn();
+   						subFastReturn.selectFromID(theSub.getID());
+   						subFastReturn.setFastReturnServiceID(SubscriptionFastReturn.FAST_RETURN);
+         				subFastReturn.update();
+         				
+         	        	partServ.selectFromID(2);
+    		            //Setting the partnerServiceID as 2 and setting the service id as 2
+    		            theSub.setPartnerServiceID(2);
+    		            theSub.setServiceID(2);
+    		            theSub.update();
+         				
+		        	}
+		        	
+		
+		        }
+		} else {
+			if (!customer.selectFromID(id)) {
+				System.out.println("The customer was not found in records");
+				return false;
+			}
+		}
+
+		System.out.println(
+			"Customer ID: "
+				+ customer.getID()
+				+ " Customer Name:"
+				+ customer.getFirstName()
+				+ " "
+				+ customer.getLastName()
+				+ "\n");
+
+		// get the Address object
+		
+		//Start 09/23/2010 MJGP
+		//We send Shipping address to Moneris in place of billing address.
+		//To know if there was fraud or at least to warn customer support.
+//		Address billingAddress = new Address();
+//		Address[] addressArray =
+//			billingAddress.selectFromCustomerID(customer.getID());
+//		for (int iter = 0; iter < addressArray.length; iter++) {
+//			if (addressArray[iter].isBillingAddress()) {
+//				billingAddress = addressArray[iter];
+//			}
+//		}
+		Address shippingAddress = Address.selectFromCustomerID(customer.getID(), AddressType.SHIPPING);
+		//End 09/23/2010 MJGP
+
+		CreditCard chargeCard = new CreditCard();
+		CreditCard[] cardArray = null;
+		if (creditCardObj == null) {
+
+			// get the CreditCard object
+			cardArray = CreditCard.selectFromCustomerID(customer.getID());
+			for (int x = 0; x < cardArray.length; x++) {
+				if (cardArray[x].getStatus() == CreditCardStatus.ACTIVE) {
+					chargeCard = cardArray[x];
+				}
+			}
+		} else {
+			// the creditcard passed in was not null, use this card to charge
+			cardArray = new CreditCard[1];
+			cardArray[0] = creditCardObj;
+			chargeCard = cardArray[0];
+		}
+
+		if (chargeCard.getAccountNumber().length() == 0) {
+
+			Alert.send(
+				"GameAccess Customer Does Not have Active CreditCard",
+				"In attempting to charge a customer, it was discover that "
+					+ "customer id: "
+					+ customer.getID()
+					+ "does "
+					+ "not have an ACTIVE credit card. Please investigate this further.");
+		}
+
+		// ********* AMOUNT
+		Money billAmount =
+			isRecurring ? new Money(partServ.getPrice()) : new Money(amount);
+			
+		
+		/* Fast Return: If customer is using extra services like Fast Return & Reserve Games, then add those service charge
+		 * to the monthly bill.
+		 * 
+		 */	
+		double extraChargeForOtherServices = findExtraChargeForOtherServices(theSub.getID());	
+		Money extraMoney = new Money(extraChargeForOtherServices);
+		
+
+		billAmount = billAmount.add(extraMoney);
+
+		/** KTPL: DelinquentCustomers
+		 *  Add surcharge amount for delinquent customers */		  		
+		if(isRecurring){
+			DelinquentCustomers delinquentCustomer = new DelinquentCustomers();
+			
+			// If is a delinquent customer
+			if(delinquentCustomer.selectDelinquentCustomerFromSubscription(theSub.getID())){
+				double surchargeAmount = DelinquentCustomers.getSurchargeAmount(delinquentCustomer.getMaxLevel(), billAmount.doubleValue());
+				
+				System.out.println("============= Surcharge Amount ========="+surchargeAmount);
+				
+				Money surchargeMoney = new Money(surchargeAmount);
+				billAmount = billAmount.add(surchargeMoney);
+				
+				System.out.println("============= Bill Amount ========="+billAmount.doubleValue());
+			}
+		}		
+		
+		Money total = null;
+
+		if (tax != null) {
+			total =
+				new Money(
+					new Double(
+						billAmount.toDouble().doubleValue()
+							+ tax.doubleValue()));
+		} else {
+			total =
+				SalesTax.getInstance().calculateTotalForAmountAndAddress(
+					billAmount,
+					shippingAddress);
+		}
+
+		Money salesTax = Money.subtract(total, billAmount);
+
+		/*
+		    if(taxTable.stateExists(billingAddress.getState()) == false) {
+		        Alert.send("GameAccess Billing: Customer state does not exist",
+		                   "Customer: " + customer.getID() + "\n" +
+		                   "Has a state that does not exist: " +
+		                   billingAddress.getState());
+		    }
+		*/
+
+		charge(
+			chargeCard,
+			customer,
+			shippingAddress,
+			billAmount,
+			salesTax,
+			"Monthly Billing");
+
+		if (_creditTrans != null) {
+
+			if (isRecurring) {
+
+				// Now insert the recurring transaction
+				// (This ID is actually the same ID
+				//  as the CreditTransaction)
+
+				recurTrans = new RecurringTransaction();
+				recurTrans.setSubscriptionID(theSub.getID());
+				recurTrans.setCycle(cycleNumber);
+				recurTrans.insert(_creditTrans.getID());
+			} else {
+
+				// insert the single transaction instead
+				singleTrans = new SingleTransaction();
+				singleTrans.setCustomerID(customer.getID());
+				singleTrans.setCreditCardID(chargeCard.getID());
+				singleTrans.setTypeID(singleTransTypeID.intValue());
+				singleTrans.setBillingAddressID(shippingAddress.getID());
+				singleTrans.insert(_creditTrans.getID());
+			}
+
+			if (comment != null) {
+				_creditTrans.setTransactionComment(comment);
+			}
+
+			_creditTrans.setTransactionType(
+				isRecurring
+					? TransactionType.RECURRING
+					: TransactionType.SINGLE);
+
+			if (_authentication.isValidSale()) {
+
+				_creditTrans.setTransactionStatus(TransactionStatus.COMPLETE);
+				returnVal = true;
+				System.out.println("SUCESSFULLY CHARGED");
+
+			} else {
+
+				// the charge was declined
+				_creditTrans.setTransactionStatus(
+					TransactionStatus.UNABLE_TO_CHARGE_CARD);
+				returnVal = false;
+				System.out.println("CHARGE DECLINED");
+			}
+
+			_creditTrans.update();
+
+			// Was the card declined?
+			if (_authentication.isValidSale() == false) {
+				// does the customer have any other creditcards that we can try?
+				if (cardArray.length > 1) {
+
+					CreditCard attemptedCard = null;
+					int x = 0;
+
+					do {
+
+						// attempt to charge the customer again with the other cards. 
+						if (cardArray[x].getStatus()
+							== CreditCardStatus.INACTIVE) {
+							System.out.println(
+								"The current creditcard failed, attempting to charge "
+									+ "additional credit cards for this account.");
+
+							attemptedCard = cardArray[x];
+
+							charge(
+								attemptedCard,
+								customer,
+								shippingAddress,
+								billAmount,
+								salesTax,
+								"Monthly Billing");
+
+							if (_creditTrans != null) {
+
+								// increment the cycle number and perform another insert
+								// to indicate the attempt
+
+								if (isRecurring) {
+									recurTrans.setCycle(++cycleNumber);
+									recurTrans.insert(_creditTrans.getID());
+								} else {
+									// set the new attempted card ID 
+									singleTrans.setCreditCardID(
+										attemptedCard.getID());
+									singleTrans.insert(_creditTrans.getID());
+								}
+
+								if (comment != null) {
+									_creditTrans.setTransactionComment(comment);
+								}
+
+								_creditTrans.setTransactionType(
+									isRecurring
+										? TransactionType.RECURRING
+										: TransactionType.SINGLE);
+
+								if (_authentication.isValidSale()) {
+
+									// if successful, set the working card to active 
+									// and disable the invalid card.
+									attemptedCard.activate();
+
+									_creditTrans.setTransactionStatus(
+										TransactionStatus.COMPLETE);
+									_creditTrans.update();
+
+									returnVal = true;
+									System.out.println("SUCESSFULLY CHARGED");
+								} else { //charge failed
+									_creditTrans.setTransactionStatus(
+										TransactionStatus
+											.UNABLE_TO_CHARGE_CARD);
+									_creditTrans.update();
+								}
+							}
+						}
+						++x;
+					} while ((!returnVal) && (x < cardArray.length));
+				}
+			} // end (authentication.isValidSale() == false)
+		}
+		if (returnVal) {
+		     theSub.setFreeDays(0); 
+             	     theSub.update();	    
+		}
+		return (returnVal);
+	}
+
+	/**
+	 ** This charge does not take a sales tax object, it passes the call along with a sales tax
+	 ** that is set to zero.
+	 **/
+	public void charge(
+		CreditCard theCard,
+		Customer theCustomer,
+		Address billingAddr,
+		Money amount,
+		String comment) {
+		Money zeroTax = new Money("0.00");
+		charge(theCard, theCustomer, billingAddr, amount, zeroTax, comment);
+	}
+
+	public void charge(
+		CreditCard theCard,
+		Customer theCustomer,
+		Address billingAddr,
+		Money amount,
+		Money taxAmount,
+		String comment) {
+
+		// Moneris requires that the order id be passed also
+		_creditTrans = new CreditTransaction();
+		// set it to be dummy data
+		_creditTrans.setTransactionStatus(
+			TransactionStatus.INCOMPLTE_PRE_CHARGE);
+		_creditTrans.setTransactionType(TransactionType.SINGLE);
+		_creditTrans.insert();
+
+		// Create a CashRegister Object
+		CashRegister _register =
+			new MonerisCashRegister(
+				theCustomer,
+				billingAddr,
+				theCard,
+				_creditTrans);
+
+		Money total = Money.add(amount, taxAmount);
+
+		System.out.println(
+			"Charging: "
+				+ theCustomer.getFirstName()
+				+ " "
+				+ theCustomer.getLastName()
+				+ " $"
+				+ total.toString());
+
+		if (isCommandLine) {
+			System.out.print("OK? (y/n): ");
+			CommandLine theCL = new CommandLine();
+			while (!theCL.readString()) {
+				System.out.println("That is not a valid response. Re-Enter:");
+			}
+			if (!(theCL.getString().toLowerCase().equals("y"))) {
+				System.out.println("Exiting...");
+				return;
+			}
+
+		}
+
+		// perform initial validation on the creditcard
+		boolean cardValidated = false;
+		String validationErrorMsg = null;
+
+		System.out.println("charge YEAR: " + theCard.getExpirationYear());
+		System.out.println("charge MONTH: " + theCard.getExpirationMonth());
+
+		if (!theCard.isExpired()) {
+			cardValidated = true;
+			/*
+			 // check the card structure
+			 if(CreditCardNumber.isValid(theCard.getAccountNumber())){
+			     cardValidated = true;
+			 } else{
+			 // Careful, this can only be 100 characters.
+			     validationErrorMsg = "PRE-VALIDATION: failed verify card # check";
+			 }
+			*/
+		} else {
+			validationErrorMsg = "PRE-VALIDATION: The credit card has expired.";
+		}
+
+		_authentication = new Authentication();
+
+		if (cardValidated) {
+			HashMap resultPairs = null;
+			if (TESTING_DONOTCHARGE == true) {
+				// do not charge, we are testing
+				resultPairs = new HashMap();
+				resultPairs.put("RESULT", "0");
+				resultPairs.put("RESPMSG", "Testing");
+				resultPairs.put("AUTHCODE", "testing auth code");
+				resultPairs.put("AVSADDR", "X");
+				resultPairs.put("AVSZIP", "X");
+				resultPairs.put("CVV2MATCH", "X");
+			} else {
+				_register.saleTransaction(total);
+				resultPairs = _register.getAuthTokens();
+			}
+			if (resultPairs != null) {
+				_authentication = new Authentication(resultPairs);
+				_authentication.insert();
+				_creditTrans.setAuthentication(_authentication.getID());
+				// Pull the reference number from the resulting HashMap
+				if ((String) resultPairs.get("PNREF") != null)
+					_creditTrans.setReferenceNum(
+						(String) resultPairs.get("PNREF"));
+				_creditTrans.setTransactionType(TransactionType.SINGLE);
+				// Give them the benefit of the doubt...will be changed
+				// if it is a fail
+				_creditTrans.setTransactionStatus(TransactionStatus.COMPLETE);
+				_creditTrans.setTransactionComment(comment);
+				_creditTrans.setAmount(amount.toString());
+				_creditTrans.setSalesTax(taxAmount.toString());
+				_creditTrans.update();
+			}
+		} else {
+
+			// card did not pass initial validation, create a new mock Authentication/CT object
+			// and insert it into the database with the failed validation reason specified.
+
+			// do we want to insert a blank authentication record to be used for the creditTrans object?
+			_authentication.setResponseMessage(validationErrorMsg);
+			_authentication.setResult(
+				Integer.toString(Authentication.DATAVALIDATIONERROR));
+			_authentication.insert();
+			_creditTrans.setAuthentication(_authentication.getID());
+
+			_creditTrans.setReferenceNum("");
+			_creditTrans.setTransactionType(TransactionType.SINGLE);
+			_creditTrans.setTransactionStatus(TransactionStatus.COMPLETE);
+			_creditTrans.setTransactionComment(validationErrorMsg);
+			_creditTrans.setAmount(amount.toString());
+			_creditTrans.setSalesTax(taxAmount.toString());
+			_creditTrans.update();
+		}
+	}
+
+	/**
+	 * One time function for setting the billing dates ten days ahead of
+	 * the start dates.
+	 **/
+	/*
+	public static void incrementBillingDate () {
+	Subscription subSelect = new Subscription();
+	Subscription[] allSubs = subSelect.selectAllSubscriptions();
+	for(int iter = 0; iter < allSubs.length; iter++) {
+	    NullableTimeAndDate startDate = allSubs[iter].getStartDate();
+	    if(startDate.getTimeAndDate() != null) {
+		System.out.print("Start Date: " + TimeAndDate.getSQLDateStringFromTimeAndDate(startDate.getTimeAndDate()) + "  ");
+		TimeAndDate newDate = startDate.getTimeAndDate();
+		newDate.add(TimeAndDate.DAY_OF_MONTH, 10);
+		NullableTimeAndDate nullDate = new NullableTimeAndDate();
+		nullDate.setTimeAndDate(newDate);
+		allSubs[iter].setBillDate(nullDate);
+		System.out.println("Bill Date: " + TimeAndDate.getSQLDateStringFromTimeAndDate(nullDate.getTimeAndDate()));
+	    } else { // its null
+		allSubs[iter].setBillDate(startDate);	    
+	    }
+	
+	    allSubs[iter].update();
+	}
+	}
+	*/
+
+	private boolean doRefund(String orderId,String referenceNumber,
+		Money amount,
+		String customerID) {
+
+		_register = new MonerisCashRegister(orderId, referenceNumber, customerID);
+		return _register.creditTransaction(amount);
+	}
+
+	public boolean refund(CreditTransaction creditTransaction, Money amount) {
+
+		String comment;
+		String referenceNumber;
+
+		// Refund feature
+		String orderId;
+
+		boolean refundProcessed = false;
+
+		// GAMEACCESS
+		String customerID = "";
+		if (creditTransaction.getTransactionType() == TransactionType.SINGLE) {
+			SingleTransaction st = new SingleTransaction();
+			if (st.selectFromID(creditTransaction.getID()) == true) {
+				customerID = Integer.toString(st.getCustomerID());
+			}
+		} else if (
+			creditTransaction.getTransactionType()
+				== TransactionType.RECURRING) {
+			RecurringTransaction rt = new RecurringTransaction();
+			if (rt.selectFromID(creditTransaction.getID()) == true) {
+				Subscription sub = new Subscription();
+				if (sub.selectFromID(rt.getSubscriptionID()) == true) {
+					customerID =
+						Integer.toString(sub.getPurchasingCustomerID());
+				}
+			}
+		}
+	
+		//	 [ KTPL: 2007-11-01 RefundTax
+				 
+		 Address customerShippingAddress = Address.selectFromCustomerID(Integer.parseInt(customerID), AddressType.SHIPPING);
+	     double taxExcludedAmount = SalesTax.taxExludedAmountFromAmountAndAddress(amount.toDouble(), customerShippingAddress).doubleValue();
+	     double taxAmount = amount.doubleValue() - taxExcludedAmount;
+	     
+	     Money taxExcludedMoney = new Money(taxExcludedAmount);
+	     Money taxMoney = new Money(taxAmount);
+	     
+	     //	  KTPL: 2007-11-01 RefundTax ]
+
+		referenceNumber = creditTransaction.getReferenceNum(); // Receipt.getTxnNumber 
+		orderId = creditTransaction.getID()+""; // Transaction id generated during purchase
+
+
+		HashMap resultPairs;
+		
+		if (TESTING_DONOTCHARGE == true) {
+			// do not charge, we are testing
+			resultPairs = new HashMap();
+			resultPairs.put("RESULT", "0");
+			resultPairs.put("RESPMSG", "Testing");
+			resultPairs.put("AUTHCODE", "testing auth code");
+			resultPairs.put("AVSADDR", "X");
+			resultPairs.put("AVSZIP", "X");
+			resultPairs.put("CVV2MATCH", "X");
+			
+			refundProcessed = true;
+		} else {
+			refundProcessed = doRefund(orderId,referenceNumber, amount, customerID);
+			resultPairs = _register.getAuthTokens();
+		}
+				
+	
+		if (refundProcessed) {
+			comment =
+				"Refund of: "
+					+ amount.toString()
+					+ " for #: "
+					+ referenceNumber;
+
+			// report that the COMPLETED CreditCardTransaction has turned 
+			// into a refunded one, update it in the database
+			creditTransaction.setTransactionStatus(
+				TransactionStatus.COMPLETED_AND_REFUNDED);
+			creditTransaction.update();
+
+			// create new transaction of type refund transaction
+			_creditTrans = new CreditTransaction();
+			if (resultPairs != null) {
+				_authentication = new Authentication(resultPairs);
+				_authentication.insert();
+
+				// set the refund transaction object's ID  
+				if ((String) resultPairs.get("PNREF") != null) {
+					_creditTrans.setReferenceNum(
+						(String) resultPairs.get("PNREF"));
+				}
+
+				_creditTrans.setAuthentication(_authentication.getID());
+			}
+
+			_creditTrans.setTransactionType(TransactionType.REFUND);
+			_creditTrans.setTransactionStatus(TransactionStatus.COMPLETE);
+			_creditTrans.setTransactionComment(comment);
+			//	 [ KTPL: 2007-11-01 RefundTax
+			_creditTrans.setAmount(taxExcludedMoney.toString());
+			_creditTrans.setSalesTax(taxMoney.toString());
+			//	  KTPL: 2007-11-01 RefundTax ]
+			_creditTrans.insert();
+
+			// Create the refund transaction object and insert it into the database
+			RefundTransaction refundTransaction = new RefundTransaction();
+
+			// need to get the ID from the auth token
+			refundTransaction.setCreditTransactionID(creditTransaction.getID());
+			refundTransaction.setTimestamp(new TimeAndDate());
+			// [ KTPL: 2007-11-01 RefundTax
+			refundTransaction.setCustomerID(Integer.parseInt(customerID));
+			//  KTPL: 2007-11-01 RefundTax ]
+			refundTransaction.insert(_creditTrans.getID());
+		} else {
+			return false;
+		}
+
+		return refundProcessed;
+	}
+
+	public boolean autoBillForGivenDay(int day) {
+		//write out to file that we started autobilling
+		String startString =
+			"Started billing for day of month: "
+				+ day
+				+ " on "
+				+ (new TimeAndDate()).toString();
+		FileUtils.writeStringToFile(lastBillStartDateFile, startString);
+		//call billing
+		billMonthlyUsers(day);
+		String finishString =
+			"Finished billing for day of month: "
+				+ day
+				+ " on "
+				+ (new TimeAndDate()).toString();
+		//write out to file that day finished.
+		FileUtils.writeStringToFile(lastBillDateFinishFile, finishString);
+		return (false);
+	}
+
+	public void autoBillMonthlyUsers() {
+		TimeAndDate today = new TimeAndDate();
+		ArrayList date = getLastBillDate();
+		if ((date != null) && (date.size() > 0)) {
+			String line1 = (String) date.get(0);
+			TimeAndDate yesterday = (TimeAndDate) today.clone();
+			yesterday.add(TimeAndDate.DAY_OF_MONTH, -1);
+			// Does yesterday == today?
+			if (yesterday.toString(billDateFormat).equalsIgnoreCase(line1)) {
+				// special case if today is the first of the month
+				if (today.get(TimeAndDate.DAY_OF_MONTH) == 1) {
+					int yesterdayDate = yesterday.get(TimeAndDate.DAY_OF_MONTH);
+					while (yesterdayDate < 31) {
+						++yesterdayDate;
+						autoBillForGivenDay(yesterdayDate);
+					}
+					// now that last month is done, bill for the first
+					autoBillForGivenDay(1);
+				} else {
+					//just bill for today
+					int billDate = today.get(TimeAndDate.DAY_OF_MONTH);
+					autoBillForGivenDay(billDate);
+				}
+				//Billing has completed successfully, write out the file to show this
+				writeLastBillDate();
+			} else {
+				// uh-oh last sucessful bill date is not yesterday
+				Alert.send(
+					"GameAccess BILLING PROBLEM: billing did not run yesterday",
+					"Billing.java: Auto billing process trying to run on "
+						+ today.toString()
+						+ " encountered a problem, the last billing date is not yesterday. This means that billing did not run yesterday. You should check in the commerce directory of the java files and look for the file: "
+						+ dayOfLastBillFile
+						+ " to get the date that the billing last successfully ran on. Also, check out: "
+						+ lastBillStartDateFile
+						+ " and "
+						+ lastBillDateFinishFile
+						+ " to get the last start and end days of the month. You can use 'manualbillforday' to bill for today.");
+			}
+		} else {
+			// problem with file ERROR
+			Alert.send(
+				"GameAccess BILLING PROBLEM: cannot read file",
+				"Billing.java: Auto billing process has a problem with the file. This is a pretty high level error meaning that the file either was not written out yesterday (billing did not finish) or the file is not there or some other file problem. You should check: "
+					+ dayOfLastBillFile
+					+ " that is what is causing the error.");
+		}
+	}
+
+	public static ArrayList getLastBillDate() {
+		//look for last successful bill date file,
+		// if it does not exist or, if the date is less than yesterday
+		// we have a problem.
+		File dateFile = new File(dayOfLastBillFile);
+		ArrayList date = null;
+		if ((dateFile.exists()) && (dateFile.canRead())) {
+			date = FileUtils.readTextFileToString(dayOfLastBillFile);
+		}
+		System.out.println(date);
+		return (date);
+	}
+
+	public static void writeLastBillDate() {
+		TimeAndDate today = new TimeAndDate();
+		FileUtils.writeStringToFile(
+			dayOfLastBillFile,
+			today.toString(billDateFormat));
+	}
+
+	public void manualDailyBill(int dayToBill) {
+		autoBillForGivenDay(dayToBill);
+		writeLastBillDate();
+	}
+
+	public static int numberOfDelinquentPayments(int custID) {
+
+		int returnVal = 0;
+
+		// get the alerts for customer (if any)
+		CustomerAlerts[] customerAlerts =
+			CustomerAlerts.selectAllActiveBillingAlertsForCustomer(custID);
+
+		// does the customer have any alerts?
+		if (customerAlerts != null && customerAlerts.length > 0) {
+
+			System.out.println("Customer " + custID + " has alerts.");
+
+			int totalCalculatedCharges = 0;
+
+			TimeAndDate billUntil = new TimeAndDate();
+
+			Queue queue = new Queue();
+			queue.setCustomer(custID);
+
+			// check to see if the user has any games out
+			ArrayList queueList =
+				queue.selectAllRentedQueueForCustomerAsArrayList();
+			if (queueList == null || queueList.size() == 0) {
+
+				System.out.println(
+					"The user appears to have returned their games.");
+				// user has returned all rented games, charge them just from the
+				// month of delinquency up until the last return date.
+
+				NullableTimeAndDate lastReturn =
+					Queue.getLastDateReturnedForCustomer(custID);
+				// If last return date is null then the billing date stays "now"
+				if (lastReturn.getTimeAndDate() != null) {
+					billUntil = lastReturn.getTimeAndDate();
+				}
+			} else {
+				System.out.println("The user has not returned their games");
+				// billUntil date stays 'now'
+			}
+
+			TimeAndDate billFrom = customerAlerts[0].getTimestamp();
+
+			// if the recurring charge falls within the delinquency window,
+			// count it as a transaction. The delinquency window would be shorter
+			// than del_start -> now() if the user returned their games.
+			// All charges after that period should be wavered.
+
+			// determine delinquency start date
+			for (int x = 1; x < customerAlerts.length; x++) {
+
+				TimeAndDate tad = customerAlerts[x].getTimestamp();
+
+				// get the TAD object for the earliest active customer alert
+				if (billFrom.getInMillis() > tad.getInMillis()) {
+					billFrom = tad;
+				}
+			}
+
+			int numberOfCharges = 0;
+			Integer numChargesObj = null;
+
+			Subscription sub =
+				new Subscription().selectSubscriptionForPurchaseCuID(custID);
+
+			if (sub != null) {
+				numChargesObj =
+					DBJoin.numOfRecurringTransactions(
+						sub.getID(),
+						TransactionStatus.UNABLE_TO_CHARGE_CARD,
+						billFrom,
+						billUntil);
+			}
+
+			if (numChargesObj != null) {
+				numberOfCharges = numChargesObj.intValue();
+			}
+
+			System.out.println("Bill from date is " + billFrom.toString());
+			System.out.println("Bill to date is " + billUntil.toString());
+
+			// determine elapsed months for billFrom to billUntil
+			int elapsedMonths =
+				TimeAndDate.getElapsedMonths(billFrom, billUntil);
+
+			System.out.println(
+				"Number of months since delinquency " + elapsedMonths);
+			System.out.println(
+				"Number of recurring transactions since delinquency "
+					+ numberOfCharges);
+
+			// take the lesser of elapsed number of months delinquent and the number of charges.
+			if (elapsedMonths < numberOfCharges) {
+				totalCalculatedCharges = elapsedMonths;
+			} else {
+				totalCalculatedCharges = numberOfCharges;
+			}
+
+			// finally, make sure that the minimum number of times to bill is 1
+			if (totalCalculatedCharges > 0) {
+				returnVal = totalCalculatedCharges;
+			} else {
+				returnVal = 1;
+			}
+		}
+
+		return returnVal;
+	}
+
+	//return the number of successful charges that have occurred
+	public static int chargeDelinquentCustomer(int custID) {
+		return (chargeDelinquentCustomer(custID, false));
+	}
+
+	/**
+	 ** Allow the user to specify if it is being called with a command line or not
+	 **/
+	public static int chargeDelinquentCustomer(
+		int custID,
+		boolean commandLine) {
+		Billing billing = new Billing();
+		billing.setCommandLine(commandLine);
+		billing.setRemoveAlertIfSuccessful(true);
+		return (billing.chargeDelinquentCustomer(custID, null));
+	}
+
+	//return the number of successful charges that have occurred
+	protected int chargeDelinquentCustomer(
+		int custID,
+		Integer numberOfDelinquentPayments) {
+
+		int numberOfCharges = 0;
+		int successfulCharges = 0;
+
+		Subscription sub =
+			new Subscription().selectSubscriptionForPurchaseCuID(custID);
+
+		numberOfCharges =
+			(numberOfDelinquentPayments != null)
+				? numberOfDelinquentPayments.intValue()
+				: numberOfDelinquentPayments(custID);
+
+		//---- bill the customer for monthly x 'numberOfCharges' ---//
+		boolean isSuccessfulCharge = false;
+		boolean continueToAttemptCharges = true;
+
+		for (int x = 0; x < numberOfCharges; x++) {
+			if (continueToAttemptCharges == true) {
+				isSuccessfulCharge = recurringChargeWriteAlert(sub.getID(), 1);
+
+				if (isSuccessfulCharge) {
+					successfulCharges++;
+				} else {
+					// charge failed, stop trying them
+					continueToAttemptCharges = false;
+				}
+			}
+		}
+
+		return successfulCharges;
+	}
+
+	
+	// Fast Return & Reserve Games
+	public static double findExtraChargeForOtherServices(int subId) {
+		double extraCharge = 0d;
+		int billingType = BillingType.getBillingTypeForSubscription(subId);
+		
+		int mul = 1;
+		if(billingType == BillingType.QUARTERLY_BILLING){
+			mul = 3;
+		}
+		if(billingType == BillingType.BIANNUAL_BILLING){
+			mul = 6;
+		}			
+		
+		SubscriptionFastReturn fastReturn = new SubscriptionFastReturn();
+		fastReturn.selectFromID(subId);
+		
+		SubscriptionReserveGame reserveGame = new SubscriptionReserveGame();
+		reserveGame.selectFromID(subId);
+		
+		// Check for fast return
+		
+		if(fastReturn.getFastReturnServiceID() == SubscriptionFastReturn.FAST_RETURN)
+		{
+			extraCharge = extraCharge + (SubscriptionFastReturn.FAST_RETURN_CHARGE * mul);
+		}
+		if(reserveGame.getReserveGameServiceID() == SubscriptionReserveGame.RESERVE_GAMES)
+		{
+			extraCharge = extraCharge + (SubscriptionReserveGame.RESERVE_GAME_CHARGE  * mul);
+		}
+		System.out.println("------------------ Extra Charge: "+extraCharge);
+		return extraCharge;
+	}
+
+	public final static void main(String args[]) {
+		Billing moMoney = new Billing();
+
+		if ((args.length > 0) && (args[0].equals("billone"))) {
+			CommandLine theCL = new CommandLine();
+			System.out.print(
+				"Please enter the subscription id to be charged: ");
+			while (!theCL.readInt()) {
+				System.out.println("That is not a valid queue id. Re-Enter:");
+			}
+			int subID = theCL.getInt();
+
+			moMoney.setCommandLine(true);
+			moMoney.recurringChargeWriteAlert(subID, 1);
+		} else if ((args.length > 0) && (args[0].equals("billall"))) {
+			moMoney.setCommandLine(true);
+			moMoney.billMonthlyReccurringUsers();
+		} else if ((args.length > 0) && (args[0].equals("billmonthly"))) {
+			moMoney.setCommandLine(false);
+			NullableTimeAndDate theDate = new NullableTimeAndDate();
+			theDate.setTimeAndDate(new TimeAndDate(2004, 0, 31, 0, 0));
+			moMoney.billMonthlyUsers(theDate);
+		} else if ((args.length > 0) && (args[0].equals("autobill"))) {
+                        moMoney.setCommandLine(false);
+                        try {
+                                moMoney.autoBillMonthlyUsers();
+                        } catch (NumberFormatException nfe) {
+                                Alert.send("GameAccess Billing Failed", "Autobilling script has stopped due to communication problem with the Moneris Payment Gateway.");
+                                nfe.printStackTrace();
+                                System.exit(-1);
+                        } catch (Exception e) {
+				Alert.send("GameAccess Billing Failed", "Autobilling script has stopped due to an unknown Exception.");
+                                e.printStackTrace();
+                                System.exit(-1);
+			}
+
+		} else if ((args.length > 0) && (args[0].equals("manualbillforday"))) {
+			moMoney.setCommandLine(true);
+			CommandLine theCL = new CommandLine();
+			System.out.print(
+				"Please enter the day (integer) that you want to bill for: ");
+			while (!theCL.readInt()
+				&& (theCL.getInt() >= 1 && theCL.getInt() <= 31)) {
+				System.out.println("That is not a valid integer. Re-Enter:");
+			}
+			int day = theCL.getInt();
+			moMoney.manualDailyBill(day);
+		} else {
+			System.out.println(
+				"USAGE: java govojo.commerce.Billing billone|billall");
+		}
+	}
+}

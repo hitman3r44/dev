@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+  <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+     <layout class="org.apache.log4j.SimpleLayout"/>
+  </appender>
+
+  <appender name="proxoolFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+     <param name="File" value="/var/log/proxool/proxool.log"/>
+     <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+     <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d{DATE} [%-5p] %c {%F:%L} - %m%n"/>
+     </layout>
+  </appender>
+
+  <root>
+     <!-- For Log4J Levels See: 
+         http://supportweb.cs.bham.ac.uk/documentation/tutorials/docsystem/build/tutorials/log4j/log4j.html#LOG4J-Basics -->
+
+     <!-- Specify the level on the line below -->
+     <priority value="OFF"/>
+     <appender-ref ref="consoleAppender"/>
+     <appender-ref ref="proxoolFileAppender"/>
+  </root>
+
+</log4j:configuration> 

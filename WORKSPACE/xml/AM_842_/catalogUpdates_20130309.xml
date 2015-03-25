@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="AM_PEU27179"/>
+    <ls-product id="AM_PEU230128"/>
+    <ls-product id="AM_SONBDVE390">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONBDVE3100</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ301358">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241386</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ101353">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ301379">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSGEF43</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ101359">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSXDC79</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ301360">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROT70227</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ00001">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ101319">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTLB72498</substitute-product>
+    </ls-product>
+    <ls-product id="AM_ESQ301395">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSSC125</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512634">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGS72439</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512719">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGB72339</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512720">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNE161</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512584">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512724">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSRK021</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512519">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241564</substitute-product>
+    </ls-product>
+    <ls-product id="AM_HUG1512661">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTAGS90047</substitute-product>
+    </ls-product>
+    <ls-product id="AM_LCT2010547">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_LCT2000518">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_LCT2010595">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_LCT2000668">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_LCT2000651">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_LCT2010552">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNDC31</substitute-product>
+    </ls-product>
+    <ls-product id="AM_LCT2010579">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA475</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL81197">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="AM_THL10286">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL10285">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="AM_THL10311">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL10276">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPH9016</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL80996">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPEGF91</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL90835">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPF3995</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL90781">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6021</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL10307">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6015</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL81146">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPS6031</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL90768">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC26002</substitute-product>
+    </ls-product>
+    <ls-product id="AM_LCT2010621">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="AM_LCT2010566">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="AM_CAB519057">
+        <group>Outdoors</group>
+        <category>Bbqs</category>
+    </ls-product>
+    <ls-product id="AM_BDI580415">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CAB530352">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_BDI530632">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_BDI530634">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CAB943052">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CAB629310">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_APPMD093LL">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - English</title>
+    </ls-product>
+    <ls-product id="AM_APPZ0MP">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - French</title>
+    </ls-product>
+    <ls-product id="AM_APPMD096LL">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - English</title>
+    </ls-product>
+    <ls-product id="AM_APPZ0MS">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - French</title>
+    </ls-product>
+    <ls-product id="AM_THL1781242">
+        <status>DISCONTINUED</status>
+        <substitute-product>LRSRRS89R</substitute-product>
+    </ls-product>
+    <ls-product id="AM_THL1710277">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="AM_SONMDREX38IPB">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONMDREX100IP_BK</substitute-product>
+    </ls-product>
+    <ls-product id="AM_SONPS250">
+        <cost>293.70</cost>
+        <discount-dollars>31.30</discount-dollars>
+        <discount-percent>9.63</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>33.11</average-canada>
+            <rate-per-province>
+                <AB>31.46</AB>
+                <BC>33.11</BC>
+                <MB>25.85</MB>
+                <NB>27.29</NB>
+                <NL>34.86</NL>
+                <NS>27.74</NS>
+                <NT>33.56</NT>
+                <NU>95.39</NU>
+                <ON>21.42</ON>
+                <PE>26.19</PE>
+                <QC>19.22</QC>
+                <SK>31.46</SK>
+                <YT>39.86</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_TOS47L6200U">
+        <cost>1,157.82</cost>
+        <discount-dollars>135.17</discount-dollars>
+        <discount-percent>10.45</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>100.51</average-canada>
+            <rate-per-province>
+                <AB>95.93</AB>
+                <BC>100.51</BC>
+                <MB>77.11</MB>
+                <NB>80.88</NB>
+                <NL>104.29</NL>
+                <NS>82.25</NS>
+                <NT>100.26</NT>
+                <NU>319.30</NU>
+                <ON>69.82</ON>
+                <PE>78.10</PE>
+                <QC>66.48</QC>
+                <SK>95.91</SK>
+                <YT>113.26</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AM_CAB116344">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CAB130251">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CAB130190">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="AM_CABSPIN1G">
+        <shipping-size>
+            <length>42</length>
+            <width>16</width>
+            <height>16</height>
+        </shipping-size>
+    </ls-product>
+</catalog>

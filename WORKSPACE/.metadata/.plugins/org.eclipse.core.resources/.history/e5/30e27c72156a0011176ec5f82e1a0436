@@ -1,0 +1,17 @@
+package com.loyauty.service.category;
+
+import java.util.List;
+
+
+import com.loyauty.exception.ServiceException;
+
+import com.loyauty.service.Service;
+
+import com.loyauty.service.core.dto.CategoryDTO;
+
+public interface CategoryService extends Service {
+	
+	List<CategoryDTO> getAllCategory() throws ServiceException;
+
+	
+}

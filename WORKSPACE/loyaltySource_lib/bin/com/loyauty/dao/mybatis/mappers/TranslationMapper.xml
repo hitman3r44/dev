@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.loyauty.dao.mybatis.mappers.TranslationMapper">
+	
+	<resultMap type="TranslationEntry" id="translationEntryResultMap">
+		<id property="id" column="entryId"/>			
+	</resultMap>
+		
+	<resultMap type="Translation" id="translationResultMap">
+		<constructor>
+		<!-- ID argument; flagging results as ID will help improve overall performance
+			<idArg column="id" javaType="int"/>
+			 -->
+		</constructor>
+		
+		<id property="id" column="transId"/>
+		<collection property="entries" ofType="TranslationEntry" resultMap="translationEntryResultMap"/>				
+	</resultMap>		
+	
+	<sql id="translationEntrySelectFragment">
+   		te.id as entryId, te.trans_id as transId, te.lang_id as language, te.text, te.creation_date as creationDate  
+   	</sql>
+   	
+	<sql id="select">
+		select t.id as id, t.creation_date as creationDate,
+		<include refid="translationEntrySelectFragment"/>
+		from translation t join translation_entry te on t.id=te.trans_id		
+	</sql>
+	
+   	<sql id="where">where t.id = #{id}</sql>
+   	
+   	<sql id="orderById">order by id</sql>   	
+   			
+   	<select id="getTranslation" resultMap="translationResultMap">
+		<include refid="select"/>
+      	<include refid="where"/>
+	</select>
+	
+	<select id="getAllTranslations" resultMap="translationResultMap">
+		<include refid="select"/>
+		<include refid="orderById"/>			      	
+	</select>	
+		
+	<insert id="insertTranslation" parameterType="Translation">		
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('translation_id_seq')
+    	</selectKey>    	
+    	insert into translation(id) values (#{id})
+	</insert>	
+	
+	<select id="getEntry" resultMap="translationEntryResultMap">		
+		select 
+		<include refid="translationEntrySelectFragment"/>
+		from translation_entry te where id=#{id}
+	</select>
+
+	<select id="getEntrybyTranlationLang" resultMap="translationEntryResultMap">		
+		select 
+		<include refid="translationEntrySelectFragment"/>
+		from translation_entry te where te.trans_id=#{transId} and te.lang_id = #{language}
+	</select>
+
+	
+	<insert id="insertEntry" parameterType="TranslationEntry">		
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('translation_entry_id_seq')
+    	</selectKey>    	
+    	insert into translation_entry(id, trans_id, lang_id, text) values(#{id}, #{transId}, #{language}, #{text})
+	</insert>
+	
+	<update id="updateEntry" parameterType="TranslationEntry">
+		update translation_entry t set text = #{text} where id=#{id}			
+	</update>	    
+	
+</mapper>
+

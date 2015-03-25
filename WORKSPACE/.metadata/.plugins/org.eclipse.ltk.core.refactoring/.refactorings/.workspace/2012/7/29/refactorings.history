@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;loyaltySource_admin/src/com/loyauty/web/struts/action/brand/Brand.java&apos;" deleteContents="false" description="Delete resource &apos;loyaltySource_admin/src/com/loyauty/web/struts/action/brand/Brand.java&apos;" element1="/loyaltySource_admin/src/com/loyauty/web/struts/action/brand/Brand.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1342809063233"/>
+</session>

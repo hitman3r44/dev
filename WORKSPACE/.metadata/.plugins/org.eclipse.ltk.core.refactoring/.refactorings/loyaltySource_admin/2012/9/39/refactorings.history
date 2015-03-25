@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.loyauty.web.struts.action.ajax.AdminPageAjax.setuserproductstatus()&apos; to &apos;findUserProductStatus&apos;&#x0D;&#x0A;- Original project: &apos;loyaltySource_admin&apos;&#x0D;&#x0A;- Original element: &apos;com.loyauty.web.struts.action.ajax.AdminPageAjax.setuserproductstatus()&apos;&#x0D;&#x0A;- Renamed element: &apos;com.loyauty.web.struts.action.ajax.AdminPageAjax.findUserProductStatus()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;setuserproductstatus&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;com.loyauty.web.struts.action.ajax{AdminPageAjax.java[AdminPageAjax~setuserproductstatus" name="findUserProductStatus" references="true" stamp="1348770772859" version="1.0"/>
+</session>

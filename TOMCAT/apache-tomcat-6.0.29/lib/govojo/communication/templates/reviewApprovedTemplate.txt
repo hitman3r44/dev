@@ -1,0 +1,13 @@
+Dear #FIRSTNAME#,
+
+Your review has been approved and can now be viewed by all
+members.  Thanks for supporting the Game Access community!
+
+Sincerely,
+
+The Game Access team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/account/displayAccountLanding.jsp
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

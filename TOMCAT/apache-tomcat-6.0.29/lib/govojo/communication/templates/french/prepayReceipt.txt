@@ -1,0 +1,10 @@
+Bonjour #FIRSTNAME#,
+Bienvenue à Game Access, la meilleure manière de louer vos jeux vidéo en ligne. Nous aimerions vous remercier d'avoir choisi notre service. Pour débuter, veuillez ajouter les jeux que vous désirez dans votre sélection. Pour plus de détails, visitez la page ci-dessous.
+http://gameaccess.ca/displayFAQ.jsp?lang=fr#game_queue
+Votre compte est prépayé jusqu'au #EXPIRY_DATE#, après quoi vous serez facturé mensuellement. Veuillez noter que vous pouvez opter pour une facturation trimestrielle ou biannuelle pour économiser de 10 à 20% sur votre prochain renouvellement. Le changement peut être effectué dans la section 'Mon compte' en appuyant sur 'Mettre à jour mon abonnement'.
+Si vous avez des questions, n'hésitez pas à communiquer avec nous ici :http://www.gameaccess.ca/displayContactUs.jsp?lang=fr
+Maintenant c'est à vous de jouer!L'Équipe Game Access
+*---- Liens utiles ----*
+Contactez-nous - http://www.gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon compte - https://gameaccess.ca/account/displayLogin.jsp?lang=fr 
+FAQ - http://gameaccess.ca/displayFAQ.jsp?lang=fr

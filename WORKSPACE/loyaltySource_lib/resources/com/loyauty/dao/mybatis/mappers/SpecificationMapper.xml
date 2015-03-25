@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.loyauty.dao.mybatis.mappers.SpecificationMapper">
+	
+	<!-- Result maps -->
+	
+	<resultMap type="Translation" id="translationName">
+		<id property="id" 	column="nameTransId"/>
+		<collection property="entries" ofType="TranslationEntry">
+			<id property="id" 				column="nameEntryId"/>
+			<result property="transId" 		column="nameTransId"/>
+			<result property="language" 	column="nameLangId"/>
+			<result property="text" 		column="nameText"/>
+		</collection>
+	</resultMap>
+	
+	<resultMap type="Category" id="CategoryName">
+		<id property="id" 				    column="categoryId"/>
+		<id property="name"                 column="categoryname"/>
+		<result property="categoryGoupeId"	column="categoryGroupId"/>
+	</resultMap>
+	
+	
+	<resultMap type="Specification" id="specificationResultMap">
+		<id 	property="id" 				column="id"/>
+		<result property="name" 			column="name"/>
+		<result property="status" 			column="status"/>
+		<result property="description" 		column="description"/>
+		<result property="main" 			column="main"/>
+		<result property="creationDate" 	column="creation_date"/>
+		<association property="nameTranslation" javaType="Translation" resultMap="translationName" />
+		<association property="category"        javaType="Category" resultMap="CategoryName" />
+	</resultMap>	
+
+
+	<!-- Selects -->
+	<sql id="select">
+		select sp.id as id,
+			   ct.id as categoryId,
+			   ct.name as categoryname,
+			   ct.category_group_id as categoryGroupId,
+			   sp.name as name,
+			   sp.status_id as status,
+			   sp.description as description, 
+			   sp.main as main,
+			   sp.creation_date as creationDate,
+			   tn.id as nameEntryId,
+			   tn.trans_id as nameTransId,
+			   tn.lang_id as nameLangId,
+			   tn.text as nameText
+		from specification sp
+		left join category ct on ct.id = sp.category_id
+		left join translation_entry tn on (sp.name_trans_id = tn.trans_id) 
+	</sql>
+	   	<sql id="whereId">where sp.id = #{id}</sql>
+   	<sql id="whereName">where sp.name ilike #{name}</sql>
+   	
+   	<select id="getEntity" resultMap="specificationResultMap">
+		<include refid="select"/>		
+      	<include refid="whereId"/>
+	</select>
+	
+	<select id="getAllEntities" resultMap="specificationResultMap">
+		<include refid="select"/>
+		order by sp.name			      	
+	</select>
+	
+	<select id="getAllMainSpecification" resultMap="specificationResultMap">
+	    <include refid="select"/>
+	    where sp.main = true		
+	</select>	
+	
+	<select id="getMainSpecificationByCategory" parameterType="long" resultMap="specificationResultMap">
+	    <include refid="select"/>
+	    where sp.category_id = #{categoryId} and sp.main = true		
+	</select>
+	
+	<select id="getSpecificationByName" parameterType="String" resultMap="specificationResultMap">
+		<include refid="select"/>
+		<include refid="whereName"/>
+	</select>
+	
+	<select id="getCategoryId" parameterType="long" resultType="long">
+		select sp.category_id 
+		from specification sp 
+		where sp.id = #{id}
+	</select>
+	
+	<insert id="insertEntity" parameterType="Specification">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('specification_id_seq')
+    	</selectKey>
+		insert into specification(id, category_id, name, status_id, name_trans_id, description, main, creation_date)
+		values(#{id}, #{category.id}, #{name}, #{status}, #{nameTranslation.id},  #{description}, #{main}, #{creationDate})	
+	</insert>
+
+	<update id="updateEntity" parameterType="Specification">
+		update specification sp set name=#{name}, category_id=#{category.id}, status_id=#{status}, 
+				name_trans_id=#{nameTranslation.id}, description=#{description},  main = #{main},  creation_date=#{creationDate}
+		<include refid="whereId"/>
+	</update>
+	
+	<delete id="deleteEntity" parameterType="long">
+		delete from specification 
+		<include refid="whereId"/>
+	</delete> 
+	
+
+	
+   			
+
+
+	
+
+
+	
+
+</mapper>
+
+

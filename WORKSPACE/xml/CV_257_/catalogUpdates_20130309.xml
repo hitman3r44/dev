@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="CV_PEU27179"/>
+    <ls-product id="CV_PEU230128"/>
+    <ls-product id="CV_SONBDVE390">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONBDVE3100</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ301358">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241386</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ101353">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ301379">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSGEF43</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ101359">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSXDC79</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ301360">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROT70227</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ00001">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSUJG37</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ101319">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTLB72498</substitute-product>
+    </ls-product>
+    <ls-product id="CV_ESQ301395">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSSC125</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512634">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGS72439</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512719">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTGB72339</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512720">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNE161</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512584">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512724">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSRK021</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512519">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC241564</substitute-product>
+    </ls-product>
+    <ls-product id="CV_HUG1512661">
+        <status>DISCONTINUED</status>
+        <substitute-product>ROTAGS90047</substitute-product>
+    </ls-product>
+    <ls-product id="CV_LCT2010547">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_LCT2000518">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_LCT2010595">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_LCT2000668">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_LCT2000651">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_LCT2010552">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSNDC31</substitute-product>
+    </ls-product>
+    <ls-product id="CV_LCT2010579">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA475</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL81197">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="CV_THL10286">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL10285">
+        <status>UNAVAILABLE</status>
+    </ls-product>
+    <ls-product id="CV_THL10311">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL10276">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPH9016</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL80996">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPEGF91</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL90835">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPF3995</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL90781">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6021</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL10307">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP6015</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL81146">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPS6031</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL90768">
+        <status>DISCONTINUED</status>
+        <substitute-product>VIC26002</substitute-product>
+    </ls-product>
+    <ls-product id="CV_LCT2010621">
+        <status>DISCONTINUED</status>
+        <substitute-product>SKOSKA517</substitute-product>
+    </ls-product>
+    <ls-product id="CV_LCT2010566">
+        <status>DISCONTINUED</status>
+        <substitute-product/>
+    </ls-product>
+    <ls-product id="CV_CAB519057">
+        <group>Outdoors</group>
+        <category>Bbqs</category>
+    </ls-product>
+    <ls-product id="CV_BDI580415">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_CAB530352">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_BDI530632">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_BDI530634">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_CAB943052">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_CAB629310">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="CV_THL1781242">
+        <status>DISCONTINUED</status>
+        <substitute-product>LRSRRS89R</substitute-product>
+    </ls-product>
+    <ls-product id="CV_THL1710277">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPP5005</substitute-product>
+    </ls-product>
+    <ls-product id="CV_SONMDREX38IPB">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONMDREX100IP_BK</substitute-product>
+    </ls-product>
+</catalog>

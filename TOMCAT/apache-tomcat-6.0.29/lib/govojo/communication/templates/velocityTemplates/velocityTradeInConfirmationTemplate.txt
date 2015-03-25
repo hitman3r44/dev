@@ -1,0 +1,53 @@
+Congratulations and thank you for your trade-in!
+
+This is a confirmation e-mail that your order has been successfully
+submitted.  We will credit you $${price} towards GPlay video game rental
+subscription fees upon receipt and successful approval of your game.
+
+Please remember to package your game carefully, and then ship it to
+the following address:
+
+GPlay, Inc.
+Attn: Game Trade-In #${transactionid}
+360 22nd Street
+Suite 210
+Oakland, CA 94612-3040
+
+Please don't forget to include the packing slip print out that was
+displayed when you completed the online trade-in form.
+
+If you would like to access the order confirmation page with the GPlay
+mailing label and packing slip, please click on the link below:
+
+${confirmationurl}
+
+Please make sure that you understand the Terms of Trade listed below.
+
+Terms of Trade:
+----------------------------
+* Games must be in good shape; we will not accept games that are
+scratched, chipped, cracked, stained, or discs that skip while spinning.
+ 
+* Games are priced under the assumption that they will arrive in clean,
+un-cracked cases or boxes. Games received in a substandard case or box -
+or no container - will be accepted, but $1.00 will be deducted from the
+trade-in value.
+ 
+* The instructions must be included, and be in clean condition. All
+discs, booklets, instructions, etc. that came with the original product
+must be included. 
+
+* Only original titles will be accepted; we cannot accept copies. 
+
+* Your game trade-in for credit on the GPlay video game rental service
+is final. There are no refunds for unused credit. 
+
+
+Thank you for trading with GPlay!
+
+GPlay Customer Service
+
+*---- Helpful Links ----*
+Contact Us - http://www.gplay.com/displayContactUs.jsp
+My Account - http://www.gplay.com/account/displayAccountLanding.jsp
+FAQ - http://www.gplay.com/displayFAQ.jsp

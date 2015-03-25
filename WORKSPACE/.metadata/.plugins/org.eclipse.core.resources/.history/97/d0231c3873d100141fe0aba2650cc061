@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.loyauty.dao.mybatis.mappers.UserMapper">
+	
+	<!-- Result maps -->
+	<resultMap type="User" id="userResultMap">
+		<id property="id" column="userId"/>
+	</resultMap>
+
+	<resultMap type="ClientCategory" id="ClientCategoryResultMap">   
+		<id property="id" column="id"/>
+	</resultMap>
+
+	<resultMap type="UserConnection" id="userConnectionResultMap">
+		<id property="id" column="id"/>
+	</resultMap>
+	
+	<!-- Selects -->
+	<sql id="select">
+		select 
+			ua.id as userId, 
+			ua.login, 
+			ua.password, 
+			ua.email, 
+			ua.last_login_date as lastLoginDate,
+			ua.active, 
+			ua.creation_date as creationDate, 
+			ua.type_id as typeId, 
+			ua.code as code, 
+			ua.template,
+			ua.update_date as updateDate,
+			ua.special_handling_name as specialHandlingName,
+			ua.special_handling_fee as specialHandlingFee,
+			upr.real_name as realName, 
+			upr.address as address, 
+			upr.postal_code as postalCode, 
+			upr.phone as phone, 
+			upr.primary_language as primaryLanguage, 
+			upr.secondary_language as secondaryLanguage, 
+			upr.image_id as profileImageID, 
+			upr.multiplier as multiplier, 
+			upr.client_category_id as clientCategoryId, 
+			upr.note as note, 
+			upr.manager_id as managerId,
+			upr.shipping_insurance_multiplier AS shippingInsuranceMultiplier,
+			(select sub_up1.real_name from user_profile sub_up1 where upr.client_category_id = sub_up1.user_id) as clientCategoryName,
+			(select sub_up2.real_name from user_profile sub_up2 where upr.manager_id = sub_up2.user_id) as managerRealName,
+			cur.id AS currencyId,
+			cur.symbol AS currencySymbol,
+			cur.rate AS currencyRate,
+			cur.creation_date AS currencyCreationDate
+			
+		FROM user_account ua		
+		LEFT JOIN (user_profile upr LEFT JOIN currency cur ON upr.currency_id=cur.id) ON ua.id=upr.user_id	 
+	</sql>
+	
+	
+	<sql id="selectUserWithCategorie">
+		SELECT ua.id AS userId, ua.login, ua.password, ua.email, ua.last_login_date AS lastLoginDate,
+		ua.active, ua.creation_date AS creationDate, ua.type_id AS typeId, ua.code AS code, 
+		ua.special_handling_name as specialHandlingName, ua.special_handling_fee as specialHandlingFee,
+		
+		upr.real_name AS realName, upr.address AS address, upr.postal_code AS postalCode, upr.phone AS phone, 
+		upr.primary_language AS primaryLanguage,upr.secondary_language AS secondaryLanguage, 
+		upr.image_id AS profileImageID, upr.multiplier AS multiplier,
+		upr.shipping_insurance_multiplier AS shippingInsuranceMultiplier,
+
+		clcat.id AS clientCategoryId, clcat.name AS clientCategoryName, clcat.user_id AS clientCategoryUserId
+
+		FROM client_category clcat INNER JOIN
+			 (user_account ua INNER JOIN user_profile upr ON ua.id=upr.user_id)ON upr.client_category_id=clcat.id
+
+	</sql>
+			
+	<sql id="selectCategorie">
+		SELECT 
+		clcat.id AS clientCategoryId, clcat.name AS clientCategoryName
+		FROM client_category clcat
+	</sql>
+	<sql id="whereIdWithoutTemplate">where ua.id = #{id}</sql>
+   	<sql id="whereId">where ua.id = #{id} and ua.template=false</sql>
+   	<sql id="whereLogin">where ua.login = #{login} and ua.template=false</sql>
+   	<sql id="whereEmail">where ua.email = #{email} and ua.template=false</sql>  
+   	<sql id="whereUserIdConnection">where UC.user_id=#{userId} and UA.active=true</sql>   
+   	<sql id="whereLoginConnection">where UA.login=#{userLogin} and UA.active=true</sql>  
+   	<sql id="whereUserActive">where UA.active=true</sql> 
+   		
+   	
+   	<sql id="whereAdmin_super">WHERE ua.login = #{login} AND ua.password = #{password} AND ua.type_id=1 AND ua.template=false</sql> 
+   	<sql id="whereAdmin">WHERE ua.login = #{login} AND ua.password = #{password} AND ua.type_id in (1,3,4) AND ua.template=false</sql> 
+   	
+   	<sql id="selectUserBrandDiscount">
+		select ubd.id as id,
+			   ubd.user_id as userId,
+			   ubd.brand_id as brandId,
+			   ubd.discount as discount,
+			   ubd.creation_date as creation_date
+		from user_brand_discount ubd
+	</sql>
+		
+	<sql id="selectUserCategoryDiscount">
+		select ucd.id as id,
+			   ucd.user_id as userId,
+			   ucd.category_id as categoryId,
+			   ucd.discount as discount,
+			   ucd.creation_date as creation_date
+		from user_category_discount ucd
+	</sql>
+ 	
+   	<sql id="selectUserConnection">
+   	select 
+   		UC.id as id,UA.login as userLogin ,UC.host as host,UC.port as port,UC.user_name as userName,
+   		UC.password as password,UC.remote_folder as remoteFolder,UC.user_id as userId,UC.protocol as protocol,
+   		UC.orders_folder as ordersFolder,UC.orders_confirm_folder as ordersConfirmFolder,
+   		UC.user_sending_id AS userSendingId,UC.email_1 AS email1,UC.email_2 AS email2,
+   		UC.client_shipments_folder AS clientShipmentsFolder,UC.remote_client_invoice_folder AS remoteClientInvoiceFolder,
+   		UC.invoice_confirm_folder AS invoiceConfirmFolder,client_orders_file_moved_folder AS clientOrdersFileMovedFolder
+   		from users_connection UC inner join user_account UA on UC.user_id=UA.id
+   	</sql>
+   			
+   	<select id="getUserFromId" resultMap="userResultMap">
+		<include refid="select"/>
+      	<include refid="whereId"/>
+	</select>
+	
+	<!-- for Including Template in shipping --> 			
+   	<select id="getAnyUserFromId" resultMap="userResultMap">
+		<include refid="select"/>
+      	<include refid="whereIdWithoutTemplate"/>
+	</select>
+	<!-- for Including Template in shipping -->
+	
+	<select id="getUserFromLogin" resultMap="userResultMap">
+		<include refid="select"/>
+      	<include refid="whereLogin"/>
+	</select>
+	
+	<select id="getUserByEmail" resultMap="userResultMap">
+		<include refid="select"/>
+      	<include refid="whereEmail"/>
+	</select>	
+	
+	<select id="usernameExists" resultMap="userResultMap">
+		select ua.id from user_account ua	
+		<include refid="whereLogin"/>
+	</select>
+	
+	<select id="emailExists" resultMap="userResultMap">
+		select ua.id from user_account ua	
+		<include refid="whereEmail"/>
+	</select>
+		
+	<select id="getAllEntities" resultMap="userResultMap">
+		<include refid="select"/>				      	
+	</select>
+
+	<select id="getAllEntitiesById" resultType="Long">
+		select id from user_account				      	
+	</select>
+	
+	<select id="getAllUsersByIdLessAdministrators" resultType="Long">
+		select id from user_account	
+		where type_id != 1 and template=false	      	
+	</select>
+	
+	<select id="getAllUserAccounts" parameterType="User" resultMap="userResultMap">
+		<include refid="select"/>
+		where ua.type_id = #{typeId} and ua.active = #{active} and template=false
+		order by ua.login, upr.real_name
+	</select>
+
+	<select id="getAllUsers" parameterType="User" resultMap="userResultMap">
+		<include refid="select"/>
+		where ua.type_id = #{typeId} and template=false
+		order by ua.login,upr.real_name
+	</select>
+			
+	<select id="getUserByLogin" parameterType="String" resultMap="userResultMap">
+		<include refid="select"/>
+		where ua.login = #{value} 
+		and template = false
+		order by upr.real_name
+	</select>
+	
+	<select id="getCountUserShippingTotal" parameterType="User" resultMap="userResultMap">
+		select count(*) as userId from shipping_total where user_id = #{id};	
+	</select>
+	
+	<select id="getCountUserProductPrice" parameterType="User" resultMap="userResultMap">
+		select count(*)as userId from user_product_price where user_id = #{id};	
+	</select>
+	
+	<select id="getAllClientCategory" resultMap="ClientCategoryResultMap">
+		SELECT UA.id AS clientCategoryId, UA.login AS clientCategoryName,
+			   (SELECT SUB_UA.login FROM user_account SUB_UA WHERE SUB_UA.id=UP.client_category_id)AS clientCategoryUserLogin,
+			   (SELECT COUNT(*) FROM user_profile SUB_UP WHERE SUB_UP.client_category_id=UA.id)AS countTempUsed,
+			   (SELECT SUB_UP1.real_name FROM user_profile SUB_UP1 WHERE UP.manager_id=SUB_UP1.user_id)AS managerRealName,
+			    UP.manager_id AS managerId, 
+			    UP.client_category_id AS clientCategoryUserId,
+			    UA.creation_date AS creationDate,
+			    UP.brand_coefficient AS brandCoefficient,
+			    UP.profit_coefficient AS profitCoefficient,
+			    UP.unit_sold_coefficient AS unitSoldCoefficient
+		FROM user_account UA INNER JOIN user_profile UP ON  UA.id=UP.user_id
+		WHERE UA.template=true
+		ORDER BY clientCategoryName ASC
+	</select>
+	
+	<select id="getClientCategoryById" parameterType="Long" resultMap="ClientCategoryResultMap">
+		SELECT UA.id AS clientCategoryId, UA.login AS clientCategoryName,
+			(SELECT SUB_UA.login FROM user_account SUB_UA WHERE SUB_UA.id=UP.client_category_id)AS clientCategoryUserLogin,
+			(SELECT COUNT(*) FROM user_profile SUB_UP WHERE SUB_UP.client_category_id=UA.id)AS countTempUsed,
+			(SELECT SUB_UP1.real_name FROM user_profile SUB_UP1 WHERE UP.manager_id=SUB_UP1.user_id)AS managerRealName,
+			 UP.manager_id AS managerId, 
+			 UP.client_category_id AS clientCategoryUserId,
+			 UA.creation_date AS creationDate		    
+		FROM user_profile UP INNER JOIN user_account UA ON UA.id=UP.user_id
+		WHERE UA.template=TRUE AND UP.user_id=#{value}
+	</select>
+	
+	<select id="templateInUsed" parameterType="Long" resultMap="ClientCategoryResultMap">
+		SELECT COUNT(*)
+		FROM user_profile
+		WHERE client_Category_id= #{value}
+	</select>
+			
+	<select id="getClientCategoryByName" parameterType="String" resultMap="ClientCategoryResultMap">
+		SELECT UA.id AS clientCategoryId, UA.login AS clientCategoryName,
+					   (SELECT SUB_UA.login FROM user_account SUB_UA WHERE SUB_UA.id=UP.client_category_id)AS clientCategoryUserLogin,
+					   (SELECT COUNT(*) FROM user_profile SUB_UP WHERE SUB_UP.client_category_id=UA.id)AS countTempUsed,
+					    UP.client_category_id AS clientCategoryUserId,
+					    UA.creation_date AS creationDate			    
+		FROM user_account UA INNER JOIN user_profile UP ON UA.id=UP.user_id
+		WHERE LOWER(REPLACE(UA.login,' ','')) =#{value}
+	</select>
+		
+	<select id="getUserOrTemplateById" parameterType="Long" resultMap="userResultMap">
+		<include refid="select"/>
+		where ua.id = #{value}
+	</select>
+	
+	<select id="getSuperAdmin" parameterType="java.util.Map" resultMap="userResultMap">
+		<include refid="select"/>
+      		<include refid="whereAdmin_super"/>
+	</select>
+	  		
+	<select id="getAdmin" parameterType="java.util.Map" resultMap="userResultMap">
+		<include refid="select"/>
+      		<include refid="whereAdmin"/>
+	</select>
+
+   	<select id="getUserConnectionByUserId" resultMap="userConnectionResultMap">
+		<include refid="selectUserConnection"/>
+      	<include refid="whereUserIdConnection"/>
+	</select>
+	
+   	<select id="getUserConnectionByLogin" resultMap="userConnectionResultMap">
+		<include refid="selectUserConnection"/>
+      	<include refid="whereLoginConnection"/>
+	</select>
+	
+   	<select id="getAllUsersConnections" resultMap="userConnectionResultMap">
+		<include refid="selectUserConnection"/>
+      	<include refid="whereUserActive"/>
+	</select>
+
+	<!-- Inserts & Updates-->
+	<insert id="insertUserAccount" parameterType="User">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('user_account_id_seq')
+    	</selectKey>    	
+    	insert into user_account(id, login, type_id, password, email, last_login_date, active, code,
+    	special_handling_name, special_handling_fee)
+    	values (#{id}, #{login}, #{typeId}, #{password}, #{email},  #{lastLoginDate}, #{active}, #{code},
+    	#{specialHandlingName}, #{specialHandlingFee})
+	</insert>
+	
+	<insert id="insertUserProfil" parameterType="User">	
+    	insert into user_profile(user_id, real_name, address, postal_code, phone, image_id, primary_language, secondary_language, multiplier,client_category_id,manager_id,shipping_insurance_multiplier, currency_id)
+    	values (#{id}, #{realName}, #{address}, #{postalCode}, #{phone}, #{imageId}, #{primaryLanguage}, #{secondaryLanguage}, #{multiplier},#{clientCategoryId},#{managerId},#{shippingInsuranceMultiplier}, #{currencyId})
+	</insert>
+	
+	<insert id="insertProductToUsers" parameterType="User">
+		insert into user_product_price
+		(user_id, product_id, status_id, is_excluded)
+		select #{id}, id, 2, false
+		from product
+	</insert>
+	
+	<insert id="insertTemplateOnUserAccount" parameterType="User">	
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('user_account_id_seq')
+    	</selectKey>    	
+    	insert into user_account(
+    		id, 
+    		login, 
+    		code, 
+    		type_id, 
+    		password, 
+    		email, 
+    		last_login_date, 
+    		active,
+    		special_handling_name,
+    		special_handling_fee, 
+    		template)
+    	values (
+    		#{id}, 
+    		#{login}, 
+    		#{code}, 
+    		#{typeId}, 
+    		#{password}, 
+    		#{email}, 
+    		#{lastLoginDate}, 
+    		#{active},
+    		#{specialHandlingName},
+    		#{specialHandlingFee},
+    		#{template})
+	</insert>
+	
+	<insert id="insertTemplateOnUserProfile" parameterType="User">	
+   		insert into user_profile(
+   			user_id, 
+   			real_name, 
+   			address, 
+   			postal_code, 
+   			phone, 
+   			image_id, 
+   			primary_language, 
+   			secondary_language, 
+   			multiplier,
+   			manager_id,
+   			client_category_id,
+   			note)
+    	values (
+    		#{id}, 
+    		#{realName}, 
+    		#{address}, 
+    		#{postalCode}, 
+    		#{phone}, 
+    		#{imageId}, 
+    		#{primaryLanguage}, 
+    		#{secondaryLanguage}, 
+    		#{multiplier},
+    		#{managerId},
+    		#{clientCategoryId},
+    		#{note})
+	</insert>
+		
+	
+	<insert id="insertUserConnection" parameterType="UserConnection">	
+		UPDATE users_connection
+			SET 
+				host =#{host},
+				port=#{port},
+				user_name=#{userName},
+				password=#{password},
+				remote_folder=#{remoteFolder},
+				user_id=#{userId},
+				protocol=#{protocol},
+				orders_folder=#{ordersFolder},
+				user_sending_id=#{userSendingId},
+				email_1=#{email1},
+				email_2=#{email2},
+				client_shipments_folder=#{clientShipmentsFolder},
+				remote_client_invoice_folder=#{remoteClientInvoiceFolder},
+				invoice_confirm_folder=#{invoiceConfirmFolder},
+				orders_confirm_folder=#{ordersConfirmFolder}
+    	WHERE 	user_id=#{userId};
+		
+   		INSERT into users_connection(host,port,user_name,password,remote_folder,user_id,protocol,orders_folder,orders_confirm_folder)
+    	SELECT #{host},#{port},#{userName},#{password},#{remoteFolder},#{userId},#{protocol},#{ordersFolder},#{ordersConfirmFolder},
+    	  	   #{userSendingId},#{email1},#{email2},#{clientShipmentsFolder},#{remoteClientInvoiceFolder},#{invoiceConfirmFolder}
+    	WHERE NOT EXISTS(SELECT* FROM users_connection UC WHERE UC.user_id=#{userId});
+	</insert>	
+
+	<update id="updateUserAccount" parameterType="User">
+		update user_account ua set password=#{password}, email=#{email}, type_id = #{typeId}, 
+		 last_login_date=#{lastLoginDate}, active=#{active}, code = #{code},
+		 special_handling_name=#{specialHandlingName}, special_handling_fee=#{specialHandlingFee}
+		<include refid="whereId"/>
+	</update>
+	
+	<update id="updateUserAccountById" parameterType="User">
+		update user_account ua set login=#{login}, code=#{code}, type_id=#{typeId}, 
+		password=#{password}, email=#{email}, active=#{active},update_date=#{updateDate},
+		special_handling_name=#{specialHandlingName}, special_handling_fee=#{specialHandlingFee}
+		<include refid="whereId"/>
+	</update>
+	
+	<update id="updateLogin" parameterType="User">
+		update user_account set login=#{login}
+		where id= #{id} and template=false
+	</update>
+	
+	<update id="updatePassword" parameterType="User">
+		update user_account set password=#{password}
+		where id= #{id} and template=false
+	</update>
+	
+	<update id="updateEmail" parameterType="User">
+		update user_account set email=#{email}
+		where id= #{id} and template=false
+	</update>
+	
+	<update id="deactivateUserAccount" parameterType="Long">
+		update user_account set active = false
+		where id= #{id}
+	</update>
+	
+	<update id="updateUserProfileById" parameterType="User">
+		update user_profile 
+		set real_name=#{realName}, address=#{address}, postal_code=#{postalCode}, phone=#{phone}, 
+			primary_language=#{primaryLanguage}, secondary_language=#{secondaryLanguage}, 
+			multiplier=#{multiplier},client_category_id=#{clientCategoryId},manager_id=#{managerId},note=#{note},
+			shipping_insurance_multiplier=#{shippingInsuranceMultiplier},
+			currency_id=#{currencyId}
+		where user_id=#{id}
+	</update>
+	
+	<update id="updateUserAdmin" parameterType="User">
+		BEGIN;
+		SAVEPOINT sql_UPDATE_USER_ADMIN;
+		
+		UPDATE user_account
+		SET    password=#{password},
+               email=#{email},
+               update_date=#{updateDate}
+		WHERE  id=#{id};
+
+		UPDATE user_profile 
+		SET    real_name=#{realName},
+			   address=#{address},
+               postal_code=#{postalCode},
+               phone=#{phone},
+               primary_language=#{primaryLanguage},
+               secondary_language=#{secondaryLanguage} 
+		WHERE  user_id=#{id};
+		
+		RELEASE SAVEPOINT sql_UPDATE_USER_ADMIN;
+		COMMIT;
+	</update>
+	
+	<update id="updateNoteAdmin" parameterType="User">
+		UPDATE user_profile 
+		SET    note=#{note}
+		WHERE  user_id=#{id}
+	</update>
+	
+	<update id="updateClientCategoryID" parameterType="Long">
+		update user_profile 
+		set client_category_id=#{clientCategoryId}
+		where user_id=#{userId}
+	</update>
+		
+	<update id="updateTemplateCoeffitions" parameterType="ClientCategory">
+		UPDATE user_profile 
+		SET 
+		brand_coefficient=#{brandCoefficient},
+		profit_coefficient=#{profitCoefficient},
+		unit_sold_coefficient=#{unitSoldCoefficient}
+		WHERE user_id=#{clientCategoryId}
+	</update>
+
+	<update id="disableUserByIdSumit" parameterType="User">
+		update user_account set
+		active=false
+		where id= #{id} and template=false
+	</update>
+
+	<update id="disableUserByLoginSumit" parameterType="User">
+		update
+		user_account set
+		login=#{login}
+		where login=#{login} and template=false
+	</update>
+
+	<!-- Deletes -->
+	<delete id="deleteUserProfile" parameterType="Long">
+		delete from user_profile where user_id=#{userId}
+	</delete>
+	
+	<delete id="deleteUserAccount" parameterType="Long">
+		delete from user_account where id=#{userId}
+	</delete>
+	
+</mapper>
+

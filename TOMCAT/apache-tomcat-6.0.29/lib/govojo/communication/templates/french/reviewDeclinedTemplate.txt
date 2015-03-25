@@ -1,0 +1,18 @@
+Cher(e) #FIRSTNAME#,
+
+Malheureusement, votre critique n'a pu être aprouvée pour la raison suivante:
+
+#DECLINE_REASONS#
+#DECLINE_COMMENT#
+=========================
+Une copie de votre crique est affichée ici bas:  
+
+Meilleures salutations
+
+L'Équipe Game Access.
+
+*************************
+Titre du jeu: #GAME_TITLE#
+Titre de la critique: #REVIEW_TITLE#
+Votre critique: #REVIEW_BODY# 
+

@@ -1,0 +1,5 @@
+1397484620996	Delete resource 'loyaltySource_admin/src/com/loyauty/web/struts/action/backup'
+1397511407892	Delete resource 'loyaltySource_lib/libdev/commons-net-3.3.jar'
+1397512213862	Delete resource 'loyaltySource_admin/web/WEB-INF/lib/commons-net-3.3.jar'
+1397771761271	Delete resource 'loyaltySource_lib/src/com/loyauty/service/user/UserServiceImpl.java'
+1397771841357	Delete resource 'loyaltySource_admin/src/com/loyauty/web/struts/action/user/UserConnection.java'

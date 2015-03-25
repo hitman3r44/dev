@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;utilsunix&apos; to &apos;script&apos;&#x0D;&#x0A;- Original project: &apos;gamejab_lib&apos;&#x0D;&#x0A;- Destination element: &apos;script&apos;&#x0D;&#x0A;- Original element: &apos;utilsunix&apos;" description="Copy file" element1="scripts/utilsunix" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1335469995594" target="/loyaltySource_lib/script" units="0" version="1.0"/>
+</session>

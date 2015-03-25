@@ -1,0 +1,23 @@
+Cher(e) #FIRSTNAME#,
+
+Comme vous le savez sûrement déjà, votre compte GameAccess.ca est en souffrance depuis plusieurs mois. Le #DATE#, nous avons tenté de charger votre carte de crédit et à nouveau les charges on été refusées.
+
+Il est dans nos politiques de compagnie d'envoyer tout compte en souffrance depuis plus de trios (3) mois à notre agence de recouvrement affiliée. Vous avez donc jusqu'au  #NEXT_BILLING_DATE# pour effectuer tous les paiements qui sont présentement en souffrance. Nous essayerons à nouveau de charger votre carte de crédit dans cinq (5) jours.
+
+Si vous désirez effectuer un paiement à l'aide d'une nouvelle carte de crédit ou tenter avec la même carte à nouveau, veuillez visiter la page 'Mon Compte' dans votre section des membres. En utilisant le lien ici bas :
+
+http://gameaccess.ca/myAccount.do?lang=fr
+
+Veuillez s'il vous plaît nous contacter immédiatement, si cela n'a pas déjà été fait. Nos coordonnés pour nous joindre sont disponibles sur cette page : 
+http://www.gameaccess.ca/displayContactUs.jsp?lang=fr.
+
+Si vous avez toujours de nos jeux en votre possession, veuillez les renvoyer immédiatement.
+
+Merci de prendre cette situation au sérieux et vous comporter en conséquence.
+
+Le département de facturation Game Access
+
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

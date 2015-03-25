@@ -1,0 +1,832 @@
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ taglib uri="/WEB-INF/gplay.tld" prefix="govojo"%>
+<%@ taglib uri="/WEB-INF/datetime.tld" prefix="dt"%>
+<%@ taglib uri="/WEB-INF/taglibs-string.tld" prefix="str"%>
+<%@ taglib uri="/WEB-INF/session.tld" prefix="currentSession"%>
+<%@ page import="application.SessionUtils"%>
+<%@ page import="formbeans.GameAttributesBean"%>
+<%@ page import="formbeans.MultiplayerInformationBean"%>
+<%@ page import="govojo.db.Console"%>
+<%@ page import = "govojo.db.GameReviewHelpful" %>
+<%@ page import="application.SeoUrlsMaker"%>
+
+<jsp:include page="checkPreviewGame.jsp"></jsp:include>
+
+
+<%@page import="application.NavigationElements"%>
+<bean:define id="gameDescID" name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="gameDescIDAsStr" scope="session" type="java.lang.String" />
+<bean:define id="consoleIDAsString"
+	name="<%=SessionUtils.GAME_INFORMATION%>" property="consoleIDAsStr"
+	scope="session" />
+<bean:define id="purchaseID" property="purchaseAvailabilityID"
+	name="<%=SessionUtils.GAME_INFORMATION%>" scope="session" />
+
+
+<bean:define id="numGameaccessWallPaper"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfGameaccessWallPaper" scope="session" type="Integer" />
+<bean:define id="numCommunityWallPaper"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfCommunityWallPaper" scope="session" type="Integer" />
+<bean:define id="totalcriticReviews"
+	name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="totalCriticReviewsAsStr" type="String" />
+<bean:define id="totalUserReviews"
+	name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="totalNumberOFUserReviews" type="Integer" />
+<bean:define id="numGameScreenShot"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfGameaccessScreenShots" scope="session" type="Integer" />
+<bean:define id="numCommunityScreenShot"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfCommunityScreenShots" scope="session" type="Integer" />
+<bean:define id="numCommunityVideo"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfCommunityVideos" scope="session" type="Integer" />
+<bean:define id="numGameaccessVideo"
+	name="<%=SessionUtils.GAME_INFORMATION %>"
+	property="numberOfGameaccessVideos" scope="session" type="Integer" />
+<bean:define id="totalScreenShots" name="<%=SessionUtils.GAME_INFORMATION %>" property = "totalScreenshots" scope="session" type="Integer"/>
+<bean:define id="totalWallPapers" name="<%=SessionUtils.GAME_INFORMATION %>" property="totalWallpapers" scope="session" type="Integer"/>
+<bean:define id="totalVideos" name="<%=SessionUtils.GAME_INFORMATION %>" property="totalVideos" scope="session"  type="Integer"/>
+<bean:define id="retailPrice" name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="retailPrice" scope="session" type="java.lang.String" />
+<bean:define id="lowestPrice" name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="lowestPrice" scope="session" type="java.lang.String" />
+<bean:define id="newCopyPrice" name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="newCopyPrice" scope="session" type="java.lang.String" />
+<bean:define id="image" name="<%=SessionUtils.GAME_INFORMATION%>"
+	property="imagePath" scope="session" />
+	<bean:define id="mpExists" name="<%=SessionUtils.GAME_INFORMATION %>" property="multiplayerExists" type="Boolean" scope="session"/>
+<bean:define id="numPlayers" name="<%=SessionUtils.GAME_INFORMATION%>" property="numberOfPlayersAsStr" type="String" scope="session"/>
+<bean:define id="additionalInfoExists" name="<%=SessionUtils.GAME_INFORMATION %>" property="additionalInfoExists" type="Boolean" scope="session"/>
+
+<%
+NavigationElements navElements = NavigationElements.getInstance(request);
+	String consoleTop = " ";
+	String consoleRightimage = " ";
+	if (consoleIDAsString.equals(Integer.toString(Console.PLAYSTATION2))) {
+		consoleTop = "/images/console_ps2_top.gif ";
+		consoleRightimage = "images/console_ps2_top.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.XBOX))) {
+		consoleTop = "images/console_xbox_top.gif ";
+		consoleRightimage = "images/console_xbox_right.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.GAMECUBE))) {
+		consoleTop = "images/console_gc_top.gif ";
+		consoleRightimage = "images/console_xbox_gc.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.PSP))) {
+		consoleTop = "images/console_psp_top.gif ";
+		consoleRightimage = "images/console_psp_right_store.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.WII))) {
+		consoleTop = "images/console_wii_top.gif ";
+		consoleRightimage = "images/console_wii_right.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.PLAYSTATION3))) {
+		consoleTop = "images/console_ps3_top.gif ";
+		consoleRightimage = "images/console_ps3_right.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.XBOX360))) {
+		consoleTop = "images/console_360_top.gif ";
+		consoleRightimage = "images/console_360_right.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.DS))) {
+		consoleTop = "images/console_ds_top.gif ";
+		consoleRightimage = "images/console_xbox_ds.gif.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.PSVITA))) {
+		consoleTop = "images/console_vita_top.gif ";
+		consoleRightimage = "images/console_vita_right_store.gif";
+	} else if (consoleIDAsString.equals(Integer.toString(Console.WII_U))) {
+		consoleTop = "images/console_wiiu_top.gif ";
+		consoleRightimage = "images/console_wiiu_right_store.gif";
+	}
+%>
+
+<bean:define id="multiplayerInformation"
+	name="<%=SessionUtils.GAME_INFORMATION %>" scope="session"
+	property="multiplayerInfo" type="MultiplayerInformationBean" />
+<bean:define id="localMul" name="multiplayerInformation"
+	property="localMultiplayer" type="String" />
+    
+    <script type="text/javascript">
+<!--
+var count = 0;
+function checkIframe()
+{
+    try{
+    	//For IE Fix
+        if(count > 0)
+        {
+            document.getElementById('error_div').innerHTML=document.getElementById('ajax_ifr').contentWindow.document.body.innerHTML;
+        }
+    }catch (e){}
+    count++;
+}
+function callAjax(findHelpful, val,reviewId,numHelpful,numAll)
+{
+	
+	var formObj = document.forms['rateAjax'];
+	formObj.action =val;
+	formObj.target = "ajax_ifr";
+	formObj.submit();
+	
+	if(findHelpful == 1){
+	numHelpful++;
+	
+	}
+	numAll++;
+	document.getElementById('toHide'+reviewId).style.display='none';
+	document.getElementById('toUpdate'+reviewId).innerHTML=numHelpful+'/'+numAll;
+		
+}
+
+//-->
+</script>
+<% 
+   	String mp_Destination = "/mp_info_en.jsp";
+	String mpImage = "/images/gamecontent_mpinfo_en.gif";
+	String add_Destination = "/additionalDetailsNone.jsp";
+    String screenShotImage = "/images/gamecontent_screenshots_en.gif";
+   String addImage = "/images/gamecontent_moredetails_shad_en.gif";
+   String destinationScreenshotPage = "/screenshots_g_u_en.jsp";
+   String destinationWallPaperPage = " ";
+   String destinationVideoPage = "videos_g_u_en.jsp";
+   String videoImage = "/images/gamecontent_videos_en.gif";
+   String wallPaperImage = "/images/gamecontent_wallpapers_en.gif";
+    String criticDestination= "/critic_reviews_en.jsp";
+   	String criticImage= "/images/gamecontent_criticr_en.gif";
+	String userReviewDestination= "/user_reviews_en.jsp";
+   	String userReviewImage= "/images/gamecontent_userr_new_en.gif";
+   	String totalCriticReview= "("+totalcriticReviews+")";
+   	if(Integer.parseInt(totalcriticReviews)>=5)
+   	{
+   		
+   	totalCriticReview= "(5)";
+   	}
+   
+	if(totalUserReviews==1)
+   	{
+   		userReviewDestination= "/user_reviews1_en.jsp";
+   	}
+   	String totalUserReview= "("+totalUserReviews.toString()+")";
+  
+  
+   	String wallPaperCount;
+	String screenShotCount;
+	String videoCount;
+   
+   	if(Integer.toString(totalScreenShots).equals("0"))
+    {
+ 	 screenShotCount = ""; 
+ 	
+    }
+   	else 
+    {
+ 	   screenShotCount = "("+totalScreenShots+")";
+    }
+   	
+   	
+   	if(Integer.toString(totalVideos).equals("0"))
+   	{
+   		videoCount ="";
+   		
+   	}else 
+   	{
+   		videoCount ="("+totalVideos+")";
+   	}
+   	
+   	
+   	
+ 	  
+   if(Integer.toString(totalWallPapers).equals("0"))
+   {
+	   wallPaperCount = ""; 
+	 
+   }else 
+   {
+	   wallPaperCount = "("+totalWallPapers+")";
+   }
+   
+   
+	  
+   if(!mpExists)
+   {
+	   mp_Destination = "/multiplierInfoNone.jsp";
+	   mpImage = "/images/gamecontent_mpinfo_shad_en.gif";
+   }
+   
+   if(additionalInfoExists){
+	   add_Destination = "/add_details_en.jsp";
+	   addImage = "/images/gamecontent_moredetails_en.gif";
+   }
+
+ 
+ if(numCommunityWallPaper != 0 && numGameaccessWallPaper != 0)
+ {
+	 destinationWallPaperPage = "/wallpapers.jsp"; 
+ }
+ else if(numCommunityWallPaper == 0 && numGameaccessWallPaper != 0)
+ {
+	 destinationWallPaperPage = "/wallpapers_g_en.jsp";
+ }
+ else if(numCommunityWallPaper != 0 && numGameaccessWallPaper == 0)
+ {
+	 destinationWallPaperPage = "/wallpapers_u_en.jsp";
+ }
+ else if(numCommunityWallPaper == 0 && numGameaccessWallPaper == 0)
+ {
+	wallPaperImage = "/images/gamecontent_wallpapers_shad_en.gif";
+	 destinationWallPaperPage = "/wallPapersNone.jsp";
+ }
+ if(numGameScreenShot == 0 && numCommunityScreenShot == 0)
+ {
+	 screenShotImage = "/images/gamecontent_screenshots_shad_en.gif";
+	 destinationScreenshotPage = "/screenShotsNone.jsp";
+ }
+ else if(numCommunityScreenShot == 0 && numGameScreenShot != 0)
+ {
+	 destinationScreenshotPage = "/screenShotsGameaccess.jsp";
+ }
+ else if(numCommunityScreenShot != 0 && numGameScreenShot == 0)
+ {
+	 destinationScreenshotPage = "/screenshots_u_en.jsp";
+ }
+ else if(numCommunityScreenShot  !=0 && numCommunityScreenShot != 0)
+ {
+	 destinationScreenshotPage = "/screenshots_g_u_en.jsp";
+ }
+ if(numCommunityVideo == 0 &numGameaccessVideo == 0)
+ {
+	 destinationVideoPage = "videosNone.jsp";
+	 videoImage = "/images/gamecontent_videos_shad_en.gif";
+ }
+ else if(numCommunityVideo == 0 && numGameaccessVideo !=0)
+ {
+	 destinationVideoPage = "videos_g_en.jsp";
+ }
+ else if(numCommunityVideo !=0 && numGameaccessVideo ==0)
+ {
+	 destinationVideoPage = "videos_u_en.jsp";
+ }
+ else if(numCommunityVideo !=0 && numGameaccessVideo !=0)
+ {
+	 destinationVideoPage = "videos_g_u_en.jsp";
+ }
+   if(totalcriticReviews.equalsIgnoreCase("0"))
+   {
+	   criticDestination = "/critic_reviews_none_en.jsp";
+	   criticImage ="/images/gamecontent_criticr_shad_en.gif";
+	   totalCriticReview ="";
+   }
+   
+   if(totalUserReview.equalsIgnoreCase("(0)"))
+   {
+	  totalUserReview ="";
+	   userReviewDestination = "/user_reviews_none_en.jsp";
+	   userReviewImage ="/images/gamecontent_userr_new_en.gif";
+	
+   }
+   
+   	
+ %>
+
+
+
+
+
+<script type="text/javascript" src="scripts/stlib.js"></script>
+<script type="text/javascript" id="sothink_dhtmlmenu"> 
+ st_siteroot="./";
+ st_jspath="/scripts/stmenu.js";
+ if(!window.location.href.indexOf("file:") && st_jspath.charAt(0)=="/")
+  document.write('<script type="text/javascript" src="'+st_siteroot+st_jspath+'"><\/script>');
+ else 
+  document.write('<script type="text/javascript" src="'+st_jspath+'"><\/script>');
+ </script>
+
+<script type="text/javascript" src="scripts/ajaxtabs.js">
+
+/***********************************************
+* Ajax Tabs Content script v2.2- � Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+
+
+
+<jsp:include page="/storeGameTop.jsp"/>
+
+
+
+
+
+<table width="560" border="0" cellpadding="0"cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="left"><a href = "<%=SeoUrlsMaker.getConsolePageUrlStore(navElements.getCurrentConsoleKey(), "en") %>" class="verdana_12px_red_bold_und">
+		<bean:write name="<%=SessionUtils.GAME_INFORMATION%>" property="consoleName" scope="session" /></a>
+		 <span class="verdana_12px_grey"><strong>- Buy <bean:write name="<%=SessionUtils.GAME_INFORMATION%>" property="name" scope="session" /></strong></span></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="174" height="262" valign="top">
+				
+			<script>
+	function isIE(){  
+
+    var strBrwsr = navigator.userAgent.toLowerCase();  
+    if(strBrwsr.indexOf("msie") > -1 && strBrwsr.indexOf("mac") < 0){   
+        return true;  
+    }
+    else
+    {    
+        return false;  
+    }
+}
+</script>	
+				<script type="text/javascript">
+       
+if(isIE())
+{
+stBM(2,"contentmenuen",[0,"images/","","blank.gif",0,"left","default","hand",0,0,-1,174,262,"none",0,"#000000","transparent","","repeat",1,"defButton_f%20.gif","defButton_uf.gif",9,9,1,"line_def0.gif","line_def1.gif","line_def2.gif","line_def3.gif",0,0,0,0,"center",0,0]);
+stBS("p0",[0,0]);
+stIT("p0i0",["                                           ","javascript:gctabs.loadajaxpage(\'vg_details_en.jsp?game=<%=gameDescID%>&mode=2\')","","","","defIcon_c.gif","defIcon_c.gif",0,0,"11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_roll_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_over_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_over_en.gif","no-repeat",0,0,"left","middle",174,29]);
+stIT("p0i1",[,"javascript:gctabs.loadajaxpage(\'<%=mp_Destination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=mpImage%>",,,,,,"gamecontent_mpinfo_roll_en.gif",,,,,,"gamecontent_mpinfo_over_en.gif",,,,,,"gamecontent_mpinfo_over_en.gif"],"p0i0");
+stIT("p0i2",["                                   <%=screenShotCount%>","javascript:gctabs.loadajaxpage(\'<%=destinationScreenshotPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=screenShotImage%>",,,,,,"gamecontent_screenshots_roll_en.gif",,,,,,"gamecontent_screenshots_over_en.gif",,,,,,"gamecontent_screenshots_over_en.gif",,,,"center"],"p0i0");
+stIT("p0i3",["                                   <%=wallPaperCount%>","javascript:gctabs.loadajaxpage('\<%=destinationWallPaperPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=wallPaperImage%>",,,,,,"gamecontent_wallpapers_roll_en.gif",,,,,,"gamecontent_wallpapers_over_en.gif",,,,,,"gamecontent_wallpapers_over_en.gif"],"p0i2");
+stIT("p0i4",["                                   <%=videoCount%>","javascript:gctabs.loadajaxpage(\'<%=destinationVideoPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=videoImage%>",,,,,,"gamecontent_videos_roll_en.gif",,,,,,"gamecontent_videos_over_en.gif",,,,,,"gamecontent_videos_over_en.gif"],"p0i2");
+stIT("p0i5",[,"javascript:gctabs.loadajaxpage(\'<%=add_Destination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=addImage%>",,,,,,"gamecontent_moredetails_roll_en.gif",,,,,,"gamecontent_moredetails_over_en.gif",,,,,,"gamecontent_moredetails_over_en.gif"],"p0i0");
+stIT("p0i6",[,"javascript:gctabs.loadajaxpage(\'similarGames.jsp?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"gamecontent_similar_new_en.gif",,,,,,"gamecontent_similar_new_roll_en.gif",,,,,,"gamecontent_similar_new_over_en.gif",,,,,,"gamecontent_similar_new_over_en.gif"],"p0i0");
+stIT("p0i7",["                                   <%=totalCriticReview%>","javascript:gctabs.loadajaxpage(\'<%=criticDestination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=criticImage%>",,,,,,"gamecontent_criticr_roll_en.gif",,,,,,"gamecontent_criticr_over_en.gif",,,,,,"gamecontent_criticr_over_en.gif"],"p0i3");
+stIT("p0i8",["                                   ","",,,,,,,,,,,,"<%=userReviewImage%>",,,,,,"gamecontent_userr_new_en.gif",,,,,,"gamecontent_userr_new_en.gif",,,,,,"gamecontent_userr_new_en.gif",,,,,,,30],"p0i2");
+stES();
+stEM();  
+}
+else {
+stBM(2,"contentmenuen",[0,"images/","","blank.gif",0,"left","default","hand",0,0,-1,175,262,"none",0,"#000000","transparent","","repeat",1,"defButton_f%20.gif","defButton_uf.gif",9,9,1,"line_def0.gif","line_def1.gif","line_def2.gif","line_def3.gif",0,0,0,0,"center",0,0]);
+stBS("p0",[0,0]);
+stIT("p0i0",["                                           ","javascript:gctabs.loadajaxpage(\'vg_details_en.jsp?game=<%=gameDescID%>&mode=2\')","","","","defIcon_c.gif","defIcon_c.gif",0,0,"11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_roll_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_over_en.gif","no-repeat","11px 'Verdana','Arial'","#666666","none","transparent","gamecontent_vgdetails_over_en.gif","no-repeat",0,0,"left","middle",174,29]);
+stIT("p0i1",[,"javascript:gctabs.loadajaxpage(\'<%=mp_Destination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=mpImage%>",,,,,,"gamecontent_mpinfo_roll_en.gif",,,,,,"gamecontent_mpinfo_over_en.gif",,,,,,"gamecontent_mpinfo_over_en.gif"],"p0i0");
+stIT("p0i2",["                                   <%=screenShotCount%>","javascript:gctabs.loadajaxpage(\'<%=destinationScreenshotPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=screenShotImage%>",,,,,,"gamecontent_screenshots_roll_en.gif",,,,,,"gamecontent_screenshots_over_en.gif",,,,,,"gamecontent_screenshots_over_en.gif",,,,"center"],"p0i0");
+stIT("p0i3",["                                   <%=wallPaperCount%>","javascript:gctabs.loadajaxpage('\<%=destinationWallPaperPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=wallPaperImage%>",,,,,,"gamecontent_wallpapers_roll_en.gif",,,,,,"gamecontent_wallpapers_over_en.gif",,,,,,"gamecontent_wallpapers_over_en.gif"],"p0i2");
+stIT("p0i4",["                                   <%=videoCount%>","javascript:gctabs.loadajaxpage(\'<%=destinationVideoPage%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=videoImage%>",,,,,,"gamecontent_videos_roll_en.gif",,,,,,"gamecontent_videos_over_en.gif",,,,,,"gamecontent_videos_over_en.gif"],"p0i2");
+stIT("p0i5",[,"javascript:gctabs.loadajaxpage(\'<%=add_Destination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=addImage%>",,,,,,"gamecontent_moredetails_roll_en.gif",,,,,,"gamecontent_moredetails_over_en.gif",,,,,,"gamecontent_moredetails_over_en.gif"],"p0i0");
+stIT("p0i6",[,"javascript:gctabs.loadajaxpage(\'similarGames.jsp?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"gamecontent_similar_new_en.gif",,,,,,"gamecontent_similar_new_roll_en.gif",,,,,,"gamecontent_similar_new_over_en.gif",,,,,,"gamecontent_similar_new_over_en.gif"],"p0i0");
+stIT("p0i7",["                                   <%=totalCriticReview%>","javascript:gctabs.loadajaxpage(\'<%=criticDestination%>?game=<%=gameDescID%>&mode=2\')",,,,,,,,,,,,"<%=criticImage%>",,,,,,"gamecontent_criticr_roll_en.gif",,,,,,"gamecontent_criticr_over_en.gif",,,,,,"gamecontent_criticr_over_en.gif"],"p0i3");
+stIT("p0i8",["                                   ","",,,,,,,,,,,,"<%=userReviewImage%>",,,,,,"gamecontent_userr_new_en.gif",,,,,,"gamecontent_userr_new_en.gif",,,,,,"gamecontent_userr_new_en.gif",,,,,,,30],"p0i2");
+stES();
+stEM();  
+}
+      </script></td>
+   <td width="386" height="262" align="left" valign="middle" bgcolor="#B2B2B2">
+	<table width="385" height="260" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td width="100%" valign="top" bgcolor="#FFFFFF" ><div class="gameinfocontent" id="gameinfocontainer" style="background-color: white; padding: 0px"></div></td>
+	<td valign="top" bgcolor="#B2B2B2" ><img src="images/blank.gif" width="1" height="1" /></td>
+	</tr>
+	</table>
+	</td>
+	
+	
+	
+	</tr>
+	</table>
+	</td>
+  </tr>
+  
+	<tr>
+	<td>
+<div id="gctabs" style="display:none; ">
+<ul>
+<a href="vg_details_en.jsp?game<%=gameDescID%>" rel="gameinfocontainer" class="selected"></a>
+</ul>
+</div>
+
+<script type="text/javascript">
+
+var gctabs=new ddajaxtabs("gctabs", "gameinfocontainer")
+gctabs.setpersist(true)
+gctabs.setselectedClassTarget("link") //"link" or "linkparent"
+gctabs.init()
+
+</script>
+
+<script>
+	function loadTab(url){
+	
+		javascript:gctabs.loadajaxpage(url);
+	}
+		
+function rateReview(gameId)
+{
+	var gameRating = document.getElementById('gameRating').value;
+	
+	var url = "/rateGame.do?&gameID="+gameId+"&gameRating="+gameRating;
+	javascript:loadTab(url);
+}
+</script>
+
+	</td>
+</tr>
+
+</table>
+<table width="560" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:12px;">
+  <tr>
+    <td align="center" valign="top" bgcolor="#F5F5F5">
+    <table width="100" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5"> </td>
+  </tr>
+</table>
+
+    <bean:define id = "numResults" name="<%=SessionUtils.GAME_INFORMATION%>" scope="session" property="totalNumberOFUserReviews" type="java.lang.Integer"/>
+
+
+<%
+HttpSession the_session = request.getSession();
+Integer customerID = SessionUtils.getCustomerID(request);
+
+
+int REVIEWS_PER_ROW = 1;
+
+int offset = 0;
+
+int iterateLength = 3;
+   
+if(request.getParameter("offset") != null){
+	   offset = Integer.parseInt(request.getParameter("offset"));
+}
+offset=-1;
+int startOffset = offset ;
+int previousStartOffset = startOffset - 3;
+int currentOffset = offset;
+int endOffset = startOffset + 3;
+
+if(startOffset > numResults){
+	   startOffset = numResults;
+}
+
+if(startOffset + 3 > numResults){
+		endOffset = numResults;   
+}
+
+if(previousStartOffset < 0){
+	   previousStartOffset = 0;
+}
+
+if(offset == -1){
+	   offset = 0;
+	   startOffset = 0;
+	   endOffset = numResults;
+	   
+	   if(numResults != null) {
+		   iterateLength = java.lang.Math.round(numResults.intValue() / REVIEWS_PER_ROW);
+		   if(numResults.intValue() % 5 != 0){
+			   iterateLength++; 
+		   }
+		    
+		}
+}
+
+if(numResults == 0){
+	   startOffset = -1;
+}
+
+%>
+
+<bean:define id="gameDescID" name="<%=SessionUtils.GAME_INFORMATION%>" property="gameDescIDAsStr" scope="session" type="java.lang.String"/>
+
+<bean:define id="reviewExists" name="<%=SessionUtils.GAME_INFORMATION%>" property="reviewExists" scope="session" type="java.lang.Boolean"/>
+
+
+<%if(numResults!=0){
+
+int i = 0;
+String rating = "";
+%>
+
+  <logic:iterate id="fgr" name="<%=SessionUtils.GAME_INFORMATION%>" offset="<%=Integer.toString(offset)%>" property="fullGameReviews" scope="session" length="<%=iterateLength+""%>" >
+     <bean:define id="numberHelpful" name="fgr" property="numberHelpful" type="java.lang.Integer"/>
+     <bean:define id="numberNotHelpful" name="fgr" property="numberNotHelpful" type="java.lang.Integer"/>
+     <bean:define id="alias" name="fgr" property="profileAlias" type="java.lang.String"/>
+     <bean:define id="date" name="fgr" property="timestamp" type="govojo.util.TimeAndDate"/>
+     <bean:define id="reviewID" name="fgr" property="reviewID" type="java.lang.Integer"/>
+     <bean:define id="individualGameRating" name="fgr" property="individualGameRating" type="java.lang.Integer"/>
+              
+        <% 
+           String dateString = date.toddMMMyyyyString(); 
+           if(individualGameRating.intValue() == 0){
+           	  rating = "";
+           }else{
+           	  rating = individualGameRating + "/10";
+           }
+           %>
+    
+    <table width="540" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td></td>
+
+        <td height="1" align="left"></td>
+
+        <td align="left"></td>
+
+        </tr>
+
+      
+      
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td height="24" align="left" class="verdana_11px_grey"><strong><bean:define id="title" name="fgr" property="title"/><%=title%></strong></td>
+     
+        <td width="100%" align="left"><span class="verdana_11px_red"><strong><%= rating %> </strong></span></td>
+       
+
+        </tr>
+        
+
+      <tr>
+
+        <td><img src="images/blank.gif" width="15" height="1"></td>
+
+        <td height="1" align="left"><img src="images/blank.gif" width="450" height="1"></td>
+
+        <td align="left"><img src="images/blank.gif" width="50" height="1"></td>
+
+        </tr>
+
+    </table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/blank.gif" width="15" height="1" /></td>
+    <td width="100%" align="left"><img src="images/game_content_seperator.gif" width="385" height="1" /></td>
+  </tr>
+</table>
+</td>
+
+  </tr>
+
+
+
+  <tr>
+
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td></td>
+
+        <td height="1" align="left"></td>
+
+        </tr>
+
+      <tr>
+
+        <td> </td>
+
+        <td width="100%" height="15" align="left" valign="bottom" class="verdana_11px_grey">Posted by <html:link page="<%="viewProfile.do?alias="+alias%>" styleClass="verdana_11px_red_und"><%=alias%> </html:link> on <%=dateString%> </td>
+
+        </tr>
+
+      <tr>
+
+        <td><img src="images/blank.gif" width="15" height="1"></td>
+
+        <td height="1" align="left"><img src="images/blank.gif" width="135" height="1"></td>
+
+        </tr>
+
+    </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td></td>
+
+        <td height="1" align="left"></td>
+
+      </tr>
+      
+
+      <tr>
+
+        <td> </td>
+
+        <td width="100%" height="10" align="left" class="verdana_11px_blue"><span id="toUpdate<%=reviewID.intValue() %>"><%=numberHelpful.toString()%> /<%=(numberHelpful.intValue() + numberNotHelpful.intValue())%></span>  users found this review helpful.</td>
+
+      </tr>
+      
+
+      <tr>
+
+        <td><img src="images/blank.gif" width="15" height="1"></td>
+
+        <td height="1" align="left"><img src="images/blank.gif" width="135" height="1"></td>
+
+      </tr>
+
+    </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="8"> </td>
+
+  </tr>
+
+  <tr>
+
+    <td><table width="525"  border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td></td>
+
+        <td height="1" align="left"></td>
+
+      </tr>
+      
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td width="100%" height="20" align="left" class="verdana_11px_grey"><bean:define id="reviewContent" name="fgr" property="description"/><%=reviewContent %></td>
+
+      </tr>
+
+      <tr>
+
+        <td><img src="images/blank.gif" width="15" height="1"></td>
+
+        <td height="1" align="left"><img src="images/blank.gif" width="135" height="1"></td>
+
+      </tr>
+
+    </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="5"> </td>
+
+  </tr>
+
+  <tr>
+
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td></td>
+
+        <td height="1" align="left"></td>
+
+        <td align="left"></td>
+
+        <td align="left"></td>
+
+      </tr>
+      
+    <%  if(customerID!=null)
+    {
+  
+       GameReviewHelpful dbHelpful = new GameReviewHelpful();
+      
+
+      if(!dbHelpful.ratingExists(customerID, reviewID) ){ %>
+
+      <tr id="toHide<%=reviewID.intValue() %>">
+
+        <td>&nbsp;</td>
+
+		
+        <td height="23" align="left" nowrap class="verdana_11px_grey"><strong>Was this review helpful?</strong></td>
+
+        <td align="left" valign="top"><span class="verdana_11px_grey"><a href="javascript:void(0);" onclick="javascript:callAjax(1, '<%="/rateReviewHelpful.do?game=" + gameDescID + "&review=" + reviewID.intValue() + "&helpful=true&offset="+currentOffset %>',<%=reviewID.intValue() %>,<%=numberHelpful.toString()%>, <%=(numberHelpful.intValue() + numberNotHelpful.intValue())%>)"  ><img src="images/game_content_but_yes_grey_en.gif" alt="" width="57" height="22" border="0"></a>
+		
+
+
+ </span></td>
+ 
+ 
+ 
+ 
+ 
+
+        <td align="left" valign="top"><span class="verdana_11px_grey"><a href="javascript:void(0);" onclick="javascript:callAjax(2, '<%="/rateReviewHelpful.do?game=" + gameDescID + "&review=" + reviewID.intValue() + "&helpful=false&offset="+currentOffset %>',<%=reviewID.intValue() %>,<%=numberHelpful.toString()%>, <%=(numberHelpful.intValue() + numberNotHelpful.intValue())%>)"> <img src="images/game_content_but_no_grey_en.gif" alt="" width="57" height="22" border="0"></a>
+        
+ </span></td>
+
+      </tr>
+      <%}} 
+    
+    
+    %>
+    
+     
+    	
+
+      
+   
+     
+      
+    
+
+      <tr>
+
+        <td><img src="images/blank.gif" width="15" height="1"></td>
+
+        <td height="1" align="left"><img src="images/blank.gif" width="220" height="1"></td>
+
+        <td align="left"><img src="images/blank.gif" width="70" height="1"></td>
+
+        <td width="100%" align="left"></td>
+
+      </tr>
+
+    </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="5"> </td>
+
+  </tr>
+
+</table>
+<%
+i++;
+%>
+<% offset += REVIEWS_PER_ROW; %>
+
+</logic:iterate>
+<form action="" name="rateAjax" method="post">
+<iframe width="0" height="0" style="display:none" name="ajax_ifr" id="ajax_ifr" src="/images/blank.gif"></iframe>        
+</form>
+
+  <table width="385"  border="0" cellspacing="0" cellpadding="0">
+    
+    <tr>
+      <td width="100%" height="45" align="center" valign="top" nowrap class="verdana_11px_grey"><html:link page="<%= "/writeReview.do?pageType=writeReview&game=" + gameDescID%>" styleClass="arial_11px_blue_underlined" ><img src="images/button_wreview_gray_en.gif" width="170" height="32" border="0"> </html:link></td>
+    </tr>
+    
+    
+</table>
+<%}else{ %>
+<table width="558" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center"><table width="540" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10"> </td>
+  </tr>
+</table>
+  <table width="385" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" class="verdana_11px_grey">There are unfortunately no user reviews for this game. Why not write your own and share your experience with others?</td>
+  </tr>
+  <tr>
+    <td align="center" class="verdana_11px_grey"><table width="385"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td  align="left"><img src="images/blank.gif" width="70" height="15"></td>
+        </tr>
+      
+      <tr>
+        <td width="100%" height="45" align="center" valign="top" nowrap class="verdana_11px_grey"><html:link page="<%= "/writeReview.do?pageType=writeReview&game=" + gameDescID%>" styleClass="arial_11px_blue_underlined" ><img src="images/button_wreview_gray_en.gif" width="170" height="32" border="0"> </html:link></td>
+        </tr>
+      
+      
+  </table></td>
+  </tr>
+  </table></td>
+</tr>
+</table>
+<%} %>
+</td>
+  </tr>
+</table>
+
+<bean:define id="gameName" name="<%=SessionUtils.GAME_INFORMATION%>" property="name" scope="session" type="java.lang.String"/>

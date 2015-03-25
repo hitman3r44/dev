@@ -1,0 +1,18 @@
+Dear #FIRSTNAME#,
+
+Thank You for registering with Gameaccess.ca.
+
+click the link given below to activate your account.
+
+https://gameaccess.ca/activateMyaccount.do?subID=#SUB_ID#
+
+
+
+Thank you,
+
+The Game Access Team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - https://gameaccess.ca/account/displayAccountLanding.jsp
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp 

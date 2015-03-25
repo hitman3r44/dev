@@ -1,0 +1,926 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<style type="text/css">
+label {
+	width:170px;
+}
+.vanadium-advice {
+	margin-left: 170px;
+}
+input.vanadium-valid {
+	background-image: none;
+}
+</style>
+<div class="unit" style="width:800px;margin-left:100px;">
+
+<!-- Image Product -->
+<div class="pop_title" style="margin-top:30px;">View Product - <s:property value="nameEn" /></div>
+
+<s:if test="hasActionErrors()"> 
+  <div id="globalAdvice" class="gray_bg global-vanadium-advice">
+  		<s:iterator value="actionErrors">
+  				<span><s:property escape="false" /></span><br/>
+  		</s:iterator>
+  </div>
+</s:if>
+
+  <div id="formContainer" >
+    <s:form id="form" action="editProduct.do" method="post" validate="true" enctype="multipart/form-data">
+    <s:hidden id="productId" name="productId"/>
+    <s:hidden id="imageId" name="imageId"/>
+    <s:hidden name="update" value="true"/>
+    <s:token />
+<fieldset>
+
+<!-- Image Product -->
+<div style="position:absolute;left:630px">
+	<div class="image" style="margin-left:10px;width:200px;">
+		 <s:if test="%{imgDTO!=null}">
+			<img src="${product}<s:property value="imgDTO.name" />" />
+			<div style="margin-top:3px;">Current Size:</div>		        			
+	        	<span id="img_dim_1"><s:property value="imgDTO.width" /> X 
+	        	<s:property value="imgDTO.height" /> - 
+	        	<s:property value="imgDTO.size" />kb</span>		
+		</s:if>
+	</div>
+		<div id="file-uploader" style="text-align:center">
+	</div>
+	<div id="messageUpload" style="width:200px;"></div>
+
+
+</div>
+<!-- Image Product --> 
+      
+     	<!--Brand-->
+        <label for="team_name">Brand:</label>
+		<s:select id="brand" 
+        		  name="brand"
+        		  cssStyle="width:156px;"
+        		  required="true"
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 
+        		  listKey="id"
+        		  listValue="%{name}"			    		  
+    			  list="brandList" /> 
+    	<s:hidden id="brandName" name="brandName" value="" />
+    	<span id="brand_Error" style="display:none;margin-left:2px;"></span>
+         <!--Brand-->
+        <br />
+         <!--Category-->
+        <label for="username">Category:</label>
+ 		<s:select id="category" 
+        		  name="category"
+        		  cssStyle="width:156px;"
+        		  required="true"	
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 	
+        		  list="categoryList"
+      			  listKey="id"
+      			  listValue="%{getText(name)}" /> 
+    	<s:hidden id="categoryName" name="categoryName" value="" />
+    	<span id="category_Error" style="display:none;margin-left:2px;"></span>
+        <!--Category-->
+        <br />
+        <!--Type-->
+        <label for="accept_team_members">Type:</label>
+        <s:select id="mainSpecification" 
+        		  name="mainSpecification"
+        		  cssStyle="width:156px;"
+        		  required="true"	
+        		  headerKey="-1" 
+        		  headerValue="--Please Select--" 	
+        		  list="mainSpecificationList"
+      			  listKey="id"
+      			  listValue="%{getText(name)}" /> 
+    	<s:hidden id="mainSpecificationName" name="mainSpecificationName" value="" />
+    	<span id="main_spec_Error" style="display:none;margin-left:2px;"></span>
+        <!--Type-->
+        <br />
+        <!--Status-->
+        <label>Status:</label>
+		<s:select id="statusId" 
+        		  name="statusId"
+        		  cssStyle="width:156px;"
+        		  required="true"
+        		  listKey="id"
+        		  listValue="%{getText(name)}"			    		  
+    			  list="statusList" /> 
+    	<s:hidden id="statusName" name="statusName" value="" />
+    	<div id="discontinuedSub"></div>
+    	<span id="status_Error" style="display:none;margin-left:2px;"></span>
+    	<!--Status-->    	 	
+        <br />
+        <!--Active Clients-->        
+        <label>Active Clients:</label>		
+		<s:if test='%{activeClientsSize != 0}'>
+			<s:select id="activeClientsId"
+        		  name="activeClientsId"
+        		  cssStyle="width:156px;" 
+        		  required="false"
+        		  listKey="id"
+        		  multiple="true"
+        		  size="%{activeClientsTFSize}"
+        		  listValue="%{getText(login)}"	
+    			  list="activeClientsList"  />
+    		 <span id="activeClients_Error" style="display:none;margin-left:2px;"></span>
+		</s:if>
+		<s:else>
+			<s:textfield id="noActiveClient" name="noActiveClient" maxlength="5" cssStyle="width:156px;" value="--- NONE ----" readonly="true" />
+		</s:else>
+    	<!--Active Clients-->
+        <br />
+       <!--Manufacturer Product ID-->
+        <table border="0">
+        	<tr>
+		        <td></td>        
+		        <td></td>
+		        <td align="center">Qty:</td>
+		        <td align="center">Supplier:</td>
+		        <td class="cost" align="center">Cost:</td>
+	        </tr>
+	        <tr>
+		        <td><label for="accept_team_members">Manufacturer prodcut ID (s):</label></td>        
+		        <td><s:textfield id="manufProductID" name="manufProductID" maxlength="50" cssStyle="width:150px;"/></td>
+		        <td><s:textfield id="manufProductQuantity" name="manufProductQuantity" maxlength="5" cssStyle="width:35px;"/></td>
+		        <td><s:textfield id="supplier" name="supplier" maxlength="50" cssStyle="width:100px;"/></td>
+		        <td><s:textfield id="price" name="price" maxlength="15" cssStyle="width:100px;" cssClass="cost"/></td>
+	        </tr>
+	        <tr>
+		        <td><label for="accept_team_members"></label></td>
+		        <td><s:textfield id="manufProductID1" name="manufProductID1" maxlength="50" cssStyle="width:150px;"/></td>
+		        <td><s:textfield id="manufProductQuantity1" name="manufProductQuantity1" maxlength="5" cssStyle="width:35px;"/></td>
+		        <td><s:textfield id="supplier1" name="supplier1" maxlength="50" cssStyle="width:100px;"/></td>
+		        <td><s:textfield id="price1" name="price1" maxlength="15" cssStyle="width:100px;" cssClass="cost"/></td>
+	        </tr>
+	        <tr>
+		        <td><label for="accept_team_members"></label></td>
+		        <td><s:textfield id="manufProductID2" name="manufProductID2" maxlength="50" cssStyle="width:150px;"/></td>
+		        <td><s:textfield id="manufProductQuantity2" name="manufProductQuantity2" maxlength="5" cssStyle="width:35px;"/></td>
+		        <td><s:textfield id="supplier2" name="supplier2" maxlength="50" cssStyle="width:100px;"/></td>
+		        <td><s:textfield id="price2" name="price2" maxlength="15" cssStyle="width:100px;" cssClass="cost"/></td>
+	        </tr>
+	        <tr>
+		        <td><label for="accept_team_members"></label></td>
+		        <td><s:textfield id="manufProductID3" name="manufProductID3" maxlength="50" cssStyle="width:150px;"/></td>
+		        <td><s:textfield id="manufProductQuantity3" name="manufProductQuantity3" maxlength="5" cssStyle="width:35px;"/></td>
+		        <td><s:textfield id="supplier3" name="supplier3" maxlength="50" cssStyle="width:100px;"/></td>
+		        <td><s:textfield id="price3" name="price3" maxlength="15" cssStyle="width:100px;" cssClass="cost"/></td>
+	        </tr>
+	        <tr>
+		        <td><label for="accept_team_members"></label></td>
+		        <td><s:textfield id="manufProductID4" name="manufProductID4" maxlength="50" cssStyle="width:150px;"/></td>
+		        <td><s:textfield id="manufProductQuantity4" name="manufProductQuantity4" maxlength="5" cssStyle="width:35px;"/></td>
+		        <td><s:textfield id="supplier4" name="supplier4" maxlength="50" cssStyle="width:100px;"/></td>
+		        <td><s:textfield id="price4" name="price4" maxlength="15" cssStyle="width:100px;" cssClass="cost"/></td>
+	        </tr>
+	    </table> 
+	    <!--Manufacturer Product ID-->
+        <br />
+        <!--Loyalty Product ID-->
+        <label for="accept_team_members">Loyalty Source Product ID:</label>
+        <s:textfield id="loyaltyProductId" name="loyaltyProductId" maxlength="50" cssStyle="width:150px;"/>
+        <!-- <s:hidden id="loyaltyProductIdSub" name="loyaltyProductIdSub" value="" /> -->
+        <span id="loyaltyProductId_Error" style="display:none;margin-left:2px;"></span>
+        <!--Loyalty Product ID-->
+        <br />
+        <!--Name ENGLISH-->
+        <label for="accept_team_members">Name - ENGLISH:</label>        
+        <s:textfield id="nameEn" name="nameEn" maxlength="75" cssStyle="width:250px;"/>
+        <span id="nameEn_Error" style="display:none;margin-left:2px;"></span>
+        <!--Name ENGLISH-->
+        <br />
+        <!--Name FRENCH-->
+        <label for="accept_team_members">Name - FRENCH:</label>
+        <s:textfield id="nameFr" name="nameFr" maxlength="75" cssStyle="width:250px;"/>
+         <span id="nameFr_Error" style="display:none;margin-left:2px;"></span>
+        <!--Name FRENCH-->
+        <br />
+        <!--Product Image-->
+        <!--<label for="accept_team_members">Product IMAGE:</label>-->
+		<!-- <input type="file" name="productImage" size="31" /> .PNG .JPEG  --> 
+		<!--<s:file name="productImage" size="31" />.PNG .JPEG  --> 
+        <!--CHANGE IMAGE-->
+        <!--<br />-->
+        <!--MSRP-->
+        <label for="accept_team_members">MSRP:</label>        
+        <s:textfield id="msrp" name="msrp" maxlength="15" cssStyle="width:80px;" />
+        <span id="msrp_Error" style="display:none;margin-left:2px;"></span>
+        <!--MSRP-->
+        <br />
+        <!--OUR COST-->
+        <label for="accept_team_members">Our cost:</label>       
+        <s:textfield id="cost" name="cost" maxlength="15" cssStyle="width:80px;" />
+         <span id="cost_Error" style="display:none;margin-left:2px;"></span>
+        <!--OUR COST-->
+        <br />
+        
+	<div id="userNameList" class="fixed column" style="padding:20px 0px 0px 0px;">	    
+		<div class="blue f12 bold pb10" style="padding-bottom:10px;"></div>
+			<div id="productListData" style="width:1500px;"> 		   
+				<table border="1" cellspacing="0" cellpadding="0" class="pad_5px nowraptable datatable">
+					<thead class="gray_header">
+					<tr>
+						<th><s:text name="Client Name" /></th>
+						<th><s:text name="Selling Price" /></th>
+						<th><s:text name="Profit_%" /></th>
+						<th><s:text name="Discount_%" /></th>
+						<th><s:text name="Exclude" /></th>
+					</tr>
+					</thead>
+						<s:if test="%{userNameList != null}">
+							<s:if test="%{userNameList.size > 0}" >
+								<tbody>
+									<s:iterator value="userNameList" status="count">
+										<tr>
+											<td><s:property value="login"/></td>
+											
+												<s:if test='%{excluded[#count.index] == "t"}' >
+													<td><input 	id="userPrice_<s:property value="id"/>"
+																disabled="disabled" 
+																style="text-align: center; width: 80px;" 
+																value="<s:property value="%{userPrice[#count.index]}"/>"
+																name="userPrice"/>$</td>
+												</s:if>
+												<s:if test='%{excluded[#count.index] == "f"}' >
+													<td><input 	id="userPrice_<s:property value="id"/>"
+																style="text-align: center; width: 80px;" 
+																value="<s:property value="%{userPrice[#count.index]}"/>"
+																name="userPrice"/>$</td>
+												</s:if>
+																								
+												<s:if test='%{excluded[#count.index] == "t"}' >
+													<td><input 	id="percentageProfit_<s:property value="id"/>"
+																disabled="disabled" 
+																style="text-align: center; width: 40px;" 
+																value="<s:property value="%{percentageProfit[#count.index]}"/>" 
+																class="pa10" 
+																name="percentageProfit"/>%</td>
+												</s:if>
+												<s:if test='%{excluded[#count.index] == "f"}' >
+													<td><input 	id="percentageProfit_<s:property value="id"/>"
+																style="text-align: center; width: 40px;" 
+																value="<s:property value="%{percentageProfit[#count.index]}"/>" 
+																class="pa10" 
+																name="percentageProfit"/>%</td>
+												</s:if>
+
+												<s:if test='%{excluded[#count.index] == "t"}' >														
+													<td><input 	id="percentageDiscount_<s:property value="id"/>"
+																disabled="disabled" 
+																style="text-align: center; width: 40px;" 
+																value="<s:property value="%{percentageDiscount[#count.index]}"/>"  
+																class="pa10"												
+																name="percentageDiscount"/>%</td>
+												</s:if>
+												<s:if test='%{excluded[#count.index] == "f"}' >														
+													<td><input 	id="percentageDiscount_<s:property value="id"/>" 
+																style="text-align: center; width: 40px;" 
+																value="<s:property value="%{percentageDiscount[#count.index]}"/>"  
+																class="pa10"												
+																name="percentageDiscount"/>%</td>
+												</s:if>
+											
+											<td><center>
+												<s:if test='%{excluded[#count.index] == "t"}' >
+													<input 	type="checkbox" 
+															title="if checked here, user will be excluded for this product"
+															id="isExcluded" 
+															name="isExcluded" 
+															value="<s:property value="id"/>" 
+															checked="checked"
+															class="pa10" />													
+												</s:if>
+												<s:if test='%{excluded[#count.index] == "f"}' >
+													<input	type="checkbox" 
+															title="if checked here, user will be excluded for this product"
+															id="isExcluded" 
+															name="isExcluded" 
+															value="<s:property value="id"/>" 
+															class="pa10" />
+												</s:if>
+											</center></td>
+										</tr>
+									</s:iterator>
+								</tbody>
+							</s:if>
+						</s:if>	            								
+	    	</table>
+	    	<br/><br/>
+		</div>		
+	  </div>
+        
+      <br />
+        
+        <!--BOX SIZE-->
+        <label for="accept_team_members">Box size (inches):</label>
+        W<s:textfield id="width" name="width" maxlength="5" cssStyle="width:35px;"/>
+        L<s:textfield id="large" name="large" maxlength="5" cssStyle="width:35px;"/>
+        H<s:textfield id="high" name="high" maxlength="5" cssStyle="width:35px;"/>
+        <!--BOX SIZE-->
+        <br />
+        <!--WEIGHT-->
+        <label for="accept_team_members">Weight (lbs):</label><s:textfield id="weight" name="weight" maxlength="5" cssStyle="width:35px;"/>
+        lbs<!--WEIGHT-->
+        <br />
+        <!--Link url-->
+        <label for="accept_team_members">Link url:</label>
+        <s:textfield id="linkUrl" name="linkUrl" cssStyle="width:150px;"/>
+        <span id="linkUrl_Error" style="display:none;margin-left:2px;"></span>
+        <!--Link url-->        
+        <br />
+        <!--Warranty-->
+        <table>
+        <tr>
+        <td><label for="accept_team_members">Warranty:</label></td>
+	    <s:if test="%{defectFree == false}">
+        	<td><s:textfield 	id="warrantyQuantity" 
+        						name="warrantyQuantity" 
+        						maxlength="7" 
+        						cssStyle="width:35px;"/></td>
+        </s:if>
+	    <s:if test="%{defectFree == true}">
+        	<td><s:textfield 	id="warrantyQuantity" 
+        						name="warrantyQuantity" 
+        						maxlength="7" 
+        						cssStyle="width:35px;" 
+        						disabled="true"
+        						value="" /></td>
+         </s:if>         
+        <td>&nbsp;</td><td>&nbsp;</td>       	 
+       	<s:if test="%{periodTime == 'month'}"> 
+       		<td><input type="radio" id="grpMonth" name="periodTime" value="month" maxlength="1" checked/>Month(s)</td>
+       		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+       		<td><input type="radio" id="grpYear" name="periodTime" value="year" maxlength="1"  />Year(s)</td>
+       	</s:if>
+       	<s:if test="%{periodTime == 'year'}"> 
+       		<td><input type="radio" id="grpMonth" name="periodTime" value="month" maxlength="1" />Month(s)</td>
+       		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+       		<td><input type="radio" id="grpYear" name="periodTime" value="year" maxlength="1" checked />Year(s)</td>
+       	</s:if>
+       	      		
+	    <s:if test="%{defectFree == true}">
+	    	<td><input type="radio" id="grpMonth" name="periodTime" value="month" maxlength="1" disabled="disabled"/>Month(s)</td>
+       		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+       		<td><input type="radio" id="grpYear" name="periodTime" value="year" maxlength="1" checked disabled="disabled"/>Year(s)</td>
+       		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td> 
+	       	<td><s:checkbox id="defectFree" name="defectFree" cssStyle="width:35px;" value="true" /></td>
+	    </s:if>
+	     <s:if test="%{defectFree == false}">
+	       	<td><s:checkbox id="defectFree" name="defectFree" cssStyle="width:35px;" value="" /></td>
+	    </s:if>
+       	<td>Defect-free</td>
+       	
+       	</tr>
+       	</table>
+        <!--Warranty-->  
+        <br />  
+        <!--NOTE-->
+        <label for="accept_team_members">Note:</label>       
+        <s:textarea id="note" name="note" rows="10" cssStyle="width:500px;"></s:textarea>
+        <!--NOTE-->           	    	
+		<br />
+        <!--Description ENGLISH-->
+        <label for="accept_team_members">Description - ENGLISH:</label><s:textarea id="descriptionEn" name="descriptionEn" rows="10" cssStyle="width:500px;"></s:textarea>
+        
+         <span id="descriptionEn_Error" style="display:none;margin-left:2px;"></span>
+        <!--Description ENGLISH-->
+        <br />
+        <!--Description FRENCH-->
+        <label for="accept_team_members">Description - FRENCH:</label><s:textarea id="descriptionFr" name="descriptionFr" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="descriptionFr_Error" style="display:none;margin-left:2px;"></span>
+        <!--Description FRENCH-->
+        <br />
+        <!--SPECS ENGLISH-->
+        <label for="accept_team_members">Specs - ENGLISH:</label>
+        <s:textarea id="specificationEn" name="specificationEn" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="specificationEn_Error" style="display:none;margin-left:2px;"></span>
+        <!--SPECS ENGLISH-->
+        <br />
+        <!--SPECS FRENCH-->
+        <label for="accept_team_members">Specs - FRENCH:</label>       
+        <s:textarea id="specificationFr" name="specificationFr" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="specificationFr_Error" style="display:none;margin-left:2px;"></span>
+        <!--SPECS FRENCH-->
+        <br />  
+        <!--OTHERS ENGLISH-->
+        <label for="accept_team_members">Others - ENGLISH:</label>
+        <s:textarea id="otherEng" name="otherEng" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="otherEng_Error" style="display:none;margin-left:2px;"></span>
+        <!--OTHERS ENGLISH-->
+        <br />
+        <!--OTHERS FRENCH-->
+        <label for="accept_team_members">Others - FRENCH:</label>       
+        <s:textarea id="otherFr" name="otherFr" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="otherFr_Error" style="display:none;margin-left:2px;"></span>
+        <!--OTHERS FRENCH-->
+         
+        <br />
+        <s:if test='%{#session.usr == "menu"}' > 
+       		<input type="submit" value="Update Product" 
+       	   			style="margin:20px 20px 0px 190px;padding:5px 10px;font-size:20px;"/>
+		</s:if>
+      </fieldset>
+    </s:form>
+    
+     <s:form name="frm" action="getProductList.do">
+     	<s:hidden id="signalHid" name="signalHid" value="" />
+     	<s:hidden id="brandIDHid" name="brandIDHid" value="" />
+     	<s:hidden id="categoryIDHid" name="categoryIDHid" value="" />
+     	
+     	<input id="productListButton" name="productListButton" type="submit" value="Product List" 
+     			style="margin:20px 20px 0px 190px;padding:5px 10px;font-size:20px;" />
+    </s:form>
+    
+  </div>
+</div>
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+	  var requiredMessage = '<s:text name="loyauty.error.common.required" />';
+	  var vanadiumAdv = "vanadium-advice -vanadium-empty-advice- vanadium-invalid";
+	  var VanadiumRules = {
+			brand: [
+	  			'only_on_blur',
+	  			['advice','brand_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		category: [
+	  			'only_on_blur',
+	  			['advice','category_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		mainSpecification: [
+	  			'only_on_blur',
+	  			['advice','main_spec_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		statusId: [
+	  		  	'only_on_blur',
+	  		  	['advice','status_Error'],
+	  		  	{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		manufProductID: [
+	 			'only_on_blur',
+	 			['advice','manufProductID_Error'],
+	 			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		loyaltyProductId: [
+	  			'only_on_blur',
+	  			['advice','loyaltyProductId_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		nameEn: [
+	   			'only_on_blur',
+	   			['advice','nameEn_Error'],
+	   			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		nameFr: [
+				'only_on_blur',
+				['advice','nameFr_Error'],
+				{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],  
+	  		msrp: [
+	  			'only_on_blur',
+	  			['advice','msrp_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	],
+	  		cost: [
+	  			'only_on_blur',
+	  			['advice','cost_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	],  	  	
+	  	   descriptionEn: [
+	  			'only_on_blur',
+	  			['advice','descriptionEn_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	],  
+	   	   descriptionFr: [
+	   			'only_on_blur',
+	   			['advice','descriptionFr_Error'],
+	   			{validator:'required', invalidCustomMessage: requiredMessage}
+	   	  	], 
+	   	   specificationEn: [
+	  	  		'only_on_blur',
+	  	  		['advice','specificationEn_Error'],
+	  	  		{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	], 
+	  	    specificationFr: [
+	  			'only_on_blur',
+	  			['advice','specificationFr_Error'],
+	  			{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	],
+		  	otherEng: [
+		 		'only_on_blur',
+		 	  	['advice','otherEng_Error'],
+		 		{validator:'required', invalidCustomMessage: requiredMessage}
+			], 
+		 	otherFr: [
+		 		'only_on_blur',
+		 	  	['advice','otherFr_Error'],
+		 	  	{validator:'required', invalidCustomMessage: requiredMessage}
+		 	],   	    	  	  	  	    	    	  	  	  					
+	  		formContainer: 'container'
+	  	};
+
+	//Rich Text
+		tinyMCE.init({
+			mode : "exact",
+		    elements : "descriptionEn,specificationEn,otherEng",
+		    theme : "advanced",
+		    theme_advanced_buttons1 : "justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,spellchecker",
+		    theme_advanced_buttons2 : "",
+		    theme_advanced_buttons3 : "",
+		    theme_advanced_toolbar_location : "top",
+		    theme_advanced_toolbar_align : "left",
+		    plugins : "inlinepopups,spellchecker",
+	        spellchecker_languages : "+English=en,French=fr"
+	    });
+
+		tinyMCE.init({
+			mode : "exact",
+		    elements : "descriptionFr,specificationFr,otherFr",
+		    theme : "advanced",
+		    theme_advanced_buttons1 : "justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,spellchecker",
+		    theme_advanced_buttons2 : "",
+		    theme_advanced_buttons3 : "",
+		    theme_advanced_toolbar_location : "top",
+		    theme_advanced_toolbar_align : "left",
+		    plugins : "inlinepopups,spellchecker",
+	        spellchecker_languages : "English=en,+French=fr"		    
+	    });
+
+		$('#brandName').val($('#brand option:selected').text());
+		$('#categoryName').val($('#category option:selected').text());	
+		$('#mainSpecificationName').val($('#mainSpecification option:selected').text());
+		$('#statusName').val($('#statusId option:selected').text());
+				
+		// brand changes
+		$("#brand").change( function(){	
+			var cat;				
+			$('#brandName').val($('#brand option:selected').text());				
+			populateCategory($(this).val(), cat);				
+		});
+
+		// category changes
+		$("#category").change( function(){	
+			var spec;						
+			$('#categoryName').val($('#category option:selected').text());	
+			populateMainSpecification($(this).val(), $("#brand").val(), spec);				
+		});
+		
+		// mainSpecification changes
+		$("#mainSpecification").change( function(){	
+			$('#mainSpecificationName').val($('#mainSpecification option:selected').text());									
+
+		});	
+
+		// status changes
+		$("#statusId").change( function(){	
+			$('#statusName').val($('#statusId option:selected').text());
+		});	
+
+		$("#manufProductID1").change(function() {
+			if($(this).val() != '') {
+				$(".cost").show();
+			} else {
+				$(".cost").hide();
+			}
+		});
+
+		$(".cost").change(function() {
+			var sum = 0;
+			var value = 0;
+			 $("input.cost").each(function(i, elem) {
+				 value = parseFloat($(elem).val());
+				 if($(elem).val() != '') {
+					 $(elem).val(value.toFixed(2));
+					 sum = parseFloat(sum) + parseFloat($(elem).val());
+				 }
+			 });
+			 if(sum != 0) {
+				 $("#cost").val(sum.toFixed(2));
+			 }			 
+		});
+
+		$("#manufProductID").change(function() {
+			var qty = $("#manufProductQuantity").val();
+			if ( $(this).val().length == 0 || $(this).val() === "") {
+				qty = "";
+				$("#manufProductQuantity").val(qty);
+				$("#supplier").val(qty);
+				$("#price").val(qty);
+				$(".cost").change();
+			} else {
+				$("#manufProductQuantity").change(function () {
+				var value = $(this).val();
+				if ( $("#manufProductID").val().length != 0 ) {
+					if ($("#manufProductQuantity").val() === "" 
+					      ||  $("#manufProductQuantity").val() === "0") {
+						value = 1;
+					}	      
+				} else {
+					value = $(this).val();
+				}
+				$("#manufProductQuantity").val(value);
+			}).change();				
+			}			
+		}).change();
+
+		$("#manufProductID1").change(function() {
+			var qty = $("#manufProductQuantity1").val();
+			if ( $(this).val().length == 0 || $(this).val() === "") {
+				qty = "";
+				$("#manufProductQuantity1").val(qty);
+				$("#supplier1").val(qty);
+				$("#price1").val(qty);
+				$(".cost").change();
+			} else {
+				$("#manufProductQuantity1").change(function () {
+				var value = $(this).val();
+				if ( $("#manufProductID1").val().length != 0 ) {
+					if ($("#manufProductQuantity1").val() === "" 
+					      ||  $("#manufProductQuantity1").val() === "0") {
+						value = 1;
+					}	      
+				} else {
+					value = $(this).val();
+				}
+				$("#manufProductQuantity1").val(value);
+			}).change();				
+			}			
+		}).change();
+
+		$("#manufProductID2").change(function() {
+			var qty = $("#manufProductQuantity2").val();
+			if ( $(this).val().length == 0 || $(this).val() === "") {
+				qty = "";
+				$("#manufProductQuantity2").val(qty);
+				$("#supplier2").val(qty);
+				$("#price2").val(qty);
+				$(".cost").change();
+			} else {
+				$("#manufProductQuantity2").change(function () {
+				var value = $(this).val();
+				if ( $("#manufProductID2").val().length != 0 ) {
+					if ($("#manufProductQuantity2").val() === "" 
+					      ||  $("#manufProductQuantity2").val() === "0") {
+						value = 1;
+					}	      
+				} else {
+					value = $(this).val();
+				}
+				$("#manufProductQuantity2").val(value);
+			}).change();				
+			}			
+		}).change();
+
+		$("#manufProductID3").change(function() {
+			var qty = $("#manufProductQuantity3").val();
+			if ( $(this).val().length == 0 || $(this).val() === "") {
+				qty = "";
+				$("#manufProductQuantity3").val(qty);
+				$("#supplier3").val(qty);
+				$("#price3").val(qty);
+				$(".cost").change();
+			} else {
+				$("#manufProductQuantity3").change(function () {
+				var value = $(this).val();
+				if ( $("#manufProductID3").val().length != 0 ) {
+					if ($("#manufProductQuantity3").val() === "" 
+					      ||  $("#manufProductQuantity3").val() === "0") {
+						value = 1;
+					}	      
+				} else {
+					value = $(this).val();
+				}
+				$("#manufProductQuantity3").val(value);
+			}).change();				
+			}			
+		}).change();
+
+		$("#manufProductID4").change(function() {
+			var qty = $("#manufProductQuantity4").val();
+			if ( $(this).val().length == 0 || $(this).val() === "") {
+				qty = "";
+				$("#manufProductQuantity4").val(qty);
+				$("#supplier4").val(qty);
+				$("#price4").val(qty);
+				$(".cost").change();
+			} else {
+				$("#manufProductQuantity4").change(function () {
+				var value = $(this).val();
+				if ( $("#manufProductID4").val().length != 0 ) {
+					if ($("#manufProductQuantity4").val() === "" 
+					      ||  $("#manufProductQuantity4").val() === "0") {
+						value = 1;
+					}	      
+				} else {
+					value = $(this).val();
+				}
+				$("#manufProductQuantity4").val(value);
+			}).change();				
+			}			
+		}).change();
+		
+		var productId = $("#productId").val();
+		var imageId = $("#imageId").val();
+
+		 var uploader = new qq.FileUploader( {
+		        // pass the dom node (ex. $(selector)[0] for jQuery users)
+		        element: document.getElementById('file-uploader'),
+		        // path to server-side upload script
+		        action: 'ajax/uploadImage.do',
+		        //add params
+		        params: {},
+		        debug: true,
+		        onSubmit: function(id, fileName) {
+		            uploader.setParams({productId: productId, imageId: imageId});          
+		        },
+		        onComplete: function(id, fileName, res) {
+		            $(".qq-upload-list").empty();
+		        	if( res.success === true ) {
+		        		$("#messageUpload").removeClass(vanadiumAdv).hide();
+						var app = '<div class="hcenter" style="padding-top:10px;">' +
+								  '<div id="image" class="hcenter"><img width="300" height="300" src="${product}large/'+res.name+'?_='+new Date().getTime()+'" /></div>'+
+								  '<div style="margin-top:3px;">Current Size:</div>'+
+								  '<span id="img_dim">'+ res.width +'x' + res.height +' - ' + res.size + 'kb</span></div>';
+
+						$("#imageId").val(res.imageId);
+						
+		            	$('.image').html(app);        		         
+		        	} else {                			
+		            	$("#messageUpload").removeClass(vanadiumAdv);        
+		            	$("#messageUpload").addClass(vanadiumAdv).html("<span>" + res.success + "&nbsp;<a href='http://faq.gamejab.com/node/11' target='_blank'>" + res.msg + "</a></span>").show();                        
+		         	}
+		        }        
+		    });
+
+	 	$("#defectFree").click(function() {
+			var checked = $("input:checked[value='true']").val();
+			$("#warrantyQuantity").attr('value', '');
+			if (checked) {
+				$("#warrantyQuantity").attr('disabled', true);
+				$("#grpMonth").attr('disabled', true);
+				$("#grpYear").attr('disabled', true);
+
+				$("#warranty").attr('value', 'defect-free');						
+			} else {	// undefined
+				$("#warrantyQuantity").attr('disabled', false);
+				$("#grpMonth").attr('disabled', false);
+				$("#grpYear").attr('disabled', false);
+
+				//$("#warranty").attr('value', '');
+			}		
+		});
+  	});
+	
+  	(function($) {
+  		$.fn.currencyFormat = function() {
+  	  		this.each( function( i ) {
+  	  	  		$(this).change( function( e ){
+  	  	  	  		this.value = parseFloat(this.value).toFixed(2);
+				});
+			});             
+			return this;     
+		};     
+	 })( jQuery );    
+	
+ 	$("#cost").change(function() {
+ 	 	$("#cost").currencyFormat(); 	 		
+ 	}).change(); 
+
+ 	$("#msrp").change(function() {
+ 	 	$("#msrp").currencyFormat(); 	 		
+ 	}).change();
+	
+ 	$("#productListButton").click(function() {
+ 	 	var signal = -100;	// A unique value 
+ 	 	$("#signalHid").attr('value', signal);
+ 	 	var brand = $("#brand").val();
+ 	 	var category = $("#category").val();
+ 	 	$("#brandIDHid").attr('value', brand);
+ 	 	$("#categoryIDHid").attr('value', category);
+	 });
+	
+ 	if ($("#statusId").val() == 3) {
+ 	 	var sub = "<s:property value='loyaltyProductIdSub'/>";
+ 		$("#discontinuedSub").html("<label for='accept_team_members'  style='color:red;font-weight:bolder;'>New Sub LS-Product-ID:</label>" 
+ 		 		+ "<input type='text' id='loyaltyProductIdSub' name='loyaltyProductIdSub' maxlength='75'" 
+ 		 		+  " cssStyle='width:150px;' value='" + sub + "' size='24' />");
+ 	}
+	
+	$("#statusId").change( function() {
+		var usersNumber ='<s:property value="activeClientsSize" />';
+		var sub = "<s:property value='loyaltyProductIdSub'/>";
+		var loyaltyProductIdVal = $("#loyaltyProductId").val();
+		var whatIsClicked = $("#statusId").val();
+		
+		if (whatIsClicked == 1) {			// AVAILABLE
+			$("#discontinuedSub").hide();					
+		} else if (whatIsClicked == 2) {	// UNAVAILABLE
+			$("#discontinuedSub").hide();				
+			if (usersNumber > 0 ) {
+				alert("Product currently 'Active' with one or more Clients.");
+			}
+		} else if (whatIsClicked == 3) {	// DISCONTINUED
+			$("#discontinuedSub").show();
+			if (usersNumber > 0 ) {
+				alert("Product currently 'Active' with one or more Clients.");
+			}
+			$("#discontinuedSub").html("<label for='accept_team_members' style='color:red;font-weight:bolder;'>New Sub LS-Product-ID:</label><input type='text' value='" 
+					+ sub +"' id='loyaltyProductIdSub' name='loyaltyProductIdSub' maxlength='50' cssStyle='width:150px;' size='24' />");			
+					
+		} else if (whatIsClicked == 4) {	// DISABLED
+			$("#discontinuedSub").hide();
+		}
+	});
+
+	var qtyValue = 0;
+	$("#defect-free").click(function() {
+		var checked = $("input:checked[value='true']").val();
+		$("#warranty").attr('value', '');
+		if (checked) {
+			$("#wQty").attr('disabled', true);
+			$("#grp-month").attr('disabled', true);
+			$("#grp-year").attr('disabled', true);
+			$("#warranty").attr('value', 'defect-free');						
+		} else {	// undefined
+			$("#wQty").attr('value', '');
+			$("#wQty").attr('disabled', false);
+			$("#grp-month").attr('disabled', false);
+			$("#grp-year").attr('disabled', false);
+		}
+	});
+
+	$("input:radio[name=grp]").change(function() { 
+		var radioChoice = $(this).val();
+		$("#radH").val(radioChoice);
+		var plural = "s";
+		radioChoice = (qtyValue > 1) ? (radioChoice + plural) : radioChoice;
+		var warrantyVal = qtyValue + " " + radioChoice;
+		$("#warranty").val(warrantyVal);
+	});
+
+	$("input#wQty").change(function() {
+		qtyValue = $(this).val();
+	});
+
+  	// populate value for Selling price if it is entered as text, auto populate the Profit %
+	$('input#[id^="userPrice_"]').change(function() {
+	  	var userId = $(this).attr('id').split("_")[1];
+	  	var price = $(this).val();
+	  	var priceFloat = parseFloat(price);	  	
+		if (price.length == 0 || price === "") {
+			$(this).val("");
+			$("input#percentageProfit_" + userId).val("");
+		} else {
+			var cost = $("input#cost").val();
+			var profit = ((price/cost)-1)*100;
+			$("input#percentageProfit_" + userId).val(profit.toFixed(1));
+			var msrp = $("input#msrp").val();
+			var disc = ((msrp-price)/msrp)*100;
+			$("input#percentageDiscount_" + userId).val(disc.toFixed(1));
+			$(this).val(priceFloat.toFixed(2));
+		}		
+	}).change();
+	
+	//populate value for Profit % if it is entered as text, auto populate the Selling price
+	$('input#[id^="percentageProfit_"]').change(function(){
+		var userId = $(this).attr('id').split("_")[1];
+		var profit = $(this).val();	
+		var cost = $("input#cost").val();
+		var price = $("input#userPrice_" + userId).val();
+		price = ((price == '' && profit != '') || (price == null && profit != '')) ? 0 : price;	
+		if (price.length != 0 || price != '') {
+			if (profit.length == 0 || profit == "") {
+				profit = ((price/cost)-1)*100;
+				$("input#percentageProfit_" + userId).val(profit.toFixed(1));
+			} else {
+				price = cost*((profit/100)+1);
+				$("input#userPrice_" + userId).val(price.toFixed(2));
+				var msrp = $("input#msrp").val();
+				disc = ((msrp-price)/msrp)*100;			
+				$("input#percentageDiscount_" + userId).val(disc.toFixed(1));
+        	}
+			var profitFloat = parseFloat(profit);
+			$("input#percentageProfit_" + userId).val(profitFloat.toFixed(1));
+		}
+	}).change();
+
+	// clear out the values of it row, and disable/enable the price and profit box
+	$('input#[id^="isExcluded"]').click(function() {
+		var userId = $(this).val();
+		var checked = Boolean($(this).is(":checked"));
+		
+		$("input#userPrice_" + userId).val('');
+		$("input#percentageProfit_" + userId).val('');
+		$("input#percentageDiscount_" + userId).val('');
+		
+		$("input#userPrice_" + userId).attr("disabled", checked);
+		$("input#percentageProfit_" + userId).attr("disabled", checked);
+		$("input#percentageDiscount_" + userId).attr("disabled", checked);
+	});	
+
+  </script>
+  
+  

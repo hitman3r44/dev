@@ -1,0 +1,91 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
+<%-- custom style for the Sign In form --%>
+<style type="text/css">
+label {
+	width:100px;
+}
+.vanadium-advice {
+	margin-left: 121px;
+}
+input.vanadium-valid {
+	background-image: none;
+}
+</style>
+
+<div class="unit" style="width: 510px;">
+  <div class="pop_title">Sign In</div>
+  <div id="globalAdvice" style="padding:15px 20px 15px 20px;display: none;" class="gray_bg"></div>
+  <div id="formContainer" >
+    <s:form namespace="/user" action="login" id="form" method="post" validate="true">
+      <fieldset>
+        <label for="username"><strong><s:text name="loyauty.common.text.short.username" /></strong></label>
+        <s:textfield id="username" 
+        			 name="username" 
+        			 maxlength="14" 
+        			 cssStyle="width:130px;" />
+        <div id="usernameError" style="display:none"></div>
+        <br />
+        <label for="password"><strong><s:text name="loyauty.common.text.short.password" />:</strong></label>
+        <s:password id="password" 
+        			 name="password" 
+        			 maxlength="12" 
+        			 cssStyle="width:130px;"/>
+        <div id="passwordError" style="display:none"></div>
+        <br />
+        <div style="margin:10px 20px 0px 120px;"><s:submit name="submit" value="%{getText('loyauty.common.title.signIn')}" cssStyle="padding:3px 10px 3px 10px;"/>
+        </div>
+      </fieldset>
+    </s:form>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+var requiredMessage = '<s:text name="gamejab.error.common.required" />';
+
+var VanadiumRules = {
+		username: [
+			'only_on_blur',
+			['advice','usernameError'],
+			{validator:'required', invalidCustomMessage: requiredMessage}
+		],
+		password: [
+			'only_on_blur',
+			['advice','passwordError'],
+			{validator:'required', invalidCustomMessage: requiredMessage}
+		],
+		formContainer: 'container'
+	};
+
+jQuery(document).ready(function () {
+	
+	Vanadium.loadAndInit( function() {
+							$.fancybox.resize();
+						  });
+	
+	VanadiumForm.handleSubmit($("#form"), true, function(hasErrors,hasGlobalErrors,response,ajaxStatus) {
+			  if ( ajaxStatus == 'success' ) {
+				if (!hasGlobalErrors && !hasErrors ) {
+					$("#globalAdvice").removeClass("global-vanadium-advice")
+									  .html('<strong>Login success</strong>').show();
+					
+						window.setTimeout('$.fancybox.close();location.reload();',1500);
+				} else {
+					// the vanadium framework has written errors message in div.#globalAdvice, so show it
+					$("#globalAdvice").addClass("global-vanadium-advice").show();
+				}
+				$.fancybox.resize();
+			}
+		  },"globalAdvice");
+	
+	/* 
+	 * Another way to submit the form, the user will be forward to the struts result page
+	 *
+	 VanadiumForm.handleSubmit($("#form"), false);	 
+	*/
+	
+});
+	   
+	
+</script>

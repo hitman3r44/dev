@@ -1,0 +1,22 @@
+Dear #FIRSTNAME#,
+
+As you now already know, your account with us is passed due on payment. On #DATE#, we attempted to charge your credit card for our video game rental service and the transaction was denied once again.
+
+We will attempt to charge the card again on #NEXT_BILLING_DATE#. All new game rentals are still on hold. Once the account has been properly billed, we will immediately start resending games.
+
+If you would like to make a payment now with a new credit card or simply try to charge the same card again, please log in using the link below and access the "My account" section, where you will be able to make a payment.
+
+http://gameaccess.ca/myAccount.do
+
+If you cannot make a payment soon, we highly suggest you contact us to give us an update on the situation. Please note that if the issue is not resolved before #NEXT_BILLING_DATE#, you will lose your reward privileges and there will be a surcharge applied to the total amount to cover our administrative fees. This surcharge will also increase monthly until all payments are cleared.
+
+We also strongly suggest you send back all games currently in your possession as a gesture of good faith. 
+
+Thank you,
+
+Game Access Billing Department
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/myAccount.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContextState>
+<org.eclipse.mylyn.context.ui.editors>
+<MonitoredWindowOpenEditors class="org.eclipse.ui.internal.WorkbenchWindow" isActive="true" isLaunching="true" number="0">
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLGenXProductCatalog.java" partName="XMLGenXProductCatalog.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/cronjob/XMLGenXProductCatalog.java" title="XMLGenXProductCatalog.java" tooltip="loyaltySource_lib/src/com/loyauty/cronjob/XMLGenXProductCatalog.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/cronjob/XMLGenXProductCatalog.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="29" selectionOffset="13708" selectionTopPixel="6415"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EditProduct.java" partName="EditProduct.java" path="C:/dev/workspace/loyaltySource_admin/src/com/loyauty/web/struts/action/product/EditProduct.java" title="EditProduct.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/product/EditProduct.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/product/EditProduct.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="32406" selectionTopPixel="15584"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DTOFactory.java" partName="DTOFactory.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java" title="DTOFactory.java" tooltip="loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13555" selectionTopPixel="5168"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MakeXML.java" partName="MakeXML.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/cronjob/MakeXML.java" title="MakeXML.java" tooltip="loyaltySource_lib/src/com/loyauty/cronjob/MakeXML.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/cronjob/MakeXML.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1338" selectionTopPixel="392"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutoShipping.java" partName="AutoShipping.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/cronjob/AutoShipping.java" title="AutoShipping.java" tooltip="loyaltySource_lib/src/com/loyauty/cronjob/AutoShipping.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/cronjob/AutoShipping.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6588" selectionTopPixel="2235"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetRatesClient.java" partName="GetRatesClient.java" path="C:/dev/workspace/loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/GetRatesClient.java" title="GetRatesClient.java" tooltip="loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/GetRatesClient.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/GetRatesClient.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5956" selectionTopPixel="1361"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductServiceImpl.java" partName="ProductServiceImpl.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/service/product/ProductServiceImpl.java" title="ProductServiceImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/service/product/ProductServiceImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/product/ProductServiceImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="97567" selectionTopPixel="44436"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="ProductMapper.xml" partName="ProductMapper.xml" path="C:/dev/workspace/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml" title="ProductMapper.xml" tooltip="loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductDaoImpl.java" partName="ProductDaoImpl.java" path="C:/dev/workspace/loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java" title="ProductDaoImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="28" selectionOffset="17353" selectionTopPixel="8930"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SearchResults.java" partName="SearchResults.java" path="C:/dev/workspace/loyaltySource/src/com/loyauty/web/struts/action/search/SearchResults.java" title="SearchResults.java" tooltip="loyaltySource/src/com/loyauty/web/struts/action/search/SearchResults.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource/src/com/loyauty/web/struts/action/search/SearchResults.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8400" selectionTopPixel="3268"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="loyaltydeploy" partName="loyaltydeploy" path="C:/dev/workspace/loyaltySource_lib/script/loyaltydeploy" title="loyaltydeploy" tooltip="loyaltySource_lib/script/loyaltydeploy" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/script/loyaltydeploy"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="600" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="TransformerImpl.class" partName="TransformerImpl.class" title="TransformerImpl.class" tooltip="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource/C:\/Program Files\/Java\/jdk1.6.0_21\/jre\/lib\/rt.jar&lt;com.sun.org.apache.xalan.internal.xsltc.trax(TransformerImpl.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9596" selectionTopPixel="5320"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="CoreDocumentImpl.class" partName="CoreDocumentImpl.class" title="CoreDocumentImpl.class" tooltip="com.sun.org.apache.xerces.internal.dom.CoreDocumentImpl" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource/C:\/Program Files\/Java\/jdk1.6.0_21\/jre\/lib\/rt.jar&lt;com.sun.org.apache.xerces.internal.dom(CoreDocumentImpl.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="21223" selectionTopPixel="11096"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="DefaultActionInvocation.class" partName="DefaultActionInvocation.class" title="DefaultActionInvocation.class" tooltip="com.opensymphony.xwork2.DefaultActionInvocation" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource_admin/lib\/xwork-core-2.1.6.jar&lt;com.opensymphony.xwork2(DefaultActionInvocation.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UpdatesXML.java" partName="UpdatesXML.java" path="C:/dev/workspace/loyaltySource/src/com/loyauty/web/struts/action/xml/UpdatesXML.java" title="UpdatesXML.java" tooltip="loyaltySource/src/com/loyauty/web/struts/action/xml/UpdatesXML.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource/src/com/loyauty/web/struts/action/xml/UpdatesXML.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="112" selectionOffset="834" selectionTopPixel="219"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RatingServiceStub.java" partName="RatingServiceStub.java" path="C:/dev/workspace/loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/stub/RatingServiceStub.java" title="RatingServiceStub.java" tooltip="loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/stub/RatingServiceStub.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/SOAP/rating/src/ca/canadapost/cpcdp/rating/stub/RatingServiceStub.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6378" selectionTopPixel="3306"/>
+</editor>
+</MonitoredWindowOpenEditors>
+</org.eclipse.mylyn.context.ui.editors>
+</ContextState>

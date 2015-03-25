@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;loyaltySource_lib/src/com/loyauty/pgm/report/ShippingTotal.java&apos;" deleteContents="false" description="Delete resource &apos;loyaltySource_lib/src/com/loyauty/pgm/report/ShippingTotal.java&apos;" element1="/loyaltySource_lib/src/com/loyauty/pgm/report/ShippingTotal.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1356027944373"/>
+</session>

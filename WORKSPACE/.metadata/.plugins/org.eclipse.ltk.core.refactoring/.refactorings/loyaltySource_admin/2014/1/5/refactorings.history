@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/filesXLS&apos; to &apos;filesXLSZZ&apos;" description="Rename resource &apos;filesXLS&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="filesXLS" name="filesXLSZZ" stamp="1391108547037" updateReferences="true"/>
+</session>

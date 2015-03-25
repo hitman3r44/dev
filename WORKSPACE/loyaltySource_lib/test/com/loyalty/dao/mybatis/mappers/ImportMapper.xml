@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.gamejab.dao.mybatis.mappers.ImportMapper">
+		
+	<resultMap type="Import" id="importResultMap">
+		<id property="id" column="id"/>		
+	</resultMap>		
+	
+	<sql id="select">
+	select gd_id as id, console_name as platform, genre_name as genre, rating_name as rating, gd_release_date as releaseDate,
+	gd_name as name, gd_publisher as publisher, gd_developer as developer, gd_long_desc as description,
+	gd_image_name as coverImage, is_large_image as largeImage, gd_upc as upc, gd_manual_url as gd_manualUrl,
+	gd_num_players as numberOfPlayers, local_multiplayer as localMultiplayer, local_co_op as localCoop,
+	local_network as localNetwork, online_multiplayer as onlineMultiplayer, online_co_op as  onlineCoop,
+	other_features as otherFeatures, gamejab_id as gamejabId
+	from gamejabinfo
+	</sql>
+   	<sql id="where">where gd_id = #{id}</sql>
+   			
+   	<select id="getEntity" resultMap="importResultMap">
+		<include refid="select"/>
+      	<include refid="where"/>
+	</select>		 
+	
+	<update id="updateEntity" parameterType="Import">
+		update gamejabinfo SET gamejab_id=#{gamejabId}
+		<include refid="where"/>
+	</update>
+	
+	<select id="getAllEntities" resultMap="importResultMap" parameterType="Import">
+		<include refid="select"/>				      	
+	</select>
+	
+	<select id="getAllEntitiesCount" resultType="long">
+		select count(id) from gamejabinfo
+	</select>
+	    
+</mapper>
+

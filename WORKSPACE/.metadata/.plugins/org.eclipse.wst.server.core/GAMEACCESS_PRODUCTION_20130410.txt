@@ -1,0 +1,11 @@
+rmiregistry&/usr/java/jdk1.6.0/bin/java 
+	-Djava.security.policy=policy.all 
+	-Djava.rmi.server.hostname=72.55.158.230 
+	govojo.rmi.InventoryServer 
+	&
+	
+UPDATE statetaxrate SET str_salestax = 12.0000 WHERE str_id = 2 and sa_id = 2;
+
+
+UPDATE statetaxrate SET str_salestax = 14.0000 WHERE str_id = 10 and sa_id = 10;
+UPDATE specialcoupontype SET sct_name = '30 DAYS TRIAL 2 GAMES FAST RETURN (ONCE)' where sct_id = 16;

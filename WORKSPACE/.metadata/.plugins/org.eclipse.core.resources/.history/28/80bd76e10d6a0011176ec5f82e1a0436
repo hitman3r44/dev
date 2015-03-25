@@ -1,0 +1,13 @@
+package com.loyauty.dao;
+
+import java.util.List;
+
+import com.loyauty.model.Category;
+
+
+public interface CategoryDao extends BasicGenericDao<Category, Long> {
+
+	
+	List<Category> getCategoriesByBrand(long id);
+}
+

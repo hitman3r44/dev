@@ -1,0 +1,22 @@
+Dear #FIRSTNAME#,
+
+As you surely know by now, your account with us is passed due on many payments. On #DATE#, we attempted to charge your credit card for our video game rental service and the transaction was denied once again.
+
+It is our policy to send accounts that are more than 3 months passed due to our affiliate Recovery Agency. You have until the #NEXT_BILLING_DATE# to make all outstanding payments. We will also try to charge the account in 5 days.
+
+If you would like to make a payment now with a new credit card or simply try to charge the same card again, please log in using the link below and access the "My account" section where you will be able to make a payment.
+
+http://gameaccess.ca/myAccount.do
+
+Please contact us if you haven't done so already. Our contact information is available at http://www.gameaccess.ca/displayContactUs.jsp.
+
+If you have any of our games in your possession, please send them back immediately.
+
+Thank you for taking this matter seriously and conducting yourself accordingly.
+
+Game Access Billing Department
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/myAccount.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

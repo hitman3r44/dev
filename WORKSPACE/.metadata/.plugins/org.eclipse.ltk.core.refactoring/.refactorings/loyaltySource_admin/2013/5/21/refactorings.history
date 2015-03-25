@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/web/scripts/clientCategory.js&apos; to &apos;clientCategoryAddProduct.js&apos;" description="Rename resource &apos;clientCategory.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/scripts/clientCategory.js" name="clientCategoryAddProduct.js" stamp="1369418768660" updateReferences="true"/>
+</session>

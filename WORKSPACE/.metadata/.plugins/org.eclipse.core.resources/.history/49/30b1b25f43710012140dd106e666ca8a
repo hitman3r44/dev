@@ -1,0 +1,15 @@
+
+				query = "UPDATE user_product_price SET shipping_coverage = '" + shippingCoverage 
+						+ "', shipping_total_canada = '" + shippingTotalCanada + "'"
+						+ ", price = '" + price + "'"
+						+ ", price_type = 4"
+						+ ", percent_profit = '" + profit + "'"
+						+ ", percent_discount = '" + discount + "'"
+						+ " WHERE user_id = " + userID 
+						+ " AND product_id = " + productID;
+
+package com.loyauty.pgm;
+
+public class TransferUserForUserProductPrice {
+
+}

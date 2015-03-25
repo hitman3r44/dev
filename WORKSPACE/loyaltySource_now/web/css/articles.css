@@ -1,0 +1,92 @@
+
+/* *************** Body of Articales.jsp ***************** */
+.PageArticales
+{
+margin:40px;
+
+font-size:17px;
+
+text-align:justify;
+}
+
+
+/* *************** title ***************** */
+#titreP
+{
+margin:0px;
+}
+
+
+#titre
+{
+font-size:17px;
+margin-bottom:0px;
+font-weight:bolder;
+}
+
+
+
+/* *************** ligne horizontale  ***************** */
+#ligne
+{
+margin:0px;
+margin-bottom:20px;
+}
+
+
+
+/* *************** image float   ***************** */
+.imageflottane
+{
+width:300px;
+height:300px;
+float:left;
+margin-bottom:20px;
+margin-right:20px;
+}
+
+
+
+/* *************** links  ***************** */
+.lien
+{
+margin-left:100px;
+color:rgb(49,132,224 );
+}
+
+
+
+/* *************** paragraphe image  ***************** */
+.paragraphe
+{
+margin:0px;
+
+}
+.paragraphe1
+{
+clear:both;
+
+}
+#imageleftparagraphe
+{
+margin-top:20px;
+}
+
+/* *************** Liste   ***************** */
+#liste ul li {
+font-size:10px;
+
+list-style-type : none;
+liste-style-image : url("images/neutral.png");
+}
+
+ #listeLi {
+   		 float : left;
+		 margin-left:5px;
+		
+}
+.lienListe
+{
+font-weight:bold;
+color:rgb(49,132,224 );
+}

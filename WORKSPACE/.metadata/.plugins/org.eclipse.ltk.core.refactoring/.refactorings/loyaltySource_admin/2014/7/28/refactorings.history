@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;loyaltySource_admin/web/images/findOrders.png&apos; to &apos;find.png&apos;" description="Rename resource &apos;findOrders.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/images/findOrders.png" name="find.png" stamp="1404605954376" updateReferences="true"/>
+</session>

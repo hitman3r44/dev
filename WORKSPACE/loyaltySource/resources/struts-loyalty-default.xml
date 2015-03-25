@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="struts-loyalty-default" namespace="/" extends="struts-default" >
+		
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+        <interceptors>
+            <interceptor name="authentication"
+                         class="com.loyauty.web.struts.interceptor.AuthenticationInterceptor" />
+                         
+                     
+            <interceptor name="vanadiumJsonValidation"
+                         class="com.loyauty.web.struts.interceptor.VanadiumJSONValidationInterceptor"/>
+            
+            <interceptor-stack name="vanadiumJsonValidationWorkflowStack">
+                <interceptor-ref name="basicStack"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel</param>
+                </interceptor-ref>
+                <interceptor-ref name="vanadiumJsonValidation"/>
+                <interceptor-ref name="workflow"/>
+            </interceptor-stack>
+                      
+        </interceptors>
+		
+		<default-interceptor-ref name="defaultStack" />		
+		
+		<global-results>
+	  		<result name="gja">WEB-INF/jsp/application/error.jsp</result>
+	    </global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="gja" exception="com.loyauty.web.exception.LoyautyActionException"/>
+		</global-exception-mappings>
+		
+    </package>
+
+</struts>

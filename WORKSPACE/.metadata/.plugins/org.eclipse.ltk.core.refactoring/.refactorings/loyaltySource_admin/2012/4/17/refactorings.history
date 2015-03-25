@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.loyalty.web.struts.action.product.ProductTest2&apos; to &apos;ProductExcelTest&apos;&#x0D;&#x0A;- Original project: &apos;loyaltySource_admin&apos;&#x0D;&#x0A;- Original element: &apos;com.loyalty.web.struts.action.product.ProductTest2&apos;&#x0D;&#x0A;- Renamed element: &apos;com.loyalty.web.struts.action.product.ProductExcelTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ProductTest2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/test&lt;com.loyalty.web.struts.action.product{ProductTest2.java[ProductTest2" matchStrategy="1" name="ProductExcelTest" qualified="false" references="true" similarDeclarations="false" stamp="1335281620569" textual="false" version="1.0"/>
+</session>

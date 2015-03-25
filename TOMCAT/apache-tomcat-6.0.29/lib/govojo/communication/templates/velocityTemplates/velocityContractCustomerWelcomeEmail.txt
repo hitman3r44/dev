@@ -1,0 +1,32 @@
+Dear ^${firstname},
+
+Welcome to Game Access, the best way to rent video games 
+online.  We would like to thank you for signing up 
+for our service. Please login to your account and begin 
+adding games to your queue.  For a detailed explanation 
+of how the queue works, click on the link below.
+ 
+http://www.gameaccess.ca/displayFAQ.jsp#game_queue
+ 
+Your first set of games should ship within 72 hours.  Be 
+sure to keep your queue full so that we can keep you busy 
+with lots of games to play!
+
+Your account is prepaid through ^${prepayenddate}, after 
+which you will be billed monthly. Keep in mind that your 
+membership fee is not refundable.
+
+If you have any questions, please feel free to contact our 
+Customer Service using the link below.
+ 
+http://www.gameaccess.ca/displayContactUs.jsp
+
+
+Now you've got games!
+ 
+The Game Access team
+ 
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - https://gameaccess.ca/account/displayAccountLanding.jsp
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

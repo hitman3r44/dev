@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="BK_PEU27179"/>
+    <ls-product id="BK_PEU230128"/>
+    <ls-product id="BK_SONBDVE390">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONBDVE3100</substitute-product>
+    </ls-product>
+    <ls-product id="BK_THL10276">
+        <status>DISCONTINUED</status>
+        <substitute-product>PULPH9016</substitute-product>
+    </ls-product>
+    <ls-product id="BK_CAB519057">
+        <group>Outdoors</group>
+        <category>Bbqs</category>
+    </ls-product>
+    <ls-product id="BK_BDI580415">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CAB530352">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_BDI530632">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_BDI530634">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CAB943052">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CAB629310">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_APPMD093LL">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - English</title>
+    </ls-product>
+    <ls-product id="BK_APPZ0MP">
+        <status>AVAILABLE</status>
+        <title>iMac 21.5" - 2.7 GHz - French</title>
+    </ls-product>
+    <ls-product id="BK_APPMD096LL">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - English</title>
+    </ls-product>
+    <ls-product id="BK_APPZ0MS">
+        <status>AVAILABLE</status>
+        <title>iMac 27" - 3.2 GHz - French</title>
+    </ls-product>
+    <ls-product id="BK_SONMDREX38IPB">
+        <status>DISCONTINUED</status>
+        <substitute-product>SONMDREX100IP_BK</substitute-product>
+    </ls-product>
+    <ls-product id="BK_TOS47L6200U">
+        <cost>1,178.31</cost>
+        <discount-dollars>114.68</discount-dollars>
+        <discount-percent>8.87</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>72.16</average-canada>
+            <rate-per-province>
+                <AB>88.25</AB>
+                <BC>92.47</BC>
+                <MB>70.94</MB>
+                <NB>74.40</NB>
+                <NL>95.94</NL>
+                <NS>75.67</NS>
+                <NT>92.24</NT>
+                <NU>293.76</NU>
+                <ON>64.24</ON>
+                <PE>71.85</PE>
+                <QC>61.16</QC>
+                <SK>88.24</SK>
+                <YT>104.20</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="BK_CAB116344">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CAB130251">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CAB130190">
+        <group>Outdoors</group>
+        <category>Others - Outdoors</category>
+    </ls-product>
+    <ls-product id="BK_CABSPIN1G">
+        <shipping-size>
+            <length>42</length>
+            <width>16</width>
+            <height>16</height>
+        </shipping-size>
+    </ls-product>
+</catalog>

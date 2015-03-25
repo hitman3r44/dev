@@ -1,0 +1,179 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<style type="text/css">
+label {
+	width:170px;
+}
+.vanadium-advice {
+	margin-left: 170px;
+}
+input.vanadium-valid {
+	background-image: none;
+}
+</style>
+<div class="unit" style="width:800px;margin-left:100px;">
+
+<!-- Image Brand -->
+<div class="pop_title" style="margin-top:30px;">View Brand - <s:property value="name" /></div>
+
+<s:if test="hasActionErrors()">  
+  <div id="globalAdvice" class="gray_bg global-vanadium-advice">
+  		<s:iterator value="actionErrors">
+  				<span><s:property escape="false" /></span><br/>
+  		</s:iterator></div>  
+</s:if>
+
+<div style="float:right;">
+
+
+	
+	<div class="image" style="margin-left:2px;width:100px;">
+		 <s:if test="%{imageDTO!=null}">
+			<img src="${brand}<s:property value="imageDTO.name" />" width="100" height="100" />
+			<div style="margin-top:2px;">Current Size:</div>		        			
+	        	<span id="img_dim_1"><s:property value="imageDTO.width" /> X 
+	        	<s:property value="imageDTO.height" /> - 
+	        	<s:property value="imageDTO.size" />kb</span>		
+		</s:if>
+	</div>
+		<div id="file-uploader" style="text-align:center">
+		
+	</div>
+	
+	
+	<div id="messageUpload" style="width:200px;"></div>  	
+</div>
+
+  <!--<div class="hcenter" style="padding-top:10px;width:200px;margin-left:30px;">
+	  		<div id="file-uploader"></div>
+			<div id="messageUpload" style="width:200px;"></div>  			
+	  	</div>
+	  	<br />
+
+          <div class="image fixed column" style="margin-left:10px;width:200px;">
+                  			        			     
+          </div>
+
+          <br />-->
+          
+<!-- Image Product -->
+<table border="0"><tr>
+  <div id="formContainer" >
+    <s:form id="form" action="confirmEditBrand.do" method="post" validate="true" enctype="multipart/form-data">
+    <s:hidden id="brandId" name="brandId"/>
+    <s:hidden id="imageId" name="imageId"/>
+    <s:token></s:token>
+      <fieldset>
+      <!--Brand-->
+        <!--Name-->
+        <label for="accept_team_members">Name:</label>        
+        <s:textfield id="name" name="name" maxlength="120" cssStyle="width:250px;"/>
+        <span id="name_Error" style="display:none;margin-left:2px;"></span>
+        <!--Name-->
+        <br />
+          <label for="Categories Group">Categories Group: </label>
+        <s:checkboxlist label="Categories Group: "
+         				 id="categoryGroupListLong"
+         				 name="categoryGroupListLong"
+         				 cssStyle="width:96px;"
+         				 listKey="id"
+         				 theme="checkbox-fix"
+        		  		 listValue="%{getText(name)}"
+         				 list="categoryGroupList"></s:checkboxlist> 
+         <br />
+        <!--Code-->
+        <label for="accept_team_members">Code:</label>        
+        <s:textfield id="code" name="code" maxlength="120" cssStyle="width:100px;"/>
+        <span id="code_Error" style="display:none;margin-left:2px;"></span>
+        <!--Code-->
+        <br />
+        <!--Description-->
+        <label for="accept_team_members">Description:</label>
+        	<s:textarea id="description" name="description" rows="10" cssStyle="width:500px;"></s:textarea>
+         <span id="description_Error" style="display:none;margin-left:2px;"></span>
+        <!--Description-->
+        <br />
+
+        <s:if test='%{#session.usr == "uv"}' >
+        <input type="submit" value="Update Brand" 
+        	   style="margin:20px 20px 0px 190px;padding:5px 10px;font-size:20px;" disabled />        	   
+       	</s:if>        
+        <s:if test='%{#session.usr == "menu"}' >        
+        <input type="submit" value="Update Brand" 
+        	   style="margin:20px 20px 0px 190px;padding:5px 10px;font-size:20px;"/>        	   
+       	</s:if>
+       	
+        	   
+      </fieldset>
+    </s:form>
+  </div>
+</div>
+</tr></table>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() { 
+
+	  var requiredMessage = '<s:text name="loyauty.error.common.required" />';
+	  var vanadiumAdv = "vanadium-advice -vanadium-empty-advice- vanadium-invalid";
+	  var VanadiumRules = {
+	  		name: [
+	   			'only_on_blur',
+	   			['advice','name_Error'],
+	   			{validator:'required', invalidCustomMessage: requiredMessage}
+	  		],
+	  		description: [
+	  				'only_on_blur',
+	  				['advice','description_Error'],
+	  				{validator:'required', invalidCustomMessage: requiredMessage}
+	  	  	],  
+	   	    formContainer: 'container'
+	  	};
+
+		//Rich Text
+		tinyMCE.init({
+			mode : "textareas",
+		    theme : "advanced",
+		    theme_advanced_buttons1 : "mybutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo",
+		    theme_advanced_buttons2 : "",
+		    theme_advanced_buttons3 : "",
+		    theme_advanced_toolbar_location : "top",
+		    theme_advanced_toolbar_align : "left",
+		    plugins : 'inlinepopups'
+	    });
+
+		var brandId = $("#brandId").val();
+		var imageId = $("#imageId").val();
+
+		 var uploader = new qq.FileUploader({
+		        // pass the dom node (ex. $(selector)[0] for jQuery users)
+		        element: document.getElementById('file-uploader'),
+		        // path to server-side upload script
+		        action: 'ajax/uploadImage.do',
+		        //add params
+		        params: {},
+		        debug: true,
+		        onSubmit: function(id, fileName){
+		            uploader.setParams({brandId: brandId, imageId: imageId});          
+		        },
+		        onComplete: function(id, fileName, res){                    
+		            $(".qq-upload-list").empty();      
+		        	if( res.success === true ) {
+		        		$("#messageUpload").removeClass(vanadiumAdv).hide();
+						var app = '<div class="hcenter" style="padding-top:10px;">' +
+								  '<div id="image" class="hcenter"><img width="300" height="300" src="${brand}large/'+res.name+'?_='+new Date().getTime()+'" /></div>'+
+								  '<div style="margin-top:3px;">Current Size:</div>'+
+								  '<span id="img_dim">'+ res.width +'x' + res.height +' - ' + res.size + 'kb</span></div>';
+
+						$("#imageId").val(res.imageId);
+								  
+		            	$('.image').html(app);        		         
+		        	}
+		        	else {                			
+		            	$("#messageUpload").removeClass(vanadiumAdv);        
+		            	$("#messageUpload").addClass(vanadiumAdv).html("<span>" + res.success + "&nbsp;<a href='http://faq.gamejab.com/node/11' target='_blank'>" + res.msg + "</a></span>").show();                        
+		         	}
+		        }        
+		    }); 
+	});
+  
+  </script>

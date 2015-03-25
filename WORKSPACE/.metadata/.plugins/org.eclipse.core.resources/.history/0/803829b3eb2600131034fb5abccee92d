@@ -1,0 +1,335 @@
+package com.loyauty.web.struts.action.orders;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
+import javax.servlet.http.HttpSession;
+import org.apache.commons.io.FileUtils;
+import lombok.Getter;
+import lombok.Setter;
+
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.model.Orders;
+import com.loyauty.model.OrdersRows;
+import com.loyauty.model.User;
+import com.loyauty.service.core.DTOFactory;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.OrdersDTO;
+import com.loyauty.service.core.dto.UserFileDataRecoveryDTO;
+import com.loyauty.service.core.dto.UserFileRecoveryDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.orders.OrdersService;
+import com.loyauty.service.user.UserService;
+import com.loyauty.web.struts.action.LoyautyAction;
+
+
+public class CreateOrdersAuto extends LoyautyAction {
+	private static final long serialVersionUID = -1238269595572206024L;
+
+	private UserService userService;
+	private OrdersService orderService;
+	@Getter @Setter
+	private String userLoginTo;
+	@Getter @Setter
+	private List<User> usersList;
+	private static int USER_TYPE = 2;
+	@Getter @Setter
+	private File orderFile;
+	@Getter @Setter
+	List<OrdersDTO>listOrdersDTO;
+	Hashtable<String, OrdersDTO>hashOrders;
+	@Getter @Setter
+	private String orderSelected;
+	@Getter @Setter
+	private Long showOrderSignal;
+	@Getter @Setter
+	private Long okShowOrderSignal;
+	@Getter @Setter
+	private Long saveOrdersSignal;
+	@Getter @Setter
+	private Long confirmSaveOrdersSignal;
+	@Getter @Setter
+	private Long duplicateOrderSignal;
+	@Getter @Setter
+	private String lsOrderId;
+	@Getter @Setter
+	private String message;
+	@Getter @Setter
+	private String userLogo;
+	@Getter @Setter
+	Integer indexOrder;
+	@Getter @Setter
+	Integer indexRow;
+	@Getter @Setter
+	private Double quantityToChange;
+	@Getter @Setter
+	private Long quantityToChangeSignal;
+	@Getter @Setter
+	private Long checkBoxPrintSignal;
+	@Getter @Setter
+	private Long okSaveSuccessPopSignal;
+	@Getter @Setter
+	private Boolean checkBoxPrintEtem;
+	@Getter @Setter
+	private Boolean checkBoxPrint;
+	@Getter @Setter
+	private Long pageTop=0L;
+	@Getter @Setter
+	private Long saved;
+	@Getter @Setter
+	private String showNotificationPop="visibility:hidden;display:none;";
+	@Getter @Setter
+	private String showSaveSuccessPop="visibility:hidden;display:none;";
+	public  CreateOrdersAuto() throws ServiceLocatorException {
+		super();	
+		userService = getServiceLocator().getUserService();
+		orderService = getServiceLocator().getOrderService();
+		listOrdersDTO=new ArrayList<OrdersDTO>();
+	}
+
+	/*=========================================================================================
+	 											method execute
+	  =========================================================================================*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public String execute() throws Exception {
+		hashOrders=new Hashtable<String, OrdersDTO>();
+		HttpSession session = request.getSession(true);
+		System.out.println("pageTop:"+pageTop);
+		listOrdersDTO=	(ArrayList<OrdersDTO>)session.getAttribute("listOrdersDTOAuto");
+		saved=orderService.nbOrdersNotSavedInDB(listOrdersDTO);
+		userLogo=(String)session.getAttribute("userLogo");
+		int rowIndex;
+		String nameFile="";
+		String dataPath="";
+		try {
+				/*-------------------- recovery users list -----------------------------------
+						we access to the database only once to retrieve a list of users
+				 -----------------------------------------------------------------------------*/
+				BasicUserDTO basicUserDTO = new BasicUserDTO();
+				basicUserDTO.setTypeId(USER_TYPE);
+				List<User> usersListSession=(List<User>)session.getAttribute("usersListSession");
+				if(usersListSession==null){
+					List<UserSessionDTO> listAllUsers= userService.getAllUsers(basicUserDTO);
+					usersList=new ArrayList<User>();
+					for(UserSessionDTO userDTO:listAllUsers){
+						User user=new User();
+						user.setId(userDTO.getId());
+						user.setLogin(userDTO.getLogin());
+						usersList.add(user);
+					}
+					session.setAttribute("usersListSession",usersList);
+				}else usersList=usersListSession;
+
+				/*-------------------- When user check print item -----------------------------
+						Add or remove this element from the orders to print
+		 		 -----------------------------------------------------------------------------*/
+				if(checkBoxPrintSignal!=null && checkBoxPrintSignal!=0L){
+					listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOAuto");
+					hashOrders= (Hashtable<String, OrdersDTO>)session.getAttribute("hashOrders");
+					OrdersDTO order=orderService.getOrderDTOByLsOrderId(lsOrderId);
+					if(order==null){
+						addActionError(getText("loyauty.error.common.savingOrders"));
+						return SUCCESS;
+					}
+					OrdersDTO orderDTOInHash=hashOrders.get(lsOrderId);
+					orderDTOInHash.setPrint(checkBoxPrint);
+					OrdersDTO orderDTOInList=listOrdersDTO.get(indexOrder);
+					orderDTOInList.setPrint(checkBoxPrint);
+					return SUCCESS;
+				}
+
+
+				/*------------- When user check on the button OK of dialog saveSuccessPop ----
+							 			just hide the popup saveSuccessPop
+		 		 -----------------------------------------------------------------------------*/
+				if(okSaveSuccessPopSignal!=null && okSaveSuccessPopSignal!=0L){
+					listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOAuto");
+					return SUCCESS;
+				}
+
+				/*-------------------- When user change Quantity to split --------------------
+					prepare order to split from two other orders witch
+					 one must have a lsOrder with underscore 
+		 		 -----------------------------------------------------------------------------*/
+				if(quantityToChangeSignal!=null && quantityToChangeSignal!=0L){
+					listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOAuto");
+					hashOrders= (Hashtable<String, OrdersDTO>)session.getAttribute("hashOrders");
+					OrdersDTO order=orderService.getOrderDTOByLsOrderId(lsOrderId);
+					if(order==null){
+						addActionError(getText("loyauty.error.common.savingOrders"));
+						return SUCCESS;
+					}
+					System.out.println("quantityToChangeSignal="+quantityToChangeSignal);
+					System.out.println("lsOrderId="+lsOrderId);
+					System.out.println("quantityToChange="+quantityToChange);
+					System.out.println("indexRow="+indexRow);
+					OrdersDTO orderToChangeQt=hashOrders.get(lsOrderId);
+					OrdersRows orderRow=orderToChangeQt.getRowsList().get(indexRow);
+					if(quantityToChange<orderRow.getQuantity())orderRow.setQuantityToSplit(quantityToChange);
+					return SUCCESS;
+				}
+
+				/*-------------------- SAVE ORDERS -------------------------------------------
+						save in data bases just orders witch has print checked 
+		 		 -----------------------------------------------------------------------------*/
+				if(saveOrdersSignal!=null && saveOrdersSignal!=0L){
+					listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOAuto");
+					boolean callNotification=orderService.isExistAnyLsOrderIdInDB(listOrdersDTO);
+					if(callNotification){//ask admin if he want to save all orders
+						if(confirmSaveOrdersSignal==null || confirmSaveOrdersSignal==0L){
+							message="One or more of these Orders already exists.\n"+
+									"Select option:";
+							showNotificationPop="display:block;visibility:visible;";	
+						}else if(confirmSaveOrdersSignal==1L){//add all orders in DB
+							saved=0L;
+							listOrdersDTO=orderService.insertListOrders(listOrdersDTO); 
+							session.setAttribute("listOrdersDTOAuto",listOrdersDTO);
+							hashOrders =orderService.getHashOrdersDTOFromListOrdersDTO(listOrdersDTO);
+							session.setAttribute("hashOrders",hashOrders);
+							message="Saving has completed successfuly";
+							showSaveSuccessPop="display:block;visibility:visible;";
+						}else if(confirmSaveOrdersSignal==2L){//add just orders if not exist in DB
+							saved=0L;
+							orderService.insertListOrdersIfNotExist(listOrdersDTO); 
+							session.setAttribute("listOrdersDTOAuto",listOrdersDTO);
+							hashOrders =orderService.getHashOrdersDTOFromListOrdersDTO(listOrdersDTO);
+							session.setAttribute("hashOrders",hashOrders);
+							message="Saving has completed successfuly";
+							showSaveSuccessPop="display:block;visibility:visible;";
+						}
+					}else{
+						saved=0L;
+						message="Saving has completed successfuly";
+						showSaveSuccessPop="display:block;visibility:visible;";
+						listOrdersDTO=orderService.insertListOrders(listOrdersDTO);
+						session.setAttribute("listOrdersDTOAuto",listOrdersDTO);
+					}
+					return SUCCESS;
+				}
+
+				/*-------------------- Duplicate Order ----------------------------------------
+						Create order in just in memory
+		 		 -----------------------------------------------------------------------------*/
+				if(duplicateOrderSignal!=null && duplicateOrderSignal!=0L){
+				listOrdersDTO=	(ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOAuto");
+				hashOrders= (Hashtable<String, OrdersDTO>)session.getAttribute("hashOrders");
+				OrdersDTO order=orderService.getOrderDTOByLsOrderId(lsOrderId);
+				if(order==null){
+					addActionError(getText("loyauty.error.common.savingOrders"));
+					return SUCCESS;
+				}
+				OrdersDTO orderToClone=hashOrders.get(lsOrderId);
+				OrdersDTO orderClone=DTOFactory.getOrderDTOSplitted(orderToClone);
+				if(orderClone!=null){
+					String lsOrder=orderClone.getLsOrderId();
+					String strlsOrder=orderService.generateLsOrderId(lsOrder, hashOrders);
+					orderClone.setLsOrderId(strlsOrder);
+					orderClone.setCssStyle("background-color:#FFFF99;border-right: 1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:  1px solid #CCCCCC;");
+					rowIndex=0;
+					for(OrdersRows row: orderClone.getRowsList()){
+						row.setIndex(rowIndex);
+						System.out.println(row.getProductId()+" --- "+row.getLsProductID()+" --- "+row.getQuantity()+" --- "+row.getProductDescription());	
+						rowIndex++;
+					}
+					saved=0L;
+					listOrdersDTO.add(indexOrder+1,orderClone);
+					hashOrders.put(orderClone.getLsOrderId(), orderClone);
+					if(listOrdersDTO.size()>0){
+						session.setAttribute("listOrdersDTOAuto",listOrdersDTO);
+						session.setAttribute("hashOrders",hashOrders);
+					}
+				}
+				saved=orderService.nbOrdersNotSavedInDB(listOrdersDTO);
+				return SUCCESS;
+				}
+
+				/*---------------- retrieve file info customer order -------------------------*/
+				UserFileRecoveryDTO ufrDTO=orderService.getUserFileRecoveryByUser(userLoginTo);
+				session.setAttribute("userLogin",userLoginTo);
+
+				/*--------------------recovery OrderFile client ------------------------------
+					recovered the client file and converts it into a list, and  
+ 					a Hatable witch allow use to control the orders rows
+				 -----------------------------------------------------------------------------*/
+				File OrderFilePermanent=null;
+				if(orderFile!=null){
+					String filePath = request.getSession().getServletContext().getRealPath("/");
+					dataPath = filePath + "WEB-INF/jsp/orders/data/";
+        			nameFile=dataPath+userLoginTo+"."+ufrDTO.getFileType();
+        			//show user logo
+        			userLogo="./images/orders/usersLogos/"+userLoginTo+".png";
+        			if(ufrDTO.getUserId()<=0L)userLogo=null;
+        			session.setAttribute("userLogo",userLogo);
+        			OrderFilePermanent = new File(nameFile);
+					if(OrderFilePermanent.exists())OrderFilePermanent.delete();
+					try {
+						OrderFilePermanent = new File(nameFile);
+						FileUtils.copyFile(orderFile, OrderFilePermanent);
+					} catch (IOException e) {
+						e.printStackTrace();
+						return "input";
+					}
+				}
+				/*-------------------- converts the order file to a list and HashTable -------
+					recovered the client file and converts it into a list, and  
+ 					a Hatable witch allow use to control the orders rows
+				 -----------------------------------------------------------------------------*/
+				Collection listUsrDataDTO=null;
+				saved=1L;
+				switch (ufrDTO.getFileTypeId()) {
+				case 1: //case xml file
+					listUsrDataDTO=orderService.toArrayListFromXML(OrderFilePermanent, userLoginTo);
+					break;
+				case 2: //case xls file
+					listUsrDataDTO=orderService.toArrayListFromXLS(OrderFilePermanent, userLoginTo);
+					break;
+				case 3: // case csv file
+					orderService.csvParsing(dataPath,userLoginTo);
+					nameFile=dataPath+userLoginTo+".xls";
+					OrderFilePermanent = new File(nameFile);
+					listUsrDataDTO=orderService.toArrayListFromXLS(OrderFilePermanent, userLoginTo);
+				} 
+				ArrayList<UserFileDataRecoveryDTO> list=(ArrayList<UserFileDataRecoveryDTO>)listUsrDataDTO;
+				hashOrders =orderService.getHashOrdersFromUserDataRecovery(ufrDTO.getUserId(),list);
+				listOrdersDTO=new ArrayList<OrdersDTO>();
+				int balance=0;
+				int OrderIndex=0;
+				rowIndex=0;
+				for(OrdersDTO orDTO: hashOrders.values()){
+					balance=(balance==1?0:1);
+					if(balance==1){
+						orDTO.setCssStyle("background-color: rgb(245,249,252);border-right: 1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:  1px solid #CCCCCC;");
+					}else{
+						orDTO.setCssStyle("background-color: color:white;border-right:1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-top:1px solid #CCCCCC;");
+					}
+					orDTO.setIndex(OrderIndex); 
+					listOrdersDTO.add(orDTO);
+					rowIndex=0;
+					System.out.println("-------------- "+orDTO.getLsOrderId()+" ---------------");
+					for(OrdersRows row: orDTO.getRowsList()){
+						row.setIndex(rowIndex);
+						System.out.println(row.getProductId()+" --- "+row.getLsProductID()+" --- "+row.getQuantity()+" --- "+row.getProductDescription());	
+						rowIndex++;
+					}
+					OrderIndex++;
+				}
+				if(listOrdersDTO.size()>0){
+					session.setAttribute("listOrdersDTOAuto",listOrdersDTO);
+					session.setAttribute("hashOrders",hashOrders);
+				}else userLogo=null;
+				session.setAttribute("userLogo",userLogo);	
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "input";
+			}
+	return SUCCESS;
+	}
+
+	
+}

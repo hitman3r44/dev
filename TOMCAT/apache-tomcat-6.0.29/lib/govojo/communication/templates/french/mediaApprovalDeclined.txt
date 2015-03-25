@@ -1,0 +1,9 @@
+Cher(e) #FIRSTNAME#,
+
+Vous avez soumis du contenu qui a malheureusement du être refusé par notre équipe. De manière à mieux comprendre ce qu'est du contenu acceptable, veuillez s'il vous plaît visiter le lien ici-bas :
+
+http://gameaccess.ca/displayTermsOfUse.jsp?lang=fr
+
+Merci de choisir Game Acces,
+
+L'Équipe Game Access

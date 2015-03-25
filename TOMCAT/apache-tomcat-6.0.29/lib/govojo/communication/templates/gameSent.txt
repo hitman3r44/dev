@@ -1,0 +1,21 @@
+Dear #FIRSTNAME#,
+
+We have just packaged and shipped the following game
+from your queue to you. Shipping times are generally 
+between 2 to 6 business days depending on your location.
+
+#GAMENAME#
+
+If you have any questions, please feel free to 
+contact our customer service department here:
+
+http://www.gameaccess.ca/displayContactUs.jsp
+
+Thank you,
+
+The Game Access Team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/account/displayAccountLanding.jsp
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

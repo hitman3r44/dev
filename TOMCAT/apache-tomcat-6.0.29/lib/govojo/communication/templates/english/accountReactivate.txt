@@ -1,0 +1,14 @@
+Dear #FIRSTNAME#,
+
+Thank you for signing up to the Game Access community. In order to complete and activate your account, please click the link bellow. 
+
+http://www.gameaccess.ca/activateMyaccount.do?subID=#SUB_ID#
+
+Thank you,
+
+The Game Access Team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/myAccount.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

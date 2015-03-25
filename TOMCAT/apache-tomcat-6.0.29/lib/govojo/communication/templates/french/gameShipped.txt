@@ -1,0 +1,18 @@
+Cher(e) #FIRSTNAME#,
+
+Nous avons empaqueté et expédié les jeux suivant de votre commande :
+
+#GAMENAME#
+
+Pour plus d'information concernant le statut de vos achats, veuillez visiter votre section des membres en utilisant le lien ici-bas.
+
+http://gameaccess.ca/myAccount.do?lang=fr
+
+Si vous avez des questions, veuillez communiquer avec notre service à la clientèle à support@gameaccess.ca.
+
+Merci de magasiner chez Game Access.
+ 
+*---- Liens Utiles ----*
+Nous Joindre - http://gameaccess.ca/displayContactUs.jsp?lang=fr
+Mon Compte - http://gameaccess.ca/myAccount.do?lang=fr
+FAQ -http://gameaccess.ca/displayFAQ.jsp?lang=fr

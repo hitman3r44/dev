@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Orders>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>1181375</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_KEUKUB40</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Elite Brewer</Product_Title>
+    <Unit_Price>120.02</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brian</Client_First_Name>
+    <Client_Last_Name>Prinsen</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>94 Dunkirk Road</Address_Street>
+    <Address_Street_Other>#1 South</Address_Street_Other>
+    <Address_City>St.Catharines</Address_City>
+    <Address_Province>ON</Address_Province>
+    <Address_Postal_Code>L2P3H4</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>905-688-3322</Client_Phone>
+    <Client_Email>brian@culliganniagara.com</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>1181375</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_KEUVANHB</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>90 K-Cups Van Houtte Bundle</Product_Title>
+    <Unit_Price>56.20</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brian</Client_First_Name>
+    <Client_Last_Name>Prinsen</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>94 Dunkirk Road</Address_Street>
+    <Address_Street_Other>#1 South</Address_Street_Other>
+    <Address_City>St.Catharines</Address_City>
+    <Address_Province>ON</Address_Province>
+    <Address_Postal_Code>L2P3H4</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>905-688-3322</Client_Phone>
+    <Client_Email>brian@culliganniagara.com</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697829</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_BVLRC600XL</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Risotto Plus</Product_Title>
+    <Unit_Price>100.80</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>ray</Client_First_Name>
+    <Client_Last_Name>clusiau</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>301-2500 PALLADIUM DR</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>KANATA</Address_City>
+    <Address_Province>ON</Address_Province>
+    <Address_Postal_Code>K2V1E2</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>6138360086</Client_Phone>
+    <Client_Email>parts@kanatamazda.com</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697813</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_FOSDROP</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Stainless Steel Drop Earrings</Product_Title>
+    <Unit_Price>35.10</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brett</Client_First_Name>
+    <Client_Last_Name>Miller</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>16 Gloria McCluskey Ave</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Dartmouth</Address_City>
+    <Address_Province>NS</Address_Province>
+    <Address_Postal_Code>B3B 2C2</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>902-481-7733</Client_Phone>
+    <Client_Email>brettmiller@millertire.ca</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697811</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_JAWJB02_RD</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>JAMBOX Wireless Bluetooth Speaker - RED DOT</Product_Title>
+    <Unit_Price>178.17</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brett</Client_First_Name>
+    <Client_Last_Name>Miller</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>16 Gloria McCluskey Ave</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Dartmouth</Address_City>
+    <Address_Province>NS</Address_Province>
+    <Address_Postal_Code>B3B 2C2</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>902-481-7733</Client_Phone>
+    <Client_Email>brettmiller@millertire.ca</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697811</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_RWTDW2080</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Steam Iron Focus II</Product_Title>
+    <Unit_Price>88.90</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brett</Client_First_Name>
+    <Client_Last_Name>Miller</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>16 Gloria McCluskey Ave</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Dartmouth</Address_City>
+    <Address_Province>NS</Address_Province>
+    <Address_Postal_Code>B3B 2C2</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>902-481-7733</Client_Phone>
+    <Client_Email>brettmiller@millertire.ca</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697811</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_KTAKSM100_BK</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Ultra Power Plus  Tilt Head Stand Mixer - ONYX BLACK</Product_Title>
+    <Unit_Price>287.50</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Brett</Client_First_Name>
+    <Client_Last_Name>Miller</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>16 Gloria McCluskey Ave</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Dartmouth</Address_City>
+    <Address_Province>NS</Address_Province>
+    <Address_Postal_Code>B3B 2C2</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>902-481-7733</Client_Phone>
+    <Client_Email>brettmiller@millertire.ca</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697745</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140422</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_CAB116344</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Daiwa Mini Spin Fishing Travel Packs</Product_Title>
+    <Unit_Price>63.92</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Cherie</Client_First_Name>
+    <Client_Last_Name>Mercereau</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>#100, 103 Portage Close</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>SHERWOOD PARK</Address_City>
+    <Address_Province>AB</Address_Province>
+    <Address_Postal_Code>T8H 2R5</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>780 819 7641</Client_Phone>
+    <Client_Email>cheriem@hpier.com</Client_Email>
+  </Order>
+</Orders>

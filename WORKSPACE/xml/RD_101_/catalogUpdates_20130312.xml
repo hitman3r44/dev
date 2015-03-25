@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="RD_DELEN680">
+        <status>DISCONTINUED</status>
+        <substitute-product>DELEN520SL</substitute-product>
+    </ls-product>
+    <ls-product id="RD_JJJ70852WH">
+        <brand-name>Joseph Joseph</brand-name>
+        <group>Kitchen</group>
+        <category>Tools &amp; Accessories</category>
+        <type>Accessories</type>
+        <image>http://loyaltysource.com/media/product/large/jjj70852wh_1361741244516.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Arena Self-Draining Dish Rack</title>
+        <description>Self-Draining Dish Rack, 4 x 17 x 14” / 10 x 43 x 35cm, white/green.The innovative, compact design of this stylish dish rack provides lots of space for draining and storing plates, bowls, glasses and utensils. Flexible ribs hold dishes securely in place, helping to prevent chips and scratches while drying. The distinctive, concentric design and sloping base, channel water away quickly and efficiently and the integrated spout enables it to be drained directly into the sink. Extra-large utensil holders also ensure Arena is as practical as it is stylish. ***Dishes not included***</description>
+        <specification/>
+        <others/>
+        <warranty>1 year</warranty>
+        <model-number>7085002WH</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>19</length>
+            <width>18</width>
+            <height>7</height>
+        </shipping-size>
+        <msrp>69.99</msrp>
+        <cost>42.50</cost>
+        <discount-dollars>27.49</discount-dollars>
+        <discount-percent>39.28</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>0.00</average-canada>
+            <rate-per-province>
+                <AB>0.00</AB>
+                <BC>0.00</BC>
+                <MB>0.00</MB>
+                <NB>0.00</NB>
+                <NL>0.00</NL>
+                <NS>0.00</NS>
+                <NT>0.00</NT>
+                <NU>0.00</NU>
+                <ON>0.00</ON>
+                <PE>0.00</PE>
+                <QC>0.00</QC>
+                <SK>0.00</SK>
+                <YT>0.00</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="RD_TTMN13654">
+        <title>RocketBallz Steel Iron Set - LEFT</title>
+    </ls-product>
+    <ls-product id="RD_TTMN13665">
+        <title>RocketBallz Steel Iron Set - RIGHT</title>
+    </ls-product>
+    <ls-product id="RD_APPME392C-A">
+        <brand-name>Apple</brand-name>
+        <group>Electronics</group>
+        <category>Computers</category>
+        <type>Tablets &amp; Netbooks</type>
+        <image>http://loyaltysource.com/media/product/large/appme392ca_1363018209624.jpg</image>
+        <status>AVAILABLE</status>
+        <title>iPad with Retina display Wi-Fi 128GB - BLACK</title>
+        <description>Pick up the iPad with Retina display and suddenly, it’s clear. You’re actually touching your photos, reading a book, playing the piano. Nothing comes between you and what you love. That’s because the fundamental elements of iPad — the display, the processor, the cameras, the wireless connection — all work together to create the best possible experience. And they make iPad capable of so much more than you ever imagined.</description>
+        <specification>9.7-inch (diagonal) LED-backlit Multi-Touch display with IPS technology Dual-core A6X with quad-core graphics 128GB of storage Wi-Fi / Bluetooth 4.0 HD video recording (1080p) 5-megapixel iSight camera Built-in speaker / microphone</specification>
+        <others>4th Generation Environmental Handling Fee included.</others>
+        <warranty>1 year</warranty>
+        <model-number>ME392C/A</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>12</length>
+            <width>13</width>
+            <height>5</height>
+        </shipping-size>
+        <msrp>800.99</msrp>
+        <cost>822.50</cost>
+        <discount-dollars>-21.51</discount-dollars>
+        <discount-percent>-2.69</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>15.84</average-canada>
+            <rate-per-province>
+                <AB>15.84</AB>
+                <BC>15.84</BC>
+                <MB>15.84</MB>
+                <NB>15.84</NB>
+                <NL>15.84</NL>
+                <NS>15.84</NS>
+                <NT>15.84</NT>
+                <NU>15.84</NU>
+                <ON>15.84</ON>
+                <PE>15.84</PE>
+                <QC>15.84</QC>
+                <SK>15.84</SK>
+                <YT>15.84</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="RD_APPME401C-A">
+        <brand-name>Apple</brand-name>
+        <group>Electronics</group>
+        <category>Computers</category>
+        <type>Tablets &amp; Netbooks</type>
+        <image>http://loyaltysource.com/media/product/large/appme401ca_1363021302653.jpg</image>
+        <status>AVAILABLE</status>
+        <title>iPad with Retina display Wi-Fi 4G 128GB - WHITE</title>
+        <description>Pick up the iPad with Retina display and suddenly, it’s clear. You’re actually touching your photos, reading a book, playing the piano. Nothing comes between you and what you love. That’s because the fundamental elements of iPad — the display, the processor, the cameras, the wireless connection — all work together to create the best possible experience. And they make iPad capable of so much more than you ever imagined.</description>
+        <specification>9.7-inch (diagonal) LED-backlit Multi-Touch display with IPS technology Dual-core A6X with quad-core graphics 128GB of storage Wi-Fi / Bluetooth 4.0 / 4G LTE HD video recording (1080p) 5-megapixel iSight camera Built-in speaker / microphone</specification>
+        <others>4th Generation Environmental Handling Fee included.</others>
+        <warranty>1 year</warranty>
+        <model-number>ME401C/A</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>12</length>
+            <width>13</width>
+            <height>5</height>
+        </shipping-size>
+        <msrp>930.99</msrp>
+        <cost>955.97</cost>
+        <discount-dollars>-24.98</discount-dollars>
+        <discount-percent>-2.68</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.82</average-canada>
+            <rate-per-province>
+                <AB>17.82</AB>
+                <BC>17.82</BC>
+                <MB>17.82</MB>
+                <NB>17.82</NB>
+                <NL>17.82</NL>
+                <NS>17.82</NS>
+                <NT>17.82</NT>
+                <NU>17.82</NU>
+                <ON>17.82</ON>
+                <PE>17.82</PE>
+                <QC>17.82</QC>
+                <SK>17.82</SK>
+                <YT>17.82</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="RD_APPIPWF4G128G">
+        <brand-name>Apple</brand-name>
+        <group>Electronics</group>
+        <category>Computers</category>
+        <type>Tablets &amp; Netbooks</type>
+        <image>http://loyaltysource.com/media/product/large/appipwf4g128g_1363024767286.jpg</image>
+        <status>AVAILABLE</status>
+        <title>iPad Retina Wi-Fi 4G 128GB Bundle - BLACK</title>
+        <description>Pick up the iPad with Retina display and suddenly, it’s clear. You’re actually touching your photos, reading a book, playing the piano. Nothing comes between you and what you love. That’s because the fundamental elements of iPad — the display, the processor, the cameras, the wireless connection — all work together to create the best possible experience. And they make iPad capable of so much more than you ever imagined. This bundle includes a black iPad with retina display Wi-Fi 4G 128GB, a wireless keyboard, a light grey smart cover and a lightning to 30-pin connector.</description>
+        <specification>9.7-inch (diagonal) LED-backlit Multi-Touch display with IPS technology Dual-core A6X with quad-core graphics 128GB of storage Wi-Fi / Bluetooth 4.0 / 4G LTE HD video recording (1080p) 5-megapixel iSight camera Built-in speaker / microphone Also included : Wireless English keyboard iPad Smart Cover case - Light grey Lighting to 30-pin adapter cable (0.2M)</specification>
+        <others>4th Generation Environmental Handling Fee included.</others>
+        <warranty>1 year</warranty>
+        <model-number>ME400C/A</model-number>
+        <weight>5</weight>
+        <shipping-size>
+            <length>12</length>
+            <width>13</width>
+            <height>5</height>
+        </shipping-size>
+        <msrp>1099.99</msrp>
+        <cost>1,118.72</cost>
+        <discount-dollars>-18.73</discount-dollars>
+        <discount-percent>-1.70</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>19.80</average-canada>
+            <rate-per-province>
+                <AB>19.80</AB>
+                <BC>19.80</BC>
+                <MB>19.80</MB>
+                <NB>19.80</NB>
+                <NL>19.80</NL>
+                <NS>19.80</NS>
+                <NT>19.80</NT>
+                <NU>19.80</NU>
+                <ON>19.80</ON>
+                <PE>19.80</PE>
+                <QC>19.80</QC>
+                <SK>19.80</SK>
+                <YT>19.80</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

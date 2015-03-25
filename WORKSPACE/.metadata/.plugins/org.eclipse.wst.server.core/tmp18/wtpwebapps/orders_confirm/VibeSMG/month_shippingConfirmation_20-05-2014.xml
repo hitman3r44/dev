@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>GD-V-117617</po_number>
+        <first_name>Riggs</first_name>
+        <last_name>Fraser</last_name>
+        <client_street>3161 Findlay Creek Drive</client_street>
+        <client_city>Ottawa</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K1T4E4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>UMB330682</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>UMB330682</ls_product_id>
+        <product_title>Otto Pump - WHITE</product_title>
+        <cost>22.75</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723483586467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>GD-V-118290</po_number>
+        <first_name>Bennet</first_name>
+        <last_name>Geoff</last_name>
+        <client_street>104 Cedar Valley Dr.</client_street>
+        <client_city>Kanata</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2M3A3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>APPMD480CA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD480CA</ls_product_id>
+        <product_title>New iPod Nano 16GB - SILVER</product_title>
+        <cost>146.66</cost>
+        <shipping_cost>10.35</shipping_cost>
+        <tracking_number>7310723466284465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>sqt-V-118251</po_number>
+        <first_name>Defrancesco</first_name>
+        <last_name>Gisella</last_name>
+        <client_street>22 Brampton Road</client_street>
+        <client_city>Weston</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M9R3J1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>NESCITMK_RD</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>NESCITMK_RD</ls_product_id>
+        <product_title>CitiZ &amp; Milk C121 - REFRESH RED</product_title>
+        <cost>250.91</cost>
+        <shipping_cost>17.54</shipping_cost>
+        <tracking_number>7310723453697469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118313</po_number>
+        <first_name>LANDRIAULT</first_name>
+        <last_name>MELISSA</last_name>
+        <client_street>UNIVERSAL CWT. 205 Franktown Rd</client_street>
+        <client_city>CARLETON PLACE</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K7C2N9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>FOSRAIL_RG</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSRAIL_RG</ls_product_id>
+        <product_title>Stainless Steel Rail Bracelet - ROSE GOLD</product_title>
+        <cost>63.7</cost>
+        <shipping_cost>10.61</shipping_cost>
+        <tracking_number>7310723459532467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>GD-V-117373</po_number>
+        <first_name>Toczko</first_name>
+        <last_name>Michael</last_name>
+        <client_street>59 Allenby Road</client_street>
+        <client_city>Kanata</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2K2J8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>APPMD718CA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD718CA</ls_product_id>
+        <product_title>New iPod Touch 64GB - BLUE</product_title>
+        <cost>391.91</cost>
+        <shipping_cost>15.96</shipping_cost>
+        <tracking_number>7310723123982468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118051</po_number>
+        <first_name>BURANT</first_name>
+        <last_name>LEA-ANN</last_name>
+        <client_street>EDMONTON TRAVEL. 134-53226 RGE. RD. 261</client_street>
+        <client_city>SPRUCE GROVE</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T7Y1A3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>VIC30373701</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>VIC30373701</ls_product_id>
+        <product_title>All-in-One Adapter Plug</product_title>
+        <cost>45.5</cost>
+        <shipping_cost>14.00</shipping_cost>
+        <tracking_number>7310723159788461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-113130</po_number>
+        <first_name>HAMMOND</first_name>
+        <last_name>DONNA</last_name>
+        <client_street>124 450 COUNTRY HILLS BLVD NE</client_street>
+        <client_city>CALGARY</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T3K5A5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>CUTKE25ZR</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CUTKE25ZR</ls_product_id>
+        <product_title>Skillet 25cm</product_title>
+        <cost>26.98</cost>
+        <shipping_cost>19.77</shipping_cost>
+        <tracking_number>7310723021429461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117514</po_number>
+        <first_name>GORDON</first_name>
+        <last_name>AMANDA</last_name>
+        <client_street>SEARS TRAVEL*. 880 FORT WILLIAM RD</client_street>
+        <client_city>THUNDER BAY</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>P7B2S4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>HASA5301</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>HASA5301</ls_product_id>
+        <product_title>Risk Legacy Boardgame</product_title>
+        <cost>48.72</cost>
+        <shipping_cost>17.02</shipping_cost>
+        <tracking_number>7310723955968456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117862</po_number>
+        <first_name>MASKIEWICH</first_name>
+        <last_name>BILL</last_name>
+        <client_street>ADVANTAGE MACKENZIE TRAVEL. 1272 MAIN ST   </client_street>
+        <client_city>SMITHERS</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V0J2N0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>TIMT2N647AW</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TIMT2N647AW</ls_product_id>
+        <product_title>Central Park Black</product_title>
+        <cost>37.5</cost>
+        <shipping_cost>16.47</shipping_cost>
+        <tracking_number>7310723041028460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>GD-V-113632</po_number>
+        <first_name>Cockerill</first_name>
+        <last_name>Terry</last_name>
+        <client_street>232 October Gold Way</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T3Z0A4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>CAN840916G</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CAN840916G</ls_product_id>
+        <product_title>PowerShot SX510 HS with 16G Memory card</product_title>
+        <cost>273.06</cost>
+        <shipping_cost>19.95</shipping_cost>
+        <tracking_number>7310723791916451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117736</po_number>
+        <first_name>BOUDREAU</first_name>
+        <last_name>ISABELLE</last_name>
+        <client_street>VOYAGES SEARS ST JEROME. 900 BOUL GRIGNON</client_street>
+        <client_city>ST JEROME</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>J7Y3S7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>MOTMA130CA</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>MOTMA130CA</ls_product_id>
+        <product_title>Talkabout MA130CA 13KM GMRS 2-Way Radios</product_title>
+        <cost>37.06</cost>
+        <shipping_cost>11.24</shipping_cost>
+        <tracking_number>7310723825015457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-113133</po_number>
+        <first_name>LALANDE</first_name>
+        <last_name>JEANETTE</last_name>
+        <client_street>1442 Birchcliffe Court</client_street>
+        <client_city>OSHAWA</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L1J7Z7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>LIT631146</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>LIT631146</ls_product_id>
+        <product_title>Little Handiworker Workhorse</product_title>
+        <cost>32.75</cost>
+        <shipping_cost>10.83</shipping_cost>
+        <tracking_number>7310723699530452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117516</po_number>
+        <first_name>GORDON</first_name>
+        <last_name>AMANDA</last_name>
+        <client_street>SEARS TRAVEL*. 880 FORT WILLIAM RD</client_street>
+        <client_city>THUNDER BAY</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>P7B2S4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>RDL04140G</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>RDL04140G</ls_product_id>
+        <product_title>O Cabernet-Merlot Wine Glass - Set of 4</product_title>
+        <cost>44.85</cost>
+        <shipping_cost>15.91</shipping_cost>
+        <tracking_number>7310723630230458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117671</po_number>
+        <first_name>THOMPSON</first_name>
+        <last_name>RUTH</last_name>
+        <client_street>61 CROWFOOT TERRACE NW</client_street>
+        <client_city>CALGARY</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T3G4J8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>RCVPFL021</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>RCVPFL021</ls_product_id>
+        <product_title>Just Cavalli for Women</product_title>
+        <cost>44.8</cost>
+        <shipping_cost>12.17</shipping_cost>
+        <tracking_number>7310723666234451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-117691</po_number>
+        <first_name>PRIES</first_name>
+        <last_name>SHANON</last_name>
+        <client_street>14 Calvert Crescent</client_street>
+        <client_city>LANIGAN</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S0K2M0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>CAB943052</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>CAB943052</ls_product_id>
+        <product_title>Deluxe Life Vest</product_title>
+        <cost>23.23</cost>
+        <shipping_cost>23.92</shipping_cost>
+        <tracking_number>7310723685060451</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>GD-V-119051</po_number>
+        <first_name>Hassard</first_name>
+        <last_name>Nancy</last_name>
+        <client_street>116 Oakside Bay SW</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2V4P2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>TCA0535G</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TCA0535G</ls_product_id>
+        <product_title>Bamboo Salad Bowl and Bamboo Salad Servers</product_title>
+        <cost>35.91</cost>
+        <shipping_cost>21.37</shipping_cost>
+        <tracking_number>7310723187783476</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-119025</po_number>
+        <first_name>MUSGRAVE</first_name>
+        <last_name>DOUG</last_name>
+        <client_street>9 Deer Park Cres </client_street>
+        <client_city>TORONTO</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4V2C4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>NES3594_BK</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>NES3594_BK</ls_product_id>
+        <product_title>New Aeroccino 3 Milk Frother - BLACK</product_title>
+        <cost>77.86</cost>
+        <shipping_cost>8.31</shipping_cost>
+        <tracking_number>7310723178913479</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-15</shipped_date>
+    </order>
+    <order>
+        <po_number>SC-V-117752</po_number>
+        <first_name>Lyons</first_name>
+        <last_name>Heike</last_name>
+        <client_street>901 Antonio Street</client_street>
+        <client_city>Pickering</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L1W1T4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>TTCTCG08</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TTCTCG08</ls_product_id>
+        <product_title>4 in 1 Electric Grill</product_title>
+        <cost>43.23</cost>
+        <shipping_cost>9.45</shipping_cost>
+        <tracking_number>7310723040052473</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118952</po_number>
+        <first_name>CHATUR</first_name>
+        <last_name>NIKKI</last_name>
+        <client_street>MARLIN TRAVEL HINTON*. 165 SEABOLT CRESCENT</client_street>
+        <client_city>HINTON</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T7V1K4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>REMPR3023</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>REMPR3023</ls_product_id>
+        <product_title>Dress Stainless Steel Watch for Men</product_title>
+        <cost>50.0</cost>
+        <shipping_cost>11.82</shipping_cost>
+        <tracking_number>7310723061395474</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-14</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118881</po_number>
+        <first_name>MERCIER</first_name>
+        <last_name>LOUIS</last_name>
+        <client_street>VOYAGES BERGERON. 3415 PAQUETTE</client_street>
+        <client_city>ST-HUBERT</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>J3Y4M3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>SHEF9501-1</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>SHEF9501-1</ls_product_id>
+        <product_title>Ferrari 100 Roller Ball Pen - RED</product_title>
+        <cost>26.0</cost>
+        <shipping_cost>6.84</shipping_cost>
+        <tracking_number>7310723960757465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>GD-V-118579</po_number>
+        <first_name>Bishop</first_name>
+        <last_name>Michael</last_name>
+        <client_street>552 Denbury Avenue</client_street>
+        <client_city>Ottawa</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2A2N9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>APPMC184LLB</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMC184LLB</ls_product_id>
+        <product_title>Apple Wireless Keyboard</product_title>
+        <cost>73.56</cost>
+        <shipping_cost>7.95</shipping_cost>
+        <tracking_number>7310723809708467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118630</po_number>
+        <first_name>BIBAULT</first_name>
+        <last_name>MICHELLE</last_name>
+        <client_street>TRAVEL CONNECTIONS INC. 23-845 DAKOTA STREET</client_street>
+        <client_city>WINNIPEG</client_city>
+        <client_province>MB</client_province>
+        <client_postal_code>R2M5M3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>TIMT5K632MF</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TIMT5K632MF</ls_product_id>
+        <product_title>Digital Pedometer</product_title>
+        <cost>28.13</cost>
+        <shipping_cost>11.25</shipping_cost>
+        <tracking_number>7310723800278464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118432</po_number>
+        <first_name>MONTPETIT</first_name>
+        <last_name>MARYSE</last_name>
+        <client_street>VOYAGES DU SUROIT. 139 RUE VICTORIA</client_street>
+        <client_city>SALABERRY DE VALLEYFIELD</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>J6T1A4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>TFLFV3476</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>TFLFV3476</ls_product_id>
+        <product_title>Ultraglide Diffusion Iron</product_title>
+        <cost>40.0</cost>
+        <shipping_cost>7.91</shipping_cost>
+        <tracking_number>7310723615658468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118435</po_number>
+        <first_name>DYTAN</first_name>
+        <last_name>BENNETTE</last_name>
+        <client_street>A TRAVEL AGENCY. 4755 VAN HORNE AVENUE</client_street>
+        <client_city>MONTREAL</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>H3W1H8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>BVLOV800CB</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>BVLOV800CB</ls_product_id>
+        <product_title>Bamboo Cutting Board</product_title>
+        <cost>35.1</cost>
+        <shipping_cost>8.85</shipping_cost>
+        <tracking_number>7310723615706466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>TCL-V-118467</po_number>
+        <first_name>SIDHU</first_name>
+        <last_name>KULJIT SINGH</last_name>
+        <client_street>REDTAG.CA. 108 apt 20 humberline drive</client_street>
+        <client_city>ETOBICOKE</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M9W6L5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number>REMPR3027</client_product_number>
+        <quantity>1.0</quantity>
+        <ls_product_id>REMPR3027</ls_product_id>
+        <product_title>Classic Black Leather Watch for Men</product_title>
+        <cost>34.38</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723615380468</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+</shipped_orders>

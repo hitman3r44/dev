@@ -1,0 +1,1103 @@
+/**
+ * @(#)SubscribeNew.java 1.0 
+ *
+ */
+
+package govojo.commerce;
+
+import govojo.communication.Receipt;
+import govojo.communication.config.MailPropertiesManager;
+import govojo.db.Account;
+import govojo.db.AccountType;
+import govojo.db.Address;
+import govojo.db.AddressType;
+import govojo.db.Answer;
+import govojo.db.Authentication;
+import govojo.db.CreditCard;
+import govojo.db.CreditCardStatus;
+import govojo.db.CreditTransaction;
+import govojo.db.Customer;
+import govojo.db.CustomerType;
+import govojo.db.PartnerService;
+import govojo.db.PartnerServiceBilling;
+import govojo.db.PartnerServiceHistory;
+import govojo.db.PrePaidCode;
+import govojo.db.Queue;
+import govojo.db.RewardRedemption;
+import govojo.db.Service;
+import govojo.db.SingleTransaction;
+import govojo.db.SingleTransactionType;
+import govojo.db.Subscription;
+import govojo.db.SubscriptionContract;
+import govojo.db.SubscriptionFastReturn;
+import govojo.db.SubscriptionReserveGame;
+import govojo.db.SubscriptionStatus;
+import govojo.db.SubscriptionTrigger;
+import govojo.db.SubscriptionTriggerStatus;
+import govojo.db.SubscriptionTriggerType;
+import govojo.db.TransactionStatus;
+import govojo.db.TransactionType;
+import govojo.db.value.OrderValue;
+import govojo.debugging.Alert;
+import govojo.membership.MemberRewards;
+import govojo.net.Mail;
+import govojo.util.NullableTimeAndDate;
+import govojo.util.TimeAndDate;
+
+import java.util.HashMap;
+
+
+public class SubscribeNew {
+
+
+	public static boolean TESTING_DONOTAUTHENTICATE =false;
+
+
+	// Send email to clyde and Karl at gameaccess
+	private static String emailRecipients[] = MailPropertiesManager.getInstance().getSubscribeNewEmailRecipients();
+
+	private String errorType = "";
+
+	private String userErrorString = "";
+
+	public static String USER_CORRECTABLE_ERROR = "USER_CORRECTABLE_ERROR";
+
+	public static String ERROR_AVS_PROBLEM = "ERROR_AVS_PROBLEM";
+
+	public static String ERROR_TECH_PROBLEM = "ERROR_TECH_PROBLEM";
+
+	public static int DEFAULT_CONTRACT_LENGTH = 12;
+
+	public static double MONTHLY_COST = 19.95;
+	 public static int UPGRADING = 1;
+
+	public SubscribeNew() {
+		initialize();
+	}
+
+	public void initialize() {
+
+	}
+
+	public void setErrorType(String theType) {
+		errorType = theType;
+	}
+
+	public String getErrorType() {
+		return (errorType);
+	}
+
+	public void setUserErrorString(String theError) {
+		userErrorString = theError;
+	}
+
+	public String getUserErrorString() {
+		return (userErrorString);
+	}
+
+	
+
+	public boolean updateTrialToNewPlanAndCharge(Subscription currentSubscription, int serviceId, int billingCycleId) {
+		Subscription newSubscription = currentSubscription;
+		PartnerService ps = new PartnerService();
+		ps.selectPartnerServiceForPartnerAndServiceIDAndBillingCycle(serviceId, 1, billingCycleId);
+		newSubscription.setPartnerServiceID(ps.getID());
+		newSubscription.setServiceID(serviceId);
+		
+		Customer customer = new Customer();
+		customer.selectFromID(newSubscription.getPurchasingCustomerID());
+		Account account = new Account();
+		account.selectFromID(customer.getAccount());
+		CreditCard creditCard = CreditCard.selectActiveFromCustomerID(customer.getID());				
+		Address billingAddress = Address.selectFromCustomerID(customer.getID(), AddressType.BILLING);
+		Address shippingAddress = Address.selectFromCustomerID(customer.getID(), AddressType.SHIPPING);
+		Answer[] answers = new Answer[0]; 
+		PrePaidCode prePaidCode = new PrePaidCode();
+		prePaidCode.setNumberMonths(1);
+		// Checking before update if the customer is in trial
+		boolean isInTrial = Subscription.isInTrial(newSubscription.getID());
+		boolean applyDiscount = false;
+		if (isInTrial) {
+			boolean alreadyReceivedGame = (Queue.getNumberOfGamesRentedAndReturnedTillDate(customer.getID())!=0);
+			if (!alreadyReceivedGame) {
+				if (newSubscription.getPartnerServiceID()==1) {
+					newSubscription.setPartnerServiceID(15);
+					newSubscription.setServiceID(7);
+					applyDiscount = true;
+				} else if (newSubscription.getPartnerServiceID()==2) {
+					newSubscription.setPartnerServiceID(16);
+					newSubscription.setServiceID(8);
+					applyDiscount = true;
+				}
+			}
+		}
+		// turn on Updating mode
+		UPGRADING=1;
+		boolean result = insertAndCharge(account, customer, creditCard,
+				billingAddress, shippingAddress, newSubscription, answers, prePaidCode, null, null, applyDiscount,false,false);
+		// recover to Inserting mode
+		UPGRADING=0;
+		// if the customer was in trial before update, the billing trigger should be turned at SubscriptionTriggerStatus.FIRED_SUCCESSFUL
+		if (isInTrial 
+			&& (SubscriptionTrigger.getActiveTrialUpgradeTriggersForSubscription(newSubscription.getID()).getStatusID() == SubscriptionTriggerStatus.NOT_FIRED)
+			//Start 24/05/2011 MJGP
+			//If there is any problem, I don't update the trigger
+			&& result
+			//End 24/05/2011 MJGP
+			) {
+			SubscriptionTrigger subTrigger = SubscriptionTrigger.getActiveTrialUpgradeTriggersForSubscription(newSubscription.getID());
+			subTrigger.setStatusID(SubscriptionTriggerStatus.FIRED_SUCCESSFUL);
+			subTrigger.update();
+		}
+		return result;
+	}
+	
+	public boolean insertAndCharge(Account theAccount, Customer theCustomer,
+			CreditCard theCreditCard, Address billingAddress,
+			Address shippingAddress, Subscription theSubscription,
+			Answer[] theAnswers) {
+
+		return insertAndCharge(theAccount, theCustomer, theCreditCard,
+				billingAddress, shippingAddress, theSubscription, theAnswers,
+				null, null, null, null,false,false);
+	}
+	
+	public boolean insertAndCharge(Account theAccount, Customer theCustomer,
+			CreditCard theCreditCard, Address billingAddress,
+			Address shippingAddress, Subscription theSubscription,
+			Answer[] theAnswers, PrePaidCode prePaidCode,
+			RewardRedemption[] rewards, OrderValue orderValue, boolean fastReturn, boolean reserveGame) {
+
+		return insertAndCharge(theAccount, theCustomer, theCreditCard,
+				billingAddress, shippingAddress, theSubscription, theAnswers,
+				prePaidCode, rewards, orderValue, null, fastReturn, reserveGame);
+	}
+	
+	public boolean insertAndCharge(Account theAccount, Customer theCustomer,
+			CreditCard theCreditCard, Address billingAddress,
+			Address shippingAddress, Subscription theSubscription,
+			Answer[] theAnswers, PrePaidCode prePaidCode,
+			RewardRedemption[] rewards, OrderValue orderValue, Boolean applyDiscount, 
+			boolean fastReturn, boolean reserveGame) {
+
+		boolean returnVal = true;
+		// transaction is in discount by default to match with the old implementation
+		if (applyDiscount == null) {
+			applyDiscount = true;
+		}
+		// remenbering state 
+		boolean wasInTrialBeforeTransaction = theSubscription.isInTrial();
+	
+		/******* ACCOUNT **********/
+	        // Set the account type to "customer"
+		theAccount.setAccountType(AccountType.CUSTOMER);
+		//insert the account
+		theAccount.insert();
+		
+		/******* CUSTOMER *********/
+		// Set the customer to subscriber
+		theCustomer.setCustomerType(CustomerType.SUBSCRIBER);
+		// Set the account id 
+		theCustomer.setAccount(theAccount.getID());
+		if((theCustomer.getID() == 0)||(UPGRADING==0)) {
+		    // we are working with an existing customer (preview customer)
+		    // update them instead of insert
+		    //theCustomer.update();
+
+		    // Make a note that a preview customer became a trial customer
+		    /*CustomerConversion convert = new CustomerConversion();
+		    convert.setCustomerID(theCustomer.getID());
+		    convert.setConversionTypeID(ConversionType.PREVIEW_TO_TRIAL);
+		    convert.insert();*/
+			theCustomer.insert();
+			
+		} 
+			
+			System.out.println("********Inserting Customer*******");
+		    // new customer
+		    
+		
+		if(UPGRADING == 1)
+		{
+			theCustomer.update();
+		}
+
+
+		//******* CREDIT CARD *******
+		
+		// Set the Customer ID
+		theCreditCard.setCustomerID(theCustomer.getID());
+		if(theCreditCard.getAccountNumber() == null)
+		{
+			theCreditCard.setStatus(CreditCardStatus.INACTIVE);
+		}
+		else
+		{
+			theCreditCard.setStatus(CreditCardStatus.ACTIVE);
+		}
+		if(UPGRADING==0||theSubscription.getID()==0)
+		{
+		theCreditCard.insert();
+		}else if(UPGRADING ==1 ||theSubscription.getID()!=0)
+		{
+			CreditCard card = new CreditCard();
+			try{
+			card = CreditCard.selectActiveFromCustomerID(theCustomer.getID());
+			}catch(Exception e){
+				e.printStackTrace();
+			}if(card==null)
+			{
+			theCreditCard.insert();
+			}else if(card!=null){
+				theCreditCard.setID(card.getID());
+				theCreditCard.update();
+			}
+			
+		}
+		//******* BILLING ADDRESS ***
+		// Set the Customer ID
+		billingAddress.setCustomerID(theCustomer.getID());
+		// Set the address type to "billing"
+		billingAddress.setAddressType(AddressType.BILLING);
+		if(UPGRADING == 0||theSubscription.getID()==0)
+		{
+		try {
+			billingAddress.insert();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		}else if(UPGRADING==1 ||theSubscription.getID()!=0)
+		{
+			Address addr = new Address();
+			try{
+			addr = Address.selectFromCustomerID(theCustomer.getID(),AddressType.BILLING);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			if (addr==null)
+			{
+				try {
+					billingAddress.insert();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}	
+			}else if(addr!=null)
+			{
+			billingAddress.setID(addr.getID());
+			billingAddress.update();
+			}
+		}
+				   
+		//******* SHIPPING ADDRESS **
+		// Set the Customer ID
+		shippingAddress.setCustomerID(theCustomer.getID());
+		// Set the address type to "shipping"
+		shippingAddress.setAddressType(AddressType.SHIPPING);
+		if(UPGRADING==0||theSubscription.getID()==0)
+		{
+		shippingAddress.insert();
+		}if(UPGRADING == 1 ||theSubscription.getID()!=0)
+		{
+			Address addr = new Address();
+			try{
+			addr = Address.selectFromCustomerID(theCustomer.getID(),AddressType.SHIPPING);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			if (addr==null)
+			{
+				try {
+					shippingAddress.insert();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}	
+			}else if(addr!=null)
+			{
+			shippingAddress.setID(addr.getID());
+			shippingAddress.update();
+			}
+			
+		}
+		//******* SUBSCRIPTION *****
+		// Set the subscription status to "disabled"
+
+		
+		if(UPGRADING == 0||theSubscription.getID()==0)
+		{
+		theSubscription.setSubscriptionStatusID(SubscriptionStatus.FAILED_AUTHENTICATION);
+		// Set the Purchasing Customer ID
+		
+		theSubscription.setPurchasingCustomerID(theCustomer.getID());
+		// Set the Receiving Customer ID
+		theSubscription.setReceivingCustomerID(theCustomer.getID());
+		}
+		// Set the CreditCardID
+		theSubscription.setCreditCardID(theCreditCard.getID());
+         
+		//*############## Things below this line should require
+		//*############## changes in the future. Most of these lines
+		//*############## should just need to be removed...
+		// The partner service ID should be already set, select the service
+		// id for convience.
+		PartnerService thePS = new PartnerService();
+		// if this id does not exist, we have big problems.
+		System.out.println("***subscription***partnerservice id*****"+theSubscription.getPartnerServiceID());
+		if(thePS.selectFromID(theSubscription.getPartnerServiceID())) {
+			System.out.println("****setting service***");
+		    theSubscription.setServiceID(thePS.getService());
+		} else {
+		    // the partner service does not exist, default them to 1, 1
+		    theSubscription.setPartnerServiceID(1);
+		    theSubscription.setServiceID(1);
+		    Alert.send("PartnerService ID undefined",
+			       "The partner service id is does not exist for customer number: " + 
+	                       theCustomer.getID() + 
+	                       ". They have been defaulted to partnerServiceID 1 and serviceID 1");
+		}
+
+		//set the Placement ID
+		theSubscription.setPlacementID(1);
+		// subscription insert
+		if(theSubscription.getID()==0) {
+			theSubscription.insert();
+		}
+		
+		//Start 25/01/2011 MJGP
+		//Add the Fast return and one reserve game services.
+		if (fastReturn)
+		{
+			SubscriptionFastReturn subscriptionFastReturn = new SubscriptionFastReturn();
+			subscriptionFastReturn.selectFromID(theSubscription.getID());
+			subscriptionFastReturn.setFastReturnServiceID(SubscriptionFastReturn.FAST_RETURN);
+			subscriptionFastReturn.setExpireDate(new NullableTimeAndDate());
+			subscriptionFastReturn.update();
+			
+		}
+		if (reserveGame)
+		{
+			SubscriptionReserveGame subReserveGame = new SubscriptionReserveGame();
+           	subReserveGame.selectFromID(theSubscription.getID());
+           	subReserveGame.setReserveGameServiceID(SubscriptionReserveGame.RESERVE_GAMES);
+           	subReserveGame.setExpireDate(new NullableTimeAndDate());
+           	subReserveGame.update();
+		}
+		//End 25/01/2011 MJGP
+		
+		// Insert PartnerServiceHistory (for downgrade issue)
+	        PartnerServiceHistory psh = new PartnerServiceHistory();
+	        psh.setSubscriptionID(theSubscription.getID());
+	        psh.setPartnerServiceID(theSubscription.getPartnerServiceID());
+	        psh.insert();
+
+
+		//******** ANSWER ARRAY *****
+		for(int i = 0; i < theAnswers.length; i++)
+		{
+		    if(theAnswers[i] != null) {
+			// Set the CustomerID
+			theAnswers[i].setCustomerID(theCustomer.getID());
+			// Set the SubscriptionID
+			theAnswers[i].setSubscriptionID(theSubscription.getID());
+			// Set the Email
+			theAnswers[i].setEmail(theCustomer.getEmail());
+			// insert it...
+			theAnswers[i].insert();
+		    }
+		}
+		//For Separating Gold, Platinum and Silver
+		if(theCreditCard.getAccountNumber() != null)
+		{
+	        if(!theCreditCard.isExpired()) { 
+	        	
+	    	    // if prepaid code is null 
+	    	    // AND (order value is null OR shipping and handling is null) 
+	                if((prePaidCode == null) && ((orderValue == null) || (orderValue.getShippingAndHandlingCost() == null))) {
+	    	   
+	    	        //********* FINISHED WITH THE INSERTS, PURCHASE ****
+                	//Start 09/23/2010 MJGP
+            		//We send Shipping address to Moneris in place of billing address.
+            		//To know if there was fraud or at least to warn customer support.	
+//	    	        returnVal = makePurchase(theCustomer, theCreditCard, billingAddress, 
+//	    					 shippingAddress, theSubscription);
+                	returnVal = makePurchase(theCustomer, theCreditCard, shippingAddress, 
+		    					 shippingAddress, theSubscription);
+                	//End 09/23/2010 MJGP
+                			    	      
+	                } else{ // this person is doing a prepay or just paying for
+	    		//ship and handle,  calculate the price
+	    		
+	    		Money total = new Money();
+	    		Money taxAmount = new Money();
+	    		Money amount = null;
+	    	
+	    		if(prePaidCode != null) { //they are doing a prepay
+	    		    Service service = new Service();
+	    		    service.selectFromID(theSubscription.getServiceID());
+
+	    		    // calculate the tax
+	    		    //Money monthlyCostTotal = calculateMonthlyCost(prePaidCode.getNumberMonths());
+	    		    //New SignUp: Below line commented as the existing prepay is to be retained for later rollback
+	    		    //Money monthlyCostTotal = gameaccessMonthlyCost(3, service.getMaxGameOut());
+	    		    System.out.println("The Customer is getting charged:"+thePS.getPrice());
+	    		    Money monthlyCostTotal = new Money(new Double(thePS.getPrice()));
+	    		    amount = monthlyCostTotal;
+	    		    //Start 25/01/2011 MJGP	
+	    			//Add the extra charge, Fast return and Reserve a Game.  
+	    			double extraChargeForOtherServices = Billing.findExtraChargeForOtherServices(theSubscription.getID());
+	    			Money extraMoney = new Money(extraChargeForOtherServices);
+	    			amount = amount.add(extraMoney);
+	    			//End 25/01/2011 MJGP
+
+	    		    total =SalesTax.getInstance().getTotalAmountWithTaxForAddress(shippingAddress.getState(), amount);
+	    		    
+	    		    // the tax will get added back in by the single charge method
+	    		    taxAmount = Money.subtract(total, amount);
+	    		} else if((orderValue != null) && (orderValue.getShippingAndHandlingCost() != null)) { //prepaid code is null, they are just paying for ship and handle
+	    		    taxAmount = new Money("0.00");
+	    		    amount = orderValue.getShippingAndHandlingCost();
+	    		    total = orderValue.getShippingAndHandlingCost();
+	    		} else {
+	    		    Alert.send("Subscribe.java -- bad S&H", "At this point in Subsribe, I am expecting a non-null Shipping and Handling, guess what. I got a null. The follwing customer will be charged zero: " + theCustomer.toShowStateString());
+	    		}
+	    		//New SignUp: Earlier the string was "Charged customer xxx for prepaid membership"
+	                    String comment = "Charged customer " + amount.toString() + " for discounted first month membership";
+	    	    
+	    		Billing theCharge = new Billing();
+	    		theCharge.setCommandLine(false);
+	    		//New Signup changes: Changed the state from MEMBERSHIP_PREPAY to DISCOUNTED_FIRST_MONTH_MEMBERSHIP
+	    		int singleTransType;
+	    		// choosing of the transaction type
+	    		if (applyDiscount == true) {
+	    			singleTransType = SingleTransactionType.DISCOUNTED_FIRST_MONTH_MEMBERSHIP;
+	    		} else {
+	    			singleTransType = SingleTransactionType.MEMBERSHIP_PREPAY;
+	    		}
+
+	    		
+                boolean success = theCharge.singleCharge(theCustomer.getID(), 
+							 amount.toDouble().doubleValue(), 
+							 taxAmount.toDouble().doubleValue(), 
+							 comment, 
+							 singleTransType);
+                if(success) {
+	    		    if(prePaidCode != null) {
+	    			// set the subscription dates 
+	    			// (start, bill, expire) accordingly
+	    			//Prince  adjustPrepaidDates(prePaidCode, theSubscription);
+	    			// since we are doing a prepaid subscription, 
+	    			// set the send email to false
+	    			// the class above us will send it.
+	    			
+	    			TimeAndDate now = new TimeAndDate();
+	    		        theSubscription.setStartDate(now);
+	    		       // theSubscription.setBillDate(new NullableTimeAndDate(now));
+	    		        
+						if(wasInTrialBeforeTransaction || (theSubscription.getPartnerServiceID()==16)||(theSubscription.getPartnerServiceID()==15))
+	    		        {
+							NullableTimeAndDate billDate = PartnerServiceBilling.getBillingDateForPartnerService(now, theSubscription.getPartnerServiceID());
+	    					theSubscription.setBillDate(billDate);
+	    		        }
+	    		        theSubscription.update();
+	    			successActions(theCustomer, theSubscription, false, false, false);
+	    		    } else {
+	    			successActions(theCustomer, theSubscription, true, true, false);
+	    		    }
+	    		    
+	    		    // Rewards should be handled here
+
+	    		    returnVal = true;
+	    		} else { // single charge failed
+	    		    Authentication auth = theCharge.getAuthentication();
+	    		    
+	    		    String errorString = null;
+	    		    if(auth.isUserFriendlyErrorMessage(theCustomer.getLanguage())) {
+	    			setErrorType(USER_CORRECTABLE_ERROR);
+	    			setUserErrorString(auth.getUserErrorMessage());
+	    			errorString = "The error is correctable by the user..." + auth.getUserErrorMessage();
+	    		    } else {
+	    			// Actually this is an unidentified problem, but we are
+	    			// going to inform the user that it is the
+	    			// catch all "tech prob"
+	    			setErrorType(ERROR_TECH_PROBLEM);
+	    			errorString = "Un-identified problem look at the results of the auth in the Database.";
+	    		    }
+	    		    
+	    		    // Set the subscription to be Authentication failed
+	    		    failedSignupActions(theCustomer, theSubscription, errorString);
+	    		    returnVal = false;
+	    		}
+	    		
+	                }
+	        	    
+	    	} else {
+	    	    setErrorType(USER_CORRECTABLE_ERROR);
+	    	    String errorString = "The error is correctable by the user...The expiration date " +
+	    		"on the credit card has passed";
+	                setUserErrorString(errorString);
+	                returnVal = false;
+	    	} 		
+		}
+		else
+		{	
+			if(theSubscription.getPartnerServiceID() == 17)
+			{
+				//For Silver customers only
+				theSubscription.setSubscriptionStatusID(SubscriptionStatus.SILVER_PENDING);
+				theSubscription.update();
+			}
+		}
+		
+		return(returnVal);
+		
+	    }
+
+	public boolean insertGoldPaypal(Account theAccount, Customer theCustomer, Address billingAddress,
+			Address shippingAddress, Subscription theSubscription,
+			Answer[] theAnswers) {
+
+		boolean returnVal = false;
+		/******* ACCOUNT **********/
+		System.out.println("******** Inserting Paypal Customer Data *******");
+		
+	    theAccount.setAccountType(AccountType.CUSTOMER);
+		theAccount.insert();
+		
+		/******* CUSTOMER *********/
+		theCustomer.setCustomerType(CustomerType.SUBSCRIBER);
+		theCustomer.setAccount(theAccount.getID());
+		if((theCustomer.getID() == 0)||(UPGRADING==0)) {
+			theCustomer.insert();			
+		} 
+			
+		
+		if(UPGRADING == 1)
+		{
+			theCustomer.update();
+		}
+
+
+		//******* BILLING ADDRESS ***
+		// Set the Customer ID
+		billingAddress.setCustomerID(theCustomer.getID());
+		// Set the address type to "billing"
+		billingAddress.setAddressType(AddressType.BILLING);
+		if(UPGRADING == 0||theSubscription.getID()==0)
+		{
+		try {
+			billingAddress.insert();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		}else if(UPGRADING==1 ||theSubscription.getID()!=0)
+		{
+			Address addr = new Address();
+			try{
+			addr = Address.selectFromCustomerID(theCustomer.getID(),AddressType.BILLING);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			if (addr==null)
+			{
+				try {
+					billingAddress.insert();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}	
+			}else if(addr!=null)
+			{
+			billingAddress.setID(addr.getID());
+			billingAddress.update();
+			}
+		}
+				   
+		//******* SHIPPING ADDRESS **
+		// Set the Customer ID
+		shippingAddress.setCustomerID(theCustomer.getID());
+		// Set the address type to "shipping"
+		shippingAddress.setAddressType(AddressType.SHIPPING);
+		if(UPGRADING==0||theSubscription.getID()==0)
+		{
+		shippingAddress.insert();
+		}if(UPGRADING == 1 ||theSubscription.getID()!=0)
+		{
+			Address addr = new Address();
+			try{
+			addr = Address.selectFromCustomerID(theCustomer.getID(),AddressType.SHIPPING);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			if (addr==null)
+			{
+				try {
+					shippingAddress.insert();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}	
+			}else if(addr!=null)
+			{
+			shippingAddress.setID(addr.getID());
+			shippingAddress.update();
+			}
+			
+		}
+		
+		//******* SUBSCRIPTION *****
+		// Set the subscription status to "disabled"
+		
+		if(UPGRADING == 0||theSubscription.getID()==0)
+		{
+		theSubscription.setSubscriptionStatusID(SubscriptionStatus.FAILED_AUTHENTICATION);
+		// Set the Purchasing Customer ID
+		
+		theSubscription.setPurchasingCustomerID(theCustomer.getID());
+		// Set the Receiving Customer ID
+		theSubscription.setReceivingCustomerID(theCustomer.getID());
+		}
+		        
+		
+		PartnerService thePS = new PartnerService();
+		// if this id does not exist, we have big problems.
+		System.out.println("***subscription***partnerservice id*****"+theSubscription.getPartnerServiceID());
+		if(thePS.selectFromID(theSubscription.getPartnerServiceID())) {
+			System.out.println("****setting service***");
+		    theSubscription.setServiceID(thePS.getService());
+		} else {
+		    // the partner service does not exist, default them to 1, 1
+		    theSubscription.setPartnerServiceID(1);
+		    theSubscription.setServiceID(1);
+		    Alert.send("PartnerService ID undefined",
+			       "The partner service id is does not exist for customer number: " + 
+	                       theCustomer.getID() + 
+	                       ". They have been defaulted to partnerServiceID 1 and serviceID 1");
+		}
+
+		//set the Placement ID
+		theSubscription.setPlacementID(1);
+		// subscription insert
+		if(theSubscription.getID()==0)
+		{
+			theSubscription.insert();
+		}
+		
+		// Insert PartnerServiceHistory (for downgrade issue)
+	        PartnerServiceHistory psh = new PartnerServiceHistory();
+	        psh.setSubscriptionID(theSubscription.getID());
+	        psh.setPartnerServiceID(theSubscription.getPartnerServiceID());
+	        psh.insert();
+
+
+		//******** ANSWER ARRAY *****
+		for(int i = 0; i < theAnswers.length; i++)
+		{
+		    if(theAnswers[i] != null) {
+			// Set the CustomerID
+			theAnswers[i].setCustomerID(theCustomer.getID());
+			// Set the SubscriptionID
+			theAnswers[i].setSubscriptionID(theSubscription.getID());
+			// Set the Email
+			theAnswers[i].setEmail(theCustomer.getEmail());
+			// insert it...
+			theAnswers[i].insert();
+		    }
+		}
+		//For Separating Gold, Platinum and Silver
+		      
+      	 System.out.println("Customer paypal succeeded");
+      	successActions(theCustomer, theSubscription, true, true, false);
+          returnVal = true;
+		
+		return(returnVal);
+		
+	    }
+	
+	public static void insertSilver(Subscription theSubscribe,
+			Customer theCustomer) {
+		System.out.println("*****inserting****");
+		Service silverService = new Service();
+		PartnerService silverPaServicve = new PartnerService();
+		
+		
+		silverPaServicve.selectFromID(17);
+		theSubscribe.setServiceID(silverPaServicve.getService());
+		theSubscribe.setPartnerID(1);
+		theCustomer.setCustomerType(CustomerType.SUBSCRIBER);
+		
+		
+		theCustomer.insert();
+		
+		theSubscribe.setSubscriptionStatusID(SubscriptionStatus.SILVER_PENDING);
+		
+		theSubscribe.setPurchasingCustomerID(theCustomer.getID());
+		theSubscribe.setReceivingCustomerID(theCustomer.getID());
+		theSubscribe.setPlacementID(1);
+		theSubscribe.insert();
+
+	}
+
+	private static void adjustPrepaidDates(PrePaidCode prePaidCode,
+			Subscription subscription) {
+
+		// determine how long (in months) the prepaid card is good for
+		int numMonths = prePaidCode.getNumberMonths();
+
+		// create nullable time and date objects
+		NullableTimeAndDate ntadExp = new NullableTimeAndDate();
+		NullableTimeAndDate ntad = new NullableTimeAndDate();
+
+		// create a time and date for NOW
+		TimeAndDate now = new TimeAndDate();
+
+		// create a time and date for NOW + numMonths (set its contents)
+		TimeAndDate nowPlusCertLength = (TimeAndDate) now.clone();
+		nowPlusCertLength.add(TimeAndDate.MONTH, numMonths);
+
+		// encapsulate the TimeAndDate object with a NullableTimeAndDate
+		ntad.setTimeAndDate(now);
+		ntadExp.setTimeAndDate(nowPlusCertLength);
+
+		subscription.setExpireDate(ntadExp);
+		subscription.setStartDate(now);
+		subscription.setBillDate(ntadExp);
+		subscription.update();
+	}
+
+	public static boolean updateContract(Subscription subscription,
+			int contractID) {
+
+		return updateContract(subscription, contractID, true);
+	}
+
+	public static boolean updateContract(Subscription subscription,
+			int contractID, boolean update) {
+
+		boolean returnVal = true;
+
+		// set contract information here
+		SubscriptionContract subscriptionContract = new SubscriptionContract();
+		subscriptionContract.selectFromID(contractID);
+
+		TimeAndDate contractEndDate = new TimeAndDate();
+		contractEndDate.add(TimeAndDate.DAY_OF_YEAR, subscriptionContract
+				.getContractLengthInDays());
+
+		subscription.setContractExpireDate(new NullableTimeAndDate(
+				contractEndDate));
+
+		if (update) {
+			returnVal = subscription.update();
+		}
+
+		return returnVal;
+	}
+
+	/**
+	 * The objects passed in have already been inserted into the DB Lets go
+	 * through the purchase process.
+	 */
+	public boolean makePurchase(Customer theCustomer, CreditCard theCreditCard,
+			Address billingAddress, Address shippingAddress,
+			Subscription theSubscription) {
+		System.out.println("**********Calling Make Purchase*********");
+		// Moneris requires that the order id be passed also
+		// set it to be dummy data
+		CreditTransaction theTransaction = new CreditTransaction();
+		theTransaction
+				.setTransactionStatus(TransactionStatus.INCOMPLTE_PRE_CHARGE);
+		theTransaction.setTransactionType(TransactionType.SINGLE);
+		theTransaction.insert();
+		
+		CashRegister payment = new MonerisCashRegister(theCustomer,
+				billingAddress, theCreditCard, theTransaction);
+		
+
+		boolean returnVal = false;
+
+		HashMap resultPairs = null;
+
+		if (TESTING_DONOTAUTHENTICATE == true) {
+			// do not charge, we are testing
+			resultPairs = new HashMap();
+			resultPairs.put("RESULT", "0");
+			resultPairs.put("RESPMSG", "Testing");
+			resultPairs.put("AUTHCODE", "testing auth code");
+			resultPairs.put("AVSADDR", "X");
+			resultPairs.put("AVSZIP", "X");
+			resultPairs.put("CVV2MATCH", "X");
+		} else if(theSubscription.getPartnerServiceID()==17) {
+			resultPairs = new HashMap();
+			resultPairs.put("RESULT", "0");
+			resultPairs.put("RESPMSG", "GoldSignUp");
+			resultPairs.put("AUTHCODE", "Gold sign up");
+			resultPairs.put("AVSADDR", "X");
+			resultPairs.put("AVSZIP", "X");
+			resultPairs.put("CVV2MATCH", "X");
+		} else {
+			System.out
+					.println("============ Inside Else Part=================== authoriozeTransaction");
+		
+			payment.authorizeTransaction();
+			resultPairs = payment.getAuthTokens();
+			
+
+		}
+
+		Authentication auth = new Authentication();
+		SingleTransaction singleTrans = new SingleTransaction();
+
+		if (resultPairs != null) {
+
+			auth = new Authentication(resultPairs);
+			auth.insert();
+
+			theTransaction.setAuthentication(auth.getID());
+			// Pull the reference number from the resulting HashMap
+			if ((String) resultPairs.get("PNREF") != null)
+				theTransaction.setReferenceNum((String) resultPairs
+						.get("PNREF"));
+			theTransaction.setTransactionType(TransactionType.SINGLE);
+			theTransaction.setTransactionStatus(TransactionStatus.COMPLETE);
+			theTransaction.setTransactionComment("Sign-up Authorization");
+			theTransaction.setAmount(payment.getAuthorizeAmount());
+			if(theSubscription.getPartnerServiceID()==17)
+				theTransaction.setAmount("0.00");
+			theTransaction.insert();
+
+			// Now insert the single transaction (This ID is actually the same
+			// ID
+			// as the CreditTransaction)
+			singleTrans.setCustomerID(theCustomer.getID());
+			singleTrans.setCreditCardID(theCreditCard.getID());
+			singleTrans.setBillingAddressID(billingAddress.getID());
+			if (theSubscription.getPartnerServiceID() == 17) {
+				singleTrans
+						.setTypeID(SingleTransactionType.GOLD_MEMBER_SIGN_UP);
+			} else {
+				singleTrans
+						.setTypeID(SingleTransactionType.SIGNUP_AUTHORIZATION);
+			}
+
+			singleTrans.insert(theTransaction.getID());
+		}
+
+		if (auth.isValidTransaction()) {
+			// -------- (KTPL: ) ------
+			// Upgrade this user to two games out after the trial
+
+			SubscriptionTrigger upgradeAfterTrial = new SubscriptionTrigger();
+			upgradeAfterTrial.setSubscriptionID(theSubscription.getID());
+			upgradeAfterTrial
+					.setTypeID(SubscriptionTriggerType.AFTER_TRIAL_UPGRADE_TO_TWO_GAMES_OUT);
+			upgradeAfterTrial.setStatusID(SubscriptionTriggerStatus.NOT_FIRED);
+			
+			// MS: Insert just if it's a platinum member. In fact, without the if condition, this caused 
+			// two inserts on the subscriptiontrigger table and leaded to a duplicate key exception for 
+			// gold members upgrading to a free trial.
+			if(theSubscription.getPartnerServiceID() != 17){
+				upgradeAfterTrial.insert();
+			}
+
+			// -------- (KTPL: ) ------
+			successActions(theCustomer, theSubscription, true, true, false);
+			returnVal = true;
+		} else // bad transaction
+		{
+			// Why is this a bad transaction?
+			// set the error type
+			// First: Check and make sure there was not a communication problem
+			// Second: Check if it is some message that can be displayed to
+			// the user, if so set the message.
+			// Third: Check to see if it is an avs problem
+			// Fourth: This must be another error.
+			String errorString = new String();
+
+			if (!(payment.hasRequiredValues()) || auth.isCommunicationProblem()) {
+				setErrorType(ERROR_TECH_PROBLEM);
+				if (auth.isCommunicationProblem()) {
+					errorString = "Communication problem. Error string = "
+							+ auth.getResponseMessage();
+				} else { // does not have required values
+					errorString = "Did not have required values.";
+				}
+			} else if (auth.isUserFriendlyErrorMessage()) {
+				setErrorType(USER_CORRECTABLE_ERROR);
+				setUserErrorString(auth.getUserErrorMessage());
+				errorString = "The error is correctable by the user..."
+						+ auth.getUserErrorMessage();
+			} else if (!auth.isValidAVS()) {
+				setErrorType(ERROR_AVS_PROBLEM);
+				errorString = "AVS failed, they should have a chance to re-enter";
+			} else {
+				// Actually this is an unidentified problem, but we are
+				// going to inform the user that it is the
+				// catch all "tech prob"
+				setErrorType(ERROR_TECH_PROBLEM);
+				errorString = "Un-identified problem look at the results of the auth in the Database.";
+			}
+
+			failedSignupActions(theCustomer, theSubscription, errorString);
+
+			returnVal = false;
+		}
+
+		return (returnVal);
+	}
+
+	public static void successActions(Customer theCustomer,
+			Subscription theSubscription, boolean sendEmail) {
+		
+		successActions(theCustomer, theSubscription, sendEmail, true, true);
+	}
+
+	public static void successActions(Customer theCustomer,
+			Subscription theSubscription, boolean sendEmail,
+			boolean adjustDates, boolean rewards) {
+		System.out.println("*****calling success actions*******");
+		if (rewards == true) {
+			// This user gets a magazine subscription
+			MemberRewards.awardMagazineSubscription(theCustomer.getID());
+		}
+
+		// theSubscription.setSubscriptionStatusID(SubscriptionStatus.NEEDS_EMAIL_VERIFICATION);
+		  if(theSubscription.getPartnerServiceID() == 17)
+			{
+				//For Gold customers only
+				theSubscription.setSubscriptionStatusID(SubscriptionStatus.GOLD_ACTIVE);
+				System.out.println("*****setting gold****");
+				theSubscription.setOncePlatinum(0);
+				//theSubscription.update();
+			}else{
+		theSubscription.setSubscriptionStatusID(SubscriptionStatus.ACTIVE);
+		theSubscription.setOncePlatinum(1);
+			}
+		if (adjustDates == true) {
+			System.out.println("*******setting bill dates inside success actions*********");
+			theSubscription.setStartDate(new TimeAndDate());
+			Service serv = new Service();
+			serv.selectFromID(theSubscription.getServiceID());
+			// Create a NullableTimeAndDate that is now + numberTrialDays
+			TimeAndDate nowPlusTrial = new TimeAndDate();
+			if(theSubscription.getPartnerServiceID()==15 || (theSubscription.getPartnerServiceID()==16))
+			{
+				nowPlusTrial.add(TimeAndDate.MONTH, 1);
+			}
+			
+			nowPlusTrial.add(TimeAndDate.DATE, serv.getTrialLength());
+			NullableTimeAndDate billDate = new NullableTimeAndDate();
+			billDate.setTimeAndDate(nowPlusTrial);
+			theSubscription.setBillDate(billDate);
+		}
+		theSubscription.update();
+
+		if (sendEmail) {
+			Receipt.sendReceipt(theCustomer, theSubscription);
+			Mail.send(emailRecipients, "GameAccess SUCCESSFUL TRANSACTION",
+					new String("Subscription ID: " + theSubscription.getID()
+							+ "\n" + "Customer ID: " + theCustomer.getID()
+							+ "\n" + "Customer Name: "
+							+ theCustomer.getFirstName() + " "
+							+ theCustomer.getLastName() + "\n"));
+
+		}
+	}
+
+	public static void failedSignupActions(Customer theCustomer,
+			Subscription theSubscription, String errorString) {
+		// Append to their login to prevent problems if they successfully
+		// try to sign up again, otherwise they will have two logons as the
+		// same email...
+		if(UPGRADING == 0)
+		{
+		theCustomer.setLogin(theCustomer.getLogin() + "_FAILED_AUTH");
+		theCustomer.update();
+
+		theSubscription
+				.setSubscriptionStatusID(SubscriptionStatus.FAILED_AUTHENTICATION);
+		}
+		
+		theSubscription.update();
+	}
+	
+	public static Money calculateTotalPriceForPrePay(int numMonths,
+			Address shippingAddress) {
+		return (calculateTotalPriceForPrePay(numMonths, shippingAddress,
+				new Money("19.50")));
+	}
+
+	public static Money calculateTotalPriceForPrePay(int numMonths,
+			Address shippingAddress, Money extraCost) {
+
+		Money total = calculateMonthlyCost(numMonths);
+
+		if (shippingAddress != null) {
+			total = SalesTax.getInstance().calculateTotalForAmountAndAddress(
+					total, shippingAddress);
+		}
+
+		// Add in the shipping/handling or what ever the extra cost is, after
+		// the taxes
+		if (extraCost != null) {
+			total = Money.add(extraCost, total);
+		}
+
+		return (total);
+	}
+
+	public static Money calculateMonthlyCost(int numMonths) {
+
+		Money total = null;
+
+		if (numMonths != 0) {
+			// change it to a double so we don't lose precision
+			total = new Money(MONTHLY_COST * (double) numMonths);
+		} else {
+			Alert
+					.send(
+							"Subscribe.calculateTotalPriceForPrePay() - Invalid month offset passed",
+							"A month offset waspassed in that does not exist in the system");
+			total = null;
+		}
+		return (total);
+	}
+
+	public static Money gameaccessPrePayTotal(int partnerServiceID,
+			Address shippingAddress) {
+		Money total = new Money();
+		PartnerService pasv = new PartnerService();
+		if (pasv.selectFromID(partnerServiceID) == true) {
+			Service service = new Service();
+			if (service.selectFromID(pasv.getService()) == true) {
+				total = gameaccessMonthlyCost(3, service.getMaxGameOut());
+				Double taxRate = CanadianTax
+						.getTaxAsGreaterThanOne(shippingAddress.getState());
+				Double amount = SalesTax.calculateTotalForAmountAndTax(total
+						.toDouble(), taxRate);
+				total = new Money(amount);
+			}
+		}
+		return (total);
+	}
+
+	public static Money gameaccessMonthlyCost(int numMonths, int numGamesOut) {
+		Money returnVal = new Money();
+
+		if (numMonths == 3) {
+			if (numGamesOut == 1) {
+				returnVal = new Money(42.95);
+			} else if (numGamesOut == 2) {
+				returnVal = new Money(59.95);
+			} else if (numGamesOut == 3) {
+				returnVal = new Money(79.95);
+			} else if (numGamesOut == 4) {
+				returnVal = new Money(95.95);
+			}
+		}
+		return (returnVal);
+	}
+
+	public static void main(String args[]) {
+		System.out.println("1 month: " + (calculateMonthlyCost(1)).toString());
+		System.out.println("2 months: " + (calculateMonthlyCost(2)).toString());
+		System.out.println("3 months: " + (calculateMonthlyCost(3)).toString());
+		System.out.println("6 months: " + (calculateMonthlyCost(6)).toString());
+	}
+}

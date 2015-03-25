@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<admin_properties>
+
+<!--notification_admin: indexGroupTag:0 -->
+    <shipping_confirmation>
+        <notification_admin>hamdoune@loyaltysource.com</notification_admin>
+        <notification_admin>frank@loyaltysource.com</notification_admin>
+    </shipping_confirmation>
+    
+<!-- next group:indexGroupTag:0 -->
+
+</admin_properties>

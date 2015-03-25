@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Orders>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697301</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140419</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_HIP7TB4</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>7'' Android 4.0 Touchscreen Tablet</Product_Title>
+    <Unit_Price>123.75</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>Yves</Client_First_Name>
+    <Client_Last_Name>Levac</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>285 St-Vincent</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>St-Placide</Address_City>
+    <Address_Province>QC</Address_Province>
+    <Address_Postal_Code>J0V 2B0</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>450-258-4241</Client_Phone>
+    <Client_Email/>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697269</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140419</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_PEU23322</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Paris u'Select 18cm/7'' Salt &amp; Pepper Mill Combo - NATURAL</Product_Title>
+    <Unit_Price>56.25</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>George</Client_First_Name>
+    <Client_Last_Name>Etches</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>6200 Tomken Road</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Mississauga</Address_City>
+    <Address_Province>ON</Address_Province>
+    <Address_Postal_Code>L5T 1X7</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>(905) 670-7354</Client_Phone>
+    <Client_Email>netches@atlastire.com</Client_Email>
+  </Order>
+  <Order>
+    <Company_Header>Online Rewards</Company_Header>
+    <Purchase_Order_Number>697269</Purchase_Order_Number>
+    <Client_Order_ID/>
+    <Purchase_Order_Date>20140419</Purchase_Order_Date>
+    <Required_Date/>
+    <Quantity>1</Quantity>
+    <LS_Product_ID>OR_KTABCG11</LS_Product_ID>
+    <Customer_Product_Number/>
+    <Product_Title>Coffee Grinder</Product_Title>
+    <Unit_Price>40.00</Unit_Price>
+    <Client_Number/>
+    <Client_First_Name>George</Client_First_Name>
+    <Client_Last_Name>Etches</Client_Last_Name>
+    <Client_Other_Name/>
+    <Address_Street>6200 Tomken Road</Address_Street>
+    <Address_Street_Other/>
+    <Address_City>Mississauga</Address_City>
+    <Address_Province>ON</Address_Province>
+    <Address_Postal_Code>L5T 1X7</Address_Postal_Code>
+    <Shipping_Company/>
+    <Client_Phone>(905) 670-7354</Client_Phone>
+    <Client_Email>netches@atlastire.com</Client_Email>
+  </Order>
+</Orders>

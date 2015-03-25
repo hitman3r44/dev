@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="loyaltySource">
+    <property environment="env"/>
+    <property name="TOMCAT_LOYALTY" value="../../tomcat/apache-tomcat-6.0.29"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse"/>
+    <property name="loyaltySource_lib.location" value="../loyaltySource_lib"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="../../../loyaltySource_lib"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="LOYALTY_LIB_BACKEND.userclasspath">
+        <pathelement location="../../../loyaltySource_lib/lib/asm-1.5.3.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/cglib-2.1_3.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/ehcache-core-2.1.0.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/jai_codec-1.1.3.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/jai-core-1.1.3-alpha.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/jdom.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/mail-1.4.3.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/mybatis-3.0.1.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/postgresql-8.4-701.jdbc4.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/quartz-all-1.8.1.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/rome-1.0.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/slf4j-api-1.5.11.jar"/>
+        <pathelement location="../../../loyaltySource_lib/lib/slf4j-jdk14-1.5.11.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libsearch/apache-solr-solrj-3.3.0.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libsearch/commons-codec-1.3.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libsearch/commons-httpclient-3.1.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libsearch/commons-logging-1.1.1.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libsearch/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
+    </path>
+    <path id="LOYALTY_LIB_DEV.userclasspath">
+        <pathelement location="../../../loyaltySource_lib/libdev/junit-4.8.2.jar"/>
+        <pathelement location="../../../loyaltySource_lib/libdev/lombok.jar"/>
+    </path>
+    <path id="LOYALTY_LIB_SHARED.userclasspath">
+        <pathelement location="../../../loyaltySource_lib/libshared/log4j-1.2.16.jar"/>
+    </path>
+    <path id="LOYALTY_LIB_WEB.userclasspath">
+        <pathelement location="../../../loyaltySource_admin/lib/commons-beanutils-1.7.0.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-digester-2.0.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-fileupload-1.2.1.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-io-1.3.2.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-lang-2.5.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-logging-1.0.4.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/commons-logging-api-1.1.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/flexjson.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/freemarker-2.3.15.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/jsoup-1.7.2.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/ognl-2.7.3.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/struts2-core-2.1.8.1.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/struts2jsonresult0.99.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/struts2-tiles-plugin-2.1.8.1.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/struts-mailreader-dao-1.3.5.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/tiles-api-2.0.6.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/tiles-core-2.0.6.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/tiles-jsp-2.0.6.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/urlrewrite-3.2.0.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/xwork-core-2.1.6.jar"/>
+        <pathelement location="../../../loyaltySource_admin/lib/poi-2.5.1.jar"/>
+    </path>
+    <path id="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath">
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/annotations-api.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/catalina-ant.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/catalina-ha.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/catalina-tribes.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/catalina.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/commons-collections-3.1.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/commons-logging.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/cryptix32.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/el-api.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/HTTPClient.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jai_codec.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jai_core.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jakarta-oro-2.0.6.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jakarta-oro-2.0.6_bk.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jasper-el.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jasper-jdt.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jasper.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/JavaAPI.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/JavaAPI_bk.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jdbc-latest.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jdom.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/jsp-api.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/log4j-1.2.8.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/mail-1.3.1.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/proxool-0.8.3.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/servlet-api.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/struts.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/utils.jar"/>
+        <pathelement location="../../tomcat/apache-tomcat-6.0.29/lib/velocity-1.4.jar"/>
+    </path>
+    <path id="loyaltySource_lib.classpath">
+        <pathelement location="${loyaltySource_lib.location}/bin"/>
+        <pathelement location="${loyaltySource_lib.location}/SOAP/rating/bin"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/bin"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/conf"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axiom-api-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axiom-dom-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axiom-impl-1.2.12.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axis2-codegen-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axis2-kernel-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axis2-xmlbeans-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/commons-codec-1.3.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/commons-httpclient-3.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/commons-logging-1.1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/httpcore-4.0.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/neethi-3.0.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/wsdl4j-1.6.2.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/xmlbeans-2.3.0.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/XmlSchema-1.4.7.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/wss4j-1.5.12.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axis2-adb-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/axis2-transport-http-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/mail-1.4.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/commons-fileupload-1.2.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/woden-api-1.0M9.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/rampart-core-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/rampart-policy-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/xmlsec-1.4.5.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/rampart-trust-1.6.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/opensaml1-1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/opensaml-2.2.3.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/rampart/xmltooling-1.2.0.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/jaxen-1.1.1.jar"/>
+        <pathelement location="${loyaltySource_lib.location}/third-party/lib/axis2/mex-1.6.1-impl.jar"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="LOYALTY_LIB_BACKEND.userclasspath"/>
+        <path refid="LOYALTY_LIB_DEV.userclasspath"/>
+        <path refid="LOYALTY_LIB_SHARED.userclasspath"/>
+        <path refid="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath"/>
+    </path>
+    <path id="loyaltySource.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="LOYALTY_LIB_BACKEND.userclasspath"/>
+        <path refid="LOYALTY_LIB_DEV.userclasspath"/>
+        <path refid="LOYALTY_LIB_SHARED.userclasspath"/>
+        <path refid="LOYALTY_LIB_WEB.userclasspath"/>
+        <path refid="loyaltySource_lib.classpath"/>
+        <pathelement location="${TOMCAT_LOYALTY}/lib/annotations-api.jar"/>
+        <pathelement location="${TOMCAT_LOYALTY}/lib/el-api.jar"/>
+        <pathelement location="${TOMCAT_LOYALTY}/lib/jasper.jar"/>
+        <pathelement location="${TOMCAT_LOYALTY}/lib/jsp-api.jar"/>
+        <pathelement location="${TOMCAT_LOYALTY}/lib/servlet-api.jar"/>
+        <path refid="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="resources">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${loyaltySource_lib.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${loyaltySource_lib.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="loyaltySource.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" source="${source}" target="${target}">
+            <src path="resources"/>
+            <classpath refid="loyaltySource.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

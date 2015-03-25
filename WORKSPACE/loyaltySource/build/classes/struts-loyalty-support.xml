@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+     <package name="struts-loyalty-support" namespace="/" extends="struts-loyalty-default">        	 
+		
+		<action name="homePage" class="com.loyauty.web.struts.action.home.HomePage">
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="basicStack" />
+            <result name="success" type="tiles">/homePage.tiles</result>
+        </action>
+        
+        <action name="venderAgreement" class="com.loyauty.web.struts.action.user.VenderAgreement">
+			<interceptor-ref name="i18nStack"/>
+			<result name="success" type="tiles">/venderAgreement.tiles</result>
+			<result name="input" type="tiles">/homePage.tiles</result>
+		</action>
+        
+        <action name="searchResults" class="com.loyauty.web.struts.action.search.SearchResults">
+        	<interceptor-ref name="i18nStack"/>
+            <result name="success" type="tiles">/searchResults.tiles</result>
+            <result name="showProduct" type="redirect">${urlProductPageSeo}</result>
+        </action>		
+        
+        <action name="product" class="com.loyauty.web.struts.action.product.Product">
+        	<interceptor-ref name="i18nStack"/>
+            <result name="success" type="tiles">/product.tiles</result>              
+        </action>
+        
+        <action name="ourProducts" class="com.loyauty.web.struts.action.product.OurProducts">
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="basicStack" />
+            <result name="success" type="tiles">/ourProducts.tiles</result>            
+        </action>  
+        
+        <action name="ourBrand" class="com.loyauty.web.struts.action.brand.OurBrand">
+            <interceptor-ref name="i18nStack"/>
+            <interceptor-ref name="basicStack" />
+            <result name="success" type="tiles">/ourBrand.tiles</result>            
+        </action>
+        
+		<action name="accessXML" class="com.loyauty.web.struts.action.xml.AccessXML">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="catalogUpdates.xml"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="tiles">/homePage.tiles</result>
+         </action>
+         
+         <action name="accessXMLWithDates" class="com.loyauty.web.struts.action.xml.AccessXMLWithDates">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="${xmlFileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="tiles">/homePage.tiles</result>
+        </action>         
+        
+        <action name="updatesXML" class="com.loyauty.web.struts.action.xml.UpdatesXML">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="catalogUpdates.xml"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+        </action>
+        
+        <action name="accessXMLFr" class="com.loyauty.web.struts.action.xml.AccessXMLFR">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="catalogUpdatesFr.xml"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="tiles">/homePage.tiles</result>
+         </action>
+         
+         <action name="accessXMLWithDatesFr" class="com.loyauty.web.struts.action.xml.AccessXMLWithDatesFR">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="${xmlFileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="input" type="tiles">/homePage.tiles</result>
+        </action>         
+        
+        <action name="updatesXMLFr" class="com.loyauty.web.struts.action.xml.UpdatesXMLFR">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="catalogUpdatesFr.xml"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+        </action>
+                     
+        <action name="ordersConfirmation" class="com.loyauty.web.struts.action.orders.OrdersConfirmation">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+        </action>
+       <action name="customerSignUp" class="com.loyauty.web.struts.action.user.CustomerSignUp" >
+        	<interceptor-ref name="i18nStack"/>
+        	<result name="success" type="tiles">/customerSignUp.tiles</result>                			 
+			<result name="input" type="tiles">/customerSignUp.tiles</result> 
+        </action>
+        
+        <action name="error" class="com.loyauty.web.struts.action.errors.Error" >
+        	<interceptor-ref name="i18nStack"/>
+        	<result name="success" type="tiles">/error.tiles</result>                			 
+			<result name="input" type="tiles">/error.tiles</result> 
+        </action>
+             
+        <action name="sales" class="com.loyauty.web.struts.action.sales.ClientSales" >
+        	<interceptor-ref name="i18nStack"/>
+        	<result name="success" type="tiles">/sales.tiles</result>                			 
+			<result name="input" type="tiles">/sales.tiles</result> 
+        </action>
+        
+          
+        <action name="sendEmail" class="com.loyauty.web.struts.action.pages.SendEmail" >
+        	<interceptor-ref name="i18nStack"/>
+        	<result name="success" type="redirect">mailto:info@loyaltysource.com</result>                			 
+			<result name="input" type="tiles">/homePage.do</result> 
+        </action>
+
+ 				        
+    </package>
+   
+   	<package name="struts-loyauty-user" namespace="/user" extends="struts-loyalty-default"> 
+	
+		<action name="*User" class="com.loyauty.web.struts.action.user.UserCUD" method="{1}">
+			<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>               
+        </action>                
+        
+        <action name="login" class="com.loyauty.web.struts.action.user.Login" >
+        	<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="vanadiumJsonValidationWorkflowStack"/>
+            <result name="success" type="redirect">/homePage.do</result>                			 
+        </action>
+              
+        <action name="switchLang" class="com.loyauty.web.struts.action.user.SwitchLang" >
+        	<interceptor-ref name="i18nStack"/>        	
+			<interceptor-ref name="basicStack"/>
+			<result name="homePage" type="redirect">/homePage.do</result>
+        </action>
+        
+        <action name="logout" class="com.loyauty.web.struts.action.user.Logout" >
+        	<interceptor-ref name="i18nStack"/>
+			<interceptor-ref name="basicStack"/>
+			<result name="success" type="redirect">/homePage.do</result>
+        </action>
+
+    </package>      
+       
+    <package name="struts-loyauty-ajax" namespace="/ajax" extends="struts-loyalty-default">
+		
+		<result-types>
+			<result-type name="json" class="code.google.struts2jsonresult.JSONResult">
+				<!-- format the output json -->
+				<param name="prettyPrint">false</param>
+				<!--
+					Serialize the result property of the action 
+					See (https://cwiki.apache.org/S2PLUGINS/another-json-result-typestruts2jsonresult.html) to understand this configuration
+				-->
+				<param name="target">result</param>
+				<param name="deepSerialize">true</param>
+				<param name="patterns"> -*.class</param>
+			</result-type>
+		</result-types>
+		
+	</package>   
+    
+    <package name="wildcard" namespace="/" extends="struts-loyalty-default">
+		
+        <action name="*" class="com.loyauty.web.struts.action.LoyautyAction">
+            <result type="tiles">/{1}.tiles</result>
+        </action>
+        
+    </package>
+    
+</struts>

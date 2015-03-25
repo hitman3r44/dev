@@ -1,0 +1,23 @@
+package com.loyauty.dao.mybatis;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.loyauty.dao.CategoryDao;
+import com.loyauty.model.Category;
+
+
+public class CategoryDaoImpl extends BasicGenericDaoImpl<Category, Long> implements  CategoryDao{
+
+	public CategoryDaoImpl(SqlSession sqlSession, String mapperName) {
+		super(sqlSession, mapperName);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Category> getCategoriesByBrand(long id) {
+		return (List<Category>) getSqlSession().selectList(getNameSpace("getCategoriesByBrand"), id);
+	}
+
+}

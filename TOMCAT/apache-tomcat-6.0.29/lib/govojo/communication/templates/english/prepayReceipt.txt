@@ -1,0 +1,21 @@
+Dear #FIRSTNAME#,
+ 
+Welcome to Game Access, the best way to rent video games online. We would like to thank you for signing up to our service. Please login to your account and begin adding games to your queue. For a detailed explanation of how the queue works, please click on the link below.
+ 
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp
+
+Your account is prepaid through #EXPIRY_DATE#, after which you will be billed monthly. Please note that you may choose to renew your membership quarterly or biannually and save 10 to 20% off your next membership fee. You may do so by going into the 'My account' section and clicking on 'Change my membership'.
+
+If you have any questions, please feel free to contact our Customer Service using the link below.
+ 
+http://www.gameaccess.ca/displayContactUs.jsp
+
+
+Now you've got games!
+ 
+The Game Access team
+
+*---- Helpful Links ----*
+Contact Us - http://www.gameaccess.ca/displayContactUs.jsp
+My Account - http://www.gameaccess.ca/showMembershipChangeInfo.do
+FAQ - http://www.gameaccess.ca/displayFAQ.jsp

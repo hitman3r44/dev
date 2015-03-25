@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soa.tutorials.serg.edu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soa.tutorials.serg.edu" xmlns:intf="http://soa.tutorials.serg.edu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soa.tutorials.serg.edu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getNums">
+    <complexType>
+     <sequence>
+      <element name="n" type="xsd:int"/>
+      <element name="m" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNumsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNumsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNums2">
+    <complexType>
+     <sequence>
+      <element name="n" type="xsd:int"/>
+      <element name="m" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNums2Response">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getNums2Return" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getNums2Request">
+
+      <wsdl:part element="impl:getNums2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNumsRequest">
+
+      <wsdl:part element="impl:getNums" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNums2Response">
+
+      <wsdl:part element="impl:getNums2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNumsResponse">
+
+      <wsdl:part element="impl:getNumsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Echo">
+
+      <wsdl:operation name="getNums">
+
+         <wsdl:input message="impl:getNumsRequest" name="getNumsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNumsResponse" name="getNumsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNums2">
+
+         <wsdl:input message="impl:getNums2Request" name="getNums2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNums2Response" name="getNums2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EchoSoapBinding" type="impl:Echo">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getNums">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNumsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNumsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNums2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNums2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNums2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EchoService">
+
+      <wsdl:port binding="impl:EchoSoapBinding" name="Echo">
+
+         <wsdlsoap:address location="http://localhost/SOATest/services/Echo"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>7201-313050</po_number>
+        <first_name>Phil</first_name>
+        <last_name>Bergeron</last_name>
+        <client_street>2212 Gladwin Cres Unit E9</client_street>
+        <client_city>Ottawa</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K1B5N1</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPMD101LL</ls_product_id>
+        <product_title>MacBook Pro 13" - English</product_title>
+        <cost>1182.06</cost>
+        <shipping_cost>40.58</shipping_cost>
+        <tracking_number>7310723787103452</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>7201-313054</po_number>
+        <first_name>Eric</first_name>
+        <last_name>Maltais</last_name>
+        <client_street>195 rang 5 ouest</client_street>
+        <client_city>Mont-Carmel</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>G0L1W0</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGT210RZ</ls_product_id>
+        <product_title>Galaxy Tab 3 7'' 8GB</product_title>
+        <cost>215.06</cost>
+        <shipping_cost>14.24</shipping_cost>
+        <tracking_number>7310723820215456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-02</shipped_date>
+    </order>
+    <order>
+        <po_number>274342-1</po_number>
+        <first_name>Barry</first_name>
+        <last_name>Johnson</last_name>
+        <client_street>105 - 1755 West Broadway</client_street>
+        <client_city>Vancouver</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6J4S5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGUN32EH5300FXZC</ls_product_id>
+        <product_title>LED Smart TV 32" 1080p 60Hz</product_title>
+        <cost>503.96</cost>
+        <shipping_cost>41.12</shipping_cost>
+        <tracking_number>7310723632675455</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>274342-1</po_number>
+        <first_name>Barry</first_name>
+        <last_name>Johnson</last_name>
+        <client_street>105 - 1755 West Broadway</client_street>
+        <client_city>Vancouver</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6J4S5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUA8CHDMI6</ls_product_id>
+        <product_title>6 Foot HDMI Cable</product_title>
+        <cost>19.29</cost>
+        <shipping_cost>12.17</shipping_cost>
+        <tracking_number>7310723629779456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>276846-1</po_number>
+        <first_name>Lauren</first_name>
+        <last_name>Sweezie</last_name>
+        <client_street>200 Foster Cres</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5R3Y5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>SONDVPSR51</ls_product_id>
+        <product_title>Sony 1080p Upconverting DVD Player</product_title>
+        <cost>48.13</cost>
+        <shipping_cost>8.70</shipping_cost>
+        <tracking_number>7310723710383456</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>279491-1</po_number>
+        <first_name>John</first_name>
+        <last_name>MacDonald</last_name>
+        <client_street>96 McIlveen Drive</client_street>
+        <client_city>Saint John</client_city>
+        <client_province>NB</client_province>
+        <client_postal_code>E2J4Y7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>SMGUN32EH5300FXZC</ls_product_id>
+        <product_title>LED Smart TV 32" 1080p 60Hz</product_title>
+        <cost>503.96</cost>
+        <shipping_cost>35.11</shipping_cost>
+        <tracking_number>7310723633476457</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>279491-1</po_number>
+        <first_name>John</first_name>
+        <last_name>MacDonald</last_name>
+        <client_street>96 McIlveen Drive</client_street>
+        <client_city>Saint John</client_city>
+        <client_province>NB</client_province>
+        <client_postal_code>E2J4Y7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>ALUA8CHDMI6</ls_product_id>
+        <product_title>6 Foot HDMI Cable</product_title>
+        <cost>19.29</cost>
+        <shipping_cost>12.06</shipping_cost>
+        <tracking_number>7310723640792458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>7201-313052</po_number>
+        <first_name>Alex</first_name>
+        <last_name>Ip</last_name>
+        <client_street>825 Denison St.</client_street>
+        <client_city>Markham</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R5E4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>TIMT5K470L3</ls_product_id>
+        <product_title>Health Touch Contact Heart Rate Monitor Watch</product_title>
+        <cost>46.88</cost>
+        <shipping_cost>7.50</shipping_cost>
+        <tracking_number>7310723665865458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>7201-313053</po_number>
+        <first_name>Alex</first_name>
+        <last_name>Ip</last_name>
+        <client_street>825 Denison St.</client_street>
+        <client_city>Markham</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3R5E4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>PEUPW210052</ls_product_id>
+        <product_title>Epivac Dual Action Wine &amp; Champagne Pump Set</product_title>
+        <cost>21.88</cost>
+        <shipping_cost>7.50</shipping_cost>
+        <tracking_number>7310723686317455</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-01</shipped_date>
+    </order>
+    <order>
+        <po_number>7201-313062</po_number>
+        <first_name>LARRY</first_name>
+        <last_name>YU</last_name>
+        <client_street>UNIT 6  13511 CRESTWOOD PLACE</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6V2E9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>DBDSSL20SB</ls_product_id>
+        <product_title>20V Lithium Cordless Drill/Driver with SmartSelect</product_title>
+        <cost>103.28</cost>
+        <shipping_cost>14.80</shipping_cost>
+        <tracking_number>7310723358770472</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+    <order>
+        <po_number>280057-1</po_number>
+        <first_name>Corey</first_name>
+        <last_name>Piercey</last_name>
+        <client_street>107 Norris Close</client_street>
+        <client_city>Red Deer</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T4P1r2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>HIPHST29A4GB</ls_product_id>
+        <product_title>4GB MP3 Video Player</product_title>
+        <cost>21.88</cost>
+        <shipping_cost>11.11</shipping_cost>
+        <tracking_number>7310723912863466</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>7201-313045</po_number>
+        <first_name>LARRY</first_name>
+        <last_name>YU</last_name>
+        <client_street>UNIT 6  13511 CRESTWOOD PLACE</client_street>
+        <client_city>RICHMOND</client_city>
+        <client_province>BC</client_province>
+        <client_postal_code>V6V2E9</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>5.0</quantity>
+        <ls_product_id>PRE101163G</ls_product_id>
+        <product_title>Herb Savor &amp; Snips Bundle</product_title>
+        <cost>26.0</cost>
+        <shipping_cost>17.30</shipping_cost>
+        <tracking_number>7310723827837460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>5721-202620</po_number>
+        <first_name>Lesley</first_name>
+        <last_name>MacDonald</last_name>
+        <client_street>200 Foster Crescent</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5R3Y5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>GARG3</ls_product_id>
+        <product_title>Approach G3 Handheld Golf GPS Navigator</product_title>
+        <cost>269.09</cost>
+        <shipping_cost>12.75</shipping_cost>
+        <tracking_number>7310723809122461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>280029-1</po_number>
+        <first_name>Joe</first_name>
+        <last_name>Perri</last_name>
+        <client_street>114 Jacqueline St.</client_street>
+        <client_city>London</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>N5Z3P7</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>BVL800ESXL</ls_product_id>
+        <product_title>Duo-Temp 15 Bar Espresso Maker</product_title>
+        <cost>258.57</cost>
+        <shipping_cost>19.81</shipping_cost>
+        <tracking_number>7310723595815462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>280047-1</po_number>
+        <first_name>Pat</first_name>
+        <last_name>McCay</last_name>
+        <client_street>6632 90th AVE SE</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2Z1N6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>LLGBP540</ls_product_id>
+        <product_title>3D Capable Blu-Ray Disk Player with Smart TV and Built in WI-FI</product_title>
+        <cost>133.69</cost>
+        <shipping_cost>22.37</shipping_cost>
+        <tracking_number>7310723466820465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>5721-202695</po_number>
+        <first_name>Patricia</first_name>
+        <last_name>Burzese</last_name>
+        <client_street>200 Foster Cresent</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5R3y5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>VIVDVR548</ls_product_id>
+        <product_title>HD Digital Camcorder</product_title>
+        <cost>56.72</cost>
+        <shipping_cost>7.95</shipping_cost>
+        <tracking_number>7310723466531460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-08</shipped_date>
+    </order>
+    <order>
+        <po_number>277298-1</po_number>
+        <first_name>Al</first_name>
+        <last_name>Gill</last_name>
+        <client_street>6550-30th Avenue</client_street>
+        <client_city>Nisku</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T9E0R4</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>3.0</quantity>
+        <ls_product_id>ALUF114F</ls_product_id>
+        <product_title>14" Digital Frame with 512MB Memory and Remote</product_title>
+        <cost>123.7</cost>
+        <shipping_cost>24.90</shipping_cost>
+        <tracking_number>7310723277567467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>279293-1</po_number>
+        <first_name>Nancy</first_name>
+        <last_name>Davison</last_name>
+        <client_street>200 Foster Crescent</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5R3Y5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>HARAVR1710</ls_product_id>
+        <product_title>AVR1710 7.2 Channel A/V Receiver</product_title>
+        <cost>400.13</cost>
+        <shipping_cost>21.78</shipping_cost>
+        <tracking_number>7310723334135462</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>280074-1</po_number>
+        <first_name>Ernie</first_name>
+        <last_name>De Angelis</last_name>
+        <client_street>353 Clarence Street</client_street>
+        <client_city>Brampton</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L6W1T6</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>WILWTF1825</ls_product_id>
+        <product_title>NFL Pro Replica Football Game Ball</product_title>
+        <cost>37.5</cost>
+        <shipping_cost>9.80</shipping_cost>
+        <tracking_number>7310723142467465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>5721-202590</po_number>
+        <first_name>Anthony</first_name>
+        <last_name>Paquette</last_name>
+        <client_street>3000 louis a amos</client_street>
+        <client_city>Lachine</client_city>
+        <client_province>QC</client_province>
+        <client_postal_code>h8t3p8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPME643CA</ls_product_id>
+        <product_title>New iPod Touch 16GB</product_title>
+        <cost>225.14</cost>
+        <shipping_cost>9.68</shipping_cost>
+        <tracking_number>7310723144671464</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>5721-202612</po_number>
+        <first_name>Alan</first_name>
+        <last_name>Nielsen</last_name>
+        <client_street>3238 Folkway drive</client_street>
+        <client_city>Burlington</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>l7p3x2</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>APPME856CA</ls_product_id>
+        <product_title>iPad mini with Retina display Wi-Fi 128GB - SPACE GRAY</product_title>
+        <cost>734.03</cost>
+        <shipping_cost>27.21</shipping_cost>
+        <tracking_number>7310723132493467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>276842-1</po_number>
+        <first_name>Clint</first_name>
+        <last_name>Busenius</last_name>
+        <client_street>12354 184 st</client_street>
+        <client_city>Edmonton</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T5V0A5</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>LEN59373006</ls_product_id>
+        <product_title>G505s Notebook PC</product_title>
+        <cost>503.54</cost>
+        <shipping_cost>30.99</shipping_cost>
+        <tracking_number>7310723939603458</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>278249-1</po_number>
+        <first_name>Richard</first_name>
+        <last_name>Lamoureux</last_name>
+        <client_street>172 Chapman Close SE</client_street>
+        <client_city>Calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>T2X3T3</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>HASCRSCG_ENG</ls_product_id>
+        <product_title>Cranium 2.0 Canadian Edition and Game of Scattegories Boardgames - ENGLISH</product_title>
+        <cost>64.8</cost>
+        <shipping_cost>13.06</shipping_cost>
+        <tracking_number>7310723930584459</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+    <order>
+        <po_number>5727-200147</po_number>
+        <first_name>Nick</first_name>
+        <last_name>Harvey</last_name>
+        <client_street>87 Colonial rd</client_street>
+        <client_city>Belleville</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K8R1B8</client_postal_code>
+        <client_order_id/>
+        <client_other_id/>
+        <client_number/>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>KTAKSB1575MC</ls_product_id>
+        <product_title>5 Speed Stand Blender</product_title>
+        <cost>115.0</cost>
+        <shipping_cost>14.05</shipping_cost>
+        <tracking_number>7310723020817467</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-05</shipped_date>
+    </order>
+</shipped_orders>

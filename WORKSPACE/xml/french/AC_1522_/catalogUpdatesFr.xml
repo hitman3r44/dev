@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <ls-product id="AC_TFL0050">
+        <cost>268.14</cost>
+        <discount-dollars>81.85</discount-dollars>
+        <discount-percent>23.39</discount-percent>
+    </ls-product>
+    <ls-product id="AC_BUGB0103">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>16.78</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>25.19</BC>
+                <MB>19.91</MB>
+                <NB>21.26</NB>
+                <NL>26.96</NL>
+                <NS>21.60</NS>
+                <NT>25.19</NT>
+                <NU>87.58</NU>
+                <ON>14.45</ON>
+                <PE>21.43</PE>
+                <QC>12.18</QC>
+                <SK>25.19</SK>
+                <YT>33.61</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_TFLFV3476">
+        <cost>38.40</cost>
+        <discount-dollars>26.59</discount-dollars>
+        <discount-percent>40.91</discount-percent>
+    </ls-product>
+    <ls-product id="AC_VIC30379_BK">
+        <type>Luggage Sets</type>
+    </ls-product>
+    <ls-product id="AC_TFLOF170850">
+        <cost>82.16</cost>
+        <discount-dollars>17.83</discount-dollars>
+        <discount-percent>17.83</discount-percent>
+    </ls-product>
+    <ls-product id="AC_TFLTT560E50">
+        <cost>50.61</cost>
+        <discount-dollars>9.38</discount-dollars>
+        <discount-percent>15.64</discount-percent>
+    </ls-product>
+    <ls-product id="AC_TFLFR404652">
+        <cost>66.20</cost>
+        <discount-dollars>23.79</discount-dollars>
+        <discount-percent>26.44</discount-percent>
+    </ls-product>
+    <ls-product id="AC_TFLFZ700051">
+        <cost>226.93</cost>
+        <discount-dollars>73.06</discount-dollars>
+        <discount-percent>24.35</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD10706">
+        <cost>291.20</cost>
+        <discount-dollars>148.79</discount-dollars>
+        <discount-percent>33.82</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>33.66</average-canada>
+            <rate-per-province>
+                <AB>47.88</AB>
+                <BC>47.88</BC>
+                <MB>35.62</MB>
+                <NB>37.73</NB>
+                <NL>50.94</NL>
+                <NS>38.27</NS>
+                <NT>47.88</NT>
+                <NU>187.86</NU>
+                <ON>27.95</ON>
+                <PE>38.00</PE>
+                <QC>23.41</QC>
+                <SK>47.88</SK>
+                <YT>61.20</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CUD10707">
+        <cost>324.24</cost>
+        <discount-dollars>145.75</discount-dollars>
+        <discount-percent>31.01</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD10708">
+        <cost>383.04</cost>
+        <discount-dollars>166.95</discount-dollars>
+        <discount-percent>30.36</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD10906">
+        <cost>206.64</cost>
+        <discount-dollars>83.35</discount-dollars>
+        <discount-percent>28.74</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD10907">
+        <cost>228.48</cost>
+        <discount-dollars>91.51</discount-dollars>
+        <discount-percent>28.60</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD10908">
+        <cost>277.20</cost>
+        <discount-dollars>92.79</discount-dollars>
+        <discount-percent>25.08</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD11904G">
+        <cost>131.04</cost>
+        <discount-dollars>48.95</discount-dollars>
+        <discount-percent>27.20</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD11907G">
+        <cost>151.20</cost>
+        <discount-dollars>68.79</discount-dollars>
+        <discount-percent>31.27</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD11908G">
+        <cost>189.84</cost>
+        <discount-dollars>60.15</discount-dollars>
+        <discount-percent>24.06</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD17204G">
+        <cost>110.88</cost>
+        <discount-dollars>39.11</discount-dollars>
+        <discount-percent>26.08</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD17207G">
+        <cost>131.04</cost>
+        <discount-dollars>58.95</discount-dollars>
+        <discount-percent>31.03</discount-percent>
+    </ls-product>
+    <ls-product id="AC_CUD17208G">
+        <cost>157.92</cost>
+        <discount-dollars>62.07</discount-dollars>
+        <discount-percent>28.21</discount-percent>
+    </ls-product>
+    <ls-product id="AC_TFL0990G">
+        <cost>50.62</cost>
+        <discount-dollars>49.37</discount-dollars>
+        <discount-percent>49.37</discount-percent>
+    </ls-product>
+    <ls-product id="AC_TFLGC702D52">
+        <cost>162.67</cost>
+        <discount-dollars>87.32</discount-dollars>
+        <discount-percent>34.93</discount-percent>
+    </ls-product>
+    <ls-product id="AC_BUG49545001">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>21.43</average-canada>
+            <rate-per-province>
+                <AB>30.24</AB>
+                <BC>30.24</BC>
+                <MB>23.58</MB>
+                <NB>25.08</NB>
+                <NL>32.25</NL>
+                <NS>25.46</NS>
+                <NT>30.24</NT>
+                <NU>107.36</NU>
+                <ON>17.71</ON>
+                <PE>25.27</PE>
+                <QC>15.00</QC>
+                <SK>30.24</SK>
+                <YT>39.55</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_TFLIS5500Q0">
+        <cost>84.55</cost>
+        <discount-dollars>55.44</discount-dollars>
+        <discount-percent>39.60</discount-percent>
+    </ls-product>
+    <ls-product id="AC_VIC31318201">
+        <type>Luggage Sets</type>
+        <estimated-shipping-rates>
+            <average-canada>34.21</average-canada>
+            <rate-per-province>
+                <AB>49.07</AB>
+                <BC>49.07</BC>
+                <MB>36.14</MB>
+                <NB>38.33</NB>
+                <NL>52.24</NL>
+                <NS>38.88</NS>
+                <NT>49.07</NT>
+                <NU>196.45</NU>
+                <ON>28.27</ON>
+                <PE>38.60</PE>
+                <QC>23.50</QC>
+                <SK>49.07</SK>
+                <YT>62.87</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_MNI982214">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AC_MNI864700">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>19.04</average-canada>
+            <rate-per-province>
+                <AB>27.85</AB>
+                <BC>27.85</BC>
+                <MB>21.19</MB>
+                <NB>22.69</NB>
+                <NL>29.86</NL>
+                <NS>23.07</NS>
+                <NT>27.85</NT>
+                <NU>104.97</NU>
+                <ON>15.32</ON>
+                <PE>22.88</PE>
+                <QC>12.61</QC>
+                <SK>27.85</SK>
+                <YT>37.16</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_MNI92019">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AC_MNI91854">
+        <type>Computer Cases</type>
+    </ls-product>
+    <ls-product id="AC_MNI92002">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>22.24</average-canada>
+            <rate-per-province>
+                <AB>32.02</AB>
+                <BC>32.02</BC>
+                <MB>24.36</MB>
+                <NB>25.97</NB>
+                <NL>34.21</NL>
+                <NS>26.37</NS>
+                <NT>32.02</NT>
+                <NU>120.22</NU>
+                <ON>18.16</ON>
+                <PE>26.16</PE>
+                <QC>15.14</QC>
+                <SK>32.02</SK>
+                <YT>42.02</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_MNI958771">
+        <type>Travel Bags</type>
+        <estimated-shipping-rates>
+            <average-canada>32.37</average-canada>
+            <rate-per-province>
+                <AB>45.65</AB>
+                <BC>45.65</BC>
+                <MB>34.37</MB>
+                <NB>36.38</NB>
+                <NL>48.52</NL>
+                <NS>36.88</NS>
+                <NT>45.65</NT>
+                <NU>174.53</NU>
+                <ON>27.01</ON>
+                <PE>36.62</PE>
+                <QC>22.79</QC>
+                <SK>45.65</SK>
+                <YT>58.25</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_MNI982264">
+        <type>Computer Cases</type>
+        <estimated-shipping-rates>
+            <average-canada>18.49</average-canada>
+            <rate-per-province>
+                <AB>25.98</AB>
+                <BC>25.98</BC>
+                <MB>20.70</MB>
+                <NB>22.06</NB>
+                <NL>27.75</NL>
+                <NS>22.40</NS>
+                <NT>25.98</NT>
+                <NU>88.38</NU>
+                <ON>15.25</ON>
+                <PE>22.23</PE>
+                <QC>12.98</QC>
+                <SK>25.98</SK>
+                <YT>34.40</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_MNILHB20020">
+        <type>Travel Bags</type>
+    </ls-product>
+    <ls-product id="AC_SAS511141349">
+        <type>Travel Bags</type>
+        <estimated-shipping-rates>
+            <average-canada>26.89</average-canada>
+            <rate-per-province>
+                <AB>39.21</AB>
+                <BC>39.21</BC>
+                <MB>28.90</MB>
+                <NB>30.80</NB>
+                <NL>41.89</NL>
+                <NS>31.28</NS>
+                <NT>39.21</NT>
+                <NU>156.98</NU>
+                <ON>21.87</ON>
+                <PE>31.04</PE>
+                <QC>17.98</QC>
+                <SK>39.21</SK>
+                <YT>51.10</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_TFLK170DCA">
+        <cost>32.89</cost>
+        <discount-dollars>17.10</discount-dollars>
+        <discount-percent>34.21</discount-percent>
+    </ls-product>
+    <ls-product id="AC_SASXENWPAG">
+        <type>Travel Bags</type>
+    </ls-product>
+    <ls-product id="AC_CNB700103200021">
+        <msrp>124.99</msrp>
+        <cost>81.25</cost>
+        <discount-dollars>43.74</discount-dollars>
+        <discount-percent>34.99</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>11.25</average-canada>
+            <rate-per-province>
+                <AB>14.30</AB>
+                <BC>14.30</BC>
+                <MB>13.40</MB>
+                <NB>14.26</NB>
+                <NL>15.22</NL>
+                <NS>14.47</NS>
+                <NT>14.30</NT>
+                <NU>27.89</NU>
+                <ON>9.67</ON>
+                <PE>14.37</PE>
+                <QC>8.90</QC>
+                <SK>14.30</SK>
+                <YT>18.80</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700103710021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103710021_1423843106701.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Portefeuille LADY - Noir</title>
+        <description>Le portefeuille en cuir véritable avec un effet python et lisse offre assez d'espace pour tous vos affaires. Il est orné avec un rabat avant avec fermeture à pression et multiples compartiments intérieurs de pour cartes et billets.</description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse Couleur: Noir. Placage de ton or. Caractéristiques:Rabat avant avec fermeture à pression. Multiple compartiments intérieurs pour cartes &amp; billets.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700103710021</model-number>
+        <weight>1.10</weight>
+        <shipping-size>
+            <length>5.00</length>
+            <width>4.75</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>11.25</average-canada>
+            <rate-per-province>
+                <AB>14.30</AB>
+                <BC>14.30</BC>
+                <MB>13.40</MB>
+                <NB>14.26</NB>
+                <NL>15.22</NL>
+                <NS>14.47</NS>
+                <NT>14.30</NT>
+                <NU>27.89</NU>
+                <ON>9.67</ON>
+                <PE>14.37</PE>
+                <QC>8.90</QC>
+                <SK>14.30</SK>
+                <YT>18.80</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700108400021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700108400021_1423843497079.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Portefeuille SUBLIME - Graphite</title>
+        <description>Cette pochette élégante vous accompagne d’un endroit à l'autre. La silhouette en cuir fabriqué en Italie et fermeture à pression aimantée est parfait pour le rangement de vos indispensables. </description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur:Graphite. Placage de ton gris foncé. Caractéristiques:Rabat avant avec fermeture à pression aimantée. Multiple compartiments intérieurs, dont un à zip, pour cartes, billets &amp; autre.  </specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700108400021</model-number>
+        <weight>2.87</weight>
+        <shipping-size>
+            <length>7.5</length>
+            <width>4.0</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>12.77</average-canada>
+            <rate-per-province>
+                <AB>16.55</AB>
+                <BC>16.55</BC>
+                <MB>14.85</MB>
+                <NB>15.78</NB>
+                <NL>17.61</NL>
+                <NS>16.01</NS>
+                <NT>16.55</NT>
+                <NU>37.09</NU>
+                <ON>10.91</ON>
+                <PE>15.90</PE>
+                <QC>9.96</QC>
+                <SK>16.55</SK>
+                <YT>21.48</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CEL44310">
+        <brand-name>Celestron</brand-name>
+        <group>Children</group>
+        <category>Toys</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cel44310_1423843698048.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Microscope numérique portable avec écran ACL</title>
+        <description>Le microscope numérique de poche Celestron ACL est, un microscope portable léger avec un écran ACL TFT 2,4 pouces couleur. Une pochette de transport souple est inclus afin que vous puissiez l'emmener sur tous vos aventures en plein air.</description>
+        <specification>Écran LCD 2,4 couleur. 3 MP appareil photo numérique. 1x à 3,7x zoom optique jusqu'à 54x grossissement. Zoom numérique 4x. 128 Mo de mémoire flash interne, avec fente pour carte SD pour le stockage ajouté jusqu'à 16 Go. Éclairage LED réglable. Câble USB 2.0 pour le transfert des images sur votre ordinateur. Étui de transport souple.</specification>
+        <others>2 piles AA non fournies.</others>
+        <warranty>1 année</warranty>
+        <model-number>44310</model-number>
+        <weight>1.00</weight>
+        <shipping-size>
+            <length>4.00</length>
+            <width>3.0</width>
+            <height>2.0</height>
+        </shipping-size>
+        <msrp>114.99</msrp>
+        <cost>98.37</cost>
+        <discount-dollars>16.62</discount-dollars>
+        <discount-percent>14.45</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>11.71</average-canada>
+            <rate-per-province>
+                <AB>14.75</AB>
+                <BC>14.75</BC>
+                <MB>13.86</MB>
+                <NB>14.72</NB>
+                <NL>15.68</NL>
+                <NS>14.93</NS>
+                <NT>14.75</NT>
+                <NU>28.35</NU>
+                <ON>10.13</ON>
+                <PE>14.83</PE>
+                <QC>9.36</QC>
+                <SK>14.75</SK>
+                <YT>19.26</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700108930021">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700108930021_1423845168694.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Portefeuille SUBLIME - Noir</title>
+        <description>Cette pochette élégante vous accompagne d’un endroit à l'autre. La silhouette en cuir fabriqué en Italie et fermeture à pression aimantée est parfait pour le rangement de vos indispensables. </description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur: Noir. Placage de ton or rose. Caractéristiques:Rabat avant avec fermeture à pression aimantée. Multiple compartiments intérieurs, dont un à zip, pour cartes, billets &amp; autre.  </specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700108930021</model-number>
+        <weight>2.87</weight>
+        <shipping-size>
+            <length>7.5</length>
+            <width>4.0</width>
+            <height>0.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>12.77</average-canada>
+            <rate-per-province>
+                <AB>16.55</AB>
+                <BC>16.55</BC>
+                <MB>14.85</MB>
+                <NB>15.78</NB>
+                <NL>17.61</NL>
+                <NS>16.01</NS>
+                <NT>16.55</NT>
+                <NU>37.09</NU>
+                <ON>10.91</ON>
+                <PE>15.90</PE>
+                <QC>9.96</QC>
+                <SK>16.55</SK>
+                <YT>21.48</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700104200020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700104200020_1423845864077.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à bandoulière MISS - Naturel et noir</title>
+        <description>Ce sac à main bandoulière est idéal pour porter tous les jours. Cette piece en cuir véritable est ornée avec une bandoulière ajustable, un compartiment intérieure zippée, et un rabat avant fermeture à pression. </description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur:Naturel &amp; Noir. Placage de ton argent. Caractéristiques:Bandoulière ajustable. Rabat avant avec fermeture à pression aimantée. Compartiment arrière. Compartiment intérieur zippé &amp; compartiment pour téléphone. Longueur bandoulière:  23,5'' au plus court / 25'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700104200020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>8.0</length>
+            <width>7.0</width>
+            <height>3.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>14.52</average-canada>
+            <rate-per-province>
+                <AB>18.29</AB>
+                <BC>18.29</BC>
+                <MB>16.60</MB>
+                <NB>17.53</NB>
+                <NL>19.36</NL>
+                <NS>17.76</NS>
+                <NT>18.29</NT>
+                <NU>38.84</NU>
+                <ON>12.66</ON>
+                <PE>17.65</PE>
+                <QC>11.71</QC>
+                <SK>18.29</SK>
+                <YT>23.22</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700104710020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700104710020_1423845997445.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à bandoulière MISS - Noir</title>
+        <description>Ce sac à main bandoulière est idéal pour porter tous les jours. Cette piece en cuir véritable est ornée avec une bandoulière ajustable, un compartiment intérieure zippée, et un rabat avant fermeture à pression. </description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur:Noir. Placage de ton or. Caractéristiques:Bandoulière ajustable. Rabat avant avec fermeture à pression aimantée. Compartiment arrière. Compartiment intérieur zippé &amp; compartiment pour téléphone. Longueur bandoulière:  23,5'' au plus court / 25'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700104710020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>8.0</length>
+            <width>7.0</width>
+            <height>3.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>14.43</average-canada>
+            <rate-per-province>
+                <AB>18.29</AB>
+                <BC>18.29</BC>
+                <MB>16.60</MB>
+                <NB>17.53</NB>
+                <NL>19.36</NL>
+                <NS>NOT AVAILABLE</NS>
+                <NT>18.29</NT>
+                <NU>38.84</NU>
+                <ON>12.66</ON>
+                <PE>17.65</PE>
+                <QC>11.71</QC>
+                <SK>18.29</SK>
+                <YT>23.22</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700101310020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700101310020_1423846372332.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à épaule SIGNATURE - Noir</title>
+        <description>Ce sac branché est faite en cuir véritable et orné avec des chaînes décoratives amovibles. Avec sa bandoulière adjustable, il peut être porté en diagonale ou à l’épaule.</description>
+        <specification>Composition / Finition: Cuir véritable d'Italie (vache). Effet texturé. Chaînes décoratives amovibles. Couleur: Noir. Placage de ton argent. Caractéristiques: Bandoulière ajustable. Fermeture à zip sur le dessus. Compartiment intérieur zippé. Longueur bandoulière: 21'' au plus court / 22,5'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700101310020</model-number>
+        <weight>3.31</weight>
+        <shipping-size>
+            <length>13.75</length>
+            <width>10.5</width>
+            <height>3.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>19.59</average-canada>
+            <rate-per-province>
+                <AB>25.09</AB>
+                <BC>25.09</BC>
+                <MB>21.85</MB>
+                <NB>23.00</NB>
+                <NL>26.48</NL>
+                <NS>23.28</NS>
+                <NT>25.09</NT>
+                <NU>65.21</NU>
+                <ON>17.08</ON>
+                <PE>23.14</PE>
+                <QC>15.48</QC>
+                <SK>25.09</SK>
+                <YT>32.18</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700101400020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700101400020_1423846549905.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à épaule SIGNATURE - Argenté</title>
+        <description>Ce sac branché est faite en cuir véritable et orné avec des chaînes décoratives amovibles. Avec sa bandoulière adjustable, il peut être porté en diagonale ou à l’épaule.</description>
+        <specification>Composition / Finition: Cuir véritable d'Italie (vache). Effet texturé. Chaînes décoratives amovibles. Couleur: Argenté. Placage de ton gris foncé. Caractéristiques: Bandoulière ajustable. Fermeture à zip sur le dessus. Compartiment intérieur zippé. Longueur bandoulière: 21'' au plus court / 22,5'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700101400020</model-number>
+        <weight>3.31</weight>
+        <shipping-size>
+            <length>13.75</length>
+            <width>10.5</width>
+            <height>3.75</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>19.59</average-canada>
+            <rate-per-province>
+                <AB>25.09</AB>
+                <BC>25.09</BC>
+                <MB>21.85</MB>
+                <NB>23.00</NB>
+                <NL>26.48</NL>
+                <NS>23.28</NS>
+                <NT>25.09</NT>
+                <NU>65.21</NU>
+                <ON>17.08</ON>
+                <PE>23.14</PE>
+                <QC>15.48</QC>
+                <SK>25.09</SK>
+                <YT>32.18</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700105310020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700105310020_1423847134849.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à épaule DAME - Noir et argent</title>
+        <description>Élégant et sophistiqué est faite en cuir véritable avec un effet python et lisse. Fini avec un rabat avant avec fermeture à pression aimantée, vos essentiels sont stockés en style.</description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur:Noir. Placage de ton argent. Caractéristiques:Bandoulière amovible combinaison chaînes &amp; cuir. Rabat avant avec fermeture à pression aimantée. Compartiment arrière zippé. Compartiment intérieur zippé. Longueur bandoulière: 13''. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700105310020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>9.0</length>
+            <width>5.25</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>13.96</average-canada>
+            <rate-per-province>
+                <AB>17.32</AB>
+                <BC>17.32</BC>
+                <MB>15.79</MB>
+                <NB>16.66</NB>
+                <NL>18.29</NL>
+                <NS>16.88</NS>
+                <NT>17.32</NT>
+                <NU>33.91</NU>
+                <ON>12.28</ON>
+                <PE>16.77</PE>
+                <QC>11.49</QC>
+                <SK>17.32</SK>
+                <YT>22.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700105710020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700105710020_1423847274542.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à épaule DAME - Noir et or</title>
+        <description>Élégant et sophistiqué est faite en cuir véritable avec un effet python et lisse. Fini avec un rabat avant avec fermeture à pression aimantée, vos essentiels sont stockés en style.</description>
+        <specification>Composition / Finition:Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur: Noir. Placage de ton or. Caractéristiques:Bandoulière amovible combinaison chaînes &amp; cuir. Rabat avant avec fermeture à pression aimantée. Compartiment arrière zippé. Compartiment intérieur zippé. Longueur bandoulière: 13''. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700105710020</model-number>
+        <weight>2.20</weight>
+        <shipping-size>
+            <length>9.0</length>
+            <width>5.25</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>13.96</average-canada>
+            <rate-per-province>
+                <AB>17.32</AB>
+                <BC>17.32</BC>
+                <MB>15.79</MB>
+                <NB>16.66</NB>
+                <NL>18.29</NL>
+                <NS>16.88</NS>
+                <NT>17.32</NT>
+                <NU>33.91</NU>
+                <ON>12.28</ON>
+                <PE>16.77</PE>
+                <QC>11.49</QC>
+                <SK>17.32</SK>
+                <YT>22.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700103200020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103200020_1423847691390.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à poigné LADY - Naturel et noir</title>
+        <description>Fait en cuir véritable italien, cette sac à main offre les dimensions idéales pour le transport de vos indispensables pour la journée. Ornée avec des poignées supérieures et une bandoulière ajustable et amovible, cette bourse est ultra-pratique et chic.  </description>
+        <specification>Composition / Finition: Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur: Naturel &amp; Noir. Placage de ton argent. Caractéristiques:Poignées supérieures et bandoulière ajustable &amp; amovible. Fermeture à zip sur le dessus. Compartiment arrière zippé; Deux compartiments avant dont un avec fermeture à pression. Multiple compartiments intérieurs, dont un à zip, pour tablette électronique &amp; téléphone. Longueur poignées / Bandoulière: Poignées: 5 1/2'' Bandoulière: 22'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700103200020</model-number>
+        <weight>4.40</weight>
+        <shipping-size>
+            <length>11.5</length>
+            <width>9.5</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>15.84</average-canada>
+            <rate-per-province>
+                <AB>19.93</AB>
+                <BC>19.93</BC>
+                <MB>18.05</MB>
+                <NB>19.04</NB>
+                <NL>21.06</NL>
+                <NS>19.29</NS>
+                <NT>19.93</NT>
+                <NU>44.66</NU>
+                <ON>13.86</ON>
+                <PE>19.16</PE>
+                <QC>12.76</QC>
+                <SK>19.93</SK>
+                <YT>26.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_CNB700103400020">
+        <brand-name>Caroline Néron</brand-name>
+        <group>Apparel</group>
+        <category>Handbags</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/cnb700103400020_1423847849945.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Sac à poigné LADY - Graphite</title>
+        <description>Fait en cuir véritable italien, cette sac à main offre les dimensions idéales pour le transport de vos indispensables pour la journée. Ornée avec des poignées supérieures et une bandoulière ajustable et amovible, cette bourse est ultra-pratique et chic.  </description>
+        <specification>Composition / Finition: Cuir véritable d'Italie (vache &amp; mouton). Effet python &amp; lisse. Couleur: Graphite. Placage de ton gris foncé. Caractéristiques:Poignées supérieures et bandoulière ajustable &amp; amovible. Fermeture à zip sur le dessus. Compartiment arrière zippé; Deux compartiments avant dont un avec fermeture à pression. Multiple compartiments intérieurs, dont un à zip, pour tablette électronique &amp; téléphone. Longueur poignées / Bandoulière: Poignées: 5 1/2'' Bandoulière: 22'' au plus long. Livré avec une housse de protection.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>700103400020</model-number>
+        <weight>4.40</weight>
+        <shipping-size>
+            <length>11.5</length>
+            <width>9.5</width>
+            <height>2.0</height>
+        </shipping-size>
+        <estimated-shipping-rates>
+            <average-canada>17.08</average-canada>
+            <rate-per-province>
+                <AB>19.93</AB>
+                <BC>19.93</BC>
+                <MB>18.05</MB>
+                <NB>19.04</NB>
+                <NL>21.06</NL>
+                <NS>19.29</NS>
+                <NT>19.93</NT>
+                <NU>44.66</NU>
+                <ON>NOT AVAILABLE</ON>
+                <PE>19.16</PE>
+                <QC>12.76</QC>
+                <SK>19.93</SK>
+                <YT>26.17</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_GAI333269448338G">
+        <brand-name>Gaiam</brand-name>
+        <group>Sports</group>
+        <category>Fitness</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/gai333269448338g_1423853736288.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Kit de Yoga - VIOLET</title>
+        <description>Le Kit de Yoga Gaiam est un moyen idéal pour faciliter le yoga dans votre routine d'entraînement quotidien. Il est livré avec un tapis de yoga, un étui de transport, un bloc de yoga, et une bouteille d'eau.</description>
+        <specification>Cet ensemble inclus: Tapis de yoga. Bloc de yoga. Étui de transport. Bouteille d'eau.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>ZKOCMT703331</model-number>
+        <weight>5.00</weight>
+        <shipping-size>
+            <length>24.0</length>
+            <width>10.0</width>
+            <height>10.00</height>
+        </shipping-size>
+        <msrp>109.99</msrp>
+        <cost>67.76</cost>
+        <discount-dollars>42.23</discount-dollars>
+        <discount-percent>38.39</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>21.00</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>33.05</BC>
+                <MB>24.40</MB>
+                <NB>26.12</NB>
+                <NL>35.43</NL>
+                <NS>26.55</NS>
+                <NT>NOT AVAILABLE</NT>
+                <NU>132.36</NU>
+                <ON>17.90</ON>
+                <PE>26.34</PE>
+                <QC>14.53</QC>
+                <SK>33.05</SK>
+                <YT>43.77</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_TFL254575G">
+        <brand-name>T-fal</brand-name>
+        <group>Kitchen</group>
+        <category>Cookware</category>
+        <type>Cookware Sets</type>
+        <image>http://loyaltysource.com/media/product/large/tfl254575g_1423856390648.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Poêles d'induction Talent - 3 pieces</title>
+        <description>Démontrez vos talents culinaires à l'aide avec cette poêles à frire Talent de T-Fal. Faite en aluminium robuste, cette poêles présente un revêtement antiadhésif révolutionnaire en titane à 6 couches. Avec ses rebords surélevés, elles procure une bonne surface de cuisson, tout en évitant les éclaboussures. La technologie Thermo-Spot indique lorsque la poêle est assez chaude, assurant des résultats précis de cuisson.</description>
+        <specification>Cet ensemble inclus: Poêle 20cm. Poêle 24cm. Poêle 30cm.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>E4420252</model-number>
+        <weight>8.00</weight>
+        <shipping-size>
+            <length>17.72</length>
+            <width>12.60</width>
+            <height>9.45</height>
+        </shipping-size>
+        <msrp>254.99</msrp>
+        <cost>73.01</cost>
+        <discount-dollars>181.98</discount-dollars>
+        <discount-percent>71.37</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>20.34</average-canada>
+            <rate-per-province>
+                <AB>29.98</AB>
+                <BC>29.98</BC>
+                <MB>22.65</MB>
+                <NB>24.22</NB>
+                <NL>NOT AVAILABLE</NL>
+                <NS>24.61</NS>
+                <NT>29.98</NT>
+                <NU>114.48</NU>
+                <ON>16.56</ON>
+                <PE>24.42</PE>
+                <QC>13.65</QC>
+                <SK>29.98</SK>
+                <YT>39.76</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_RWTIS1430">
+        <brand-name>Rowenta</brand-name>
+        <group>Homeworks</group>
+        <category>Appliances</category>
+        <type>Irons &amp; Steamers</type>
+        <image>http://loyaltysource.com/media/product/large/rwtis1430_1423858344524.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Défroisseur Pro Compact</title>
+        <description>Tous les avantages d'un défroisseur regroupés dans un seul appareil compact et portable. Ce défroisseur à vapeur Rowenta permet d'éliminer les faux plis de tous vos vêtements de façon rapide et facile.</description>
+        <specification>Puissance de 1400 watts. Réservoir d'eau de 1 litre pour une vapeur continue et sans limite avec jet de vapeur réglable. Tuyau souple qui reste froid au toucher en tout temps. Rangement pratique : le tuyau souple s'enroule autour de la base et la tête se verrouille pour un rangement sécuritaire. Accessoire permettant de faire disparaître facilement les plis les plus tenaces.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>IS1430</model-number>
+        <weight>3.00</weight>
+        <shipping-size>
+            <length>10.0</length>
+            <width>6.0</width>
+            <height>6.00</height>
+        </shipping-size>
+        <msrp>69.99</msrp>
+        <cost>50.00</cost>
+        <discount-dollars>19.99</discount-dollars>
+        <discount-percent>28.56</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>12.54</average-canada>
+            <rate-per-province>
+                <AB>16.98</AB>
+                <BC>16.98</BC>
+                <MB>14.76</MB>
+                <NB>15.79</NB>
+                <NL>18.18</NL>
+                <NS>16.04</NS>
+                <NT>16.98</NT>
+                <NU>45.55</NU>
+                <ON>10.43</ON>
+                <PE>15.92</PE>
+                <QC>9.20</QC>
+                <SK>16.98</SK>
+                <YT>23.42</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_RWTIB5100D1">
+        <brand-name>Rowenta</brand-name>
+        <group>Homeworks</group>
+        <category>Appliances</category>
+        <type>Irons &amp; Steamers</type>
+        <image>http://loyaltysource.com/media/product/large/rwtib5100d1_1423858778128.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Planche à repasser - BLANC</title>
+        <description>Offrez à vos vêtements le soin qu'ils méritent en utilisant la planche à repasser de Rowenta. Conçue pour vous offrir une grande surface de repassage, elle est dotée d'un support pour votre fer à repasser ou station à vapeur, et d'un porte-cintre pour votre offrir une expérience de repassage confortable. La planche à repasser se transporte facilement grâce aux roulettes pour que vous la rangiez où bon vous semble.</description>
+        <specification>Fait de mousse et de coton.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>IB5100D1</model-number>
+        <weight>12.00</weight>
+        <shipping-size>
+            <length>67.72</length>
+            <width>18.5</width>
+            <height>9.84</height>
+        </shipping-size>
+        <msrp>119.99</msrp>
+        <cost>90.00</cost>
+        <discount-dollars>29.99</discount-dollars>
+        <discount-percent>24.99</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>NOT AVAILABLE</average-canada>
+            <rate-per-province>
+                <AB>NOT AVAILABLE</AB>
+                <BC>NOT AVAILABLE</BC>
+                <MB>NOT AVAILABLE</MB>
+                <NB>NOT AVAILABLE</NB>
+                <NL>NOT AVAILABLE</NL>
+                <NS>NOT AVAILABLE</NS>
+                <NT>NOT AVAILABLE</NT>
+                <NU>NOT AVAILABLE</NU>
+                <ON>NOT AVAILABLE</ON>
+                <PE>NOT AVAILABLE</PE>
+                <QC>NOT AVAILABLE</QC>
+                <SK>NOT AVAILABLE</SK>
+                <YT>NOT AVAILABLE</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+    <ls-product id="AC_SAGLIGHTBULB">
+        <brand-name>Smart &amp; Green</brand-name>
+        <group>Homeworks</group>
+        <category>Decoration</category>
+        <type>N/A</type>
+        <image>http://loyaltysource.com/media/product/large/saglightbulb_1423861500721.jpg</image>
+        <status>AVAILABLE</status>
+        <title>Ampoule DEL avec haut-parleur</title>
+        <description>L’ampoule Eco Chic est une ampoule DEL écoénergétique avec haut-parleur Bluetooth intégré. Il suffit de la placer dans une lampe électrique standard et d’utiliser la fonction « Play » de votre lecteur de musique compatible à Bluetooth pour écouter la musique de votre choix, quand vous le voulez.</description>
+        <specification>Type d’ampoule : DEL 8 W, 110 à 240 V. Écoénergétique. Faible consommation d'énergie. 4 couleurs au choix : blanc, vert, bleu et rouge. Haut-parleur : 10 W, 200 Hz à 20 kHz.</specification>
+        <others/>
+        <warranty>1 année</warranty>
+        <model-number>LIGHTBULB</model-number>
+        <weight>1.00</weight>
+        <shipping-size>
+            <length>15.0</length>
+            <width>9.00</width>
+            <height>9.0</height>
+        </shipping-size>
+        <msrp>99.99</msrp>
+        <cost>84.24</cost>
+        <discount-dollars>15.75</discount-dollars>
+        <discount-percent>15.75</discount-percent>
+        <estimated-shipping-rates>
+            <average-canada>17.41</average-canada>
+            <rate-per-province>
+                <AB>24.59</AB>
+                <BC>24.59</BC>
+                <MB>19.63</MB>
+                <NB>20.95</NB>
+                <NL>26.30</NL>
+                <NS>21.28</NS>
+                <NT>24.59</NT>
+                <NU>83.27</NU>
+                <ON>14.28</ON>
+                <PE>21.12</PE>
+                <QC>12.13</QC>
+                <SK>24.59</SK>
+                <YT>32.77</YT>
+            </rate-per-province>
+        </estimated-shipping-rates>
+    </ls-product>
+</catalog>

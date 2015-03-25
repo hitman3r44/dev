@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gamejab_lib/test/jsp&apos; to &apos;jsp.jsp&apos;" description="Rename resource &apos;jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test/jsp" name="jsp.jsp" stamp="1338579658837" updateReferences="true"/>
+</session>

@@ -1,0 +1,37 @@
+###########deploy devserver START 
+
+/usr/apache-tomcat-6.0.35/bin/shutdown.sh
+#delete media link
+cd /usr/apache-tomcat-6.0.35/webapps/loyaltySourceAdmin/
+unlink media
+cd /usr/apache-tomcat-6.0.35/webapps/loyaltySource/
+unlink media
+cd /usr/apache-tomcat-6.0.35/webapps/loyaltySourceAdmin/
+rm -f media
+cd /usr/deployloyalty/
+rm -rf *
+svn export file:///opt/svnserve/repositories/trunk/loyaltySource --force
+svn export file:///opt/svnserve/repositories/trunk/loyaltySource_admin --force
+svn export file:///opt/svnserve/repositories/trunk/loyaltySource_lib --force
+cd loyaltySource_admin
+ant tomcat-clean
+ant deploy
+cd ..
+cd loyaltySource
+ant tomcat-clean
+ant deploy
+cd ..
+
+cd /usr/apache-tomcat-6.0.35/work/Catalina
+rm -rf *
+/usr/apache-tomcat-6.0.35/bin/shutdown.sh
+/usr/apache-tomcat-6.0.35/bin/startup.sh
+tail -500f /usr/apache-tomcat-6.0.35/logs/catalina.out 
+#deploy devserver END
+
+##########attach image directory DEVSERVER START
+cd /usr/apache-tomcat-6.0.35/webapps/loyaltySourceAdmin/ 
+ln -s /home/loyaltySource/media media
+cd /usr/apache-tomcat-6.0.35/webapps/loyaltySource/ 
+ln -s /home/loyaltySource/media media
+#attach image directory DEVSERVER END

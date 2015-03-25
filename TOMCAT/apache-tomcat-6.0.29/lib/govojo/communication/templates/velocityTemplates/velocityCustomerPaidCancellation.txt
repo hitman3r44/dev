@@ -1,0 +1,36 @@
+Dear ^${firstname},
+
+We're sorry to see that you have cancelled your GPlay membership. 
+For a limited time, we are offering you 5 free days to try us out 
+again, no strings attached. 
+
+You won't be sorry! Here are the things we are doing to improve the 
+service for our members:
+
+   * We are getting more copies of the games you want to play!
+   * We plan to open another mailing facility on the East Coast for 
+     faster shipments!
+   * New website features including buying games you liked, fully 
+     scanned game manuals, and customized recommendations!
+
+
+If you wish to reactivate your membership, please reply to this 
+message with the word "REACTIVATE" in the subject line. If you wish 
+to cancel after your 5 free days, simply email us and we'll have 
+your account deactivated immediately.
+
+What are you waiting for?  We're ready to send you your games!
+
+Sincerely,
+GPlay Customer Service
+
+*********************************************************************
+You are receiving this message because you have cancelled your 
+membership of GPlay's video game rental service. You will not receive 
+another message from GPlay regarding your membership cancellation. 
+GPlay does not disclose, rent, or sell any information that you 
+provide to us. For more information, please refer to our Privacy 
+Policy.
+
+http://www.gplay.com/displayPrivacyPolicy.jsp
+*********************************************************************

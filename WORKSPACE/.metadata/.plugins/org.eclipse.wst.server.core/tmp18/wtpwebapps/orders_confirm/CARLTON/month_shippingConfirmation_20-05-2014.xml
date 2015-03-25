@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shipped_orders>
+    <order>
+        <po_number>762254-1</po_number>
+        <first_name>Nikki</first_name>
+        <last_name>Wright</last_name>
+        <client_street>3 Gwillimbury Dr.</client_street>
+        <client_city>Bradford</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L3Z0B3</client_postal_code>
+        <client_order_id>556466</client_order_id>
+        <client_other_id>Advanced Micro Devices</client_other_id>
+        <client_number>556466</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKSHD854ZMA</ls_product_id>
+        <product_title>MICHAEL Essential Zip Wallet - RED</product_title>
+        <cost>97.15</cost>
+        <shipping_cost>10.61</shipping_cost>
+        <tracking_number>7310723960263461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-13</shipped_date>
+    </order>
+    <order>
+        <po_number>712575-1</po_number>
+        <first_name>Ernesto</first_name>
+        <last_name>Fernandez</last_name>
+        <client_street>511A CHAPMAN MILLS DR</client_street>
+        <client_city>NEPEAN</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>K2J0M8</client_postal_code>
+        <client_order_id>1000006125-1</client_order_id>
+        <client_other_id/>
+        <client_number>s06961l</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKS998_BR</ls_product_id>
+        <product_title>MICHAEL 15'' Jet Set Travel Tote - BROWN</product_title>
+        <cost>307.61</cost>
+        <shipping_cost>16.12</shipping_cost>
+        <tracking_number>7310723779010461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>739994-1</po_number>
+        <first_name>David</first_name>
+        <last_name>Dunn</last_name>
+        <client_street>6404 Norfolk Dr Nw</client_street>
+        <client_city>calgary</client_city>
+        <client_province>AB</client_province>
+        <client_postal_code>t2k5k2</client_postal_code>
+        <client_order_id>330121-1</client_order_id>
+        <client_other_id/>
+        <client_number>94581</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKS998_BR</ls_product_id>
+        <product_title>MICHAEL 15'' Jet Set Travel Tote - BROWN</product_title>
+        <cost>307.61</cost>
+        <shipping_cost>23.35</shipping_cost>
+        <tracking_number>7310723777597469</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-12</shipped_date>
+    </order>
+    <order>
+        <po_number>755513-1</po_number>
+        <first_name>Wilf</first_name>
+        <last_name>Peters</last_name>
+        <client_street>226 Cardinal Cres</client_street>
+        <client_city>Saskatoon</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S7L6H8</client_postal_code>
+        <client_order_id>1000011735-1</client_order_id>
+        <client_other_id>Altus group</client_other_id>
+        <client_number>13179</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>VIC31303601</ls_product_id>
+        <product_title>Alpineer Duffle Bag</product_title>
+        <cost>196.0</cost>
+        <shipping_cost>45.85</shipping_cost>
+        <tracking_number>7310723571096465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-09</shipped_date>
+    </order>
+    <order>
+        <po_number>715138-1</po_number>
+        <first_name>QING</first_name>
+        <last_name>CHANG - SUN</last_name>
+        <client_street>2825 Argentia Road</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5N 8G6</client_postal_code>
+        <client_order_id>2312-1</client_order_id>
+        <client_other_id/>
+        <client_number>208649</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSEXPMINI_BK</ls_product_id>
+        <product_title>Explorer Mini Bag - BLACK</product_title>
+        <cost>61.75</cost>
+        <shipping_cost>7.95</shipping_cost>
+        <tracking_number>7310723269315465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>733913-1</po_number>
+        <first_name>Stephanie</first_name>
+        <last_name>Costa</last_name>
+        <client_street>200 Bloor St. East</client_street>
+        <client_city>Toronto</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>M4W1E5</client_postal_code>
+        <client_order_id>329335-1</client_order_id>
+        <client_other_id/>
+        <client_number>207313</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKSHD854ZMA</ls_product_id>
+        <product_title>MICHAEL Essential Zip Wallet - RED</product_title>
+        <cost>97.15</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723284582460</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>743605-1</po_number>
+        <first_name>Cori</first_name>
+        <last_name>Pau</last_name>
+        <client_street>44 Villa Antica Drive</client_street>
+        <client_city>Woodbridge</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L4H1P9</client_postal_code>
+        <client_order_id>553614</client_order_id>
+        <client_other_id>Advanced Micro Devices</client_other_id>
+        <client_number>553614</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKSHD854ZMA</ls_product_id>
+        <product_title>MICHAEL Essential Zip Wallet - RED</product_title>
+        <cost>97.15</cost>
+        <shipping_cost>7.55</shipping_cost>
+        <tracking_number>7310723285647465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>751260-1</po_number>
+        <first_name>ALINA</first_name>
+        <last_name>ZALWOWSKI - SUN</last_name>
+        <client_street>2825 Argentia Road</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5N 8G6</client_postal_code>
+        <client_order_id>2529-1</client_order_id>
+        <client_other_id/>
+        <client_number>6483</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSEXPMINI_BK</ls_product_id>
+        <product_title>Explorer Mini Bag - BLACK</product_title>
+        <cost>61.75</cost>
+        <shipping_cost>9.45</shipping_cost>
+        <tracking_number>7310723288008461</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-07</shipped_date>
+    </order>
+    <order>
+        <po_number>749573-1</po_number>
+        <first_name>DENISE</first_name>
+        <last_name>SAMPSON - SUN</last_name>
+        <client_street>2825 Argentia Road</client_street>
+        <client_city>Mississauga</client_city>
+        <client_province>ON</client_province>
+        <client_postal_code>L5N 8G6</client_postal_code>
+        <client_order_id>2524-1</client_order_id>
+        <client_other_id/>
+        <client_number>128931</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>FOSSYDSIG_BR</ls_product_id>
+        <product_title>Sydney Signature Shopper - BROWN</product_title>
+        <cost>102.7</cost>
+        <shipping_cost>9.09</shipping_cost>
+        <tracking_number>7310723180863465</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-06</shipped_date>
+    </order>
+    <order>
+        <po_number>746900-2</po_number>
+        <first_name>Jen</first_name>
+        <last_name>Prette</last_name>
+        <client_street>409 Kensington Avenue</client_street>
+        <client_city>Estevan</client_city>
+        <client_province>SK</client_province>
+        <client_postal_code>S4A2A6</client_postal_code>
+        <client_order_id>1000010613-2</client_order_id>
+        <client_other_id>Power Dodge Ltd.</client_other_id>
+        <client_number>s53028j</client_number>
+        <client_product_number/>
+        <quantity>1.0</quantity>
+        <ls_product_id>MKSHD674ZMA</ls_product_id>
+        <product_title>MICHAEL Essential Zip Wallet - WHITE</product_title>
+        <cost>97.15</cost>
+        <shipping_cost>13.04</shipping_cost>
+        <tracking_number>7310723313703477</tracking_number>
+        <shipping_company>Canada Post</shipping_company>
+        <shipped_date>2014-05-16</shipped_date>
+    </order>
+</shipped_orders>

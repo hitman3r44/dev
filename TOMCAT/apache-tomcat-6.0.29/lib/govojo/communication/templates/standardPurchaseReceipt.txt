@@ -1,0 +1,42 @@
+Dear #FIRSTNAME# #LASTNAME#:
+
+Thank you for shopping at Yvys.com! This is your
+Order Confirmation. Please review the details below
+and print this for your records.
+
+Order Number: #ORDERID#
+
+Your order will be billed to:
+
+#FIRSTNAME# #LASTNAME#
+#BILLING_STREET#
+#BILLING_CITY#, #BILLING_STATE# #BILLING_ZIP#
+
+Your order will be shipped 7-10 business days from
+the delivery of this Order Confirmation email.
+
+Your order will be shipped via 2nd Day FedEx to:
+
+#FIRSTNAME# #LASTNAME#
+#SHIPPING_STREET#
+#SHIPPING_CITY#, #SHIPPING_STATE# #SHIPPING_ZIP#
+
+To Return an item: Please follow our Return Policy
+Guidelines: http://www.yvys.com/help/returns.html 
+
+If you have any other questions, please contact us
+through one of the following ways:
+
+  1. Our website http://www.yvys.com/contactus.html 
+     (This is the quickest and easiest way!)
+
+  2. E-mail at help@yvys.com, or
+  3. Toll-free at 1-877-603-6225
+
+Thank you for shopping at Yvys.com.
+
+
+Yvys.com
+Customer Service
+Visit us at our website at http://www.yvys.com
+

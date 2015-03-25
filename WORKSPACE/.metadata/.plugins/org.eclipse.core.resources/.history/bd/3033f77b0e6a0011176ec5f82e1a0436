@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    
+    
+ 
+<mapper namespace="com.loyauty.dao.mybatis.mappers.BrandMapper">
+
+		
+	<resultMap type="Brand" id="brandResultMap">
+		<id property="id" column="brandId"/>
+		<association property="image" javaType="Image" resultMap="ImageMapper.imageResultMap" />
+	</resultMap>	
+
+	
+	<sql id="select">
+		select  br.id as brandId,
+				br.name as name,
+				br.image_id as image,
+				br.description as description,
+				br.creation_date as creationDate,
+				im.id as imageId,
+				im.name as imageName,
+				im.real_name as realNameImg				
+		FROM brand br			
+		left join image im on (br.image_id = im.id )	
+	</sql>
+   	<sql id="whereId">where br.id = #{id}</sql>
+   	<sql id="whereName">where br.name = #{name}</sql>
+   	
+   	<select id="getEntity" resultMap="brandResultMap">
+		<include refid="select"/>		
+      	<include refid="whereId"/>
+	</select>
+	
+	<select id="getAllEntities" resultMap="brandResultMap">
+		<include refid="select"/>
+		order by br.name				      	
+	</select>
+	
+	
+	<insert id="insertEntity" parameterType="Brand">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+      		select nextVal('brand_id_seq')
+    	</selectKey>
+		insert into brand(id, name, image_id, description)
+		values(#{id}, #{name}, #{image.id}, #{description})	
+	</insert>
+
+	<update id="updateEntity" parameterType="Brand">
+		update brand set name=#{name}, image_id=#{image.id}, description=#{description}, creation_date=#{creationDate}
+		<include refid="whereId"/>
+	</update>
+	
+	<delete id="deleteEntity" parameterType="long">
+		delete from brand 
+		<include refid="whereId"/>
+	</delete>  
+
+
+
+
+</mapper>

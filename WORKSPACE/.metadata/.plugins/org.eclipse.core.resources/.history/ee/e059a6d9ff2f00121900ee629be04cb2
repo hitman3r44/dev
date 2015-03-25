@@ -1,0 +1,253 @@
+package com.loyauty.cronjob;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+import ca.canadapost.cpcdp.rating.GetRatesClient;
+
+import com.loyauty.enums.UserType;
+import com.loyauty.exception.ServiceException;
+import com.loyauty.exception.ServiceLocatorException;
+import com.loyauty.service.ServiceLocator;
+import com.loyauty.service.core.dto.BasicUserDTO;
+import com.loyauty.service.core.dto.CityDTO;
+import com.loyauty.service.core.dto.ProductDTO;
+import com.loyauty.service.core.dto.ProvinceDTO;
+import com.loyauty.service.core.dto.ShippingCityDTO;
+import com.loyauty.service.core.dto.ShippingProvinceDTO;
+import com.loyauty.service.core.dto.ShippingTotalDTO;
+import com.loyauty.service.core.dto.UserProductPriceDTO;
+import com.loyauty.service.core.dto.UserSessionDTO;
+import com.loyauty.service.product.ProductService;
+import com.loyauty.service.user.UserService;
+
+public class FillingInShippingCityDBTable {
+
+	private static double COVERAGE_RATE_PER_100$ = 1.80d;
+	private static double POUND_TO_KG_FACTOR = .45359237;
+	private static double INCH_TO_CM_FACTOR = 2.54;
+	
+	
+	
+	private static ServiceLocator serviceLocator;
+	private static ProductService productService;
+	private static UserService userService;
+	
+	public static void main(String... args) {
+		serviceLocator = ServiceLocator.getInsance();
+		try {			
+			userService = serviceLocator.getUserService();			
+			productService = serviceLocator.getProductService();
+			ExecutorService executor = null;
+			Future<BigDecimal> future = null;			
+			long productId = 0L;
+			long provinceId = 0L;
+			long userId = 0L;
+			String rate = "";
+			List<ProductDTO> productDTOList = null;
+			List<ProvinceDTO> provinceDTOList = null;
+			List<CityDTO> cityDTOList = null;
+			List<UserSessionDTO> userSessionDTOList = null;
+			double weightedTotalProvince = 0d;
+			double expeditedParcelPrice = 0d;
+			double populationPercentage = 0d;
+			double averageShippingTotal = 0d;
+			double weightedProvinceTotalWithCoverage = 0d;
+			double weightLbs = 0d;
+			double lengthIn = 0d, widthIn = 0d, heightIn = 0d;			
+			double weightKg = 0d;
+			double lengthCm = 0d, widthCm = 0d, heightCm = 0d;		
+			int weight = 0;
+			int length = 0, width = 0, height = 0;
+			BigDecimal rateBD = new BigDecimal(0);
+			double rateVal = 0d;
+			double coverage = 0d;
+			ShippingCityDTO shippingCityDTO = new ShippingCityDTO();
+			ShippingProvinceDTO shippingProvinceDTO = new ShippingProvinceDTO();
+			ShippingTotalDTO shippingTotalDTO = new ShippingTotalDTO();
+			BasicUserDTO basicUserDTO = null;
+			UserProductPriceDTO userProductPriceDTO = null;
+			
+			productDTOList = new ArrayList<ProductDTO>();
+			productDTOList = productService.getAllValidStatusProducts(3);
+				// productService.getAllValidStatusProductsForAllUsers();
+			
+			for (ProductDTO productDTO : productDTOList) {
+				productId = productDTO.getId();					
+				
+				provinceDTOList = productService.getAllProvinces();
+				for (ProvinceDTO provinceDTO : provinceDTOList) {
+					// System.out.println(provinceDTO.getName() + " with id = " + provinceDTO.getId());
+					provinceId = provinceDTO.getId();
+					cityDTOList = productService.getAllCities(provinceId);
+					
+					weightedTotalProvince = 0d;
+					expeditedParcelPrice = 0d;
+					
+					for (CityDTO cityDTO : cityDTOList) {
+						// System.out.println(cityDTO.getName() + " with id = " + cityDTO.getId());
+					
+						populationPercentage = Double.parseDouble(cityDTO.getPopulationPercentage());
+						populationPercentage /= 100d;
+
+						weightLbs = Double.parseDouble(productDTO.getWeight());
+						lengthIn = Double.parseDouble(productDTO.getLarge());
+						widthIn = Double.parseDouble(productDTO.getWidth());
+						heightIn = Double.parseDouble(productDTO.getHigh());
+						
+						weightKg = weightLbs * POUND_TO_KG_FACTOR;
+						lengthCm = lengthIn * INCH_TO_CM_FACTOR;
+						widthCm = widthIn * INCH_TO_CM_FACTOR;
+						heightCm = heightIn * INCH_TO_CM_FACTOR;
+						
+						weight = (int) weightKg;
+						length = (int) lengthCm;
+						width = (int) widthCm;
+						height = (int) heightCm;
+						
+						executor = Executors.newSingleThreadExecutor();
+						future = executor.submit(new GetRatesClient("H4C3C5", cityDTO.getPostalCode(),  weight, length, width, height));
+						// System.out.println("rateDB = " + future.get().toString() );
+						rateBD = future.get();
+						executor.shutdown();
+						
+						rate = rateBD.toString();
+						
+						if (rate != null) {
+							if (!rate.matches("^\\s*$") && !rate.equalsIgnoreCase("")) {					
+								rateVal = Double.parseDouble(rate);
+								rate = format(rateVal, "#,###.00", "en", "US");	
+							} else {
+								rateVal = 0d;
+								rate = "0.00";
+							}
+							if (rate.equalsIgnoreCase(".00")) {
+								rate = "0.00";
+							}							
+						}
+						
+						expeditedParcelPrice = Double.parseDouble(rate);
+						
+						shippingCityDTO = new ShippingCityDTO();
+						shippingCityDTO.setProductId(productId);
+						shippingCityDTO.setCityId(cityDTO.getId());
+						shippingCityDTO.setExpeditedParcelPrice(rate);												
+						productService.createShippingCity(shippingCityDTO);
+						
+						weightedTotalProvince += populationPercentage * expeditedParcelPrice;
+						
+					}
+					// System.out.println();					
+					
+					shippingProvinceDTO = new ShippingProvinceDTO();
+					shippingProvinceDTO.setProductId(productId);
+					shippingProvinceDTO.setProvinceId(provinceId);
+					
+					String weightedPrice = String.valueOf(weightedTotalProvince);
+					
+					if (weightedPrice != null) {
+						if (!weightedPrice.matches("^\\s*$") && !weightedPrice.equalsIgnoreCase("")) {
+							weightedPrice = format(weightedTotalProvince, "#,###.00", "en", "US");	
+						} else {
+							weightedPrice = "0.00";
+						}
+						if (weightedPrice.equalsIgnoreCase(".00")) {
+							weightedPrice = "0.00";
+						}
+					}
+					
+					shippingProvinceDTO.setWeightedTotalProvince(weightedPrice);					
+					productService.createShippingProvince(shippingProvinceDTO);
+					
+					basicUserDTO = new BasicUserDTO();
+					basicUserDTO.setTypeId(UserType.USER.getValue());
+					basicUserDTO.setActive(true);
+					averageShippingTotal = 0d;
+					userSessionDTOList = userService.getAllUserAccounts(basicUserDTO);
+					for (UserSessionDTO userSessionDTO : userSessionDTOList) {
+						userId = userSessionDTO.getId();
+						coverage = calculateCoverage(Double.parseDouble(productDTO.getPriceProduct()));	// from user_product_price DB Table.
+						
+						userProductPriceDTO = new UserProductPriceDTO();
+						userProductPriceDTO.setProductId(productId);
+						userProductPriceDTO.setUserId(userId);
+						userProductPriceDTO.setShippingCoverage(String.valueOf(coverage));
+						productService.updateUPPShippingCoverage(userProductPriceDTO);
+						
+						shippingTotalDTO = new ShippingTotalDTO();
+						shippingTotalDTO.setProductId(productId);
+						shippingTotalDTO.setProvinceId(provinceId);
+						shippingTotalDTO.setUserId(userId);
+						
+						weightedProvinceTotalWithCoverage = coverage + weightedTotalProvince;
+						String weightedProvinceWCoverage = String.valueOf(weightedProvinceTotalWithCoverage);
+						if (weightedProvinceWCoverage != null) {
+							if (!weightedProvinceWCoverage.matches("^\\s*$") && !weightedProvinceWCoverage.equalsIgnoreCase("")) {
+								weightedProvinceWCoverage = format(weightedProvinceTotalWithCoverage, "#,###.00", "en", "US");
+								
+							} else {
+								weightedProvinceWCoverage = "0.00";
+							}
+							if (weightedProvinceWCoverage.equalsIgnoreCase(".00")) {
+								weightedProvinceWCoverage = "0.00";
+							}
+						}					
+						shippingTotalDTO.setWeightedProvinceTotalWithCoverage(weightedProvinceWCoverage);
+						
+						averageShippingTotal = weightedProvinceTotalWithCoverage * 1.1d;	// +10% coverage
+						String avgTotal = String.valueOf(averageShippingTotal);				
+						if (avgTotal != null) {
+							if (!avgTotal.matches("^\\s*$") && !avgTotal.equalsIgnoreCase("")) {
+								avgTotal = format(averageShippingTotal, "#,###.00", "en", "US");	
+							} else {
+								avgTotal = "0.00";
+							}
+							if (avgTotal.equalsIgnoreCase(".00")) {
+								avgTotal = "0.00";
+							}
+						}
+						shippingTotalDTO.setAverageShippingTotal(avgTotal);
+						
+						productService.createShippingTotal(shippingTotalDTO);
+					}
+				}			
+			}			
+		} catch (ServiceLocatorException slx) {			
+			slx.printStackTrace();
+		} catch (ServiceException sx) {
+			sx.printStackTrace();
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		
+		System.exit(0);
+	}
+	
+	private static double calculateCoverage(double averageWeightedPrice) {
+		double outcome = 0d;
+		if (averageWeightedPrice >= 0d && averageWeightedPrice <= 100d) {
+			outcome = 0;
+		} else {
+			double hundredTimes = averageWeightedPrice / 100d;
+			int factor = ((int) hundredTimes) - 1;
+			outcome = ((double) factor) * COVERAGE_RATE_PER_100$;
+		}
+		return outcome;
+	}
+	
+	private static String format(double value, String pattern, String language, String country) {
+		Locale loc = new Locale(language, country);
+		NumberFormat nf = NumberFormat.getInstance(loc);
+		DecimalFormat df = (DecimalFormat) nf;
+		df.applyPattern(pattern);
+		return nf.format(value);
+	}	
+
+}
