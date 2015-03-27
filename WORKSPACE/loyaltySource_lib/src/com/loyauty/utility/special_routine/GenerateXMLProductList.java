@@ -60,11 +60,11 @@ public class GenerateXMLProductList {
     	System.out.println("Début DateTime:"+new Date());
 		serviceLocator = ServiceLocator.getInstance();	
 		
-		try {// 32;"CARLTON";"CG_"
+		try {// 39;"Achievers";"AC_"
 			productService = serviceLocator.getProductService();
-			File xmlFile = new File("C:/dev/xml/CARLTON.xml");
+			File xmlFile = new File("C:/dev/xml/Achievers_Eng.xml");
 				new FileWriter(xmlFile);
-				generateXMLRoutine(32L, xmlFile, "CG_");
+				generateXMLRoutine(39L, xmlFile, "AC_");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

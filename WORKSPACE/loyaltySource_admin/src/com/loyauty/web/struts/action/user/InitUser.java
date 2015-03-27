@@ -50,6 +50,8 @@ public class InitUser  extends LoyautyAction{
 	@Override  
 	public String execute() throws Exception {
 		
+		System.out.println("I am at InitUser");
+		
 		try {
 			//Get Currency
 			List<CurrencyDTO> currDTOList;

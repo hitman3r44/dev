@@ -57,7 +57,10 @@ public class AddProduct  extends LoyautyAction {
 	}
 	
 	@Override
-	public String execute() throws Exception {		
+	public String execute() throws Exception {
+		
+		System.out.println("I am in addProduct Class");
+		
 		brandList = commonService.getBrands();
 		BasicUserDTO basicUserDTO = new  BasicUserDTO();
 		basicUserDTO.setTypeId(UserType.USER.getValue());
@@ -88,6 +91,8 @@ public class AddProduct  extends LoyautyAction {
 	}
 	
 	public String getProductList() throws Exception {
+		System.out.println("I am in Edit Product List");
+		
 		brandList = commonService.getBrands();
 		categoryList = commonService.getCategories();
 		

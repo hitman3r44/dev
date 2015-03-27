@@ -69,6 +69,8 @@ public class AddTemplate  extends LoyautyAction{
 	@Override  
 	public String execute() throws Exception {
 		
+		System.out.println("I am at Add Template");
+		
 		try {
 			/* get managerId */
 			String managerLogin;

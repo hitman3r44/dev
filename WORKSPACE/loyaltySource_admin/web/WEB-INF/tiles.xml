@@ -267,6 +267,13 @@
 	<definition name="/userConnection.tiles" extends="formLayoutFancy">
 		<put-attribute name="body" type="template" value="../user/userConnection.jsp" />
 	</definition>
+	
+	
+	<definition name="/getOrdersByPOSumit.tiles" extends="formLayoutFancy">
+		<put-attribute name="body" type="template" value="../orders/getOrdersByPOSumit.jsp" />
+	</definition>
+	
+	
 
 	<!-- Generics templates -->
 	<definition name="baseLayout" template="/WEB-INF/jsp/layouts/baseLayout.jsp">

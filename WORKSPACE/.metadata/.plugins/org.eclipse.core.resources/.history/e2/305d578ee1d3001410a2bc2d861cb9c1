@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.loyauty.dao.mybatis.mappers.OrdersMapper">
+	
+	<!-- Result maps -->  
+	<resultMap type="UserFileRecovery" id="userFileRecoveryResultMap"> 
+		<id property="id" column="id"/>   
+	</resultMap>
+	 
+	<resultMap type="Orders" id="ordersResultMap">        
+		<id property="id" column="id"/>   
+	</resultMap>
+		
+	<resultMap type="OrdersRows" id="ordersRowsResultMap">      
+		<id property="id" column="id"/>  
+	</resultMap>
+
+	<resultMap type="Product" id="productResultMap">    
+		<id property="id" column="id"/>   
+	</resultMap>
+    
+    
+	<resultMap type="OrdersSpecialShipping" id="specialShippingResultMap">   
+		<id property="id" column="id"/>   
+	</resultMap>
+	
+	    
+	<resultMap type="UserFilesDownloaded" id="userFilesDownloadedResultMap">   
+		<id property="id" column="id"/>   
+	</resultMap>
+	
+	<resultMap type="Currency" id="currencyResultMap">        
+		<id property="id" column="id"/>   
+	</resultMap>
+	
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+												SELECT
+	     ///////////////////////////////////////////////////////////////////////////////////////////// -->
+		<select id="getUserFileRecoveryByUser" parameterType="String" resultMap="userFileRecoveryResultMap">
+		SELECT 	UFR.id AS id,product_order_number AS productOrderNumber ,client_order_number AS clientOrderNumber,client_number AS clientNumber,
+				client_first_name AS clientFirstName,client_last_name AS clientLastName,client_street AS clientStreet,cst_product_number AS cstProductNumber,
+	      		client_other_street AS clientOtherStreet,client_city AS clientCity,client_postal_code AS clientPostalCode,
+	      		client_province AS clientProvince ,client_phone AS clientPhone,client_email AS clientEmail,ls_product_id AS lsProductID,
+	      		product_description AS productDescription,unit_price AS unitPrice,company_header AS companyHeader,
+	      		UFR.user_id AS userId,file_type_id AS fileTypeId,notes AS notes,     			
+	      		(select type FROM file_type WHERE id=UFR.file_type_id) AS fileType,client_product_number AS clientProductNumber,
+	      		quantity,product_order_date AS productOrderDate,UFR.tag_root AS tagRoot,shipping_company AS shippingCompany,
+	      		required_date AS requiredDate,client_other_names AS clientOtherNames ,client_phone_zone AS clientPhoneZone,
+	      		format_date AS formatDate,client_other_id AS clientOtherId,client_other_id AS clientOtherId,provided_ls_product_id AS providedLsProductId,
+	      		file_type_id_confirm AS fileTypeIdConfirm,file_format_id_comfirm AS fileFormatIdComfirm,
+	      		file_seq_shipping AS fileSeqShipping,file_seq_invoice AS fileSeqInvoice,
+	      		CUR.id AS currencyId, CUR.rate AS currencyRate, CUR.symbol AS currencySymbol,
+				UFR.eta_field_name AS etaFieldName,UFR.second_eta_field_name AS secondEtaFieldName
+		FROM user_file_recovery UFR INNER JOIN (user_account UA INNER JOIN (user_profile UP INNER JOIN currency CUR ON UP.currency_id=CUR.id) 
+					ON UA.id=UP.user_id) ON UFR.user_id=UA.id
+		 	WHERE UA.login=#{value} 
+		</select>
+	
+		<select id="getOrderByLsOrderId" parameterType="String" resultMap="ordersResultMap">
+			SELECT	id,user_id AS userId ,product_order_number AS productOrderNumber,
+					client_order_number AS clientOrderNumber,client_first_name AS clientFirstName,
+					client_last_name AS clientLastName,client_other_names AS clientOtherNames,
+					client_number AS clientNumber,client_street AS clientStreet,client_other_street AS clientOtherStreet,
+					client_city AS clientCity,client_province AS clientProvince ,client_postal_code AS clientPostalCode,
+					client_phone AS clientPhone,client_email AS clientEmail,product_order_date AS productOrderDate, 
+					creation_date AS creationDate,ls_order_id AS lsOrderId,client_other_id AS clientOtherId
+			FROM orders
+			WHERE  ls_order_id=#{value}
+		</select>
+		
+		<select id="getCountOrderByPONumber" parameterType="java.util.Map" resultMap="ordersResultMap">
+			SELECT	count(*) AS count
+			FROM orders
+			WHERE  product_order_number=#{productOrderNumber} AND user_id=#{userId}
+		</select>
+	
+		<select id="getCountOrdersByLsOrderId" parameterType="String" resultMap="ordersResultMap">
+			SELECT	count(*) AS count
+			FROM orders
+			WHERE  ls_order_id=#{value}
+		</select>
+
+		<select id="getCountInvoicingByLsOrderId" parameterType="String" resultMap="ordersResultMap">
+			SELECT	count(*) AS count
+			FROM invoicing_orders
+			WHERE  ls_order_id=#{value}
+		</select>
+	
+		<select id="getAllOrders" parameterType="String" resultMap="ordersResultMap">
+			SELECT	ls_order_id AS lsOrderId
+			FROM orders
+		</select>
+
+		<select id="getManMaxLsOrderId" parameterType="String" resultMap="ordersResultMap">
+			SELECT max(ls_order_id) AS lsOrderId
+			FROM orders 
+			WHERE ls_order_id like #{value} || '%'
+		</select>
+	
+		<select id="getOrderSpecialShipping" parameterType="OrdersSpecialShipping" resultMap="specialShippingResultMap" >
+			SELECT user_id AS userId,ls_product_id AS lsProductId,
+				   shipping_price AS shippingPrice,product_id AS productId
+			FROM  orders_special_shipping
+			WHERE user_id=#{userId} AND product_id=#{productId}
+		</select>
+
+		<select id="getOrdersByDateClientLikeLsOrderId" parameterType="java.util.Map" resultMap="ordersResultMap" >
+		SELECT   ORD.id AS id,ORD.user_id AS userId ,
+				 UA.login AS userLogin ,
+				 ORD.company_header AS companyHeader,
+				 ORD.product_order_number AS productOrderNumber,ORD.client_order_number AS clientOrderNumber,
+				 ORD.client_first_name AS clientFirstName,ORD.client_last_name AS clientLastName,ORD.client_other_names AS clientOtherNames,
+				 ORD.client_number AS clientNumber,ORD.client_street AS clientStreet,ORD.client_other_street AS clientOtherStreet,
+				 ORD.client_city AS clientCity,ORD.client_province AS clientProvince,ORD.client_postal_code AS clientPostalCode,
+				 ORD.client_phone AS clientPhone,ORD.client_email AS clientEmail,ORD.product_order_date AS productOrderDate,
+				 ORD.ls_order_id AS lsOrderId, ORD.creation_date AS creationDate,ORD.required_date AS requiredDate,client_other_id AS clientOtherId
+		FROM     orders ORD INNER JOIN user_account UA ON ORD.user_id=UA.id
+	 	WHERE    UA.login like '%' || #{userLogin} ||'%' AND 
+			     ORD.creation_date <![CDATA[>=]]> #{creationDate} AND
+	 		     ls_order_id like '%' || #{lsOrderId} || '%'	
+	 	ORDER BY ORD.required_date,ORD.creation_date DESC,ORD.user_id	  	
+	</select>
+	
+	<select id="searchOrdersWithOptions" parameterType="java.util.Map" resultMap="ordersResultMap" >
+		SELECT   ORD.id AS id,ORD.user_id AS userId ,
+				 UA.login AS userLogin ,
+				 ORD.product_order_number AS productOrderNumber,ORD.client_order_number AS clientOrderNumber,
+				 ORD.company_header AS companyHeader,
+				 ORD.client_first_name AS clientFirstName,ORD.client_last_name AS clientLastName,ORD.client_other_names AS clientOtherNames,
+				 ORD.client_number AS clientNumber,ORD.client_street AS clientStreet,ORD.client_other_street AS clientOtherStreet,
+				 ORD.client_city AS clientCity,ORD.client_province AS clientProvince,ORD.client_postal_code AS clientPostalCode,
+				 ORD.client_phone AS clientPhone,ORD.client_email AS clientEmail,ORD.product_order_date AS productOrderDate,
+				 ORD.ls_order_id AS lsOrderId, ORD.creation_date AS creationDate,ORD.required_date AS requiredDate,client_other_id AS clientOtherId
+		FROM     orders ORD INNER JOIN user_account UA ON ORD.user_id=UA.id
+	 	WHERE    UA.login like '%' || #{userLogin} ||'%' AND 
+			     ORD.creation_date <![CDATA[>=]]> #{creationDateStart} AND ORD.creation_date <![CDATA[<=]]> #{creationDateEnd} AND
+	 		     ls_order_id like '%' || #{lsOrderId} || '%'	
+	 	ORDER BY ORD.required_date,ORD.creation_date DESC,ORD.user_id	  	
+	</select>
+
+	<select id="searchOrdersWithOptionsAndSorting" parameterType="java.util.Map" resultMap="ordersResultMap" >
+	
+		SELECT  UA.login AS userLogin,ORDR.id AS id,ORD.ls_order_id AS lsOrderId,ORD.creation_date AS creationDate,
+				ORD.required_date AS requiredDate,ORDR.status AS status,ORDR.client_product_number AS clientProductNumber,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				CASE 
+				WHEN ORDR.quantity IS NULL THEN 0
+				ELSE ORDR.quantity
+				END AS quantity,
+				CASE 
+				WHEN (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id) IS NULL THEN 0
+				ELSE (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)
+				END AS stock,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				CASE 
+				WHEN ORDR.unit_price IS NULL THEN 0
+				ELSE ORDR.unit_price
+				END AS unitPrice,
+				(SELECT to_number(price, '999999999.99')  FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id AND price IS NOT null AND price!='')AS lsPrice,
+				ORDR.notes AS notes,ORD.product_order_number AS productOrderNumber,
+				ORD.client_Order_Number AS clientOrderNumber,
+				ORD.client_first_name AS clientFirstName,
+				ORD.company_header AS companyHeader,
+				ORD.client_last_name AS clientLastName,ORD.client_other_names AS clientOtherNames,
+				ORD.client_number AS clientNumber,ORD.client_street AS clientStreet,ORD.client_other_street AS clientOtherStreet,
+				ORD.client_city AS clientCity,ORD.client_province AS clientProvince,ORD.client_postal_code AS clientPostalCode,
+				ORD.client_phone AS clientPhone,ORD.client_email AS clientEmail,ORD.user_id AS userId,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.product_id AS productId,
+				ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice,ORDR.billed AS billed,ORD.product_order_date AS productOrderDate,
+				ORDR.tracking_number AS trackingNumber,
+				(SELECT sum(T.quantity)FROM(
+					    SELECT subR.quantity,CASE 
+	       								WHEN POSITION('_' IN subR.ls_order_id)=0 THEN ls_order_id
+	       								ELSE SUBSTRING(subR.ls_order_id FROM 0 FOR POSITION('_' IN subR.ls_order_id))
+	       								END AS lsOrderId
+						FROM orders_rows subR) AS T
+				WHERE T.lsOrderId =SUBSTRING(ORDR.ls_order_id FROM 0 FOR POSITION('_' IN ORDR.ls_order_id))OR
+					  T.lsOrderId=ORDR.ls_order_id)AS quantityOriginal,client_other_id AS clientOtherId,
+				ORDR.provided_ls_product_id AS providedLsProductId,ORD.order_file_info AS orderFileInfo,
+				ORD.special_handling_name AS specialHandlingName,ORD.special_handling_fee AS specialHandlingFee,ORD.total_price AS totalPrice,
+				CUR.id AS currencyId, CUR.symbol AS currencySymbol, CUR.rate AS currencyRate,
+				CUR.creation_date AS currencyCreationDate
+	
+		FROM    user_account UA INNER JOIN(orders ORD INNER JOIN (orders_rows ORDR INNER JOIN currency CUR ON ORDR.currency_id=CUR.id) ON ORD.ls_order_id=ORDR.ls_order_id)
+			 	ON ORD.user_id=UA.id 
+	
+	 	WHERE   UA.login like '%' || #{userLogin} ||'%' AND 
+	 			 	
+			 	<if test="factorDateBetween == 0">
+			   		ORD.creation_date IS NOT NULL AND (ORD.creation_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>	
+			 	<if test="factorDateBetween == 1">
+			   		ORDR.shipped_date IS NOT NULL AND (ORDR.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' AND
+				ORDR.status like '%' || #{status} || '%' 	
+			
+			 	ORDER BY 
+			 	<foreach item="item" index="index" collection="listIndexColumn" separator="," >
+			 	
+			 	<if test="item == 0">
+					18,24,6
+				</if>
+	
+			 	<if test="item == 1">
+					1 ASC
+				</if>
+			 	<if  test="item == -1">
+					1 DESC
+				</if>
+			 	
+			 	<if test="item == 3">
+					3  ASC
+				</if>
+			 	<if test="item == -3">
+					3  DESC
+				</if>
+				
+			 	<if test="item == 4">
+					4 ASC
+				</if>
+			 	<if test="item == -4">
+					4 DESC
+				</if>
+			
+				<if test="item == 5">
+					5 ASC
+				</if>
+				<if test="item == -5">
+					5 DESC 
+				</if>
+			 			
+				<if test="item == 6">
+					6 ASC
+				</if>
+				<if test="item == -6">
+					6 DESC 
+				</if>
+				
+			 	<if test="item == 7">
+					7 ASC
+				</if>
+			 	<if test="item == -7">
+					7 DESC
+				</if>
+				
+		 		<if test="item == 8">
+					8 ASC
+				</if>
+			 	<if test="item == -8">
+					8 DESC
+				</if>
+				
+			 	<if test="item == 9">
+					9 ASC
+				</if>
+			 	<if test="item == -9">
+					9 DESC
+				</if>
+	
+				<if test="item == 10">
+					10 ASC
+				</if>
+				<if test="item == -10">
+					10 DESC
+				</if>
+	
+				<if test="item == 11">
+					11 ASC
+				</if>
+				<if test="item == -11">
+					11 DESC
+				</if>
+	
+				<if test="item == 12">
+					12 ASC
+				</if>
+				<if test="item == -12">
+					12 DESC
+				</if>
+
+				<if test="item == 13">
+					13 ASC
+				</if>
+				<if test="item == -13">
+					13 DESC
+				</if>
+						
+				<if test="item == 30">
+					30 ASC
+				</if>
+				<if test="item == -30">
+					30 DESC
+				</if>
+		
+				<if test="item == 31">
+					31 ASC
+				</if>
+				<if test="item == -31">
+					31 DESC
+				</if>
+					
+				<if test="item == 32">
+					36 ASC
+				</if>
+				<if test="item == -32">
+					36 DESC
+				</if>
+				</foreach> 	
+				LIMIT #{PAGE_ITEMS_COUNT} OFFSET  #{indexSet}
+	</select>
+	
+	<select id="getCountInvoicedOrders" parameterType="java.util.Map" resultMap="ordersResultMap" >
+		SELECT  COUNT(*) AS count
+		
+		FROM    user_account UA INNER JOIN invoicing_orders INVO ON INVO.user_id=UA.id 
+	
+	 	WHERE   UA.login like '%' || #{userLogin} ||'%' AND 
+	 	
+	 			<if test="factorDateBetween == 0">
+			   		INVO.invoiced_date IS NOT NULL AND (INVO.invoiced_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>	
+			 	<if test="factorDateBetween == 1">
+			   		INVO.shipped_date IS NOT NULL AND (INVO.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	 			<if test="factorDateBetween == 2">
+			   		INVO.creation_date IS NOT NULL AND (INVO.creation_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	 		    INVO.ls_order_id like '%' || #{lsOrderId} || '%' AND
+				INVO.status like '%' || #{status} || '%' 
+	</select>
+
+	<select id="getCountOrders" parameterType="java.util.Map" resultMap="ordersResultMap" >
+		SELECT  COUNT(*) AS count
+	
+		FROM    user_account UA INNER JOIN(orders ORD INNER JOIN orders_rows ORDR ON ORD.ls_order_id=ORDR.ls_order_id)
+			 	ON ORD.user_id=UA.id 
+	
+	 	WHERE   UA.login like '%' || #{userLogin} ||'%' AND 
+			   		     			 	
+			 	<if test="factorDateBetween == 0">
+			   		ORD.creation_date IS NOT NULL AND (ORD.creation_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>	
+			 	<if test="factorDateBetween == 1">
+			   		ORDR.shipped_date IS NOT NULL AND (ORDR.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	
+	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' AND
+				ORDR.status like '%' || #{status} || '%' 
+	
+	</select>
+
+	<select id="searchInvoicedWithSorting" parameterType="java.util.Map" resultMap="ordersResultMap" >
+	
+		SELECT  UA.login AS userLogin,INVO.id AS id,INVO.ls_order_id AS lsOrderId,INVO.creation_date AS creationDate,
+				INVO.required_date AS requiredDate,INVO.status AS status,INVO.client_product_number AS clientProductNumber,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=INVO.product_id)AS lsProductID,
+				CASE 
+				WHEN INVO.quantity IS NULL THEN 0
+				ELSE INVO.quantity
+				END AS quantity,
+				CASE 
+				WHEN (SELECT stock FROM stock ST WHERE ST.product_id=INVO.product_id) IS NULL THEN 0
+				ELSE (SELECT stock FROM stock ST WHERE ST.product_id=INVO.product_id)
+				END AS stock,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=INVO.product_id)AS productDescription,
+				CASE 
+				WHEN INVO.unit_price IS NULL THEN 0
+				ELSE INVO.unit_price
+				END AS unitPrice,
+				(SELECT to_number(price, '999999999.99')  FROM user_product_price UP WHERE UP.product_id=INVO.product_id AND UP.user_id=INVO.user_id AND price IS NOT null AND price!='')AS lsPrice,
+				INVO.notes AS notes,INVO.product_order_number AS productOrderNumber,
+				INVO.client_Order_Number AS clientOrderNumber,
+				INVO.client_first_name AS clientFirstName,
+				INVO.company_header AS companyHeader,
+				INVO.client_last_name AS clientLastName,INVO.client_other_names AS clientOtherNames,
+				INVO.client_number AS clientNumber,INVO.client_street AS clientStreet,INVO.client_other_street AS clientOtherStreet,
+				INVO.client_city AS clientCity,INVO.client_province AS clientProvince,INVO.client_postal_code AS clientPostalCode,
+				INVO.client_phone AS clientPhone,INVO.client_email AS clientEmail,INVO.user_id AS userId,INVO.shipping_company AS shippingCompany,
+				INVO.shipped_date AS shippedDate,INVO.product_id AS productId,
+				ROUND((INVO.shipping_price)::numeric, 2) AS shippingPrice,INVO.billed AS billed,INVO.product_order_date AS productOrderDate,
+				INVO.tracking_number AS trackingNumber,INVO.invoiced_date AS invoicedDate,
+				INVO.client_other_id AS clientOtherId,INVO.order_file_name AS orderFileInfo,
+				INVO.special_handling_name AS specialHandlingName,INVO.special_handling_fee AS specialHandlingFee,INVO.total_price AS totalPrice,
+				INVO.shipping_insurance_multiplier AS shippingInsuranceMultiplier,
+				CUR.id AS currencyId, CUR.symbol AS currencySymbol, CUR.rate AS currencyRate,
+				CUR.creation_date AS currencyCreationDate
+	
+		FROM    user_account UA INNER JOIN (invoicing_orders INVO INNER JOIN currency CUR ON INVO.currency_id=CUR.id)
+					ON INVO.user_id=UA.id  
+	
+	 	WHERE   UA.login like '%' || #{userLogin} ||'%' AND 
+	 			<if test="factorDateBetween == 0">
+			   		INVO.invoiced_date IS NOT NULL AND (INVO.invoiced_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>	
+			 	<if test="factorDateBetween == 1">
+			   		INVO.shipped_date IS NOT NULL AND (INVO.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	 			<if test="factorDateBetween == 2">
+			   		INVO.creation_date IS NOT NULL AND (INVO.creation_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
+			    </if>
+	 		    INVO.ls_order_id like '%' || #{lsOrderId} || '%' AND
+				INVO.status like '%' || #{status} || '%' 	
+			
+			 	ORDER BY 
+			 	<foreach item="item" index="index" collection="listIndexColumn" separator="," >
+			 	
+			 	<if test="item == 0">
+					18,24,6
+				</if>
+	
+			 	<if test="item == 1">
+					1 ASC
+				</if>
+			 	<if  test="item == -1">
+					1 DESC
+				</if>
+			 	
+			 	<if test="item == 3">
+					3  ASC
+				</if>
+			 	<if test="item == -3">
+					3  DESC
+				</if>
+				
+			 	<if test="item == 4">
+					4 ASC
+				</if>
+			 	<if test="item == -4">
+					4 DESC
+				</if>
+			
+				<if test="item == 5">
+					5 ASC
+				</if>
+				<if test="item == -5">
+					5 DESC 
+				</if>
+			 			
+				<if test="item == 6">
+					6 ASC
+				</if>
+				<if test="item == -6">
+					6 DESC 
+				</if>
+				
+			 	<if test="item == 7">
+					7 ASC
+				</if>
+			 	<if test="item == -7">
+					7 DESC
+				</if>
+				
+		 		<if test="item == 8">
+					8 ASC
+				</if>
+			 	<if test="item == -8">
+					8 DESC
+				</if>
+				
+			 	<if test="item == 9">
+					9 ASC
+				</if>
+			 	<if test="item == -9">
+					9 DESC
+				</if>
+	
+				<if test="item == 10">
+					10 ASC
+				</if>
+				<if test="item == -10">
+					10 DESC
+				</if>
+	
+				<if test="item == 11">
+					11 ASC
+				</if>
+				<if test="item == -11">
+					11 DESC
+				</if>
+	
+				<if test="item == 12">
+					12 ASC
+				</if>
+				<if test="item == -12">
+					12 DESC
+				</if>
+	
+				<if test="item == 13">
+					13 ASC
+				</if>
+				<if test="item == -13">
+					13 DESC
+				</if>
+				
+				<if test="item == 30">
+					30 ASC
+				</if>
+				<if test="item == -30">
+					30 DESC
+				</if>
+		
+				<if test="item == 31">
+					31 ASC
+				</if>
+				<if test="item == -31">
+					31 DESC
+				</if>
+				
+				<if test="item == 32">
+					36 ASC
+				</if>
+				<if test="item == -32">
+					36 DESC
+				</if>
+					
+				<if test="item == 34">
+					37 ASC
+				</if>
+				<if test="item == -34">
+					37 DESC
+				</if>
+	
+				</foreach> 	
+				LIMIT #{PAGE_ITEMS_COUNT} OFFSET  #{indexSet}
+	</select>
+
+	<select id="getListOrdersByPONumber" parameterType="java.util.Map" resultMap="ordersResultMap" >
+
+		SELECT  UA.login AS userLogin,ORDR.id AS id,ORD.ls_order_id AS lsOrderId,ORD.creation_date AS creationDate,
+				ORD.required_date AS requiredDate,ORDR.status AS status,
+				ORD.company_header AS companyHeader,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				CASE 
+				WHEN ORDR.quantity IS NULL THEN 0
+				ELSE ORDR.quantity
+				END AS quantity,
+				CASE 
+				WHEN (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id) IS NULL THEN 0
+				ELSE (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)
+				END AS stock,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				CASE 
+				WHEN ORDR.unit_price IS NULL THEN 0
+				ELSE ORDR.unit_price
+				END AS unitPrice,
+				(SELECT to_number(price, '999999999.99')  FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id AND price IS NOT null AND price!='')AS lsPrice,
+				ORDR.notes AS notes,ORD.product_order_number AS productOrderNumber,
+				ORD.client_Order_Number AS clientOrderNumber,
+				ORD.client_first_name AS clientFirstName,
+				ORD.company_header AS companyHeader,
+				ORD.client_last_name AS clientLastName,ORD.client_other_names AS clientOtherNames,
+				ORD.client_number AS clientNumber,ORD.client_street AS clientStreet,ORD.client_other_street AS clientOtherStreet,
+				ORD.client_city AS clientCity,ORD.client_province AS clientProvince,ORD.client_postal_code AS clientPostalCode,
+				ORD.client_phone AS clientPhone,ORD.client_email AS clientEmail,ORD.user_id AS userId,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.product_id AS productId,
+				ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice, ORDR.billed AS billed,ORD.product_order_date AS productOrderDate,
+				ORDR.tracking_number AS trackingNumber,
+				ORD.special_handling_name AS specialHandlingName,ORD.special_handling_fee AS specialHandlingFee,ORD.total_price AS totalPrice  
+	
+		FROM    user_account UA INNER JOIN(orders ORD INNER JOIN orders_rows ORDR ON ORD.ls_order_id=ORDR.ls_order_id)
+			 	ON ORD.user_id=UA.id 
+	
+	 	WHERE  user_id=#{userId} AND product_order_number IN
+			   <![CDATA[(]]>
+			 		<foreach item="item" index="index" collection="listOrders" separator="," >
+			 		#{item.productOrderNumber}
+					</foreach>
+			   <![CDATA[)]]>
+	</select>
+
+
+	<select id="getEtaOrderlistByFieldName" parameterType="Orders"  resultMap="ordersResultMap" >
+
+		SELECT  UA.login AS userLogin,
+				ORDR.id AS id,
+				ORD.ls_order_id AS lsOrderId,
+				ORD.creation_date AS creationDate,
+				ORD.required_date AS requiredDate,
+				ORDR.status AS status,
+				ORD.company_header AS companyHeader,
+				ORDR.notes AS notes,
+				ORD.product_order_number AS productOrderNumber,
+				ORD.client_Order_Number AS clientOrderNumber,
+				ORD.client_first_name AS clientFirstName,
+				ORD.company_header AS companyHeader,
+				ORD.client_last_name AS clientLastName,
+				ORD.client_other_names AS clientOtherNames,
+				ORD.client_number AS clientNumber,
+				ORD.client_street AS clientStreet,
+				ORD.client_other_street AS clientOtherStreet,
+				ORD.client_city AS clientCity,
+				ORD.client_province AS clientProvince,
+				ORD.client_postal_code AS clientPostalCode,
+				ORD.client_phone AS clientPhone,
+				ORD.client_email AS clientEmail,
+				ORD.user_id AS userId,
+				ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,
+				ORDR.product_id AS productId,
+				ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice, 
+				ORDR.billed AS billed,
+				ORD.product_order_date AS productOrderDate,
+				ORDR.tracking_number AS trackingNumber,
+				#{etaFieldName} AS etaFieldName,
+				#{etaFieldValue} AS etaFieldValue,
+				#{secondEtaFieldName} AS secondEtaFieldName,
+				#{secondEtaFieldValue} AS secondEtaFieldValue,
+				ORD.special_handling_name AS specialHandlingName,
+				ORD.special_handling_fee AS specialHandlingFee,
+				ORD.total_price AS totalPrice,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				CASE 
+				WHEN ORDR.quantity IS NULL THEN 0
+				ELSE ORDR.quantity
+				END AS quantity,
+				CASE 
+				WHEN (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id) IS NULL THEN 0
+				ELSE (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)
+				END AS stock,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				CASE 
+				WHEN ORDR.unit_price IS NULL THEN 0
+				ELSE ORDR.unit_price
+				END AS unitPrice,
+				(SELECT to_number(price, '999999999.99')  FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id AND price IS NOT null AND price!='')AS lsPrice
+
+		FROM    user_account UA INNER JOIN(orders ORD INNER JOIN orders_rows ORDR ON ORD.ls_order_id=ORDR.ls_order_id)
+			 	ON ORD.user_id=UA.id 
+		WHERE  user_id=#{userId}  
+
+			<!-- .............. FIRST ETA FIELD ............ -->
+			<if test="etaFieldName == 'product_order_number'">
+				AND	product_order_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_order_number'">
+				AND	client_order_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_other_id'">
+				AND	client_other_id IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_number'">
+				AND	client_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'ls_order_id'">
+				AND	ORD.ls_order_id IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'cst_product_number'">
+				AND	cst_product_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_product_number'">
+				AND	client_product_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'ls_product_id'">
+				AND	ORDR.product_id IN(SELECT id FROM product WHERE loyalty_source_product_id=#{etaFieldValue})
+			</if>
+			
+			<!-- ............ Second ETA FIELD ............. -->
+		
+			<if test="secondEtaFieldName == 'loyalty_source_product_id'">
+				AND	ORDR.product_id IN(SELECT id FROM product  WHERE loyalty_source_product_id=#{secondEtaFieldValue})
+			</if>
+			
+			<if test="secondEtaFieldName == 'model_number'">
+				AND	ORDR.product_id IN(SELECT product_id FROM product_model_number WHERE model_number=#{secondEtaFieldValue})
+			</if>
+	
+			<if test="secondEtaFieldName == 'client_first_name'">
+				AND	ORD.ls_order_id IN(SELECT ls_order_id FROM orders WHERE client_first_name=#{secondEtaFieldValue})
+			</if>
+	
+			<if test="secondEtaFieldName == 'client_last_name'">
+				AND	ORD.ls_order_id IN(SELECT ls_order_id FROM orders WHERE client_last_name=#{secondEtaFieldValue})
+			</if>
+
+		UNION
+   	
+		SELECT  UA.login AS userLogin,
+				INOR.id AS id,
+				INOR.ls_order_id AS lsOrderId,
+				INOR.creation_date AS creationDate,
+				INOR.required_date AS requiredDate,
+				INOR.status AS status,
+				INOR.company_header AS companyHeader,
+				INOR.notes AS notes,
+				INOR.product_order_number AS productOrderNumber,
+				INOR.client_Order_Number AS clientOrderNumber,
+				INOR.client_first_name AS clientFirstName,
+				INOR.company_header AS companyHeader,
+				INOR.client_last_name AS clientLastName,
+				INOR.client_other_names AS clientOtherNames,
+				INOR.client_number AS clientNumber,
+				INOR.client_street AS clientStreet,
+				INOR.client_other_street AS clientOtherStreet,
+				INOR.client_city AS clientCity,
+				INOR.client_province AS clientProvince,
+				INOR.client_postal_code AS clientPostalCode,
+				INOR.client_phone AS clientPhone,
+				INOR.client_email AS clientEmail,
+				INOR.user_id AS userId,
+				INOR.shipping_company AS shippingCompany,
+				INOR.shipped_date AS shippedDate,
+				INOR.product_id AS productId,
+				ROUND((INOR.shipping_price)::numeric, 2) AS shippingPrice, 
+				INOR.billed AS billed,
+				INOR.product_order_date AS productOrderDate,
+				INOR.tracking_number AS trackingNumber,
+				#{etaFieldName} AS etaFieldName,
+				#{etaFieldValue} AS etaFieldValue,
+				#{secondEtaFieldName} AS secondEtaFieldName,
+				#{secondEtaFieldValue} AS secondEtaFieldValue,
+				INOR.special_handling_name AS specialHandlingName,
+				INOR.special_handling_fee AS specialHandlingFee,
+				INOR.total_price AS totalPrice,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=INOR.product_id)AS lsProductID,
+				CASE 
+				WHEN INOR.quantity IS NULL THEN 0
+				ELSE INOR.quantity
+				END AS quantity,
+				CASE 
+				WHEN (SELECT stock FROM stock ST WHERE ST.product_id=INOR.product_id) IS NULL THEN 0
+				ELSE (SELECT stock FROM stock ST WHERE ST.product_id=INOR.product_id)
+				END AS stock,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=INOR.product_id)AS productDescription,
+				CASE 
+				WHEN INOR.unit_price IS NULL THEN 0
+				ELSE INOR.unit_price
+				END AS unitPrice,
+				(SELECT to_number(price, '999999999.99')  FROM user_product_price UP WHERE UP.product_id=INOR.product_id AND UP.user_id=INOR.user_id AND price IS NOT null AND price!='')AS lsPrice
+
+		FROM    user_account UA INNER JOIN invoicing_orders INOR
+			 	ON INOR.user_id=UA.id 
+		WHERE  user_id=#{userId}  
+
+			<if test="etaFieldName == 'product_order_number'">
+				AND	product_order_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_order_number'">
+				AND	client_order_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_other_id'">
+				AND	client_other_id IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_number'">
+				AND	client_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'ls_order_id'">
+				AND	ls_order_id IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'cst_product_number'">
+				AND	cst_product_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'client_product_number'">
+				AND	client_product_number IN(#{etaFieldValue})
+			</if>
+			
+			<if test="etaFieldName == 'ls_product_id'">
+				AND	INOR.product_id IN(SELECT id FROM product WHERE loyalty_source_product_id=#{etaFieldValue})
+			</if>
+			
+			
+			<!-- ............ Second ETA FIELD ............. -->
+		
+			<if test="secondEtaFieldName == 'loyalty_source_product_id'">
+				AND	INOR.product_id IN(SELECT id FROM product  WHERE loyalty_source_product_id=#{secondEtaFieldValue})
+			</if>
+			
+			<if test="secondEtaFieldName == 'model_number'">
+				AND	INOR.product_id IN(SELECT product_id FROM product_model_number WHERE model_number=#{secondEtaFieldValue})
+			</if>
+	
+			<if test="secondEtaFieldName == 'client_first_name'">
+				AND	INOR.ls_order_id IN(SELECT ls_order_id FROM invoicing_orders WHERE client_first_name=#{secondEtaFieldValue})
+			</if>
+	
+			<if test="secondEtaFieldName == 'client_last_name'">
+				AND	INOR.ls_order_id IN(SELECT ls_order_id FROM invoicing_orders WHERE client_last_name=#{secondEtaFieldValue})
+			</if>
+			
+	</select>
+
+	<select id="getOrdersItemsExistInDB" parameterType="java.util.Map" resultMap="ordersResultMap" >
+
+		SELECT* 
+		FROM
+			(SELECT  ORD.product_order_number,ORD.user_id,ORD.ls_order_id AS lsOrderId
+			FROM    orders ORD INNER JOIN orders_rows ORDR ON ORD.ls_order_id=ORDR.ls_order_id
+			UNION
+			SELECT  INORD.product_order_number,INORD.user_id,INORD.ls_order_id AS lsOrderId
+			FROM    invoicing_orders INORD	
+			)AS T
+	 	WHERE  T.user_id=#{userId} AND T.product_order_number IN
+			<![CDATA[(]]>
+				<foreach item="item" index="index" collection="listOrders" separator="," >
+			 		#{item.productOrderNumber}
+				</foreach>
+			<![CDATA[)]]>
+	</select>
+
+	<select id="getRowsByLsOrderIdLikeStatus" parameterType="String" resultMap="ordersRowsResultMap" >
+		SELECT  ORDR.id AS id, ORDR.order_id AS orderId ,ORDR.notes AS notes,ORDR.required_date AS requiredDate,
+				ORDR.cst_product_number AS cstProductNumber,ORDR.unit_price AS unitPrice,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.tracking_number AS trackingNumber,ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice,
+				ORDR.shipping_fee AS shippingFee,ORDR.billed AS billed,ORDR.quantity AS quantity,
+				ORDR.product_id AS productId,ORDR.ls_order_id AS lsOrderId,ORDR.ls_order_id AS lsOrderId,ORDR.status AS status,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				(SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)AS stock,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				(SELECT price FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id)AS lsPrice	
+		FROM 	orders_rows ORDR INNER JOIN orders ORD ON ORDR.ls_order_id=ORD.ls_order_id
+		WHERE	ORDR.ls_order_id = #{lsOrderId} AND
+				ORDR.status like '%' || #{status} || '%' 	 	
+	
+	 	<if test="sort == 5">
+			ORDER BY ORDR.status
+		</if>
+	 	
+	 	<if test="sort == 7">
+			ORDER BY ORDR.quantity
+		</if>
+		
+		<if test="sort == 10">
+			ORDER BY ORDR.unit_price
+		</if>
+		
+		<if test="sort == 19">
+			ORDER BY ORDR.shipping_company
+		</if>
+		
+		<if test="sort == 20">
+			ORDER BY ORDR.shipped_date
+		</if>
+			
+		<if test="sort == 22">
+			ORDER BY ORDR.shipping_price
+		</if>
+				
+		<if test="sort == 23">
+			ORDER BY ORDR.billed
+		</if>
+		
+	</select>
+
+	<select id="getRowsByLsOrderIdLikeStatusSorted" parameterType="String" resultMap="ordersRowsResultMap" >
+		SELECT  ORDR.id AS id, ORDR.order_id AS orderId ,ORDR.notes AS notes,ORDR.required_date AS requiredDate,
+				ORD.company_header AS companyHeader,
+				ORDR.cst_product_number AS cstProductNumber,ORDR.unit_price AS unitPrice,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.tracking_number AS trackingNumber,ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice,
+				ORDR.shipping_fee AS shippingFee,ORDR.billed AS billed,ORDR.quantity AS quantity,
+				ORDR.product_id AS productId,ORDR.ls_order_id AS lsOrderId,ORDR.ls_order_id AS lsOrderId,ORDR.status AS status,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				(SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)AS stock,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				(SELECT price FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id)AS lsPrice	
+		FROM 	orders_rows ORDR INNER JOIN orders ORD ON ORDR.ls_order_id=ORD.ls_order_id
+		WHERE	ORDR.ls_order_id like '%' || #{lsOrderId} || '%'  AND
+				ORDR.status like '%' || #{status} || '%' 	 	
+	
+	 	<if test="sort == 5">
+			ORDER BY ORDR.status
+		</if>
+	 	
+	 	<if test="sort == 7">
+			ORDER BY ORDR.quantity
+		</if>
+		
+		<if test="sort == 10">
+			ORDER BY ORDR.unit_price
+		</if>
+		
+		<if test="sort == 19">
+			ORDER BY ORDR.shipping_company
+		</if>
+		
+		<if test="sort == 20">
+			ORDER BY ORDR.shipped_date
+		</if>
+			
+		<if test="sort == 22">
+			ORDER BY ORDR.shipping_price
+		</if>
+				
+		<if test="sort == 23">
+			ORDER BY ORDR.billed
+		</if>
+		
+	</select>
+	
+	<select id="getRowByLsOrderId" parameterType="String" resultMap="ordersRowsResultMap" >
+		SELECT  ORDR.id AS id, ORDR.order_id AS orderId ,ORDR.notes AS notes,ORDR.required_date AS requiredDate,
+				ORDR.cst_product_number AS cstProductNumber,ORDR.unit_price AS unitPrice,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.tracking_number AS trackingNumber,ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice,
+				ORDR.shipping_fee AS shippingFee,ORDR.billed AS billed,ORDR.quantity AS quantity,
+				ORDR.product_id AS productId,ORDR.ls_order_id AS lsOrderId,ORDR.ls_order_id AS lsOrderId,ORDR.status AS status,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				(SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)AS stock,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				(SELECT price FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id)AS lsPrice	
+		FROM 	orders_rows ORDR INNER JOIN orders ORD ON ORDR.ls_order_id=ORD.ls_order_id
+		WHERE	ORDR.ls_order_id = #{value}
+	</select>
+	
+	<select id="getRowsByRowId" parameterType="Long" resultMap="ordersRowsResultMap" >
+		SELECT  ORDR.id AS id, ORDR.order_id AS orderId ,ORDR.notes AS notes,ORDR.required_date AS requiredDate,
+				ORDR.cst_product_number AS cstProductNumber,ORDR.unit_price AS unitPrice,ORDR.shipping_company AS shippingCompany,
+				ORDR.shipped_date AS shippedDate,ORDR.tracking_number AS trackingNumber,ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice,
+				ORDR.shipping_fee AS shippingFee,ORDR.billed AS billed,ORDR.quantity AS quantity,
+				ORDR.product_id AS productId,ORDR.ls_order_id AS lsOrderId,ORDR.ls_order_id AS lsOrderId,ORDR.status AS status,
+				(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND P.id=ORDR.product_id)AS productDescription,
+				(SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)AS stock,
+				(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=ORDR.product_id)AS lsProductID,
+				(SELECT price FROM user_product_price UP WHERE UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id)AS lsPrice	
+		FROM 	orders_rows ORDR INNER JOIN orders ORD ON ORDR.ls_order_id=ORD.ls_order_id
+		WHERE	ORDR.id = #{value}
+	</select>
+	
+	<select id="isExistProductInStock" parameterType="Product" resultMap="productResultMap" >
+		SELECT  COUNT(*) AS Id
+		FROM 	stock 
+		WHERE	product_id = #{id}
+	</select>
+
+	<select id="isFileDownloaded" parameterType="UserFilesDownloaded" resultMap="userFilesDownloadedResultMap" >
+		SELECT MAX(id) AS id 
+		FROM user_files_downloaded 
+		WHERE user_id=#{userId} and file_name=#{fileName}
+	</select>
+
+	<select id="isFileForUser" parameterType="java.util.Map" resultMap="userFilesDownloadedResultMap" >
+		SELECT MAX(UFD.id) AS id 
+		FROM user_files_downloaded UFD INNER JOIN user_account UC ON UFD.user_id=UC.id
+		WHERE UC.login=#{userLogin} and file_name=#{fileToImport}
+	</select>
+	
+	<select id="getListFileDownloaded" parameterType="java.util.Map" resultMap="userFilesDownloadedResultMap" >
+		SELECT UFD.id AS id,UC.login,UFD.treated AS treated, UFD.user_id AS userId, 
+			   UFD.file_name AS fileName, UFD.creation_date AS creationDate, 
+			   UFD.file_deleted AS fileDeleted 
+		FROM user_files_downloaded UFD INNER JOIN user_account UC on UFD.user_id=UC.id
+		WHERE UC.active=TRUE AND 
+			  UFD.file_deleted=FALSE
+		<if test="userLoginOption == 1">
+			  AND UC.login=#{userLogin}
+		</if>	
+		<if test="treatedOption == 0">
+			  AND UFD.treated=FALSE
+		</if>				
+		<if test="treatedOption == 1">
+			  AND UFD.treated=TRUE
+		</if>
+		ORDER BY UFD.creation_date DESC  
+	</select>
+	
+	<!-- Client Part -->
+	<select id="getAllClientsByUser" parameterType="Long" resultMap="ordersResultMap">
+		SELECT	UC.client_profile_id AS clientProfileId,UC.user_id AS userId,CP.client_first_name AS clientFirstName,
+				CP.client_last_name AS clientLastName,CP.client_other_names AS clientOtherNames,
+				CP.client_street AS clientStreet,CP.client_other_street AS clientOtherStreet,
+				CP.client_city AS clientCity,CP.client_province AS clientProvince ,CP.client_postal_code AS clientPostalCode,
+				CP.client_phone AS clientPhone,CP.client_email AS clientEmail,UC.creation_date AS creationDate
+		FROM 	client_profile CP INNER JOIN user_client UC ON CP.id=UC.client_profile_id
+		WHERE 	UC.user_id=#{value}
+	</select>
+
+	<select id="insertNewDestination" parameterType="Orders"  resultMap="ordersResultMap">
+		INSERT INTO 
+			client_profile(client_first_name,client_last_name,client_other_names,client_street,
+		    client_other_street,client_province,client_city,client_postal_code,client_phone,client_email)
+		VALUES
+			(#{clientFirstName},#{clientLastName},#{clientOtherNames},#{clientStreet},#{clientOtherStreet},
+			 #{clientProvince},#{clientCity},#{clientPostalCode},#{clientPhone},#{clientEmail})RETURNING id
+	</select>
+	<!-- END Client Part -->
+
+	<select id="getTotalShippedQuantityForSplitOrders" parameterType="String" resultType="double" >
+		SELECT sum(TotalQuantity.quantity) FROM(
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity FROM orders_rows WHERE ls_order_id = #{value}  AND status like '%shipped%'
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity  FROM orders_rows WHERE ls_order_id like  #{value} || '\\_' || '%' AND status like '%shipped%'
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity FROM invoicing_orders WHERE ls_order_id = #{value}  AND status like '%invoiced%'
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity  FROM invoicing_orders WHERE ls_order_id like  #{value} || '\\_' || '%' AND status like '%invoiced%'
+		) AS TotalQuantity
+	</select>
+
+	<select id="getOrderedQuantity" parameterType="String" resultType="double" >
+		SELECT sum(TotalQuantity.quantity) FROM(
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity FROM orders_rows WHERE ls_order_id = #{value}
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity  FROM orders_rows WHERE ls_order_id like  #{value} || '\\_' || '%' 
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity FROM invoicing_orders WHERE ls_order_id = #{value} 
+		UNION
+		SELECT CASE WHEN quantity IS NULL THEN 0 ELSE quantity END AS quantity  FROM invoicing_orders WHERE ls_order_id like  #{value} || '\\_' || '%' 
+		) AS TotalQuantity
+	</select>
+	
+	<select id="getInvoiceOrderByLsOrderId" parameterType="String" resultMap="ordersResultMap">
+		SELECT  INVO.id AS id, INVO.user_id AS userId, INVO.product_order_number AS productOrderNumber, INVO.client_Order_Number AS clientOrderNumber, INVO.client_first_name AS clientFirstName,
+			INVO.client_last_name AS clientLastName,INVO.client_other_names AS clientOtherNames,INVO.client_number AS clientNumber,INVO.client_street AS clientStreet,INVO.client_other_street AS clientOtherStreet,
+			INVO.client_city AS clientCity,INVO.client_province AS clientProvince,INVO.client_postal_code AS clientPostalCode,INVO.client_phone AS clientPhone,INVO.client_email AS clientEmail,
+			INVO.creation_date AS creationDate,INVO.product_order_date AS productOrderDate,INVO.required_date AS requiredDate,INVO.ls_order_id AS lsOrderId,INVO.company_header AS companyHeader,
+			INVO.notes AS notes,INVO.cst_product_number as cstProductNumber,
+			CASE 
+			WHEN INVO.unit_price IS NULL THEN 0
+			ELSE INVO.unit_price
+			END AS unitPrice,
+			INVO.shipping_company AS shippingCompany,INVO.shipped_date AS shippedDate,INVO.tracking_number AS trackingNumber,ROUND((INVO.shipping_price)::numeric, 2) AS shippingPrice,
+			INVO.billed AS billed,
+			CASE 
+			WHEN INVO.quantity IS NULL THEN 0
+			ELSE INVO.quantity
+			END AS quantity,
+			(SELECT loyalty_source_product_id FROM product PRO WHERE PRO.id=INVO.product_id)AS lsProductID,
+			INVO.status AS status,INVO.client_product_number AS clientProductNumber,INVO.invoiced_date AS invoicedDate,INVO.order_file_name AS orderFileInfo,
+			INVO.client_other_id AS clientOtherId	
+		FROM   invoicing_orders INVO 
+	 	WHERE  INVO.ls_order_id=#{lsOrderId}
+	</select>	
+
+	<select id="ordersListNotSaved" parameterType="java.util.Map" resultMap="ordersResultMap">
+		SELECT * 
+		FROM (
+			<foreach item="item" index="index" collection="ordersListImported" separator="  UNION " >
+					SELECT	#{item.productOrderNumber}
+			</foreach>
+			)AS ordersList
+		EXCEPT
+		(SELECT product_order_number AS productOrderNumber FROM orders where user_id=#{userId}
+		union
+		SELECT product_order_number FROM invoicing_orders  where user_id=#{userId}) 
+	</select>
+	
+	<select id="getCurrencyIdByUserId" parameterType="Long" resultMap="currencyResultMap">
+		SELECT	CUR.id AS id,
+				CUR.symbol AS symbol,
+				CUR.rate AS rate,
+				CUR.creation_date AS creationDate 
+		FROM currency CUR INNER JOIN user_profile UP ON CUR.id=UP.currency_id
+		WHERE UP.user_id = #{value}
+	</select>
+			
+	<select id="isThisLsOrderIdInUsed" parameterType="String" resultMap="ordersResultMap">
+		SELECT ls_order_id AS lsOrderId FROM orders WHERE ls_order_id=#{value} 
+		UNION 
+		SELECT ls_order_id AS lsOrderId FROM invoicing_orders WHERE ls_order_id=#{value}
+		LIMIT 1
+	</select>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<select id="getSaleByOrder" parameterType="Orders"  resultMap="ordersResultMap">
+		<!--  test with user_id=3, product_id=5094, qt=63 --> 
+		<!-- ===================== Change sale_qt from order quantity ==========================================================================-->
+		UPDATE product_sale SET 
+		       sale_qt=T.sale_qt-63
+		FROM (SELECT PSL.id, PSL.sale_qt,PSL.qt_max,PSL.product_id,PSL.active,USL.user_id,USL.active
+		      FROM product_sale PSL INNER JOIN user_sale USL ON PSL.id=USL.product_sale_id 
+		      WHERE USL.user_id=48 AND PSL.product_id=5094 AND PSL.qt_max IS NOT NULL AND PSL.active IS TRUE AND USL.active IS TRUE) AS T
+		WHERE product_sale.id=T.id ;
+		
+		<!-- ===================== Return quantity with regular price if sale_qt < order_qt ====================================================-->
+		SELECT PSL.id AS id, PSL.sale_qt AS quantity,PSL.product_id AS productId,USL.user_id AS userId,USL.regular_price AS price
+		      FROM product_sale PSL INNER JOIN user_sale USL ON PSL.id=USL.product_sale_id 
+		      WHERE USL.user_id=48 AND PSL.product_id=5094 AND PSL.qt_max IS NOT NULL AND PSL.active IS TRUE AND USL.active IS TRUE;
+		
+		<!-- ===================== Inactivate user sale if qt_sale <0  =========================================================================-->
+		UPDATE user_sale SET
+		       active=FALSE
+		FROM (SELECT PSL.id FROM product_sale PSL WHERE PSL.sale_qt<![CDATA[<]]>0 AND PSL.product_id=5094) AS U
+		WHERE user_sale.product_sale_id=U.id;
+		
+		<!-- ===================== Change price by regular price if sale_qt < 0 ================================================================-->
+		UPDATE user_product_price SET
+		       price=M.regular_price, 
+		       percent_profit=M.regular_percent_profit,
+		       percent_discount=M.regular_percent_discount
+		FROM (SELECT USL.user_id,PSL.product_id,regular_price,regular_percent_profit,regular_percent_discount 
+		      FROM product_sale PSL INNER JOIN user_sale USL ON PSL.id=USL.product_sale_id 
+		      WHERE USL.user_id=48 AND PSL.product_id=5094 AND PSL.qt_max IS NOT NULL AND PSL.active IS TRUE) AS M
+		WHERE user_product_price.user_id=M.user_id AND user_product_price.product_id=M.product_id;
+		
+		<!-- ===================== Make product.status as Discountinued if sale_qt < 0 and loyalty_product_id_sub not empty  ====================-->
+		UPDATE product SET
+		       loyalty_source_product_id_sub=Y.loyalty_product_id_sub,
+		       status_id=3
+		FROM (SELECT PSL.product_id,PSL.loyalty_product_id_sub FROM product_sale PSL WHERE PSL.sale_qt<![CDATA[<]]>0 AND PSL.product_id=5094 AND PSL.active IS TRUE AND PSL.loyalty_product_id_sub IS NOT NULL AND PSL.loyalty_product_id_sub!='') AS Y
+		WHERE product.id=Y.product_id;
+		
+		<!-- ===================== Inactivate product_sale if sale_qt < 0  ======================================================================-->
+		UPDATE product_sale SET
+		       active=FALSE
+		WHERE sale_qt<![CDATA[<]]>0 AND product_id=5094;
+		
+		
+		<!-- ===================== make sale_qt = 0 if qt_sale < 0 ==============================================================================-->
+		UPDATE product_sale SET
+		       sale_qt=0
+		WHERE sale_qt<![CDATA[<]]>0 AND product_id=5094;
+	</select>
+
+	<select id="getOrdersByProductOrderNumberSumit" parameterType="java.util.Map" resultMap="ordersResultMap">
+
+		SELECT UA.login AS userLogin,ORDR.id AS id,ORD.ls_order_id AS
+		lsOrderId,ORD.creation_date AS creationDate,
+		ORD.required_date AS requiredDate,ORDR.status AS status,
+		ORD.company_header AS companyHeader,
+		(SELECT loyalty_source_product_id FROM product PRO WHERE
+		PRO.id=ORDR.product_id)AS lsProductID,
+		CASE
+		WHEN ORDR.quantity IS NULL THEN 0
+		ELSE ORDR.quantity
+		END AS quantity,
+		CASE
+		WHEN (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id) IS
+		NULL THEN 0
+		ELSE (SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)
+		END AS stock,
+		(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON
+		P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND
+		P.id=ORDR.product_id)AS productDescription,
+		CASE
+		WHEN ORDR.unit_price IS NULL THEN 0
+		ELSE ORDR.unit_price
+		END AS unitPrice,
+		(SELECT to_number(price, '999999999.99') FROM user_product_price UP WHERE
+		UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id AND price IS
+		NOT null AND price!='')AS lsPrice,
+		ORDR.notes AS notes,ORD.product_order_number AS productOrderNumber,
+		ORD.client_Order_Number AS clientOrderNumber,
+		ORD.client_first_name AS clientFirstName,
+		ORD.company_header AS companyHeader,
+		ORD.client_last_name AS clientLastName,ORD.client_other_names AS clientOtherNames,
+		ORD.client_number AS clientNumber,ORD.client_street AS
+		clientStreet,ORD.client_other_street AS clientOtherStreet,
+		ORD.client_city AS clientCity,ORD.client_province AS
+		clientProvince,ORD.client_postal_code AS clientPostalCode,
+		ORD.client_phone AS clientPhone,ORD.client_email AS
+		clientEmail,ORD.user_id AS userId,ORDR.shipping_company AS
+		shippingCompany,
+		ORDR.shipped_date AS shippedDate,ORDR.product_id AS productId,
+		ROUND((ORDR.shipping_price)::numeric, 2) AS shippingPrice, ORDR.billed
+		AS billed,ORD.product_order_date AS productOrderDate,
+		ORDR.tracking_number AS trackingNumber,
+		ORD.special_handling_name AS specialHandlingName,ORD.special_handling_fee AS
+		specialHandlingFee,ORD.total_price AS totalPrice
+
+		FROM user_account UA INNER JOIN(orders ORD INNER JOIN orders_rows ORDR ON
+		ORD.ls_order_id=ORDR.ls_order_id)
+		ON ORD.user_id=UA.id
+
+		WHERE product_order_number like '%#{productOrderNumber}%';
+		
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+												INSERT
+	////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+	 
+	<insert id="insertOrder" parameterType="Orders">
+    	INSERT INTO orders (user_id,product_order_number,client_order_number,client_first_name,
+							client_last_name,client_other_names,client_number,client_street,client_other_street,
+							client_city,client_province,client_postal_code,client_phone,client_email,product_order_date,
+							ls_order_id,required_date,creation_date,company_header,order_file_info,client_other_id,
+							special_handling_name,special_handling_fee,total_price)
+    	VALUES
+    	 (#{userId},#{productOrderNumber},#{clientOrderNumber},#{clientFirstName},
+		 #{clientLastName},#{clientOtherNames},#{clientNumber},#{clientStreet},#{clientOtherStreet},
+		 #{clientCity},#{clientProvince},#{clientPostalCode},#{clientPhone},#{clientEmail},
+		 #{productOrderDate},#{lsOrderId},#{requiredDate},#{creationDate},#{companyHeader},#{orderFileInfo},#{clientOtherId},
+		 #{specialHandlingName},#{specialHandlingFee},#{totalPrice})
+
+	</insert>
+	
+
+	<insert id="insertRowOrder" parameterType="OrdersRows">
+    	INSERT INTO orders_rows (order_id,notes,required_date,cst_product_number,unit_price,shipping_company,
+							shipped_date,tracking_number,shipping_price,shipping_fee,billed,quantity,
+							product_id,ls_order_id,client_product_number,provided_ls_product_id,currency_id)
+    	
+    	VALUES (#{orderId},#{notes},#{requiredDate},#{cstProductNumber},#{unitPrice},#{shippingCompany},
+		 		#{shippedDate},#{trackingNumber},#{shippingPrice},#{shippingFee},#{billed},#{quantity},
+		 		#{productId},#{lsOrderId},#{clientProductNumber},#{providedLsProductId},#{currencyId})
+	</insert>
+
+
+	<insert id="insertListOrders" parameterType="Orders">
+
+		<foreach item="item" index="index" collection="ordersListImported" separator=";" >
+			INSERT INTO orders (user_id,product_order_number,client_order_number,client_first_name,
+			client_last_name,client_other_names,client_number,client_street,client_other_street,
+			client_city,client_province,client_postal_code,client_phone,client_email,product_order_date,
+			ls_order_id,required_date,creation_date,company_header,order_file_info,client_other_id,
+			special_handling_name,special_handling_fee,total_price)
+			
+		 	SELECT #{item.userId},#{item.productOrderNumber},#{item.clientOrderNumber},#{item.clientFirstName},
+			#{item.clientLastName},#{item.clientOtherNames},#{item.clientNumber},#{item.clientStreet},#{item.clientOtherStreet},
+			#{item.clientCity},#{item.clientProvince},#{item.clientPostalCode},#{item.clientPhone},#{item.clientEmail},
+			#{item.productOrderDate},#{item.lsOrderId},#{item.requiredDate},#{item.creationDate},#{item.companyHeader},#{item.orderFileInfo},#{item.clientOtherId},
+			#{item.specialHandlingName},#{item.specialHandlingFee},#{item.totalPrice};
+				
+			<foreach item="row" index="index1" collection="item.rowsList" separator=";" >
+	    	INSERT INTO orders_rows (order_id,notes,required_date,cst_product_number,unit_price,shipping_company,
+								shipped_date,tracking_number,shipping_price,shipping_fee,billed,quantity,
+								product_id,ls_order_id,client_product_number,provided_ls_product_id,currency_id)
+	    	
+			SELECT  #{row.orderId},#{row.notes},#{row.requiredDate},#{row.cstProductNumber},#{row.unitPrice},#{row.shippingCompany},
+			 		#{row.shippedDate},#{row.trackingNumber},#{row.shippingPrice},#{row.shippingFee},#{row.billed},#{row.quantity},
+			 		#{row.productId},#{row.lsOrderId},#{row.clientProductNumber},#{row.providedLsProductId},#{row.currencyId}
+			</foreach>
+			
+		</foreach>
+	</insert>
+
+
+	<insert id="insertInvoicedOrder" parameterType="Orders">
+		BEGIN;
+		SAVEPOINT sql_updates;
+		
+		UPDATE orders_rows SET status='invoiced' WHERE ls_order_id = #{lsOrderId};
+		
+		INSERT INTO invoicing_orders (user_id,product_order_number,client_order_number,client_first_name,
+			    client_last_name,client_other_names,client_number,client_street,client_other_street,
+			    client_city,client_province,client_postal_code,client_phone,client_email,product_order_date,
+			    ls_order_id,required_date,creation_date,company_header,
+		
+			    notes,cst_product_number,unit_price,shipping_company,
+			    shipped_date,tracking_number,shipping_price,billed,quantity,
+			    product_id,client_product_number,order_file_name,client_other_id,
+			    special_handling_name,special_handling_fee,total_price,currency_id,
+			    shipping_insurance_multiplier)
+		SELECT
+		    	#{userId},#{productOrderNumber},#{clientOrderNumber},#{clientFirstName},
+			    #{clientLastName},#{clientOtherNames},#{clientNumber},#{clientStreet},#{clientOtherStreet},
+			    #{clientCity},#{clientProvince},#{clientPostalCode},#{clientPhone},#{clientEmail},
+			    #{productOrderDate},#{lsOrderId},#{requiredDate},#{creationDate},#{companyHeader},
+		
+			    #{notes},#{cstProductNumber},#{unitPrice},#{shippingCompany},
+			    #{shippedDate},#{trackingNumber},#{shippingPrice},#{billed},#{quantity},
+			    #{productId},#{clientProductNumber},#{orderFileInfo},#{clientOtherId},
+			    #{specialHandlingName},#{specialHandlingFee},#{totalPrice},#{currencyId},
+			    #{shippingInsuranceMultiplier}
+			    
+			    
+		WHERE NOT EXISTS (SELECT * FROM invoicing_orders X WHERE X.ls_order_id=#{lsOrderId});
+			    
+		DELETE FROM orders_rows where ls_order_id = #{lsOrderId};
+		DELETE FROM orders where ls_order_id = #{lsOrderId};
+		
+		RELEASE SAVEPOINT sql_updates;
+		COMMIT;	
+	</insert>
+
+	<insert id="insertOrderSpecialShipping" parameterType="OrdersSpecialShipping">
+		INSERT INTO orders_special_shipping(user_id,ls_product_id,shipping_price,product_id)
+		VALUES(#{userId},#{lsProductId},#{shippingPrice},#{productId});
+	</insert>
+
+<!--
+	<insert id="insertProductInStock" parameterType="Product" >
+		INSERT INTO stock (product_id,stock)
+		VALUES (#{id},#{stock})
+	</insert>
+-->
+	<insert id="insertUserClient" parameterType="Orders" >
+		INSERT INTO user_client(user_id,client_profile_id)
+		VALUES(#{userId},#{clientProfileId})
+	</insert>
+	
+	<insert id="insertUserFileRecovery" parameterType="userFileRecovery" >
+			UPDATE user_file_recovery 
+				SET 	product_order_number=#{productOrderNumber},
+						client_order_number=#{clientOrderNumber},
+						cst_product_number=#{cstProductNumber},
+						product_order_date=#{productOrderDate},
+						client_number=#{clientNumber},
+						client_first_name=#{clientFirstName}, 
+						client_last_name=#{clientLastName},
+						client_street=#{clientStreet}, 
+						client_other_street=#{clientOtherStreet}, 
+						client_city=#{clientCity},
+						client_postal_code=#{clientPostalCode},
+						client_province=#{clientProvince}, 
+						client_phone=#{clientPhone},
+						client_email=#{clientEmail},
+						ls_product_id=#{lsProductID},  
+						product_description= #{productDescription},
+						unit_price= #{unitPrice},
+						company_header=#{companyHeader},
+						user_id=#{userId}, 
+						file_type_id=#{fileTypeId},
+						file_type= #{fileType}, 
+						quantity=#{quantity}, 
+						tag_root=#{tagRoot},
+						shipping_company=#{shippingCompany}, 
+						required_date=#{requiredDate}, 
+						client_other_names=#{clientOtherNames}, 
+						client_phone_zone=#{clientPhoneZone}, 
+						format_date=#{formatDate},
+						notes= #{notes},
+						client_product_number=#{clientProductNumber},
+						client_other_id=#{clientOtherId},
+						provided_ls_product_id=#{providedLsProductId},
+						file_type_id_confirm=#{fileTypeIdConfirm},
+						file_format_id_comfirm=#{fileFormatIdComfirm}
+			WHERE 		user_id=#{userId} AND file_type_id=#{fileTypeId};
+			
+			INSERT INTO user_file_recovery (product_order_number, client_order_number, cst_product_number,
+						product_order_date, client_number, client_first_name, client_last_name,
+						client_street, client_other_street, client_city, client_postal_code,
+						client_province, client_phone, client_email, ls_product_id, product_description,
+						unit_price, company_header, user_id, file_type_id, file_type, quantity, tag_root,
+						shipping_company, required_date, client_other_names, client_phone_zone, format_date,
+						 notes,client_product_number,client_other_id,provided_ls_product_id,file_type_id_confirm,file_format_id_comfirm)				
+			SELECT 		#{productOrderNumber}, #{clientOrderNumber}, #{cstProductNumber},
+						#{productOrderDate}, #{clientNumber}, #{clientFirstName}, #{clientLastName},
+						#{clientStreet}, #{clientOtherStreet}, #{clientCity}, #{clientPostalCode},
+						#{clientProvince}, #{clientPhone}, #{clientEmail}, #{lsProductID}, #{productDescription},
+						#{unitPrice}, #{companyHeader}, #{userId}, #{fileTypeId}, #{fileType}, #{quantity}, #{tagRoot},
+						#{shippingCompany}, #{requiredDate}, #{clientOtherNames}, #{clientPhoneZone}, #{formatDate}, #{notes},
+						#{clientProductNumber},#{clientOtherId},#{providedLsProductId},#{fileTypeIdConfirm},#{fileFormatIdComfirm}
+			WHERE NOT EXISTS(SELECT* FROM user_file_recovery UFR WHERE UFR.user_id=#{userId} AND UFR.file_type_id=#{fileTypeId});
+	</insert>
+
+	<insert id="insertUserFilesDownloaded" parameterType="UserFilesDownloaded" >
+			INSERT INTO user_files_downloaded(user_id, file_name)
+			SELECT #{userId}, #{fileName}
+			WHERE NOT EXISTS(SELECT* FROM user_files_downloaded UFD WHERE UFD.user_id =#{userId} AND UFD.file_name=#{fileName})
+	</insert>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+												UPDATE
+	////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<update id="makeOrderInProgress" parameterType="Orders">
+		UPDATE orders SET
+			   special_handling_name=#{specialHandlingName},
+			   special_handling_fee=#{specialHandlingFee},
+			   total_price=#{totalPrice}
+		WHERE ls_order_id=#{lsOrderId};
+		
+		UPDATE orders_rows 	SET    
+			   status='progress'
+		WHERE  ls_order_id=#{lsOrderId} AND status='open';
+	</update>
+
+
+	<update id="updateOrderSpecialShipping" parameterType="OrdersSpecialShipping">
+		UPDATE orders_special_shipping SET
+				shipping_price=#{shippingPrice}
+		WHERE user_id=#{userId} AND product_id=#{productId}
+	</update>
+
+	<update id="updateOrderByLsOrderId" parameterType="Orders">
+		UPDATE  orders SET user_id=#{userId},
+				<!--product_order_number=#{productOrderNumber},-->
+				client_order_number=#{clientOrderNumber},
+				client_first_name=#{clientFirstName},
+				client_last_name=#{clientLastName},
+				client_other_names=#{clientOtherNames},
+				client_number=#{clientNumber},
+				client_street=#{clientStreet},
+				client_other_street=#{clientOtherStreet},
+				client_city=#{clientCity},
+				client_province=#{clientProvince},
+				client_postal_code=#{clientPostalCode},
+				client_phone=#{clientPhone},
+				client_email=#{clientEmail},
+				product_order_date=#{productOrderDate},
+				special_handling_name=#{specialHandlingName},
+				special_handling_fee=#{specialHandlingFee},
+				total_price=#{totalPrice},
+				<!--ls_order_id=#{lsOrderId},-->
+				creation_date=#{creationDate},
+				company_header=#{companyHeader},
+				required_date=#{requiredDate}
+		WHERE   ls_order_id=#{lsOrderId}
+	</update>
+
+	<update id="updateQuantityOrderByLsOrderId" parameterType="Orders">
+		UPDATE 	orders_rows SET
+				quantity=#{quantity}
+		WHERE   ls_order_id=#{lsOrderId}
+	</update>
+
+	<update id="makeRowOrderInShippedById" parameterType="OrdersRows">
+		UPDATE orders_rows SET
+				notes=#{notes},
+				shipped_date=#{shippedDate},
+				tracking_number=#{trackingNumber},
+				shipping_price=#{shippingPrice},
+				shipping_company=#{shippingCompany},
+				billed=#{billed},
+				status='shipped'
+		WHERE 	id=#{id}
+	</update>
+
+	<update id="updateShippingOrderElements" parameterType="Orders">
+		UPDATE 	orders_rows SET
+				notes=#{notes},
+				shipped_date=#{shippedDate},
+				shipping_price=#{shippingPrice},
+				tracking_number=#{trackingNumber},
+				shipping_company=#{shippingCompany}			
+		WHERE 	ls_order_id=#{lsOrderId}
+	</update>
+
+	<update id="updateShippingInvoicedOrder" parameterType="Orders">
+		UPDATE 	invoicing_orders SET
+				notes=#{notes},
+				shipped_date=#{shippedDate},
+				shipping_price=#{shippingPrice},
+				tracking_number=#{trackingNumber},
+				shipping_company=#{shippingCompany}			
+		WHERE 	ls_order_id=#{lsOrderId} AND id=#{id}
+	</update>
+	
+	<update id="updateStatusByLsOrderId" parameterType="java.util.Map">
+		UPDATE 	orders_rows SET
+				status=#{status}
+		WHERE 	ls_order_id=#{lsOrderId};
+		UPDATE 	orders SET
+				special_handling_name=#{specialHandlingName},
+				special_handling_fee=#{specialHandlingFee},
+				total_price=#{totalPrice}
+		WHERE 	ls_order_id=#{lsOrderId}
+	</update>
+	
+	<update id="makeRowOrderInOpenById" parameterType="OrdersRows">
+		UPDATE orders_rows SET
+				notes=#{notes},
+				status='open',
+				shipped_date=null,
+				shipping_price=null,
+				tracking_number=null
+		WHERE 	id=#{id}
+	</update>
+	
+	<update id="updateOrderRowById" parameterType="OrdersRows">
+		UPDATE orders_rows SET
+				order_id=#{orderId},
+				notes=#{notes},
+				required_date=#{requiredDate},
+				cst_product_number=#{cstProductNumber},
+				unit_price=#{unitPrice},
+				shipping_company=#{shippingCompany},
+				shipped_date=#{shippedDate},
+				tracking_number=#{trackingNumber},
+				shipping_price=#{shippingPrice},
+				shipping_fee=#{shippingFee},
+				billed=#{billed},
+				quantity=#{quantity},
+				product_id=#{productId},
+				status=#{status}
+		WHERE 	id=#{id}
+	</update>
+	
+	<!--
+	<update id="updateStockByLsProductId" parameterType="Product">
+		UPDATE stock
+		SET stock=#{stock}
+		WHERE product_id IN(SELECT id FROM product WHERE loyalty_source_product_id=#{loyaltySourceProductId})
+	</update>
+	-->
+	<!--
+	<update id="updateStock" parameterType="java.util.Map" >
+	 	BEGIN;
+		SAVEPOINT sql_updates;
+		
+		UPDATE stock
+		SET stock=0;
+
+		<foreach item="item" index="index" collection="listStock" separator=";" >
+			UPDATE stock
+			SET stock=#{item.stock}
+			WHERE product_id=#{item.productId};
+			
+			INSERT INTO stock (product_id,stock)
+			SELECT #{item.productId},#{item.stock} WHERE NOT EXISTS(SELECT* FROM stock WHERE product_id=#{item.productId});
+		</foreach>	
+			
+		RELEASE SAVEPOINT sql_updates;
+		COMMIT;	
+	</update>
+	-->
+
+	<update id="updateFilesDownloadedStatus" parameterType="UserFilesDownloaded">	
+		UPDATE user_files_downloaded SET treated=#{treated}
+		FROM 
+       		 (SELECT UC.id AS id, UFD.file_name AS file_name
+			  FROM user_files_downloaded UFD INNER JOIN user_account UC ON UFD.user_id=UC.id 
+			  WHERE UC.login=#{userLogin})AS T
+		WHERE T.id=user_files_downloaded.user_id AND user_files_downloaded .file_name=#{fileToImport} 
+	</update>
+
+	<update id="updateFileSeqShipping" parameterType="java.util.Map">
+		UPDATE 	user_file_recovery SET
+				file_seq_shipping=#{fileSequenceNo}
+		WHERE 	user_id=#{userId}
+	</update>
+
+	<update id="updateFileSequenceInvoice" parameterType="java.util.Map">
+		UPDATE 	user_file_recovery SET
+				file_seq_invoice=#{fileSequenceNo}
+		WHERE 	user_id=#{userId}
+	</update>
+
+	<update id="updateEtaFieldName" parameterType="java.util.Map">
+		UPDATE user_file_recovery SET 
+			   eta_field_name=#{etaFieldName}
+		WHERE user_id IN(SELECT id 
+						 FROM user_account UC 
+						 WHERE UC.login=#{userLogin})
+	</update>
+
+	<update id="updateSecondEtaFieldName" parameterType="java.util.Map">
+		UPDATE user_file_recovery SET 
+			   second_eta_field_name=#{secondEtaFieldName}
+		WHERE user_id IN(SELECT id 
+						 FROM user_account UC 
+						 WHERE UC.login=#{userLogin})
+	</update>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+												DELETE
+	////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+	<delete id="deleteOrderRowByLsOrderId" parameterType="OrdersRows">
+		DELETE FROM orders_rows WHERE ls_order_id=#{lsOrderId}
+	</delete>
+
+	<delete id="deleteOrderByLsOrderId" parameterType="Orders">
+		BEGIN;
+		SAVEPOINT sql_delete;
+		DELETE FROM orders_rows WHERE ls_order_id=#{lsOrderId};
+		DELETE FROM orders WHERE ls_order_id=#{lsOrderId};
+		RELEASE SAVEPOINT sql_delete;
+		COMMIT;
+	</delete>
+
+</mapper>
+

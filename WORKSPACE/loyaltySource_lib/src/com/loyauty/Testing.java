@@ -78,10 +78,9 @@ public class Testing {
 			// Get All orders by productOrderNumber
 			orderService = serviceLocator.getOrderService();
 			OrdersDTO inputOrdersDTO = new OrdersDTO();
-			inputOrdersDTO.setProductOrderNumber("08061260");
+			inputOrdersDTO.setProductOrderNumber("0806");
 
-			List<OrdersDTO> ordersDTOList = orderService
-					.getOrdersByProductOrderNumberSumit(inputOrdersDTO);
+			List<OrdersDTO> ordersDTOList = orderService.getOrdersByProductOrderNumberSumit(inputOrdersDTO);
 
 			for (OrdersDTO ordersDTO : ordersDTOList) {
 				System.out.println("product Name: "

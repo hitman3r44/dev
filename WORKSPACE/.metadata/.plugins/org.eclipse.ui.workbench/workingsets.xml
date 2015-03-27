@@ -30,17 +30,18 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/WEB-INF" type="2"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/src" type="2"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/test" type="2"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/resources" type="2"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/scripts" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_lib" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/build_old.xml_old" type="1"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/css" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/scripts" type="2"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/.classpath" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/css" type="2"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource_admin" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/lib" type="2"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/images" type="2"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/communications" type="2"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/META-INF" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/communications" type="2"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/loyaltySource/web/images" type="2"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1331313793742_0" label="Window Working Set" name="Aggregate for window 1328050774348"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1427379132254_7" label="Window Working Set" name="Aggregate for window 1427379132254"/>
 </workingSetManager>

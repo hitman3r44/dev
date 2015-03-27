@@ -14,12 +14,14 @@ input.vanadium-valid {
 </style>
 <div id="divMainAddProduct" class="unit" style="width:800px;margin-left:100px;">
 <div class="pop_title" style="margin-top:30px;">Add a Product</div>
+
 <s:if test="hasActionErrors()">
   <div id="globalAdvice" class="gray_bg global-vanadium-advice">
   		<s:iterator value="actionErrors">
   				<span><s:property escape="false" /></span><br/>
   		</s:iterator></div>
 </s:if>
+
   <div id="formContainer" >
     <s:form id="form" action="saveProduct.do" method="post" validate="true" enctype="multipart/form-data">
     <s:token />

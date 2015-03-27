@@ -595,6 +595,12 @@
 			<result name="input" type="tiles">/editSaleProduct.tiles</result>
 			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
    		</action>
+ 		
+   		<action name="getOrdersByPOSumit" class="com.loyauty.web.struts.action.orders.GetOrdersByPOSumit">
+			<result name="success" type="tiles">/getOrdersByPOSumit.tiles</result>
+			<result name="input" type="tiles">/getOrdersByPOSumit.tiles</result>
+			<result name="authentification" type="tiles">/messageInfoPop.tiles</result>
+   		</action>
    		
    		
    		

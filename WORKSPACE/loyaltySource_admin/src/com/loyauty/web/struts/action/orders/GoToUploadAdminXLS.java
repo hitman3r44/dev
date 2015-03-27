@@ -41,6 +41,8 @@ public class GoToUploadAdminXLS  extends LoyautyAction{
 	
 	public String execute(){
 		
+		System.out.println("I am at GoToUploadAdminXLS");
+		
 		try {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("init", init);

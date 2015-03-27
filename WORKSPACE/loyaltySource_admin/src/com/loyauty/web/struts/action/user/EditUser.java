@@ -136,6 +136,8 @@ public class EditUser extends LoyautyAction {
 
 		try {
 			
+			System.out.println("We are in edituser.do");
+			
 			listClientCategory=userService.getAllClientCategory();
 			opertionsDTOList=operationsService.getOperationsByTypeAndObject(userId,"User");
 			userDTO = userService.getUserInformation(userId);

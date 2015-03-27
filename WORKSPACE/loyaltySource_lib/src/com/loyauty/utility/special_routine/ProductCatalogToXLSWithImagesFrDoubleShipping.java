@@ -138,7 +138,7 @@ public class ProductCatalogToXLSWithImagesFrDoubleShipping {
 		specificationService = serviceLocator.getSpecificationService();
 		
 		Workbook existingWorkbook = Workbook.getWorkbook(new File("C:\\xls_imgs\\template.xls"));
-		WritableWorkbook workbookCopy = Workbook.createWorkbook(new File("C:\\xls_imgs\\"+USER_LOGIN+"_Eng.xls"), existingWorkbook);
+		WritableWorkbook workbookCopy = Workbook.createWorkbook(new File("C:\\xls_imgs\\"+USER_LOGIN+"_Fr.xls"), existingWorkbook);
 		WritableSheet sheetToEdit = workbookCopy.getSheet(sheetName);
 		
 		WritableCell cellGroupName = null;
@@ -240,27 +240,29 @@ public class ProductCatalogToXLSWithImagesFrDoubleShipping {
 			if (productID != 5766L) {		
 				// LOW-RES [IMAGE] PHOTO
 				
-				if (productDTO.getImage() != null) {
-					if (productDTO.getImage().getRealName() != null) {
-						System.out.println("Image Name: |" + productDTO.getImage().getName() + "| at productID = " + productID);
-						imageFile = new File("C:\\xls_imgs\\thumbnail\\" + productDTO.getImage().getName());
-						if(imageFile.exists()){
-							imageInput = ImageIO.read(imageFile);
-							baos = new ByteArrayOutputStream();
-							ImageIO.write(imageInput, "PNG", baos);					
-							writableImage = new WritableImage(	COL_IMAGE, row, 
-												imageInput.getWidth() / CELL_DEFAULT_WIDTH, 
-												imageInput.getHeight() / CELL_DEFAULT_HEIGHT, 
-												baos.toByteArray());
-							writableImage.setImageAnchor(WritableImage.MOVE_WITH_CELLS);	
-							sheetToEdit.addImage(writableImage);
-						}else{
-							
-							imageMissing.add(productID +","+productDTO.getLoyaltyProductId()+","+productDTO.getImage().getName());
-						}
-
-					}
-				}
+				//For blocking Images
+//				if (productDTO.getImage() != null) {
+//					if (productDTO.getImage().getRealName() != null) {
+//						System.out.println("Image Name: |" + productDTO.getImage().getName() + "| at productID = " + productID);
+//						imageFile = new File("C:\\xls_imgs\\thumbnail\\" + productDTO.getImage().getName());
+//						if(imageFile.exists()){
+//							imageInput = ImageIO.read(imageFile);
+//							baos = new ByteArrayOutputStream();
+//							ImageIO.write(imageInput, "PNG", baos);					
+//							writableImage = new WritableImage(	COL_IMAGE, row, 
+//												imageInput.getWidth() / CELL_DEFAULT_WIDTH, 
+//												imageInput.getHeight() / CELL_DEFAULT_HEIGHT, 
+//												baos.toByteArray());
+//							writableImage.setImageAnchor(WritableImage.MOVE_WITH_CELLS);	
+//							sheetToEdit.addImage(writableImage);
+//						}else{
+//							
+//							imageMissing.add(productID +","+productDTO.getLoyaltyProductId()+","+productDTO.getImage().getName());
+//						}
+//
+//					}
+//				}
+				//For blocking Images
 				
 				// GROUP NAME.
 				if (productDTO.getCategory() != null) {
@@ -312,19 +314,19 @@ public class ProductCatalogToXLSWithImagesFrDoubleShipping {
 				sheetToEdit.addCell(cellLSProductId);
 				
 			
-				// PRODUCT TITLE.
-				productName = productDTO.getNameEng().getName();
-				labelProductName = new Label(COL_PRODUCTNAME, row, productName);
-				cellProductName = (WritableCell) labelProductName;
-				sheetToEdit.addCell(cellProductName);
+//				// PRODUCT TITLE.
+//				productName = productDTO.getNameEng().getName();
+//				labelProductName = new Label(COL_PRODUCTNAME, row, productName);
+//				cellProductName = (WritableCell) labelProductName;
+//				sheetToEdit.addCell(cellProductName);
 			
 				
 		
 				// PRODUCT TITLE FR.
-				/*productName = productDTO.getNameFr().getName();
+				productName = productDTO.getNameFr().getName();
 				labelProductName = new Label(COL_PRODUCTNAME, row, productName);
 				cellProductName = (WritableCell) labelProductName;
-				sheetToEdit.addCell(cellProductName);*/
+				sheetToEdit.addCell(cellProductName);
 			
 			
 				

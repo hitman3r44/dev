@@ -1,0 +1,45 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+<script type="text/javascript" src="thumbnailhover_files/jquery-latest.js"></script> 
+<script type="text/javascript" src="scripts/loyalty/order/orderManager.js"></script> 
+<script type="text/javascript">
+	$("#topMenuRed").hide();
+
+</script>
+
+<style type="text/css">
+label{
+	width:170px;
+}
+.vanadium-advice {
+	margin-left: 170px;
+}
+input.vanadium-valid {
+	background-image: none;
+}
+</style>
+<div class="unit" style="width:800px;margin-left:100px;">
+<div class="pop_title" style="margin-top:30px;">Get Orders By PO</div>
+
+  <div id="formContainer" style="padding-bottom: 60px;">
+  <br/> <br/>
+  
+  Hello Sumit, Are you fine
+  
+      <!-- ............................ List users .................................. --> 
+
+		<s:iterator value="%{ordersListSumit}" id="orderDTO">
+			        <s:iterator value="%{#orderDTO.lsOrderId}">
+					</s:iterator>           
+		</s:iterator> 
+
+  <!-- 
+  <form id="form" action="createOrdersAuto.do" method="post" enctype="multipart/form-data">
+
+ </form>
+ -->
+
+
+</div>
+</div>
+

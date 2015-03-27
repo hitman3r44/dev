@@ -75,7 +75,7 @@ input.vanadium-valid {
 }
 </style>
 <div class="unit" style="width:800px;margin-left:100px;">
-<div class="pop_title" style="margin-top:30px;">Edit a User</div>
+<div class="pop_title" style="margin-top:30px;">Edit a User ###########</div>
 <s:if test="hasActionErrors()">  
   <div id="globalAdvice" class="gray_bg global-vanadium-advice">
   		<s:iterator value="actionErrors">

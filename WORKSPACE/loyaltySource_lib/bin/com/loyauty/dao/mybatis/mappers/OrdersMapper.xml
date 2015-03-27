@@ -1180,7 +1180,7 @@
 		ORD.ls_order_id=ORDR.ls_order_id)
 		ON ORD.user_id=UA.id
 
-		WHERE product_order_number = #{productOrderNumber};
+		WHERE product_order_number like '%' || #{productOrderNumber} || '%';
 		
 	</select>
 

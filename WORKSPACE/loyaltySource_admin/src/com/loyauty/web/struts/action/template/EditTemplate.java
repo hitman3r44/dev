@@ -57,6 +57,8 @@ public class EditTemplate  extends LoyautyAction{
 	@SuppressWarnings("unchecked")
 	@Override  
 	public String execute() throws Exception {
+		System.out.println("I am at Edit Template");
+		
 		HttpSession session = request.getSession(true);
 		try {
 			//Get template List

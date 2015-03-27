@@ -19,7 +19,7 @@ td:empty { display: none; }
     </s:iterator></div>
     </s:if>
 
-<div id="formContainer">
+<div id="formContainer"> #########
 <s:token></s:token>
 <fieldset style="border:0; margin-top:20px;">
 <TABLE border="1" bordercolor="lightgrey" width="450px">

@@ -93,7 +93,9 @@ public class AdminPageAjax<T> extends LoyautyListActionSupport {
 	
 	
 	@Override  
-	public String execute() throws Exception {							
+	public String execute() throws Exception {
+		System.out.println("I am at AdminPageAjax");
+		
 		dataLinks = new ArrayList<UserSessionDTO>();
 		BasicUserDTO basicUserDTO = new BasicUserDTO();
 		userService = this.getServiceLocator().getUserService();
