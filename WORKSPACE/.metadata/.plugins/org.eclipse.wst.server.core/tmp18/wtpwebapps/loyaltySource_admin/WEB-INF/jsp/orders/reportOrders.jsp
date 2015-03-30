@@ -156,7 +156,7 @@ input.vanadium-valid {
 		<s:hidden id="generateESTFileSignal" name="generateESTFileSignal" value="0"/>  
    </s:form>
    
-  <!-- ............................. TABLE USER LOGIN ............................ -->
+  <!-- ............................. TABLE USER LOGIN START............................ -->
   <table id="tabLogin" width="1120px">
 				<!-- ...................... Line separator ............. -->
 				<tr height="5px">
@@ -214,13 +214,18 @@ input.vanadium-valid {
 					             
 			    
 			    <td style="padding-left: 5px;"><img id="iconFindOrders" src="images/orders/findOrders.png"/></td>
-				</tr>					
+				</tr>
+				
+									
 				<!-- ...................... Line separator ............. -->
 				<tr height="5px">
 				<td colspan="7"/>
 				</tr>
 				<!-- .................................................... -->						
     </table>
+    <!-- ............................. TABLE USER LOGIN END............................ -->
+    
+    
 
     <!-- ............................ List users .................................. --> 
 	<select id="list"  style="visibility:hidden;display:none;">
