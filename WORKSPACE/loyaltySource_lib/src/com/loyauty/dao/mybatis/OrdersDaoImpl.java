@@ -448,8 +448,17 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		
 		@SuppressWarnings("unchecked")
 		@Override
-		public List<Orders> searchOrdersWithOptionsAndSorting(Date creationDateStart,Date creationDateEnd, Integer factorDateBetween,String userLogin, 
-															  String lsOrderId,String status,List<Integer>listIndexColumn,Integer PAGE_ITEMS_COUNT,Integer indexSet){ 
+		public List<Orders> searchOrdersWithOptionsAndSorting(
+				Date creationDateStart,
+				Date creationDateEnd, 
+				Integer factorDateBetween,
+				String userLogin,
+				String lsOrderId,
+				String status,
+				List<Integer>listIndexColumn,
+				Integer PAGE_ITEMS_COUNT,
+				Integer indexSet){
+			
 			List<Orders>result=null;
 			HashMap<String, Object>param=new HashMap<String, Object>();
 			param.put("creationDateStart", creationDateStart); 
@@ -463,6 +472,34 @@ import com.loyauty.service.core.dto.OrdersDTO;
 			param.put("index", "0");
 			param.put("listIndexColumn", listIndexColumn);
 			result=(List<Orders>) getSqlSession().selectList(getNameSpace("searchOrdersWithOptionsAndSorting"), param);
+			return result;
+		}
+		
+		//New Override Method 
+		@SuppressWarnings("unchecked")
+		@Override
+		public List<Orders> searchOrdersWithOptionsAndSorting(
+				Date creationDateStart,
+				Date creationDateEnd, 
+				Integer factorDateBetween,
+				Orders orders,
+				List<Integer>listIndexColumn,
+				Integer PAGE_ITEMS_COUNT,
+				Integer indexSet){
+			
+			List<Orders>result=null;
+			HashMap<String, Object>param=new HashMap<String, Object>();
+			param.put("creationDateStart", creationDateStart); 
+			param.put("creationDateEnd", creationDateEnd);
+			param.put("factorDateBetween", factorDateBetween);
+			param.put("userLogin", orders.getUserLogin());
+			param.put("lsOrderId", orders.getOrderId());
+			param.put("status", orders.getStatus());
+			param.put("PAGE_ITEMS_COUNT", PAGE_ITEMS_COUNT);
+			param.put("indexSet", indexSet);
+			param.put("index", "0");
+			param.put("listIndexColumn", listIndexColumn);
+			result=(List<Orders>) getSqlSession().selectList(getNameSpace("searchOrdersWithNewOptionsAndSorting"), param);
 			return result;
 		}
 
@@ -837,5 +874,38 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		public List<Orders> getOrdersByProductOrderNumberSumit(Orders order) {
 			return (List<Orders>) getSqlSession().selectList(getNameSpace("getOrdersByProductOrderNumberSumit"), order);
 		}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Orders> searchOrdersWithOptionsAndSortingNew(
+			Date creationDateStart, Date creationDateEnd,
+			Integer factorDateBetween, String userLogin, String lsOrderId,
+			String status, List<Integer> listIndexColumn,
+			Integer PAGE_ITEMS_COUNT, Integer indexSet,
+			String productOrderNumberSearch,String clientOrderNumber,
+			String clientOther) {
+		List<Orders> result = null;
+		HashMap<String, Object> param = new HashMap<String, Object>();
+		param.put("creationDateStart", creationDateStart);
+		param.put("creationDateEnd", creationDateEnd);
+		param.put("userLogin", userLogin);
+		param.put("lsOrderId", lsOrderId);
+		param.put("factorDateBetween", factorDateBetween);
+		param.put("status", status);
+		param.put("PAGE_ITEMS_COUNT", PAGE_ITEMS_COUNT);
+		param.put("indexSet", indexSet);
+		param.put("index", "0");
+		param.put("listIndexColumn", listIndexColumn);
+		param.put("productOrderNumber", productOrderNumberSearch);
+		param.put("clientOrderNumber", clientOrderNumber);
+		param.put("clientOtherId", clientOther);
+		
+		System.out.println("OrderDaoImp Class: "+ productOrderNumberSearch);
+		
+		result = (List<Orders>) getSqlSession().selectList(
+				getNameSpace("searchOrdersWithOptionsAndSorting"), param);
+		return result;
+
+	}
 
 }

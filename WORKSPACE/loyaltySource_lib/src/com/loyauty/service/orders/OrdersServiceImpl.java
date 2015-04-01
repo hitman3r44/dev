@@ -1855,6 +1855,92 @@ public class OrdersServiceImpl extends ServiceImpl implements OrdersService {
 
 		return DTOFactory.getListOrderDTOFromListOrderSorted(result,hashProvinces);
 	}
+	
+	/**----------------------------------------------------------
+	 *SEARCH ORDERS BY OPTIONS AND SORTING* 
+	 *New method implemented for the new parameter
+	  -----------------------------------------------------------*/
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrdersDTO> searchOrdersWithOptionsAndSorting(
+			final Date creationDateStart,
+			final Date creationDateEnd,
+			final Integer factorDateBetween,
+			final OrdersDTO ordersDTO,
+			final List<Integer>listIndexColumn,
+			final Integer PAGE_ITEMS_COUNT,
+			final Integer indexSet){
+		List<Orders> result=null;
+		
+		final Orders orderObj=new Orders();
+		orderObj.setUserLogin(ordersDTO.getUserLogin());
+		orderObj.setOrderId(ordersDTO.getOrderId());
+		orderObj.setStatus(ordersDTO.getStatus());
+		orderObj.setProductOrderNumber(ordersDTO.getProductOrderNumber());
+		orderObj.setClientOrderNumber(ordersDTO.getClientOrderNumber());
+		orderObj.setClientOtherId(ordersDTO.getClientOtherId());
+		
+		try{
+			daoManager.setCommitTransaction(true);
+			result = (List<Orders>) daoManager.executeAndHandle(new DaoCommand() {
+				@Override
+				public Object execute(DaoManager daoManager) throws DaoException {			
+					return daoManager.getOrdersDao().searchOrdersWithOptionsAndSorting(
+							creationDateStart, 
+							creationDateEnd,
+							factorDateBetween,
+							orderObj, 
+							listIndexColumn,
+							PAGE_ITEMS_COUNT,
+							indexSet);
+				}
+			});
+		}catch (DaoException de) {
+			try {
+				throw new ServiceException(de);
+			} catch (ServiceException e) { 
+				e.printStackTrace();
+			}
+		}
+		List<ProvinceDTO> listProvinces;
+		Hashtable<String, ProvinceDTO> hashProvinces=new Hashtable<String, ProvinceDTO>(); 
+		try {
+			productService = serviceLocator.getProductService(); 
+			userService= serviceLocator.getUserService();
+			listProvinces = productService.getAllProvinces();
+			for(ProvinceDTO provinceDTO:listProvinces){
+				hashProvinces.put(provinceDTO.getCode(), provinceDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		if(result!=null) {
+			for(Orders order: result) {
+				if(order.getCurrencyId()!=null && order.getCurrencyRate()!=null) {
+					if(order.getLsPrice()!=null) {
+						Double currencyPrice = order.getLsPrice()*order.getCurrencyRate();
+						currencyPrice = (double) Math.round(currencyPrice*100) / 100;
+						order.setCurrencyPrice(currencyPrice);
+					}
+					if(order.getUnitPrice()!=null) {
+						Double currencyUnitPrice = order.getUnitPrice()*order.getCurrencyRate();
+						currencyUnitPrice = (double) Math.round(currencyUnitPrice*100) / 100;
+						order.setCurrencyUnitPrice(currencyUnitPrice);
+					}
+					/*
+					if(order.getShippingPrice()!=null) {
+						Double currencyShippingPrice = order.getShippingPrice()*order.getCurrencyRate();
+						currencyShippingPrice = (double) Math.round(currencyShippingPrice*100) / 100;
+						order.setCurrencyShippingPrice(currencyShippingPrice);
+					}
+					*/
+				}
+			}
+		}
+
+		return DTOFactory.getListOrderDTOFromListOrderSorted(result,hashProvinces);
+	}
 
 
 	/**----------------------------------------------------------
@@ -6703,6 +6789,87 @@ public class OrdersServiceImpl extends ServiceImpl implements OrdersService {
 		}
 		return DTOFactory.getListOrderDTOFromListOrder(result);
 
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrdersDTO> searchOrdersWithOptionsAndSortingNew(
+			final Date creationDateStart, final Date creationDateEnd,
+			final Integer factorDateBetween, final String userLogin,
+			final String lsOrderId, final String status,
+			final List<Integer> listIndexColumn,
+			final Integer PAGE_ITEMS_COUNT, final Integer indexSet,
+			final String productOrderNumberSearch,
+			final String clientOrderNumber, final String clientOther) {
+		List<Orders> result = null;
+		try {
+			daoManager.setCommitTransaction(true);
+			result = (List<Orders>) daoManager
+					.executeAndHandle(new DaoCommand() {
+						@Override
+						public Object execute(DaoManager daoManager)
+								throws DaoException {
+							return daoManager.getOrdersDao().searchOrdersWithOptionsAndSortingNew(
+											creationDateStart, creationDateEnd,
+											factorDateBetween, userLogin,
+											lsOrderId, status, listIndexColumn,
+											PAGE_ITEMS_COUNT, indexSet,
+											productOrderNumberSearch,
+											clientOrderNumber, clientOther);
+						}
+					});
+		} catch (DaoException de) {
+			try {
+				throw new ServiceException(de);
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			}
+		}
+		List<ProvinceDTO> listProvinces;
+		Hashtable<String, ProvinceDTO> hashProvinces = new Hashtable<String, ProvinceDTO>();
+		try {
+			productService = serviceLocator.getProductService();
+			userService = serviceLocator.getUserService();
+			listProvinces = productService.getAllProvinces();
+			for (ProvinceDTO provinceDTO : listProvinces) {
+				hashProvinces.put(provinceDTO.getCode(), provinceDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		if (result != null) {
+			for (Orders order : result) {
+				if (order.getCurrencyId() != null
+						&& order.getCurrencyRate() != null) {
+					if (order.getLsPrice() != null) {
+						Double currencyPrice = order.getLsPrice()
+								* order.getCurrencyRate();
+						currencyPrice = (double) Math
+								.round(currencyPrice * 100) / 100;
+						order.setCurrencyPrice(currencyPrice);
+					}
+					if (order.getUnitPrice() != null) {
+						Double currencyUnitPrice = order.getUnitPrice()
+								* order.getCurrencyRate();
+						currencyUnitPrice = (double) Math
+								.round(currencyUnitPrice * 100) / 100;
+						order.setCurrencyUnitPrice(currencyUnitPrice);
+					}
+					/*
+					 * if(order.getShippingPrice()!=null) { Double
+					 * currencyShippingPrice =
+					 * order.getShippingPrice()*order.getCurrencyRate();
+					 * currencyShippingPrice = (double)
+					 * Math.round(currencyShippingPrice*100) / 100;
+					 * order.setCurrencyShippingPrice(currencyShippingPrice); }
+					 */
+				}
+			}
+		}
+
+		return DTOFactory.getListOrderDTOFromListOrderSorted(result,
+				hashProvinces);
 	}
 	
 }

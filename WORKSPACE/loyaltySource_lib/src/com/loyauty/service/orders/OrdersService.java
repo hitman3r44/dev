@@ -114,6 +114,17 @@ public interface OrdersService extends Service {
 			                                          List<Integer>listIndexColumn,Integer PAGE_ITEMS_COUNT,Integer indexSet)
 			                                          throws ServiceException;
 	
+	//Override the method
+	List<OrdersDTO> searchOrdersWithOptionsAndSorting(
+			Date creationDateStart,
+			Date creationDateEnd,
+			Integer factorDateBetween, 
+            OrdersDTO ordersDTO,
+            List<Integer>listIndexColumn,
+            Integer PAGE_ITEMS_COUNT,
+            Integer indexSet)
+            throws ServiceException;
+	
 	List<OrdersDTO> searchInvoicedWithSorting(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin, 
 												String lsOrderId,String status,List<Integer>listIndexColumn,
 												int PAGE_ITEMS_COUNT,int indexSet)throws ServiceException;
@@ -254,5 +265,30 @@ public interface OrdersService extends Service {
 	 * @throws ServiceException
 	 */
 	List<OrdersDTO> getOrdersByProductOrderNumberSumit(OrdersDTO ordersDTO) throws ServiceException;
+
+	/**
+	 * 
+	 * @param creationDateStartArg
+	 * @param creationDateEndArg
+	 * @param reportDateBetween
+	 * @param userLogin
+	 * @param lsOrderId
+	 * @param status
+	 * @param listIndexColumn
+	 * @param pAGE_ITEMS_COUNT
+	 * @param indexSet
+	 * @param productOrderNumberSearch
+	 * @param clientOrderNumber
+	 * @param clientOther
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<OrdersDTO> searchOrdersWithOptionsAndSortingNew(
+			Date creationDateStartArg, Date creationDateEndArg,
+			Integer reportDateBetween, String userLogin, String lsOrderId,
+			String status, List<Integer> listIndexColumn,
+			Integer pAGE_ITEMS_COUNT, Integer indexSet,
+			String productOrderNumberSearch, String clientOrderNumber,
+			String clientOther) throws ServiceException;
 
 }

@@ -96,6 +96,24 @@ public interface OrdersDao extends BasicDao{
 
 	List<Orders> searchOrdersWithOptionsAndSorting(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin,
 			 										String lsOrderId,String status,List<Integer>listIndexColumn,Integer PAGE_ITEMS_COUNT,Integer indexSet);
+
+	// New Method for Searching in Handeling
+	List<Orders> searchOrdersWithOptionsAndSortingNew(Date creationDateStart,
+			Date creationDateEnd, Integer factorDateBetween, String userLogin,
+			String lsOrderId, String status, List<Integer> listIndexColumn,
+			Integer PAGE_ITEMS_COUNT, Integer indexSet,
+			String productOrderNumberSearch, String clientOrderNumber,
+			String clientOther);
+	
+	//New method for search orders
+	List<Orders> searchOrdersWithOptionsAndSorting(
+			Date creationDateStart,
+			Date creationDateEnd,
+			Integer factorDateBetween,
+			Orders orders,
+			List<Integer>listIndexColumn,
+			Integer PAGE_ITEMS_COUNT,
+			Integer indexSet);
 	 
 	List<Orders> searchInvoicedWithSorting(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin, String lsOrderId,String status,List<Integer>listIndexColumn,int PAGE_ITEMS_COUNT,int indexSet);
 	 
@@ -103,7 +121,11 @@ public interface OrdersDao extends BasicDao{
 			 					   String userLogin, String lsOrderId,String status);
 	 
 	Orders getCountOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin, String lsOrderId,String status);
-
+	/**
+	 * 
+	 * @param ufd
+	 * @return
+	 */
 	boolean isFileDownloaded(UserFilesDownloaded ufd);
 	
 	List<UserFilesDownloaded> getListFileDownloaded(String userLogin, Integer userLoginOption, Integer treatedOption);

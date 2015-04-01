@@ -195,9 +195,16 @@
 			 	<if test="factorDateBetween == 1">
 			   		ORDR.shipped_date IS NOT NULL AND (ORDR.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
 			    </if>
-	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' AND
-				ORDR.status like '%' || #{status} || '%' 	
-			
+	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' 
+	 		    AND
+				ORDR.status like '%' || #{status} || '%'
+				AND
+				ORD.product_order_number like '%' || #{productOrderNumber} || '%'
+				AND 
+				ORD.client_Order_Number like '%' || #{clientOrderNumber} || '%' 
+				AND 
+				client_other_id like '%' || #{clientOtherId} || '%'
+				
 			 	ORDER BY 
 			 	<foreach item="item" index="index" collection="listIndexColumn" separator="," >
 			 	
@@ -311,6 +318,237 @@
 				</if>
 				</foreach> 	
 				LIMIT #{PAGE_ITEMS_COUNT} OFFSET  #{indexSet}
+	</select>
+	
+	<select id="searchOrdersWithNewOptionsAndSorting" parameterType="java.util.Map" resultMap="ordersResultMap">
+	
+		SELECT UA.login AS userLogin,ORDR.id AS id,ORD.ls_order_id AS
+		lsOrderId,ORD.creation_date AS creationDate,
+		ORD.required_date AS
+		requiredDate,ORDR.status AS status,ORDR.client_product_number AS
+		clientProductNumber,
+		(SELECT loyalty_source_product_id FROM product PRO
+		WHERE
+		PRO.id=ORDR.product_id)AS lsProductID,
+		CASE
+		WHEN ORDR.quantity IS
+		NULL THEN 0
+		ELSE ORDR.quantity
+		END AS quantity,
+		CASE
+		WHEN (SELECT stock
+		FROM stock ST WHERE ST.product_id=ORDR.product_id) IS
+		NULL THEN 0
+		ELSE
+		(SELECT stock FROM stock ST WHERE ST.product_id=ORDR.product_id)
+		END AS
+		stock,
+		(SELECT TE.text FROM product P INNER JOIN translation_entry TE ON
+		P.name_trans_id=TE.trans_id WHERE TE.lang_id='1' AND
+		P.id=ORDR.product_id)AS productDescription,
+		CASE
+		WHEN ORDR.unit_price IS
+		NULL THEN 0
+		ELSE ORDR.unit_price
+		END AS unitPrice,
+		(SELECT
+		to_number(price, '999999999.99') FROM user_product_price UP WHERE
+		UP.product_id=ORDR.product_id AND UP.user_id=ORD.user_id AND price IS
+		NOT null AND price!='')AS lsPrice,
+		ORDR.notes AS
+		notes,ORD.product_order_number AS productOrderNumber,
+		ORD.client_Order_Number AS clientOrderNumber,
+		ORD.client_first_name AS
+		clientFirstName,
+		ORD.company_header AS companyHeader,
+		ORD.client_last_name AS clientLastName,ORD.client_other_names AS
+		clientOtherNames,
+		ORD.client_number AS clientNumber,ORD.client_street AS
+		clientStreet,ORD.client_other_street AS clientOtherStreet,
+		ORD.client_city AS clientCity,ORD.client_province AS
+		clientProvince,ORD.client_postal_code AS clientPostalCode,
+		ORD.client_phone AS clientPhone,ORD.client_email AS
+		clientEmail,ORD.user_id AS userId,ORDR.shipping_company AS
+		shippingCompany,
+		ORDR.shipped_date AS shippedDate,ORDR.product_id AS
+		productId,
+		ROUND((ORDR.shipping_price)::numeric, 2) AS
+		shippingPrice,ORDR.billed
+		AS billed,ORD.product_order_date AS
+		productOrderDate,
+		ORDR.tracking_number AS trackingNumber,
+		(SELECT
+		sum(T.quantity)FROM(
+		SELECT subR.quantity,CASE
+		WHEN POSITION('_' IN
+		subR.ls_order_id)=0 THEN ls_order_id
+		ELSE SUBSTRING(subR.ls_order_id
+		FROM 0 FOR POSITION('_' IN
+		subR.ls_order_id))
+		END AS lsOrderId
+		FROM
+		orders_rows subR) AS T
+		WHERE T.lsOrderId =SUBSTRING(ORDR.ls_order_id
+		FROM 0 FOR POSITION('_' IN
+		ORDR.ls_order_id))OR
+		T.lsOrderId=ORDR.ls_order_id)AS quantityOriginal,client_other_id AS
+		clientOtherId,
+		ORDR.provided_ls_product_id AS
+		providedLsProductId,ORD.order_file_info
+		AS orderFileInfo,
+		ORD.special_handling_name AS
+		specialHandlingName,ORD.special_handling_fee AS
+		specialHandlingFee,ORD.total_price AS totalPrice,
+		CUR.id AS currencyId,
+		CUR.symbol AS currencySymbol, CUR.rate AS currencyRate,
+		CUR.creation_date AS currencyCreationDate
+	
+		FROM user_account UA INNER
+		JOIN(orders ORD INNER JOIN (orders_rows ORDR
+		INNER JOIN currency CUR ON
+		ORDR.currency_id=CUR.id) ON
+		ORD.ls_order_id=ORDR.ls_order_id)
+		ON
+		ORD.user_id=UA.id
+	
+		WHERE UA.login like '%' || #{userLogin} ||'%' AND
+	
+		<if test="factorDateBetween == 0">
+			ORD.creation_date IS NOT NULL AND (ORD.creation_date
+			BETWEEN #{creationDateStart} AND
+			#{creationDateEnd}) AND
+		</if>
+		
+		<if test="factorDateBetween == 1">
+			ORDR.shipped_date IS NOT NULL AND (ORDR.shipped_date
+			BETWEEN #{creationDateStart} AND
+			#{creationDateEnd}) AND
+		</if>
+		
+		ORD.ls_order_id like '%' || #{lsOrderId} || '%' 
+		AND
+		ORDR.status like '%' || #{status} || '%'
+<!-- 		AND
+		ORDR.client_product_number like '%' || #{productOrderNumber} || '%'
+		AND
+		ORD.client_Order_Number like '%' || #{clientOrderNumber} || '%'
+		AND
+		client_other_id like '%' || #{clientOtherId} || '%' -->
+	
+		ORDER BY
+		<foreach item="item" index="index" collection="listIndexColumn"
+			separator=",">
+	
+			<if test="item == 0">
+				18,24,6
+					</if>
+	
+			<if test="item == 1">
+				1 ASC
+					</if>
+			<if test="item == -1">
+				1 DESC
+					</if>
+	
+			<if test="item == 3">
+				3 ASC
+					</if>
+			<if test="item == -3">
+				3 DESC
+					</if>
+	
+			<if test="item == 4">
+				4 ASC
+					</if>
+			<if test="item == -4">
+				4 DESC
+					</if>
+	
+			<if test="item == 5">
+				5 ASC
+					</if>
+			<if test="item == -5">
+				5 DESC 
+					</if>
+	
+			<if test="item == 6">
+				6 ASC
+					</if>
+			<if test="item == -6">
+				6 DESC 
+					</if>
+	
+			<if test="item == 7">
+				7 ASC
+					</if>
+			<if test="item == -7">
+				7 DESC
+					</if>
+	
+			<if test="item == 8">
+				8 ASC
+					</if>
+			<if test="item == -8">
+				8 DESC
+					</if>
+	
+			<if test="item == 9">
+				9 ASC
+					</if>
+			<if test="item == -9">
+				9 DESC
+					</if>
+	
+			<if test="item == 10">
+				10 ASC
+					</if>
+			<if test="item == -10">
+				10 DESC
+					</if>
+	
+			<if test="item == 11">
+				11 ASC
+					</if>
+			<if test="item == -11">
+				11 DESC
+					</if>
+	
+			<if test="item == 12">
+				12 ASC
+					</if>
+			<if test="item == -12">
+				12 DESC
+					</if>
+	
+			<if test="item == 13">
+				13 ASC
+					</if>
+			<if test="item == -13">
+				13 DESC
+					</if>
+	
+			<if test="item == 30">
+				30 ASC
+					</if>
+			<if test="item == -30">
+				30 DESC
+					</if>
+	
+			<if test="item == 31">
+				31 ASC
+					</if>
+			<if test="item == -31">
+				31 DESC
+					</if>
+	
+			<if test="item == 32">
+				36 ASC
+					</if>
+			<if test="item == -32">
+				36 DESC
+					</if>
+		</foreach>
+		LIMIT #{PAGE_ITEMS_COUNT} OFFSET #{indexSet}
 	</select>
 	
 	<select id="getCountInvoicedOrders" parameterType="java.util.Map" resultMap="ordersResultMap" >
