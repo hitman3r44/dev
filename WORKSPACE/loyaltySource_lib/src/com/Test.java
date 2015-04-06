@@ -118,6 +118,30 @@ public class Test{
 			userService=serviceLocator.getUserService();
 			configService=serviceLocator.getConfigService();
 			
+			
+		    String expectedPattern = "yyyy-mm-dd";
+		    SimpleDateFormat formatter = new SimpleDateFormat(expectedPattern);
+		    
+			Date creationDateStartArg = formatter.parse("2015-01-01") ; 
+			Date  creationDateEndArg= formatter.parse("2015-03-31"); 
+			Integer reportDateBetween= null;
+			String userLogin= null; 
+			String lsOrderId= null; 
+			String status= null; 
+			List<Integer>listIndexColumn= getNewListIndexColumn();
+			Integer pAGE_ITEMS_COUNT= null; 
+			Integer indexSet= null; 
+			String productOrderNumberSearch= "IL"; 
+			String clientOrderNumber= null; 
+			String clientOther= null;
+			
+			
+			List<OrdersDTO>result=orderService.searchOrdersWithOptionsAndSortingNew(creationDateStartArg, creationDateEndArg, reportDateBetween, userLogin, lsOrderId, status, listIndexColumn, pAGE_ITEMS_COUNT, indexSet, productOrderNumberSearch, clientOrderNumber, clientOther);
+			System.out.println("count:"+result.size());
+			for(OrdersDTO orderDTO:result){
+				System.out.println("LS Order: "+ orderDTO.getLsOrderId());
+			}
+			
 		/*	String LS_PRODUCT_ID="W;   A'BC,XY;Z SELECT '";
 			LS_PRODUCT_ID = LS_PRODUCT_ID.replaceAll(" SELECT ",""); 
 			LS_PRODUCT_ID = LS_PRODUCT_ID.replaceAll("\\s","");
@@ -206,7 +230,7 @@ public class Test{
 
 			//Integer count=orderService.nbOrdersNotSaved(list);
 			
-			 boolean result= productService.disableSaleWhenOutTime(3L) ;
+//			 boolean result= productService.disableSaleWhenOutTime(3L) ;
 			 
 			 
 			//System.out.println(result);
@@ -506,6 +530,20 @@ sb.append("<p class=MsoNormal><o:p>&nbsp;</o:p></p></div>");*/
 	}
     
 	
-    
+	static List<Integer> getNewListIndexColumn() {
+		List<Integer> reult = new ArrayList<Integer>();
+		for (int i = 0; i <= 34; i++) {
+			if (i != 2 && i <= 13) {
+				reult.add(i);
+				if (i != 0)
+					reult.add(-i);
+			}
+			if (i == 30 || i == 31 || i == 34) {
+				reult.add(i);
+				reult.add(-i);
+			}
+		}
+		return reult;
+	}
 
 }

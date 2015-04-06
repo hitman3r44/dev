@@ -185,9 +185,9 @@ public class ReportOrders extends LoyautyAction {
 	@Getter
 	@Setter
 	private String clientEmail;
-	@Getter
-	@Setter
-	private String productOrderNumber;
+//	@Getter
+//	@Setter
+//	private String productOrderNumber;
 	@Getter
 	@Setter
 	private String strRequiredDate;
@@ -220,9 +220,7 @@ public class ReportOrders extends LoyautyAction {
 	@Getter
 	@Setter
 	private String companyHeader;
-	@Getter
-	@Setter
-	private String trackingNumber;
+
 	@Getter
 	@Setter
 	private Long quantityToChangeSignal;
@@ -357,6 +355,21 @@ public class ReportOrders extends LoyautyAction {
 	@Getter
 	@Setter
 	Integer PAGE_ITEMS_COUNT = 100;
+	
+	//New Added Field in the search option as toggle functionality
+	@Getter
+	@Setter
+	private String productOrderNumberSearch;
+	@Getter
+	@Setter
+	private String trakingNumber;
+	@Getter
+	@Setter
+	private String  clientOther;
+	@Getter
+	@Setter
+	private String	 clientOrderNumber;
+	//New Added Field in the search option as toggle functionality
 
 	// ------Pagination
 
@@ -383,6 +396,20 @@ public class ReportOrders extends LoyautyAction {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public String execute() throws Exception {
+		System.out.println("Product Order Number: "+ productOrderNumberSearch);
+		System.out.println("Tracking Number: "+ trakingNumber);
+		System.out.println("Client Order ID: "+ clientOrderNumber);
+		System.out.println("Client Other ID: "+ clientOther);
+		
+		//Create new object or Order to modify the search functionality
+		OrdersDTO orderDTOObj=new OrdersDTO();
+		orderDTOObj.setLsOrderId(lsOrderId);
+		orderDTOObj.setUserLogin(userLogin);
+		orderDTOObj.setStatus(status);
+		orderDTOObj.setProductOrderNumber(productOrderNumberSearch);
+		orderDTOObj.setClientOrderNumber(clientOrderNumber);
+		orderDTOObj.setClientOtherId(clientOther);
+		
 		HttpSession session = request.getSession(true);
 
 		if (showOrderDetailPop == null)
@@ -409,10 +436,8 @@ public class ReportOrders extends LoyautyAction {
 			sizeResult = 0L;
 		if (indexOrder == null)
 			indexOrder = 0;
-		userPrivileges = (UsersPrivilegesDTO) session
-				.getAttribute("userPrivileges");
-		usersPrivShippedToInvoiced = (UsersPrivilegesDTO) session
-				.getAttribute("usersPrivShippedToInvoiced");
+		userPrivileges = (UsersPrivilegesDTO) session.getAttribute("userPrivileges");
+		usersPrivShippedToInvoiced = (UsersPrivilegesDTO) session.getAttribute("usersPrivShippedToInvoiced");
 		usersPrivChangeShippedStatus = (UsersPrivilegesDTO) session
 				.getAttribute("usersPrivChangeShippedStatus");
 		hashStatus = (HashMap<Integer, String>) session
@@ -698,11 +723,17 @@ public class ReportOrders extends LoyautyAction {
 				if (listIndexColumn == null)
 					listIndexColumn = getNewListIndexColumn();
 				lsOrderId = lsOrderId.toUpperCase();
-				//Searching Functionality 
+				
+				//New Searching Functionality
 				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
 						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, userLogin, lsOrderId, status,
-						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+						reportDateBetween,orderDTOObj,listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				//Old Searching Functionality				
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, userLogin, lsOrderId, status,
+//						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				
 				if (findOrdersSignal != null && findOrdersSignal != 0L)
 					initalizeListIndexSet(session, orderService);
 				// Color in RED rows containing a GroupItems
@@ -947,8 +978,8 @@ public class ReportOrders extends LoyautyAction {
 							}
 						}
 
-						if (trackingNumber != null)
-							trackingNumber = trackingNumber.replaceAll(
+						if (trakingNumber != null)
+							trakingNumber = trakingNumber.replaceAll(
 									"^ +| +$|( )+", "$1");
 						if (shippingCompany != null)
 							shippingCompany = shippingCompany.replaceAll(
@@ -961,13 +992,13 @@ public class ReportOrders extends LoyautyAction {
 						if (newStatus != null && !newStatus.equals(""))
 							orderToEdit.setStatus(newStatus);
 						orderToEdit.setShippingCompany(shippingCompany);
-						orderToEdit.setTrackingNumber(trackingNumber);
+						orderToEdit.setTrackingNumber(trakingNumber);
 						orderToEdit.setShowRowShipping(0L);
 						orderToEdit.setShowOnlyEditNote(0L);
 						OrdersRows row = orderToEdit.getRowsList().get(0);
 						row.setShippingPrice(shippingPrice);
 						row.setShippingCompany(shippingCompany);
-						row.setTrackingNumber(trackingNumber);
+						row.setTrackingNumber(trakingNumber);
 						orderToEdit.setCssRow("");
 
 						if (newStatus != null && !newStatus.equals("")) { // if
@@ -1068,10 +1099,28 @@ public class ReportOrders extends LoyautyAction {
 				// if(findOrdersSignal!=null &&
 				// findOrdersSignal!=0L)initalizeListIndexSet(session,orderService
 				// );
-				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, userLogin, lsOrderId, status,
-						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				
+				//Old Working Methods
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, userLogin, lsOrderId, status,
+//						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				
+				//New Functionality with same mapping
+				listOrdersDTO = orderService.searchOrdersWithOptionsAndSortingNew(
+								creationDateStartArg, creationDateEndArg,
+								reportDateBetween, userLogin, lsOrderId,
+								status, listIndexColumn, PAGE_ITEMS_COUNT,
+								indexSet, productOrderNumberSearch,clientOrderNumber,
+								clientOther);
+
+//				//New Searching Functionality
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, orderDTOObj, listIndexColumn,
+//						PAGE_ITEMS_COUNT, indexSet);
+				
+				
 				// Color in RED rows containing a GroupItems
 				for (OrdersDTO orderDTO : listOrdersDTO) {
 					if (orderDTO != null && orderDTO.getStatus() != null
@@ -1118,10 +1167,18 @@ public class ReportOrders extends LoyautyAction {
 					listIndexColumn.set(i, nextElement);
 					nextElement = element;
 				}
+				
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, userLogin, lsOrderId, status,
+//						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				
+				// New Searching Functionality
 				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
 						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, userLogin, lsOrderId, status,
-						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+						reportDateBetween, orderDTOObj, listIndexColumn,
+						PAGE_ITEMS_COUNT, indexSet);
+				
 				int balance = 0;
 				int OrderIndex = 0;
 				for (OrdersDTO orDTO : listOrdersDTO) {
@@ -1240,7 +1297,7 @@ public class ReportOrders extends LoyautyAction {
 					orderRowToSaveMemory.setShippingFee(shippingFee);
 					orderRowToSaveMemory.setShippingPrice(shippingFee);
 					orderRowToSaveMemory.setShippingCompany(shippingCompany);
-					orderRowToSaveMemory.setTrackingNumber(trackingNumber);
+					orderRowToSaveMemory.setTrackingNumber(trakingNumber);
 					if (orderRowToSaveMemory.getCurrencyId() != null
 							&& orderRowToSaveMemory.getCurrencyId() != 1
 							&& orderRowToSaveMemory.getCurrencyRate() != null) {
@@ -1316,7 +1373,7 @@ public class ReportOrders extends LoyautyAction {
 						orderRowToClone.setUnitPrice(unitPrice);
 						orderRowToClone.setShippingFee(shippingFee);
 						orderRowToClone.setShippingCompany(shippingCompany);
-						orderRowToClone.setTrackingNumber(trackingNumber);
+						orderRowToClone.setTrackingNumber(trakingNumber);
 					}
 					orderRowToClone.setIcon("images/orders/itemValidated.png");
 					OrdersRows orderRowToAdd = DTOFactory
@@ -1422,10 +1479,18 @@ public class ReportOrders extends LoyautyAction {
 						orderToEdit, hashProvinces);
 				listIndexColumn = (List<Integer>) session
 						.getAttribute("listIndexColumn");
+				
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, userLogin, lsOrderId, status,
+//						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				
+				// New Searching Functionality
 				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
 						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, userLogin, lsOrderId, status,
-						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+						reportDateBetween, orderDTOObj, listIndexColumn,
+						PAGE_ITEMS_COUNT, indexSet);
+				
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				message = "Saving has completed successfuly";
 				showSaveSuccessPop = "display:block;visibility:visible;";
@@ -1536,7 +1601,7 @@ public class ReportOrders extends LoyautyAction {
 		orderDTO.setClientPostalCode(clientPostalCode);
 		orderDTO.setClientPhone(clientPhone);
 		orderDTO.setClientEmail(clientEmail);
-		orderDTO.setProductOrderNumber(productOrderNumber);
+		orderDTO.setProductOrderNumber(productOrderNumberSearch);
 		orderDTO.setCompanyHeader(companyHeader);
 		if (((strProductOrderDate) != null)
 				&& (!"".equals(strProductOrderDate))) {

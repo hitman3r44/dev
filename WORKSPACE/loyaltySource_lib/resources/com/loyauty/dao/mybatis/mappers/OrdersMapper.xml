@@ -428,12 +428,12 @@
 		ORD.ls_order_id like '%' || #{lsOrderId} || '%' 
 		AND
 		ORDR.status like '%' || #{status} || '%'
-<!-- 		AND
+		AND
 		ORDR.client_product_number like '%' || #{productOrderNumber} || '%'
 		AND
 		ORD.client_Order_Number like '%' || #{clientOrderNumber} || '%'
 		AND
-		client_other_id like '%' || #{clientOtherId} || '%' -->
+		client_other_id like '%' || #{clientOtherId} || '%'
 	
 		ORDER BY
 		<foreach item="item" index="index" collection="listIndexColumn"
