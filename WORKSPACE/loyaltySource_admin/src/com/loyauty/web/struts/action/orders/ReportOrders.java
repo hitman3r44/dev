@@ -654,7 +654,7 @@ public class ReportOrders extends LoyautyAction {
 						|| switchBetweenStatusAndClientOther == 0) ? 1: 0);
 				listOrdersDTO = new ArrayList<OrdersDTO>();
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
-				session.setAttribute("switchBetweenLsOrderAndClientOrderId", switchBetweenStatusAndClientOther);
+				session.setAttribute("switchBetweenStatusAndClientOther", switchBetweenStatusAndClientOther);
 				return SUCCESS;
 			}
 			
