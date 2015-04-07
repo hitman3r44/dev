@@ -119,25 +119,31 @@ public class Test{
 			configService=serviceLocator.getConfigService();
 			
 			
-		    String expectedPattern = "yyyy-mm-dd";
+		    String expectedPattern = "yyyy-MM-dd";
 		    SimpleDateFormat formatter = new SimpleDateFormat(expectedPattern);
 		    
-			Date creationDateStartArg = formatter.parse("2015-01-01") ; 
-			Date  creationDateEndArg= formatter.parse("2015-03-31"); 
-			Integer reportDateBetween= null;
-			String userLogin= null; 
-			String lsOrderId= null; 
-			String status= null; 
+			Date creationDateStartArg = formatter.parse("1990-01-01") ;
+//			Date creationDateStartArg = null ;
+			System.out.println("Creation Date Start: "+formatter.format(creationDateStartArg));
+			Date  creationDateEndArg= formatter.parse("2015-04-07");
+//			Date  creationDateEndArg= null;
+			System.out.println("Creation Date End: "+formatter.format(creationDateEndArg));
+			Integer reportDateBetween= 0;
+			String userLogin= ""; 
+			String lsOrderId= ""; 
+			String status= ""; 
 			List<Integer>listIndexColumn= getNewListIndexColumn();
-			Integer pAGE_ITEMS_COUNT= null; 
-			Integer indexSet= null; 
-			String productOrderNumberSearch= "IL"; 
-			String clientOrderNumber= null; 
-			String clientOther= null;
+			Integer pAGE_ITEMS_COUNT= 2000; 
+			Integer indexSet= 0; 
+//			String productOrderNumberSearch= "IL";
+			String productOrderNumberSearch= "8495732";
+			String clientOrderNumber= ""; 
+			String clientOther= "";
 			
 			
 			List<OrdersDTO>result=orderService.searchOrdersWithOptionsAndSortingNew(creationDateStartArg, creationDateEndArg, reportDateBetween, userLogin, lsOrderId, status, listIndexColumn, pAGE_ITEMS_COUNT, indexSet, productOrderNumberSearch, clientOrderNumber, clientOther);
 			System.out.println("count:"+result.size());
+			
 			for(OrdersDTO orderDTO:result){
 				System.out.println("LS Order: "+ orderDTO.getLsOrderId());
 			}

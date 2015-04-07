@@ -366,10 +366,22 @@ public class ReportOrders extends LoyautyAction {
 	@Getter
 	@Setter
 	private String  clientOther;
-	@Getter
-	@Setter
+	@Getter	@Setter
 	private String	 clientOrderNumber;
+	
+	@Getter	@Setter
+	private Integer switchBetweenClientLoginAndPoNumberSignal;
+	@Getter	@Setter
+	private Integer switchBetweenClientLoginAndPoNumber;
 	//New Added Field in the search option as toggle functionality
+	@Getter	@Setter
+	private Integer switchBetweenLsOrderAndClientOrderIdSignal;
+	@Getter	@Setter
+	private Integer switchBetweenLsOrderAndClientOrderId;
+	@Getter	@Setter
+	private Integer switchBetweenStatusAndClientOtherSignal;
+	@Getter	@Setter
+	private Integer switchBetweenStatusAndClientOther;
 
 	// ------Pagination
 
@@ -497,15 +509,33 @@ public class ReportOrders extends LoyautyAction {
 					usersList.add(user);
 				}
 				session.setAttribute("usersListSession", usersList);
-			} else
+			} else{
 				usersList = usersListSession;
-			listOrdersDTO = (ArrayList<OrdersDTO>) session
-					.getAttribute("listOrdersDTOReport");
-			reportDateBetween = (Integer) session
-					.getAttribute("reportDateBetween");
+			}
+			
+			listOrdersDTO = (ArrayList<OrdersDTO>) session.getAttribute("listOrdersDTOReport");
+			
+			reportDateBetween = (Integer) session.getAttribute("reportDateBetween");
 			if (reportDateBetween == null) {
 				reportDateBetween = 0;
 				session.setAttribute("reportDateBetween", reportDateBetween);
+			}
+
+			//Added for the new field
+			switchBetweenClientLoginAndPoNumber = (Integer) session.getAttribute("switchBetweenClientLoginAndPoNumber");
+			if (switchBetweenClientLoginAndPoNumber == null) {
+				switchBetweenClientLoginAndPoNumber = 0;
+				session.setAttribute("switchBetweenClientLoginAndPoNumber", switchBetweenClientLoginAndPoNumber);
+			}
+			switchBetweenLsOrderAndClientOrderId = (Integer) session.getAttribute("switchBetweenLsOrderAndClientOrderId");
+			if (switchBetweenLsOrderAndClientOrderId == null) {
+				switchBetweenLsOrderAndClientOrderId = 0;
+				session.setAttribute("switchBetweenLsOrderAndClientOrderId", switchBetweenLsOrderAndClientOrderId);
+			}
+			switchBetweenStatusAndClientOther = (Integer) session.getAttribute("switchBetweenStatusAndClientOther");
+			if (switchBetweenStatusAndClientOther == null) {
+				switchBetweenStatusAndClientOther = 0;
+				session.setAttribute("switchBetweenStatusAndClientOther", switchBetweenStatusAndClientOther);
 			}
 
 			/*------ always check if the Admin select all orders ------------
@@ -583,16 +613,54 @@ public class ReportOrders extends LoyautyAction {
 			/*----------------- When Admin Click on the pageIndex ----------------------------------
 										catch  page index
 			 ---------------------------------------------------------------------------------------*/
-
+			//Toggle Switch between PO Date and Shipping date
 			if (dateBetweenSignal != null && dateBetweenSignal != 0L) {
-				reportDateBetween = ((reportDateBetween == null || reportDateBetween == 0) ? 1
-						: 0);
+				reportDateBetween = ((reportDateBetween == null || reportDateBetween == 0) ? 1: 0);
 				listOrdersDTO = new ArrayList<OrdersDTO>();
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				session.setAttribute("reportDateBetween", reportDateBetween);
 				return SUCCESS;
 			}
+		
+			//Toggle Switch between Client Login and PO Number	
+//			switchBetweenClientLoginAndPoNumber=(Integer)session.getAttribute("switchBetweenClientLoginAndPoNumber");
+			
+			if (switchBetweenClientLoginAndPoNumberSignal != null && switchBetweenClientLoginAndPoNumberSignal != 0L) {
+				switchBetweenClientLoginAndPoNumber = ((switchBetweenClientLoginAndPoNumber == null 
+						|| switchBetweenClientLoginAndPoNumber == 0) ? 1: 0);
+				listOrdersDTO = new ArrayList<OrdersDTO>();
+				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
+				session.setAttribute("switchBetweenClientLoginAndPoNumber", switchBetweenClientLoginAndPoNumber);
+				return SUCCESS;
+			}
+			
+			//Switching between "ls_Order" and "Client Order Id"	
+//			switchBetweenLsOrderAndClientOrderId = (Integer)session.getAttribute("switchBetweenLsOrderAndClientOrderId");
+			
+			if (switchBetweenLsOrderAndClientOrderIdSignal != null && switchBetweenLsOrderAndClientOrderIdSignal != 0L) {
+				switchBetweenLsOrderAndClientOrderId = ((switchBetweenLsOrderAndClientOrderId == null 
+						|| switchBetweenLsOrderAndClientOrderId == 0) ? 1: 0);
+				listOrdersDTO = new ArrayList<OrdersDTO>();
+				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
+				session.setAttribute("switchBetweenLsOrderAndClientOrderId", switchBetweenLsOrderAndClientOrderId);
+				return SUCCESS;
+			}
+			
+			//Switching between "Status" and "Client Other Id"
+//			switchBetweenStatusAndClientOther = (Integer)session.getAttribute("switchBetweenStatusAndClientOther");
+			
+			if (switchBetweenStatusAndClientOtherSignal != null && switchBetweenStatusAndClientOtherSignal != 0L) {
+				switchBetweenStatusAndClientOther = ((switchBetweenStatusAndClientOther == null 
+						|| switchBetweenStatusAndClientOther == 0) ? 1: 0);
+				listOrdersDTO = new ArrayList<OrdersDTO>();
+				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
+				session.setAttribute("switchBetweenLsOrderAndClientOrderId", switchBetweenStatusAndClientOther);
+				return SUCCESS;
+			}
+			
 
+			
+			
 			/*----------------- When Admin Click on the pageIndex ----------------------------------
 										catch  page index
 			 ---------------------------------------------------------------------------------------*/
@@ -626,6 +694,7 @@ public class ReportOrders extends LoyautyAction {
 				Long totalOrders = orderService.getCountOrders(
 						creationDateStartArg, creationDateEndArg,
 						reportDateBetween, userLogin, lsOrderId, status);
+				
 				String strcount = totalOrders.toString();
 				Integer sizeList = Integer.parseInt(strcount)
 						/ PAGE_ITEMS_COUNT;

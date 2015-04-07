@@ -4467,3 +4467,154 @@ Contains: Could not delete C:\dev\WORKSPACE\.metadata\.plugins\org.eclipse.wst.s
 !MESSAGE Could not delete C:\dev\WORKSPACE\.metadata\.plugins\org.eclipse.wst.server.core\tmp18\wtpwebapps\loyaltySource\WEB-INF\lib\struts2-core-2.1.8.1.jar. May be locked by another process.
 !SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-06 12:23:25.437
 !MESSAGE Could not delete C:\dev\WORKSPACE\.metadata\.plugins\org.eclipse.wst.server.core\tmp18\wtpwebapps\loyaltySource\WEB-INF\lib\struts2-tiles-plugin-2.1.8.1.jar. May be locked by another process.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/asm-1.5.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/cglib-2.1_3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/ehcache-core-2.1.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/jai_codec-1.1.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/jai-core-1.1.3-alpha.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/jdom.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/mail-1.4.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/mybatis-3.0.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/postgresql-8.4-701.jdbc4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/quartz-all-1.8.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/rome-1.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/slf4j-api-1.5.11.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/slf4j-jdk14-1.5.11.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/apache-solr-solrj-3.3.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-codec-1.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-httpclient-3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-logging-1.1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/simmetrics_jar_v1_6_2_d07_02_07.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/junit-4.8.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/lombok.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/jsch-0.1.50.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-net-3.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/log4j-1.2.16.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-beanutils-1.7.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-digester-2.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-fileupload-1.2.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-io-1.3.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-lang-2.5.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-logging-1.0.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/commons-logging-api-1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/flexjson.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/freemarker-2.3.15.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/ognl-2.7.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/struts2-core-2.1.8.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/struts2jsonresult0.99.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/struts2-tiles-plugin-2.1.8.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/struts-mailreader-dao-1.3.5.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/tiles-api-2.0.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/tiles-core-2.0.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/tiles-jsp-2.0.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/urlrewrite-3.2.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/xwork-core-2.1.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/poi-2.5.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2015-04-07 09:47:35.579
+!MESSAGE Could not delete C:/dev/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp18/wtpwebapps/loyaltySource/WEB-INF/lib/jsoup-1.7.2.jar. May be locked by another process.
+
+!ENTRY org.eclipse.core.resources 4 2 2015-04-07 12:42:05.353
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-04-07 12:42:05.373
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-04-07 12:42:05.373
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-04-07 12:42:27.127
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-04-07 12:42:27.212
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-04-07 12:42:27.212
+!MESSAGE Errors running builder 'Java Builder' on project 'loyaltySource_admin'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.ast.Argument.bind(Argument.java:35)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.bindArguments(AbstractMethodDeclaration.java:83)
+	at org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:406)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1147)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.resolve(TypeDeclaration.java:1235)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:540)
+	at org.eclipse.jdt.internal.compiler.Compiler.process(Compiler.java:759)
+	at org.eclipse.jdt.internal.compiler.ProcessTaskManager.run(ProcessTaskManager.java:137)
+	at java.lang.Thread.run(Thread.java:722)

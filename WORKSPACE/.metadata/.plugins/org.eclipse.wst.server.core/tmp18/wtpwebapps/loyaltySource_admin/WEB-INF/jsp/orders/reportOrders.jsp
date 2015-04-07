@@ -82,6 +82,18 @@ input.vanadium-valid {
 			<s:hidden id="deleteOrderSignal" name="deleteOrderSignal" value="0" />
 			<s:hidden id="dateBetweenSignal" name="dateBetweenSignal" value="0" />
 			<s:hidden id="reportDateBetween" name="reportDateBetween" value="0" />
+			<!-- New variable -->
+			<s:hidden id="switchBetweenClientLoginAndPoNumber" name="switchBetweenClientLoginAndPoNumber" value="0" />
+			<s:hidden id="switchBetweenClientLoginAndPoNumberSignal" name="switchBetweenClientLoginAndPoNumberSignal" value="0" />
+			
+			<s:hidden id="switchBetweenLsOrderAndClientOrderIdSignal" name="switchBetweenLsOrderAndClientOrderIdSignal" value="0" />
+			<s:hidden id="switchBetweenLsOrderAndClientOrderId" name="switchBetweenLsOrderAndClientOrderId" value="0" />
+			
+			<s:hidden id="switchBetweenStatusAndClientOtherSignal" name="switchBetweenStatusAndClientOtherSignal" value="0" />
+			<s:hidden id="switchBetweenStatusAndClientOther" name="switchBetweenStatusAndClientOther" value="0" />
+			
+			  
+			<s:hidden id="optionalFieldSwitch" name="optionalFieldSwitch" value="0" />
 
 			<!-- ***************** Pagination ********************************** -->
 			<s:hidden id="pageIndexSignal" name="pageIndexSignal" value="0" />
@@ -210,7 +222,8 @@ input.vanadium-valid {
 						Client </span> Login: 
 				</td> 
 				--%>
-				<s:if test="%{reportDateBetween==null || reportDateBetween==0}">
+				
+				<s:if test="%{switchBetweenClientLoginAndPoNumber==null || switchBetweenClientLoginAndPoNumber==0}">
 				<%-- <s:if test='%{userLogin==null && userLogin!=""}'> --%>
 				<td style="padding-left: 5px; width: 80px;">
 				<span id="toggleBetweenLoginAndPONumber" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">
@@ -269,7 +282,7 @@ input.vanadium-valid {
 
 				
 				<!-- ...lsOrderId... -->
-				<s:if test="%{reportDateBetween==null || reportDateBetween==0}">
+				<s:if test="%{switchBetweenLsOrderAndClientOrderId==null || switchBetweenLsOrderAndClientOrderId==0}">
 				<td style="padding-left: 5px; width: 92px;">
 				<span id="toggleBetweenlsOrderIdAndclientOrderId" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">ls_Order_Id: </span></td>
 				<td style="padding-left: 5px; width:119px;">
@@ -295,7 +308,7 @@ input.vanadium-valid {
 				<!-- ...lsOrderId... -->
 
 				<!-- ...Status... -->
-				<s:if test="%{reportDateBetween==null || reportDateBetween==0}">
+				<s:if test="%{switchBetweenStatusAndClientOther==null || switchBetweenStatusAndClientOther==0}">
 					<td style="padding-left: 5px;wi">
 					<span id="toggleBetweenStatusAndclientOtherId" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">Status: </span></td>
 					<td style="padding-left: 5px; width: 100px;"><s:select label=""
@@ -3520,29 +3533,29 @@ input.vanadium-valid {
 								-------------------------------------------------------------------------------------------*/
 					 			$("#toggleBetweenLoginAndPONumber").click(function() {
 									fillSarchParameters();
-									$("#dateBetweenSignal").val(1);
+									$("#switchBetweenClientLoginAndPoNumberSignal").val(1);
 									$('#form').trigger("submit");
 								});
 								
-								//toggleBetweenStatus
+																
+								/*----------------------- Switching between "ls_Order" and "Client Order Id" --------------------
+								 When Admin click sentens "ls_Order" or "Client Order Id" in Search Options 
+								-------------------------------------------------------------------------------------------*/
+					 			$("#toggleBetweenlsOrderIdAndclientOrderId").click(function() {
+									fillSarchParameters();
+									$("#switchBetweenLsOrderAndClientOrderIdSignal").val(1);
+									$('#form').trigger("submit");
+								});
 								
 								/*----------------------- Switching between "Status" and "Client Other Id" --------------------
 								 When Admin click sentens "Status" or "Client Other Id" in Search Options 
 								-------------------------------------------------------------------------------------------*/
 					 			$("#toggleBetweenStatusAndclientOtherId").click(function() {
 									fillSarchParameters();
-									$("#dateBetweenSignal").val(1);
+									$("#switchBetweenStatusAndClientOtherSignal").val(1);
 									$('#form').trigger("submit");
 								});
 								
-								/*----------------------- Switching between "ls_Order" and "Client Order Id" --------------------
-								 When Admin click sentens "ls_Order" or "Client Order Id" in Search Options 
-								-------------------------------------------------------------------------------------------*/
-					 			$("#toggleBetweenlsOrderIdAndclientOrderId").click(function() {
-									fillSarchParameters();
-									$("#dateBetweenSignal").val(1);
-									$('#form').trigger("submit");
-								});
 
 								/*------------------------------- Function:fillSarchParameters --------------------------------
 													     	   Function to fill sarch parameters  
