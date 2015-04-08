@@ -207,14 +207,19 @@ public class OrdersServiceImpl extends ServiceImpl implements OrdersService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Long getCountOrders(final Date creationDateStart,final Date creationDateEnd,final Integer factorDateBetween,
-			final String userLogin, final String lsOrderId,final String status){
+			final String userLogin, final String lsOrderId,final String status, final String productOrderNumberSearch, 
+			final String clientOrderNumber,
+			final String clientOther){
 		Orders result=null;
 		try{
 			daoManager.setCommitTransaction(true);
 			result = (Orders) daoManager.executeAndHandle(new DaoCommand() {
 				@Override
 				public Object execute(DaoManager daoManager) throws DaoException {			
-					return daoManager.getOrdersDao().getCountOrders(creationDateStart,creationDateEnd,factorDateBetween,userLogin,lsOrderId,status);
+					return daoManager.getOrdersDao().getCountOrders(
+							creationDateStart,creationDateEnd,factorDateBetween,
+							userLogin,lsOrderId,status,
+							productOrderNumberSearch,clientOrderNumber, clientOther);
 				}
 			});
 		}catch (DaoException de) {

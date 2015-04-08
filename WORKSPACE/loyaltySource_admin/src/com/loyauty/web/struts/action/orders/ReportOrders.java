@@ -665,8 +665,7 @@ public class ReportOrders extends LoyautyAction {
 										catch  page index
 			 ---------------------------------------------------------------------------------------*/
 			if (pageIndexSignal != null && pageIndexSignal != 0L) {
-				OrdersDTO orderDTO = (OrdersDTO) session
-						.getAttribute("orderPageSelected");
+				OrdersDTO orderDTO = (OrdersDTO) session.getAttribute("orderPageSelected");
 				if (orderDTO != null)
 					orderDTO.setCssStyle("");
 				OrdersDTO orderPageSelected = listIndexSet.get(indexList);
@@ -691,9 +690,9 @@ public class ReportOrders extends LoyautyAction {
 				OrdersDTO orderDTO = listIndexSet.get(listIndexSet.size() - 1);
 				if (orderDTO != null)
 					nextListPages = orderDTO.getIndex() + 1;
-				Long totalOrders = orderService.getCountOrders(
-						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, userLogin, lsOrderId, status);
+				Long totalOrders = orderService.getCountOrders(creationDateStartArg,
+						creationDateEndArg, reportDateBetween, userLogin, lsOrderId,
+						status,productOrderNumberSearch,clientOrderNumber,clientOther);
 				
 				String strcount = totalOrders.toString();
 				Integer sizeList = Integer.parseInt(strcount)
@@ -824,8 +823,7 @@ public class ReportOrders extends LoyautyAction {
 				nextListPages = 0;
 				session.setAttribute("nextListPages", nextListPages);
 				session.setAttribute("selectedStatus", selectedStatus);
-				session.setAttribute("creationDateStartArg",
-						creationDateStartArg);
+				session.setAttribute("creationDateStartArg",creationDateStartArg);
 				session.setAttribute("creationDateEndArg", creationDateEndArg);
 				session.setAttribute("reportDateBetween", reportDateBetween);
 				session.setAttribute("lsOrderId", lsOrderId);
@@ -834,6 +832,10 @@ public class ReportOrders extends LoyautyAction {
 				session.setAttribute("listIndexColumn", listIndexColumn);
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				session.setAttribute("invoicedOrdersRefresh", 0L);
+				
+				session.setAttribute("productOrderNumberSearch", productOrderNumberSearch);
+				session.setAttribute("clientOrderNumber", clientOrderNumber);
+				session.setAttribute("clientOther", clientOther);
 				return SUCCESS;
 			}
 
@@ -1211,6 +1213,8 @@ public class ReportOrders extends LoyautyAction {
 				session.setAttribute("lsOrderId", lsOrderId);
 				session.setAttribute("userLogin", userLogin);
 				session.setAttribute("status", status);
+				//For newly added field
+				session.setAttribute("productOrderNumberSearch", productOrderNumberSearch);
 
 				session.setAttribute("listIndexColumn", listIndexColumn);
 				session.setAttribute("sizeResult", sizeResult);
@@ -1717,7 +1721,8 @@ public class ReportOrders extends LoyautyAction {
 		listIndexSet = new ArrayList<OrdersDTO>();
 		totalOrders = orderService.getCountOrders(creationDateStartArg,
 				creationDateEndArg, reportDateBetween, userLogin, lsOrderId,
-				status);
+				status,productOrderNumberSearch,clientOrderNumber,clientOther);
+		
 		String strcount = totalOrders.toString();
 		Integer sizeList = Integer.parseInt(strcount) / PAGE_ITEMS_COUNT;
 		nextListPages = 1;
@@ -1732,6 +1737,7 @@ public class ReportOrders extends LoyautyAction {
 		session.setAttribute("indexSet", indexSet);
 		session.setAttribute("totalOrders", totalOrders);
 		session.setAttribute("listIndexSet", listIndexSet);
+		session.setAttribute("productOrderNumberSearch", productOrderNumberSearch);
 
 	}
 

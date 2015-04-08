@@ -253,7 +253,7 @@ input.vanadium-valid {
 					
 					<td style="padding-left: 5px; width:152px;">
 					<s:textfield id="poNumberId"
-							name="productOrderNumberSearch" value="%{productOrderNumber}"
+							name="productOrderNumberSearch" value="%{productOrderNumberSearch}"
 							cssStyle="width:150px" />
 					</td>
 				</s:else>
@@ -323,7 +323,7 @@ input.vanadium-valid {
 					Client Other Id: </span></td>
 					<td style="padding-left: 5px; width: 95px;">
 					<s:textfield id="clientOtherId"
-							name="clientOther" value="%{clientOtherId}"
+							name="clientOther" value="%{clientOther}"
 							cssStyle="width:150px" /></td>
 				</s:else>
 <%-- 				<td style="padding-left: 5px; width: 45px;">Status:</td>
@@ -3412,44 +3412,25 @@ input.vanadium-valid {
 															.trigger("submit");
 												});
 
-								//when Admin click on a imge imgPrevListPages 
-								$('#tabPageIndex #imgPrevListPages')
-										.click(
+
+
+			//when Admin click on a imge imgPrevListPages 
+								$('#tabPageIndex #imgPrevListPages').click(
 												function() {
 													//Search Parameters 
-													var userLogin = $(
-															"#txtUserLoginTo")
-															.val();
-													var strCreationDateStart = $(
-															"#creationDateStartPicker")
-															.val();
-													var strCreationDateEnd = $(
-															"#creationDateEndPicker")
-															.val();
-													$("#frmUserLogin").val(
-															userLogin);
-													var selectedStatus = $(
-															"#selectedStatus")
-															.val();
-													var lsOrderId = $(
-															"#lsOrderIdSearch")
-															.val();
-													$("#lsOrderIdFRM").val(
-															lsOrderId);
-													$("#frmSelectedStatus")
-															.val(selectedStatus);
-													$(
-															"#frmStrCreationDateStart")
-															.val(
-																	strCreationDateStart);
-													$("#frmStrCreationDateEnd")
-															.val(
-																	strCreationDateEnd);
+													var userLogin = $("#txtUserLoginTo").val();
+													var strCreationDateStart = $("#creationDateStartPicker").val();
+													var strCreationDateEnd = $("#creationDateEndPicker").val();
+													$("#frmUserLogin").val(userLogin);
+													var selectedStatus = $("#selectedStatus").val();
+													var lsOrderId = $("#lsOrderIdSearch").val();
+													$("#lsOrderIdFRM").val(lsOrderId);
+													$("#frmSelectedStatus").val(selectedStatus);
+													$("#frmStrCreationDateStart").val(strCreationDateStart);
+													$("#frmStrCreationDateEnd").val(strCreationDateEnd);
 													$('#indexList').val(0);
-													$('#prevListPagesSignal')
-															.val(1);
-													$('#form')
-															.trigger("submit");
+													$('#prevListPagesSignal').val(1);
+													$('#form').trigger("submit");
 												});
 
 								/*------------------------------- Function:recoveryDataOrder --------------------------------
@@ -3512,6 +3493,8 @@ input.vanadium-valid {
 									$('#creationOrderDateFRM').val(
 											creationOrderDate);
 									$('#clientLastNameFRM').val(clientLastName);
+									
+																
 									$('#clientFirstNameFRM').val(
 											clientFirstName);
 									$('#clientOtherNamesFRM').val(
@@ -3527,35 +3510,44 @@ input.vanadium-valid {
 									$('#clientPhoneFRM').val(clientPhone);
 									$('#clientEmailFRM').val(clientEmail);
 								}
-								
+
 								/*----------------------- Switching between "Client Login" and "PO Number" --------------------
 								 When Admin click sentens "PO Number" or "Client Login" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-					 			$("#toggleBetweenLoginAndPONumber").click(function() {
-									fillSarchParameters();
-									$("#switchBetweenClientLoginAndPoNumberSignal").val(1);
-									$('#form').trigger("submit");
-								});
-								
-																
+								$("#toggleBetweenLoginAndPONumber").click(
+									function() {
+										fillSarchParameters();
+										$("#switchBetweenClientLoginAndPoNumberSignal").val(1);
+										$('#form').trigger("submit");
+									});
+
 								/*----------------------- Switching between "ls_Order" and "Client Order Id" --------------------
 								 When Admin click sentens "ls_Order" or "Client Order Id" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-					 			$("#toggleBetweenlsOrderIdAndclientOrderId").click(function() {
-									fillSarchParameters();
-									$("#switchBetweenLsOrderAndClientOrderIdSignal").val(1);
-									$('#form').trigger("submit");
-								});
-								
+								$("#toggleBetweenlsOrderIdAndclientOrderId")
+										.click(
+												function() {
+													fillSarchParameters();
+													$(
+															"#switchBetweenLsOrderAndClientOrderIdSignal")
+															.val(1);
+													$('#form')
+															.trigger("submit");
+												});
+
 								/*----------------------- Switching between "Status" and "Client Other Id" --------------------
 								 When Admin click sentens "Status" or "Client Other Id" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-					 			$("#toggleBetweenStatusAndclientOtherId").click(function() {
-									fillSarchParameters();
-									$("#switchBetweenStatusAndClientOtherSignal").val(1);
-									$('#form').trigger("submit");
-								});
-								
+								$("#toggleBetweenStatusAndclientOtherId")
+										.click(
+												function() {
+													fillSarchParameters();
+													$(
+															"#switchBetweenStatusAndClientOtherSignal")
+															.val(1);
+													$('#form')
+															.trigger("submit");
+												});
 
 								/*------------------------------- Function:fillSarchParameters --------------------------------
 													     	   Function to fill sarch parameters  
@@ -3563,16 +3555,21 @@ input.vanadium-valid {
 								function fillSarchParameters() {
 									//search parameters 
 									var userLogin = $("#txtUserLoginTo").val();
-									$("#frmUserLogin").val(userLogin);			//Some Hidden Form
-									var strCreationDateStart = $("#creationDateStartPicker").val();
-									$("#frmStrCreationDateStart").val(strCreationDateStart);
-									var strCreationDateEnd = $("#creationDateEndPicker").val();
-									$("#frmStrCreationDateEnd").val(strCreationDateEnd);
-									var selectedStatus = $("#selectedStatus").val();
+									$("#frmUserLogin").val(userLogin); //Some Hidden Form
+									var strCreationDateStart = $(
+											"#creationDateStartPicker").val();
+									$("#frmStrCreationDateStart").val(
+											strCreationDateStart);
+									var strCreationDateEnd = $(
+											"#creationDateEndPicker").val();
+									$("#frmStrCreationDateEnd").val(
+											strCreationDateEnd);
+									var selectedStatus = $("#selectedStatus")
+											.val();
 									$("#frmSelectedStatus").val(selectedStatus);
 									var lsOrderId = $("#lsOrderIdSearch").val();
 									$("#lsOrderIdFRM").val(lsOrderId);
-									
+
 									var productOrderNumberSearch = $("#poNumberId").val();
 									$("#frmProductOrderNumber").val(productOrderNumberSearch);
 									var trakingNumber = $("#trakingNumberId").val();
@@ -3584,9 +3581,6 @@ input.vanadium-valid {
 								}
 
 							});
-			
-
-
 		</script>
 	</div>
 </div>

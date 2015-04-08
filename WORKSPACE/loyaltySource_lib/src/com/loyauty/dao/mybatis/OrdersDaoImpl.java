@@ -407,7 +407,12 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		}
 
 		@Override
-		public Orders getCountOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin, String lsOrderId,String status) {
+		public Orders getCountOrders(
+				Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,
+				String userLogin, String lsOrderId,String status,
+				String productOrderNumberSearch, 
+				String clientOrderNumber,
+				String clientOther) {
 			Orders result=null;
 			HashMap<String, Object>param=new HashMap<String, Object>();
 			param.put("creationDateStart", creationDateStart); 
@@ -416,6 +421,10 @@ import com.loyauty.service.core.dto.OrdersDTO;
 			param.put("userLogin", userLogin);
 			param.put("lsOrderId", lsOrderId);
 			param.put("status", status);
+			param.put("productOrderNumberSearch", productOrderNumberSearch);
+			param.put("clientOrderNumber", clientOrderNumber);
+			param.put("clientOther", clientOther);
+			
 			result=(Orders)getSqlSession().selectOne(getNameSpace("getCountOrders"),param);
 			return result;
 		}
@@ -900,7 +909,7 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		param.put("clientOrderNumber", clientOrderNumber);
 		param.put("clientOtherId", clientOther);
 		
-		System.out.println("OrderDaoImp Class: "+ productOrderNumberSearch);
+//		System.out.println("OrderDaoImp Class: "+ productOrderNumberSearch);
 		
 		result = (List<Orders>) getSqlSession().selectList(
 				getNameSpace("searchOrdersWithOptionsAndSorting"), param);

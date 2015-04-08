@@ -133,21 +133,27 @@ public class Test{
 			String lsOrderId= ""; 
 			String status= ""; 
 			List<Integer>listIndexColumn= getNewListIndexColumn();
-			Integer pAGE_ITEMS_COUNT= 2000; 
+			Integer pAGE_ITEMS_COUNT= 100; 
 			Integer indexSet= 0; 
-//			String productOrderNumberSearch= "IL";
-			String productOrderNumberSearch= "8495732";
+			String productOrderNumberSearch= "IL";
+//			String productOrderNumberSearch= "";
 			String clientOrderNumber= ""; 
 			String clientOther= "";
 			
 			
-			List<OrdersDTO>result=orderService.searchOrdersWithOptionsAndSortingNew(creationDateStartArg, creationDateEndArg, reportDateBetween, userLogin, lsOrderId, status, listIndexColumn, pAGE_ITEMS_COUNT, indexSet, productOrderNumberSearch, clientOrderNumber, clientOther);
-			System.out.println("count:"+result.size());
+//			List<OrdersDTO>result=orderService.searchOrdersWithOptionsAndSortingNew(creationDateStartArg, creationDateEndArg, reportDateBetween, userLogin, lsOrderId, status, listIndexColumn, pAGE_ITEMS_COUNT, indexSet, productOrderNumberSearch, clientOrderNumber, clientOther);
+//			System.out.println("count:"+result.size());
+//			
+//			for(OrdersDTO orderDTO:result){
+//				System.out.println("LS Order: "+ orderDTO.getLsOrderId());
+//			}
 			
-			for(OrdersDTO orderDTO:result){
-				System.out.println("LS Order: "+ orderDTO.getLsOrderId());
-			}
+			Long totalOrders = orderService.getCountOrders(creationDateStartArg,
+					creationDateEndArg, reportDateBetween, userLogin, lsOrderId,
+					status,productOrderNumberSearch,clientOrderNumber,clientOther);
 			
+			
+			System.out.println("Total number of Orders: "+totalOrders);
 		/*	String LS_PRODUCT_ID="W;   A'BC,XY;Z SELECT '";
 			LS_PRODUCT_ID = LS_PRODUCT_ID.replaceAll(" SELECT ",""); 
 			LS_PRODUCT_ID = LS_PRODUCT_ID.replaceAll("\\s","");

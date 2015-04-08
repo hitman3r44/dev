@@ -77,7 +77,17 @@ public interface OrdersService extends Service {
 	Long getCountInvoicedOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,
 			   				    String userLogin, String lsOrderId,String status)throws ServiceException;
 	
-	Long getCountOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween, String userLogin, String lsOrderId,String status)throws ServiceException;
+	Long getCountOrders(
+			Date creationDateStart,
+			Date creationDateEnd,
+			Integer factorDateBetween, 
+			String userLogin, 
+			String lsOrderId,
+			String status,
+			String productOrderNumberSearch, 
+			String clientOrderNumber,
+			String clientOther
+			)throws ServiceException;
 	
 	boolean isExistAnyLsOrderIdInDB(List<OrdersDTO>listOrders);
 	

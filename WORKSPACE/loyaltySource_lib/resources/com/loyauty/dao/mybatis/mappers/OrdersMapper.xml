@@ -577,7 +577,7 @@
 		FROM    user_account UA INNER JOIN(orders ORD INNER JOIN orders_rows ORDR ON ORD.ls_order_id=ORDR.ls_order_id)
 			 	ON ORD.user_id=UA.id 
 	
-	 	WHERE   UA.login like '%' || #{userLogin} ||'%' AND 
+	 	WHERE   UA.login like '%' || #{userLogin} || '%' AND 
 			   		     			 	
 			 	<if test="factorDateBetween == 0">
 			   		ORD.creation_date IS NOT NULL AND (ORD.creation_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
@@ -586,8 +586,15 @@
 			   		ORDR.shipped_date IS NOT NULL AND (ORDR.shipped_date BETWEEN #{creationDateStart} AND #{creationDateEnd}) AND
 			    </if>
 	
-	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' AND
-				ORDR.status like '%' || #{status} || '%' 
+	 		    ORD.ls_order_id like '%' || #{lsOrderId} || '%' 
+	 		    AND
+				ORDR.status like '%' || #{status} || '%'
+				AND
+				ORD.product_order_number like '%' || #{productOrderNumberSearch} || '%'
+				AND 
+				ORD.client_Order_Number like '%' || #{clientOrderNumber} || '%' 
+				AND 
+				client_other_id like '%' || #{clientOther} || '%'
 	
 	</select>
 

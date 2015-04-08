@@ -120,7 +120,16 @@ public interface OrdersDao extends BasicDao{
 	Orders getCountInvoicedOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,
 			 					   String userLogin, String lsOrderId,String status);
 	 
-	Orders getCountOrders(Date creationDateStart,Date creationDateEnd,Integer factorDateBetween,String userLogin, String lsOrderId,String status);
+	Orders getCountOrders(
+			Date creationDateStart,
+			Date creationDateEnd,Integer 
+			factorDateBetween,
+			String userLogin, 
+			String lsOrderId,
+			String status,
+			String productOrderNumberSearch, 
+			String clientOrderNumber,
+			String clientOther);
 	/**
 	 * 
 	 * @param ufd
