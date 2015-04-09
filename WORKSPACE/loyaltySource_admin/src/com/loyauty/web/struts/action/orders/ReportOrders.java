@@ -690,6 +690,7 @@ public class ReportOrders extends LoyautyAction {
 				OrdersDTO orderDTO = listIndexSet.get(listIndexSet.size() - 1);
 				if (orderDTO != null)
 					nextListPages = orderDTO.getIndex() + 1;
+				
 				Long totalOrders = orderService.getCountOrders(creationDateStartArg,
 						creationDateEndArg, reportDateBetween, userLogin, lsOrderId,
 						status,productOrderNumberSearch,clientOrderNumber,clientOther);
@@ -1241,16 +1242,24 @@ public class ReportOrders extends LoyautyAction {
 					nextElement = element;
 				}
 				
+				//New Functionality with same mapping
+				listOrdersDTO = orderService.searchOrdersWithOptionsAndSortingNew(
+								creationDateStartArg, creationDateEndArg,
+								reportDateBetween, userLogin, lsOrderId,
+								status, listIndexColumn, PAGE_ITEMS_COUNT,
+								indexSet, productOrderNumberSearch,clientOrderNumber,
+								clientOther);
+				
 //				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
 //						creationDateStartArg, creationDateEndArg,
 //						reportDateBetween, userLogin, lsOrderId, status,
 //						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
 				
-				// New Searching Functionality
-				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, orderDTOObj, listIndexColumn,
-						PAGE_ITEMS_COUNT, indexSet);
+//				// New Searching Functionality
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, orderDTOObj, listIndexColumn,
+//						PAGE_ITEMS_COUNT, indexSet);
 				
 				int balance = 0;
 				int OrderIndex = 0;
@@ -1558,11 +1567,20 @@ public class ReportOrders extends LoyautyAction {
 //						reportDateBetween, userLogin, lsOrderId, status,
 //						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
 				
+
+				//New Functionality with same mapping
+				listOrdersDTO = orderService.searchOrdersWithOptionsAndSortingNew(
+								creationDateStartArg, creationDateEndArg,
+								reportDateBetween, userLogin, lsOrderId,
+								status, listIndexColumn, PAGE_ITEMS_COUNT,
+								indexSet, productOrderNumberSearch,clientOrderNumber,
+								clientOther);				
+				
 				// New Searching Functionality
-				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-						creationDateStartArg, creationDateEndArg,
-						reportDateBetween, orderDTOObj, listIndexColumn,
-						PAGE_ITEMS_COUNT, indexSet);
+//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
+//						creationDateStartArg, creationDateEndArg,
+//						reportDateBetween, orderDTOObj, listIndexColumn,
+//						PAGE_ITEMS_COUNT, indexSet);
 				
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				message = "Saving has completed successfuly";

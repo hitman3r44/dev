@@ -238,7 +238,17 @@ input.vanadium-valid {
 						<div style="position: absolute;">
 							<select id="selectUsersTag" name="sometext" size="2"
 								multiple="multiple" class="selectUsersTag"
-								style="height: 67px; width: 150px; position: absolute; z-index: 100; display: none; margin-right: 20px; overflow: none;"
+								style="
+								height: 67px; 
+								width: 154px;
+								top: 42px;
+								right: -90px; 
+								position: relative; 
+								z-index: 100; 
+								display: none; 
+								margin-right: 20px; 
+								overflow: none;
+								"
 								scrolling="no">
 								<option></option>
 							</select>
@@ -1435,6 +1445,89 @@ input.vanadium-valid {
 											$('#toolTipReportPop').css("display", "none");
 											$('#toolTipReportPop').css("visibility", "hidden");
 										});
+								
+								
+							/*------------------------------------- ToolTipReport:Client Login And PO Number -------------------------------- 
+							 	  when Admin mouve the mouse on the sentence "Client Login" or "PO Number"  
+							------------------------------------------------------------------------------------------------*/
+							$('#toggleBetweenLoginAndPONumber').mouseover(
+											function() {
+												var position = $('#toggleBetweenLoginAndPONumber').position();
+												$('#toolTipReportPop #message').text("Click to toggle between Login And PO Number");
+												var y = position.top;
+												var height = $('#toolTipReportPop').height();
+												y = (y - height);
+												var x = position.left;
+												var toolTipWidth = $('#toolTipReportPop').width();
+												toolTipWidth = toolTipWidth / 2;
+												x = x - toolTipWidth;
+												$("#toolTipReportPop").css('top', y - 5);
+												$("#toolTipReportPop").css('left', x + 81);
+												$('#toolTipReportPop').css("display", "block");
+												$('#toolTipReportPop').css(	"visibility","visible");
+											});
+							//when Admin move the mouse out the sentence "Shipped Date between" or "PO Date between" 
+ 							$('#toggleBetweenLoginAndPONumber').mouseout(
+									function() {
+										$('#toolTipReportPop').css("display", "none");
+										$('#toolTipReportPop').css("visibility", "hidden");
+									});
+							
+							
+							/*------------------------------------- ToolTipReport:Ls Order And Client Order Id -------------------------------- 
+						 	  when Admin mouve the mouse on the sentence "Ls Order" And "Client Order Id"  
+						  ------------------------------------------------------------------------------------------------*/
+						$('#toggleBetweenlsOrderIdAndclientOrderId').mouseover(
+										function() {
+											var position = $('#toggleBetweenlsOrderIdAndclientOrderId').position();
+											$('#toolTipReportPop #message').text("Click to toggle between Ls Order And Client Order Id");
+											var y = position.top;
+											var height = $('#toolTipReportPop').height();
+											y = (y - height);
+											var x = position.left;
+											var toolTipWidth = $('#toolTipReportPop').width();
+											toolTipWidth = toolTipWidth / 2;
+											x = x - toolTipWidth;
+											$("#toolTipReportPop").css('top', y - 5);
+											$("#toolTipReportPop").css('left', x + 30);
+											$('#toolTipReportPop').css("display", "block");
+											$('#toolTipReportPop').css(	"visibility","visible");
+										});
+						//when Admin move the mouse out the sentence "Ls Order" And "Client Order Id" 
+						$('#toggleBetweenlsOrderIdAndclientOrderId').mouseout(
+								function() {
+									$('#toolTipReportPop').css("display", "none");
+									$('#toolTipReportPop').css("visibility", "hidden");
+								});
+						
+						
+					/*------------------------------------- ToolTipReport:Status and Client Other Id -------------------------------- 
+					 	  when Admin mouve the mouse on the sentence "Status" or "Client Other Id"  
+					  ------------------------------------------------------------------------------------------------*/
+					$('#toggleBetweenStatusAndclientOtherId').mouseover(
+									function() {
+										var position = $('#toggleBetweenStatusAndclientOtherId').position();
+										$('#toolTipReportPop #message').text("Click to toggle between Status and Client Other Id");
+										var y = position.top;
+										var height = $('#toolTipReportPop').height();
+										y = (y - height);
+										var x = position.left;
+										var toolTipWidth = $('#toolTipReportPop').width();
+										toolTipWidth = toolTipWidth / 2;
+										x = x - toolTipWidth;
+										$("#toolTipReportPop").css('top', y - 5);
+										$("#toolTipReportPop").css('left', x + 30);
+										$('#toolTipReportPop').css("display", "block");
+										$('#toolTipReportPop').css(	"visibility","visible");
+									});
+					//when Admin move the mouse out the sentence "Status" or "Client Other Id" 
+					$('#toggleBetweenStatusAndclientOtherId').mouseout(
+							function() {
+								$('#toolTipReportPop').css("display", "none");
+								$('#toolTipReportPop').css("visibility", "hidden");
+							});
+							
+								
 
 								/*----------------------------------- Delete Order --------------------------------------
 											 			Delete Order using confirmation popup 

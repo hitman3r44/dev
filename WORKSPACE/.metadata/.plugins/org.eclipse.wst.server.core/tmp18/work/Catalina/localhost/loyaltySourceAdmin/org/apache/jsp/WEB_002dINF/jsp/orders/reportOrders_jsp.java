@@ -1841,6 +1841,89 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"none\");\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"visibility\", \"hidden\");\n");
       out.write("\t\t\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t/*------------------------------------- ToolTipReport:Client Login And PO Number -------------------------------- \n");
+      out.write("\t\t\t\t\t\t\t \t  when Admin mouve the mouse on the sentence \"Client Login\" or \"PO Number\"  \n");
+      out.write("\t\t\t\t\t\t\t------------------------------------------------------------------------------------------------*/\n");
+      out.write("\t\t\t\t\t\t\t$('#toggleBetweenLoginAndPONumber').mouseover(\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tvar position = $('#toggleBetweenLoginAndPONumber').position();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop #message').text(\"Click to toggle between Login And PO Number\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tvar y = position.top;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tvar height = $('#toolTipReportPop').height();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\ty = (y - height);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tvar x = position.left;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tvar toolTipWidth = $('#toolTipReportPop').width();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\ttoolTipWidth = toolTipWidth / 2;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tx = x - toolTipWidth;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('top', y - 5);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('left', x + 81);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"block\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\t\"visibility\",\"visible\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t\t//when Admin move the mouse out the sentence \"Shipped Date between\" or \"PO Date between\" \n");
+      out.write(" \t\t\t\t\t\t\t$('#toggleBetweenLoginAndPONumber').mouseout(\n");
+      out.write("\t\t\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"none\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"visibility\", \"hidden\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t/*------------------------------------- ToolTipReport:Ls Order And Client Order Id -------------------------------- \n");
+      out.write("\t\t\t\t\t\t \t  when Admin mouve the mouse on the sentence \"Ls Order\" And \"Client Order Id\"  \n");
+      out.write("\t\t\t\t\t\t  ------------------------------------------------------------------------------------------------*/\n");
+      out.write("\t\t\t\t\t\t$('#toggleBetweenlsOrderIdAndclientOrderId').mouseover(\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tvar position = $('#toggleBetweenlsOrderIdAndclientOrderId').position();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop #message').text(\"Click to toggle between Ls Order And Client Order Id\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tvar y = position.top;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tvar height = $('#toolTipReportPop').height();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\ty = (y - height);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tvar x = position.left;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tvar toolTipWidth = $('#toolTipReportPop').width();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\ttoolTipWidth = toolTipWidth / 2;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\tx = x - toolTipWidth;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('top', y - 5);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('left', x + 30);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"block\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\t\"visibility\",\"visible\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t//when Admin move the mouse out the sentence \"Ls Order\" And \"Client Order Id\" \n");
+      out.write("\t\t\t\t\t\t$('#toggleBetweenlsOrderIdAndclientOrderId').mouseout(\n");
+      out.write("\t\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"none\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"visibility\", \"hidden\");\n");
+      out.write("\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t/*------------------------------------- ToolTipReport:Status and Client Other Id -------------------------------- \n");
+      out.write("\t\t\t\t\t \t  when Admin mouve the mouse on the sentence \"Status\" or \"Client Other Id\"  \n");
+      out.write("\t\t\t\t\t  ------------------------------------------------------------------------------------------------*/\n");
+      out.write("\t\t\t\t\t$('#toggleBetweenStatusAndclientOtherId').mouseover(\n");
+      out.write("\t\t\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tvar position = $('#toggleBetweenStatusAndclientOtherId').position();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop #message').text(\"Click to toggle between Status and Client Other Id\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tvar y = position.top;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tvar height = $('#toolTipReportPop').height();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\ty = (y - height);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tvar x = position.left;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tvar toolTipWidth = $('#toolTipReportPop').width();\n");
+      out.write("\t\t\t\t\t\t\t\t\t\ttoolTipWidth = toolTipWidth / 2;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tx = x - toolTipWidth;\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('top', y - 5);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$(\"#toolTipReportPop\").css('left', x + 30);\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"block\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\t\"visibility\",\"visible\");\n");
+      out.write("\t\t\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t//when Admin move the mouse out the sentence \"Status\" or \"Client Other Id\" \n");
+      out.write("\t\t\t\t\t$('#toggleBetweenStatusAndclientOtherId').mouseout(\n");
+      out.write("\t\t\t\t\t\t\tfunction() {\n");
+      out.write("\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"display\", \"none\");\n");
+      out.write("\t\t\t\t\t\t\t\t$('#toolTipReportPop').css(\"visibility\", \"hidden\");\n");
+      out.write("\t\t\t\t\t\t\t});\n");
+      out.write("\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t\t\n");
       out.write("\n");
       out.write("\t\t\t\t\t\t\t\t/*----------------------------------- Delete Order --------------------------------------\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t \t\t\tDelete Order using confirmation popup \n");
@@ -6959,7 +7042,17 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
         out.write("\t\t\t\t\t\t<div style=\"position: absolute;\">\n");
         out.write("\t\t\t\t\t\t\t<select id=\"selectUsersTag\" name=\"sometext\" size=\"2\"\n");
         out.write("\t\t\t\t\t\t\t\tmultiple=\"multiple\" class=\"selectUsersTag\"\n");
-        out.write("\t\t\t\t\t\t\t\tstyle=\"height: 67px; width: 150px; position: absolute; z-index: 100; display: none; margin-right: 20px; overflow: none;\"\n");
+        out.write("\t\t\t\t\t\t\t\tstyle=\"\n");
+        out.write("\t\t\t\t\t\t\t\theight: 67px; \n");
+        out.write("\t\t\t\t\t\t\t\twidth: 154px;\n");
+        out.write("\t\t\t\t\t\t\t\ttop: 42px;\n");
+        out.write("\t\t\t\t\t\t\t\tright: -90px; \n");
+        out.write("\t\t\t\t\t\t\t\tposition: relative; \n");
+        out.write("\t\t\t\t\t\t\t\tz-index: 100; \n");
+        out.write("\t\t\t\t\t\t\t\tdisplay: none; \n");
+        out.write("\t\t\t\t\t\t\t\tmargin-right: 20px; \n");
+        out.write("\t\t\t\t\t\t\t\toverflow: none;\n");
+        out.write("\t\t\t\t\t\t\t\t\"\n");
         out.write("\t\t\t\t\t\t\t\tscrolling=\"no\">\n");
         out.write("\t\t\t\t\t\t\t\t<option></option>\n");
         out.write("\t\t\t\t\t\t\t</select>\n");
@@ -7061,13 +7154,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f1 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f0);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(255,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(265,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f1.setId("poNumberId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(255,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(265,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f1.setName("productOrderNumberSearch");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(255,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(265,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f1.setValue("%{productOrderNumberSearch}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(255,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(265,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f1.setCssStyle("width:150px");
     int _jspx_eval_s_005ftextfield_005f1 = _jspx_th_s_005ftextfield_005f1.doStartTag();
     if (_jspx_th_s_005ftextfield_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7086,7 +7179,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f1 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f1.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(285,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(295,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f1.setTest("%{switchBetweenLsOrderAndClientOrderId==null || switchBetweenLsOrderAndClientOrderId==0}");
     int _jspx_eval_s_005fif_005f1 = _jspx_th_s_005fif_005f1.doStartTag();
     if (_jspx_eval_s_005fif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7130,13 +7223,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f2 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f1);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(289,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(299,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f2.setId("lsOrderIdSearch");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(289,4) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(299,4) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f2.setName("lsOrderId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(289,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(299,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f2.setValue("%{lsOrderId}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(289,4) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(299,4) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f2.setCssStyle("width:150px");
     int _jspx_eval_s_005ftextfield_005f2 = _jspx_th_s_005ftextfield_005f2.doStartTag();
     if (_jspx_th_s_005ftextfield_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7199,13 +7292,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f3 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f1);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(299,50) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(309,50) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f3.setId("clientOrderId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(299,50) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(309,50) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f3.setName("clientOrderNumber");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(299,50) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(309,50) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f3.setValue("%{clientOrderNumber}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(299,50) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(309,50) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f3.setCssStyle("width:150px");
     int _jspx_eval_s_005ftextfield_005f3 = _jspx_th_s_005ftextfield_005f3.doStartTag();
     if (_jspx_th_s_005ftextfield_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7224,7 +7317,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f2 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f2.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(311,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(321,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f2.setTest("%{switchBetweenStatusAndClientOther==null || switchBetweenStatusAndClientOther==0}");
     int _jspx_eval_s_005fif_005f2 = _jspx_th_s_005fif_005f2.doStartTag();
     if (_jspx_eval_s_005fif_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7267,21 +7360,21 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.SelectTag _jspx_th_s_005fselect_005f0 = (org.apache.struts2.views.jsp.ui.SelectTag) _005fjspx_005ftagPool_005fs_005fselect_0026_005fvalue_005frequired_005fname_005flist_005flabel_005fheaderValue_005fheaderKey_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.SelectTag.class);
     _jspx_th_s_005fselect_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fselect_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setLabel("");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setName("selectedStatus");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = headerKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = headerKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setHeaderKey("-1");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = headerValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = headerValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setHeaderValue("All Status");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = list type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = list type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setList("#{'0':'Open', '1':'Progress', '2':'Shipped'}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setValue("%{selectedStatus}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = required type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = required type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setRequired("false");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(314,50) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(324,50) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setCssStyle("width: 150px");
     int _jspx_eval_s_005fselect_005f0 = _jspx_th_s_005fselect_005f0.doStartTag();
     if (_jspx_th_s_005fselect_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7342,13 +7435,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f4 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(325,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(335,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f4.setId("clientOtherId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(325,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(335,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f4.setName("clientOther");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(325,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(335,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f4.setValue("%{clientOther}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(325,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(335,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f4.setCssStyle("width:150px");
     int _jspx_eval_s_005ftextfield_005f4 = _jspx_th_s_005ftextfield_005f4.doStartTag();
     if (_jspx_th_s_005ftextfield_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7367,7 +7460,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f3 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f3.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(339,5) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(349,5) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f3.setTest("%{reportDateBetween==null || reportDateBetween==0}");
     int _jspx_eval_s_005fif_005f3 = _jspx_th_s_005fif_005f3.doStartTag();
     if (_jspx_eval_s_005fif_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7443,13 +7536,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.DateTag _jspx_th_s_005fdate_005f0 = (org.apache.struts2.views.jsp.DateTag) _005fjspx_005ftagPool_005fs_005fdate_0026_005fvar_005fname_005fid_005fformat_005fnobody.get(org.apache.struts2.views.jsp.DateTag.class);
     _jspx_th_s_005fdate_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fdate_005f0.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(353,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(363,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f0.setId("creationDateStart");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(353,4) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(363,4) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f0.setName("creationDateStart");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(353,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(363,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f0.setVar("creationDateStart");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(353,4) name = format type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(363,4) name = format type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f0.setFormat("dd/MM/yyyy");
     int _jspx_eval_s_005fdate_005f0 = _jspx_th_s_005fdate_005f0.doStartTag();
     if (_jspx_th_s_005fdate_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7468,17 +7561,17 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f5 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005freadonly_005fname_005fkey_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f5.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setId("creationDateStartPicker");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setName("strCreationDateStart");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setValue("%{#creationDateStart}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = key type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = key type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setKey("labelkey");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = readonly type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = readonly type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setReadonly("false");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(354,4) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(364,4) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setCssStyle("width:150px;");
     int _jspx_eval_s_005ftextfield_005f5 = _jspx_th_s_005ftextfield_005f5.doStartTag();
     if (_jspx_th_s_005ftextfield_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7497,13 +7590,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.DateTag _jspx_th_s_005fdate_005f1 = (org.apache.struts2.views.jsp.DateTag) _005fjspx_005ftagPool_005fs_005fdate_0026_005fvar_005fname_005fid_005fformat_005fnobody.get(org.apache.struts2.views.jsp.DateTag.class);
     _jspx_th_s_005fdate_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fdate_005f1.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(360,35) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(370,35) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f1.setId("creationDateEnd");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(360,35) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(370,35) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f1.setName("creationDateEnd");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(360,35) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(370,35) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f1.setVar("creationDateEnd");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(360,35) name = format type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(370,35) name = format type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fdate_005f1.setFormat("dd/MM/yyyy");
     int _jspx_eval_s_005fdate_005f1 = _jspx_th_s_005fdate_005f1.doStartTag();
     if (_jspx_th_s_005fdate_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7522,17 +7615,17 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f6 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005freadonly_005fname_005fkey_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f6.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setId("creationDateEndPicker");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setName("strCreationDateEnd");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setValue("%{#creationDateEnd}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = key type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = key type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setKey("labelkey");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = readonly type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = readonly type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setReadonly("false");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(362,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(372,5) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setCssStyle("width:150px;");
     int _jspx_eval_s_005ftextfield_005f6 = _jspx_th_s_005ftextfield_005f6.doStartTag();
     if (_jspx_th_s_005ftextfield_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7551,9 +7644,9 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue_005fid.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f0.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(416,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(426,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f0.setValue("%{usersList}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(416,3) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(426,3) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f0.setId("row");
     int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
     if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7593,9 +7686,9 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f1 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue_005fid.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(417,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(427,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f1.setValue("%{#row}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(417,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(427,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f1.setId("cell");
     int _jspx_eval_s_005fiterator_005f1 = _jspx_th_s_005fiterator_005f1.doStartTag();
     if (_jspx_eval_s_005fiterator_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7637,7 +7730,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f1);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(419,6) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(429,6) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f0.setValue("%{#cell.login}");
     int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
     if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7656,7 +7749,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(431,56) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(441,56) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f1.setValue("%{listOrdersDTO.size}");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7675,7 +7768,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(434,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(444,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f2.setValue("%{totalOrders}");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7694,7 +7787,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f4 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f4.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(436,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(446,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f4.setTest("%{listOrdersDTO.size > 0  && superAdmin!=null}");
     int _jspx_eval_s_005fif_005f4 = _jspx_th_s_005fif_005f4.doStartTag();
     if (_jspx_eval_s_005fif_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7742,7 +7835,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f5 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f5.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(451,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(461,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f5.setTest("%{listOrdersDTO.size > 0 && usersPrivShippedToInvoiced!=null}");
     int _jspx_eval_s_005fif_005f5 = _jspx_th_s_005fif_005f5.doStartTag();
     if (_jspx_eval_s_005fif_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7783,11 +7876,11 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.HiddenTag _jspx_th_s_005fhidden_005f103 = (org.apache.struts2.views.jsp.ui.HiddenTag) _005fjspx_005ftagPool_005fs_005fhidden_0026_005fvalue_005fname_005fid_005fnobody.get(org.apache.struts2.views.jsp.ui.HiddenTag.class);
     _jspx_th_s_005fhidden_005f103.setPageContext(_jspx_page_context);
     _jspx_th_s_005fhidden_005f103.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(462,2) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(472,2) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f103.setId("sizeResult");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(462,2) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(472,2) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f103.setName("sizeResult");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(462,2) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(472,2) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f103.setValue("%{listOrdersDTO.size}");
     int _jspx_eval_s_005fhidden_005f103 = _jspx_th_s_005fhidden_005f103.doStartTag();
     if (_jspx_th_s_005fhidden_005f103.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -7806,7 +7899,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f6 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f6.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(665,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(675,4) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f6.setTest("%{listOrdersDTO.size > 0}");
     int _jspx_eval_s_005fif_005f6 = _jspx_th_s_005fif_005f6.doStartTag();
     if (_jspx_eval_s_005fif_005f6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -7856,9 +7949,9 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f2 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue_005fid.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f6);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(672,9) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(682,9) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f2.setValue("listOrdersDTO");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(672,9) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(682,9) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f2.setId("order");
     int _jspx_eval_s_005fiterator_005f2 = _jspx_th_s_005fiterator_005f2.doStartTag();
     if (_jspx_eval_s_005fiterator_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8156,7 +8249,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(675,18) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(685,18) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f3.setValue("#order.CssStyle");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8175,7 +8268,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f4 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(675,55) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(685,55) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f4.setValue("#order.cssRow");
     int _jspx_eval_s_005fproperty_005f4 = _jspx_th_s_005fproperty_005f4.doStartTag();
     if (_jspx_th_s_005fproperty_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8194,7 +8287,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f7 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f7.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(677,40) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(687,40) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f7.setTest("%{infoMissing==1}");
     int _jspx_eval_s_005fif_005f7 = _jspx_th_s_005fif_005f7.doStartTag();
     if (_jspx_eval_s_005fif_005f7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8232,13 +8325,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.CheckboxTag _jspx_th_s_005fcheckbox_005f0 = (org.apache.struts2.views.jsp.ui.CheckboxTag) _005fjspx_005ftagPool_005fs_005fcheckbox_0026_005fvalue_005fname_005fid_005fdisabled_005fnobody.get(org.apache.struts2.views.jsp.ui.CheckboxTag.class);
     _jspx_th_s_005fcheckbox_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fcheckbox_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(682,43) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(692,43) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fcheckbox_005f0.setId("checkBoxItem");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(682,43) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(692,43) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fcheckbox_005f0.setName("checkBoxItem");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(682,43) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(692,43) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fcheckbox_005f0.setValue("%{checkBoxItem}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(682,43) name = disabled type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(692,43) name = disabled type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fcheckbox_005f0.setDisabled("%{checkBoxItem}");
     int _jspx_eval_s_005fcheckbox_005f0 = _jspx_th_s_005fcheckbox_005f0.doStartTag();
     if (_jspx_th_s_005fcheckbox_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8257,7 +8350,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f5 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(686,55) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(696,55) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f5.setValue("#order.index");
     int _jspx_eval_s_005fproperty_005f5 = _jspx_th_s_005fproperty_005f5.doStartTag();
     if (_jspx_th_s_005fproperty_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8276,7 +8369,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f6 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(689,164) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(699,164) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f6.setValue("#order.userLogin");
     int _jspx_eval_s_005fproperty_005f6 = _jspx_th_s_005fproperty_005f6.doStartTag();
     if (_jspx_th_s_005fproperty_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8295,7 +8388,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f7 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f7.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(692,220) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(702,220) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f7.setValue("#order.id");
     int _jspx_eval_s_005fproperty_005f7 = _jspx_th_s_005fproperty_005f7.doStartTag();
     if (_jspx_th_s_005fproperty_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8314,7 +8407,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f8 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f8.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(695,11) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(705,11) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f8.setTest("superAdmin!=null");
     int _jspx_eval_s_005fif_005f8 = _jspx_th_s_005fif_005f8.doStartTag();
     if (_jspx_eval_s_005fif_005f8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8357,7 +8450,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f8 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f8.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f8);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(697,237) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(707,237) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f8.setValue("#order.lsOrderId");
     int _jspx_eval_s_005fproperty_005f8 = _jspx_th_s_005fproperty_005f8.doStartTag();
     if (_jspx_th_s_005fproperty_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8415,7 +8508,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f9 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f9.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f4);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(704,194) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(714,194) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f9.setValue("#order.lsOrderId");
     int _jspx_eval_s_005fproperty_005f9 = _jspx_th_s_005fproperty_005f9.doStartTag();
     if (_jspx_th_s_005fproperty_005f9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8434,7 +8527,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f10 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f10.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(709,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(719,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f10.setValue("#order.creationDate");
     int _jspx_eval_s_005fproperty_005f10 = _jspx_th_s_005fproperty_005f10.doStartTag();
     if (_jspx_th_s_005fproperty_005f10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8453,7 +8546,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f11 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f11.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(712,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(722,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f11.setValue("#order.requiredDate");
     int _jspx_eval_s_005fproperty_005f11 = _jspx_th_s_005fproperty_005f11.doStartTag();
     if (_jspx_th_s_005fproperty_005f11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8472,7 +8565,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f9 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f9.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(716,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(726,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f9.setTest("showRowShipping==0 && superAdmin!=null");
     int _jspx_eval_s_005fif_005f9 = _jspx_th_s_005fif_005f9.doStartTag();
     if (_jspx_eval_s_005fif_005f9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8516,7 +8609,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f12 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f12.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f12.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f9);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(717,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(727,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f12.setValue("#order.status");
     int _jspx_eval_s_005fproperty_005f12 = _jspx_th_s_005fproperty_005f12.doStartTag();
     if (_jspx_th_s_005fproperty_005f12.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8535,7 +8628,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f0 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(722,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(732,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f0.setTest("showRowShipping!=0 && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f0 = _jspx_th_s_005felseif_005f0.doStartTag();
     if (_jspx_eval_s_005felseif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8577,23 +8670,23 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.SelectTag _jspx_th_s_005fselect_005f1 = (org.apache.struts2.views.jsp.ui.SelectTag) _005fjspx_005ftagPool_005fs_005fselect_0026_005fname_005flistValue_005flistKey_005flist_005fid_005fheaderValue_005fheaderKey_005femptyOption_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.SelectTag.class);
     _jspx_th_s_005fselect_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fselect_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f0);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setId("statusId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setName("statusId");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = list type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = list type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setList("listStatus");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = emptyOption type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = emptyOption type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setEmptyOption("false");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = headerKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = headerKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setHeaderKey("");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = listKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = listKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setListKey("id");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = listValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = listValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setListValue("status");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = headerValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = headerValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setHeaderValue("--Select--");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(723,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(733,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f1.setCssStyle("width:80px;color:black;");
     int _jspx_eval_s_005fselect_005f1 = _jspx_th_s_005fselect_005f1.doStartTag();
     if (_jspx_th_s_005fselect_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8650,7 +8743,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f13 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f13.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f13.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f5);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(730,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(740,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f13.setValue("#order.status");
     int _jspx_eval_s_005fproperty_005f13 = _jspx_th_s_005fproperty_005f13.doStartTag();
     if (_jspx_th_s_005fproperty_005f13.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8669,7 +8762,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f14 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f14.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f14.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(736,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(746,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f14.setValue("#order.lsProductID");
     int _jspx_eval_s_005fproperty_005f14 = _jspx_th_s_005fproperty_005f14.doStartTag();
     if (_jspx_th_s_005fproperty_005f14.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8688,7 +8781,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f15 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f15.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f15.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(739,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(749,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f15.setValue("#order.quantity");
     int _jspx_eval_s_005fproperty_005f15 = _jspx_th_s_005fproperty_005f15.doStartTag();
     if (_jspx_th_s_005fproperty_005f15.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8707,7 +8800,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f16 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f16.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f16.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(742,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(752,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f16.setValue("#order.stock");
     int _jspx_eval_s_005fproperty_005f16 = _jspx_th_s_005fproperty_005f16.doStartTag();
     if (_jspx_th_s_005fproperty_005f16.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8726,7 +8819,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f17 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f17.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f17.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(745,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(755,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f17.setValue("#order.productDescription");
     int _jspx_eval_s_005fproperty_005f17 = _jspx_th_s_005fproperty_005f17.doStartTag();
     if (_jspx_th_s_005fproperty_005f17.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8745,7 +8838,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f18 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f18.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f18.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(748,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(758,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f18.setValue("#order.unitPrice");
     int _jspx_eval_s_005fproperty_005f18 = _jspx_th_s_005fproperty_005f18.doStartTag();
     if (_jspx_th_s_005fproperty_005f18.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8764,7 +8857,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f19 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f19.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f19.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(751,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(761,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f19.setValue("#order.lsPrice");
     int _jspx_eval_s_005fproperty_005f19 = _jspx_th_s_005fproperty_005f19.doStartTag();
     if (_jspx_th_s_005fproperty_005f19.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8783,7 +8876,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f10 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f10.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(755,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(765,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f10.setTest("%{#order.currencyId != 1}");
     int _jspx_eval_s_005fif_005f10 = _jspx_th_s_005fif_005f10.doStartTag();
     if (_jspx_eval_s_005fif_005f10 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8826,7 +8919,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f20 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f20.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f20.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f10);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(756,44) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(766,44) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f20.setValue("#order.currencyUnitPrice");
     int _jspx_eval_s_005fproperty_005f20 = _jspx_th_s_005fproperty_005f20.doStartTag();
     if (_jspx_th_s_005fproperty_005f20.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8845,7 +8938,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f21 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f21.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f21.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f10);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(757,51) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(767,51) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f21.setValue("#order.currencySymbol");
     int _jspx_eval_s_005fproperty_005f21 = _jspx_th_s_005fproperty_005f21.doStartTag();
     if (_jspx_th_s_005fproperty_005f21.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8864,7 +8957,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f11 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f11.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(763,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(773,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f11.setTest("%{#order.currencyId != 1}");
     int _jspx_eval_s_005fif_005f11 = _jspx_th_s_005fif_005f11.doStartTag();
     if (_jspx_eval_s_005fif_005f11 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8907,7 +9000,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f22 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f22.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f22.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f11);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(764,44) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(774,44) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f22.setValue("#order.currencyPrice");
     int _jspx_eval_s_005fproperty_005f22 = _jspx_th_s_005fproperty_005f22.doStartTag();
     if (_jspx_th_s_005fproperty_005f22.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8926,7 +9019,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f23 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f23.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f23.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f11);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(765,47) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(775,47) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f23.setValue("#order.currencySymbol");
     int _jspx_eval_s_005fproperty_005f23 = _jspx_th_s_005fproperty_005f23.doStartTag();
     if (_jspx_th_s_005fproperty_005f23.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -8945,7 +9038,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f12 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f12.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f12.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(771,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(781,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f12.setTest("showOnlyEditNote==0 && superAdmin!=null");
     int _jspx_eval_s_005fif_005f12 = _jspx_th_s_005fif_005f12.doStartTag();
     if (_jspx_eval_s_005fif_005f12 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -8988,7 +9081,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f24 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f24.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f24.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f12);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(772,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(782,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f24.setValue("#order.notes");
     int _jspx_eval_s_005fproperty_005f24 = _jspx_th_s_005fproperty_005f24.doStartTag();
     if (_jspx_th_s_005fproperty_005f24.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9007,7 +9100,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f1 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(776,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(786,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f1.setTest("showOnlyEditNote==1 && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f1 = _jspx_th_s_005felseif_005f1.doStartTag();
     if (_jspx_eval_s_005felseif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9049,13 +9142,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f7 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f7.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f1);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(777,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(787,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f7.setId("notes");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(777,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(787,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f7.setName("notes");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(777,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(787,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f7.setValue("%{notes}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(777,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(787,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f7.setCssStyle("width:115px");
     int _jspx_eval_s_005ftextfield_005f7 = _jspx_th_s_005ftextfield_005f7.doStartTag();
     if (_jspx_th_s_005ftextfield_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9112,7 +9205,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f25 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f25.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f25.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f6);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(782,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(792,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f25.setValue("#order.notes");
     int _jspx_eval_s_005fproperty_005f25 = _jspx_th_s_005fproperty_005f25.doStartTag();
     if (_jspx_th_s_005fproperty_005f25.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9131,7 +9224,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f26 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f26.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f26.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(786,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(796,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f26.setValue("#order.productOrderNumber");
     int _jspx_eval_s_005fproperty_005f26 = _jspx_th_s_005fproperty_005f26.doStartTag();
     if (_jspx_th_s_005fproperty_005f26.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9150,7 +9243,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f27 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f27.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f27.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(789,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(799,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f27.setValue("#order.clientProductNumber");
     int _jspx_eval_s_005fproperty_005f27 = _jspx_th_s_005fproperty_005f27.doStartTag();
     if (_jspx_th_s_005fproperty_005f27.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9169,7 +9262,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f28 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f28.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f28.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(792,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(802,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f28.setValue("#order.clientOrderNumber");
     int _jspx_eval_s_005fproperty_005f28 = _jspx_th_s_005fproperty_005f28.doStartTag();
     if (_jspx_th_s_005fproperty_005f28.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9188,7 +9281,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f29 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f29.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f29.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(796,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(806,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f29.setValue("#order.clientOtherId");
     int _jspx_eval_s_005fproperty_005f29 = _jspx_th_s_005fproperty_005f29.doStartTag();
     if (_jspx_th_s_005fproperty_005f29.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9207,7 +9300,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f30 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f30.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f30.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(800,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(810,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f30.setValue("#order.clientFirstName");
     int _jspx_eval_s_005fproperty_005f30 = _jspx_th_s_005fproperty_005f30.doStartTag();
     if (_jspx_th_s_005fproperty_005f30.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9226,7 +9319,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f31 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f31.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f31.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(803,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(813,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f31.setValue("#order.clientLastName");
     int _jspx_eval_s_005fproperty_005f31 = _jspx_th_s_005fproperty_005f31.doStartTag();
     if (_jspx_th_s_005fproperty_005f31.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9245,7 +9338,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f32 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f32.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f32.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(806,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(816,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f32.setValue("#order.clientOtherNames");
     int _jspx_eval_s_005fproperty_005f32 = _jspx_th_s_005fproperty_005f32.doStartTag();
     if (_jspx_th_s_005fproperty_005f32.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9264,7 +9357,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f33 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f33.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f33.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(809,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(819,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f33.setValue("#order.clientNumber");
     int _jspx_eval_s_005fproperty_005f33 = _jspx_th_s_005fproperty_005f33.doStartTag();
     if (_jspx_th_s_005fproperty_005f33.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9283,7 +9376,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f34 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f34.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f34.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(812,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(822,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f34.setValue("#order.clientStreet");
     int _jspx_eval_s_005fproperty_005f34 = _jspx_th_s_005fproperty_005f34.doStartTag();
     if (_jspx_th_s_005fproperty_005f34.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9302,7 +9395,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f35 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f35.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f35.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(815,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(825,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f35.setValue("#order.clientOtherStreet");
     int _jspx_eval_s_005fproperty_005f35 = _jspx_th_s_005fproperty_005f35.doStartTag();
     if (_jspx_th_s_005fproperty_005f35.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9321,7 +9414,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f36 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f36.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f36.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(818,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(828,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f36.setValue("#order.clientCity");
     int _jspx_eval_s_005fproperty_005f36 = _jspx_th_s_005fproperty_005f36.doStartTag();
     if (_jspx_th_s_005fproperty_005f36.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9340,7 +9433,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f37 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f37.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f37.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(821,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(831,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f37.setValue("#order.clientProvince");
     int _jspx_eval_s_005fproperty_005f37 = _jspx_th_s_005fproperty_005f37.doStartTag();
     if (_jspx_th_s_005fproperty_005f37.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9359,7 +9452,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f38 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f38.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f38.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(824,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(834,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f38.setValue("#order.clientPostalCode");
     int _jspx_eval_s_005fproperty_005f38 = _jspx_th_s_005fproperty_005f38.doStartTag();
     if (_jspx_th_s_005fproperty_005f38.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9378,7 +9471,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f39 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f39.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f39.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(827,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(837,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f39.setValue("#order.clientPhone");
     int _jspx_eval_s_005fproperty_005f39 = _jspx_th_s_005fproperty_005f39.doStartTag();
     if (_jspx_th_s_005fproperty_005f39.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9397,7 +9490,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f40 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f40.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f40.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(830,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(840,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f40.setValue("#order.clientEmail");
     int _jspx_eval_s_005fproperty_005f40 = _jspx_th_s_005fproperty_005f40.doStartTag();
     if (_jspx_th_s_005fproperty_005f40.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9416,7 +9509,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f13 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f13.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f13.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(834,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(844,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f13.setTest("showRowShipping==0  && superAdmin!=null");
     int _jspx_eval_s_005fif_005f13 = _jspx_th_s_005fif_005f13.doStartTag();
     if (_jspx_eval_s_005fif_005f13 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9460,7 +9553,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f41 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f41.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f41.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f13);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(835,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(845,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f41.setValue("#order.shippingCompany");
     int _jspx_eval_s_005fproperty_005f41 = _jspx_th_s_005fproperty_005f41.doStartTag();
     if (_jspx_th_s_005fproperty_005f41.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9479,7 +9572,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f2 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(840,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(850,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f2.setTest("showRowShipping!=0  && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f2 = _jspx_th_s_005felseif_005f2.doStartTag();
     if (_jspx_eval_s_005felseif_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9522,13 +9615,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f8 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f8.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(841,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(851,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f8.setId("shippingCompany");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(841,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(851,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f8.setName("shippingCompany");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(841,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(851,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f8.setValue("%{shippingCompany}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(841,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(851,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f8.setCssStyle("width:110px");
     int _jspx_eval_s_005ftextfield_005f8 = _jspx_th_s_005ftextfield_005f8.doStartTag();
     if (_jspx_th_s_005ftextfield_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9585,7 +9678,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f42 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f42.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f42.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f7);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(847,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(857,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f42.setValue("#order.shippingCompany");
     int _jspx_eval_s_005fproperty_005f42 = _jspx_th_s_005fproperty_005f42.doStartTag();
     if (_jspx_th_s_005fproperty_005f42.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9604,7 +9697,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f14 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f14.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f14.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(852,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(862,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f14.setTest("showRowShipping==0 && superAdmin!=null");
     int _jspx_eval_s_005fif_005f14 = _jspx_th_s_005fif_005f14.doStartTag();
     if (_jspx_eval_s_005fif_005f14 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9648,7 +9741,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f43 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f43.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f43.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f14);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(853,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(863,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f43.setValue("#order.shippedDate");
     int _jspx_eval_s_005fproperty_005f43 = _jspx_th_s_005fproperty_005f43.doStartTag();
     if (_jspx_th_s_005fproperty_005f43.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9667,7 +9760,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f3 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(858,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(868,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f3.setTest("showRowShipping!=0 && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f3 = _jspx_th_s_005felseif_005f3.doStartTag();
     if (_jspx_eval_s_005felseif_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9713,7 +9806,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f44 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f44.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f44.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f3);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(861,21) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(871,21) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f44.setValue("#order.shippedDate");
     int _jspx_eval_s_005fproperty_005f44 = _jspx_th_s_005fproperty_005f44.doStartTag();
     if (_jspx_th_s_005fproperty_005f44.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9770,7 +9863,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f45 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f45.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f45.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f8);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(867,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(877,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f45.setValue("#order.shippedDate");
     int _jspx_eval_s_005fproperty_005f45 = _jspx_th_s_005fproperty_005f45.doStartTag();
     if (_jspx_th_s_005fproperty_005f45.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9789,7 +9882,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f15 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f15.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f15.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(872,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(882,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f15.setTest("showRowShipping==0  && superAdmin!=null");
     int _jspx_eval_s_005fif_005f15 = _jspx_th_s_005fif_005f15.doStartTag();
     if (_jspx_eval_s_005fif_005f15 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9833,7 +9926,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f46 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f46.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f46.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f15);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(873,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(883,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f46.setValue("#order.trackingNumber");
     int _jspx_eval_s_005fproperty_005f46 = _jspx_th_s_005fproperty_005f46.doStartTag();
     if (_jspx_th_s_005fproperty_005f46.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9852,7 +9945,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f4 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(878,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(888,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f4.setTest("showRowShipping!=0  && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f4 = _jspx_th_s_005felseif_005f4.doStartTag();
     if (_jspx_eval_s_005felseif_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -9895,13 +9988,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f9 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f9.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f4);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(879,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(889,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f9.setId("trackingNumber");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(879,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(889,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f9.setName("trackingNumber");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(879,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(889,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f9.setValue("%{trackingNumber}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(879,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(889,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f9.setCssStyle("width:115px;");
     int _jspx_eval_s_005ftextfield_005f9 = _jspx_th_s_005ftextfield_005f9.doStartTag();
     if (_jspx_th_s_005ftextfield_005f9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9958,7 +10051,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f47 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f47.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f47.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f9);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(885,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(895,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f47.setValue("#order.trackingNumber");
     int _jspx_eval_s_005fproperty_005f47 = _jspx_th_s_005fproperty_005f47.doStartTag();
     if (_jspx_th_s_005fproperty_005f47.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -9977,7 +10070,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f16 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f16.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f16.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(890,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(900,12) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f16.setTest("showRowShipping==0  && superAdmin!=null");
     int _jspx_eval_s_005fif_005f16 = _jspx_th_s_005fif_005f16.doStartTag();
     if (_jspx_eval_s_005fif_005f16 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10021,7 +10114,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f48 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f48.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f48.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f16);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(891,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(901,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f48.setValue("#order.shippingPrice");
     int _jspx_eval_s_005fproperty_005f48 = _jspx_th_s_005fproperty_005f48.doStartTag();
     if (_jspx_th_s_005fproperty_005f48.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10040,7 +10133,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f5 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(896,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(906,20) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f5.setTest("showRowShipping!=0  && superAdmin!=null");
     int _jspx_eval_s_005felseif_005f5 = _jspx_th_s_005felseif_005f5.doStartTag();
     if (_jspx_eval_s_005felseif_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10083,13 +10176,13 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.TextFieldTag _jspx_th_s_005ftextfield_005f10 = (org.apache.struts2.views.jsp.ui.TextFieldTag) _005fjspx_005ftagPool_005fs_005ftextfield_0026_005fvalue_005fname_005fid_005fcssStyle_005fnobody.get(org.apache.struts2.views.jsp.ui.TextFieldTag.class);
     _jspx_th_s_005ftextfield_005f10.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felseif_005f5);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(897,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(907,13) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f10.setId("shippingPriceToEdit");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(897,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(907,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f10.setName("strShippingPrice");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(897,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(907,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f10.setValue("%{shippingPrice}");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(897,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(907,13) name = cssStyle type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f10.setCssStyle("width:60px;");
     int _jspx_eval_s_005ftextfield_005f10 = _jspx_th_s_005ftextfield_005f10.doStartTag();
     if (_jspx_th_s_005ftextfield_005f10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10146,7 +10239,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f49 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f49.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f49.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005felse_005f10);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(904,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(914,13) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f49.setValue("#order.shippingPrice");
     int _jspx_eval_s_005fproperty_005f49 = _jspx_th_s_005fproperty_005f49.doStartTag();
     if (_jspx_th_s_005fproperty_005f49.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10165,7 +10258,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f50 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f50.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f50.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f2);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(909,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(919,174) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f50.setValue("#order.billed");
     int _jspx_eval_s_005fproperty_005f50 = _jspx_th_s_005fproperty_005f50.doStartTag();
     if (_jspx_th_s_005fproperty_005f50.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10184,7 +10277,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f17 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f17.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f17.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(930,8) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(940,8) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f17.setTest("indexSet>10*PAGE_ITEMS_COUNT && listOrdersDTO.size>0");
     int _jspx_eval_s_005fif_005f17 = _jspx_th_s_005fif_005f17.doStartTag();
     if (_jspx_eval_s_005fif_005f17 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10223,7 +10316,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f6 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f6.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(935,13) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(945,13) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f6.setTest("listOrdersDTO.size>0");
     int _jspx_eval_s_005felseif_005f6 = _jspx_th_s_005felseif_005f6.doStartTag();
     if (_jspx_eval_s_005felseif_005f6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10260,9 +10353,9 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f3 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue_005fid.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f3.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(939,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(949,4) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f3.setValue("listIndexSet");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(939,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(949,4) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f3.setId("item");
     int _jspx_eval_s_005fiterator_005f3 = _jspx_th_s_005fiterator_005f3.doStartTag();
     if (_jspx_eval_s_005fiterator_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10302,7 +10395,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f18 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f18.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f18.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f3);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(940,5) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(950,5) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f18.setTest("listOrdersDTO.size>0");
     int _jspx_eval_s_005fif_005f18 = _jspx_th_s_005fif_005f18.doStartTag();
     if (_jspx_eval_s_005fif_005f18 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10351,7 +10444,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f51 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f51.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f51.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f18);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(942,99) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(952,99) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f51.setValue("#item.cssStyle");
     int _jspx_eval_s_005fproperty_005f51 = _jspx_th_s_005fproperty_005f51.doStartTag();
     if (_jspx_th_s_005fproperty_005f51.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10370,11 +10463,11 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.HiddenTag _jspx_th_s_005fhidden_005f104 = (org.apache.struts2.views.jsp.ui.HiddenTag) _005fjspx_005ftagPool_005fs_005fhidden_0026_005fvalue_005fname_005fid_005fnobody.get(org.apache.struts2.views.jsp.ui.HiddenTag.class);
     _jspx_th_s_005fhidden_005f104.setPageContext(_jspx_page_context);
     _jspx_th_s_005fhidden_005f104.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f18);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(943,7) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(953,7) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f104.setId("pageIndexHedden");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(943,7) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(953,7) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f104.setName("pageIndexHedden");
-    // /WEB-INF/jsp/orders/reportOrders.jsp(943,7) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(953,7) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fhidden_005f104.setValue("%{#item.index}");
     int _jspx_eval_s_005fhidden_005f104 = _jspx_th_s_005fhidden_005f104.doStartTag();
     if (_jspx_th_s_005fhidden_005f104.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10393,7 +10486,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f52 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f52.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f52.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fif_005f18);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(944,34) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(954,34) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f52.setValue("#item.index");
     int _jspx_eval_s_005fproperty_005f52 = _jspx_th_s_005fproperty_005f52.doStartTag();
     if (_jspx_th_s_005fproperty_005f52.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -10412,7 +10505,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.IfTag _jspx_th_s_005fif_005f19 = (org.apache.struts2.views.jsp.IfTag) _005fjspx_005ftagPool_005fs_005fif_0026_005ftest.get(org.apache.struts2.views.jsp.IfTag.class);
     _jspx_th_s_005fif_005f19.setPageContext(_jspx_page_context);
     _jspx_th_s_005fif_005f19.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(948,8) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(958,8) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fif_005f19.setTest("((nextListPages+10)*PAGE_ITEMS_COUNT>totalOrders)&& listOrdersDTO.size>0");
     int _jspx_eval_s_005fif_005f19 = _jspx_th_s_005fif_005f19.doStartTag();
     if (_jspx_eval_s_005fif_005f19 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -10450,7 +10543,7 @@ public final class reportOrders_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ElseIfTag _jspx_th_s_005felseif_005f7 = (org.apache.struts2.views.jsp.ElseIfTag) _005fjspx_005ftagPool_005fs_005felseif_0026_005ftest.get(org.apache.struts2.views.jsp.ElseIfTag.class);
     _jspx_th_s_005felseif_005f7.setPageContext(_jspx_page_context);
     _jspx_th_s_005felseif_005f7.setParent(null);
-    // /WEB-INF/jsp/orders/reportOrders.jsp(952,13) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/orders/reportOrders.jsp(962,13) name = test type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005felseif_005f7.setTest("listOrdersDTO.size>0");
     int _jspx_eval_s_005felseif_005f7 = _jspx_th_s_005felseif_005f7.doStartTag();
     if (_jspx_eval_s_005felseif_005f7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
