@@ -441,25 +441,28 @@
 	
 			<if test="item == 0">
 				18,24,6
-					</if>
+			</if>
 	
 			<if test="item == 1">
 				1 ASC
-					</if>
+			</if>
+			
 			<if test="item == -1">
 				1 DESC
-					</if>
+			</if>
 	
 			<if test="item == 3">
 				3 ASC
-					</if>
+			</if>
+			
 			<if test="item == -3">
 				3 DESC
-					</if>
+			</if>
 	
 			<if test="item == 4">
 				4 ASC
-					</if>
+			</if>
+			
 			<if test="item == -4">
 				4 DESC
 					</if>
