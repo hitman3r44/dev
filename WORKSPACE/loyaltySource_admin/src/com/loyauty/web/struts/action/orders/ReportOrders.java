@@ -382,7 +382,12 @@ public class ReportOrders extends LoyautyAction {
 	private Integer switchBetweenStatusAndClientOtherSignal;
 	@Getter	@Setter
 	private Integer switchBetweenStatusAndClientOther;
-
+	//Added for the multiple functionality in switching  
+	@Getter	@Setter
+	private Integer switchBetweenOptionFieldsSignal;
+	@Getter	@Setter
+	private Integer switchBetweenOptionFields;
+	
 	// ------Pagination
 
 	/*
@@ -397,6 +402,9 @@ public class ReportOrders extends LoyautyAction {
 		orderService = getServiceLocator().getOrderService();
 		productService = getServiceLocator().getProductService();
 		operationsService = getServiceLocator().getOperationsService();
+		switchBetweenOptionFields = 0;
+		
+		
 	}
 
 	/*
@@ -412,6 +420,7 @@ public class ReportOrders extends LoyautyAction {
 		System.out.println("Tracking Number: "+ trakingNumber);
 		System.out.println("Client Order ID: "+ clientOrderNumber);
 		System.out.println("Client Other ID: "+ clientOther);
+		System.out.println(switchBetweenOptionFields);
 		
 		//Create new object or Order to modify the search functionality
 		OrdersDTO orderDTOObj=new OrdersDTO();
@@ -423,7 +432,8 @@ public class ReportOrders extends LoyautyAction {
 		orderDTOObj.setClientOtherId(clientOther);
 		
 		HttpSession session = request.getSession(true);
-
+		
+		
 		if (showOrderDetailPop == null)
 			showOrderDetailPop = "visibility:hidden;display:none;";
 		if (showConfirmDeleteOrderPop == null)
@@ -536,6 +546,12 @@ public class ReportOrders extends LoyautyAction {
 			if (switchBetweenStatusAndClientOther == null) {
 				switchBetweenStatusAndClientOther = 0;
 				session.setAttribute("switchBetweenStatusAndClientOther", switchBetweenStatusAndClientOther);
+			}
+			
+			switchBetweenOptionFields = (Integer) session.getAttribute("switchBetweenOptionFields");
+			if (switchBetweenOptionFields == null) {
+				switchBetweenOptionFields = 0;
+				session.setAttribute("switchBetweenOptionFields", switchBetweenOptionFields);
 			}
 
 			/*------ always check if the Admin select all orders ------------
@@ -656,6 +672,20 @@ public class ReportOrders extends LoyautyAction {
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				session.setAttribute("switchBetweenStatusAndClientOther", switchBetweenStatusAndClientOther);
 				return SUCCESS;
+			}
+			
+			//For toggling all four option 
+			if (switchBetweenOptionFieldsSignal != null && switchBetweenOptionFieldsSignal != 0L) {
+
+				switchBetweenOptionFields++;
+				listOrdersDTO = new ArrayList<OrdersDTO>();
+				session.setAttribute("switchBetweenOptionFields", switchBetweenOptionFields);
+				if (switchBetweenOptionFields == 4){
+					switchBetweenOptionFields = 0;
+					session.setAttribute("switchBetweenOptionFields", switchBetweenOptionFields);
+				} 
+				
+				return SUCCESS;				
 			}
 			
 
@@ -793,10 +823,15 @@ public class ReportOrders extends LoyautyAction {
 					listIndexColumn = getNewListIndexColumn();
 				lsOrderId = lsOrderId.toUpperCase();
 				
-				//New Searching Functionality
-				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-						creationDateStartArg, creationDateEndArg,
-						reportDateBetween,orderDTOObj,listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
+				//New Functionality with same mapping
+				listOrdersDTO = orderService.searchOrdersWithOptionsAndSortingNew(
+								creationDateStartArg, creationDateEndArg,
+								reportDateBetween, userLogin, lsOrderId,
+								status, listIndexColumn, PAGE_ITEMS_COUNT,
+								indexSet, productOrderNumberSearch,clientOrderNumber,
+								clientOther);
+
+				
 				//Old Searching Functionality				
 //				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
 //						creationDateStartArg, creationDateEndArg,
@@ -837,6 +872,7 @@ public class ReportOrders extends LoyautyAction {
 				session.setAttribute("productOrderNumberSearch", productOrderNumberSearch);
 				session.setAttribute("clientOrderNumber", clientOrderNumber);
 				session.setAttribute("clientOther", clientOther);
+				session.setAttribute("switchBetweenOptionFields", switchBetweenOptionFields);
 				return SUCCESS;
 			}
 
@@ -1186,13 +1222,6 @@ public class ReportOrders extends LoyautyAction {
 								indexSet, productOrderNumberSearch,clientOrderNumber,
 								clientOther);
 
-//				//New Searching Functionality
-//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-//						creationDateStartArg, creationDateEndArg,
-//						reportDateBetween, orderDTOObj, listIndexColumn,
-//						PAGE_ITEMS_COUNT, indexSet);
-				
-				
 				// Color in RED rows containing a GroupItems
 				for (OrdersDTO orderDTO : listOrdersDTO) {
 					if (orderDTO != null && orderDTO.getStatus() != null
@@ -1216,6 +1245,7 @@ public class ReportOrders extends LoyautyAction {
 				session.setAttribute("status", status);
 				//For newly added field
 				session.setAttribute("productOrderNumberSearch", productOrderNumberSearch);
+				session.setAttribute("switchBetweenOptionFields", switchBetweenOptionFields);
 
 				session.setAttribute("listIndexColumn", listIndexColumn);
 				session.setAttribute("sizeResult", sizeResult);
@@ -1255,11 +1285,6 @@ public class ReportOrders extends LoyautyAction {
 //						reportDateBetween, userLogin, lsOrderId, status,
 //						listIndexColumn, PAGE_ITEMS_COUNT, indexSet);
 				
-//				// New Searching Functionality
-//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-//						creationDateStartArg, creationDateEndArg,
-//						reportDateBetween, orderDTOObj, listIndexColumn,
-//						PAGE_ITEMS_COUNT, indexSet);
 				
 				int balance = 0;
 				int OrderIndex = 0;
@@ -1575,12 +1600,6 @@ public class ReportOrders extends LoyautyAction {
 								status, listIndexColumn, PAGE_ITEMS_COUNT,
 								indexSet, productOrderNumberSearch,clientOrderNumber,
 								clientOther);				
-				
-				// New Searching Functionality
-//				listOrdersDTO = orderService.searchOrdersWithOptionsAndSorting(
-//						creationDateStartArg, creationDateEndArg,
-//						reportDateBetween, orderDTOObj, listIndexColumn,
-//						PAGE_ITEMS_COUNT, indexSet);
 				
 				session.setAttribute("listOrdersDTOReport", listOrdersDTO);
 				message = "Saving has completed successfuly";

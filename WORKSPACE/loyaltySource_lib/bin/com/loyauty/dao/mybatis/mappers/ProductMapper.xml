@@ -1626,9 +1626,7 @@
 
 	
 
-	<sql id="selectAlterUserProductXML">
-
-		select 	up_xml.id,
+	<sql id="selectAlterUserProductXML">select 	up_xml.id,
 
 				up_xml.user_id as userId,
 
@@ -1646,9 +1644,7 @@
 				
 				up_xml.price
 
-		from alter_user_product_xml up_xml
-
-	</sql>
+		from alter_user_product_xml up_xml</sql>
 
 	
 
@@ -4869,26 +4865,20 @@
 	</update>
 
 
-
-	<update id="updateStock" parameterType="java.util.Map" >
+	<!-- 	Updated By Sumit Sarkar -->
+<!-- 	<update id="updateStock" parameterType="java.util.Map" >
 
 	 	BEGIN;
-
-		SAVEPOINT sql_updates;
-
-		
+		SAVEPOINT sql_updates;		
 
 		UPDATE stock
-
 		SET stock=0;
-
-
 
 		UPDATE stock SET stock=productListMapped.stock
 
 		FROM
 
-		(SELECT P.id AS productId,productList.stock
+		(SELECT P.id AS productId,productList.stock, productList.orderAmount
 
 		FROM (
 
@@ -4896,21 +4886,23 @@
 
 				SELECT	#{item.loyaltySourceProductId} AS loyaltySourceProductId,
 
-				        #{item.stock} AS stock
+				        #{item.stock} AS stock,
+				        
+				        #{item.orderAmount} AS orderAmount
 
 			</foreach>
 
-			)AS productList INNER JOIN product P ON productList.loyaltySourceProductId=P.loyalty_source_product_id 
+			)AS	productList INNER JOIN	product P ON productList.loyaltySourceProductId = P.loyalty_source_product_id 
 
-		) AS productListMapped
+		)AS	productListMapped
 
 		WHERE stock.product_id=productListMapped.productId;
 
 
 
-		INSERT INTO stock (product_id,stock)
+		INSERT INTO stock (product_id,stock,order_amount)
 
-		SELECT P.id AS productId,productList.stock
+		SELECT P.id AS productId,productList.stock,productList.orderAmount
 
 		FROM(
 
@@ -4918,7 +4910,75 @@
 
 				SELECT	#{item.loyaltySourceProductId} AS loyaltySourceProductId,
 
-				        #{item.stock} AS stock
+				        #{item.stock} AS stock,
+				        
+				        #{item.orderAmount} AS orderAmount
+
+			</foreach>
+
+			) AS productList INNER JOIN	product P ON productList.loyaltySourceProductId=P.loyalty_source_product_id
+
+		WHERE NOT EXISTS(SELECT* FROM stock ST WHERE ST.product_id= P.id);
+
+		RELEASE SAVEPOINT sql_updates;
+
+		COMMIT;	
+
+	</update> -->
+	
+	<update id="updateStock" parameterType="java.util.Map" >
+
+	 	BEGIN;
+		SAVEPOINT sql_updates;
+		
+
+		UPDATE stock
+		SET stock=0;
+
+
+		UPDATE stock SET stock=productListMapped.stock, order_amount= productListMapped.orderAmount
+
+		FROM
+
+		(SELECT P.id AS productId,productList.stock,productList.orderAmount
+
+		FROM (
+
+			<foreach item="item" index="index" collection="listStock" separator="  UNION " >
+
+				SELECT	#{item.loyaltySourceProductId} AS loyaltySourceProductId,
+
+				        #{item.stock} AS stock,
+				        
+				        #{item.orderAmount} AS orderAmount
+
+			</foreach>
+
+			)AS productList 
+			INNER JOIN 
+			product P 
+			ON 
+			productList.loyaltySourceProductId=P.loyalty_source_product_id 
+
+		) AS productListMapped
+
+		WHERE stock.product_id=productListMapped.productId;
+
+
+
+		INSERT INTO stock (product_id,stock,order_amount)
+
+		SELECT P.id AS productId,productList.stock,productList.orderAmount
+
+		FROM(
+
+			<foreach item="item" index="index" collection="listStock" separator="  UNION " >
+
+				SELECT	#{item.loyaltySourceProductId} AS loyaltySourceProductId,
+
+				        #{item.stock} AS stock,
+				        
+				        #{item.orderAmount} AS orderAmount
 
 			</foreach>
 

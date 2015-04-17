@@ -251,6 +251,7 @@ input.vanadium-valid {
 		    <s:if test="%{listProductDTOFormXLS==null || listProductDTOFormXLS.size==0}">
 		   <input id="btUpdateStockDisabled" disabled="disabled" type="button" value="Upload First xls File To Update Stock" style="margin:20px 5px 0px 0px;padding:2px 10px;font-size:14px;font-weight:bold;"/> 
 		   </s:if>
+		   
 		   <s:else>
 		   <img id="exclamationStock" alt="Please Click on This Button To Update Stock" src="images/exclamation.png" width="110px" height="110px"/>
 		    <input id="btUpdateStock" type="button" value="Update Stock" style="margin:20px 5px 0px 0px;padding:2px 10px;font-size:14px;color:#FF6666;font-weight:bold;cursor: pointer;"/>

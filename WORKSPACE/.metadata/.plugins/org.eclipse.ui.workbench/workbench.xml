@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="41" version="2.0">
+<workbench progressCount="26" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="100" y="100">
+<window height="768" maximized="true" width="1024" x="229" y="37">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -24,7 +24,7 @@
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -39,43 +39,89 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="8"/>
+<part id="6"/>
+<part id="7"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GoToUploadAdminXLS.java" partName="GoToUploadAdminXLS.java" path="C:/dev/WORKSPACE/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java" title="GoToUploadAdminXLS.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="835" selectionTopPixel="513"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReportOrders.java" partName="ReportOrders.java" path="C:/dev/WORKSPACE/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/ReportOrders.java" title="ReportOrders.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/ReportOrders.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/ReportOrders.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="42043" selectionTopPixel="22439"/>
 </editor>
-<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="getOrdersByPOSumit.jsp" partName="getOrdersByPOSumit.jsp" path="C:/dev/WORKSPACE/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp" title="getOrdersByPOSumit.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="880" selectionTopPixel="269"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="reportOrders.jsp" partName="reportOrders.jsp" path="C:/dev/WORKSPACE/loyaltySource_admin/web/WEB-INF/jsp/orders/reportOrders.jsp" title="reportOrders.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/orders/reportOrders.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/web/WEB-INF/jsp/orders/reportOrders.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="32989" selectionTopPixel="15276"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetOrdersByPOSumit.java" partName="GetOrdersByPOSumit.java" path="C:/dev/WORKSPACE/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java" title="GetOrdersByPOSumit.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="15" selectionOffset="1373" selectionTopPixel="326"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersService.java" partName="OrdersService.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/service/orders/OrdersService.java" title="OrdersService.java" tooltip="loyaltySource_lib/src/com/loyauty/service/orders/OrdersService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/orders/OrdersService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="36" selectionOffset="12261" selectionTopPixel="4864"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Orders.java" partName="Orders.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/model/Orders.java" title="Orders.java" tooltip="loyaltySource_lib/src/com/loyauty/model/Orders.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductDaoImpl.java" partName="ProductDaoImpl.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java" title="ProductDaoImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/ProductDaoImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="28516" selectionTopPixel="15010"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="ProductMapper.xml" partName="ProductMapper.xml" path="C:/dev/WORKSPACE/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml" title="ProductMapper.xml" tooltip="loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/ProductMapper.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UploadAdminXLS.java" partName="UploadAdminXLS.java" path="C:/dev/WORKSPACE/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/UploadAdminXLS.java" title="UploadAdminXLS.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/UploadAdminXLS.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/UploadAdminXLS.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8217" selectionTopPixel="3838"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductDao.java" partName="ProductDao.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/dao/ProductDao.java" title="ProductDao.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/ProductDao.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/ProductDao.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="17294" selectionTopPixel="15504"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Product.java" partName="Product.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/model/Product.java" title="Product.java" tooltip="loyaltySource_lib/src/com/loyauty/model/Product.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/model/Product.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1458" selectionTopPixel="627"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDTO.java" partName="OrdersDTO.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/service/core/dto/OrdersDTO.java" title="OrdersDTO.java" tooltip="loyaltySource_lib/src/com/loyauty/service/core/dto/OrdersDTO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/core/dto/OrdersDTO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2462" selectionTopPixel="1083"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersServiceImpl.java" partName="OrdersServiceImpl.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java" title="OrdersServiceImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="263701" selectionTopPixel="128735"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDao.java" partName="OrdersDao.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/dao/OrdersDao.java" title="OrdersDao.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/OrdersDao.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/OrdersDao.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="36" selectionOffset="3131" selectionTopPixel="1558"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDaoImpl.java" partName="OrdersDaoImpl.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/dao/mybatis/OrdersDaoImpl.java" title="OrdersDaoImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/OrdersDaoImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/OrdersDaoImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="32856" selectionTopPixel="16711"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="OrdersMapper.xml" partName="OrdersMapper.xml" path="C:/dev/WORKSPACE/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml" title="OrdersMapper.xml" tooltip="loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Orders.java" partName="Orders.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/model/Orders.java" title="Orders.java" tooltip="loyaltySource_lib/src/com/loyauty/model/Orders.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/model/Orders.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="456" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="171" selectionTopPixel="646"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DaoManagerImpl.java" partName="DaoManagerImpl.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/dao/mybatis/DaoManagerImpl.java" title="DaoManagerImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/DaoManagerImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/DaoManagerImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1972" selectionTopPixel="627"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DTOFactory.java" partName="DTOFactory.java" path="C:/dev/WORKSPACE/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java" title="DTOFactory.java" tooltip="loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="73503" selectionTopPixel="27816"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
-<view id="org.eclipse.ui.views.AllMarkersView" partName="Markers">
-<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.allSeverityField" categoryGroup="org.eclipse.ui.ide.type" markerContentGenerator="org.eclipse.ui.ide.allMarkersGenerator" partName="Markers">
-<columnWidths org.eclipse.ui.ide.allSeverityField="300" org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94"/>
-<visible IMemento.internal.id="org.eclipse.ui.ide.allSeverityField"/>
-<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
-<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
-<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
-<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
-</viewState>
-</view>
-<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
-<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
 <view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
 <filters>
@@ -86,9 +132,7 @@
 <filter element="*.class" isEnabled="false"/>
 </filters>
 <expanded>
-<element path="/loyaltySource"/>
 <element path="/loyaltySource_admin"/>
-<element path="/loyaltySource_admin/resources"/>
 <element path="/loyaltySource_admin/src"/>
 <element path="/loyaltySource_admin/src/com"/>
 <element path="/loyaltySource_admin/src/com/loyauty"/>
@@ -102,14 +146,13 @@
 <element path="/loyaltySource_admin/web/WEB-INF/jsp/orders"/>
 </expanded>
 <selection>
-<element path="/loyaltySource/.settings"/>
+<element path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/ReportOrders.java"/>
 </selection>
 </viewState>
 </view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
-<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
@@ -175,13 +218,9 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="org.eclipse.ui.views.ResourceNavigator"/>
-<view id="org.eclipse.ui.views.AllMarkersView"/>
-<view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.wst.server.ui.ServersView"/>
-<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
-<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -204,30 +243,15 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.2732175" ratioLeft="456" ratioRight="1213" relationship="2" relative="topLeft"/>
+<info part="org.eclipse.ui.editorss" ratio="0.1851408" ratioLeft="309" ratioRight="1360" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.7427938" ratioLeft="670" ratioRight="232" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.AllMarkersView" label="Markers"/>
-<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
-<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer"/>
-<page content="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="topRight" ratio="0.7" ratioLeft="525" ratioRight="225" relationship="2" relative="org.eclipse.ui.editorss">
@@ -237,6 +261,22 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@39623a2c" ratio="0.67184037" ratioLeft="606" ratioRight="296" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.wst.server.ui.ServersView" appearance="2" expanded="2">
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.AllMarkersView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
 </mainWindow>
 </layout>
 </perspective>
@@ -244,161 +284,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrderFile.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_lib/src/com/loyauty/Testing.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/loyaltySource_lib/resources/loyauty-database.properties"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_lib/src/com/loyauty/model/Orders.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/ReportOrders.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_lib/src/com/loyauty/service/orders/OrdersService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java"/>
 </editors>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="3732" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263184" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="921" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263271" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262686" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262719" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262757" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262801" y="0"/>
 </item>
-<item historyLabel="Testing.java" index="4">
-<position info="not_deleted" x="2875" y="4"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262840" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262888" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262840" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262959" y="0"/>
 </item>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="3732" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262923" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="822" y="8"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263002" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263054" y="0"/>
 </item>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="3732" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263095" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263149" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263095" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263224" y="0"/>
 </item>
-<item historyLabel="Testing.java" index="4">
-<position info="not_deleted" x="2875" y="4"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263184" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263271" y="0"/>
 </item>
-<item historyLabel="GoToUploadAdminXLS.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262686" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="681" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262719" y="0"/>
 </item>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="4131" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262757" y="0"/>
 </item>
-<item historyLabel="OrdersMapper.xml" index="5"/>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="190" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262801" y="0"/>
 </item>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="4131" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263054" y="0"/>
 </item>
-<item historyLabel="GoToUploadAdminXLS.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263095" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="522" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263149" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position info="not_deleted" x="1402" y="34"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263095" y="0"/>
 </item>
-<item historyLabel="OrdersMapper.xml" index="5"/>
-<item historyLabel="loyauty-database.properties" index="6">
-<position info="not_deleted" x="364" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263224" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position info="not_deleted" x="1595" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263184" y="0"/>
 </item>
-<item historyLabel="Testing.java" index="4">
-<position info="not_deleted" x="2879" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263271" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="1">
-<position info="not_deleted" x="1362" y="4"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="262686" y="0"/>
 </item>
-<item historyLabel="Testing.java" index="4">
-<position info="not_deleted" x="2879" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263665" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263728" y="0"/>
 </item>
-<item historyLabel="getOrderFile.jsp" index="3">
-<position info="not_deleted" x="4004" y="37"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263665" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="843" y="0"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42002" y="0"/>
 </item>
-<item historyLabel="GoToUploadAdminXLS.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42357" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="822" y="8"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42462" y="0"/>
 </item>
-<item historyLabel="GoToUploadAdminXLS.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42357" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="822" y="8"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42404" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="7">
-<position info="not_deleted" x="1373" y="15"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42462" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="822" y="8"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42357" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="7">
-<position info="not_deleted" x="1373" y="15"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42404" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="822" y="8"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42462" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="7">
-<position info="not_deleted" x="1373" y="15"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42357" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="880" y="0"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42404" y="0"/>
 </item>
-<item historyLabel="GetOrdersByPOSumit.java" index="7">
-<position info="not_deleted" x="1373" y="15"/>
+<item historyLabel="ReportOrders.java" index="1">
+<position info="not_deleted" x="42043" y="0"/>
 </item>
-<item historyLabel="getOrdersByPOSumit.jsp" index="2">
-<position info="not_deleted" x="880" y="9"/>
+<item historyLabel="OrdersService.java" index="2">
+<position info="not_deleted" x="12261" y="36"/>
 </item>
-<item active="true" historyLabel="Orders.java" index="8">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="OrdersServiceImpl.java" index="0">
+<position info="not_deleted" x="263701" y="0"/>
+</item>
+<item historyLabel="DTOFactory.java" index="3">
+<position info="not_deleted" x="67094" y="34"/>
+</item>
+<item active="true" historyLabel="DTOFactory.java" index="3">
+<position info="not_deleted" x="73769" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -417,47 +456,47 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DTOFactory.java" tooltip="loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/service/core/DTOFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DaoManagerImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/DaoManagerImpl.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/DaoManagerImpl.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="DefaultActionInvocation.class" tooltip="com.opensymphony.xwork2.DefaultActionInvocation">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource_admin/lib\/xwork-core-2.1.6.jar&lt;com.opensymphony.xwork2(DefaultActionInvocation.class"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="DefaultSqlSession.class" tooltip="org.apache.ibatis.session.defaults.DefaultSqlSession">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource_lib/lib\/mybatis-3.0.1.jar&lt;org.apache.ibatis.session.defaults(DefaultSqlSession.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BasicDaoImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/BasicDaoImpl.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/BasicDaoImpl.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Orders.java" tooltip="loyaltySource_lib/src/com/loyauty/model/Orders.java">
 <persistable path="/loyaltySource_lib/src/com/loyauty/model/Orders.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetOrdersByPOSumit.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java">
-<persistable path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GetOrdersByPOSumit.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="loyauty-database.properties" tooltip="loyaltySource_lib/resources/loyauty-database.properties">
-<persistable path="/loyaltySource_lib/resources/loyauty-database.properties"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="OrdersMapper.xml" tooltip="loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml">
 <persistable path="/loyaltySource_lib/resources/com/loyauty/dao/mybatis/mappers/OrdersMapper.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Testing.java" tooltip="loyaltySource_lib/src/com/loyauty/Testing.java">
-<persistable path="/loyaltySource_lib/src/com/loyauty/Testing.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDaoImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/mybatis/OrdersDaoImpl.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/dao/mybatis/OrdersDaoImpl.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="getOrderFile.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/orders/getOrderFile.jsp">
-<persistable path="/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrderFile.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDao.java" tooltip="loyaltySource_lib/src/com/loyauty/dao/OrdersDao.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/dao/OrdersDao.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="getOrdersByPOSumit.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp">
-<persistable path="/loyaltySource_admin/web/WEB-INF/jsp/orders/getOrdersByPOSumit.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersServiceImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/service/orders/OrdersServiceImpl.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GoToUploadAdminXLS.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java">
-<persistable path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/GoToUploadAdminXLS.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OrdersDTO.java" tooltip="loyaltySource_lib/src/com/loyauty/service/core/dto/OrdersDTO.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/service/core/dto/OrdersDTO.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="menu.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/layouts/menu.jsp">
-<persistable path="/loyaltySource_admin/web/WEB-INF/jsp/layouts/menu.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductServiceImpl.java" tooltip="loyaltySource_lib/src/com/loyauty/service/product/ProductServiceImpl.java">
+<persistable path="/loyaltySource_lib/src/com/loyauty/service/product/ProductServiceImpl.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateOrdersManual.java" tooltip="loyaltySource_admin/src/com/loyauty/web/struts/action/orders/CreateOrdersManual.java">
-<persistable path="/loyaltySource_admin/src/com/loyauty/web/struts/action/orders/CreateOrdersManual.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="createOrdersManual.jsp" tooltip="loyaltySource_admin/web/WEB-INF/jsp/orders/createOrdersManual.jsp">
-<persistable path="/loyaltySource_admin/web/WEB-INF/jsp/orders/createOrdersManual.jsp"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Http11Processor.class" tooltip="org.apache.coyote.http11.Http11Processor">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource/C:\/dev\/TOMCAT\/apache-tomcat-6.0.29\/lib\/tomcat-coyote.jar&lt;org.apache.coyote.http11(Http11Processor.class"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="JIoEndpoint.class" tooltip="org.apache.tomcat.util.net.JIoEndpoint">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource/C:\/dev\/TOMCAT\/apache-tomcat-6.0.29\/lib\/tomcat-coyote.jar&lt;org.apache.tomcat.util.net(JIoEndpoint.class"/>
 </file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ApplicationFilterChain.class" tooltip="org.apache.catalina.core.ApplicationFilterChain">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=loyaltySource/C:\/dev\/TOMCAT\/apache-tomcat-6.0.29\/lib\/catalina.jar&lt;org.apache.catalina.core(ApplicationFilterChain.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CharacterEncodingFilter.java" tooltip="loyaltySource_admin/src/com/loyauty/web/filter/CharacterEncodingFilter.java">
-<persistable path="/loyaltySource_admin/src/com/loyauty/web/filter/CharacterEncodingFilter.java"/>
 </file>
 </mruList>
 </workbench>

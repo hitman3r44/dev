@@ -83,17 +83,23 @@ input.vanadium-valid {
 			<s:hidden id="dateBetweenSignal" name="dateBetweenSignal" value="0" />
 			<s:hidden id="reportDateBetween" name="reportDateBetween" value="0" />
 			<!-- New variable -->
-			<s:hidden id="switchBetweenClientLoginAndPoNumber" name="switchBetweenClientLoginAndPoNumber" value="0" />
+<%-- 			<s:hidden id="switchBetweenClientLoginAndPoNumber" name="switchBetweenClientLoginAndPoNumber" value="0" />
 			<s:hidden id="switchBetweenClientLoginAndPoNumberSignal" name="switchBetweenClientLoginAndPoNumberSignal" value="0" />
 			
 			<s:hidden id="switchBetweenLsOrderAndClientOrderIdSignal" name="switchBetweenLsOrderAndClientOrderIdSignal" value="0" />
 			<s:hidden id="switchBetweenLsOrderAndClientOrderId" name="switchBetweenLsOrderAndClientOrderId" value="0" />
 			
 			<s:hidden id="switchBetweenStatusAndClientOtherSignal" name="switchBetweenStatusAndClientOtherSignal" value="0" />
-			<s:hidden id="switchBetweenStatusAndClientOther" name="switchBetweenStatusAndClientOther" value="0" />
+			<s:hidden id="switchBetweenStatusAndClientOther" name="switchBetweenStatusAndClientOther" value="0" /> --%>
+			
+			<!-- For Multiple Option -->
+			<s:hidden id="switchBetweenOptionFieldsSignal" name="switchBetweenOptionFieldsSignal" value="0" />
+			<s:hidden id="switchBetweenOptionFields" name="switchBetweenOptionFields" value="0" />
+			
+			
 			
 			  
-			<s:hidden id="optionalFieldSwitch" name="optionalFieldSwitch" value="0" />
+			<%-- <s:hidden id="optionalFieldSwitch" name="optionalFieldSwitch" value="0" /> --%>
 
 			<!-- ***************** Pagination ********************************** -->
 			<s:hidden id="pageIndexSignal" name="pageIndexSignal" value="0" />
@@ -201,7 +207,8 @@ input.vanadium-valid {
 		</s:form>
 
 		<!-- ............................. TABLE USER LOGIN START............................ -->
-		<table id="tabLogin" width="100%">
+		<!-- <table id="tabLogin" width="100%"> -->
+		<table id="tabLogin" width="1120px">
 			<!-- ...................... Line separator ............. -->
 			<tr height="5px">
 				<td colspan="7" />
@@ -223,8 +230,8 @@ input.vanadium-valid {
 				</td> 
 				--%>
 				
-				<s:if test="%{switchBetweenClientLoginAndPoNumber==null || switchBetweenClientLoginAndPoNumber==0}">
-				<%-- <s:if test='%{userLogin==null && userLogin!=""}'> --%>
+<%-- 				<s:if test="%{switchBetweenClientLoginAndPoNumber==null || switchBetweenClientLoginAndPoNumber==0}">
+				<s:if test='%{userLogin==null && userLogin!=""}'>
 				<td style="padding-left: 5px; width: 80px;">
 				<span id="toggleBetweenLoginAndPONumber" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">
 							Client Login: </span></td>
@@ -266,10 +273,10 @@ input.vanadium-valid {
 							name="productOrderNumberSearch" value="%{productOrderNumberSearch}"
 							cssStyle="width:150px" />
 					</td>
-				</s:else>
+				</s:else> --%>
 
 				
-<%-- 				<td style="padding-left: 5px; width: 80px;">Client Login:</td>
+				<td style="padding-left: 5px; width: 104px;">Client Login:</td>
 				<td>
 				
 					<div class="ui-widget">
@@ -287,18 +294,87 @@ input.vanadium-valid {
 						</select>
 					</div>
 				
-				</td> --%>
+				</td>
 				<!-- ...Login... -->
 
 				
 				<!-- ...lsOrderId... -->
-				<s:if test="%{switchBetweenLsOrderAndClientOrderId==null || switchBetweenLsOrderAndClientOrderId==0}">
+				<%-- XXXXXX:<s:property value="%{switchBetweenOptionFields}"/> --%>
+				<s:if test="%{switchBetweenOptionFields==null || switchBetweenOptionFields==0}">
+					<td style="padding-left: 5px; width: 92px;"><span
+						id="switchBetweenOptionFieldsId"
+						style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">ls_Order_Id:
+					</span>
+					</td>
+					<td style="padding-left: 5px; width: 119px;"><s:textfield
+							id="lsOrderIdSearch" name="lsOrderId" value="%{lsOrderId}"
+							cssStyle="width:150px" />
+					</td>
+				</s:if>
+				
+					
+				<s:if test="%{switchBetweenOptionFields!=null && switchBetweenOptionFields==1}">
+					<td style="padding-left: 5px; width: 80px;"><span
+						id="switchBetweenOptionFieldsId"
+						style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">
+							PO Number: </span>
+					</td>
+
+					<td style="padding-left: 5px; width: 152px;"><s:textfield
+							id="poNumberId" name="productOrderNumberSearch"
+							value="%{productOrderNumberSearch}" cssStyle="width:150px" />
+					</td>
+				</s:if>
+				
+					
+				<s:if test="%{switchBetweenOptionFields!=null && switchBetweenOptionFields==2}">
+				<td style="padding-left: 5px; width: 92px;"><span
+						id="switchBetweenOptionFieldsId"
+						style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">Client
+							Order Id: </span>
+					</td>
+					<td style="padding-left: 5px; width: 100px;"><s:textfield id="clientOrderId"
+							name="clientOrderNumber" value="%{clientOrderNumber}"
+							cssStyle="width:150px" />
+					</td>
+				</s:if>
+				
+					
+				<s:if test="%{switchBetweenOptionFields!=null && switchBetweenOptionFields==3}">
+					<td style="padding-left: 5px; width: 92px;"><span
+						id="switchBetweenOptionFieldsId"
+						style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">
+							Client Other Id: </span>
+					</td>
+					<td style="padding-left: 5px; width: 95px;"><s:textfield
+							id="clientOtherId" name="clientOther" value="%{clientOther}"
+							cssStyle="width:150px" />
+					</td>
+				</s:if>				
+				
+				
+				
+				
+				<%-- <s:if test="%{switchBetweenLsOrderAndClientOrderId==null || switchBetweenLsOrderAndClientOrderId==0}">
 				<td style="padding-left: 5px; width: 92px;">
 				<span id="toggleBetweenlsOrderIdAndclientOrderId" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">ls_Order_Id: </span></td>
 				<td style="padding-left: 5px; width:119px;">
 				<s:textfield id="lsOrderIdSearch" name="lsOrderId" value="%{lsOrderId}" cssStyle="width:150px" />
 				</td>
 				</s:if>
+				
+				<s:elseif test="%{switchBetweenClientLoginAndPoNumber==null || switchBetweenClientLoginAndPoNumber==0}">
+					<td style="padding-left: 5px; width: 80px;"><span
+						id="toggleBetweenLoginAndPONumber"
+						style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">
+							PO Number: </span></td> 
+					
+					<td style="padding-left: 5px; width:152px;">
+					<s:textfield id="poNumberId"
+							name="productOrderNumberSearch" value="%{productOrderNumberSearch}"
+							cssStyle="width:150px" />
+					</td>
+				</s:elseif>
 				
 				<s:else>
 					<td style="padding-left: 5px; width: 92px;"><span
@@ -311,6 +387,7 @@ input.vanadium-valid {
 							cssStyle="width:150px" />
 					</td>
 				</s:else>
+ --%>				
 				<%-- <td style="padding-left: 5px; width: 45px;">ls_Order_Id:</td>
 				<td style="padding-left: 5px;">
 				<s:textfield id="lsOrderIdSearch" name="lsOrderId" value="%{lsOrderId}" cssStyle="width:100px" />
@@ -318,7 +395,8 @@ input.vanadium-valid {
 				<!-- ...lsOrderId... -->
 
 				<!-- ...Status... -->
-				<s:if test="%{switchBetweenStatusAndClientOther==null || switchBetweenStatusAndClientOther==0}">
+				
+				<%-- <s:if test="%{switchBetweenStatusAndClientOther==null || switchBetweenStatusAndClientOther==0}">
 					<td style="padding-left: 5px;wi">
 					<span id="toggleBetweenStatusAndclientOtherId" style="cursor: pointer; color: rgb(44, 140, 171); text-decoration: underline;">Status: </span></td>
 					<td style="padding-left: 5px; width: 100px;"><s:select label=""
@@ -335,13 +413,15 @@ input.vanadium-valid {
 					<s:textfield id="clientOtherId"
 							name="clientOther" value="%{clientOther}"
 							cssStyle="width:150px" /></td>
-				</s:else>
-<%-- 				<td style="padding-left: 5px; width: 45px;">Status:</td>
+				</s:else> --%>
+				
+				
+				<td style="padding-left: 5px; width: 45px;">Status:</td>
 				<td style="padding-left: 5px;"><s:select label=""
 						name="selectedStatus" headerKey="-1" headerValue="All Status"
 						list="#{'0':'Open', '1':'Progress', '2':'Shipped'}"
 						value="%{selectedStatus}" required="false" cssStyle="width:100px" />
-				</td> --%>
+				</td>
 				<!-- ...Status... -->
 				
 				<!-- ...Creation Date Start... -->
@@ -455,7 +535,6 @@ input.vanadium-valid {
 					<td width="80px"><img id="imgPrintOrders"
 						src="images/orders/printAll.png" style="cursor: pointer;" />
 					</td>
-
 				</s:if>
 
 				<s:if
@@ -464,7 +543,6 @@ input.vanadium-valid {
 					<td><img id="imgGetInvoicedXLS"
 						src="images/orders/xlsInvoiced.png" style="cursor: pointer;" />
 					</td>
-
 				</s:if>
 
 			</tr>
@@ -479,46 +557,70 @@ input.vanadium-valid {
 			style="align: left; cursor: default; table-layout: fixed;">
 			<thead class="gray_header">
 				<tr height="30px">
-					<td width="45px"><img
-						style="cursor: pointer; margin-left: 10px;" id="imgSelectAllPO"
-						alt="" src="images/orders/selectAllPO.png" /></td>
-					<td width="20px" style="padding-right: 10px;"><img
-						style="cursor: pointer; align: right;" id="imgSort" alt=""
-						src="images/orders/selectSommePO.png" /></td>
-					<td width="135px"
-						style="padding-left: 5px; border-left: 1px solid white; border-right: 1px solid white;">Partner
-						Name<img id="imgSort" src="images/orders/sortColumn.png"
+				
+					<!-- Left Sides two buttons --> 
+					<td width="45px"><img style="cursor: pointer; margin-left: 10px;" id="imgSelectAllPO"
+						alt="" src="images/orders/selectAllPO.png" />
+					</td>
+					
+					<td width="20px" style="padding-right: 10px;"><img style="cursor: pointer; align: right;" id="imgSort" alt=""
+						src="images/orders/selectSommePO.png" />
+					</td>
+					<!-- Left Sides two buttons -->
+					
+					<!-- Partner Name  Column-->
+					<td width="135px" style="padding-left: 5px; border-left: 1px solid white; border-right: 1px solid white;">
+					Partner Name<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Partner Name  Column-->
+					
+					<!-- Row OrderId -->
 					<td width="134px"
-						style="padding-left: 5px; border-left: 1px solid white; border-right: 1px solid white; visibility: hidden; display: none; padding-right: 10px;">Row
+						style="padding-left: 5px; border-left: 1px solid white; border-right: 1px solid white; 
+						visibility: hidden; display: none; padding-right: 10px;">Row
 						order ID<img id="imgSort" src=""
 						style="visibility: hidden; display: none; padding-right: 10px;" />
 					</td>
+					<!-- Row OrderId -->
+					
+					<!-- LS Order ID -->
 					<td width="220px"
 						style="padding-left: 10px; border-right: 1px solid white;">LS
 						Order ID<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- LS Order ID -->
+					
+					<!-- PO Date -->
 					<td width="103px"
 						style="padding-left: 10px; border-right: 1px solid white;">PO
 						Date<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- PO Date -->
+					
+					<!-- Required Date -->
 					<td width="120px"
 						style="padding-left: 10px; border-right: 1px solid white;">Required
 						Date<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Required Date -->
+					
+					<!-- Status -->
 					<td width="120px"
 						style="padding-left: 10px; border-right: 1px solid white;">Status<img
 						id="imgSort" src="images/orders/sortColumn.png" align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Status -->
+					
+					<!-- LS Product ID -->
 					<td style="visibility: hidden; display: none;"><img
 						id="imgSort" src="" /></td>
 					<td width="130px"
@@ -527,40 +629,75 @@ input.vanadium-valid {
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- LS Product ID -->
+					
+					<!-- Quantity -->
 					<td width="90px"
 						style="padding-left: 10px; border-right: 1px solid white;">Quantity<img
 						id="imgSort" src="images/orders/sortColumn.png" align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Quantity -->
+					
+					<!-- STOCK -->
 					<td width="90px"
 						style="padding-left: 10px; border-right: 1px solid white;">STOCK<img
 						id="imgSort" src="images/orders/sortColumn.png" align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- STOCK -->
+					
+					<!-- ORDER -->
+					<td width="90px"
+						style="padding-left: 10px; border-right: 1px solid white;">ORDER<img
+						id="imgSort" src="images/orders/sortColumn.png" align="right"
+						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
+					</td>
+					<!-- ORDER -->
+					
+					<!-- Product Title -->
 					<td width="180px"
 						style="padding-left: 10px; border-right: 1px solid white;">Product
 						Title<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Product Title -->
+					
+					<!-- Unit -->
 					<td width="120px"
 						style="padding-left: 10px; border-right: 1px solid white;">Unit
 						Price<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- Unit -->
+					
+					<!-- LS Price -->
 					<td width="120px"
 						style="padding-left: 10px; border-right: 1px solid white;">LS
 						Price<img id="imgSort" src="images/orders/sortColumn.png"
 						align="right"
 						style="vertical-align: middle; cursor: pointer; padding-right: 10px;" />
 					</td>
+					<!-- LS Price -->
+					
+					
+					<!-- Unit Price Currency -->
 					<td width="132px"
 						style="padding-left: 10px; border-right: 1px solid white;">Unit
-						Price Currency</td>
+						Price Currency
+					</td>
+					<!-- Unit Price Currency -->
+					
+					<!-- LSPrice Currency -->
 					<td width="120px"
 						style="padding-left: 10px; border-right: 1px solid white;">LS
-						Price Currency</td>
+						Price Currency
+					</td>
+					<!-- LSPrice Currency -->
+					
+					
 					<td width="170px"
 						style="padding-left: 10px; border-right: 1px solid white;">Notes<img
 						id="imgSort" src=""
@@ -671,36 +808,49 @@ input.vanadium-valid {
 					<td style="background-color: white; border-right: 0px solid white;">Billed</td>
 				</tr>
 			</thead>
+			
 			<tbody>
 				<s:if test="%{listOrdersDTO.size > 0}">
 					<tr>
 						<td colspan="34">
 							<div id="divRowsOrder"
-								style="overflow-y: auto; width: 5030px; direction: rtl; text-align: left; max-height: 550px; height: 800px; cursor: default; padding-bottom: 10px; overflow-x: hidden;">
+								style="overflow-y: auto; width: 5030px; direction: rtl; text-align: left; max-height: 550px; height: 800px; cursor: default; padding:0px 0px 10px 90px; overflow-x: hidden;">
 								<table style="direction: ltr; table-layout: fixed;"
 									width="5030px">
 									<s:iterator value="listOrdersDTO" id="order">
 
 										<tr height="45px" id="rowOrder"
 											style='<s:property value="#order.CssStyle"/><s:property value="#order.cssRow"/>font-size: 12px;border-bottom:1px solid #CCCCCC;border-right:1px solid white;'>
+											
 											<td id="columnInfoNotCompleted" width="19px" align="right"
-												style="padding-left: 20px;"><s:if
+												style="padding-left: 20px;">
+												<s:if
 													test='%{infoMissing==1}'>
 													<img id="infoMissingDiv"
 														src="images/orders/infoMissing.png">
-												</s:if></td>
-											<td align="center" width="35px"><s:checkbox
+												</s:if>
+											</td>
+											
+											<td align="center" width="35px">
+											<s:checkbox
 													id="checkBoxItem" name="checkBoxItem"
-													value="%{checkBoxItem}" disabled="%{checkBoxItem}" /></td>
+													value="%{checkBoxItem}" disabled="%{checkBoxItem}" />
+											</td>
+											
 											<td id="columnIndexOrder"
 												style="visibility: hidden; display: none;"><s:property
-													value="#order.index" /></td>
+													value="#order.index" />
+											</td>
+											
 											<td width="125px"
 												style="border-left: 1px solid #CCCCCC; border-right: 1px solid #CCCCCC; padding-left: 10px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;"><s:property
-													value="#order.userLogin" /></td>
+													value="#order.userLogin" />
+											</td>
+											
 											<td width="125px"
 												style="border-left: 1px solid #CCCCCC; border-right: 1px solid #CCCCCC; padding-left: 10px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; visibility: hidden; display: none; padding-right: 10px;"><s:property
-													value="#order.id" /></td>
+													value="#order.id" />
+											</td>
 
 											<s:if test="superAdmin!=null">
 												<td id="columnRowOrderId" width="220px"
@@ -723,12 +873,14 @@ input.vanadium-valid {
 													value="#order.requiredDate" /></td>
 											<td width="120px"
 												style="border-right: 1px solid #CCCCCC; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; overflow: hidden; text-overflow: ellipsis;">
+												
 												<s:if test='showRowShipping==0 && superAdmin!=null'>
 													<s:property value="#order.status" />
 													<a id="statusToEdit" href="#" style="align: rigth;">
 														Edit</a>
 													<center id="statusId"></center>
 													<center id="saveStatus"></center>
+												
 												</s:if> <s:elseif test="showRowShipping!=0 && superAdmin!=null">
 													<s:select id="statusId" name="statusId" list="listStatus"
 														emptyOption="false" headerKey="" listKey="id"
@@ -736,10 +888,12 @@ input.vanadium-valid {
 														cssStyle="width:80px;color:black;" />
 													<a id="saveStatus" href="#" style="align: rigth;"> Save</a>
 													<center id="statusToEdit"></center>
+												
 												</s:elseif> <s:else>
 													<s:property value="#order.status" />
 												</s:else>
 											</td>
+											
 											<td style="visibility: hidden; display: none;"><img
 												id="imgSort" src="" /></td>
 											<td width="130px"
@@ -751,6 +905,16 @@ input.vanadium-valid {
 											<td width="90px"
 												style="border-right: 1px solid #CCCCCC; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; overflow: hidden; text-overflow: ellipsis;"><s:property
 													value="#order.stock" /></td>
+											
+											<!-- Added by Sumit for showing the data of Order -->		
+											<td width="90px"
+												style="border-right: 1px solid #CCCCCC; padding-left: 5px; 
+												padding-right: 5px; padding-top: 5px; padding-bottom: 5px; 
+												overflow: hidden; text-overflow: ellipsis;">
+												<s:property value="#order.orderAmount" />
+											</td>
+											<!-- Added by Sumit for showing the data of Order -->
+											
 											<td width="180px"
 												style="border-right: 1px solid #CCCCCC; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; overflow: hidden; text-overflow: ellipsis;"><s:property
 													value="#order.productDescription" /></td>
@@ -1445,87 +1609,33 @@ input.vanadium-valid {
 											$('#toolTipReportPop').css("display", "none");
 											$('#toolTipReportPop').css("visibility", "hidden");
 										});
-								
-								
-							/*------------------------------------- ToolTipReport:Client Login And PO Number -------------------------------- 
-							 	  when Admin mouve the mouse on the sentence "Client Login" or "PO Number"  
-							------------------------------------------------------------------------------------------------*/
-							$('#toggleBetweenLoginAndPONumber').mouseover(
-											function() {
-												var position = $('#toggleBetweenLoginAndPONumber').position();
-												$('#toolTipReportPop #message').text("Click to toggle between Login And PO Number");
-												var y = position.top;
-												var height = $('#toolTipReportPop').height();
-												y = (y - height);
-												var x = position.left;
-												var toolTipWidth = $('#toolTipReportPop').width();
-												toolTipWidth = toolTipWidth / 2;
-												x = x - toolTipWidth;
-												$("#toolTipReportPop").css('top', y - 5);
-												$("#toolTipReportPop").css('left', x + 81);
-												$('#toolTipReportPop').css("display", "block");
-												$('#toolTipReportPop').css(	"visibility","visible");
-											});
-							//when Admin move the mouse out the sentence "Shipped Date between" or "PO Date between" 
- 							$('#toggleBetweenLoginAndPONumber').mouseout(
-									function() {
-										$('#toolTipReportPop').css("display", "none");
-										$('#toolTipReportPop').css("visibility", "hidden");
-									});
-							
-							
-							/*------------------------------------- ToolTipReport:Ls Order And Client Order Id -------------------------------- 
-						 	  when Admin mouve the mouse on the sentence "Ls Order" And "Client Order Id"  
-						  ------------------------------------------------------------------------------------------------*/
-						$('#toggleBetweenlsOrderIdAndclientOrderId').mouseover(
-										function() {
-											var position = $('#toggleBetweenlsOrderIdAndclientOrderId').position();
-											$('#toolTipReportPop #message').text("Click to toggle between Ls Order And Client Order Id");
-											var y = position.top;
-											var height = $('#toolTipReportPop').height();
-											y = (y - height);
-											var x = position.left;
-											var toolTipWidth = $('#toolTipReportPop').width();
-											toolTipWidth = toolTipWidth / 2;
-											x = x - toolTipWidth;
-											$("#toolTipReportPop").css('top', y - 5);
-											$("#toolTipReportPop").css('left', x + 30);
-											$('#toolTipReportPop').css("display", "block");
-											$('#toolTipReportPop').css(	"visibility","visible");
-										});
-						//when Admin move the mouse out the sentence "Ls Order" And "Client Order Id" 
-						$('#toggleBetweenlsOrderIdAndclientOrderId').mouseout(
-								function() {
-									$('#toolTipReportPop').css("display", "none");
-									$('#toolTipReportPop').css("visibility", "hidden");
-								});
+
 						
-						
-					/*------------------------------------- ToolTipReport:Status and Client Other Id -------------------------------- 
-					 	  when Admin mouve the mouse on the sentence "Status" or "Client Other Id"  
-					  ------------------------------------------------------------------------------------------------*/
-					$('#toggleBetweenStatusAndclientOtherId').mouseover(
-									function() {
-										var position = $('#toggleBetweenStatusAndclientOtherId').position();
-										$('#toolTipReportPop #message').text("Click to toggle between Status and Client Other Id");
-										var y = position.top;
-										var height = $('#toolTipReportPop').height();
-										y = (y - height);
-										var x = position.left;
-										var toolTipWidth = $('#toolTipReportPop').width();
-										toolTipWidth = toolTipWidth / 2;
-										x = x - toolTipWidth;
-										$("#toolTipReportPop").css('top', y - 5);
-										$("#toolTipReportPop").css('left', x + 30);
-										$('#toolTipReportPop').css("display", "block");
-										$('#toolTipReportPop').css(	"visibility","visible");
-									});
-					//when Admin move the mouse out the sentence "Status" or "Client Other Id" 
-					$('#toggleBetweenStatusAndclientOtherId').mouseout(
-							function() {
-								$('#toolTipReportPop').css("display", "none");
-								$('#toolTipReportPop').css("visibility", "hidden");
-							});
+	/*------------------------------------- ToolTipReport: Ls Order,Client Other Id, Client Order Id And PO Number-------------------------------- 
+	 	  when Admin mouve the mouse on the sentence "Ls Order","Client Other Id", "Client Order Id" And "PO Number"  
+	------------------------------------------------------------------------------------------------*/
+	$('#switchBetweenOptionFieldsId').mouseover(
+					function() {
+						var position = $('#switchBetweenOptionFieldsId').position();
+						$('#toolTipReportPop #message').text("Click to toggle between Ls Order, PO Number, Client Order Id and Client Other Id");
+						var y = position.top;
+						var height = $('#toolTipReportPop').height();
+						y = (y - height);
+						var x = position.left;
+						var toolTipWidth = $('#toolTipReportPop').width();
+						toolTipWidth = toolTipWidth / 2;
+						x = x - toolTipWidth;
+						$("#toolTipReportPop").css('top', y - 5);
+						$("#toolTipReportPop").css('left', x + 30);
+						$('#toolTipReportPop').css("display", "block");
+						$('#toolTipReportPop').css(	"visibility","visible");
+					});
+	//when Admin move the mouse out the sentence "Ls Order","Client Other Id", "Client Order Id" And "PO Number" 
+	$('#switchBetweenOptionFieldsId').mouseout(
+			function() {
+				$('#toolTipReportPop').css("display", "none");
+				$('#toolTipReportPop').css("visibility", "hidden");
+			});
 							
 								
 
@@ -3607,17 +3717,17 @@ input.vanadium-valid {
 								/*----------------------- Switching between "Client Login" and "PO Number" --------------------
 								 When Admin click sentens "PO Number" or "Client Login" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-								$("#toggleBetweenLoginAndPONumber").click(
+/* 								$("#toggleBetweenLoginAndPONumber").click(
 									function() {
 										fillSarchParameters();
 										$("#switchBetweenClientLoginAndPoNumberSignal").val(1);
 										$('#form').trigger("submit");
-									});
+									}); */
 
 								/*----------------------- Switching between "ls_Order" and "Client Order Id" --------------------
 								 When Admin click sentens "ls_Order" or "Client Order Id" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-								$("#toggleBetweenlsOrderIdAndclientOrderId")
+/* 								$("#toggleBetweenlsOrderIdAndclientOrderId")
 										.click(
 												function() {
 													fillSarchParameters();
@@ -3626,12 +3736,12 @@ input.vanadium-valid {
 															.val(1);
 													$('#form')
 															.trigger("submit");
-												});
+												}); */
 
 								/*----------------------- Switching between "Status" and "Client Other Id" --------------------
 								 When Admin click sentens "Status" or "Client Other Id" in Search Options 
 								-------------------------------------------------------------------------------------------*/
-								$("#toggleBetweenStatusAndclientOtherId")
+/* 								$("#toggleBetweenStatusAndclientOtherId")
 										.click(
 												function() {
 													fillSarchParameters();
@@ -3640,8 +3750,19 @@ input.vanadium-valid {
 															.val(1);
 													$('#form')
 															.trigger("submit");
+												}); */
+								
+								/*----------------------- Switching between "LS_Order_id","Client Other Id",
+																			"PO Number" and "Client Order Id" --------------------
+								-------------------------------------------------------------------------------------------*/
+								$("#switchBetweenOptionFieldsId").click(	
+										function() {
+													fillSarchParameters();
+													$("#switchBetweenOptionFieldsSignal").val(1);
+													$('#form').trigger("submit");
 												});
-
+								
+								
 								/*------------------------------- Function:fillSarchParameters --------------------------------
 													     	   Function to fill sarch parameters  
 								  -------------------------------------------------------------------------------------------*/
@@ -3649,16 +3770,11 @@ input.vanadium-valid {
 									//search parameters 
 									var userLogin = $("#txtUserLoginTo").val();
 									$("#frmUserLogin").val(userLogin); //Some Hidden Form
-									var strCreationDateStart = $(
-											"#creationDateStartPicker").val();
-									$("#frmStrCreationDateStart").val(
-											strCreationDateStart);
-									var strCreationDateEnd = $(
-											"#creationDateEndPicker").val();
-									$("#frmStrCreationDateEnd").val(
-											strCreationDateEnd);
-									var selectedStatus = $("#selectedStatus")
-											.val();
+									var strCreationDateStart = $("#creationDateStartPicker").val();
+									$("#frmStrCreationDateStart").val(strCreationDateStart);
+									var strCreationDateEnd = $("#creationDateEndPicker").val();
+									$("#frmStrCreationDateEnd").val(strCreationDateEnd);
+									var selectedStatus = $("#selectedStatus").val();
 									$("#frmSelectedStatus").val(selectedStatus);
 									var lsOrderId = $("#lsOrderIdSearch").val();
 									$("#lsOrderIdFRM").val(lsOrderId);

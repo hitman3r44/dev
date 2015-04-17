@@ -3511,16 +3511,23 @@ public class ProductServiceImpl extends ServiceImpl implements ProductService {
 		int ROW_TO_START = 1;
 		final int COL_LS_PRODUCT_ID=1;
 		final int COL_STOCK=2;
+		
+		//Added by Sumit Sarkar
+		final int COL_PRODUCT_ORDER=3;
 
 		String  strSTOCK="";
+		String  strORDER="";
 
 		//Values of cells
 		String  LS_PRODUCT_ID="";
 		Double STOCK = null;
+		Double ORDER = null;
 
 		//Cells
 		Cell cellLS_PRODUCT_ID= null;
 		Cell cellSTOCK= null;
+		Cell cellORDER= null;
+		
 		Workbook existingWorkbook = Workbook.getWorkbook(new File(destFileStockXLS+"stock.xls"));
 		Sheet sheetToRead=existingWorkbook.getSheet(0);
 		int ROW_MAX = sheetToRead.getRows();
@@ -3543,6 +3550,7 @@ public class ProductServiceImpl extends ServiceImpl implements ProductService {
 			if(cellSTOCK!=null){
 				strSTOCK = cellSTOCK.getContents();
 				strSTOCK=strSTOCK.replaceAll(" ", "");
+				
 				if(strSTOCK!=null && !strSTOCK.equals("")){
 					int index=strSTOCK.indexOf(",");
 					if(index>=0){
@@ -3559,9 +3567,40 @@ public class ProductServiceImpl extends ServiceImpl implements ProductService {
 					STOCK=null;
 				}
 			}
-			if((LS_PRODUCT_ID==null ||LS_PRODUCT_ID.equals("")&&(strSTOCK==null ||strSTOCK.equals("")))){
+			// --------------- START 3:ORDER
+			cellORDER = sheetToRead.getCell(COL_PRODUCT_ORDER - 1, row);
+			if (cellORDER != null) {
+				strORDER = cellORDER.getContents();
+				strORDER = strORDER.replaceAll(" ", "");
+
+				if (strORDER != null && !strORDER.equals("")) {
+					int index = strORDER.indexOf(",");
+					if (index >= 0) {
+						String strORDER1 = strORDER.substring(0, index);
+						String strORDER2 = strORDER.substring(index + 1,strORDER.length());
+						strORDER = strORDER1 + "." + strORDER2;
+					}
+				} else
+					errorReport += " " + (row + 1) + " ,ORDER:" + strORDER + " ,|---->is null \n";
+				ORDER = null;
+				try {
+					ORDER = Double.parseDouble(strORDER);
+				} catch (Exception pe) {
+					ORDER = null;
+				}
+			}
+			// --------------- END 3:ORDER
+			
+			// Check all those variable is empty or null value
+			if((LS_PRODUCT_ID==null || LS_PRODUCT_ID.equals("") 
+					&& 
+					(strSTOCK==null  || strSTOCK.equals("")) 
+					&& 
+					(strORDER==null  || strORDER.equals("")))){
 				break;
 			}
+			// Check all those variable is empty or null value
+			
 			if(LS_PRODUCT_ID!=null){
 				// Clean LS_PRODUCT_ID
 				LS_PRODUCT_ID = LS_PRODUCT_ID.replaceAll(" SELECT ",""); 
@@ -3571,9 +3610,13 @@ public class ProductServiceImpl extends ServiceImpl implements ProductService {
 				LS_PRODUCT_ID=LS_PRODUCT_ID.replaceAll(";","");
 				LS_PRODUCT_ID=LS_PRODUCT_ID.replaceAll(",","");
 			}
+			//Set all the values to ProductDTO Object
 			productDTO = new ProductDTO();
+			
 			productDTO.setLoyaltyProductId(LS_PRODUCT_ID);
 			productDTO.setStock(STOCK);
+			productDTO.setOrderAmount(ORDER);
+			
 			listStock.add(productDTO);
 
 		}

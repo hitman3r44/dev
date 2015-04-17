@@ -60,6 +60,8 @@ public class Product extends AbstractEntity{
 	private String oldImageRealName;
 	
 	private Double stock;
+	//Added by Sumit Sarkar
+	private Double orderAmount;
 
 	private String actualWidth;
 	private String actualLength;
