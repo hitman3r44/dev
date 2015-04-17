@@ -6812,8 +6812,7 @@ public class OrdersServiceImpl extends ServiceImpl implements OrdersService {
 			result = (List<Orders>) daoManager
 					.executeAndHandle(new DaoCommand() {
 						@Override
-						public Object execute(DaoManager daoManager)
-								throws DaoException {
+						public Object execute(DaoManager daoManager) throws DaoException {
 							return daoManager.getOrdersDao().searchOrdersWithOptionsAndSortingNew(
 											creationDateStart, creationDateEnd,
 											factorDateBetween, userLogin,

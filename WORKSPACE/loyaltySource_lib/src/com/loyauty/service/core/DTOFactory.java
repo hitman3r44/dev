@@ -1491,9 +1491,11 @@ public final class DTOFactory {
 			}
 			orderDTO.setIndex(indexOrder);
 			indexOrder++;
+			
 			orderDTO.setDuplicate(order.getDuplicate());
 			orderDTO.setQuantityOriginal(order.getQuantityOriginal());
 			orderDTO.setClientProductNumber(order.getClientProductNumber());
+			
 			if(order.getClientCity()!=null)orderDTO.setClientCity(order.getClientCity());
 			if(order.getClientEmail()!=null)orderDTO.setClientEmail(order.getClientEmail());
 			if(order.getSpecialHandlingName()!=null)orderDTO.setSpecialHandlingName(order.getSpecialHandlingName());
@@ -1569,6 +1571,9 @@ public final class DTOFactory {
 			if(order.getShippingFee()!=null)orderDTO.setShippingFee(order.getShippingFee());
 			if(order.getShippingPrice()!=null)orderDTO.setShippingPrice(order.getShippingPrice());
 			if(order.getStatus()!=null)orderDTO.setStatus(order.getStatus());
+			//Added Sumit Sarkar
+			if(order.getOrderAmount()!=null)orderDTO.setOrderAmount(order.getOrderAmount());
+			
 			if(order.getStock()!=null)orderDTO.setStock(order.getStock());
 			if(order.getTrackingNumber()!=null)orderDTO.setTrackingNumber(order.getTrackingNumber());
 			if(order.getUnitPrice()!=null)orderDTO.setUnitPrice(order.getUnitPrice()); 
@@ -2421,6 +2426,8 @@ public final class DTOFactory {
 			product.setId(productDTO.getId());
 			product.setLoyaltySourceProductId(productDTO.getLoyaltyProductId());
 			product.setStock(productDTO.getStock());
+			//Added for new column by Sumit Sarkar
+			product.setOrderAmount(productDTO.getOrderAmount());
 			result.add(product);
 		}//end for
 		return result;
@@ -2436,6 +2443,8 @@ public final class DTOFactory {
 			if(product.getId()!=null)productDTO.setId(product.getId());
 			productDTO.setLoyaltyProductId(product.getLoyaltySourceProductId());
 			productDTO.setStock(product.getStock());
+			//Added by Sumit Sarkar
+			productDTO.setOrderAmount(product.getOrderAmount());
 			result.add(productDTO);
 		}//end for
 		return result;

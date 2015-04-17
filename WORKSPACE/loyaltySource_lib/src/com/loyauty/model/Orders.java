@@ -59,6 +59,10 @@ public class Orders  extends AbstractEntity{
 	private Long    productId;
 	private String  status;
 	private String  productDescription;
+	
+	//Sumit Sarkar
+	private Double  orderAmount;
+	
 	private Double  stock;
 	private String  lsProductID;
 	private Double  lsPrice;

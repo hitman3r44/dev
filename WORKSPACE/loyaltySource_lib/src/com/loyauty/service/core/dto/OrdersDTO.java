@@ -75,6 +75,10 @@ public class OrdersDTO extends  BasicDTO{
 	private String 	status;
 	private String 	productDescription;
 	private Double 	stock;
+	
+	//Added by Sumit Sarkar
+	private Double 	orderAmount;
+	
 	private String 	lsProductID;
 	private String  providedLsProductId; //ls_product_id provided by client
 	private Double 	lsPrice;

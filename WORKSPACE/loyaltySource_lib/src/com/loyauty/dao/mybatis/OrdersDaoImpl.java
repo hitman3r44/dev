@@ -883,6 +883,10 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		public List<Orders> getOrdersByProductOrderNumberSumit(Orders order) {
 			return (List<Orders>) getSqlSession().selectList(getNameSpace("getOrdersByProductOrderNumberSumit"), order);
 		}
+	
+		
+	//Created By Sumit Sarkar
+	//For searching with new parameters
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -893,8 +897,11 @@ import com.loyauty.service.core.dto.OrdersDTO;
 			Integer PAGE_ITEMS_COUNT, Integer indexSet,
 			String productOrderNumberSearch,String clientOrderNumber,
 			String clientOther) {
+		
 		List<Orders> result = null;
+		
 		HashMap<String, Object> param = new HashMap<String, Object>();
+		
 		param.put("creationDateStart", creationDateStart);
 		param.put("creationDateEnd", creationDateEnd);
 		param.put("userLogin", userLogin);
@@ -909,10 +916,7 @@ import com.loyauty.service.core.dto.OrdersDTO;
 		param.put("clientOrderNumber", clientOrderNumber);
 		param.put("clientOtherId", clientOther);
 		
-//		System.out.println("OrderDaoImp Class: "+ productOrderNumberSearch);
-		
-		result = (List<Orders>) getSqlSession().selectList(
-				getNameSpace("searchOrdersWithOptionsAndSorting"), param);
+		result = (List<Orders>) getSqlSession().selectList(getNameSpace("searchOrdersWithOptionsAndSorting"), param);
 		return result;
 
 	}
